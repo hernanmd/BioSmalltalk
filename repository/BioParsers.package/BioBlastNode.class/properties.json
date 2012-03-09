@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 10/22/2011 00:41",
+	"super" : "BioObject",
+	"category" : "BioParsers-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"nodeName"
+	],
+	"name" : "BioBlastNode",
+	"type" : "normal"
+}

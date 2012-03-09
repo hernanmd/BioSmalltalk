@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 7/9/2010 14:07",
+	"super" : "BioNCBIIdParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioLocalParser",
+	"type" : "normal"
+}

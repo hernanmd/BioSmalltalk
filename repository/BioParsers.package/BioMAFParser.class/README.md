@@ -1,0 +1,1 @@
+GTMAFParser as described in https://cgwb.nci.nih.gov/goldenPath/help/maf.html

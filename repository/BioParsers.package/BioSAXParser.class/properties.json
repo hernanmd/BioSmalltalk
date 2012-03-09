@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 1/13/2012 20:47",
+	"super" : "SAXHandler",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"results",
+		"catchNodes",
+		"selectedNodes"
+	],
+	"name" : "BioSAXParser",
+	"type" : "normal"
+}

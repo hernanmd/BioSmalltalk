@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFASTABasicParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioFASTAMultiParser",
+	"type" : "normal"
+}

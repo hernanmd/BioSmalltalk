@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioXMLResultFormatter",
+	"category" : "BioParsers-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioXMLDictionaryMap",
+	"type" : "normal"
+}

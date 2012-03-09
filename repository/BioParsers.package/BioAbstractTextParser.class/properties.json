@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 1/26/2012 00:48",
+	"super" : "BioAbstractParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioAbstractTextParser",
+	"type" : "normal"
+}

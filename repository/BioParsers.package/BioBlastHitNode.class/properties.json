@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioBlastValueNode",
+	"category" : "BioParsers-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBlastHitNode",
+	"type" : "normal"
+}

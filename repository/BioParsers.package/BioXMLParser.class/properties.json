@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"formatter",
+		"nodes"
+	],
+	"name" : "BioXMLParser",
+	"type" : "normal"
+}

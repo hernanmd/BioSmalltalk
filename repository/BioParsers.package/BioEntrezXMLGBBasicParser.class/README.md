@@ -1,0 +1,1 @@
+This is a basic parser which can parse accession, definition and sequence nodes from each GBSeq.

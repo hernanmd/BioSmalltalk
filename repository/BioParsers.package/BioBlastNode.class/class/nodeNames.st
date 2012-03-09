@@ -1,0 +1,4 @@
+accessing
+nodeNames
+
+	^ Array empty

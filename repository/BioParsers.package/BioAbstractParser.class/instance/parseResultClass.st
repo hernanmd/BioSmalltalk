@@ -1,0 +1,4 @@
+accessing
+parseResultClass
+
+	self subclassResponsibility

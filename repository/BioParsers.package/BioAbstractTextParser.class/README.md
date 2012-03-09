@@ -1,0 +1,1 @@
+BioAbstractTextParser is an abstract class which groups common behavior for subclasses. Mostly related with parsing of structured text.

@@ -1,0 +1,4 @@
+accessing
+nodeDescriptions 
+
+	^ #('Offset of database sequence at the end of the alignment (one-offset)' 'Offset of query at the end of the alignment (one-offset)' 'Number of gaps in the alignment' 'Length of the alignment used' 'End of phi-blast pattern on the query (one-offset)' 'Formatting middle line as normally seen in BLAST report' 'Offset of database sequence at the start of the alignment (one-offset)' 'Ordinal number of the HSP, one-offset' 'Number of identities in the alignment' 'Frame of the database sequence if applicable' 'Expect value of the HSP' 'Alignment string for the query' 'Frame of the query if applicable' 'Offset of query at the start of the alignment (one-offset)' 'Score (in bits) of the HSP' 'Alignment string for the database' 'Number of positive (conservative) substitutions in the alignment' 'Score density' 'Start of phi-blast pattern on the query (one-offset)' '')

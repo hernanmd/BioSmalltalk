@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "hfm 1/29/2012 03:18",
+	"super" : "BioObject",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"parser",
+		"expression",
+		"results",
+		"status"
+	],
+	"name" : "BioAbstractParser",
+	"type" : "normal"
+}

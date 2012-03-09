@@ -1,0 +1,4 @@
+testing
+isStructureNode 
+
+	^ true

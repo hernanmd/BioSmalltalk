@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 11/15/2011 03:55",
+	"super" : "BioEntrezResultParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEResultKeysParser",
+	"type" : "normal"
+}

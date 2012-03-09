@@ -1,0 +1,4 @@
+testing
+isAmbiguousAlphabet
+
+	^ true

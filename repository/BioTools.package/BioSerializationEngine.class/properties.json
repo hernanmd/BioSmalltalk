@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractAdapter",
+	"category" : "BioTools-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"AdapterClass"
+	],
+	"instvars" : [
+		"doCompression",
+		"location"
+	],
+	"name" : "BioSerializationEngine",
+	"type" : "normal"
+}

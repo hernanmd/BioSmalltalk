@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioInitialResult",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIGenBankResult",
+	"type" : "normal"
+}

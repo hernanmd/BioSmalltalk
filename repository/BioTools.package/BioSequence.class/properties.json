@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 10/24/2011 01:08",
+	"super" : "BioObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"seq",
+		"alphabet",
+		"name"
+	],
+	"name" : "BioSequence",
+	"type" : "normal"
+}

@@ -1,0 +1,4 @@
+tables
+protozoanMitocondrialTableId
+	
+	^ 4

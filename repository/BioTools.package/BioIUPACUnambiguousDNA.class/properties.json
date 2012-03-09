@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 10/16/2011 16:01",
+	"super" : "BioIUPACDNA",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIUPACUnambiguousDNA",
+	"type" : "normal"
+}

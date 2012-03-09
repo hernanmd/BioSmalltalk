@@ -1,0 +1,4 @@
+accessing private
+definitionString
+
+	^ 'Result'

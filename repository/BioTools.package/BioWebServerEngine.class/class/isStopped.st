@@ -1,0 +1,4 @@
+accessing
+isStopped
+
+	self subclassResponsibility

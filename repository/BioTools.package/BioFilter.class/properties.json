@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 11/11/2011 01:38",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reader",
+		"cumulative",
+		"contents"
+	],
+	"name" : "BioFilter",
+	"type" : "normal"
+}

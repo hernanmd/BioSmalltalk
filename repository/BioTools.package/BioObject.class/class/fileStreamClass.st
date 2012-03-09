@@ -1,0 +1,4 @@
+filesystem
+fileStreamClass
+
+	^ FileStream

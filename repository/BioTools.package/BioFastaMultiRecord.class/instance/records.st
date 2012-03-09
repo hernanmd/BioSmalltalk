@@ -1,0 +1,4 @@
+accessing
+records
+
+	^ self sequences

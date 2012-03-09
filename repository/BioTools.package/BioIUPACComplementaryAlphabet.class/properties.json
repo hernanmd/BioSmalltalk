@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioIUPACAlphabet",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [
+		"complementaryTable"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIUPACComplementaryAlphabet",
+	"type" : "normal"
+}

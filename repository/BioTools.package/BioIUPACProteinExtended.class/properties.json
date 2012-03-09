@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 10/16/2011 21:43",
+	"super" : "BioIUPACProtein",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIUPACProteinExtended",
+	"type" : "normal"
+}

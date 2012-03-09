@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioException",
+	"category" : "BioTools-Exceptions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioDuplicateObject",
+	"type" : "normal"
+}

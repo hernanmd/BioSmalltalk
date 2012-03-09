@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "hfm 8/31/2011 14:40",
+	"super" : "BioObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contents",
+		"nextReader"
+	],
+	"name" : "BioAbstractReader",
+	"type" : "normal"
+}

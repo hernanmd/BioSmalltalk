@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioIUPACRNA",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIUPACUnambiguousRNA",
+	"type" : "normal"
+}

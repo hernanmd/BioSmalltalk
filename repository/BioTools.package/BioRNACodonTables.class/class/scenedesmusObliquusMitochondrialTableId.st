@@ -1,0 +1,4 @@
+tables
+scenedesmusObliquusMitochondrialTableId
+	
+	^ 22

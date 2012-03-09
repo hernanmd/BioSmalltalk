@@ -1,0 +1,4 @@
+testing
+isFastaRecord
+
+	^ true

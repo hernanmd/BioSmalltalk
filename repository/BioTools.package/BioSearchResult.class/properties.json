@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"updater",
+		"history",
+		"status",
+		"project",
+		"result",
+		"formatters"
+	],
+	"name" : "BioSearchResult",
+	"type" : "normal"
+}

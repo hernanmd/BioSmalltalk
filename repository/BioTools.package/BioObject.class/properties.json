@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 10/9/2011 18:07",
+	"super" : "Object",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioObject",
+	"type" : "normal"
+}

@@ -1,0 +1,4 @@
+*BioTools
+allowOpenTranscript
+
+	^ false

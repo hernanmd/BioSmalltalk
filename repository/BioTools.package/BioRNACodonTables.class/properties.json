@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioCodonTables",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		"codonTables"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioRNACodonTables",
+	"type" : "normal"
+}

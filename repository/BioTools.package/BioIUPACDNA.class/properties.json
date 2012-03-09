@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioIUPACComplementaryAlphabet",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIUPACDNA",
+	"type" : "normal"
+}

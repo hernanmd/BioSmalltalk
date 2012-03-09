@@ -1,0 +1,4 @@
+accessing
+defaultFilterClass
+
+	self subclassResponsibility

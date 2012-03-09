@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioInterfaceObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"url",
+		"lastStatus",
+		"searchResult"
+	],
+	"name" : "BioClientObject",
+	"type" : "normal"
+}

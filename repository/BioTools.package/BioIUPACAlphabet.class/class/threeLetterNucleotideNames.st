@@ -1,0 +1,3 @@
+accessing
+threeLetterNucleotideNames
+	^ ThreeLetterNucleotideNames

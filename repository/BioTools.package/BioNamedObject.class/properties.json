@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 10/9/2011 18:07",
+	"super" : "BioVersionedObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"names"
+	],
+	"name" : "BioNamedObject",
+	"type" : "normal"
+}

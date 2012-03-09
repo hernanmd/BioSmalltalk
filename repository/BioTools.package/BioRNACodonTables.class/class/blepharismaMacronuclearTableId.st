@@ -1,0 +1,4 @@
+tables
+blepharismaMacronuclearTableId
+	
+	^ 15

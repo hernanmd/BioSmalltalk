@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAlphabet",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNullAlphabet",
+	"type" : "normal"
+}

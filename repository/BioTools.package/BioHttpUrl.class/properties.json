@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "HttpUrl",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"webClient"
+	],
+	"name" : "BioHttpUrl",
+	"type" : "normal"
+}

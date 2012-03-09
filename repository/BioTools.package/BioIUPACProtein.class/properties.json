@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioIUPACAlphabet",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stopSymbol"
+	],
+	"name" : "BioIUPACProtein",
+	"type" : "normal"
+}

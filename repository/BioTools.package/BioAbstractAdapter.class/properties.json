@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 10/10/2011 18:33",
+	"super" : "BioObject",
+	"category" : "BioTools-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"provider"
+	],
+	"name" : "BioAbstractAdapter",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioSearchResult",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"filter"
+	],
+	"name" : "BioFilteredResult",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 10/4/2011 20:15",
+	"super" : "BioObject",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"unknownElement"
+	],
+	"name" : "BioAlphabet",
+	"type" : "normal"
+}

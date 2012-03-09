@@ -1,0 +1,4 @@
+tables
+invertebrateMitocondrialTableId
+	
+	^ 5

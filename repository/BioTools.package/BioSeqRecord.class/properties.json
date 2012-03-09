@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "hfm 10/23/2011 23:41",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"jobs",
+		"projects",
+		"seq",
+		"header",
+		"annotations",
+		"description",
+		"letterAnnotations"
+	],
+	"name" : "BioSeqRecord",
+	"type" : "normal"
+}

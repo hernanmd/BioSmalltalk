@@ -1,0 +1,4 @@
+tables
+thraustochytriumMitochondrialTableId
+	
+	^ 23

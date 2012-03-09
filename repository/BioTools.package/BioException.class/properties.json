@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Exception",
+	"category" : "BioTools-Exceptions",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Logger",
+		"RaiseWarning",
+		"ShowWarning"
+	],
+	"instvars" : [
+		"exceptionDate"
+	],
+	"name" : "BioException",
+	"type" : "normal"
+}

@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "hfm 1/27/2011 03:14",
+	"super" : "BioAlphabet",
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"OneLetterAminoacidNames",
+		"OneLetterNucleotideNames",
+		"ThreeLetterAminoacidNames",
+		"ThreeLetterNucleotideNames"
+	],
+	"instvars" : [ ],
+	"name" : "BioIUPACAlphabet",
+	"type" : "normal"
+}

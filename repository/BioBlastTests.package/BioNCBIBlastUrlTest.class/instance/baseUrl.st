@@ -1,0 +1,4 @@
+accessing
+baseUrl
+
+	^ BioNCBIWWWBlastClient baseUrl

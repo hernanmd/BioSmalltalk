@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNCBITests",
+	"category" : "BioBlastTests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIBlastUrlTest",
+	"type" : "normal"
+}

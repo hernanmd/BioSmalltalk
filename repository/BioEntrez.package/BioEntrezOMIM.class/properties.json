@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioELitDatabase",
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezOMIM",
+	"type" : "normal"
+}

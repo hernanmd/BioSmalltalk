@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioEWebEnvCmd",
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEPost",
+	"type" : "normal"
+}

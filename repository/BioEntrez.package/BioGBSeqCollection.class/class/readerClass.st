@@ -1,0 +1,4 @@
+private
+readerClass
+
+	^ BioEXmlGBSeqReader

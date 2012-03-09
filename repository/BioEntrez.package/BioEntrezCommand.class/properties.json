@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioDBCommandObject",
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"entrez"
+	],
+	"name" : "BioEntrezCommand",
+	"type" : "normal"
+}

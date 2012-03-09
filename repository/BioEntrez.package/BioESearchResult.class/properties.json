@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 11/11/2011 02:44",
+	"super" : "BioInitialResult",
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioESearchResult",
+	"type" : "normal"
+}

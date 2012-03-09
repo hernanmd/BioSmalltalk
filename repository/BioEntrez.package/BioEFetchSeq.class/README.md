@@ -1,0 +1,1 @@
+http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchseq_help.html#retparam

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioOrderedCollection",
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezUIDCollection",
+	"type" : "normal"
+}

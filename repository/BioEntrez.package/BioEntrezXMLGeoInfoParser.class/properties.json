@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 2/12/2012 04:33",
+	"super" : "BioEntrezXMLGBCountryParser",
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezXMLGeoInfoParser",
+	"type" : "normal"
+}

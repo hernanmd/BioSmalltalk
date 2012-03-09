@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioERetDatabase",
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioESeqDatabase",
+	"type" : "normal"
+}

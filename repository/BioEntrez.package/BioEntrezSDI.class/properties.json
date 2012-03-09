@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioEntrezDatabase",
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezSDI",
+	"type" : "normal"
+}

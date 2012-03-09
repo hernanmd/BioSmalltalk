@@ -1,0 +1,1 @@
+BioESearchResult represents a result set from an Entrez database

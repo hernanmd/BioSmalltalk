@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioESummary",
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioESummaryAlternative",
+	"type" : "normal"
+}

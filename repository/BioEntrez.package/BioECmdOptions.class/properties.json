@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioCmdOptions",
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioECmdOptions",
+	"type" : "normal"
+}

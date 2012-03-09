@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 7/12/2010 07:45",
+	"super" : "BioClientObject",
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezClient",
+	"type" : "normal"
+}

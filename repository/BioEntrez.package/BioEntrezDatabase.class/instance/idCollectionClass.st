@@ -1,0 +1,4 @@
+accessing private
+idCollectionClass
+
+	^ BioEntrezUIDCollection 

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 2/8/2011 02:09",
+	"super" : "BioNCBIBlast",
+	"category" : "BioBlast-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBILocalBlastClient",
+	"type" : "normal"
+}

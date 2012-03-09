@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioInitialResult",
+	"category" : "BioBlast-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIBlastResult",
+	"type" : "normal"
+}

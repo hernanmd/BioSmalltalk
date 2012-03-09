@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNCBILocalBlastClient",
+	"category" : "BioBlast-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBILocalBlastLegacy2223",
+	"type" : "normal"
+}

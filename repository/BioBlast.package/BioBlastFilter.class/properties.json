@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFilter",
+	"category" : "BioBlast-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBlastFilter",
+	"type" : "normal"
+}

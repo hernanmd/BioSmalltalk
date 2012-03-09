@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractReader",
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"statusParser",
+		"rtoe",
+		"ridParser",
+		"rtoeParser"
+	],
+	"name" : "BioQBlastReader",
+	"type" : "normal"
+}

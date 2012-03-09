@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "hfm 6/11/2011 13:38",
+	"super" : "BioNCBIBlast",
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"getUrl",
+		"cmd"
+	],
+	"name" : "BioNCBIWWWBlastClient",
+	"type" : "normal"
+}

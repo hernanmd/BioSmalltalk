@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 12/1/2011 15:44",
+	"super" : "BioFilteredReader",
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"searchResults",
+		"querySeq",
+		"saveContents"
+	],
+	"name" : "BioNCBIReader",
+	"type" : "normal"
+}

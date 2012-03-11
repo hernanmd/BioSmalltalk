@@ -1,0 +1,4 @@
+accessing-entrez
+genBankReaderClass
+
+	^ BioNCBIGenBankReader

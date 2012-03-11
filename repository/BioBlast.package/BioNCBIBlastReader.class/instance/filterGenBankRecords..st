@@ -5,5 +5,5 @@ filterGenBankRecords: aBlock
 	| gbReader |
 	
 	self halt.
-	gbReader := BioNCBIGenBankReader new selectGenBankRecords: self lastResult result.
+	gbReader := self genBankReaderClass new selectGenBankRecords: self lastResult result.
 	^ gbReader contents select: [: seqRecord | aBlock value: seqRecord ].

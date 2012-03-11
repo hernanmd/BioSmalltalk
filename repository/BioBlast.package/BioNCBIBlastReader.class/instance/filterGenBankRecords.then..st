@@ -5,7 +5,7 @@ filterGenBankRecords: selectBlock then: postBlock
 	| filteredResult seqRecords |
 	
 	filteredResult := self contents.
-	self nextReader: BioNCBIGenBankReader new.
+	self nextReader: self genBankReaderClass new.
 	self nextReader
 			genBankRecordsAsXMLFrom: filteredResult contents
 			database: self blastDbName;

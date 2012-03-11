@@ -2,4 +2,4 @@ accessing
 nodesCollectionClass
 
 	^ nodesCollectionClass
-		ifNil: [ nodesCollectionClass := BioGBSeqCollection ]
+		ifNil: [ nodesCollectionClass := self defaultNodesClass ]

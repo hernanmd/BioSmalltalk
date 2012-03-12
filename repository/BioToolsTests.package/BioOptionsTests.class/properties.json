@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractTest",
+	"category" : "BioToolsTests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"cmdOptions"
+	],
+	"name" : "BioOptionsTests",
+	"type" : "normal"
+}

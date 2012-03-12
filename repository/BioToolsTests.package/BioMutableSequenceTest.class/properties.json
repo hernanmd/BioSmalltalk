@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractSequenceTest",
+	"category" : "BioToolsTests-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioMutableSequenceTest",
+	"type" : "normal"
+}

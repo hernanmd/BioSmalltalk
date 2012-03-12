@@ -1,4 +1,4 @@
-instance creation
+parse-ncbi-identifiers
 tokenizeSwissProtEntryName: aString
 	" Tokenize aString representing a Swiss-Prot identifier "
 	

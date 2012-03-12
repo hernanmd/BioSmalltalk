@@ -1,4 +1,4 @@
-instance creation
+parse-ncbi-xml
 parseNcbiXmlBlastNodes: anObject
 	" Answer a Collection of header nodes found in anObject "
 	

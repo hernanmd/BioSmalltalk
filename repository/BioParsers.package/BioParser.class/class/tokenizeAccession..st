@@ -1,4 +1,4 @@
-instance creation
+parse-ncbi-identifiers
 tokenizeAccession: aString
 	" Tokenize aString containing an accession number "
 	

@@ -1,4 +1,4 @@
-instance creation
+parse-fasta
 tokenizeFastaHeader: aString
 	" Tokenize aString representing a FASTA header String "
 	

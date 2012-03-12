@@ -6,5 +6,5 @@ parse: aString
 	
 	parseResults := self parseString: aString.
 	^ self isSuccess
-		ifTrue: [ self buildResults: parseResults ]
+		ifTrue: [ results := self buildResults: parseResults ]
 		ifFalse: [ self signalInvalidObject: parseResults ].

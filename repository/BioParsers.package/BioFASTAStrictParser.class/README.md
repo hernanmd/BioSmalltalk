@@ -1,1 +1,1 @@
-This class is not intended to be used directly
+This class is not intended to be used directly. This parser may be obsolete, more testing is need

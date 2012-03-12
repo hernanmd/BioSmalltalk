@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioSamples",
+	"category" : "BioToolsSamples-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioESamples",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractParserTest",
+	"category" : "BioParserTests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"emblParser"
+	],
+	"name" : "BioEMBLParserTest",
+	"type" : "normal"
+}

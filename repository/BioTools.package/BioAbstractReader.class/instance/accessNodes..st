@@ -8,4 +8,4 @@ accessNodes: aNodeName
 			selectNodes: ( Array with: aNodeName )
 			in: self results ) isEmpty
 				ifFalse: [ qResult ]
-				ifTrue: [ self signalInvalidObject: 'Empty result set' ]
+				ifTrue: [ self signalInvalidObject: 'Empty result set' translated ]

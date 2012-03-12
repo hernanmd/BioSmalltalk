@@ -4,8 +4,9 @@ accessNode: aNodeName
 	or raise an exception if there are no results in the receiver "
 	
 	| qResult |
-	^ ( qResult := self 
+	( qResult := self 
 			selectNodes: ( Array with: aNodeName )
-			in: self results ) isEmpty
-				ifFalse: [ qResult anyOne ]
-				ifTrue: [ self signalNotFound: 'Empty result set' ]
+			in: self results ).
+	^ qResult 
+		at: aNodeName
+		ifAbsent: [ self signalNotFound: 'Empty result set' translated ]

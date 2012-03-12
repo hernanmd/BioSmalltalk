@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 12/4/2011 16:40",
+	"super" : "BioCSVFormatter",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"consensus"
+	],
+	"name" : "BioBlastCSVFormatter",
+	"type" : "normal"
+}

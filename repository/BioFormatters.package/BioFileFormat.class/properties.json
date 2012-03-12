@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Registry"
+	],
+	"instvars" : [
+		"description",
+		"extensions",
+		"rootClass"
+	],
+	"name" : "BioFileFormat",
+	"type" : "normal"
+}

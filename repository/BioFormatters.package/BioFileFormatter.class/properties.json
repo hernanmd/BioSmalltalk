@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "hfm 12/4/2011 16:36",
+	"super" : "BioFormatter",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"inputFile",
+		"outputFile",
+		"outputFilename",
+		"stream",
+		"writeToFile"
+	],
+	"name" : "BioFileFormatter",
+	"type" : "normal"
+}

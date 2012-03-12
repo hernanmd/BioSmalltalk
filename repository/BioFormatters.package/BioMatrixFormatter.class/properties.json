@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFileFormatter",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"matrix"
+	],
+	"name" : "BioMatrixFormatter",
+	"type" : "normal"
+}

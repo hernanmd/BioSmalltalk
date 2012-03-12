@@ -1,0 +1,1 @@
+Strategy to format names accordingly to specific conditions. The #format: method must be implemented in subclasses

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 2/12/2012 03:23",
+	"super" : "BioNamedObject",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stream"
+	],
+	"name" : "BioFile",
+	"type" : "normal"
+}

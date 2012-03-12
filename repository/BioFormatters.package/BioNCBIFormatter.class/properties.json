@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFormatter",
+	"category" : "BioFormatters-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"OutputOptions"
+	],
+	"instvars" : [
+		"giObject"
+	],
+	"name" : "BioNCBIFormatter",
+	"type" : "normal"
+}

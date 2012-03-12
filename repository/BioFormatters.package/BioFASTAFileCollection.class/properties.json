@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFileDirectoryCollection",
+	"category" : "BioFormatters-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioFASTAFileCollection",
+	"type" : "normal"
+}

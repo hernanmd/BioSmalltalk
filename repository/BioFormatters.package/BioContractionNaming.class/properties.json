@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 3/15/2011 15:45",
+	"super" : "BioNaming",
+	"category" : "BioFormatters-Naming",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contractionLimit",
+		"capitalize",
+		"skipStopWords"
+	],
+	"name" : "BioContractionNaming",
+	"type" : "normal"
+}

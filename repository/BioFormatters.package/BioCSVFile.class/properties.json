@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "hfm 8/12/2011 18:28",
+	"super" : "BioFile",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"ignoreLinesStrategy",
+		"ignoreLinesCount",
+		"lines"
+	],
+	"name" : "BioCSVFile",
+	"type" : "normal"
+}

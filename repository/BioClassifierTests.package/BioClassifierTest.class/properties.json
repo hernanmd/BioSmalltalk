@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractTest",
+	"category" : "BioClassifierTests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"classifier",
+		"group"
+	],
+	"name" : "BioClassifierTest",
+	"type" : "normal"
+}

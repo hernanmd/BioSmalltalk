@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioClassifier-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"subject",
+		"organization",
+		"conditions",
+		"conditionIndex",
+		"subjectIsClassified"
+	],
+	"name" : "BioClassifier",
+	"type" : "normal"
+}

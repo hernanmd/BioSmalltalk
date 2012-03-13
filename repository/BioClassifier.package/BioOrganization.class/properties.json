@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "hfm 10/19/2011 15:17",
+	"super" : "BioNamedObject",
+	"category" : "BioClassifier-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"matchedElements",
+		"feature"
+	],
+	"name" : "BioOrganization",
+	"type" : "normal"
+}

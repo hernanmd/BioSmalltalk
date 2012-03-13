@@ -1,0 +1,4 @@
+accessing-strategy
+setEquality
+
+	strategy := #=

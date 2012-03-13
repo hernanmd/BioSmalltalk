@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioClassifier-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contents",
+		"selector",
+		"strategy"
+	],
+	"name" : "BioGroupOrganization",
+	"type" : "normal"
+}

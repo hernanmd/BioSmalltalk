@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioAbstractProject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"creator",
+		"remover",
+		"creationDate",
+		"removalDate",
+		"modifications"
+	],
+	"name" : "BioProjectHistory",
+	"type" : "normal"
+}

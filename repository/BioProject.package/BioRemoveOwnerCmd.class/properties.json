@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioProjectCommand",
+	"category" : "BioProject-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioRemoveOwnerCmd",
+	"type" : "normal"
+}

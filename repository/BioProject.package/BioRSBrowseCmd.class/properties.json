@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioRSStaticCmd",
+	"category" : "BioProject-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioRSBrowseCmd",
+	"type" : "normal"
+}

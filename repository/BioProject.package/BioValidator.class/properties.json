@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioObject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"reason",
+		"date",
+		"owner"
+	],
+	"name" : "BioValidator",
+	"type" : "normal"
+}

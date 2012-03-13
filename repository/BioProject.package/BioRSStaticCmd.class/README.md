@@ -1,0 +1,1 @@
+Groups commands which uses a result but do not create a new result set nor uses other results

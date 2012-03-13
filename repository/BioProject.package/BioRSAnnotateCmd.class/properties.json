@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioRSDynamicCmd",
+	"category" : "BioProject-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioRSAnnotateCmd",
+	"type" : "normal"
+}

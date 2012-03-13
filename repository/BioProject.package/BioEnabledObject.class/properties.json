@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioValidator",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEnabledObject",
+	"type" : "normal"
+}

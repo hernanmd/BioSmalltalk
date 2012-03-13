@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractProject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"owners",
+		"users",
+		"lastUser"
+	],
+	"name" : "BioProjectUsage",
+	"type" : "normal"
+}

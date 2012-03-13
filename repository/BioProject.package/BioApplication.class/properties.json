@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"AppSingleton"
+	],
+	"instvars" : [
+		"applicationProjects",
+		"applicationUsers"
+	],
+	"name" : "BioApplication",
+	"type" : "normal"
+}

@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "hfm 1/31/2011 14:24",
+	"super" : "BioAbstractProject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"info",
+		"jobs"
+	],
+	"name" : "BioProject",
+	"type" : "normal"
+}

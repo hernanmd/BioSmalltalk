@@ -1,0 +1,1 @@
+Groups operations which creates new results

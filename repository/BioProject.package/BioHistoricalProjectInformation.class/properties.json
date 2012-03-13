@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioProjectInformation",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioHistoricalProjectInformation",
+	"type" : "normal"
+}

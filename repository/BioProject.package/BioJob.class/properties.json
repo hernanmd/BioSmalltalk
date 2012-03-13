@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractProject",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sequences",
+		"searchResults"
+	],
+	"name" : "BioJob",
+	"type" : "normal"
+}

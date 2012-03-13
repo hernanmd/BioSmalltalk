@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractTest",
+	"category" : "BioFormatterTests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioFileFormatTest",
+	"type" : "normal"
+}

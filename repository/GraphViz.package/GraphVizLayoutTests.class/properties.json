@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GraphVizBaseTests",
+	"category" : "GraphViz-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "GraphVizLayoutTests",
+	"type" : "normal"
+}

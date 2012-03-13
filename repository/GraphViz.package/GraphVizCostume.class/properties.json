@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "GraphViz-Connectors",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"graph",
+		"nodes",
+		"edges"
+	],
+	"name" : "GraphVizCostume",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "FileBasedGraphVizGenerator",
+	"category" : "GraphViz-Generators",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MacOSGraphVizGenerator",
+	"type" : "normal"
+}

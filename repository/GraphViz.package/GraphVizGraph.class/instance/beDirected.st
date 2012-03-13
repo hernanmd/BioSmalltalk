@@ -1,0 +1,4 @@
+accessing
+beDirected
+
+	directed := true

@@ -1,0 +1,4 @@
+accessing
+beClean
+
+	deleteIntermediateFiles  := true

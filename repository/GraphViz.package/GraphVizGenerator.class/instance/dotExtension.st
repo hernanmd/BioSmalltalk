@@ -1,0 +1,4 @@
+accessing
+dotExtension
+
+	^ '.txt'

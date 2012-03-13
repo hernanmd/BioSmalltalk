@@ -1,0 +1,4 @@
+accessing
+beUndirected
+
+	directed := false

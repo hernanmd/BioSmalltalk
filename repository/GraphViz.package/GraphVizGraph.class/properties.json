@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "GraphVizItem",
+	"category" : "GraphViz-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"directed",
+		"children",
+		"currentGraphReceiver",
+		"nodes",
+		"layoutSize",
+		"edges",
+		"currentNodeStyle",
+		"currentEdgeStyle"
+	],
+	"name" : "GraphVizGraph",
+	"type" : "normal"
+}

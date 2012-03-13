@@ -1,0 +1,4 @@
+accessing
+fromNode
+
+	^ fromNode

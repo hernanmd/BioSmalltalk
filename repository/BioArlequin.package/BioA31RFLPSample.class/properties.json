@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioA31Sample",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioA31RFLPSample",
+	"type" : "normal"
+}

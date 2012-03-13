@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioA31Sample",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"allele1",
+		"allele2"
+	],
+	"name" : "BioA31MicrosatSample",
+	"type" : "normal"
+}

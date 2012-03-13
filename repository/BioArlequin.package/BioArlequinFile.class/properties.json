@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "INISectionsFile",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dataSection",
+		"sampleKeyNumber"
+	],
+	"name" : "BioArlequinFile",
+	"type" : "normal"
+}

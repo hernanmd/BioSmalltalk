@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioMatrixFormatter",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sample",
+		"referenceSequence",
+		"populations"
+	],
+	"name" : "BioAFormatter",
+	"type" : "normal"
+}

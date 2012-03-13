@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "hfm 7/13/2011 17:47",
+	"super" : "BioNamedObject",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"group",
+		"data"
+	],
+	"name" : "BioA31Group",
+	"type" : "normal"
+}

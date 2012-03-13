@@ -1,0 +1,52 @@
+testing
+dataSample3
+
+	^'[[Samples]]
+	SampleName= "BOVINOS"
+	SampleSize=8
+	SampleData={
+OT1	5	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	A	C	C	A	T	T
+B1	5	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+A1	6	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+CH1	3	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+J1	2	A	T	C	T	A	G	C	A	A	C	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA1	11	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+OT2	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	G	T	C	G	T	C	A	C	C	G	A	T	T
+OT3	2	A	T	C	T	A	G	C	A	A	T	A	C	T	G	C	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+B2	1	A	T	C	T	A	G	C	A	A	T	A	C	T	A	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+A2	1	A	T	C	T	G	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+A3	1	A	T	C	T	A	G	C	A	A	T	A	C	T	A	T	T	T	T	G	T	C	T	T	C	T	A	T	C	A	T	C	A	C	C	C	A	T	T
+A4	1	A	T	C	T	A	G	C	A	A	T	A	T	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA2	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA3	2	A	T	C	T	A	A	C	A	A	T	A	C	T	G	T	C	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	T	T	T
+USA4	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	T	C	T	A	T	T
+USA5	1	A	C	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA6	1	A	T	C	T	A	G	C	A	A	T	T	C	T	G	T	C	T	T	A	T	C	T	T	C	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA7	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	A	T	G	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+OT4	5	A	T	C	T	A	G	C	A	A	T	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	C	T
+B3	2	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	C	A	T	T	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+B4	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	C	T
+B5	1	A	T	C	T	A	G	T	A	A	T	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	G	C	C	C	A	T	T
+A5	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	C	C	C	C	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+J2	1	A	T	C	T	A	A	C	A	A	C	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+J3	1	A	T	C	T	A	G	C	T	G	T	A	C	T	G	C	C	T	T	A	C	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA8	1	A	T	C	C	A	G	C	A	A	T	A	C	T	G	C	C	T	C	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA9	1	A	T	C	T	A	G	C	A	A	T	A	C	C	A	T	C	T	T	A	T	C	T	T	T	C	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA10	4	A	T	C	T	A	G	C	A	A	T	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	G	T	C	G	T	C	A	C	C	C	A	C	T
+USA11	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	A	C	C	C	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA12	1	G	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	A	C	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+USA13	1	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	G	T	T
+B6	3	A	T	T	T	A	G	T	A	A	T	A	C	C	G	T	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	T	T
+C1	1	A	T	C	T	A	G	C	T	A	T	A	C	T	G	T	C	T	T	A	T	C	T	C	T	C	A	T	C	G	T	T	A	C	C	C	A	T	T
+J4	1	A	T	C	T	A	A	C	A	A	T	A	C	T	G	C	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	C	T
+USA14	2	A	C	C	T	A	G	C	A	A	T	A	C	T	G	T	C	T	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	T	T	C	A	T	T
+OT5	4	A	T	C	T	A	G	C	G	A	T	A	C	T	G	T	C	T	T	A	T	C	T	T	T	T	A	T	C	A	C	C	A	C	C	T	A	T	T
+OT6	3	A	T	C	T	A	G	C	G	A	T	A	C	T	G	T	C	T	T	A	T	C	T	T	T	T	A	T	C	A	C	C	A	C	C	C	A	T	G
+B7	1	A	T	C	T	A	G	C	G	A	T	A	C	T	G	T	C	T	T	A	T	C	T	C	T	T	A	T	C	A	C	C	A	C	C	T	A	T	T
+CH2	1	A	T	C	T	A	A	C	A	A	C	A	C	T	G	T	C	C	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	C	T
+CH3	1	A	T	T	T	A	A	C	A	A	T	A	C	T	G	T	C	C	T	A	T	C	T	T	T	T	A	T	C	G	T	C	A	C	C	C	A	C	T
+A6	1	A	T	T	T	A	G	C	A	A	T	A	C	T	C	T	C	C	T	A	T	C	T	T	T	T	A	C	C	G	T	C	A	C	C	C	A	C	T
+CH4	1	A	T	T	T	A	G	C	A	A	T	A	C	T	G	T	C	C	T	A	T	C	T	C	T	T	A	T	C	G	T	C	A	C	C	T	A	C	T
+A7	1	A	T	T	T	A	G	C	A	A	T	G	C	T	G	T	C	C	C	A	T	C	T	T	T	T	A	T	T	G	T	C	A	C	C	C	A	C	T
+}
+'

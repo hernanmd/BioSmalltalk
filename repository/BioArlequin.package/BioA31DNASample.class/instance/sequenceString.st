@@ -1,0 +1,4 @@
+accessing
+sequenceString
+
+	^ self sequence

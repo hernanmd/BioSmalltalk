@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioArlequinFile",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioGBArlequinFile",
+	"type" : "normal"
+}

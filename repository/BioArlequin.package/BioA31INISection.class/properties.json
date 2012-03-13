@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 5/30/2010 05:31",
+	"super" : "INIFileSection",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioA31INISection",
+	"type" : "normal"
+}

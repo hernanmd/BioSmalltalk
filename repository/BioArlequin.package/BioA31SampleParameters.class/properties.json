@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "hfm 12/2/2011 13:54",
+	"super" : "BioMatrixFormatter",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"identifiers",
+		"frequencies",
+		"sequences",
+		"prvIdentifiers",
+		"samplesPrefix"
+	],
+	"name" : "BioA31SampleParameters",
+	"type" : "normal"
+}

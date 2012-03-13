@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioA31INISection",
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"HaplListValues"
+	],
+	"instvars" : [ ],
+	"name" : "BioA31HaplotypeSection",
+	"type" : "normal"
+}

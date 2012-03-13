@@ -1,0 +1,4 @@
+private
+extractIdentifier: aString
+
+	^ aString

@@ -1,0 +1,4 @@
+initialize-release
+formatter
+
+	^ BioFormatter

@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [
+		"breeds"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"synonyms",
+		"locations"
+	],
+	"name" : "BioBreed",
+	"type" : "normal"
+}

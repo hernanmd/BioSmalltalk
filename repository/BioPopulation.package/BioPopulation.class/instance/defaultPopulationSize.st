@@ -1,0 +1,4 @@
+accessing
+defaultPopulationSize
+
+	^ 100	

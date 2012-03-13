@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 1/27/2011 03:40",
+	"super" : "ReadWriteStream",
+	"category" : "BioSupport-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioSequenceStream",
+	"type" : "normal"
+}

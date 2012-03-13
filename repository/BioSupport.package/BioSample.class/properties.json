@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioSupport-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"identifier",
+		"sequence",
+		"frequency",
+		"formatters"
+	],
+	"name" : "BioSample",
+	"type" : "normal"
+}

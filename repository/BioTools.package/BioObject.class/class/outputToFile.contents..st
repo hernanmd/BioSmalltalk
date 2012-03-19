@@ -4,4 +4,5 @@ outputToFile: nameString contents: anObject
 	| fs |
 	
 	[ fs := self newFileNamed: nameString.
+	fs wantsLineEndConversion: false.
 	anObject outputTo: fs ] ensure: [ fs close ].	

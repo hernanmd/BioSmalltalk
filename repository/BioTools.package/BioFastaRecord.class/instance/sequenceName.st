@@ -1,5 +1,9 @@
 accessing
 sequenceName
-	" Answer the receiver's GTSequence sequence header "
+	" Answer the receiver's sequence header "
 	
-	^ self name
+	| seqName |
+	
+	^ ( ( seqName := self name ) beginsWith: '>' )
+		ifTrue: [ seqName allButFirst ]
+		ifFalse: [ seqName ]

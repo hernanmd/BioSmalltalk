@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioDBCommandObject",
+	"category" : "BioNCBI-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBICommand",
+	"type" : "normal"
+}

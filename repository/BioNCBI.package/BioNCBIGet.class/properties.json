@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioNCBICSCommand",
+	"category" : "BioNCBI-Commands",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIGet",
+	"type" : "normal"
+}

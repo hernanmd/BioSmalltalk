@@ -1,5 +1,6 @@
 accessing
 serialize: anObject
-
-	self serializer serialize: anObject.
-	self doCompressionIn: self fileName.
+	" See superimplementor comment "
+	
+	self provider serialize: anObject toFileNamed: self location.
+	self doCompressionIn: self location.

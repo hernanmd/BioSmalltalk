@@ -1,4 +1,9 @@
 accessing
 materialize: aLocationString
 
-	^ ( self for: aLocationString ) materialize
+	| materialization |
+	
+	self gtLog: 'Materializing...' translated.
+	materialization := ( self for: aLocationString ) materialize.
+	self gtLog: 'done' translated.
+	^ materialization

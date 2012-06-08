@@ -1,4 +1,4 @@
-filtering-blast-accessions
+private
 accessions: aStringCollection condition: cmpSymbol
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
 	

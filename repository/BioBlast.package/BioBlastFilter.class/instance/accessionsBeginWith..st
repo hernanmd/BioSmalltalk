@@ -1,6 +1,7 @@
 filtering-blast-accessions
 accessionsBeginWith: accessionCollection
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
+	<userComment: 'Select accession numbers beggining with a provided number'>
 	
 	^ accessionCollection size = 1
 		ifTrue: [ 

@@ -1,4 +1,4 @@
-filtering-blast-definitions
+accessing
 hspIdentities
 	" Answer a filter with the receiver's HSP identity nodes "
 

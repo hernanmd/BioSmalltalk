@@ -1,15 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "BioNamedObject",
+	"super" : "BioClassifier",
 	"category" : "BioClassifier-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"organization",
-		"matches",
-		"mismatches"
+		"ruleSet"
 	],
-	"name" : "BioClassifier",
+	"name" : "BioRuleClassifier",
 	"type" : "normal"
 }

@@ -6,10 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"organization",
-		"matches",
-		"mismatches"
+		"evaluation",
+		"context",
+		"condition"
 	],
-	"name" : "BioClassifier",
+	"name" : "BioRule",
 	"type" : "normal"
 }

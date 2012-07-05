@@ -3,4 +3,6 @@ filesFromXMLDirectory: aDirectoryString
 	" Answer a new instance of the receiver with XML file contents
 	from aDirectoryString "
 	
-	^ self withAll: ( self readerClass filesFromXMLDirectory: aDirectoryString ).
+	^ self withAll: ( ( BioObject fileDirectoryContentsFor: aDirectoryString ) asFileCollection
+			select: [: file | file isXML ]
+			thenCollect: [: file | self readerClass newFromXML: file ] ).

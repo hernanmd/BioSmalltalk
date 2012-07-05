@@ -5,7 +5,10 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"readerClass",
+		"parser"
+	],
 	"name" : "BioReadersCollection",
 	"type" : "normal"
 }

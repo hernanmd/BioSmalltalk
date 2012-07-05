@@ -1,4 +1,4 @@
 accessing
 eRecord
 	^ eRecord
-		ifNil: [ eRecord := Dictionary new ]
+		ifNil: [ eRecord := self entrezRecordClass new ]

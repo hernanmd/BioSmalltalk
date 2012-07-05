@@ -8,4 +8,4 @@ newERecordValue: aString
 			self eRecord isEmpty
 				ifFalse: [ 
 					self results add: self eRecord.
-					self eRecord: Dictionary new  ] ]
+					self eRecord: self entrezRecordClass new  ] ]

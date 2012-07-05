@@ -1,1 +1,0 @@
-This parser could distinguish GBSeq trees with territorial information about countries.

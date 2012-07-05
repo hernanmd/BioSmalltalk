@@ -1,5 +1,8 @@
-accessing
+initialize-release
 release
-	" Private - Release information from the receiver "
+	" Private - Initialize the receiver's repository.
+	
+	self release "
 
-	breeds := nil.
+	super release.
+	self repositories: nil.

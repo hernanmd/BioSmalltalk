@@ -1,5 +1,6 @@
-accessing
+initialize-release
 initialize
+	" Private - self initialize "
 
-	super initialize.
-	breeds := OrderedCollection new.
+	self breedSpecies do: [: speciesName |
+		self repositories add: ( BioRepository new name: speciesName ) ]

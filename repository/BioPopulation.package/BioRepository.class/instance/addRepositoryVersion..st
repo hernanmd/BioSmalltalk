@@ -1,0 +1,4 @@
+accessing
+addRepositoryVersion: aRepositoryVersion
+
+	self repositoryVersions add: aRepositoryVersion

@@ -3,14 +3,14 @@
 	"super" : "BioNamedObject",
 	"category" : "BioPopulation-Core",
 	"classinstvars" : [
-		"breeds"
+		"breeds",
+		"initializeRepositoryOnDemand"
 	],
 	"pools" : [ ],
-	"classvars" : [ ],
-	"instvars" : [
-		"synonyms",
-		"locations"
+	"classvars" : [
+		"Repositories"
 	],
+	"instvars" : [ ],
 	"name" : "BioBreed",
 	"type" : "normal"
 }

@@ -11,4 +11,5 @@ alignmentAt: accession put: sequenceString
 					cls isNil not ]
 				ifNone: [ nil ].
 	found 
-		ifNotNil: [ cls at: 'GBSeq_alignment' put: sequenceString. ]
+		ifNotNil: [
+			cls at: 'GBSeq_alignment' put: sequenceString. ]

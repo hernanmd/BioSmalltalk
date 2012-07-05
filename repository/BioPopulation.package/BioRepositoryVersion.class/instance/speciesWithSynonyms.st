@@ -1,0 +1,4 @@
+accessing
+speciesWithSynonyms
+
+	^ self needsWork

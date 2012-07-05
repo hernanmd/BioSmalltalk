@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"repositoryVersions"
+	],
+	"name" : "BioRepository",
+	"type" : "normal"
+}

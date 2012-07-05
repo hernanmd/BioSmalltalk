@@ -1,4 +1,4 @@
 initialize-release
 initializeStream: collection
 
-	stream := WriteStream on: ( String new: ( self sizeFrom: collection ) ).	
+	stream := ReadWriteStream on: ( String new: ( self sizeFrom: collection ) ).	

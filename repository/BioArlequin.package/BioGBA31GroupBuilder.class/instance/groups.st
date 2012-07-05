@@ -14,5 +14,5 @@ groups
 
 	^ groupSamples collect: [: group | 
 		BioA31Group
-			named: group key territoryName
+			named: group key name
 			data: ( BioGBA31SampleParameters on: group value ) ].

@@ -10,7 +10,9 @@ padAlignmentIn: hit
 
 	qFrom ~= 1 
 		ifTrue: [ correctedSeq := ( self generateJoin: $? repeat: qFrom - 1 ) , correctedSeq ].
-	qTo < self querySeq size 
+	self querySeq isNil
+		ifTrue: [ self error: 'Missing reference (query) sequence' ].
+	qTo <  self querySeq size 
 		ifTrue: [ correctedSeq := correctedSeq , ( self generateJoin: $? repeat: self querySeq size - qTo )  ].
 
 	^ correctedSeq

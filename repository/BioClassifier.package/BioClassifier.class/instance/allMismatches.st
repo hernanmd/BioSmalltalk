@@ -1,5 +1,7 @@
 accessing
 allMismatches
 
-	^ mismatches at: #mismatches
+	^ mismatches isNil
+		ifFalse: [ mismatches at: #mismatches ]
+		ifTrue: [ Array empty ]
 		

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioCSVFormatter",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioGoogleFusionTablesFormatter",
+	"type" : "normal"
+}

@@ -6,5 +6,5 @@ updateRepository
 	importer := BioImporter versionImporterAt: self name.
 	self bioSpecies: nil.
 	self locatedBioSpecies: nil.
-	importer importFromCsvFile: self requestCsvFile.
+	importer importFromCsvFile: BioObject requestCsvFile.
 	importer initializeBioSpecies.

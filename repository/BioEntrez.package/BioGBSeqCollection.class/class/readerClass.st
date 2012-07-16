@@ -1,4 +1,4 @@
-private
-readerClass
+accessing
+readerClass 
 
 	^ BioEXmlGBSeqReader

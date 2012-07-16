@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioAbstractReader",
+	"super" : "BioEntrezXmlReader",
 	"category" : "BioEntrez-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

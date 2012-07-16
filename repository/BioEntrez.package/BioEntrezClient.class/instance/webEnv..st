@@ -1,8 +1,7 @@
 accessing public
-webEnv: aGTESearchResult
-	" Set the receiver's web environment and query key
-	from aGETSearchResult "
+webEnv: aBioESearchResult
+	" Set the receiver's web environment and query key from aGETSearchResult "
 	
 	^ self url
-		queryKey: aGTESearchResult queryKey;
-		webEnv: aGTESearchResult webEnv
+		queryKey: aBioESearchResult queryKey first;
+		webEnv: aBioESearchResult webEnv first

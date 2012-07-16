@@ -1,4 +1,4 @@
 private
 readerClass
 
-	^ BioEReader
+	^ BioEntrezSearchResultReader

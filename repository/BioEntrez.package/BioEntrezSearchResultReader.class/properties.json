@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "hfm 2/12/2012 04:33",
-	"super" : "BioEntrezXMLGBCountryParser",
+	"commentStamp" : "",
+	"super" : "BioEntrezXmlReader",
 	"category" : "BioEntrez-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioEntrezXMLGeoInfoParser",
+	"name" : "BioEntrezSearchResultReader",
 	"type" : "normal"
 }

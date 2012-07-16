@@ -1,5 +1,5 @@
 accessing parser
-results: aString
+results: anObject
 	"Set the value of results"
 
-	contents := aString
+	contents := anObject

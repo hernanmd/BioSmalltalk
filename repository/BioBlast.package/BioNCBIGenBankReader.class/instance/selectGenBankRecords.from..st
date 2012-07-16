@@ -2,12 +2,12 @@ accessing-entrez
 selectGenBankRecords: selectBlock from: aDataSource
 	" Off-Line version "
 	
-	| results |
+	| tmpResults |
 	
-	results := OrderedCollection new.
+	tmpResults := OrderedCollection new.
 	contents
 		ifNil: [ contents := ( self nodesCollectionClass filesFromXMLDirectory: aDataSource ) parseDocuments ].
 	contents do: [: seqRecord | 
 		( selectBlock value: seqRecord )
-			ifTrue: [ results add: seqRecord ] ].
-	^ results asBio: self nodesCollectionClass
+			ifTrue: [ tmpResults add: seqRecord ] ].
+	^ tmpResults asBio: self nodesCollectionClass

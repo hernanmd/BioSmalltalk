@@ -6,9 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"searchResults",
 		"querySeq",
-		"saveContents"
+		"results"
 	],
 	"name" : "BioNCBIReader",
 	"type" : "normal"

@@ -1,5 +1,5 @@
 accessing
 searchResults
 
-	^ searchResults
-		ifNil: [ searchResults := OrderedCollection new ]
+	^ results
+		ifNil: [ results := self parsedContents ]

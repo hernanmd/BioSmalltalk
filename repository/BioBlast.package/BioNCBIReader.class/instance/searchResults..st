@@ -1,3 +1,3 @@
 accessing
 searchResults: anObject
-	searchResults := anObject
+	results := anObject

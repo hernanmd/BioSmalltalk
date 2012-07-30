@@ -4,9 +4,9 @@ prvDownloadFileNamed: fileName binary: boolean
 
 	| stream |
 
-	self gtLog: 'Started download of ' , fileName.			
+	self bioLog: 'Started download of ' , fileName.			
 	stream := self newFileNamed: fileName.
 	boolean ifTrue: [ stream binary ].
 	stream nextPutAll: ( self client getFileNamed: fileName ).
-	self gtLog: 'Completed download of ' , fileName.
+	self bioLog: 'Completed download of ' , fileName.
 	^ stream

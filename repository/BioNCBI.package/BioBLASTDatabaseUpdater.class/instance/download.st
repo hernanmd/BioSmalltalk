@@ -5,7 +5,7 @@ download
 	[
 	self filesToDownload do: [: fileName |
 		self prvDownload: fileName ].
-	self gtLog: 'Downloads completed successfully'.
+	self bioLog: 'Downloads completed successfully'.
 	] 
 		forkAt: Processor userBackgroundPriority 
 		named: 'BLAST updater'.

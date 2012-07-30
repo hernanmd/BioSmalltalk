@@ -9,6 +9,6 @@ prvDownload: fileName
 				( self verifyMD5checksum: fileName )
 					ifFalse: [ self error: 'Checksum failed' ] ] ]
 		ifFalse: [
-			self gtLog: 'Skipping download, file is updated: ' , fileName ]
+			self bioLog: 'Skipping download, file is updated: ' , fileName ]
 	
 	 

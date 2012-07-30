@@ -6,7 +6,7 @@ download: fileName
 		ifNotNil: [ 
 			self prvDownload: fileName.
 			self client close.
-			self gtLog: 'Downloads completed successfully' ]
+			self bioLog: 'Downloads completed successfully' ]
 		ifNil: [ self inform: 'Connection failed' translated ].
 	
 	 

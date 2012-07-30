@@ -5,13 +5,13 @@ executeFirstRequest: aClient
 	| rid |
 	
 	requestCount := 0.
-	self gtLog: 'Fetching NCBI BLAST request identifier...'.
+	self bioLog: 'Fetching NCBI BLAST request identifier...'.
 	self reader 
 			results: aClient url activate.
 
 	rid := self reader rid	.
-	self gtLog: 'RTOE = ' , self reader rtoe.
-	self gtLog: 'RID = ' , rid.
+	self bioLog: 'RTOE = ' , self reader rtoe.
+	self bioLog: 'RID = ' , rid.
 
 	aClient 
 		rid: rid;

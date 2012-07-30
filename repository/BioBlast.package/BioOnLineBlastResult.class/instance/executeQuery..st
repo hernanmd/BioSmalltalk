@@ -6,6 +6,6 @@ executeQuery: aClient
 		ifTrue: [ 
 			self result: ( BioNCBIBlastReader newFrom: self ).
 			self beSuccess.
-			self gtLog: 'Finished successfully' translated ]
+			self bioLog: 'Finished successfully' translated ]
 		ifFalse: [ 
 			self executeTryRequest: aClient ].

@@ -4,14 +4,14 @@ rtoe
 	
 	| lastRtoe |
 	
-	self gtLog: 'Parsing RTOE...'.
+	self bioLog: 'Parsing RTOE...'.
 	lastRtoe := self parserForRTOE parse: self results.
 	^ ( lastRtoe beginsWith: 'Error' )
 		ifFalse: [ 
-			self gtLog: 'New RTOE = ' , lastRtoe.
+			self bioLog: 'New RTOE = ' , lastRtoe.
 			rtoe := lastRtoe ]
 		ifTrue: [ 
-			self gtLog: 'RTOE not found: ' , lastRtoe.
+			self bioLog: 'RTOE not found: ' , lastRtoe.
 			rtoe 
 				ifNil: [ self error: 'Couldn''t parse Request Time of Execution' ]
 				ifNotNil: [ rtoe ] ] " Using the last known RTOE... "

@@ -4,5 +4,5 @@ parseXMLDocumentsFrom: aDataSource
 	
 	self contents: 
 		(( BioGBSeqCollection filesFromXMLDirectory: aDataSource ) 
-			parser: self classifier parserClass;
+			parser: self parser;
 			parseDocuments)

@@ -8,7 +8,7 @@ selectStatus
 	self shouldWaitForResults
 		ifTrue: [ 
 			waiting := self delaySeconds.
-			self gtLog: 'QBLAST: Delaying retry for ' , waiting asString , ' seconds'.
+			self bioLog: 'QBLAST: Delaying retry for ' , waiting asString , ' seconds'.
 			( Delay forSeconds: waiting ) wait.
 			^  false
 		].

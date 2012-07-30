@@ -11,11 +11,11 @@ genBankSplitRecordsFrom: dbSymbol format: formatSymbol uids: anArray
 		tmpCol add: id.
 		index \\ self entrezUrlUidLimit = 0
 			ifTrue: [
-				self gtLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
+				self bioLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
 				self searchResults add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ).
 				tmpCol := OrderedCollection new. ] ].
 	tmpCol isEmpty
 		ifFalse: [ 
-			self gtLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
+			self bioLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
 			self searchResults add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ) ].
 	^ self searchResults

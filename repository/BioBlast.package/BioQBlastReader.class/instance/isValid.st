@@ -7,6 +7,6 @@ isValid
 			ifFalse: [ 
 				| resultType |
 				resultType := self statusParser results.
-				self gtLog: 'Result Type: ' , resultType.
+				self bioLog: 'Result Type: ' , resultType.
 				^ resultType ~= 'UNKNOWN' ].
 	^ true

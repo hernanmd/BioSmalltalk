@@ -7,4 +7,4 @@ updateRepository
 	self bioSpecies: nil.
 	self locatedBioSpecies: nil.
 	importer importFromCsvFile: BioObject requestCsvFile.
-	importer initializeBioSpecies.
+	importer initializeLocatedSpecies.

@@ -6,4 +6,4 @@ addFrequency: aString
 	configuration := self configurationAt: self class frequencyId.
 	( configuration validate: aString )
 		ifTrue: [ self at: self class frequencyId put: aString asString ]
-		ifFalse: [ self gtLog: aString , ' value is not listed as a valid frequency string']
+		ifFalse: [ self bioLog: aString , ' value is not listed as a valid frequency string']

@@ -6,4 +6,4 @@ addSampleNumber: aNumber
 	configuration := self configurationAt: self class sampleNumberId.
 	( configuration validate: aNumber asNumber )
 		ifTrue: [ self at: self class sampleNumberId put: aNumber asString ]
-		ifFalse: [ self gtLog: aNumber asString , ' value out of range for NbSamples']
+		ifFalse: [ self bioLog: aNumber asString , ' value out of range for NbSamples']

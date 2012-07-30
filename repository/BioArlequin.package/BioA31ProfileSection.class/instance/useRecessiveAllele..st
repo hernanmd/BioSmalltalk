@@ -6,4 +6,4 @@ useRecessiveAllele: aString
 	configuration := self configurationAt: self class recessiveAlleleId.
 	( configuration validate: aString )
 		ifTrue: [ self at: self class recessiveAlleleId put: aString asString ]
-		ifFalse: [ self gtLog: aString , ' value is not listed as a valid missing data character']
+		ifFalse: [ self bioLog: aString , ' value is not listed as a valid missing data character']

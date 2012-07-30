@@ -7,4 +7,4 @@ useMissingData: aCharacter
 	configuration := self configurationAt: self class missingDataId.
 	( configuration validate: aCharacter )
 		ifTrue: [ self at: self class missingDataId put: aCharacter asString ]
-		ifFalse: [ self gtLog: aCharacter , ' value is not listed as a valid missing data character']
+		ifFalse: [ self bioLog: aCharacter , ' value is not listed as a valid missing data character']

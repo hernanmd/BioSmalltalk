@@ -3,7 +3,7 @@ fillDataColumnsFrom: hitCollection
 
 	| columns alignLength |
 
-	self gtLog: 'Started filling columns...'.
+	self bioLog: 'Started filling columns...'.
 	alignLength := hitCollection first alignLength asNumber.	
 	columns := OrderedCollection new: alignLength.
 	1 to: alignLength do: [: index |
@@ -18,6 +18,6 @@ fillDataColumnsFrom: hitCollection
 		column size > 1
 			ifTrue: [ columns add: index ].
 	].
-	self gtLog: 'Finished filling columns...'.
+	self bioLog: 'Finished filling columns...'.
 	^ columns
 	

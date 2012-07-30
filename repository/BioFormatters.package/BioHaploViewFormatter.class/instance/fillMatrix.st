@@ -4,7 +4,7 @@ fillMatrix
 	
 	| index |
 	
-	self gtLog: 'Filling matrix...'.
+	self bioLog: 'Filling matrix...'.
 	
 	index := 0.
 	self parser rowsDo: [: rs |
@@ -14,4 +14,4 @@ fillMatrix
 			put: ( self valueFor: rs ).
 		index := index + 1 ].
 	
-	self gtLog: 'Finished filling matrix'
+	self bioLog: 'Finished filling matrix'

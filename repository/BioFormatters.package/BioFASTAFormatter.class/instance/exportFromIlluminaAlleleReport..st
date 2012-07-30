@@ -4,7 +4,7 @@ exportFromIlluminaAlleleReport: aFilename
 	
 	| fs |
 	
-	parser := STextParser on: ( FileStream readOnlyFileNamed: aFilename ).
+	parser := self parserClass on: ( FileStream readOnlyFileNamed: aFilename ).
 	parser ignoreHeaderLine; delimiter: $;.
 	fs := self newFileNamed: self outputFilename.
 	

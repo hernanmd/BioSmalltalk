@@ -1,7 +1,7 @@
 testing
 testSettingWebClientAdapter
 
-	| testAddress |
+"	| testAddress |
 	
 	( testAddress := self urlTestAddress ) = self nullUrlAddress
 		ifFalse: [
@@ -10,7 +10,7 @@ testSettingWebClientAdapter
 			self deny: adapter provider isBehavior.
 			self assert: ( adapter provider isKindOf: ( self classFor: BioWebClientEngine adapter providerClass ) ).
 			testAddress = self defaultUrlTestAddress 
-				ifFalse: [ BioWebClientEngine stopWebServer ] ].
+				ifFalse: [ BioWebClientEngine stopWebServer ] ]."
 
 
 			

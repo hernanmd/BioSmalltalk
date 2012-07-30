@@ -1,7 +1,7 @@
 testing
 testUsingWebClientAdapter
 
-	| testAddress |
+"	| testAddress |
 	
 	( testAddress := self urlTestAddress ) = self nullUrlAddress
 		ifFalse: [
@@ -11,4 +11,4 @@ testUsingWebClientAdapter
 			self assert: adapter downloadUrl = testAddress.
 			self assert: adapter responseType isBehavior.
 			self assert: ( adapter httpGet isKindOf: adapter responseType ).
-			self assert: ( adapter httpGetContents isKindOf: String ) ].
+			self assert: ( adapter httpGetContents isKindOf: String ) ]."

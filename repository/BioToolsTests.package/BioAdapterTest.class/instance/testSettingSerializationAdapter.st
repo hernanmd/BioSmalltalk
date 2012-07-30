@@ -9,10 +9,7 @@ testSettingSerializationAdapter
 			adapter := BioSerializationEngine for: 'testSerialize.obj'.
 
 			self deny: adapter location isNil.
-			self deny: adapter provider isNil.
-			
-			self assert: adapter provider isBehavior
-				description: 'Adapter is not set with a location yet' ]
+			self deny: adapter provider isNil ]
 
 			
 

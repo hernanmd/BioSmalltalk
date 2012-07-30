@@ -7,5 +7,5 @@ initializeAlphabetFrom: aString
 	 	[ ( BioAlphabet guessAlphabetFrom: aString ) new ]
 		on: BioErrorSpecificationObject
 		do: [: ex | 
-				self gtLog: ex messageText.
+				self bioLog: ex messageText.
 				self defaultAlphabetClass new ]

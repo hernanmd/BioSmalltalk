@@ -1,5 +1,5 @@
 *BioTools
-gtLog: aString
+bioLog: aString
 	" Write aString to a streamer "
 	
-	self class gtLog: aString
+	self class bioLog: aString

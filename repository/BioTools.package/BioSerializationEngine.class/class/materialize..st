@@ -3,7 +3,7 @@ materialize: aLocationString
 
 	| materialization |
 	
-	self gtLog: 'Materializing...' translated.
+	self bioLog: 'Materializing...' translated.
 	materialization := ( self for: aLocationString ) materialize.
-	self gtLog: 'done' translated.
+	self bioLog: 'done' translated.
 	^ materialization

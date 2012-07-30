@@ -4,11 +4,11 @@ addFilterFrom: collection
 	
 	| filterResult |
 	
-	self gtLog: 'Filtering...'.
+	self bioLog: 'Filtering...'.
 	filterResult := self newFilteredResult: collection.
 	self isCumulativeFilter
 		ifFalse: [ 
-			self contents ifNotNil: [ self gtLog: 'Updating previous filtered result...' ].
+			self contents ifNotNil: [ self bioLog: 'Updating previous filtered result...' ].
 			self contents: filterResult.
 			self reader addFilter: self ]
 		ifTrue: [ 

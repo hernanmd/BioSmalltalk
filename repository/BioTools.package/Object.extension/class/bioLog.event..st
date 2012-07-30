@@ -1,5 +1,5 @@
 *BioTools
-gtLog: aString event: aDescriptionString
+bioLog: aString event: aDescriptionString
 	" Write aString to the streamer "
 	
 	self openTranscript.

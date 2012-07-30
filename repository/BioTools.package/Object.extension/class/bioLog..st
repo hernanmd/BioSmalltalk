@@ -1,5 +1,5 @@
 *BioTools
-gtLog: aString
+bioLog: aString
 	" Write aString to the Transcript "
 	
 	self openTranscript.

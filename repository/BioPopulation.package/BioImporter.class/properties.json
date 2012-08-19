@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [
+		"newSpecies"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioImporter",
+	"type" : "normal"
+}

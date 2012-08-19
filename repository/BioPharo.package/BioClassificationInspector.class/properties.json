@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioInspector",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioClassificationInspector",
+	"type" : "normal"
+}

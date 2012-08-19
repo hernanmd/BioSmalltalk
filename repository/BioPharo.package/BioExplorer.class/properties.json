@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectExplorer",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"classifierModel",
+		"searchingString",
+		"useExactMatch"
+	],
+	"name" : "BioExplorer",
+	"type" : "normal"
+}

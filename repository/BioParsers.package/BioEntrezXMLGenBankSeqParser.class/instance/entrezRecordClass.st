@@ -1,4 +1,4 @@
 accessing
 entrezRecordClass
 
-	^ BioGBXmlDictionary
+	^ Dictionary

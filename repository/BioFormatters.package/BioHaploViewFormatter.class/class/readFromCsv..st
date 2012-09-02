@@ -1,14 +1,14 @@
-examples
-example03
+instance creation
+readFromCsv: csvFilename
 	" The case for the following example is an output file sent by Illumina 
 	and you want to export to HaploView format by chromosome. 
 	
-	self example03
+	BioHaploViewFormatter readFromCsv: ''
 	"
 
 	| inputCol exporter |
 
-	inputCol := Dictionary newFromPairs: { 'c-03.csv' . ( self linesCount: 'c-03.csv') }.
+	inputCol := Dictionary newFromPairs: { csvFilename . ( self linesCount: csvFilename ) }.
 	self 
 		folder: String empty
 		newOnInputFiles: inputCol 

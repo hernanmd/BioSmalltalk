@@ -1,1 +1,1 @@
-SystemOrganization addCategory: #'BioPharo-Settings'!
+SystemOrganization addCategory: #'BioPharo-Platform'!

@@ -1,11 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "SettingTreeBuilder",
+	"super" : "ObjectExplorer",
 	"category" : "BioPharo-Platform",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "BioSettings",
+	"instvars" : [
+		"classifierModel",
+		"searchingString",
+		"useExactMatch"
+	],
+	"name" : "BioExplorer",
 	"type" : "normal"
 }

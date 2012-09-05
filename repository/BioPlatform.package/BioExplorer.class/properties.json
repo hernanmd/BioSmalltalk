@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectExplorer",
+	"category" : "BioPlatform-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"classifierModel",
+		"searchingString",
+		"useExactMatch"
+	],
+	"name" : "BioExplorer",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Inspector",
+	"category" : "BioPlatform-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioInspector",
+	"type" : "normal"
+}

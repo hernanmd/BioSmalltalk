@@ -1,7 +1,7 @@
 testing
 testAccessFilterBlastReader02
 
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	reader filter alignsWithMinLength: 235.
 
 	self assert: reader hits isCollection.

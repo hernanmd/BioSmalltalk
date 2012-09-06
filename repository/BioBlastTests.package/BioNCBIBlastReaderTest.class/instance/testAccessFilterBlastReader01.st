@@ -3,7 +3,7 @@ testAccessFilterBlastReader01
 
 	| ft |
 
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	ft := reader filter definitionsBeginWith: #('Bos taurus').
 
 	self assert: ( reader filter isKindOf: BioBlastFilter ).

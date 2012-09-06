@@ -1,7 +1,7 @@
 testing
 testFilterBlastReader01
 
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	reader filter definitionsBeginWith: #('Bos taurus').
 
 	self assert: reader hits isCollection.

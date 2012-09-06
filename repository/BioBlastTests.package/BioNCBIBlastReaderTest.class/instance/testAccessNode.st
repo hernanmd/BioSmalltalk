@@ -3,7 +3,7 @@ testAccessNode
 
 	| nodeContents |
 	
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	
 	nodeContents := reader accessNode: 'Iteration_iter-num'.
 	self assert: ( nodeContents isKindOf: Collection ).

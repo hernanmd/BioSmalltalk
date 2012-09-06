@@ -2,7 +2,7 @@ testing
 testAccessBlastReader03
 	" Accessing information about the BLAST "
 
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	self deny: reader giList isEmpty.
 	self assert: ( reader giList bioHasEqualElements: self giList1 ).
 

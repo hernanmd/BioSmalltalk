@@ -3,7 +3,7 @@ testAccessDNAAlignments01
 
 	| alignment |
 
-	reader := BioNCBIBlastReader newFromXML: self resultBlastnDNA01.	
+	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.	
 	alignment := reader alignments.
 	
 	self assert: ( alignment isKindOf: BioAlignment ).

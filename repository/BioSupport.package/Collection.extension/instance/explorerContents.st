@@ -7,7 +7,7 @@ explorerContents
 	^ self explorerContentsWithIndexCollect: [:value :index |
 		| zeroPadding repeats |
 		
-		zeroPadding := [ self generateJoin: 0 repeat: digits - index digitCount ]
+		zeroPadding := [ BioObject generateJoin: 0 repeat: digits - index digitCount ]
 		on: MessageNotUnderstood 
 		do: [: ex | String empty ].
 		ObjectExplorerWrapper

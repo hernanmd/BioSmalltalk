@@ -2,4 +2,4 @@ testing
 isRunningInMac
 	" Answer <true> if the host system is running in Mac OS "
 	
-	^ BioOSInterfaceEngine new isRunningInMac
+	^ BioOSInterfaceEngine adapter isRunningInMac

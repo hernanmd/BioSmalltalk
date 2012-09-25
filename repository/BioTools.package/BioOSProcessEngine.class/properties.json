@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "hfm 9/25/2012 01:52",
+	"super" : "BioOSInterfaceEngine",
+	"category" : "BioTools-Adapters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioOSProcessEngine",
+	"type" : "normal"
+}

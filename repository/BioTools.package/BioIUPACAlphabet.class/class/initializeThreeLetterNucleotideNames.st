@@ -1,5 +1,6 @@
 initialize-release
 initializeThreeLetterNucleotideNames
-	" Private - #needsWork "
 
-	^ Dictionary new yourself	
+	self needsWork.
+	^ Dictionary new
+			yourself	

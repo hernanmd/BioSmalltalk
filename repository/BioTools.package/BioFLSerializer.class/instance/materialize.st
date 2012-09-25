@@ -2,4 +2,4 @@ accessing
 materialize
 	" See superimplementor comment "
 
-	^ FLMaterializer materializeFromFileNamed: self location
+	^ ( Smalltalk at: #FLMaterializer ) materializeFromFileNamed: self location

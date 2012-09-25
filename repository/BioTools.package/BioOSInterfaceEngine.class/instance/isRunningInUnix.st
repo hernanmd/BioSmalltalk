@@ -1,5 +1,5 @@
-testing
+accessing
 isRunningInUnix
 	" Answer <true> if the host system is running in any Unix-like OS "
 	
-	^ BioOSInterfaceEngine new isRunningInUnix
+	^ self provider isUnix

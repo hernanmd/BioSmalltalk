@@ -1,5 +1,5 @@
-testing
+accessing
 isRunningInWindows
 	" Answer <true> if the host system is running in Microsoft Windows "
 	
-	^ BioOSInterfaceEngine new isRunningInWindows
+	^ self provider isWin32 or: [ self provider isWin32CE ]

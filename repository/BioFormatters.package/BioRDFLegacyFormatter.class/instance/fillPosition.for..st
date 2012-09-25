@@ -6,7 +6,7 @@ fillPosition: colIndex for: maxDigits
 
 	pad := maxDigits - colIndex numberOfDigits.
 	position := ( WriteStream on: String new ) 
-					nextPutAll: ( self generateJoin: '0' repeat: pad );				
+					nextPutAll: ( BioObject generateJoin: '0' repeat: pad );				
 					nextPutAll: colIndex asString;
 					yourself.
 	^ position contents

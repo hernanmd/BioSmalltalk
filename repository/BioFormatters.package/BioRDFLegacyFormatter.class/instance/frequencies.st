@@ -5,7 +5,7 @@ frequencies
 	^ frequencies
 		ifNil: [ 
 			frequencies := 
-				self 
+				BioObject 
 					generate: '1' 
 					repeat: matrix numberOfRows - self positionCiphers - 1 ].
 

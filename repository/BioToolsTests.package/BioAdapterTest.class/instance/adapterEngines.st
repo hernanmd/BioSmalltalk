@@ -4,7 +4,7 @@ adapterEngines
 
 	^ { 
 		BioWebClientEngine . 
-		BioWebServerEngine . 
 		BioSerializationEngine .
-		BioExecutionEngine
+		BioExecutionEngine .
+		BioOSInterfaceEngine
 		}

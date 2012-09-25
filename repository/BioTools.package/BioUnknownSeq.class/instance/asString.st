@@ -2,6 +2,6 @@ accessing
 asString
 	" Answer a String with the receiver's sequence "
 	
-	^ self 
+	^ BioObject 
 		generateJoin: self unknownLetter 
 		repeat: self size

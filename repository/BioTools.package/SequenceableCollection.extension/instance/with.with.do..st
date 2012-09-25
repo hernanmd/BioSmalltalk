@@ -1,8 +1,8 @@
 *BioTools
-with: firstCollection with: sndCollection do: threeArgBlock
-	"Evaluate threeArgBlock with corresponding elements from this firstCollection and sndCollection."
+with: firstCollection with: secondCollection do: threeArgBlock
+	"Evaluate threeArgBlock with corresponding elements from this firstCollection and secondCollection."
 	
-	( ( firstCollection size = sndCollection size ) 
+	( ( firstCollection size = secondCollection size ) 
 		and: [ firstCollection size = self size ] ) 
 			ifFalse: [ self error: 'collections all must be the same size'].
 	
@@ -11,4 +11,4 @@ with: firstCollection with: sndCollection do: threeArgBlock
 		threeArgBlock 
 			value: (self at: index)
 			value: ( firstCollection at: index )
-			value: ( sndCollection at: index ) ]
+			value: ( secondCollection at: index ) ]

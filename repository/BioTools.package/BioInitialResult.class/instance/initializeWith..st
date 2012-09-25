@@ -2,5 +2,5 @@ initialize-release
 initializeWith: aClient
 	" Private - Set the receiver's client "
 	
-	super initialize.
+	self initialize.
 	self client: aClient.

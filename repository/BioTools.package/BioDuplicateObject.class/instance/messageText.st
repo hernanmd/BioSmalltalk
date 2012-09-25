@@ -1,6 +1,6 @@
 printing
 messageText
 
-	^ String streamContents: [ :strm |
-		messageText ifNotNil: [ strm nextPutAll: messageText; space ].
-		strm nextPutAll: ' already exists' translated ]
+	^ String streamContents: [ :stream |
+		messageText ifNotNil: [ stream nextPutAll: messageText; space ].
+		stream nextPutAll: ' already exists' translated ]

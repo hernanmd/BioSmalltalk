@@ -2,4 +2,4 @@ comparing
 hash
 	" Private - hash is implemented because #= is implemented "
 
-	^ self class hash bitXor: self size hash
+	^ self sequences hash bitXor: self size hash

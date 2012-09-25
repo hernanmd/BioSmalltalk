@@ -6,7 +6,9 @@ randomLength: size for: anAlphabetClass
 	self alphabet: anAlphabetClass.
 	gen := ( Generator on: [: g | 
 				size timesRepeat: [ ( g yield: anAlphabetClass codes atRandom ) asString ] ] ).
-	" '' join: #('a' 'b') "
 	seq := gen upToEnd
 				inject: String new
-				into: [ : a : b | a , b asString ].
+				into: [ : a : b | String streamContents: [: stream |
+							stream 
+								nextPutAll: a;
+								nextPutAll: b asString ] ].

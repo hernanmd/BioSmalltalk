@@ -4,7 +4,7 @@ isRunningTestWebServer
 	
 	| socket |
 	
-	BioWebServerEngine hasAnyProvider ifFalse: [ ^ false ].
+	self hasAnyProvider ifFalse: [ ^ false ].
 	socket := [ Socket pingPorts: self localPorts
 		on: NetNameResolver localHostName
 		timeOutSecs: 10 ]

@@ -1,7 +1,4 @@
 accessing
 complementaryCases
 
-	^ { $a . $u . 
-	$u . $a . 
-	$c . $g . 
-	$g . $c }
+	^ #($a $u $u $a $c $g $g $c)

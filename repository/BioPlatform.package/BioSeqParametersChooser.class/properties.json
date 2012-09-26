@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "hfm 9/26/2012 17:44",
+	"super" : "MorphTreeModel",
+	"category" : "BioPlatform-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sequenceText"
+	],
+	"name" : "BioSeqParametersChooser",
+	"type" : "normal"
+}

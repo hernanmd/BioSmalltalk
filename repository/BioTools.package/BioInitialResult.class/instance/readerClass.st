@@ -1,4 +1,0 @@
-private
-readerClass
-
-	self subclassResponsibility

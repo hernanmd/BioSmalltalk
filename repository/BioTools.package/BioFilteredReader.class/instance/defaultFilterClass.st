@@ -1,4 +1,0 @@
-accessing
-defaultFilterClass
-
-	self subclassResponsibility

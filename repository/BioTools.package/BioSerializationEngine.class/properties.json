@@ -4,9 +4,7 @@
 	"category" : "BioTools-Adapters",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"AdapterClass"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"doCompression",
 		"location"

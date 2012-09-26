@@ -1,4 +1,0 @@
-accessing
-baseUrl
-
-	^ self subclassResponsibility

@@ -1,4 +1,4 @@
-convenience-behavior
+convenience-date
 dateClass
 
 	^ self class dateClass

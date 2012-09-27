@@ -1,4 +1,7 @@
 initialize-release
 initialize
 
-	parser := self parserForIdentifier ==> [: r | r allButLast ] , self entryParser.
+	super initialize.	
+	parser := 
+		self parserForIdentifier ==> [: r | r allButLast ] , 
+		self entryParser.

@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"current"
-	],
+	"instvars" : [ ],
 	"name" : "BioNCBIBlastSAXParser",
 	"type" : "normal"
 }

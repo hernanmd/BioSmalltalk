@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "hfm 1/5/2011 15:23",
+	"commentStamp" : "hfm 9/27/2012 03:20",
 	"super" : "BioAbstractTextParser",
 	"category" : "BioParsers-Core",
 	"classinstvars" : [ ],

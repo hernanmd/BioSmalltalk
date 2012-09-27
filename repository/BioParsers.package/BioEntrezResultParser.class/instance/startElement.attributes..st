@@ -3,6 +3,6 @@ startElement: elementName attributes: attributeList
 	" Private - See superimplementor's comment "
 	
 	( self selectedNodes includes: elementName )
-		ifTrue: [ 
-			self catchOn.			
-			current := elementName ]
+		ifFalse: [ ^ self ].
+	self catchOn.			
+	current := elementName

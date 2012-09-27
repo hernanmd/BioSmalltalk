@@ -1,4 +1,4 @@
 instance creation
 new: nodes
 
-	^ super new initialize: nodes
+	^ self new initialize: nodes

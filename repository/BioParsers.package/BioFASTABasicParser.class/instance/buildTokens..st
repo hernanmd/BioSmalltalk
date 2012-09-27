@@ -6,7 +6,6 @@ buildTokens: aCollection
 		ifTrue: [ 
 			self resultsForTokenize
 					add: aCollection first;
-					add: ( BioSequence joinSequence: ( self sequenceCollectionFrom: aCollection last ) );
-					yourself ]
+					add: ( BioSequence joinSequence: ( self sequenceCollectionFrom: aCollection last ) ) ]
 		ifFalse: [ aCollection do: [ : seq | self buildTokens: seq ] ].
 	^ self results		

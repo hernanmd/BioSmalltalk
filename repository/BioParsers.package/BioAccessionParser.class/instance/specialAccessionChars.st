@@ -1,6 +1,6 @@
 accessing
 specialAccessionChars
 
-	^ { $. }.
+	^ Array with: $.
 
 

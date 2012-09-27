@@ -3,6 +3,7 @@ specialFastaChars
 	" Answer a Collection with Characters with special
 	meaning for the FASTA definition line format "
 	
-	^ { Character cr . 
-		Character lf .
-		$| }
+	^ Array 
+		with: Character cr 
+		with: Character lf
+		with: $|

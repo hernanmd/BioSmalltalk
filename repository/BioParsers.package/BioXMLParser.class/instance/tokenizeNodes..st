@@ -4,7 +4,7 @@ tokenizeNodes: aCollection
 
 	parser := XMLPullParser parse: self expression.
 	self selectNodes: aCollection.
-	[ parser atEnd not ] whileTrue: [
+	[ parser atEnd ] whileFalse: [
 		| node |
 		parser next.
 		( node := parser currentNodeUpToAny: self selectedNodes )

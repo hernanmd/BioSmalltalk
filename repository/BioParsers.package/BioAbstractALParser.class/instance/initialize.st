@@ -1,6 +1,8 @@
 initialize-release
 initialize
 
-	parser := self parserForIdentifier , 
-			self parserForAccession , 
-			self parserForLocus optional
+	super initialize.
+	parser := 
+		self parserForIdentifier , 
+		self parserForAccession , 
+		self parserForLocus optional

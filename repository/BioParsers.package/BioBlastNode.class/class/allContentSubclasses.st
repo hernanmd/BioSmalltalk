@@ -1,4 +1,4 @@
 accessing
 allContentSubclasses
 
-	^ self allSubclasses difference: { BioBlastStructureNode }
+	^ self allSubclasses difference: ( Array with: BioBlastStructureNode )

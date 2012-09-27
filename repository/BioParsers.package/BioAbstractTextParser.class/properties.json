@@ -4,7 +4,10 @@
 	"category" : "BioParsers-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"Cr",
+		"Lf"
+	],
 	"instvars" : [ ],
 	"name" : "BioAbstractTextParser",
 	"type" : "normal"

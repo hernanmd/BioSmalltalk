@@ -2,6 +2,8 @@ initialize-release
 initialize
 	" Private - See superimplementor's comment "
 	
-	parser := self parserForIdentifier , 
-				self parserForAccession ,
-				( self parserForLocus ==> [: r | r allButFirst anyOne ] ).
+	super initialize.
+	parser := 
+		self parserForIdentifier , 
+		self parserForAccession ,
+		( self parserForLocus ==> [: r | r allButFirst anyOne ] ).

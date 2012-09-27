@@ -8,7 +8,8 @@
 	"instvars" : [
 		"results",
 		"catchNodes",
-		"selectedNodes"
+		"selectedNodes",
+		"current"
 	],
 	"name" : "BioSAXParser",
 	"type" : "normal"

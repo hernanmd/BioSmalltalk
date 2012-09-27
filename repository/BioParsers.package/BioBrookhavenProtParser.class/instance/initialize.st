@@ -1,8 +1,10 @@
 initialize-release
 initialize
 
-	parser := self parserForIdentifier , 
-				$| asParser , 
-				self entry , 
-				$| asParser ,
-				self chain
+	super initialize.
+	parser := 
+		self parserForIdentifier , 
+			$| asParser , 
+			self entry , 
+			$| asParser ,
+			self chain

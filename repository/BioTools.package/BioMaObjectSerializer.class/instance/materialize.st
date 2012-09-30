@@ -1,5 +1,5 @@
 accessing
 materialize
-
-	^ self serializer fileIn: 
-		( self fileDirectoryClass forFileName: self locationString )
+	" See superimplementor comment "
+	
+	^ self serializer fileIn: (self fileDirectoryClass forFileName: self locationString)

@@ -1,4 +1,4 @@
-accessing filters
+accessing
 contents
 	" This is the <filtering> protocol. Answer a BioSearchResult, if the receiver already contains filters then answer the result object given by the last filter "
 	

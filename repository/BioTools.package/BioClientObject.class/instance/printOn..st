@@ -4,6 +4,6 @@ printOn: aStream
 	
 	super printOn: aStream.
 	aStream 
-		nextPutAll: ( self decode: url asString )
+		nextPutAll: (self decode: url asString)
 		between: $[ -> $].
 	

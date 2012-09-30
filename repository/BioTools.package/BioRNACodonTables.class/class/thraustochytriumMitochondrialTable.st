@@ -1,6 +1,8 @@
 tables
 thraustochytriumMitochondrialTable
-	
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
+
 	^ self tableClass new
 add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUG'-> 'L'; add: 'UCU'-> 'S'; add: 'UCC'-> 'S'; add:
 'UCA'-> 'S'; add: 'UCG'-> 'S'; add: 'UAU'-> 'Y'; add: 'UAC'-> 'Y'; add: 'UGU'-> 'C'; add:

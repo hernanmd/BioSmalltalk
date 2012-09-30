@@ -1,4 +1,4 @@
-class initialization
+accessing
 complementaryCases
 
 	^ Array empty

@@ -9,6 +9,6 @@ groupByEquality
 			detect: [: c | c includes: r ]
 			ifNone: [ nil ].
 		found
-			ifNil: [ cols add: ( OrderedCollection new add: r; yourself ) ]
+			ifNil: [ cols add: (OrderedCollection new add: r; yourself) ]
 			ifNotNil: [ found add: r ] ].
 	^ cols

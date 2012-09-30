@@ -4,6 +4,6 @@ sequenceName
 	
 	| seqName |
 	
-	^ ( ( seqName := self name ) beginsWith: '>' )
+	^ ((seqName := self name) beginsWith: '>')
 		ifTrue: [ seqName allButFirst ]
 		ifFalse: [ seqName ]

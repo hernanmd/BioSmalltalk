@@ -1,6 +1,7 @@
 tables
 echinodermMitochondrialTable
-	
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
+
 	^ self tableClass new
 add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TCT'-> 'S'; add:
 'TCC'-> 'S'; add: 'TCA'-> 'S'; add: 'TCG'-> 'S'; add: 'TAT'-> 'Y'; add: 'TAC'-> 'Y'; add:

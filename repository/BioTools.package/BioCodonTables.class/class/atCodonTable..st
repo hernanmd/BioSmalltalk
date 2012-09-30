@@ -6,6 +6,8 @@ atCodonTable: anInteger
 	
 	cTable := self codonTables 
 			detect: [: codonTable | codonTable tableId = anInteger ]
-			ifNone: [ self signalNotFound: anInteger asString , ' codon table not found' ].
+			ifNone: [ 
+				self missingCodonTable: anInteger.
+				self error. ].
 	self currentCodonTable: cTable.
 	^ cTable

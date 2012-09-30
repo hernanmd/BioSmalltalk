@@ -4,6 +4,6 @@ bioLog: aString
 	
 	self openTranscript.
 	self streamer cr; 
-		show: TimeStamp current;
+		show: DateAndTime current;
 		space;
 		show: aString.

@@ -6,4 +6,4 @@ includesBeginWith: aString
 			each isString ifTrue: [
 				each asUppercase beginsWith: aString asUppercase ]
 			ifFalse: [
-				each anySatisfy: [ : ss | ( ss asUppercase alike: aString asUppercase ) > ( aString size / 2 ) asFloat rounded ] ] ]
+				each anySatisfy: [ : ss | (ss asUppercase alike: aString asUppercase) > (aString size / 2) asFloat rounded ] ] ]

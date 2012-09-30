@@ -8,5 +8,5 @@ renameFromDictionary: aDictionary
 			stream 
 				nextPutAll: fastaRecord name;
 				space;
-				nextPutAll: ( aDictionary at: fastaRecord sequenceNameWithoutDelimiter ) ].
+				nextPutAll: (aDictionary at: fastaRecord sequenceNameWithoutDelimiter) ].
 		fastaRecord name: newName ]

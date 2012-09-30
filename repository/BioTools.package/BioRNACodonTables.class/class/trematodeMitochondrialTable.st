@@ -1,6 +1,7 @@
 tables
 trematodeMitochondrialTable
-	
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
+
 	^ self tableClass new
 add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UCU'-> 'S'; add:
 'UCC'-> 'S'; add: 'UCA'-> 'S'; add: 'UCG'-> 'S'; add: 'UAU'-> 'Y'; add: 'UAC'-> 'Y'; add:

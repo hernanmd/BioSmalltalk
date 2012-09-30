@@ -1,5 +1,6 @@
 initialize-release
 initializeThreeLetterAminoacidNames
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
 	^ Dictionary new
                 at: 'ALA' put: 'Alanine';

@@ -1,4 +1,4 @@
-accessing-providers
+accessing
 defaultProviderClass
 	" Private - Answer the preferred provider subclass "
 	

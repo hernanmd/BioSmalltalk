@@ -6,5 +6,5 @@ indicesOfCharacter: aCharacter
 
 	indices := OrderedCollection new: self size.
 	1 to: self size do: [:pos |
-		( self at: pos ) asciiValue = aCharacter asciiValue ifTrue: [ indices addLast: pos]].
+		(self at: pos) asciiValue = aCharacter asciiValue ifTrue: [ indices addLast: pos]].
 	^ indices

@@ -1,7 +1,8 @@
 *BioTools
 asAminoacidName
 	" Answer the complete name of each receiver's aminoacid. Input may be one or three letter code. "
-	
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
+
 	^ self size = 1
 		ifTrue: [ self first asAminoacidName ]
 		ifFalse: [ 

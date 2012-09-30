@@ -6,10 +6,8 @@ sequenceNames
 	
 	alignNames := OrderedCollection new: set size.
 	set doWithIndex: [: seq : index | 
-		alignNames add: ( 
-			seq name
+		alignNames add: (seq name
 				ifNil: [ index asString ]
-				ifNotNil: [ seq name ] )
-	].
+				ifNotNil: [ seq name ])].
 	^ alignNames
 		

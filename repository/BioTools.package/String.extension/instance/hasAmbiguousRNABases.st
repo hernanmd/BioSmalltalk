@@ -5,4 +5,4 @@ hasAmbiguousRNABases
 	| alpha |
 	
 	alpha := BioAlphabet guessAlphabetFrom: self.
-	^ alpha asUppercase anySatisfy: [: letter | ( 'ACGU' includes: letter ) not ]
+	^ alpha asUppercase anySatisfy: [: letter | ('ACGU' includes: letter) not ]

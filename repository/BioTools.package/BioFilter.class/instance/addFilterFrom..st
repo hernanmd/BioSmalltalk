@@ -4,15 +4,15 @@ addFilterFrom: collection
 	
 	| filterResult |
 	
-	self bioLog: 'Filtering...'.
+	self bioLog: 'Filtering...' translated.
 	filterResult := self newFilteredResult: collection.
 	self isCumulativeFilter
 		ifFalse: [ 
-			self contents ifNotNil: [ self bioLog: 'Updating previous filtered result...' ].
+			self contents ifNotNil: [ self bioLog: 'Updating previous filtered result...' translated ].
 			self contents: filterResult.
 			self reader addFilter: self ]
 		ifTrue: [ 
 			| newFilter |
-			( newFilter := self class newFromReader: self reader ) contents: filterResult.
+			(newFilter := self class newFromReader: self reader) contents: filterResult.
 			self reader addFilter: newFilter ].
 	^ filterResult

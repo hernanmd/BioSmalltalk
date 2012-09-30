@@ -1,0 +1,1 @@
+Represents a collection which is intended to hold objects used by BioSmalltalk. Objects contained can be iterated, parsed or converted. See specific subclasses for use cases.

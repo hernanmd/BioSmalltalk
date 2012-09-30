@@ -1,4 +1,4 @@
-testing
+comparing
 hash
 	" Private - hash is implemented because #= is implemented "
 	

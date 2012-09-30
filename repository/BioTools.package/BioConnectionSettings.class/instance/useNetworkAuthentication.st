@@ -1,3 +1,3 @@
 accessing
-useNetworkAuthentification
+useNetworkAuthentication
 	^ useNetworkAuthentification

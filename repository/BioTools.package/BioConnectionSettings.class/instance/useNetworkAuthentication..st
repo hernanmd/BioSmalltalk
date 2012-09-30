@@ -1,3 +1,3 @@
 accessing
-useNetworkAuthentification: anObject
+useNetworkAuthentication: anObject
 	useNetworkAuthentification := anObject

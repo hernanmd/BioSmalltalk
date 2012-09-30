@@ -6,7 +6,7 @@ generateJoin: anObject repeat: repetitions
 	
 	repetitions >= 0
 		ifFalse: [ self signalInvalidObject: 'Repetitions must be >= 0 ' , repetitions asString ].
-	^ ( BioObject generate: anObject repeat: repetitions ) 
+	^ ( self class generate: anObject repeat: repetitions ) 
 			inject: String new 
 			into: [:a :b | String streamContents: [: stream |
 							stream 

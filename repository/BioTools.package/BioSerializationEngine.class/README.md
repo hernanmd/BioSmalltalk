@@ -1,5 +1,1 @@
-BioSerializationEngine has not been documented yet. The class comment should describe the purpose of the class, its collaborations and its variables.
-
-Instance Variables:
-	doCompression	<Boolean>
-	location	<ProtoObject | PseudoContext>
+BioSerializationEngine is the superclass for all known serializers. Behavior of serializers includes materialization and compression (compression is not implemented currently).

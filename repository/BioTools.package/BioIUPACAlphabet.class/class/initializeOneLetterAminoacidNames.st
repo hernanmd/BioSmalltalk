@@ -1,7 +1,8 @@
 initialize-release
 initializeOneLetterAminoacidNames
 	" Private - Answer the one letter mapping from Characters to aminoacid names. "
-	
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
+
 	^ Dictionary new 
 		at: $A put: 'Alanine';
 		at: $R put: 'Arginine';

@@ -1,4 +1,4 @@
-accessing private
+accessing
 validate: anObject as: aClass
 
 	^ aClass accept: anObject

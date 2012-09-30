@@ -1,8 +1,8 @@
 accessing
-addToAlignment: aGTAlignment
-	" Add the receiver to the alignment aGTAlignment "
+addToAlignment: aBioAlignment
+	" Add the receiver to the alignment aBioAlignment "
 
-	^ aGTAlignment
+	^ aBioAlignment
 		name: self name;
 		addFromSequence: self;
 		yourself

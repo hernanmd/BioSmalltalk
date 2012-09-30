@@ -1,4 +1,4 @@
-accessing-providers
+accessing
 providerClass
 
 	self subclassResponsibility

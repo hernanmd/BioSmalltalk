@@ -1,4 +1,4 @@
 *BioTools
 asFileDirectoryCollection
 
-	^ BioFileDirectoryCollection withAll: self
+	^ BioFileCollection withAll: self

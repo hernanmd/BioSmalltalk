@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioFileDirectoryCollection",
+	"name" : "BioFileCollection",
 	"type" : "normal"
 }

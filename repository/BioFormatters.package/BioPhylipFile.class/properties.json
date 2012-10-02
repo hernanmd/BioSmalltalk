@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFile",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioPhylipFile",
+	"type" : "normal"
+}

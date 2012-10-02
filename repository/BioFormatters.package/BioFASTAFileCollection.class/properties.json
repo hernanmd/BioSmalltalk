@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioFileDirectoryCollection",
+	"commentStamp" : "hfm 10/1/2012 21:30",
+	"super" : "BioFileCollection",
 	"category" : "BioFormatters-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

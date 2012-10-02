@@ -2,4 +2,4 @@ accessing
 fileExtension
 	" See superimplementor's comment"
 
-	^ self fileFormatterClass fileExtensionsFor: 'FASTA'
+	^ self fileFormatterClass fileExtensionsFor: 'Phylip'

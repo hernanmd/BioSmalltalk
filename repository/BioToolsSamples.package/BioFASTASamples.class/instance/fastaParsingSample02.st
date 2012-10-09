@@ -6,8 +6,8 @@ fastaParsingSample02
 	
 	fastaRecord := BioParser parseFasta: self fastaResult02.
 	self 
-		outputToStream: fastaRecord name;
-		outputToStream: fastaRecord sequence;
-		outputToStream: 'sequence size : ' , fastaRecord size
+		bioLog: fastaRecord name;
+		bioLog: fastaRecord sequence;
+		bioLog: 'sequence size : ' , fastaRecord size
 
 

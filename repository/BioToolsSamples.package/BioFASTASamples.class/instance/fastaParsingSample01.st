@@ -6,8 +6,8 @@ fastaParsingSample01
 	
 	parser := BioParser parseMultiFasta: self fastaResult01.
 	parser rowsDo: [ : seqRecord |
-		self outputToStream: seqRecord name;
-			outputToStream: seqRecord sequence;
-			outputToStream: seqRecord size
-		]
+		self 
+			bioLog: seqRecord name;
+			bioLog: seqRecord sequence;
+			bioLog: seqRecord size ]
 

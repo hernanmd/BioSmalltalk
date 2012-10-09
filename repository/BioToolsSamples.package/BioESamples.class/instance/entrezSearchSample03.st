@@ -6,7 +6,7 @@ entrezSearchSample03
 	Use the remote web environment and query key 
 	"
 
-	| searchResult1 searchResult2 |
+	| searchResult1 |
 
 	searchResult1 := 
 		BioEntrezClient new nuccore

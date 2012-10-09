@@ -6,7 +6,7 @@ testReadGBSeqXML
 	gbXMLCollection := BioNCBIGenBankReader filesFromXMLDirectory: self class testFilesDirectoryName.
 	
 	self 
-		assert: ( gbXMLCollection isKindOf: BioFileDirectoryCollection ) 
+		assert: ( gbXMLCollection isKindOf: BioFileCollection ) 
 		description: 'It could change to its own <Collection> like BioCSVFileCollection and BioFASTAFileCollection in the future'.
 
 	self deny: gbXMLCollection isEmpty.

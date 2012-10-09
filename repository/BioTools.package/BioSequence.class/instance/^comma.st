@@ -1,11 +1,10 @@
 accessing
 , aBioSequence
-	" Concatenate the receiver's with aGTSequence if their alphabets are compatible "
+	" Concatenate the receiver's with aBioSequence if their alphabets are compatible "
 	
 	^ self alphabet class = aBioSequence alphabet class
 		ifFalse: [ self signalInvalidObject: 
-						'Incompatible alphabets: ' , 
 						self alphabet class asString , 
-						' and ' , 
+						'Incompatible alphabet with: ' translated ,
 						aBioSequence alphabet class asString  ]
 		ifTrue: [ self newPrototypeWith: self asString , aBioSequence asString ]

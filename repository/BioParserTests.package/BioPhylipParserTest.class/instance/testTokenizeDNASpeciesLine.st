@@ -1,5 +1,5 @@
 testing
-testParseSpeciesLine
+testTokenizeDNASpeciesLine
 	" Private - Answer a <String> with a sample phylip DNA "
 	
 	| speciesLineBlock expectedResult |

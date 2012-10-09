@@ -1,7 +1,10 @@
 accessing-private
 tokenizeProtein
-	" Answer a parser for parsing exactly aCollection "
+	" Private - Tokenize the receiver's epression as Protein data "
 
-	parser := self firstLineTokenizer , #newline asParser , self speciesProteinBlockTokenizer.
-	^ self parse.
+	parser := 
+		( self firstLineTokenizer ,
+		self speciesProteinNamedBlockTokenizer ,
+		self proteinInterleaveLineTokenizer ) ==> self buildTokensBlock.
+	^ self tokenize.
 	

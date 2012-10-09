@@ -1,8 +1,11 @@
 accessing-private
 tokenizeDna
-	" Answer a parser for parsing exactly aCollection "
+	" Private - Tokenize the receiver's epression as DNA data "
 
-	parser := self firstLineTokenizer , #newline asParser , self speciesDNABlockTokenizer.
-	^ self parse.
+	parser := 
+		( self firstLineTokenizer ,
+		self speciesDNANamedBlockTokenizer ,
+		self dnaInterleaveLineTokenizer ) ==> self buildTokensBlock.
+	^ self tokenize.
 	
 	

@@ -8,13 +8,13 @@ testComplement
 	sequence := BioSequence newWith: 'ggattcggatataattattgactgtacat'.
 	
 	self assert: ( sequence alphabet isKindOf: BioIUPACUnambiguousDNA ).
-	self assert: sequence complement asString = 'cctaagcctatattaataactgacatgta' asUppercase.
+	self assert: sequence complement asString = 'cctaagcctatattaataactgacatgta'.
 	
 	sequence := 'a' asSequence.
-	self assert: sequence complement asString = 'T'.
+	self assert: sequence complement asString = 't'.
 	
 	sequence := 'c' asSequence.
-	self assert: sequence complement asString = 'G'.
+	self assert: sequence complement asString = 'g'.
 	
 	sequence := String empty asSequence.
 	self assert: sequence complement asString = String empty.

@@ -27,8 +27,3 @@ testTranslated
 	seq4 := BioSequence newProtein: 'MAIVMGR*KGAR*'.
 
 	self assert: seq3 translate = seq4.
-
-
-
-
-

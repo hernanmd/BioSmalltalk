@@ -1,4 +1,4 @@
-accessing-private
+accessing-dna
 speciesDNALineTokenizer
 	" Answer a Parser for parsing the species names line "
 	

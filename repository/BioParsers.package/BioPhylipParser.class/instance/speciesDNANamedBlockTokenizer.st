@@ -1,4 +1,4 @@
-accessing-private
+accessing-dna
 speciesDNANamedBlockTokenizer
 	" Answer a Parser for parsing the sequence blocks "
 	

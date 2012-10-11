@@ -1,5 +1,5 @@
 parse-phylip
-parsePhylipProtein: aPhylipString
+parsePhylipInterleavedDNA: aPhylipString
 	" Parse aPhylipString and answer a BioPhylip object with contents filled "
 	
-	^ ( BioPhylipParser on: aPhylipString ) parseProtein
+	^ ( BioPhylipParser on: aPhylipString ) parseDna

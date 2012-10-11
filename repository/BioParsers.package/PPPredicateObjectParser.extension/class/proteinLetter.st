@@ -4,4 +4,5 @@ proteinLetter
 	
 	^ self anyOf: 
 		BioIUPACProteinExtended codes asUppercase , 
-		BioIUPACProteinExtended codes asLowercase
+		BioIUPACProteinExtended codes asLowercase ,
+		'?-'

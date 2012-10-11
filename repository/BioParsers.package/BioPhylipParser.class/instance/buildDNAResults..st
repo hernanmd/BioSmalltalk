@@ -1,5 +1,5 @@
-accessing
-buildDnaResults: aCollection
+accessing-dna
+buildDNAResults: aCollection
 	" Answer an identified object for the receiver's parsing output "
 
 	| tokenized sequences |

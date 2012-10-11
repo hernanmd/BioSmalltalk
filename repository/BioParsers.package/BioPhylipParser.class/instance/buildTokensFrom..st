@@ -7,7 +7,7 @@ buildTokensFrom: aCollection
 	collection := self buildTokensFromFirstBlock: aCollection.
 	seqIndex := 1.
 	(seqBlock := aCollection third) doWithIndex: [:seq :index | 
-			index \\ (taxaNumber + 1) = 0
+			seqIndex = (taxaNumber + 1)
 				ifTrue: [seqIndex := 1].
 			index <= seqBlock size
 				ifFalse: [ ^ collection ].

@@ -1,5 +1,5 @@
-accessing-private
-tokenizeDna
+accessing-dna
+tokenizeInterleavedDNA
 	" Private - Tokenize the receiver's epression as DNA data "
 
 	parser := 

@@ -1,4 +1,4 @@
-accessing
+accessing-protein
 buildProteinResults: aCollection
 	" Answer an identified object for the receiver's parsing output "
 

@@ -10,7 +10,7 @@ BaluchitheTAATGTTAAT TGT
 B. virginiTAATGTTCGT TGT
 BrontosaurCAAAACCCAT CAT
 B.subtilisGGCAGCCAAT CAC'.
-	expectedResult :=  #(#('Archaeopt' 'CGATGCTTACCGC' nil) #('Hesperorni' 'CGTTACTCGTTGT' nil) #('Baluchithe' 'TAATGTTAATTGT' nil) #('B.virgini' 'TAATGTTCGTTGT' nil) #('Brontosaur' 'CAAAACCCATCAT' nil)).
+	expectedResult :=  #(#('Archaeopt ' 'CGATGCTTAC CGC' nil) #('Hesperorni' 'CGTTACTCGT TGT' nil) #('Baluchithe' 'TAATGTTAAT TGT' nil) #('B. virgini' 'TAATGTTCGT TGT' nil) #('Brontosaur' 'CAAAACCCAT CAT' nil)).
 	
 	parseResult := self speciesDNANamedBlockTokenizer parse: speciesBlock.
 	self assert: (parseResult bioHasEqualElements: expectedResult ).

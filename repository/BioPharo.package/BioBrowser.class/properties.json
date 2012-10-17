@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectExplorer",
+	"category" : "BioPharo-Platform",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBrowser",
+	"type" : "normal"
+}

@@ -1,7 +1,7 @@
 accessing
-atMatchPut: anObject
+atMismatchesPut: anObject
 	" Take an action when the receiver's subect cannot be classified "
 	
-	( self matches at: #matches ) 
+	( self mismatches at: #mismatches ) 
 		add: anObject;
 		yourself

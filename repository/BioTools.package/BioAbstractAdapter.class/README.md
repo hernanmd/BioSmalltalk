@@ -9,7 +9,4 @@ BioSerializationEngine serialize: anObject.
 
 to get the contents at an URL
 
-( BioWebEngine for: anURL ) httpGet
-
-Class Variables
-<Adapter>		Store the choosen adapter
+( BioWebClientEngine for: 'http://www.google.com.ar' ) httpGet

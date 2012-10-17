@@ -1,4 +1,5 @@
 accessing
 decode: aString
+	" See superimplementor's comment "
 
-	self needsWork.
+	self signalInvalidObject: 'Operation not supported' translated.

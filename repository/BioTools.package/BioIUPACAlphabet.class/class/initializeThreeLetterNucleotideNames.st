@@ -1,6 +1,9 @@
 initialize-release
 initializeThreeLetterNucleotideNames
 
-	self needsWork.
-	^ Dictionary new
-			yourself	
+	^ Dictionary new 
+		add: 'Ade' -> 'Adenine';
+		add: 'Thy' -> 'Thymine';
+		add: 'Gua' -> 'Guanine';
+		add: 'Cyt' -> 'Cytosine';
+		yourself

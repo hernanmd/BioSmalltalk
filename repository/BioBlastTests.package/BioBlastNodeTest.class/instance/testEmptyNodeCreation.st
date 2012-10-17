@@ -1,7 +1,6 @@
 testing
 testEmptyNodeCreation
 
-	self needsWork.
 	self assert: ( ( BioBlastNode nodeFor: 'Hit' ) isKindOf: BioBlastParentNode ).
 	self assert: ( ( BioBlastNode nodeFor: 'Hit_hsps' ) isKindOf: BioBlastParentNode ).
 	self assert: ( ( BioBlastNode nodeFor: 'Hsp' ) isKindOf: BioBlastParentNode ).

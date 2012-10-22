@@ -10,7 +10,9 @@
 	"instvars" : [
 		"description",
 		"extensions",
-		"rootClass"
+		"rootClass",
+		"compatibleFormats",
+		"sampleEntry"
 	],
 	"name" : "BioFileFormat",
 	"type" : "normal"

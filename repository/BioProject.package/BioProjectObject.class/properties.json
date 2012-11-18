@@ -8,6 +8,6 @@
 		"Application"
 	],
 	"instvars" : [ ],
-	"name" : "BioAbstractProject",
+	"name" : "BioProjectObject",
 	"type" : "normal"
 }

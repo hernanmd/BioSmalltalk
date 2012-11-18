@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioAbstractProject",
+	"super" : "BioProjectObject",
 	"category" : "BioProject-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

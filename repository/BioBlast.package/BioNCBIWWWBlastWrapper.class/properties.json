@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "hfm 6/11/2011 13:38",
-	"super" : "BioNCBIBlast",
+	"super" : "BioNCBIBlastWrapper",
 	"category" : "BioBlast-Remote",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -9,6 +9,6 @@
 		"getUrl",
 		"cmd"
 	],
-	"name" : "BioNCBIWWWBlastClient",
+	"name" : "BioNCBIWWWBlastWrapper",
 	"type" : "normal"
 }

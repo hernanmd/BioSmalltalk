@@ -2,4 +2,4 @@ path
 bl2seqPath
 	" Answer a String with the full path to the receiver's binary "
 	
-	^  self blastNamed: 'bl2seq'
+	^  self programNamed: 'bl2seq'

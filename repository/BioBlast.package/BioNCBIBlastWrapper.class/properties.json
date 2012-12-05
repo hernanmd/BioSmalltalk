@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "BioBlast",
-	"category" : "BioBlast-Remote",
+	"super" : "BioBlastWrapper",
+	"category" : "BioBlast-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioWUBlast",
+	"name" : "BioNCBIBlastWrapper",
 	"type" : "normal"
 }

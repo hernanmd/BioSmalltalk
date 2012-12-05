@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioNCBILocalBlastClient",
+	"super" : "BioNCBILocalBlastWrapper",
 	"category" : "BioBlast-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

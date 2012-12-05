@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "hfm 7/12/2010 07:45",
-	"super" : "BioClientObject",
+	"super" : "BioWebWrapper",
 	"category" : "BioEntrez-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

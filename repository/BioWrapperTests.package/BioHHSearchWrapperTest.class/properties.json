@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"wrapper"
-	],
-	"name" : "BioWrapperTest",
+	"instvars" : [ ],
+	"name" : "BioHHSearchWrapperTest",
 	"type" : "normal"
 }

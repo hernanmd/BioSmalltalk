@@ -6,10 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"url",
-		"lastStatus",
-		"searchResult"
+		"lastStatus"
 	],
-	"name" : "BioClientObject",
+	"name" : "BioWrapperObject",
 	"type" : "normal"
 }

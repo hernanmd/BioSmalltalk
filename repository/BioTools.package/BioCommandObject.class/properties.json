@@ -6,10 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"client",
-		"forceDownload",
-		"checkMD5"
+		"client"
 	],
-	"name" : "BioDBObject",
+	"name" : "BioCommandObject",
 	"type" : "normal"
 }

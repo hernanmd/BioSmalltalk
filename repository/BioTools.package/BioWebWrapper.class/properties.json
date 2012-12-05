@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "BioInterfaceObject",
+	"super" : "BioWrapperObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"client"
+		"url",
+		"searchResult"
 	],
-	"name" : "BioDBCommandObject",
+	"name" : "BioWebWrapper",
 	"type" : "normal"
 }

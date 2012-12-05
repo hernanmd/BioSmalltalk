@@ -3,7 +3,7 @@ test02LatestLocalClientAccess
 
 	| blastInterface |
 	
-	blastInterface := BioBlast.
+	blastInterface := BioBlastWrapper.
 	
 	self assert: blastInterface ncbi local latest class = BioNCBILocalBlastPlus2224.
 	self assert: blastInterface ncbi local latest blastxPath isString.

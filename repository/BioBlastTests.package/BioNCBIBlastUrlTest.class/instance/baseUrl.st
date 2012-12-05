@@ -1,4 +1,4 @@
 accessing
 baseUrl
 
-	^ BioNCBIWWWBlastClient baseUrl
+	^ BioNCBIWWWBlastWrapper baseUrl

@@ -3,13 +3,13 @@ test01InterfacesClientAccess
 
 	| blastInterface |
 	
-	blastInterface := BioBlast.
+	blastInterface := BioBlastWrapper.
 	self assert: blastInterface wrappers isCollection.
 	
-	self assert: blastInterface ncbi = BioNCBIBlast.
-	self assert: blastInterface ncbi local = BioNCBILocalBlastClient.
+	self assert: blastInterface ncbi = BioNCBIBlastWrapper.
+	self assert: blastInterface ncbi local = BioNCBILocalBlastWrapper.
 	self assert: blastInterface wu remote = nil.
-	self assert: blastInterface ncbi remote = BioNCBIWWWBlastClient.
+	self assert: blastInterface ncbi remote = BioNCBIWWWBlastWrapper.
 
 
 	

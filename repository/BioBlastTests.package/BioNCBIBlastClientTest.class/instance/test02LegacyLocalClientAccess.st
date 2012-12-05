@@ -3,7 +3,7 @@ test02LegacyLocalClientAccess
 
 	| blastInterface |
 	
-	blastInterface := BioBlast.
+	blastInterface := BioBlastWrapper.
 	
 	self assert: blastInterface ncbi local legacy class = BioNCBILocalBlastLegacy2223.	
 	self assert: blastInterface ncbi local legacy blastAllPath isString.

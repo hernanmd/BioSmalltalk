@@ -1,4 +1,4 @@
 accessing
 newNCBIClient
 
-	^ BioNCBIWWWBlastClient new
+	^ BioNCBIWWWBlastWrapper new

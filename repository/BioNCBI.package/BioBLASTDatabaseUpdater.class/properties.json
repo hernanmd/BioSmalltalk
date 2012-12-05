@@ -9,9 +9,7 @@
 		"connectionSettings",
 		"dbNames",
 		"fileNames",
-		"selectedDbName",
-		"forceDownload",
-		"checkMD5"
+		"selectedDbName"
 	],
 	"name" : "BioBLASTDatabaseUpdater",
 	"type" : "normal"

@@ -1,4 +1,4 @@
 accessing
-descriptionName
+description
 
 	^ 'CSV from Entrez GenBank Collection'

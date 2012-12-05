@@ -1,5 +1,5 @@
 accessing
-descriptionName
+description
 	" Answer a String for identifying the receiver "
 	
-	^ self class descriptionName
+	^ self class description

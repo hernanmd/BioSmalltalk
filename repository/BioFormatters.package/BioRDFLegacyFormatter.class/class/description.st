@@ -1,5 +1,5 @@
 accessing
-descriptionName
+description
 	" Answer a Collection of identifiers of the receiver "
 	
-	^ 'Fluxus Network New RDF Format'
+	^ 'Fluxus Network Legacy RDF Format'

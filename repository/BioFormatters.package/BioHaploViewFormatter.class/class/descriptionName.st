@@ -1,4 +1,0 @@
-accessing
-descriptionName
-
-	^ 'HaploView exporter'

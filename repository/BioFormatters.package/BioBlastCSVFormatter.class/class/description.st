@@ -1,4 +1,4 @@
 accessing
-descriptionName
+description
 
 	^ 'CSV from Blast HIT Collection'

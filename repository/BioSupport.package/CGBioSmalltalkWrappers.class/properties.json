@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CGBioSmalltalk",
+	"category" : "BioSupport-Generators",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CGBioSmalltalkWrappers",
+	"type" : "normal"
+}

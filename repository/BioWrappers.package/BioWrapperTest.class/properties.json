@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractTest",
+	"category" : "BioWrappers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"wrapper"
+	],
+	"name" : "BioWrapperTest",
+	"type" : "normal"
+}

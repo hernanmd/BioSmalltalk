@@ -5,4 +5,4 @@ log: file
 
 	"Log all non-essential output to this file"
 
-	 ^ self propertyAt: 'log' ifAbsentPut: [ file ]
+	 ^ self propertyAt: 'log' ifAbsentPut: [ self formatPlatformPath: file ]

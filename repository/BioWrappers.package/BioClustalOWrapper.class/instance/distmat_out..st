@@ -5,4 +5,4 @@ distmat_out: file
 
 	"Pairwise distance matrix output file"
 
-	 ^ self propertyAt: 'distmat_out' ifAbsentPut: [ file ]
+	 ^ self propertyAt: 'distmat_out' ifAbsentPut: [ self formatPlatformPath: file ]

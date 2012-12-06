@@ -5,4 +5,4 @@ guidetree_in: file
 
 	"Guide tree input file (skips distance computation and guide-tree clustering step)"
 
-	 ^ self propertyAt: 'guidetree_in' ifAbsentPut: [ file ]
+	 ^ self propertyAt: 'guidetree_in' ifAbsentPut: [ self formatPlatformPath: file ]

@@ -5,4 +5,4 @@ long_version
 
 	"Print long version information and exit"
 
-	 ^ 'long_version'
+	 ^ self addOption: 'long_version'

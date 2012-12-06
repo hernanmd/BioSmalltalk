@@ -5,4 +5,4 @@ full
 
 	"Use full distance matrix for guide-tree calculation (might be slow"
 
-	 ^ 'full'
+	 ^ self addOption: 'full'

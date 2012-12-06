@@ -5,4 +5,4 @@ force
 
 	"Force file overwriting"
 
-	 ^ 'force'
+	 ^ self addOption: 'force'

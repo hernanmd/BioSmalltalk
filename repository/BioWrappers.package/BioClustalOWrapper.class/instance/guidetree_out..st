@@ -5,4 +5,4 @@ guidetree_out: file
 
 	"Guide tree output file"
 
-	 ^ self propertyAt: 'guidetree_out' ifAbsentPut: [ file ]
+	 ^ self propertyAt: 'guidetree_out' ifAbsentPut: [ self formatPlatformPath: file ]

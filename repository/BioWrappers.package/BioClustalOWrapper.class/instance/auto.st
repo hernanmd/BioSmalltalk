@@ -5,4 +5,4 @@ auto
 
 	"Set options automatically (might overwrite some of your options)"
 
-	 ^ 'auto'
+	 ^ self addOption: 'auto'

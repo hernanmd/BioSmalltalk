@@ -5,4 +5,4 @@ verbose
 
 	"Verbose output (increases if given multiple times)"
 
-	 ^ 'verbose'
+	 ^ self addOption: 'verbose'

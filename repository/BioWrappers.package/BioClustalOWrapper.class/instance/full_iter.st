@@ -5,4 +5,4 @@ full_iter
 
 	"Use full distance matrix for guide-tree calculation during iteration (might be slowish"
 
-	 ^ 'full_iter'
+	 ^ self addOption: 'full_iter'

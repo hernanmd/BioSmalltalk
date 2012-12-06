@@ -5,4 +5,4 @@ dealign
 
 	"Dealign input sequences"
 
-	 ^ 'dealign'
+	 ^ self addOption: 'dealign'

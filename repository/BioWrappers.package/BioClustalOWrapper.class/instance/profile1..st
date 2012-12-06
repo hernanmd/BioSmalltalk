@@ -5,4 +5,4 @@ profile1: file
 
 	"Pre-aligned multiple sequence file (aligned columns will be kept fix)"
 
-	 ^ self propertyAt: 'profile1' ifAbsentPut: [ file ]
+	 ^ self propertyAt: 'profile1' ifAbsentPut: [ self formatPlatformPath: file ]

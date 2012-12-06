@@ -5,4 +5,4 @@ help
 
 	"Print this help and exit"
 
-	 ^ 'help'
+	 ^ self addOption: 'help'

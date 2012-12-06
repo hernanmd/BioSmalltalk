@@ -6,7 +6,7 @@ generateOptionMethodBody
 	(self targetSelector includes: $:)
 		ifFalse: [ 
 			codeStream
-				nextPutAll: '''';
+				nextPutAll: 'self addOption: ''';
 				nextPutAll: self targetSelector;
 				nextPutAll: '''' ]
 		ifTrue: [

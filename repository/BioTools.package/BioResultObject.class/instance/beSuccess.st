@@ -1,5 +1,5 @@
 accessing private
-beFailed
+beSuccess
 	" Set the receiver's last operation status to failed "
 	
-	status := false
+	exitStatus := true

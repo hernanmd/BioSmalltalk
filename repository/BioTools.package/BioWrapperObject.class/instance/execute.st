@@ -1,5 +1,11 @@
-accessing public - commands
+accessing public
 execute
-	" Execute current operation and answer a result object "
-
-	^ self execute: BioCommandObject
+	"Execute the receiving action"
+	
+	| execAnswer |
+	
+	execAnswer := BioExecutionEngine execute: self cmdLine.
+	^ BioResultObject new
+		result: execAnswer;
+		yourself
+		

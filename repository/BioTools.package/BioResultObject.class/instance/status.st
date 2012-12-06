@@ -1,3 +1,3 @@
 accessing
 status
-	^ status
+	^ exitStatus

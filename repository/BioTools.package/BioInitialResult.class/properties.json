@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioSearchResult",
+	"super" : "BioResultObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

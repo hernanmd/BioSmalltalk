@@ -8,11 +8,11 @@
 	"instvars" : [
 		"updater",
 		"history",
-		"status",
 		"project",
 		"result",
-		"formatters"
+		"formatters",
+		"exitStatus"
 	],
-	"name" : "BioSearchResult",
+	"name" : "BioResultObject",
 	"type" : "normal"
 }

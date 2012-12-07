@@ -1,6 +1,6 @@
 accessing
-addSearchResults: anObject
+addResults: anObject
 	" Add aGTResults to the receiver's results. 
 	Answer the newly created search result "
 	
-	^ ( self createSearchResultFrom: anObject ) addToProject: self
+	^ ( self createResultFrom: anObject ) addToProject: self

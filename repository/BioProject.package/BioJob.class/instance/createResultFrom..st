@@ -1,8 +1,8 @@
 accessing private
-createSearchResultFrom: aString
+createResultFrom: aString
 	" Answer a new search result for aString "
 	
-	^ BioSearchResult new
+	^ BioResultObject new
 		project: self;
 		result: aString;
 		yourself

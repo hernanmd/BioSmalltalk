@@ -1,9 +1,9 @@
 genomic protocol
-addSearchResults: anObject
+addResults: anObject
 	" Add anObject to the receiver's search results "
 	
-	( self validate: anObject as: BioSearchResult )
+	( self validate: anObject as: BioResultObject )
 		ifTrue: [ 
 			self register: BioAddResultCmd.
-			self project addSearchResults: anObject ]
+			self project addResults: anObject ]
 		ifFalse: [ self signalInvalidObject: anObject asString , ' is not valid as a search result object' translated ]

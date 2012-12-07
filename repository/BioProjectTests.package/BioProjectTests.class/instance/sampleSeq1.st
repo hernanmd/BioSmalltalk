@@ -1,4 +1,4 @@
 accessing
 sampleSeq1
 
-	^ self sampleSeqWith: 'acatgtgacatgcatgcatgcaca'
+	^ self newSampleSeq: 'acatgtgacatgcatgcatgcaca'

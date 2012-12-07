@@ -3,5 +3,5 @@ cmdLine
 
 	^ String streamContents: [ : stream |
 		stream 
-			nextPutAll: self clustalo;
+			nextPutAll: self programName;
 			nextPutAll: self buildParameters ]

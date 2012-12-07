@@ -3,15 +3,5 @@ buildParameters
 	" Answer a <String> with receiver's parameters "
 	
 	^ String streamContents: [: stream |
-		self properties associationsDo: [: assoc |
-			stream 
-				space;
-				nextPutAll: '--';
-				nextPutAll: assoc key;
-				nextPut: $=;
-				nextPutAll: assoc value ].
-		self options do: [: optString |
-			stream
-				space;
-				nextPutAll: '--';				
-				nextPutAll: optString ] ]
+		self buildProperties: stream.
+		self buildOptions: stream ]

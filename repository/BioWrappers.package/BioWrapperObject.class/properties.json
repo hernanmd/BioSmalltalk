@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioInterfaceObject",
+	"category" : "BioWrappers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"lastStatus",
+		"options",
+		"parameters",
+		"programName"
+	],
+	"name" : "BioWrapperObject",
+	"type" : "normal"
+}

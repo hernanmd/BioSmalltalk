@@ -1,13 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "BioAbstractTest",
+	"super" : "BioWrapperObject",
 	"category" : "BioWrappers-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"wrapper"
+		"url",
+		"searchResult"
 	],
-	"name" : "BioWrapperTest",
+	"name" : "BioWebWrapper",
 	"type" : "normal"
 }

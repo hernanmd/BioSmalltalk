@@ -1,0 +1,3 @@
+weighting
+globalWeighting
+	^globalWeighting

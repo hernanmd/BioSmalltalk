@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"English",
+		"Englishh"
+	],
+	"instvars" : [
+		"cache"
+	],
+	"name" : "Stemmer",
+	"type" : "normal"
+}

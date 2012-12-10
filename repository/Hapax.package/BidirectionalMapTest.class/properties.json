@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"map"
+	],
+	"name" : "BidirectionalMapTest",
+	"type" : "normal"
+}

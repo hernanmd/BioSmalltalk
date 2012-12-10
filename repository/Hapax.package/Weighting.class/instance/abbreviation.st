@@ -1,0 +1,4 @@
+accessing
+abbreviation
+
+	^self subclassResponsibility

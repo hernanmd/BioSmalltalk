@@ -1,0 +1,4 @@
+vector functions
+length
+
+	^length

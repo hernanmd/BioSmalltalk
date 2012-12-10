@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Bag",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Void"
+	],
+	"instvars" : [ ],
+	"name" : "Terms",
+	"type" : "normal"
+}

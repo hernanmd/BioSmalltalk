@@ -1,0 +1,4 @@
+signal constants
+valueAlreadyMappedSignal
+
+	^ValueAlreadyMappedSignal

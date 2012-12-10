@@ -1,0 +1,2 @@
+document coloring
+colorOf: document

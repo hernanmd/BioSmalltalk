@@ -1,0 +1,4 @@
+accessing
+numberOfDocuments
+
+	^self columnSize

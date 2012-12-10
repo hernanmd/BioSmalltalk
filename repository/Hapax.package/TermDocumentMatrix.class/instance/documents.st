@@ -1,0 +1,4 @@
+accessing
+documents
+
+	^documentMap asArray

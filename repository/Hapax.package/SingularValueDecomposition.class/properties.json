@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"V",
+		"U",
+		"S",
+		"comment"
+	],
+	"name" : "SingularValueDecomposition",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TermScannerTest",
+	"type" : "normal"
+}

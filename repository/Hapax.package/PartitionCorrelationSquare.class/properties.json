@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "CorrelationSquare",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"partitionMatrix",
+		"threshold"
+	],
+	"name" : "PartitionCorrelationSquare",
+	"type" : "normal"
+}

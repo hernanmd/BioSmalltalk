@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Corpus",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HXEnglishCorpus",
+	"type" : "normal"
+}

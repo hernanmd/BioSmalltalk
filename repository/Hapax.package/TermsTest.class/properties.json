@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"terms"
+	],
+	"name" : "TermsTest",
+	"type" : "variable"
+}

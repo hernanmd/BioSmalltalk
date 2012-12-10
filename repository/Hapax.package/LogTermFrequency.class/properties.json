@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "LocalWeighting",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "LogTermFrequency",
+	"type" : "normal"
+}

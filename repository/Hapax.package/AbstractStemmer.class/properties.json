@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Stemmer",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"string",
+		"r1",
+		"r2",
+		"cursor"
+	],
+	"name" : "AbstractStemmer",
+	"type" : "normal"
+}

@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "MatrixDecorator",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"termMap",
+		"documentMap",
+		"localWeighting",
+		"globalWeighting",
+		"decomposition",
+		"expectedRank"
+	],
+	"name" : "TermDocumentMatrix",
+	"type" : "normal"
+}

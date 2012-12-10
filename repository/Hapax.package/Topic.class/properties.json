@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"color",
+		"parent",
+		"cluster"
+	],
+	"name" : "Topic",
+	"type" : "normal"
+}

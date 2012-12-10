@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Collection",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"backwards",
+		"forwards"
+	],
+	"name" : "BidirectionalMap",
+	"type" : "normal"
+}

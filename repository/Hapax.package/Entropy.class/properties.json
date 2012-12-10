@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RealEntropy",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "Entropy",
+	"type" : "normal"
+}

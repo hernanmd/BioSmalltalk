@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Collection",
+	"category" : "Hapax-InformationRetrieval",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"English",
+		"Spanish"
+	],
+	"instvars" : [
+		"array"
+	],
+	"name" : "Stopwords",
+	"type" : "normal"
+}

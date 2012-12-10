@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "GlobalWeighting",
+	"category" : "Hapax",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "NullGlobalWeighting",
+	"type" : "normal"
+}

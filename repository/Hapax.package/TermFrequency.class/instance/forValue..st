@@ -1,0 +1,4 @@
+weighting
+forValue: value
+
+	^value

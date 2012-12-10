@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "FUMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"array",
+		"columnSize",
+		"rowSize"
+	],
+	"name" : "ArrayMatrix",
+	"type" : "normal"
+}

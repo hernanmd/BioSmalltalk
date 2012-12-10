@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"distanceMatrix",
+		"dendrogram"
+	],
+	"name" : "ClusterEngine",
+	"type" : "normal"
+}

@@ -1,0 +1,4 @@
+accessing
+columnSize
+
+	^matrix columnSize

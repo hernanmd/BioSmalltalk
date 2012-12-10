@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "MatrixDecorator",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"backgroundValue"
+	],
+	"name" : "UnboundedMatrix",
+	"type" : "normal"
+}

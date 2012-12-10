@@ -1,0 +1,4 @@
+accessing
+rowSize
+
+	^matrix rowSize

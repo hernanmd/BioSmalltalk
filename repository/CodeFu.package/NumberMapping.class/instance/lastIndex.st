@@ -1,0 +1,4 @@
+adding
+lastIndex
+
+	^forth size

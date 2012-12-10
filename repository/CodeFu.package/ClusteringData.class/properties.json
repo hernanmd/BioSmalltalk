@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "SymetricMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"indices",
+		"value",
+		"clusters",
+		"foundA0",
+		"foundB0"
+	],
+	"name" : "ClusteringData",
+	"type" : "normal"
+}

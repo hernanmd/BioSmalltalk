@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Collection",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"item",
+		"collection"
+	],
+	"name" : "CollectionItem",
+	"type" : "normal"
+}

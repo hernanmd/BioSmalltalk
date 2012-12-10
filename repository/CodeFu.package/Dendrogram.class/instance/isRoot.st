@@ -1,0 +1,4 @@
+testing
+isRoot
+
+	^parent == nil

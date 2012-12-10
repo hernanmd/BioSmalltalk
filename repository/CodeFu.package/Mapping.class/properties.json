@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Collection",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "Mapping",
+	"type" : "normal"
+}

@@ -1,0 +1,4 @@
+accessing
+items
+
+	^distanceMatrix items

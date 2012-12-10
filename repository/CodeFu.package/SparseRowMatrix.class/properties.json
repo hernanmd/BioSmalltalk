@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "RowMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SparseRowMatrix",
+	"type" : "normal"
+}

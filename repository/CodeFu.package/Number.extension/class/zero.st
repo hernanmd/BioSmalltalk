@@ -1,0 +1,3 @@
+*codefu
+zero 
+	^ 0

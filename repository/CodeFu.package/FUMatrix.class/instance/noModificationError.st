@@ -1,0 +1,4 @@
+private
+noModificationError
+
+	Error raise

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ArrayedCollection",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "Vector",
+	"type" : "normal"
+}

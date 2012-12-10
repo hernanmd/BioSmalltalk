@@ -1,0 +1,4 @@
+private
+defaultElement
+
+	^Float zero

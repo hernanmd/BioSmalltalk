@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "DistanceSquare",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CorrelationSquare",
+	"type" : "normal"
+}

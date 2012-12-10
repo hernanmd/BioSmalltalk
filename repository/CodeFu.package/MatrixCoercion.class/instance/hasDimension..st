@@ -1,0 +1,4 @@
+testing
+hasDimension: aDimension
+
+	^true

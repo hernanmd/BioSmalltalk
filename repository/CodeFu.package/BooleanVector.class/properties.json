@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Vector",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"bits",
+		"size"
+	],
+	"name" : "BooleanVector",
+	"type" : "normal"
+}

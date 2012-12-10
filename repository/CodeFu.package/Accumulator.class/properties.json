@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"accumulateBlock",
+		"size",
+		"value",
+		"index",
+		"valueBlock"
+	],
+	"name" : "Accumulator",
+	"type" : "normal"
+}

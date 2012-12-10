@@ -1,0 +1,4 @@
+fixture
+vectorClass
+
+	^ArrayVector

@@ -1,0 +1,4 @@
+accessing
+rowSize
+
+	^self subclassResponsibility

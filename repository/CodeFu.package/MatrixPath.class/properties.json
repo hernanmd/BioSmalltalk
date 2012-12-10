@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Vector",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"matrix",
+		"mapBlock",
+		"size"
+	],
+	"name" : "MatrixPath",
+	"type" : "normal"
+}

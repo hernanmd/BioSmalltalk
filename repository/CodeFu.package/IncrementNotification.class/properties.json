@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Notification",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"parameter"
+	],
+	"name" : "IncrementNotification",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Association",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ValueItem",
+	"type" : "normal"
+}

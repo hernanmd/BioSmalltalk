@@ -1,0 +1,4 @@
+private
+checkInvariant
+
+	^matrix checkInvariant

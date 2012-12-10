@@ -1,0 +1,4 @@
+seriation
+swap
+
+	^self subclassResponsibility

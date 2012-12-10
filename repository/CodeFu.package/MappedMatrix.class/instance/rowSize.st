@@ -1,0 +1,4 @@
+accessing
+rowSize
+
+	^rowMap size

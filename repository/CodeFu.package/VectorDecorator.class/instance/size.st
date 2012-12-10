@@ -1,0 +1,4 @@
+accessing
+size
+
+	^vector size

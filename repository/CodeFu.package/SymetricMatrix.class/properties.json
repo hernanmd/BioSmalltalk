@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "FUMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"partialColumns"
+	],
+	"name" : "SymetricMatrix",
+	"type" : "normal"
+}

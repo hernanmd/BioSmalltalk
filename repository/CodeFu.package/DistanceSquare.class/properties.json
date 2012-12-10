@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SymetricMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"distanceBlock",
+		"columnVector",
+		"items",
+		"dendrogram"
+	],
+	"name" : "DistanceSquare",
+	"type" : "normal"
+}

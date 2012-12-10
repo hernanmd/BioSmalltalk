@@ -1,0 +1,4 @@
+accessing
+sparseSize
+
+	^contents size

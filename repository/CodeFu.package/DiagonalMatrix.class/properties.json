@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "SymetricMatrix",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DiagonalMatrix",
+	"type" : "normal"
+}

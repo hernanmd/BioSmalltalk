@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Mapping",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"names",
+		"comparisonBlock"
+	],
+	"name" : "NameMapping",
+	"type" : "normal"
+}

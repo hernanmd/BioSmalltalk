@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Mapping",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"back",
+		"forth"
+	],
+	"name" : "NumberMapping",
+	"type" : "normal"
+}

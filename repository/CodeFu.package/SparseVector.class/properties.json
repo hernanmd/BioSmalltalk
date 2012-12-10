@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Vector",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"size",
+		"contents"
+	],
+	"name" : "SparseVector",
+	"type" : "normal"
+}

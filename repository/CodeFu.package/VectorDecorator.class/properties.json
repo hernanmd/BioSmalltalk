@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Vector",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"vector"
+	],
+	"name" : "VectorDecorator",
+	"type" : "normal"
+}

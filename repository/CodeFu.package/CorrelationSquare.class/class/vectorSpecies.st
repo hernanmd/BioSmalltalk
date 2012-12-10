@@ -1,0 +1,4 @@
+private
+vectorSpecies
+
+	^CorrelationVector

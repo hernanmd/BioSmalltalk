@@ -1,0 +1,4 @@
+testing
+hasSize: aSize
+
+	^true

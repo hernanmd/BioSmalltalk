@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MatrixTest",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ColumnMatrixTest",
+	"type" : "normal"
+}

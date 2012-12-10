@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "VectorTest",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SparseVectorTest",
+	"type" : "normal"
+}

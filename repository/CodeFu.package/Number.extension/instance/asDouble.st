@@ -1,0 +1,3 @@
+*codefu
+asDouble
+	^ self asFloat

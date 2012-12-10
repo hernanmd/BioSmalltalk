@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Dendrogram",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"element"
+	],
+	"name" : "DendrogramLeaf",
+	"type" : "normal"
+}

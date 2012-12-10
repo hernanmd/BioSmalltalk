@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "MatrixDecorator",
+	"category" : "CodeFu",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"columnMap",
+		"rowMap"
+	],
+	"name" : "MappedMatrix",
+	"type" : "normal"
+}

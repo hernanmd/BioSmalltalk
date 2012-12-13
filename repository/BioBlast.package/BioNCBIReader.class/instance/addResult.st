@@ -4,7 +4,6 @@ addResult
 
 	| newResult |
 	
-	self halt.
 	newResult := ( self resultClass new reader: self ) result: self parsedContents.
 	( self searchResults includes: newResult )
 		ifFalse: [ self searchResults add: newResult ].

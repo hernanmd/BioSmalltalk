@@ -4,7 +4,7 @@ withoutBlanks
 	 and white spaces condensed."
 
 	| trimmed |
-	trimmed := self withBlanksTrimmed.
+	trimmed := self trimBoth.
 	^ String streamContents: [:stream |
 		trimmed do: [:c | c == Character space ifFalse: [stream nextPut: c] ]].
 

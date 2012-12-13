@@ -1,5 +1,4 @@
 accessing
 newSampleSeq: aString
 
-	^ BioSeqRecord new
-		seq: ( BioSequence newWith: aString alphabet: BioIUPACAmbiguousDNA )
+	^ BioSequence newWith: aString alphabet: BioIUPACAmbiguousDNA

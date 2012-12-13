@@ -2,4 +2,4 @@ accessing
 resetApplication
 	" self resetApplication "
 	
-	Application := nil
+	BioApplication release.

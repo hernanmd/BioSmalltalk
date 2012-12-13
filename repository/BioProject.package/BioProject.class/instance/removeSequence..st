@@ -5,7 +5,7 @@ removeSequence: aBioSequence
 	| jobOrNil |
 	
 	jobOrNil := self jobs 
-		detect: [ : job | job includes: aBioSequence ]
+		detect: [ : job | job includesSequence: aBioSequence ]
 		ifNone: [ nil ].
 	jobOrNil
 		ifNotNilDo: [: job | 

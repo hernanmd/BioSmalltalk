@@ -5,6 +5,7 @@ addResult
 	| newResult |
 	
 	newResult := ( self resultClass new reader: self ) result: self parsedContents.
-	( self searchResults includes: newResult )
-		ifFalse: [ self searchResults add: newResult ].
-	^ newResult
+	results ifNil: [ results := OrderedCollection new].
+	(results includes: newResult)
+		ifFalse: [ results add: newResult ].
+	^newResult

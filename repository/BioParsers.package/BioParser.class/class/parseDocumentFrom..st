@@ -1,7 +1,7 @@
 parse-ncbi-xml
-parseNcbiXmlBlastNodes: anObject
+parseDocumentFrom: anObject
 	" Answer a Collection of header nodes found in anObject "
 	
 	^ BioNCBIBlastSAXParser new
-		selectNodes: BioNCBIBlastSAXParser hitNodesNames;
+		selectNodes: BioNCBIBlastSAXParser allNodeNames;
 		parse: anObject

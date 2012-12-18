@@ -1,5 +1,9 @@
 accessing-parsers
 tokenizeDescriptionLine
 
-	parser := self parserForAnyDescriptionLine.
-	^ self tokenize
+	| separator token result |
+
+	separator := $| asParser ==> [ : n | nil ].
+	token := separator negate plus flatten.
+	parser := ( token separatedBy: separator ) ==> [ :nodes | ( nodes copyWithout: nil ) collect: #trimBoth ].
+	^ self parse: self expression

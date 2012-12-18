@@ -1,4 +1,4 @@
 accessing
 hitNodesNames
 
-	^ self hitNodes keys
+	^ self allNodes keys

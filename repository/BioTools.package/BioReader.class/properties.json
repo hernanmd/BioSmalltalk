@@ -10,6 +10,6 @@
 		"nextReader",
 		"parser"
 	],
-	"name" : "BioAbstractReader",
+	"name" : "BioReader",
 	"type" : "normal"
 }

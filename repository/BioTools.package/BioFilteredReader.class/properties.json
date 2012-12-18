@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "hfm 2/8/2012 15:03",
-	"super" : "BioAbstractReader",
+	"super" : "BioReader",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

@@ -5,4 +5,4 @@ filesFromXMLDirectory: aDirectoryString
 	
 	^ self withAll: ( ( BioObject fileDirectoryContentsFor: aDirectoryString ) asFileCollection
 			select: [: file | file isXML ]
-			thenCollect: [: file | self readerClass newFromXML: file ] ).
+			thenCollect: [: file | (BioReader for: file contents) newFromXML: file ] ).

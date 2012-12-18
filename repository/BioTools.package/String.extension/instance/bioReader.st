@@ -4,7 +4,7 @@ bioReader
 	
 	| readerClass |
 	
-	readerClass := BioAbstractReader for: self.
+	readerClass := BioReader for: self.
 	^ self isXML 
 		ifTrue: [ readerClass newFromXML: self ]
 		ifFalse: [ readerClass newFromFlat: self ]

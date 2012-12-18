@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioAbstractReader",
+	"commentStamp" : "HernanMoralesDurand 12/18/2012 00:30",
+	"super" : "BioReader",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

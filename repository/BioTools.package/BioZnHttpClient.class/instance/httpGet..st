@@ -3,4 +3,4 @@ httpGet: urlString
 	"Get the response from the given url"
 	" ( self httpGet: 'http://www.squeak.org') content "
 	
-	^ (super httpGet: urlString) collection
+	^ super httpGet: urlString

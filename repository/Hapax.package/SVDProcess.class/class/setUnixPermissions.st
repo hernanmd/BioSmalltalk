@@ -1,5 +1,5 @@
 private
 setUnixPermissions
 
-	OSHandle currentOS = #unix
-		ifTrue: [ UnixProcess cshOne: ('chmod +x ', self programFilename asString) ]
+	OSPlatform isUnix
+		ifTrue: [ (Smalltalk at: #OSProcess) command: ('chmod +x ', self programFilename asString) ]

@@ -1,9 +1,8 @@
 private
 programBinary
-	| handle |
-	handle := Smalltalk at: #OSHandle ifAbsent: [self halt].
-	^handle currentOS = #win32
+
+	^OSPlatform isWin32
 		ifTrue: [ self windowsBinary ]
-		ifFalse: [ ('*I386*' match: handle currentPlatformID)
+		ifFalse: [ ('*I386*' match: OSPlatform platformName)
 			ifTrue: [ self macIntelBinary ]
 			ifFalse: [ self macPowerBinary10dot4dot10]]

@@ -1,5 +1,6 @@
 accessing
 executeCommand: aCommandName parameter: parameterName
-	" Execute aCommandName with parameterName, Answer an empty String if aCommandName is not found , otherwhise answer the aCommandName output "
-	
-	self needsWork
+	" See superimplementor's comment "
+
+	^ ((self classFor: self providerClass) 
+			command: aCommandName , String space , parameterName) output.

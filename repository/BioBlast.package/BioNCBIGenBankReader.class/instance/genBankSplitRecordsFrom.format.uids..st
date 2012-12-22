@@ -5,17 +5,17 @@ genBankSplitRecordsFrom: dbSymbol format: formatSymbol uids: anArray
 		
 	| db dbName tmpCol |
 	
-	self searchResults: ( OrderedCollection new: anArray size ).
+	results := ( OrderedCollection new: anArray size ).
 	tmpCol := OrderedCollection new.	
 	anArray doWithIndex: [: id : index |
 		tmpCol add: id.
 		index \\ self entrezUrlUidLimit = 0
 			ifTrue: [
 				self bioLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
-				self searchResults add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ).
+				results add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ).
 				tmpCol := OrderedCollection new. ] ].
 	tmpCol isEmpty
 		ifFalse: [ 
 			self bioLog: 'Requesting ' , tmpCol size asString , ' records to Entrez'.
-			self searchResults add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ) ].
-	^ self searchResults
+			results add: ( self genBankFetchRecordsFrom: dbSymbol format: formatSymbol uids: tmpCol ) ].
+	^ results

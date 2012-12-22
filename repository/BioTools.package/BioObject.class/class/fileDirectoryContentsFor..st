@@ -2,13 +2,9 @@ filesystem
 fileDirectoryContentsFor: aDirectoryString
 	" Answer a FileStream for a new fileName in the receiver's configured folder "
 	
-	| path |
+	| fs path |
+	path := (FilePath pathName: aDirectoryString isEncoded: true) asSqueakPathName.
+	^ (FileReference
+		fileSystem: (fs := FileSystem disk)
+		path: (fs pathFromString: path)) allFiles.
 	
-	path := [ self fileDirectoryClass on: aDirectoryString ]
-	on: Error
-	do: [: ex | 
-		path := ( self fileDirectoryClass on: 
-						self workingDirectory , 
-						self fileDirectoryClass slash , 
-						aDirectoryString ) ].
-	^ path entries

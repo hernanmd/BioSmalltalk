@@ -1,5 +1,6 @@
 menu
 updateBioSmalltalk
+	" Update the system "
 
 	Gofer new
 		url: 'http://ss3.gemstone.com/ss/BioSmalltalk';
@@ -40,6 +41,7 @@ updateBioSmalltalk
 	    	package: 'BioPopulation';
 	    	package: 'BioArlequin';							
 	    	package: 'BioToolsSamples';
+		package: 'BioPlatform';
 	    	load.
 		
 	self inform: 'Update done successfully' translated.

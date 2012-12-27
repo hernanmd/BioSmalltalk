@@ -2,5 +2,5 @@ accessing
 outputToFile: aString
 
 	^ BioObject new 
-		outputToFile: aString , '.arp'
+		outputToFile: aString
 		contents: self contents

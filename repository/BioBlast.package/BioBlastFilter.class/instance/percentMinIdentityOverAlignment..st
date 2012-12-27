@@ -4,7 +4,7 @@ percentMinIdentityOverAlignment: aPercentageFloat
 
 	| collection minPct |
 	
-	minPct := aPercentageFloat roundTo: 0.1.	
+	minPct := aPercentageFloat first asNumber roundTo: 0.1.	
 	collection := self hits select: [: node | 
 						| ident align |
 						ident := node selectIdentity asFloat.

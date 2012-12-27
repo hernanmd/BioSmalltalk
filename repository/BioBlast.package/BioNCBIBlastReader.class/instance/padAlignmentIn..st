@@ -9,7 +9,7 @@ padAlignmentIn: hit
 	correctedSeq := self hspHSeqFrom: hit.
 
 	qFrom ~= 1 
-		ifTrue: [ correctedSeq := ( self generateJoin: $? repeat: qFrom - 1 ) , correctedSeq ].
+		ifTrue: [ correctedSeq := ( BioObject generateJoin: $? repeat: qFrom - 1 ) , correctedSeq ].
 	self querySeq isNil
 		ifTrue: [ self error: 'Missing reference (query) sequence' ].
 	qTo <  self querySeq size 

@@ -1,6 +1,6 @@
 accessing
 executeCommand: aCommandName
-	" See superimplementor's comment "
+	" Execute aCommandName, Answer an empty String if aCommandName is not found , otherwhise answer the aCommandName output "
 
 	| process output answer |
 

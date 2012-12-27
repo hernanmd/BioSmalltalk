@@ -1,6 +1,6 @@
 accessing
 executeCommand: aCommandName parameter: parameterName
-	" See superimplementor's comment "
+	" Execute aCommandName with parameterName, Answer an empty String if aCommandName is not found , otherwhise answer the aCommandName output "
 
 	| process paths |
 

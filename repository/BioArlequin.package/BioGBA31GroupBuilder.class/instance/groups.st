@@ -4,7 +4,8 @@ groups
 
 	| groupSamples clusters |
 
-	clusters := self classifications asOrderedCollection.
+	" Remove empty groups as Arlequin does not parse well empty groups "
+	clusters := (self classifications asOrderedCollection) reject: [: assoc | assoc key classifications isEmpty ].
 	groupSamples := clusters collect: [: classAssoc |
 		classAssoc key -> ( classAssoc value collect: [: recordsByAlignment | 
 			recordsByAlignment contents groupedBy: [: seqRecord | 

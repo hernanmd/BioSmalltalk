@@ -15,4 +15,6 @@ named: aString forHaplotypicDNAGroups: aClassifier
 		addStructureName: aString;
 		addNbGroups: 1;
 		addGroups: arGroups.
-	^ newInstance outputToFile: aString
+	^ BioObject
+		outputToFullFile: aString
+		contents: newInstance contents

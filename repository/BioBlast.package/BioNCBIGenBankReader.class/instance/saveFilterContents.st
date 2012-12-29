@@ -9,14 +9,7 @@ saveFilterContents
 		ifTrue: [ 
 			self entrezSearchResults doWithIndex: [: bioESearchResult : index |
 				| fileName |
-				fileName := String streamContents: [: stream | 
-					stream 
-						nextPutAll: dir fullName;
-						nextPutAll: self fileDirectoryClass slash;
-						nextPutAll: index asString;
-						nextPutAll:  '.xml' ].
-				self 
-					outputToFullFile: fileName
-					contents: bioESearchResult  ].
+				fileName := self formatFilename: dir index: index.
+				self outputToFullFile: fileName contents: bioESearchResult  ].
 			downloadStatus := true ].
-	^ 	downloadStatus
+	^ downloadStatus

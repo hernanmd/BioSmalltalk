@@ -1,4 +1,5 @@
 accessing
 providerClass
-		
-	^ #OSProcess
+	" Private - See superimplementor's comment "
+
+	^ #PipeableOSProcess

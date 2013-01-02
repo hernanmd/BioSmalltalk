@@ -1,4 +1,5 @@
 *biopharo
 requestFastaFile
 
-	^ UIManager default chooseFullFileNameMatching: #('*.fa' '*.fasta')
+	^ UIManager default chooseFullFileNameMatching: 
+		(Array with: self filenameMatchPattern , BioFASTAFormatter formatExtension)

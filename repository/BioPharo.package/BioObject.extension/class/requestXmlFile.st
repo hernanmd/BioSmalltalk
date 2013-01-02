@@ -1,4 +1,4 @@
 *biopharo
 requestXmlFile
 
-	^ UIManager default chooseFullFileNameMatching: #('*.xml')
+	^ UIManager default chooseFullFileNameMatching: (Array with: self filenameMatchPattern , BioXMLFormatter formatExtension)

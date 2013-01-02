@@ -32,7 +32,7 @@ formatCollection
 	#('LocusLink LL_tmpl' #() '' nil)
 	#('metafasta' #() '' nil)
 	#('Phred' #('phred') 'The phd format is created by PHRED to store serialized chromatogram data. ' nil)
-	#('Phylip' #('phy' 'ph') 'PHYLIP is a free computational phylogenetics package of programs for inferring evolutionary trees (phylogenies)')
+	#('Phylip' #('phy' 'ph') 'PHYLIP is a free computational phylogenetics package of programs for inferring evolutionary trees (phylogenies)' nil)
 	#('PIR database ' #('pir') '' nil)						
 	#('PLN tracefile' #('pln') '' nil)
 	#('plain text' #('txt') '' nil)

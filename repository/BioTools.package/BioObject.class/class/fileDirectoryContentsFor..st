@@ -4,7 +4,7 @@ fileDirectoryContentsFor: aDirectoryString
 	
 	| fs path |
 	path := (FilePath pathName: aDirectoryString isEncoded: true) asSqueakPathName.
-	^ (FileReference
-		fileSystem: (fs := FileSystem disk)
+	^ (self fileReferenceClass
+		fileSystem: (fs := self fileSystemClass disk)
 		path: (fs pathFromString: path)) allFiles.
 	

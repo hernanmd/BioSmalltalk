@@ -3,7 +3,7 @@ updateRepository
 
 	| importer |
 	
-	importer := BioImporter versionImporterAt: self name.
+	importer := BioPopImporter versionImporterAt: self name.
 	self bioSpecies: nil.
 	self locatedBioSpecies: nil.
 	importer importFromCsvFile: BioObject requestCsvFile.

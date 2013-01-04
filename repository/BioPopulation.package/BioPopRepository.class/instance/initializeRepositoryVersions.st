@@ -2,4 +2,4 @@ initialize
 initializeRepositoryVersions
 
 	self names do: [ : aName |
-		BioImporter initializeFor: aName ].
+		BioPopImporter initializeFor: aName ].

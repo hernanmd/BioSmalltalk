@@ -1,4 +1,4 @@
-querying
+text-mining
 removePrefixes: loc
 
 	| tokenizedLocation |

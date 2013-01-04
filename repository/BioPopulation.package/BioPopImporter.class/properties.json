@@ -8,6 +8,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioImporter",
+	"name" : "BioPopImporter",
 	"type" : "normal"
 }

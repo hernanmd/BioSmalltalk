@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"repositoryVersions"
+		"synonyms",
+		"locations"
 	],
-	"name" : "BioRepository",
+	"name" : "BioPopSpecies",
 	"type" : "normal"
 }

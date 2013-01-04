@@ -4,6 +4,6 @@ repositoryFor: aBreedString
 	(self repositories isEmpty and: [ self initializeRepositoryOnDemand ])
 		ifTrue: [ 
 			self initialize.
-			BioImporter initializeFor: aBreedString ].
+			BioPopImporter initializeFor: aBreedString ].
 	^ self repositories detect: [ : repo |
 		repo name = aBreedString ]

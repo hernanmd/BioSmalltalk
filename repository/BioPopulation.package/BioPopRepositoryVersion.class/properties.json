@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"location"
+		"locatedBioSpecies",
+		"bioSpecies"
 	],
-	"name" : "BioTerritory",
+	"name" : "BioPopRepositoryVersion",
 	"type" : "normal"
 }

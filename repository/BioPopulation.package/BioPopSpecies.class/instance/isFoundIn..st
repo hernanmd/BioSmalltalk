@@ -1,4 +1,4 @@
-querying
+text-mining
 isFoundIn: aString
 	" Answer <true> if the receiver's is located at aString "
 	

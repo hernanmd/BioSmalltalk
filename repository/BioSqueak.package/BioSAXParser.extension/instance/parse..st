@@ -5,7 +5,6 @@ parse: anObject
 	driver := SAXDriver on: anObject readStream.
 	driver validating: true.
 	driver saxHandler: self.
-	" parser := self new driver: driver."
 	"self input: anObject readStream."
 	[ self usesNamespaces: false ]
 	on: MessageNotUnderstood

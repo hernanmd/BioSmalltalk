@@ -3,4 +3,4 @@ ffindexBuild
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:04 pm"
 
-	^ #ffindex_build
+	^ 'ffindex_build'

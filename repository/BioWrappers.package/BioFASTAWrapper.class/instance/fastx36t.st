@@ -3,4 +3,4 @@ fastx36t
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:59 pm"
 
-	^ #fastx36_t
+	^ 'fastx36_t'

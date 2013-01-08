@@ -12,3 +12,4 @@ parseDocumentFrom: anObject useNamespaces: aBoolean
 	do: [ : ex | parser useNamespaces: false ].
 	parser startDocument.
 	^ parser parseDocument.
+

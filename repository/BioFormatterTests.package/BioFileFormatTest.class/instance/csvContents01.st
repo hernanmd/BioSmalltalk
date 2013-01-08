@@ -1,4 +1,6 @@
 testing
 csvContents01
 
-	^ 'BioSmalltalkTestFiles\Test001.csv'
+	^ BioObject testFilesDirectoryName , 
+		BioObject fileDirectoryClass slash , 
+		'Test001.csv'

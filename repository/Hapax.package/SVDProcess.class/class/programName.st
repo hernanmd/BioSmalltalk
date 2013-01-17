@@ -1,6 +1,6 @@
 constants
 programName
 
-	^OSHandle currentOS = #win32
+	^OSPlatform isWin32
 		ifTrue: [ 'svd.exe' ]
 		ifFalse: [ 'svd' ]

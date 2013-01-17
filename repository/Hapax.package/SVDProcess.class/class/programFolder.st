@@ -1,6 +1,9 @@
 constants
 programFolder
 
-	^OSHandle currentOS = #win32
-		ifTrue: [ SystemUtils getEnvironmentVariable: 'CommonProgramFiles' ]
-		ifFalse: [ (SystemUtils getEnvironmentVariable: 'HOME'), '/Library' ]
+	^OSPlatform isWin32
+		ifTrue: [ ProcessWrapper new
+			        useStdout;
+				        startWithShellCommand: 'echo %CommonProgramFiles%';
+				        upToEnd. ]
+		ifFalse: [ ((Smalltalk at: #OSProcess) environment at: 'HOME'), '/Library' ]

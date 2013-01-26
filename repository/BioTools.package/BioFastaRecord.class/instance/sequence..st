@@ -1,5 +1,5 @@
 accessing
-sequence: aGTSequence
-	" Set the receiver's sequence to aGTSequence "
+sequence: BioSequence
+	" Set the receiver's sequence to BioSequence "
 	
-	sequence := aGTSequence
+	sequence := BioSequence

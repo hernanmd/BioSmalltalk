@@ -1,5 +1,5 @@
 accessing
 sequence
-	" Answer aGTSequence "
+	" Answer a BioSequence "
 	
 	^ sequence

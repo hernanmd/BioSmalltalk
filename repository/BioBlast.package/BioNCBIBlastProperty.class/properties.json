@@ -6,8 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"blastProperties"
+		"displayName",
+		"explanation",
+		"type"
 	],
-	"name" : "BioNCBIBlastResult",
+	"name" : "BioNCBIBlastProperty",
 	"type" : "normal"
 }

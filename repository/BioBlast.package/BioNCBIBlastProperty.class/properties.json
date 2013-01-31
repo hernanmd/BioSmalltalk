@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioInitialResult",
+	"super" : "BioNamedObject",
 	"category" : "BioBlast-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

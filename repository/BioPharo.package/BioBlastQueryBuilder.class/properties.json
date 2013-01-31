@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "HernanMoralesDurand 1/30/2013 23:28",
+	"super" : "MorphicQueryBuilder",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"blastResult",
+		"selectedProperty"
+	],
+	"name" : "BioBlastQueryBuilder",
+	"type" : "normal"
+}

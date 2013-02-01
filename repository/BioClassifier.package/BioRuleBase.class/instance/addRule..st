@@ -1,4 +1,4 @@
 accessing
 addRule: aRule
 
-	self ruleSet add: aRule
+	self rules add: aRule

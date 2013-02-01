@@ -1,7 +1,7 @@
 accessing
 evaluate: aCollection
 
-	^ self ruleSet do: [: rule | 
+	^ self rules do: [: rule | 
 		rule 
 			evaluate: aCollection 
 			context: self ]

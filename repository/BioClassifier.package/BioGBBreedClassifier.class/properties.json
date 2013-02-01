@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioRuleClassifier",
+	"super" : "BioClassifier",
 	"category" : "BioClassifier-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

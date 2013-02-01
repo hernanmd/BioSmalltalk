@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioRule",
-	"category" : "BioClassifier-Core",
+	"category" : "BioClassifier-KnowledgeBase",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

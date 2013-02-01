@@ -1,0 +1,22 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioIllumina-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sampleId",
+		"allele1Forward",
+		"allele2Forward",
+		"allele1Top",
+		"allele2Top",
+		"allele1AB",
+		"allele2AB",
+		"gcScore",
+		"x",
+		"y"
+	],
+	"name" : "BioIlluminaSNPObject",
+	"type" : "normal"
+}

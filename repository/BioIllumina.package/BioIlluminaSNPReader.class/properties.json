@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioIllumina-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioIlluminaSNPReader",
+	"type" : "normal"
+}

@@ -1,13 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "BioResultObject",
+	"super" : "BioNamedObject",
 	"category" : "BioTools-Query",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"filter"
+		"displayName",
+		"explanation",
+		"type"
 	],
-	"name" : "BioFilteredResult",
+	"name" : "BioProperty",
 	"type" : "normal"
 }

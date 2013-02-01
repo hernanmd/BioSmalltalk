@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 8/31/2011 14:40",
 	"super" : "BioNamedObject",
-	"category" : "BioTools-Core",
+	"category" : "BioTools-IO",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

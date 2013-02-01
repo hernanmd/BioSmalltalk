@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 12/18/2012 00:30",
 	"super" : "BioReader",
-	"category" : "BioTools-Core",
+	"category" : "BioTools-IO",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

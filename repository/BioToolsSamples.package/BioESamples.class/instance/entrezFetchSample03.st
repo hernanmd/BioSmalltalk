@@ -1,13 +1,13 @@
 eUtilities-fetch
 entrezFetchSample03
-	" Outputs an TXT with information "
+	" Outputs an XML with information "
 	
 	| result |
 	
 	result := 
 		BioEntrezClient new pubmed 
 			uids: #( 11877539 11822933 );
-			setModeText;
+			setModeXML;
 			fetch.
-	result outputToFile: 'eFetch1.txt'
+	result outputToFile: 'eFetch1.xml'
 

@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "HernanMoralesDurand 1/30/2013 23:28",
-	"super" : "MorphicQueryBuilder",
+	"commentStamp" : "HernanMoralesDurand 2/3/2013 21:25",
+	"super" : "MQBWindow",
 	"category" : "BioPharo-Tools",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -9,6 +9,6 @@
 		"blastResult",
 		"selectedProperty"
 	],
-	"name" : "BioBlastQueryBuilder",
+	"name" : "BioBlastMQBWindow",
 	"type" : "normal"
 }

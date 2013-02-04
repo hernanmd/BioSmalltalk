@@ -4,7 +4,7 @@ testBlastProperties
 	| blastResult |
 	
 	blastResult := BioNCBIBlastResult new.
-	self assert: (blastResult blastProperties allSatisfy: [: p | p isKindOf: BioProperty]).
+	self assert: (blastResult blastProperties allSatisfy: [: p | p isKindOf: MQBProperty]).
 	
 	self deny: (blastResult blastProperties collect: #displayName) isEmpty.
 	self deny: (blastResult blastProperties collect: #explanation) isEmpty.

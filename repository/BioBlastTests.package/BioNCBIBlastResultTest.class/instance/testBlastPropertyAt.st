@@ -3,6 +3,6 @@ testBlastPropertyAt
 
 	| blastResult |
 	blastResult := BioNCBIBlastResult new.
-	self assert: ((blastResult blastPropertyAt: 'ALIGNMENT LENGTH') isKindOf: BioProperty).
+	self assert: ((blastResult blastPropertyAt: 'ALIGNMENT LENGTH') isKindOf: MQBProperty).
 
 	

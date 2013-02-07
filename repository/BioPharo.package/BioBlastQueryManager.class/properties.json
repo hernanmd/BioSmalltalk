@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "MQBQueryManager",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"blastCollection",
+		"blastResult",
+		"parseResults"
+	],
+	"name" : "BioBlastQueryManager",
+	"type" : "normal"
+}

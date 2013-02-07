@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "PaginatedMorphTreeModel",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"blastResultOptions",
+		"rootClass"
+	],
+	"name" : "BioBlastResultsSelector",
+	"type" : "normal"
+}

@@ -1,4 +1,3 @@
 accessing
 blastResult
-	^ blastResult
-		ifNil: [blastResult := BioNCBIBlastResult new]
+	^ self queryManager blastResult

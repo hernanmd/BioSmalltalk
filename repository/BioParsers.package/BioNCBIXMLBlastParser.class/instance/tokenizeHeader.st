@@ -2,7 +2,6 @@ accessing
 tokenizeHeader
 	" Parse the receiver expression and answer the header nodes found "
 
-	parser := XMLPullParser parse: self expression.
 	self formatter: BioXMLDictionary new.
 	[ parser isStartTag: 'BlastOutput_iterations' ]
        whileFalse:[

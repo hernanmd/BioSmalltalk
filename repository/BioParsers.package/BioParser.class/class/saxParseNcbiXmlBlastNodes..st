@@ -1,5 +1,5 @@
 parse-ncbi-xml
-parseNcbiXmlBlastNodes: anObject
+saxParseNcbiXmlBlastNodes: anObject
 	" Answer a Collection of header nodes found in anObject "
 	
 	^ BioNCBIBlastSAXParser new

@@ -1,8 +1,7 @@
 accessing
-tokenizeNodes: aCollection
+parse
 	" Parse the receiver expression and answer the header nodes found "
 
-	self selectNodes: aCollection.
 	[ parser atEnd ] whileFalse: [
 		| node |
 		parser next.

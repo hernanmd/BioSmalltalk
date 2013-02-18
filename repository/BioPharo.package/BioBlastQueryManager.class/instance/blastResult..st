@@ -1,3 +1,3 @@
 accessing
 blastResult: anObject
-	blastResult := anObject
+	blastReader := anObject

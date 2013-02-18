@@ -6,5 +6,5 @@ executeQuery
 	
 	(self canExecute and: [ (selectedNodes := self openOutputSelectorWindow) isEmpty not ])
 		ifTrue: [ 
-			self parseSelections: selectedNodes.
-			self updateResults ]
+			self execute.
+			self parseSelections: selectedNodes ]

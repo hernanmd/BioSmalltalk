@@ -2,8 +2,9 @@ callbacks
 openFile
 	" Private - Request XML file "
 	
-	BioObject requestXmlFile
-		ifNotNilDo: [: fileName | 
-			self queryManager addBlast: (BioObject openFullFileNamed: fileName).
-			self inform: 'Blast results successfully loaded' translated ].
+	BioObject requestXmlFile ifNotNilDo: [: fileName | 
+		(BioObject openFullFileNamed: fileName)
+			ifNotNilDo: [: fileStream | 	
+				self queryManager addBlast: fileStream.
+				self inform: 'Blast results successfully loaded' translated ]].
 	

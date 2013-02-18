@@ -1,15 +1,14 @@
 {
 	"commentStamp" : "",
-	"super" : "MQBQueryManager",
+	"super" : "PaginatedMorphTreeModel",
 	"category" : "BioPharo-Tools",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"blastCollection",
-		"parseResults",
-		"blastReader"
+		"blastResultOptions",
+		"rootClass"
 	],
-	"name" : "BioBlastQueryManager",
+	"name" : "BioBlastResultsFindings",
 	"type" : "normal"
 }

@@ -1,8 +1,11 @@
 accessing
 openOutputSelectorWindow 
-
+	" Private - Answer a <Collection> with selections for the resulting output "
+	
 	| resSelectorWnd |
 	
-	resSelectorWnd := BioBlastResultsSelector new blastResultOptions: self blastResult.
+	resSelectorWnd := BioBlastResultsSelector new blastResultOptions: self blastReader.
 	resSelectorWnd open.
-	^ resSelectorWnd selection selectedItems
+	^ resSelectorWnd selection isNil
+		ifFalse: [ resSelectorWnd selection selectedItems ]
+		ifTrue: [ Array empty ]

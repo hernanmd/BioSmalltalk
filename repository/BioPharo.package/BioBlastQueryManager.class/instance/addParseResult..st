@@ -1,4 +1,4 @@
 accessing
-addParseResult: aBioNCBIBlastResult
+addParseResult: aBioNCBIBlastReader
 
-	self parseResults add: aBioNCBIBlastResult results.
+	self parseResults add: aBioNCBIBlastReader lastFilter.

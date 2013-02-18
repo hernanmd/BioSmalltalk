@@ -4,7 +4,7 @@ fromXML: aBlastXMLString
 	
 	| hitCollection |
 	
-	hitCollection := ( BioParser parseNcbiXmlBlastNodes: aBlastXMLString ) hits.
+	hitCollection := ( BioParser saxParseNcbiXmlBlastNodes: aBlastXMLString ) hits.
 	self initializeStream: hitCollection.
 	" Write positions row "
 	self exportPositions: hitCollection.

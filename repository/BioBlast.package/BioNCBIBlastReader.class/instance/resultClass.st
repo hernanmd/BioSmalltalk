@@ -1,4 +1,4 @@
 accessing filters
 resultClass
 
-	^ BioNCBIBlastResult
+	^ BioInitialResult

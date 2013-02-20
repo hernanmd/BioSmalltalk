@@ -1,4 +1,4 @@
-accessing
+accessing-properties
 blastPropertyAt: aName
 	" Answer a <BioNCBIBlastProperty> matching aName display name "
 	

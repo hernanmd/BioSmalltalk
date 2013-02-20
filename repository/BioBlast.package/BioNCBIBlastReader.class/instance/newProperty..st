@@ -1,4 +1,4 @@
-accessing
+accessing-properties
 newProperty: row
 	" Answer a new blast property from row contents "
 

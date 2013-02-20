@@ -5,5 +5,5 @@ parsedContents
 	| rs |
 	rs := self results.
 	^ rs contents isBioCollection
-		ifFalse: [ BioParser parseNcbiXmlBlastNodes: rs contents ]
+		ifFalse: [ BioParser saxParseNcbiXmlBlastNodes: rs contents ]
 		ifTrue: [ rs contents ]

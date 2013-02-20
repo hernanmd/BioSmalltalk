@@ -6,8 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"hspNodes",
-		"gbReaderClass"
+		"gbReaderClass",
+		"selectedNodes",
+		"blastProperties"
 	],
 	"name" : "BioNCBIBlastReader",
 	"type" : "normal"

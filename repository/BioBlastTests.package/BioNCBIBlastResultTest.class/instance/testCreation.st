@@ -3,8 +3,8 @@ testCreation
 
 	| blastResult |
 	
-	blastResult := BioNCBIBlastResult new.
-	self assert: (blastResult isKindOf: BioNCBIBlastResult).
+	blastResult := BioNCBIBlastReader new.
+	self assert: (blastResult isKindOf: BioNCBIBlastReader).
 	self assert: (blastResult blastProperties isKindOf: Collection).
 	self deny: blastResult blastProperties isEmpty.
 	

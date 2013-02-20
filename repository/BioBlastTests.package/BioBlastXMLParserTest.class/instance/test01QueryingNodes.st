@@ -3,7 +3,7 @@ test01QueryingNodes
 
 	| filterResult theHsps theHsp |
 	
-	self parseBlastNodes: #hits01.
+	self saxParseBlastNodes: #hits01.
 	filterResult := result hspAlignLengths: [: node | node blastValue > 100 ].
 	
 	self assert: filterResult isCollection.

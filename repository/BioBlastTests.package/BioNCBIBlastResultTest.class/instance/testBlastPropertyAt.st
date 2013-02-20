@@ -2,7 +2,7 @@ testing
 testBlastPropertyAt
 
 	| blastResult |
-	blastResult := BioNCBIBlastResult new.
+	blastResult := BioNCBIBlastReader new.
 	self assert: ((blastResult blastPropertyAt: 'ALIGNMENT LENGTH') isKindOf: MQBProperty).
 
 	

@@ -3,7 +3,7 @@ test01SelectingNodes
 
 	| queryRs |
 	
-	self parseBlastNodes: #hits01.
+	self saxParseBlastNodes: #hits01.
 	queryRs := result hspAlignLengths.
 	
 	self assert: queryRs isCollection.

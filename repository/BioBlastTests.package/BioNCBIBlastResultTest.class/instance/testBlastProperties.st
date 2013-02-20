@@ -3,7 +3,7 @@ testBlastProperties
 
 	| blastResult |
 	
-	blastResult := BioNCBIBlastResult new.
+	blastResult := BioNCBIBlastReader new.
 	self assert: (blastResult blastProperties allSatisfy: [: p | p isKindOf: MQBProperty]).
 	
 	self deny: (blastResult blastProperties collect: #displayName) isEmpty.

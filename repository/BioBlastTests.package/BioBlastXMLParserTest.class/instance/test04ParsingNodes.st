@@ -3,7 +3,7 @@ test04ParsingNodes
 
 	| theHit firstHsp secondHsp |
 
-	self parseBlastNodes: #hits04.						
+	self saxParseBlastNodes: #hits04.						
 	self assert: ( result isKindOf: BioBlastRootNode ).
 	self assert: result nodes isCollection.
 	self assert: result nodes size = 1.

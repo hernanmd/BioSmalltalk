@@ -3,7 +3,7 @@ test03ParsingNodes
 
 	| theHit theHsp |
 
-	self parseBlastNodes: #hits03.						
+	self saxParseBlastNodes: #hits03.						
 	self assert: ( result isKindOf: BioBlastRootNode ).
 	self assert: result nodes isCollection.
 	self assert: result nodes size = 1.

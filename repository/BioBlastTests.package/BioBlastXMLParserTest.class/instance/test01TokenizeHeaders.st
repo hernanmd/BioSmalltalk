@@ -2,7 +2,7 @@ testing
 test01TokenizeHeaders
 
 	self tokenizeBlastHeaderNodes: ( self perform: #hits04 ).
-	self assert: ( result isKindOf: Dictionary ).
+	self assert: ( result isKindOf: OrderPreservingDictionary ).
 	self assert: ( result includesKey: 'BlastOutput_db' ).
  	self assert: ( result includesKey: 'BlastOutput_query-ID'  ).
 	self assert: ( result includesKey: 'BlastOutput_query-def' ).

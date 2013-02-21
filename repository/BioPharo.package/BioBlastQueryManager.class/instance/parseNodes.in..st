@@ -1,9 +1,10 @@
 accessing
 parseNodes: selectedNodes in: file
 
-	self blastReader: ((BioNCBIBlastReader newFromXML: file contents)
+	Cursor execute showWhile: [ 
+		self blastReader: ((BioNCBIBlastReader newFromXML: file contents)
 					selectedNodes: (selectedNodes collect: #name);
-					yourself).
+					yourself)].
 	self blastReader filterFrom: self builder.
 	^ self blastReader
 	

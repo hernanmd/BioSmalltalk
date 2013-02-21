@@ -1,0 +1,4 @@
+*bioparsers
+asBlastParameter
+
+	^ self asNumber

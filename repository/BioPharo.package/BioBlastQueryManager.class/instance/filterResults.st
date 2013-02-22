@@ -1,4 +1,0 @@
-accessing
-filterResults
-
-	^ self parseResults

@@ -5,4 +5,4 @@ addParseResult: aBioNCBIBlastReader
 	(self parseResults includes: (filterResults := aBioNCBIBlastReader lastFilter))
 		ifFalse: [ 
 			self parseResults add: filterResults.
-			self changed: #filterResults ]
+			"self changed: #filterResults" ]

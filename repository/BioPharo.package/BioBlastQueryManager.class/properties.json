@@ -8,8 +8,7 @@
 	"instvars" : [
 		"blastCollection",
 		"parseResults",
-		"blastReader",
-		"filterResultsIndex"
+		"blastReader"
 	],
 	"name" : "BioBlastQueryManager",
 	"type" : "normal"

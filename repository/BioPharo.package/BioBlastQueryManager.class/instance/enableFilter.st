@@ -1,4 +1,0 @@
-accessing
-enableFilter
-
-	^ true

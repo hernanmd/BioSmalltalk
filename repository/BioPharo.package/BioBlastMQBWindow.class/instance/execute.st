@@ -6,3 +6,4 @@ execute
 	self collectQueries.
 	self validateInput.
 	self queryManager executeQuery.
+	self changed: #filterResults.	

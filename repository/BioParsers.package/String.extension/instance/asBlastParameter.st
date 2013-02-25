@@ -3,4 +3,7 @@ asBlastParameter
 
 	^ self isNumeric
 		ifTrue: [ self asNumber ]
-		ifFalse: [ self asLowercase ]
+		ifFalse: [ | tokens |
+			(tokens := self findTokens: ',') size = 2 "100,200"
+				ifFalse: [ self asLowercase ]
+				ifTrue: [ (tokens collect: #asNumber) asArray ]]

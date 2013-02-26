@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MQBDockHelper",
+	"category" : "BioPharo-Tools",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MQBBlastDockHelper",
+	"type" : "normal"
+}

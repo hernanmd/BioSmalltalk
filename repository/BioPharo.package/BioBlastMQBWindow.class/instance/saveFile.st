@@ -2,8 +2,8 @@ callbacks
 saveFile
 	" Private - Save the receiver filters "
 	
-	(self requestFileName: 'qb') ifNotNilDo: [: fileStream | 
+	(self requestFileName: 'filter') ifNotNilDo: [: filename | 
 		Cursor write showWhile: [ 
-			( BioSerializationEngine for: fileStream name ) serialize: self ].
-		self inform: 'Blast filters saved in file: ' translated , fileStream name ].
+			( BioSerializationEngine for: filename ) serialize: self ].
+		self inform: 'Blast filters saved in file: ' translated , filename ].
 	

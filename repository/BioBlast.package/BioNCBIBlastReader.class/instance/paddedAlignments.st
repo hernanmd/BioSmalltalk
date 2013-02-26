@@ -10,7 +10,7 @@ paddedAlignments
 	
 	align := BioAlignment new.
 	filteredResults := self contents result.
-	filteredResults collect: [: eachHit | 
+	filteredResults result collect: [: eachHit | 
 		align addSequence: ( 
 			BioSequence 
 				newNamed: eachHit hitAccessions 

@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"rules"
+		"context",
+		"initRule"
 	],
 	"name" : "BioRuleBase",
 	"type" : "normal"

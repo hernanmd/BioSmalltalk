@@ -1,7 +1,6 @@
 accessing
 evaluate: aCollection
 
-	^ self rules do: [: rule | 
-		rule 
-			evaluate: aCollection 
-			context: self ]
+	^ self initRule 
+		evaluate: aCollection 
+		context: self context

@@ -15,5 +15,5 @@ downloadGenBankRecordsInFolder: aPath
 			self inform: 'GenBank records downloaded successfully' translated.
 			seqRecords := self processGenBankRecords.
 			self nextReader contents: seqRecords.
-			self inform: 'GenBank records saved' translated ]
+			self inform: 'Dowloaded GenBank records are valid' translated ]
 		ifFalse: [ self inform: 'ERROR: GenBank records couldn''t have been downloaded' translated ].

@@ -7,10 +7,10 @@ buildWindowFor: anObject label: label
 	toolbar := self buildSearchModeToolBar: window.
 	window 
 		addMorph: toolbar
-		frame: (0@0 corner: 1@0.04).
+		frame: (0@0 corner: 1@0.05).
 	window 
 		addMorph: (listMorph := self explorerListMorph)
-		frame: (0@0.04 corner: 1@0.8).
+		frame: (0@0.05 corner: 1@0.8).
 	window 
 		addMorph: self explorerCodeMorph
 		frame: (0@0.8 corner: 1@1).

@@ -1,10 +1,12 @@
 user interface
 searchCallback: searchString
 
-	| searchMethod |
+	| searchMethod newMismatches title |
 
-	searchMethod := #includesLike:.
-	self useExactMatch 
-		ifTrue: [ searchMethod := #includes: ].
-	^ ( rootObject select: [: dict | 
-			dict perform: searchMethod with: searchString ] ) explore
+	searchMethod := self selectSearchMethod.
+	newMismatches := rootObject select: [: dict | dict perform: searchMethod with: searchString ].
+	title := 'Exploring {1} mismatches for {2}' format: { newMismatches size . searchString }.
+	self class new
+		classifierModel: self classifier;
+		openExplorerFor: newMismatches
+		withLabel: title

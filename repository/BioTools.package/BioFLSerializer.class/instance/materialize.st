@@ -2,4 +2,6 @@ accessing
 materialize
 	" See superimplementor comment "
 
-	^ (Smalltalk at: #FLMaterializer) materializeFromFileNamed: self location
+	^ self isValidMaterialization
+		ifTrue: [ (Smalltalk at: #FLMaterializer) materializeFromFileNamed: self location ]
+		ifFalse: [ self error: self location , ' is not a valid file for materialization' translated ]

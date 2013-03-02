@@ -2,11 +2,7 @@ accessing
 signalAlignmentNotFound: accessionString
 	" Private - Signal an exception "
 	
-	| messageText |
-	
-	messageText := String streamContents: [: stream |
+	self signalNotFound: (String streamContents: [: stream |
 		stream
-			nextPutAll: 'Alignment not found ' translated;
-			space;
-			nextPutAll: accessionString ].
-	self signalNotFound: messageText
+			nextPutAll: 'Alignment not found for accession: ' translated;
+			nextPutAll: accessionString ])

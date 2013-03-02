@@ -1,4 +1,4 @@
 accessing
-logException
+logger
 
 	^ self class logger

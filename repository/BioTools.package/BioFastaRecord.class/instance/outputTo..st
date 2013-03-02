@@ -6,5 +6,4 @@ outputTo: aStream
 		nextPut: $>;
 		nextPutAll: self sequenceName;
 		bioCr;
-		nextPutAll: self sequenceString;
-		bioCr.
+		nextPutAll: self sequenceString

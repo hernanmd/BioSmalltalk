@@ -1,8 +1,10 @@
 accessing
 serialize: anObject
+	" See superimplementor's comment "
 	"anObject sixxString"
 	
-	| stream |
-	stream := (Smalltalk at: #SixxWriteStream) newFileNamed: self location.
-	stream nextPut: anObject.
-	stream close.
+	Cursor write showWhile: [ 	
+		| stream |
+		stream := (Smalltalk at: #SixxWriteStream) newFileNamed: self location.
+		stream nextPut: anObject.
+		stream close ].

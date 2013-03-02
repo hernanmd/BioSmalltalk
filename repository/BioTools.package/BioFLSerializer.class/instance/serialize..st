@@ -2,5 +2,6 @@ accessing
 serialize: anObject
 	" See superimplementor comment "
 	
-	self provider serialize: anObject toFileNamed: self location.
-	self doCompressionIn: self location.
+	Cursor write showWhile: [ 	
+		self provider serialize: anObject toFileNamed: self location.
+		self doCompressionIn: self location ].

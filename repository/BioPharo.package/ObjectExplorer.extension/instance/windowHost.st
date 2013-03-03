@@ -1,0 +1,4 @@
+*biopharo
+windowHost
+
+	^ StandardWindow

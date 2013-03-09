@@ -1,4 +1,5 @@
 accessing
 setUp
 
-	sequence := 	BioUnknownSeq new: 7
+	super setUp.
+	sequence := BioUnknownSeq new: 7

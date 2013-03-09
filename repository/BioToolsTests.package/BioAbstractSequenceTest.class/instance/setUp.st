@@ -1,4 +1,5 @@
 accessing
 setUp
 
-	sequence := 	BioSequence newWith: self sampleDnaString01
+	super setUp.
+	sequence := BioSequence newWith: self sampleDnaString01

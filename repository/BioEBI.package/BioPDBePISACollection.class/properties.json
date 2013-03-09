@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioWebCollection",
+	"category" : "BioEBI-PDBePISA",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioPDBePISACollection",
+	"type" : "normal"
+}

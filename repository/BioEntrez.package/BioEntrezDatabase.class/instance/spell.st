@@ -1,4 +1,4 @@
-accessing
+actions
 spell
 	" Private - See client's implementation "
 	

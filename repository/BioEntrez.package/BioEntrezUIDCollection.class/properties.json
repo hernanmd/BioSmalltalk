@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioOrderedCollection",
+	"commentStamp" : "HernanMoralesDurand 3/9/2013 12:31",
+	"super" : "BioWebCollection",
 	"category" : "BioEntrez-Commands",
 	"classinstvars" : [ ],
 	"pools" : [ ],

@@ -1,4 +1,5 @@
 accessing
 isIdentifier: aString
 
-	self needsWork.
+	"self needsWork."
+	^ false

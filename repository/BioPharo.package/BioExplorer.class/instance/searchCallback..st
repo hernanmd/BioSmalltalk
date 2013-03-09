@@ -7,6 +7,6 @@ searchCallback: searchString
 	newMismatches := rootObject select: [: dict | dict perform: searchMethod with: searchString ].
 	title := 'Exploring {1} mismatches for {2}' format: { newMismatches size . searchString }.
 	self class new
-		classifierModel: self classifier;
+		classifierModel: self classifierModel;
 		openExplorerFor: newMismatches
 		withLabel: title

@@ -8,4 +8,5 @@ bioClassifySelection
 		list: (self classifier organizationContents collect: #name) )
 			ifNotNilDo: [: answer | | org |
 				org := self classifier organizationAt: answer.
-				org addClassification: self object ].
+				org addClassification: self object.
+				self announcer announce: (PCTRemoveItem new object: self object)].

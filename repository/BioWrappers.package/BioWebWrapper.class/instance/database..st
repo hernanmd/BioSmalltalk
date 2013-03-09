@@ -1,5 +1,7 @@
 accessing private
-database: aGTEntrezDatabase
+database: aBioDatabase
+	" Set the receiver's database to be aBioDatabase.
+	Answer aBioDatabase  "
 
-	self url dbName: aGTEntrezDatabase dbName.
-	^ aGTEntrezDatabase
+	self url dbName: aBioDatabase dbName.
+	^ aBioDatabase

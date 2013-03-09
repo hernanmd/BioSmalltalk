@@ -5,6 +5,6 @@ initializeWith: aFilePathOrFileStream
 	| fStream |
 	
 	( fStream := aFilePathOrFileStream ) isStream
-		ifFalse: [ fStream := self openFileStream: aFilePathOrFileStream ].
+		ifFalse: [ fStream := self openFullFileNamed: aFilePathOrFileStream ].
 	self stream: fStream.
 	self name: fStream name

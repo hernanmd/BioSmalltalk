@@ -4,9 +4,10 @@ exportFromIlluminaAlleleReport: aFilename
 	
 	| fs |
 	
-	parser := self parserClass on: (self openFullFileNamed: aFilename).
+	parser := self parserClass on: ( FileStream readOnlyFileNamed: aFilename ).
 	parser ignoreHeaderLine; delimiter: $;.
 	fs := self newFileNamed: self outputFilename.
+	
 	parser rowsDo: [: row |
 		fs 
 			nextPut: $>;
@@ -15,7 +16,8 @@ exportFromIlluminaAlleleReport: aFilename
 			nextPutAll: row third;
 			nextPut: $|;
 			nextPutAll: row fourth;
-			bioCr.
-		row fifth do: [: letter | fs nextPut: letter ].
-		fs bioCr. ].
+			cr.
+		row fifth do: [: letter | 
+			fs nextPut: letter ]
+		fs cr ].
 	fs close.

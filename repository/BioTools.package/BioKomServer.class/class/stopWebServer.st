@@ -1,4 +1,5 @@
 accessing
 stopWebServer
+	" See superimplementor's comment "
 
-	( self classFor: #HttpService ) shutDown
+	(self classFor: self providerClass) shutDown

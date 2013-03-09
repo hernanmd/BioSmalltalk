@@ -1,5 +1,6 @@
 accessing
 startWebServer
+	" See superimplementor's comment "
 
 	| ma |
 	ma := ( self classFor: #ModuleAssembly ) core.

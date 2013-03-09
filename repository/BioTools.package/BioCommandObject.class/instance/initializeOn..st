@@ -1,6 +1,6 @@
 initialize-release
-initializeOn: aGTClient
-	" Private - Set the receiver's client to aGTClient "
+initializeOn: aBioClientObject
+	" Private - Set the receiver's client to aBioClientObject "
 	
-	self client: aGTClient.
+	self client: aBioClientObject.
 	self initialize

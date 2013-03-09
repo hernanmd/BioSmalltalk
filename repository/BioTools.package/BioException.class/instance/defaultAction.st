@@ -7,4 +7,5 @@ defaultAction
 	self showWarning 
 		ifTrue: [ Transcript nextPutAll: self messageText; cr; flush ].
 	self raiseWarning 
-		ifTrue: [ nil ]
+		ifTrue: [ BioObject alert: self messageText ].
+	^nil

@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "BioWebResult",
-	"category" : "BioTools-Query",
+	"super" : "BioOrderedCollection",
+	"category" : "BioTools-Collections",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioNCBIGenBankResult",
+	"name" : "BioWebCollection",
 	"type" : "normal"
 }

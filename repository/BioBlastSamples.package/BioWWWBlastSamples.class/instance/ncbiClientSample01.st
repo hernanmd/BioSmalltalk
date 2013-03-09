@@ -6,7 +6,7 @@ http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY=555&DATABASE=nr&HITLIST_SIZE=1
 	| search |
 	
 	search := 
-		BioNCBIWWWBlastWrapper new nucleotide
+		BioNCBIWebBlastWrapper new nucleotide
 			query: '555';
 			hitListSize: 10;
 			filterLowComplexity;

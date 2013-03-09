@@ -1,4 +1,4 @@
 accessing private
 searchResultClass
 
-	^ BioOnLineBlastResult
+	^ BioWebBlastResult

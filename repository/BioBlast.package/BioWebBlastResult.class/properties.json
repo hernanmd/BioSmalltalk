@@ -1,14 +1,14 @@
 {
-	"commentStamp" : "hfm 6/11/2011 13:38",
-	"super" : "BioNCBIBlastWrapper",
+	"commentStamp" : "",
+	"super" : "BioWebResult",
 	"category" : "BioBlast-Remote",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"getUrl",
-		"cmd"
+		"maxRetry",
+		"requestCount"
 	],
-	"name" : "BioNCBIWWWBlastWrapper",
+	"name" : "BioWebBlastResult",
 	"type" : "normal"
 }

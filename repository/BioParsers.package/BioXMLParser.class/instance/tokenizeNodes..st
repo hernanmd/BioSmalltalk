@@ -3,7 +3,7 @@ tokenizeNodes: aCollection
 	" Parse the receiver expression and answer the header nodes found "
 
 	self selectNodes: aCollection.
-	[ parser atEnd ] whileFalse: [
+	[ self parser atEnd ] whileFalse: [
 		| node |
 		parser next.
 		( node := parser currentNodeUpToAny: self selectedNodes )

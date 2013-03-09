@@ -1,4 +1,4 @@
-*BioSupport
+*biosupport
 digitCount
 	" Answer how many digits contains the receiver "
 	

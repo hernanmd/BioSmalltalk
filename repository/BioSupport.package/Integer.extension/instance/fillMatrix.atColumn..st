@@ -1,4 +1,4 @@
-*BioSupport
+*biosupport
 fillMatrix: aMatrix atColumn: aColumnNumber
 
 	| generator repetitionsNum |

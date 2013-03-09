@@ -1,5 +1,5 @@
 testing
 testCreation
 
-	self assert: ( self ncbiClient isKindOf: BioNCBIWWWBlastWrapper ).
+	self assert: ( self ncbiClient isKindOf: BioNCBIWebBlastWrapper ).
 

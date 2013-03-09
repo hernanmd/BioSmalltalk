@@ -1,4 +1,5 @@
 accessing
 setUp
 
-	parser := self parserClass new
+	super setUp.
+	parser := BioQBlastParser new

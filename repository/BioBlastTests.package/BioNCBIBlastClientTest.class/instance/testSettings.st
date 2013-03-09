@@ -5,7 +5,7 @@ testSettings
 	
 	cmd := self ncbiClient nucleotide.
 	self assert: ( cmd isKindOf: BioNCBIPut ).
-	self assert: ( cmd client isKindOf: BioNCBIWWWBlastWrapper ).
+	self assert: ( cmd client isKindOf: BioNCBIWebBlastWrapper ).
 	self assert: ( cmd client downloadUrl last: 2 ) = 'nr'.
 	
 	cmd query: '555'.

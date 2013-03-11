@@ -1,7 +1,7 @@
 accessing
 atMatchesPut: anObject
-	" Take an action when the receiver's subect cannot be classified "
+	" Take an action when the receiver's subect is classified "
 	
-	( self matches at: #matches ) 
+	self matches
 		add: anObject;
 		yourself

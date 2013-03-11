@@ -4,6 +4,5 @@ dnaLetter
 	
 	^ self anyOf: 
 		BioIUPACUnambiguousDNA codes asUppercase , 
-		BioIUPACUnambiguousDNA codes asLowercase ,
-		'Nn'
+		BioIUPACUnambiguousDNA codes asLowercase
 		

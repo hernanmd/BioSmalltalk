@@ -4,6 +4,5 @@ bioSerializeSelection
 	Serialize the current selected item in the receiver "
 
 	| fileName |
-	
 	fileName := self object class name , '-' , BioObject currentSeconds , '.obj'.
-	^ ( BioSerializationEngine for: fileName ) serialize: self
+	^ (BioSerializationEngine for: fileName) serialize: self object

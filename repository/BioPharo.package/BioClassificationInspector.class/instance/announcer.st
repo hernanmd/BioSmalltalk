@@ -1,4 +1,3 @@
 accessing
 announcer
-	^ announcer
-		ifNil: [announcer := Announcer new]
+	^ self classifier announcer

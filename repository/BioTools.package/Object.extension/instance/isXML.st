@@ -1,0 +1,4 @@
+*BioTools
+isXML
+
+	^ false

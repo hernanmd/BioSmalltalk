@@ -5,7 +5,7 @@ newFromXML: aFileLocationOrString
 	| streamContents |
 	
 	( streamContents := aFileLocationOrString contents ) isXML
-		ifFalse: [ streamContents := self openFileNamed: aFileLocationOrString ].
+		ifFalse: [ streamContents := self openFullFileNamed: aFileLocationOrString ].
 	^ self new
 		results: streamContents contents;
 		yourself

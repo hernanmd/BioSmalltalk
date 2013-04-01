@@ -3,7 +3,9 @@ outputTo: aStream
 	" Private - Write the receiver's contents into aStream "
 	
 	aStream
+		lineEndConvention: BioObject lineEndConvention;
 		nextPut: $>;
-		nextPutAll: self sequenceName;
-		bioCr;
-		nextPutAll: self sequenceString
+		nextPutAll: self sequenceNameWithoutDelimiter;
+		cr;
+		nextPutAll: self sequenceString;
+		cr

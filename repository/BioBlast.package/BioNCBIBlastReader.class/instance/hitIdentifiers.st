@@ -1,11 +1,6 @@
 accessing-blast
 hitIdentifiers
+	" Answer a <Collection> of receiver's hit identifiers "
 
-	| tokResult |
-	
-	tokResult := BioParser 
-		tokenizeNcbiXmlBlast: contents 
-		nodes: #('Hit_id').
-	^ tokResult isEmpty
-		ifTrue: [Array empty]
-		ifFalse: [ tokResult at: 'Hit_id' ]
+	self parsingStrategy ifNil: [ self setSAXTokenizer ].
+	^ BioParser perform: self parsingStrategy withArguments: {contents . #('Hit_id')}

@@ -2,5 +2,5 @@ accessing-blast
 hitNodes
 
 	^ self 
-		selectNodes: BioNCBIBlastSAXParser hitNodesNames 
+		selectNodes: BioNCBIBlastReader hitNodesNames 
 		in: self results

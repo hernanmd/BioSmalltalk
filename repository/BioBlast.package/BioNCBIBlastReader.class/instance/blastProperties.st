@@ -1,4 +1,5 @@
 accessing-properties
 blastProperties
-	^ blastProperties
-		ifNil: [blastProperties := OrderedCollection new]
+	" Answer a <Collection> with receiver's properties for querying "
+	
+	^ self class blastProperties

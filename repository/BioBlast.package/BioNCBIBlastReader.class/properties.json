@@ -4,11 +4,12 @@
 	"category" : "BioBlast-Remote",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"BlastProperties"
+	],
 	"instvars" : [
-		"gbReaderClass",
 		"selectedNodes",
-		"blastProperties"
+		"parsingStrategy"
 	],
 	"name" : "BioNCBIBlastReader",
 	"type" : "normal"

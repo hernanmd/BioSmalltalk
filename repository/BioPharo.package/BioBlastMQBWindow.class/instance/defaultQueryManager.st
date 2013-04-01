@@ -1,4 +1,0 @@
-defaults
-defaultQueryManager 
-
-	^ BioBlastQueryManager new.

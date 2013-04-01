@@ -1,4 +1,0 @@
-accessing
-headerNodes
-
-  ^ ((Dictionary new) add: ('BlastOutput_query-ID'->'SeqId of query'); add: ('BlastOutput_version'->'Program Version'); add: ('Parameters_filter'->'Filtering options (-F)'); add: ('Parameters_gap-open'->'Gap opening cost (-G)'); add: ('BlastOutput_query-def'->'Definition line of query'); add: ('BlastOutput_reference'->'BLAST Reference'); add: ('Parameters_gap-extend'->'Gap extension cost (-E)'); add: ('Parameters_sc-mismatch'->'Mismatch score for NT (-q)'); add: ('Parameters_sc-match'->'Match score for NT (-r)'); add: ('Parameters_expect'->'Expectation threshold (-e)'); add: ('BlastOutput_query-len'->'Length of query sequence'); add: ('BlastOutput_db'->'BLAST Database Name'); add: ('BlastOutput_program'->'BLAST program: blastp, tblastx etc.'); yourself)

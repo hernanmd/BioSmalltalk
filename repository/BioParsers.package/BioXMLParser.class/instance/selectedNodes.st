@@ -2,4 +2,4 @@ accessing
 selectedNodes
 
 	^ nodes
-		ifNil: [ nodes := BioNCBIBlastSAXParser hitNodesNames ]
+		ifNil: [ nodes := BioNCBIBlastReader hitNodesNames ]

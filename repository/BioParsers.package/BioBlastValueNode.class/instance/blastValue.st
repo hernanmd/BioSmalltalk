@@ -4,5 +4,5 @@ blastValue
 	
 	^ value isNumeric
 		ifTrue: [ value asNumber ]
-		ifFalse: [ value asLowercase ]
+		ifFalse: [ value ]
 		

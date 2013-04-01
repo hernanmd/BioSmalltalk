@@ -3,5 +3,5 @@ saxParseNcbiXmlBlastNodes: anObject
 	" Answer a Collection of header nodes found in anObject "
 	
 	^ BioNCBIBlastSAXParser new
-		selectNodes: BioNCBIBlastSAXParser hitNodesNames;
+		selectNodes: BioNCBIBlastReader hitNodesNames;
 		parse: anObject

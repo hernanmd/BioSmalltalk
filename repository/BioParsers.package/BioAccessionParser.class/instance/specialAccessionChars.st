@@ -1,6 +1,0 @@
-accessing
-specialAccessionChars
-
-	^ Array with: $.
-
-

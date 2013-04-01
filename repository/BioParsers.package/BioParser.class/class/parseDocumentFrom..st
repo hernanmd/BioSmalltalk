@@ -3,5 +3,5 @@ parseDocumentFrom: anObject
 	" Answer a Collection of header nodes found in anObject "
 	
 	^ BioNCBIBlastSAXParser new
-		selectNodes: BioNCBIBlastSAXParser allNodeNames;
+		selectNodes: BioNCBIBlastReader allNodeNames;
 		parse: anObject

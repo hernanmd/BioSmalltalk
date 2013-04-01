@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNCBIBlastSAXParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIBlastSAXTokenizer",
+	"type" : "normal"
+}

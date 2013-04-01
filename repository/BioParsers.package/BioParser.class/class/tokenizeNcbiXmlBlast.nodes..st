@@ -1,8 +1,5 @@
 parse-ncbi-xml
 tokenizeNcbiXmlBlast: aString nodes: aCollection
-	" Answer a Collection of hit nodes found in aString "
+	" Answer a Collection of hit tokens found in aString "
 	
-	| parser |
-	
-	parser := BioNCBIXMLBlastParser on: aString.
-	^ parser tokenizeNodes: aCollection.
+	^ (BioNCBIXMLBlastParser on: aString) tokenizeNodes: aCollection.

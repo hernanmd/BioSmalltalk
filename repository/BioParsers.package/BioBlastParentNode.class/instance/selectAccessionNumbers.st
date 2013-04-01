@@ -1,5 +1,5 @@
 hsps accessing
 selectAccessionNumbers
-	" Answer a <Collection> of gene identifiers "
+	" Answer a <Collection> of accession numbers "
 	
-	^ (self hitIdentifiers collect: #blastValue) collect: [: defString | BioParser tokenizeAccession: defString ]
+	^ (self hitIdentifiers collect: #blastValue) collect: [: defString | BioParser parseAccession: defString ]

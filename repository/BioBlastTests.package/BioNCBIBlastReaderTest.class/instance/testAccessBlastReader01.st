@@ -3,7 +3,7 @@ testAccessBlastReader01
 	" Accessing information about the BLAST "
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
-	
+	reader setSAXParser.
 	self deny: reader hitHspsNodes isEmpty.
 	self 
 		assert: ( reader hitHspsNodes isKindOf: BioBlastNode ) 

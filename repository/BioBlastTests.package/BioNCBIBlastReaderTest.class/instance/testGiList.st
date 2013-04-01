@@ -3,9 +3,8 @@ testGiList
 
 	| giList |
 	
-	giList := ( BioNCBIBlastReader newFromXML: self resultBlastp01 ) giList.
-	
-	self assert: ( giList isKindOf: Collection ).
+	giList := (BioNCBIBlastReader newFromXML: self resultBlastp01) giList.
+	self assert: (giList isKindOf: Collection).
 	self deny: giList isEmpty.
 
 	self assert: giList size = 10.

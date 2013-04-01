@@ -4,7 +4,7 @@ test05ParsingNodes
 	| firstHit secondHit theHsp |
 
 	self saxParseBlastNodes: #hits05.						
-	self assert: ( result isKindOf: BioBlastRootNode ).
+	self assert: (result isKindOf: BioBlastRootNode).
 	self assert: result nodes isCollection.
 	self assert: result nodes size = 2.
 	self assert: result nodes size = result size.
@@ -18,7 +18,7 @@ test05ParsingNodes
 	self assert: firstHit hitDefinition blastValue = 'Bos taurus isolate CB86 mitochondrion, complete genome'.
 	self assert: firstHit hitAccession blastValue = 'GU947019'.
 	self assert: firstHit hitLength blastValue = 16339.
-	self assert: ( firstHit hitHsps isKindOf: BioBlastParentNode ).
+	self assert: (firstHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: firstHit hitHsps size = 1.
 	
 	theHsp := firstHit hitHsps nodes first.
@@ -44,7 +44,7 @@ test05ParsingNodes
 	self assert: secondHit hitDefinition blastValue = 'Bos taurus breed Jutland breed clone 38 D-loop, partial sequence; mitochondrial'.
 	self assert: secondHit hitAccession blastValue = 'HM626093'.
 	self assert: secondHit hitLength blastValue = 789.
-	self assert: ( secondHit hitHsps isKindOf: BioBlastParentNode ).
+	self assert: (secondHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: secondHit hitHsps size = 1.
 	
 	theHsp := secondHit hitHsps nodes first.

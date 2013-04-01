@@ -4,7 +4,7 @@ test04ParsingNodes
 	| theHit firstHsp secondHsp |
 
 	self saxParseBlastNodes: #hits04.						
-	self assert: ( result isKindOf: BioBlastRootNode ).
+	self assert: (result isKindOf: BioBlastRootNode).
 	self assert: result nodes isCollection.
 	self assert: result nodes size = 1.
 	self assert: result nodes size = result size.
@@ -18,7 +18,7 @@ test04ParsingNodes
 	self assert: theHit hitDefinition blastValue = 'Bos taurus mitochondrial D-loop DNA'.
 	self assert: theHit hitAccession blastValue = 'U50941'.
 	self assert: theHit hitLength blastValue = 213.
-	self assert: ( theHit hitHsps isKindOf: BioBlastParentNode ).
+	self assert: (theHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: theHit hitHsps size = 2.
 	
 	firstHsp := theHit hitHsps nodes first.

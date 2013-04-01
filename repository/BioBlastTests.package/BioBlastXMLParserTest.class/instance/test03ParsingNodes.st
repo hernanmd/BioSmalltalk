@@ -4,7 +4,7 @@ test03ParsingNodes
 	| theHit theHsp |
 
 	self saxParseBlastNodes: #hits03.						
-	self assert: ( result isKindOf: BioBlastRootNode ).
+	self assert: (result isKindOf: BioBlastRootNode).
 	self assert: result nodes isCollection.
 	self assert: result nodes size = 1.
 	self assert: result nodes size = result size.
@@ -18,7 +18,7 @@ test03ParsingNodes
 	self assert: theHit hitDefinition blastValue = 'Bos taurus isolate Rom600 mitochondrion, complete genome'.
 	self assert: theHit hitAccession blastValue = 'HQ184044'.
 	self assert: theHit hitLength blastValue = 16342.
-	self assert: ( theHit hitHsps isKindOf: BioBlastParentNode ).
+	self assert: (theHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: theHit hitHsps size = 1.
 	
 	theHsp := theHit hitHsps nodes anyOne.

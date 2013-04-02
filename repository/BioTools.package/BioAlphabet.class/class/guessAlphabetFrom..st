@@ -8,21 +8,19 @@ guessAlphabetFrom: aString
 	| normalizedString atgcCount total |
 	
 	normalizedString := aString asLowercase copyWithoutAll: self ambiguityCodes.
-	atgcCount := 'atgcn' inject: 0 into: [: sum : each | sum + ( normalizedString occurrencesOf: each ) ].
-	( total := aString size ) = 0
+	atgcCount := 'atgcn' inject: 0 into: [: sum : each | sum + (normalizedString occurrencesOf: each) ].
+	(total := aString size) = 0
 		ifTrue: [ self signalInvalidObject: 'Empty sequence, cannot guess alphabet' translated ].
 	
-	^ ( atgcCount / total ) > self guessAlphabetThreshold
+	^ (atgcCount / total) > self guessAlphabetThreshold
 		ifTrue: [ 
-			( BioIUPACAmbiguousDNA hasAmbiguousBases: aString )
+			(BioIUPACAmbiguousDNA hasAmbiguousBases: aString)
 				ifTrue: [ BioIUPACAmbiguousDNA ]
 				ifFalse: [ BioIUPACUnambiguousDNA ] ]
 		ifFalse: [ 
-			| uCount |
-			uCount := normalizedString occurrencesOf: $u.
-			( atgcCount + uCount ) / total > self guessAlphabetThreshold
+			(atgcCount + (normalizedString occurrencesOf: $u)) / total > self guessAlphabetThreshold
 				ifTrue: [ 
-					( BioIUPACUnambiguousRNA hasAmbiguousBases: aString )
+					(BioIUPACAmbiguousRNA hasAmbiguousBases: aString)
 						ifTrue: [ BioIUPACAmbiguousRNA ]
 						ifFalse: [ BioIUPACUnambiguousRNA ] ]
 				ifFalse: [ BioIUPACProtein ] ]

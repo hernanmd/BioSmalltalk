@@ -1,7 +1,7 @@
 testing
 test02CompleteStatus
 
-	self assert: ( self statusParser parse: BioWWWBlastSamples new blastcgiHtm ) = 'WAITING'.
+	self assert: ( self statusParser parse: BioWebBlastSamples new blastcgiHtm ) = 'WAITING'.
 	self assert: ( self statusParser parse: '
 
 

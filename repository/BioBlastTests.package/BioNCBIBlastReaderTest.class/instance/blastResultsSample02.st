@@ -1,4 +1,4 @@
 accessing
 blastResultsSample02
 
-	^ BioWWWBlastSamples new blastResultsSample02.
+	^ BioWebBlastSamples new blastResultsSample02.

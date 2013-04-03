@@ -9,4 +9,4 @@ parserForAmbiguityDelimited
 	separator := self delimiter asParser.
 	letter := #dnaLetter asParser.
 
-	^ ( open , letter , separator , letter , close ) ==> [: ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
+	^ (open , letter , separator , letter , close) ==> [ : ambTokens | self convertAmbiguousToSingleBase: ambTokens ]

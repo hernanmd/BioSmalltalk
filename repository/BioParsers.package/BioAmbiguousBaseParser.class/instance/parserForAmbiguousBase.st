@@ -4,6 +4,5 @@ parserForAmbiguousBase
 
 	| dnaSeq |
 	
-	dnaSeq := #dnaSequence asParser.
-	^ ( dnaSeq / self ambParser ) plus 	==> [: nodes | 
-			( nodes joinUsing: Array empty ) joinUsing: String empty ]
+	dnaSeq := #dnaLetter asParser plus flatten.
+	^ (dnaSeq / self ambParser) plus ==> [ : nodes | (nodes joinUsing: Array empty) joinUsing: String empty ]

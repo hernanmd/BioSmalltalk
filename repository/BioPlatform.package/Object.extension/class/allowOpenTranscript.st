@@ -1,0 +1,4 @@
+*bioplatform
+allowOpenTranscript
+
+	^ false

@@ -2,7 +2,7 @@ converting
 asString
 	" Answer the String representation of the receiver." 	
 	
-	^ String streamContents: [: stream |
+	^ String streamContents: [ : stream |
 		stream 
 			nextPut: $>;
 			nextPutAll: self name;

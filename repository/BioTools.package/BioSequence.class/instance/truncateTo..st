@@ -4,7 +4,7 @@ truncateTo: endInteger
 	The endInteger is inclusive, " 
 	
 	^ self 
-		initializeWith: ( self subSeqFrom: 1 to: endInteger )
+		initializeWith: (self subSeqFrom: 1 to: endInteger)
 		alphabet: self alphabet
 	
 	

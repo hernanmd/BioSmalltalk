@@ -5,7 +5,7 @@ descriptionAt: aString
 	| answer |
 	
 	answer := self databaseList 
-			detect: [: assoc | assoc key = aString ]
+			detect: [ : assoc | assoc key = aString ]
 			ifNone: [ nil ].
 	^ answer
 		ifNotNil: [ answer value ]

@@ -9,7 +9,7 @@ isRunningTestWebServer
 		on: NetNameResolver localHostName
 		timeOutSecs: 10 ]
 	on: ConnectionTimedOut
-	do: [: ex | ].
+	do: [ : ex | ex pass ].
 	socket isArray
 		ifTrue: [ self notify: 'System is running local web server'.
 				^ true ].

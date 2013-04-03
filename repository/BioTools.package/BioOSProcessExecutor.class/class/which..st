@@ -4,4 +4,4 @@ which: programName
 
 	" ToDo: Check which behavior with more than which installed "
 
-	^ ( self executeCommand: 'which' parameter: programName ) trimRight
+	^ (self executeCommand: 'which' parameter: programName) trimRight

@@ -7,5 +7,5 @@ select: aBlock
 	| newInstance |
 	
 	(newInstance := self class new) 
-		sequences: ( self sequences select: aBlock ).
+		sequences: (self sequences select: aBlock).
 	^ newInstance

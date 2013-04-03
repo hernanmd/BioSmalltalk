@@ -4,7 +4,7 @@ openOrCreateFileNamed: fileName
 	
 	| fs |
 	
-	fs := ( self fileExists: fileName )
+	fs := (self fileExists: fileName)
 			ifFalse: [ self newFileNamed: fileName ]
 			ifTrue: [ self openFileNamed: fileName ].
 	^ fs readWrite

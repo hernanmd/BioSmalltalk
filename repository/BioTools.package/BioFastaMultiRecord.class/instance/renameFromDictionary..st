@@ -2,7 +2,7 @@ accessing
 renameFromDictionary: aDictionary
 	" Take aDictionary and rename each record accordingly "
 	
-	self do: [: fastaRecord |
+	self do: [ : fastaRecord |
 		| newName |
 		newName := String streamContents: [ : stream |
 			stream 

@@ -4,5 +4,5 @@ newProtein: aString named: aName
 	
 	^ self new 
 		name: aName;
-		initializeWith: aString
-		alphabet: BioIUPACProteinExtended new
+		initializeWith: aString alphabet: BioIUPACProteinExtended new;
+		yourself

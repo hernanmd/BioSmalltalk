@@ -24,9 +24,8 @@ translateWithTableId: aTableIdentifier stopSymbol: stopCharacter toStop: stopBoo
 	"
 	
 	^ self class 
-		newWith: ( 
-			self translationTable: aTableIdentifier 
+		newWith: (self translationTable: aTableIdentifier 
 				stopSymbol: stopCharacter 
 				toStop: stopBoolean 
-				cds: cdsBoolean )
+				cds: cdsBoolean)
 		alphabet: BioIUPACProtein new

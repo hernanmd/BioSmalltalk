@@ -4,13 +4,12 @@ executeCommand: aCommandName
 
 	| process output answer |
 
-	process := ( self classFor: self providerClass ) new.
+	process := (self classFor: self providerClass) new.
 	output := process 
 		useStdout;
 		useStderr;
 		startWithShellCommand: aCommandName;
 		upToEnd.
-	^ "process exitCode = 0"
-		(answer := process errorUpToEnd) isEmpty not
+	^ (answer := process errorUpToEnd) isEmpty not "process exitCode = 0"
 			ifTrue: [ answer ]
 			ifFalse: [ output ]

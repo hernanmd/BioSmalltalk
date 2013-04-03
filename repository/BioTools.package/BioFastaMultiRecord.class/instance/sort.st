@@ -5,5 +5,5 @@ sort
 	| newFastaCollection |
 	
 	newFastaCollection := self class basicNew.
-	newFastaCollection sequences: (self sequences asSortedCollection: [: a : b | a name < b name ]).
+	newFastaCollection sequences: (self sequences asSortedCollection: [ : a : b | a name < b name ]).
 	^ newFastaCollection

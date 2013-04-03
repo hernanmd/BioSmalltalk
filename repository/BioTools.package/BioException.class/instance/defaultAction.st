@@ -5,7 +5,7 @@ defaultAction
 	self useLogger
 		ifTrue: [ self logger add: self ].
 	self showWarning 
-		ifTrue: [ Transcript nextPutAll: self messageText; cr; flush ].
+		ifTrue: [ self bioLog: self messageText ].
 	self raiseWarning 
 		ifTrue: [ BioObject alert: self messageText ].
-	^nil
+	^ nil

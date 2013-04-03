@@ -6,6 +6,6 @@ copyUpToStartParenthesis
 	'this is another (test) (with several) parenthesis' -> 'this is another'
 
 	"
-	^ ( self includes: $( )
-		ifTrue: [ ( self copyUpTo: $( ) trimRight ]
+	^ (self includes: $()
+		ifTrue: [ (self copyUpTo: $() trimRight ]
 		ifFalse: [ self ]

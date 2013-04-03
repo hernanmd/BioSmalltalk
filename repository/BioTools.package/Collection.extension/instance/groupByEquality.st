@@ -3,10 +3,10 @@ groupByEquality
 
 	| cols |
 	cols := OrderedCollection new.
-	self do: [: r |
+	self do: [ : r |
 		| found |
 		found := cols 
-			detect: [: c | c includes: r ]
+			detect: [ : c | c includes: r ]
 			ifNone: [ nil ].
 		found
 			ifNil: [ cols add: (OrderedCollection new add: r; yourself) ]

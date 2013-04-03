@@ -1,6 +1,5 @@
 instance creation
-newFromXMLCollection: aCollectionOfXMLs
-	" Answer a new instance of the receiver with XML contents
-	from aCollectionOfXMLs "
+newFromXMLCollection: xmlCollection
+	" Answer a new instance of the receiver with XML contents from xmlCollection "
 	
-	^ self withAll: ( self readerClass newFromXMLCollection: aCollectionOfXMLs ).
+	^ self withAll: (self readerClass newFromXMLCollection: xmlCollection).

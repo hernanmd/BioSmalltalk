@@ -4,8 +4,7 @@ missingCodonTable: anInteger
 	
 	| exceptionString |
 	
-	exceptionString := 
-		String streamContents: [: stream | 
+	exceptionString := String streamContents: [ : stream | 
 			stream 
 				nextPutAll: anInteger asString;
 				space;

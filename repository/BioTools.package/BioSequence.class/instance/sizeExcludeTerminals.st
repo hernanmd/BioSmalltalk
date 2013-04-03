@@ -5,7 +5,7 @@ sizeExcludeTerminals
 	| count |
 	
 	count := 0.
-	seq do: [: letter |
+	seq do: [ : letter |
 		letter == self stopSymbol
 			ifFalse: [ count := count + 1 ] ].
 	^ count

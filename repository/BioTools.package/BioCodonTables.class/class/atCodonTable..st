@@ -5,7 +5,7 @@ atCodonTable: anInteger
 	| cTable |
 	
 	cTable := self codonTables 
-			detect: [: codonTable | codonTable tableId = anInteger ]
+			detect: [ : codonTable | codonTable tableId = anInteger ]
 			ifNone: [ 
 				self missingCodonTable: anInteger.
 				self error. ].

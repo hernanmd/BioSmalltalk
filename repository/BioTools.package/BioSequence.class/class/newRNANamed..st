@@ -4,5 +4,5 @@ newRNANamed: aString
 	
 	^ self new
 		name: aString;
-		alphabet: BioIUPACAmbiguousRNA new		
+		alphabet: BioIUPACAmbiguousRNA new;
 		yourself

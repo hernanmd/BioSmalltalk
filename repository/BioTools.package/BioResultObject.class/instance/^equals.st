@@ -12,5 +12,4 @@ comparing
 		ifFalse: [ ^ false ].
 	self size = anObject size
 		ifFalse: [ ^ false ].
-	self result = anObject result.
-	^ true
+	^ self result = anObject result.

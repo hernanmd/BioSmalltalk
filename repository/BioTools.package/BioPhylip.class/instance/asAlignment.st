@@ -5,6 +5,5 @@ asAlignment
 	| align |
 	
 	align := BioAlignment new.
-	self sequences do: [: seq |
-		align addSequence: seq ].
+	self sequences do: [ : seq | align addSequence: seq ].
 	^ align

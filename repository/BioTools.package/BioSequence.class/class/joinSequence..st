@@ -4,6 +4,4 @@ joinSequence: aCollection
 	aCollection is a collection of collections with each element composed by
 	Strings or Characters "
 	
-	^ ( aCollection 
-			gather: [: each | 
-				each select: [: elem | elem isBiologicalSequence ] ] ) joinUsing: String empty
+	^ (aCollection gather: [ : each | each select: #isBiologicalSequence ]) joinUsing: String empty

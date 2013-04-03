@@ -5,9 +5,8 @@ translateToStop
 	See comment in #translateTable:stopSymbol:toStop:cds: "
 	
 	^ self class 
-		newWith: ( 
-			self translationTable: ( self codonTables atCodonTable: 1 ) 
+		newWith: (self translationTable: (self codonTables atCodonTable: 1) 
 				stopSymbol: $* 
 				toStop: true 
-				cds: false )
+				cds: false)
 		alphabet: BioIUPACProtein new

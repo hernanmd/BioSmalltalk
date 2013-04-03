@@ -1,5 +1,5 @@
 accessing
 sequenceStrings
-	" Answer a Collection of receiver's alignments String's "
+	" Answer a <Collection> of receiver's alignments String's "
 	
-	^ set collect: [: seq | seq asString ]
+	^ set collect: #asString

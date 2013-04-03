@@ -2,9 +2,7 @@
 	"commentStamp" : "",
 	"super" : "BioCodonTables",
 	"category" : "BioTools-Biological",
-	"classinstvars" : [
-		"codonTables"
-	],
+	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],

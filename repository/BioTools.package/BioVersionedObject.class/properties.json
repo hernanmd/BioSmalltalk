@@ -7,7 +7,6 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"versions",
-		"versioner",
 		"date",
 		"creator"
 	],

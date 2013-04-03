@@ -4,13 +4,13 @@ canTranslate
 	
 	self alphabet canTranslate 
 		ifFalse: [ ^ false ].
-	( self startCodons includes: ( seq copyFrom: 1 to: 3 ) ) 
+	(self startCodons includes: (seq copyFrom: 1 to: 3)) 
 		ifFalse: [ 
-			self signalInvalidObject: 'First codon is not a start codon: ' , ( seq copyFrom: 1 to: 3 ).
+			self signalInvalidObject: 'First codon is not a start codon: ' , (seq copyFrom: 1 to: 3).
 			^ false ].
-	( self stopCodons includes: ( seq copyFrom: seq size to: seq size - 3 ) ) 
+	(self stopCodons includes: (seq copyFrom: seq size to: seq size - 3)) 
 		ifFalse: [ 
-			self signalInvalidObject: 'Last codon is not a stop codon: ' , ( seq copyFrom: seq size to: seq size - 3 ).			
+			self signalInvalidObject: 'Last codon is not a stop codon: ' , (seq copyFrom: seq size to: seq size - 3).			
 			^ false ].
 	seq size \\ 3 ~= 0 
 		ifFalse: [ 

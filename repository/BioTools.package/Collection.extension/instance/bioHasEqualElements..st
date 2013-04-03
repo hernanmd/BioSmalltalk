@@ -5,9 +5,9 @@ bioHasEqualElements: otherCollection
 	element of otherCollection.
 	This should probably replace the current definition of #= ."
 
-	(otherCollection isKindOf: SequenceableCollection) ifFalse: [^ false].
-	self size = otherCollection size ifFalse: [^ false].
+	(otherCollection isKindOf: SequenceableCollection) ifFalse: [ ^ false ].
+	self size = otherCollection size ifFalse: [ ^ false ].
 	self 
-		detect: [: elem | otherCollection includes: elem ]
+		detect: [ : elem | otherCollection includes: elem ]
 		ifNone: [ ^ false ].
 	^ true

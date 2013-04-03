@@ -2,7 +2,9 @@
 	"commentStamp" : "hfm 9/27/2012 22:48",
 	"super" : "BioObject",
 	"category" : "BioTools-Biological",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"codonTables"
+	],
 	"pools" : [ ],
 	"classvars" : [
 		"CurrentCodonTable"

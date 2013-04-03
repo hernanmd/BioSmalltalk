@@ -8,7 +8,7 @@ verifyMD5checksum: fileName
 	remoteMD5File := self prvDownloadFileNamed: fileName , '.md5' binary: false.
 	remoteMD5 := remoteMD5File contents copyUpTo: Character space.
 	
-	localMD5File :=  ( self openFileNamed: fileName ) binary.
-	localMD5 := ( MD5 new hashMessage: localMD5File contents ) hex.
+	localMD5File :=  (self openFileNamed: fileName) binary.
+	localMD5 := (MD5 new hashMessage: localMD5File contents) hex.
 	
 	^ remoteMD5 = localMD5

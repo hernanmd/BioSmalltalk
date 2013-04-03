@@ -6,13 +6,12 @@ taxonIdentifiers
 	
 	idCol := (self sequences first: self numberOfTaxa) collect: #name.
 	answeredIds := OrderedCollection new: self numberOfTaxa.
-	idCol do: [: idString |
+	idCol do: [ : idString |
 		idString size = 10
 			ifFalse: [ 
 				| remSize pads |
 				remSize := 10 - idString size.
 				pads := BioObject generateJoin: ' ' repeat: remSize.
 				answeredIds add: idString , pads ]
-			ifTrue: [
-				answeredIds add: idString ]].
+			ifTrue: [ answeredIds add: idString ] ].
 	^ answeredIds

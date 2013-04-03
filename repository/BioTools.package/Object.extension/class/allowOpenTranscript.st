@@ -1,4 +1,0 @@
-*BioTools
-allowOpenTranscript
-
-	^ false

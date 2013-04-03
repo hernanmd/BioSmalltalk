@@ -1,8 +1,7 @@
 instance creation
 filesFromXMLDirectory: aDirectoryString
-	" Answer a new instance of the receiver with XML file contents
-	from aDirectoryString "
+	" Answer a new instance of the receiver with XML file contents from aDirectoryString "
 	
-	^ self withAll: ( ( BioObject fileDirectoryContentsFor: aDirectoryString ) asFileCollection
-			select: [: file | file isXML ]
-			thenCollect: [: file | (BioReader for: file contents) newFromXML: file ] ).
+	^ self withAll: ((BioObject fileDirectoryContentsFor: aDirectoryString) asFileCollection
+			select: [ : file | file isXML ]
+			thenCollect: [ : file | (BioReader for: file contents) newFromXML: file ]).

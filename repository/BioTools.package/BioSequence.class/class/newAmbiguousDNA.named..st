@@ -5,4 +5,5 @@ newAmbiguousDNA: aString named: aName
 	^ self new 
 		name: aName;
 		initializeWith: aString
-		alphabet: BioIUPACAmbiguousDNA new
+		alphabet: BioIUPACAmbiguousDNA new;
+		yourself

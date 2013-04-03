@@ -1,5 +1,5 @@
 instance creation
-newFromXMLCollection: aCollectionOfXMLs
+newFromXMLCollection: xmlCollection
 	" Answer a Collection of readers iterating over the XML Strings at aCollectionOfXMLs "
 
-	^ aCollectionOfXMLs	collect: [: string | self newFromXML: string ]
+	^ xmlCollection collect: [ : string | self newFromXML: string ]

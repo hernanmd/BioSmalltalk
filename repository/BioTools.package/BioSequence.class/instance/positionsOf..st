@@ -6,7 +6,7 @@ positionsOf: aCharacterOrString
 	
 	inputLetter := aCharacterOrString asAminoacidLetter.
 	positions := OrderedCollection new.
-	seq withIndexDo: [: letter : index |
+	seq withIndexDo: [ : letter : index |
 		letter = inputLetter
 			ifTrue: [ positions add: index ] ].
 	^ positions

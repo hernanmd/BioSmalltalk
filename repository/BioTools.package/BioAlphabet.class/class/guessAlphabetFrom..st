@@ -8,7 +8,7 @@ guessAlphabetFrom: aString
 	| normalizedString atgcCount total |
 	
 	normalizedString := aString asLowercase copyWithoutAll: self ambiguityCodes.
-	atgcCount := 'atgcn' inject: 0 into: [: sum : each | sum + (normalizedString occurrencesOf: each) ].
+	atgcCount := 'atgcn' inject: 0 into: [ : sum : each | sum + (normalizedString occurrencesOf: each) ].
 	(total := aString size) = 0
 		ifTrue: [ self signalInvalidObject: 'Empty sequence, cannot guess alphabet' translated ].
 	

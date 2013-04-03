@@ -4,7 +4,7 @@ truncateFrom: startInteger
 	The startInteger is inclusive " 
 	
 	^ self 
-		initializeWith: ( self subSeqFrom: startInteger to: self size )
+		initializeWith: (self subSeqFrom: startInteger to: self size)
 		alphabet: self alphabet
 	
 	

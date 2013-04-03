@@ -4,4 +4,4 @@ httpGetContents
 	
 	^ [ self httpGet contents ]
 	on: MessageNotUnderstood
-	do: [: ex | self httpGet content ]
+	do: [ : ex | self httpGet content ]

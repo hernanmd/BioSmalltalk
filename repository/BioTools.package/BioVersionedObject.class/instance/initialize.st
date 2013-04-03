@@ -4,5 +4,4 @@ initialize
 	
 	super initialize.
 	versions := OrderedCollection new.
-	versioner := self versionerClass new.
 	date := self dateClass now.	

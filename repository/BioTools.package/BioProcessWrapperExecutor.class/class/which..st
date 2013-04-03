@@ -4,4 +4,4 @@ which: programName
 
 	" ToDo: Check which behavior with more than which.exe installed "
 	" ToDo: Compare with Locate32 "
-	^ ( self executeCommand: 'which' parameter: programName ) trimRight
+	^ (self executeCommand: 'which' parameter: programName) trimRight

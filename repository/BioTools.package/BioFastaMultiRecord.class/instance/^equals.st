@@ -8,6 +8,6 @@ comparing
 	self == aFastaMultiRecord ifTrue: [ ^ true ].
 	self class = aFastaMultiRecord class ifFalse: [ ^ false ].
 	self size = aFastaMultiRecord size ifFalse: [ ^ false ] .
-	self sequences with: aFastaMultiRecord sequences do: [ :record1 :record2 |
-		record1 = record2 ifFalse: [ ^ false] ].
+	self sequences with: aFastaMultiRecord sequences do: [ : record1 : record2 |
+		record1 = record2 ifFalse: [ ^ false ] ].
 	^ true

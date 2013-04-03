@@ -5,7 +5,7 @@ reverseTranslate: aString
 	| translations |
 	
 	translations := OrderedCollection new.	
-	self currentCodonTable keysAndValuesDo: [:k :v |
+	self currentCodonTable keysAndValuesDo: [ :k :v |
 			v = aString asUppercase
 				ifTrue: [ translations addLast: k ] ].
 	translations

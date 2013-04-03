@@ -5,10 +5,10 @@ isUpdated: fileName
 
 	| fullName |
 		
-	( self directoryExists: self workingDirectory )
+	(self directoryExists: self workingDirectory)
 		ifFalse: [ 
 			self newDirectory: self workingDirectory.
 			self isUpdated: fileName ].
 	fullName := self fullFileNameFor: fileName.
-	^ ( self fileExists: fullName )
-		and: [ ( self openFileNamed: fileName ) directoryEntry modificationTime < ( self client getMdtm: fileName ) ]
+	^ (self fileExists: fullName)
+		and: [ (self openFileNamed: fileName) directoryEntry modificationTime < (self client getMdtm: fileName) ]

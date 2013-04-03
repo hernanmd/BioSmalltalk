@@ -1,4 +1,5 @@
 exceptions
 signalDuplicateObject: errorString
-
-	^ BioDuplicateObject new signal: errorString
+	" See comment in BioDuplicatedObject "
+	
+	^ BioDuplicatedObject new signal: errorString

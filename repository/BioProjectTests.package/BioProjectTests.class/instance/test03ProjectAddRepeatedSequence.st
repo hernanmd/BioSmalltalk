@@ -9,6 +9,6 @@ test03ProjectAddRepeatedSequence
 	self assert: project sequenceCount = 1.
 	self assert: ( project sequences includes: sampleSeq1 ).
 	
-	self should: [ project addSequence: sampleSeq1 ] raise: BioDuplicateObject.
+	self should: [ project addSequence: sampleSeq1 ] raise: BioDuplicatedObject.
 	self assert: project sequenceCount = 1.
 	self assert: ( project sequences includes: sampleSeq1 ).

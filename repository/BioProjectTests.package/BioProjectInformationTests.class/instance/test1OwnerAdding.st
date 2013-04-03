@@ -25,4 +25,4 @@ test1OwnerAdding
 	self assert: project owners size = 2.
 	self assert: ( project isOwner: ownerName2 ).	
 
-	self should: [ project addOwner: ownerName1 ] raise: BioDuplicateObject.
+	self should: [ project addOwner: ownerName1 ] raise: BioDuplicatedObject.

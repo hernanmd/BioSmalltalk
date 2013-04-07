@@ -1,5 +1,5 @@
 initialize-release
-newCodonTable: tableClass selectors: tableSelectors
+newCodonTable: tableSelectors
 	" Private - Create a new codon table with the information in tableSelectors "
 	| codonTable tableIdSelector tableNames table tableStartCodons tableStopCodons |
 	
@@ -9,10 +9,10 @@ newCodonTable: tableClass selectors: tableSelectors
 	tableStartCodons 	:= tableSelectors detect: [ : s | s endsWith: 'StartCodons' ].
 	tableStopCodons 	:= tableSelectors detect: [ : s | s endsWith: 'StopCodons' ].
 	codonTable := BioCodonTable new 
-				addName: (tableClass perform: tableIdSelector);
-				table: (tableClass perform: table);
-				startCodons: (tableClass perform: tableStartCodons);
-				stopCodons: (tableClass perform: tableStopCodons);
+				addName: (self perform: tableIdSelector);
+				table: (self perform: table);
+				startCodons: (self perform: tableStartCodons);
+				stopCodons: (self perform: tableStopCodons);
 				yourself.
-	(tableClass perform: tableNames) do: [ : tbName | codonTable addName: tbName ].
+	(self perform: tableNames) do: [ : tbName | codonTable addName: tbName ].
 	^ codonTable 

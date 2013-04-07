@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 4/7/2013 16:40",
 	"super" : "BioFileFormatter",
 	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioRDFFormatter",
+	"name" : "BioFluxusRDFFormatter",
 	"type" : "normal"
 }

@@ -8,4 +8,5 @@ exportMatrix
 		1 to: self matrix numberOfColumns do: [: colIndex |
 			self exportCellAtRow: rowIndex atColumn: colIndex ].
 		self outputFile cr ].
+	self outputFile close.
 	self bioLog: 'Finished writing matrix to file'.

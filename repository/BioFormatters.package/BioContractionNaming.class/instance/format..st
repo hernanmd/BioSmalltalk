@@ -4,11 +4,9 @@ format: aString
 
 	| result |
 	
-	self contractionLimit > aString subStrings size
+	self contractionLimit > aString substrings size
 		ifTrue: [ ^ self signalInvalidObject: 'Not enough letters to contract with the receiver, try reducing the contractionLimit' translated ].
-			
-	result := 
-		( aString subStrings first: self contractionLimit )
+	result := (aString substrings first: self contractionLimit)
 			inject: String new
 			into: [ : accum : subStr | accum , subStr first asString ].
 	self capitalize

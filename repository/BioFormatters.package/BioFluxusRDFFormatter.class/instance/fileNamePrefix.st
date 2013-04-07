@@ -2,4 +2,4 @@ accessing
 fileNamePrefix
 	" Answer a String for prefixing the output file name "
 	
-	^ 'biosmalltalk_export_csv_'
+	^ 'biosmalltalk_export_fluxus-rdf_'

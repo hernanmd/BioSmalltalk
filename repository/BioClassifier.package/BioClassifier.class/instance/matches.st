@@ -1,6 +1,6 @@
 accessing
 matches
 
+	matches ifNil: [ matches := self newMatchingDictionary: #matches ].
 	^ matches 
 		at: #matches
-		ifAbsent: [ matches := self newMatchingDictionary: #matches ].

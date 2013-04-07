@@ -2,4 +2,6 @@ accessing-blast-filters
 hitAccessionsAsString
 	" Answer a Collection with the accession Strings from the receiver's results "
 
-	^ self hitIdentifiers collect: [: id | ( BioParser parseAccession: id value ) asString ]
+	self parsingStrategy ifNil: [ self setSAXTokenizer ].
+	^ (BioParser perform: self parsingStrategy withArguments: {contents . #('Hit_accession')}) 
+		collect: [: id | id accessionId asString ]

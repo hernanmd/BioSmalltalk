@@ -4,5 +4,5 @@ codonTables
 
 	^ codonTables
 		ifNil: [ 
-			self initializeCodonTables.
+			self initialize.
 			codonTables ]

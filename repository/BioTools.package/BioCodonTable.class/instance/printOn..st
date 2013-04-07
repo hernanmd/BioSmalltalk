@@ -7,5 +7,5 @@ printOn: aStream
 		space;
 		nextPutAll: self tableId asString
 		between: $[ -> $];
-		space.
-	self table printOn: aStream.
+		space;
+		nextPutAll: self alphaName.

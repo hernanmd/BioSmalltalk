@@ -9,4 +9,5 @@ sequenceSample1
 	^ BioA31SampleCollection forDNA
 			identifiers: #(1 3 5 7);
 			frequencies: #(4 5 3 8);
-			matrix: matrix
+			matrix: matrix;
+			yourself.

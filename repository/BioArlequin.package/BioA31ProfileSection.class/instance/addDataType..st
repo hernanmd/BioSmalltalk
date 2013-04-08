@@ -4,6 +4,6 @@ addDataType: aString
 	
 	| configuration |
 	configuration := self configurationAt: self class dataTypeId.
-	( configuration validate: aString )
-		ifTrue: [ self at: self class dataTypeId put: aString asString ]
-		ifFalse: [ self bioLog: aString , ' is not listed as a valid type for DataType']
+	(configuration validate: aString)
+		ifTrue: [ self at: self class dataTypeId put: aString greaseString ]
+		ifFalse: [ self bioLog: aString , ' is not listed as a valid type for DataType' ]

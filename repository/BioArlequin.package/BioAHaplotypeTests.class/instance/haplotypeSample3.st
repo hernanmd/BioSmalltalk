@@ -1,7 +1,7 @@
 data samples
 haplotypeSample3
 
-	^'			1 Yap- A
+	^ '			1 Yap- A
 			2 Yap- B
 			3 Yap- C
 			4 Yap- D

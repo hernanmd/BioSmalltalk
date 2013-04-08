@@ -5,5 +5,5 @@ initializeWith: samplesDictionary
 	sequences := OrderedCollection new.
 	identifiers := OrderedCollection new.
 	prvIdentifiers := Dictionary new.
-	self samplesPrefix: ( ( SmallInteger maxVal atRandom asString ) first: 3 ).
+	self samplesPrefix: ((SmallInteger maxVal atRandom greaseString) first: 3).
 	self buildSamples: samplesDictionary.

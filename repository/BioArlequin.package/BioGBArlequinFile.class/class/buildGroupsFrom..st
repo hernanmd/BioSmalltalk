@@ -1,6 +1,6 @@
 instance creation
 buildGroupsFrom: aClassifier
 
-	^ ( BioGBA31GroupBuilder 
+	^ (BioGBA31GroupBuilder 
 			groupBy: 'GBQualifier_value' 
-			classifications: aClassifier groupByAlignment ) groups.
+			classifications: aClassifier groupByAlignment) groups.

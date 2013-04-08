@@ -1,7 +1,7 @@
 instance creation
 named: aString forHaplotypicFrequencyGroups: aClassifier groupBy: aSymbol
 
-	| newInstance params arGroups |
+	| newInstance arGroups |
 	
 	arGroups := self buildGroupsFrom: aClassifier.
 	newInstance := self new.

@@ -1,26 +1,29 @@
 testing
 testDataContents01
-
 	arFile := self arlequinFileClass new.
 	arFile profileSection
-		addTitle: 'Sample Title';
+		addTitle: 'Sample Title' translated;
 		addSampleNumber: 1;
 		addDataType: 'FREQUENCY';
 		setGenotypicData;
-		useLocusSeparator: 'WHITESPACE'.	
+		useLocusSeparator: 'WHITESPACE'.
 	arFile dataSection sampleSubsection
 		addSampleName: 'Tharu';
 		addSampleSize: '91';
 		addSampleData: self frequency01Sample01;
-		addSampleName: 'Oriental';		
+		addSampleName: 'Oriental';
 		addSampleSize: '46';
 		addSampleData: self frequency01Sample02;
 		addSampleName: 'Wolof';
 		addSampleSize: '110';
 		addSampleData: self frequency01Sample03;
 		yourself.
-	self assert: ( arFile contents isKindOf: String ).
-	self assert: arFile contents = '[Profile]
+	self assert: (arFile contents isKindOf: String).
+	self
+		assert:
+			arFile contents
+				=
+					'[Profile]
 	Title="Sample Title"
 	NbSamples=1
 	DataType=FREQUENCY

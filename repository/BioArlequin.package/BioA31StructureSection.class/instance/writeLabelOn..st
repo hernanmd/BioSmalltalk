@@ -1,7 +1,5 @@
 writing
 writeLabelOn: aStream
-
-	aStream 
-		nextPutAll: self class notation
-		between: $[ -> $]; 
-		cr
+	aStream
+		nextPutAll: self class notation between: $[ -> $];
+		nextPut: Character cr

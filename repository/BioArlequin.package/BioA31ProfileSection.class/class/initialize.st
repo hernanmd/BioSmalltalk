@@ -1,7 +1,7 @@
-initialize-release
+class initialization
 initialize
 	" self initialize "
 	
-	ArlequinDataTypes := { 'DNA' . 'RFLP' . 'MICROSAT' . 'STANDARD' . 'FREQUENCY' }. 
-	ArlequinFrequencies :=  { 'ABS' . 'REL' }.
+	ArlequinDataTypes := Array with: 'DNA' with: 'RFLP' with: 'MICROSAT' with: 'STANDARD' with: 'FREQUENCY'. 
+	ArlequinFrequencies := Array with: 'ABS' with: 'REL'.
 	ArlequinLocusSeparators := self formatter separators

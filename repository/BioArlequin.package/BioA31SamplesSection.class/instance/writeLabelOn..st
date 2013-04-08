@@ -1,13 +1,11 @@
 writing
 writeLabelOn: aStream
-
-	( self shouldWriteLabelOn: aStream )
-		ifTrue: [
-			aStream nextPutAll: '[Data]';
-				cr.
-			aStream nextPut: $[;
+	(self shouldWriteLabelOn: aStream)
+		ifTrue: [ 
+			aStream
+				nextPutAll: '[Data]';
+				nextPut: Character cr;
+				nextPut: $[;
 				nextPutAll: self class notation;
-				nextPut: $]; 
-				cr ]
-
-			
+				nextPut: $];
+				nextPut: Character cr ]

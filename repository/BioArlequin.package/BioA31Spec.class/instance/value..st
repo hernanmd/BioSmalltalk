@@ -1,3 +1,3 @@
-accessing
+evaluating
 value: anObject
 	value := anObject

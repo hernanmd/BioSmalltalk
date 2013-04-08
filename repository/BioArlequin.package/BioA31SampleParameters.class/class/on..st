@@ -1,4 +1,4 @@
 instance creation
 on: aSamplesDictionary
 
-	^ super new initializeWith: aSamplesDictionary
+	^ self new initializeWith: aSamplesDictionary

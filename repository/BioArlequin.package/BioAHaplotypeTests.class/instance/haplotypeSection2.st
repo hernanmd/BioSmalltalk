@@ -1,7 +1,7 @@
 data samples
 haplotypeSection2
 
-	^'[[HaplotypeDefinition]]
+	^ '[[HaplotypeDefinition]]
 
 		HaplListName="56 human mtDNA RFLPs"
 		#Data from Excoffier et al. 1992 Genetics 131:479-491

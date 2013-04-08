@@ -4,5 +4,6 @@ groupBy: keyString classifications: classifications
 	
 	^ self new 
 		keyString: keyString;
-		data: classifications
+		data: classifications;
+		yourself
 		

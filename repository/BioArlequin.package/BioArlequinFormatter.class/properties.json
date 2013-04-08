@@ -5,11 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"sample",
-		"referenceSequence",
-		"populations"
-	],
+	"instvars" : [ ],
 	"name" : "BioArlequinFormatter",
 	"type" : "normal"
 }

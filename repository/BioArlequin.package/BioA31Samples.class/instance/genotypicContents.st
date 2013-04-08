@@ -1,7 +1,7 @@
 accessing - files
 genotypicContents
 
-	^'[Profile]
+	^ '[Profile]
 
 	Title="A sample of genotypic data"
 

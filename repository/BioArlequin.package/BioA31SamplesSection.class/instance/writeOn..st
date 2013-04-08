@@ -1,4 +1,4 @@
-writing
+private
 writeOn: aStream
 	" Write the receiver's section on aStream "
 
@@ -6,7 +6,7 @@ writeOn: aStream
 	
 	delimiter := self iniFile profileSection locusSeparator value.
 	self writeLabelOn: aStream.
-	self associationsDo: [:assoc | 
+	self associationsDo: [ :assoc | 
 		" Label key case "
 		aStream tab;
 			nextPutAll: assoc key;

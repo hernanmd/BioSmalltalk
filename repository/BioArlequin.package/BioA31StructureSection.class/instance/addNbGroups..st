@@ -4,4 +4,4 @@ addNbGroups: aNumber
 	
 	self 
 		at: self class nbGroupsId key
-		put: aNumber asString
+		put: aNumber greaseString

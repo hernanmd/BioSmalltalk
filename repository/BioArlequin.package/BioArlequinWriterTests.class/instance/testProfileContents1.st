@@ -7,8 +7,8 @@ testProfileContents1
 		at: 'NbSamples' put: '1';
 		at: 'GenotypicData' put: '0';
 		yourself.
-	self assert: ( arFile contents = '[Profile]
+	self assert: (arFile contents = '[Profile]
 	Title="mtDNA sequences Old Type"
 	NbSamples=1
 	GenotypicData=0
-' )
+')

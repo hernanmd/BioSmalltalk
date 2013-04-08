@@ -3,5 +3,5 @@ printOn: aStream
 
 	super printOn: aStream.
 	aStream
-		nextPutAll: self size asString 
+		nextPutAll: self size greaseString 
 		between: $( -> $)

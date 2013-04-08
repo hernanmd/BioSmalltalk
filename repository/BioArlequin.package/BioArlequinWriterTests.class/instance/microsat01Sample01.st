@@ -10,4 +10,5 @@ microsat01Sample01
 	^ BioA31SampleCollection forDNA
 			identifiers: #(1 40);
 			frequencies: #(27 1);
-			matrix: matrix
+			matrix: matrix;
+			yourself

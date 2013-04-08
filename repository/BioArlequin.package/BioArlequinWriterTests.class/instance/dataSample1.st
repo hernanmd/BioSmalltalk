@@ -1,7 +1,7 @@
 testing
 dataSample1
 
-	^'id1 1 ACGGTGTCGA
+	^ 'id1 1 ACGGTGTCGA
 id2 2 ACGGTGTCAG
 id3 8 ACGGTGCCAA
 id4 10 ACAGTGTCAA

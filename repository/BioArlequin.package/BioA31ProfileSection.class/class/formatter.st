@@ -1,4 +1,4 @@
-initialize-release
+private
 formatter
 
 	^ BioFormatter

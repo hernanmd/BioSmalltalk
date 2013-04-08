@@ -4,6 +4,6 @@ contents
 	the receiver's input format "
 	
 	^ String streamContents: [ : str | 
-		str nextPutAll: self notation asString;
+		str nextPutAll: self notation greaseString;
 			nextPut: $=;
-			nextPutAll: self value asString ]
+			nextPutAll: self value greaseString ]

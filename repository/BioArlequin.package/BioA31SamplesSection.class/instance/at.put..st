@@ -4,8 +4,6 @@ at: keyString put: valueString
 
 	| properKey |
 	
-	" Esto es porque se indexa cada sample con un número, SampleName es el comienzo de otro sample "
-	self halt.
 	properKey := keyString isVariableBinding ifTrue: [ keyString key ] ifFalse: [ keyString ].
 	^ self iniFile 
 			section: self sampleKeyNumber

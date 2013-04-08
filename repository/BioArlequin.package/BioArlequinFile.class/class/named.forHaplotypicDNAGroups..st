@@ -1,7 +1,7 @@
 instance creation
 named: aString forHaplotypicDNAGroups: aClassifier
 
-	| newInstance params arGroups |
+	| newInstance arGroups |
 	
 	arGroups := self buildGroupsFrom: aClassifier.
 	newInstance := self new.

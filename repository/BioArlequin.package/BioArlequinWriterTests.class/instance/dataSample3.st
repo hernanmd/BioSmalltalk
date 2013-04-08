@@ -1,7 +1,7 @@
 testing
 dataSample3
 
-	^'[[Samples]]
+	^ '[[Samples]]
 	SampleName= "BOVINOS"
 	SampleSize=8
 	SampleData={

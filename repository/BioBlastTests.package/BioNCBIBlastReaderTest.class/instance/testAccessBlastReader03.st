@@ -17,12 +17,12 @@ testAccessBlastReader03
 	self assert: reader hitAccessionsAsTokens size = 100.
 	
 	self deny: reader hitAccessionsAsString isEmpty.	
-	self assert: ( reader hitAccessionsAsString allSatisfy: [ : a | a isKindOf: String ]).	
+	self assert: (reader hitAccessionsAsString allSatisfy: [ : a | a isKindOf: String ]).	
 	self assert: reader hitAccessionsAsString size = 100.
 	
 	self deny: reader hitHsps isEmpty.
 	self 
-		assert: ( reader hitHsps allSatisfy: [ : a | a isKindOf: BioBlastNode ])
+		assert: (reader hitHsps allSatisfy: [ : a | a isKindOf: BioBlastNode ])
 		description: 'Answer the nodes as a Collection of BioBlastNode hits'.
 	self assert: reader hitHsps size = 100.	
 

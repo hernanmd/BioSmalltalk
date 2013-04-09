@@ -8,6 +8,6 @@ testGiList
 	self deny: giList isEmpty.
 
 	self assert: giList size = 10.
-	self assert: ( giList bioHasEqualElements: #('116414' '227369' '544028' '118083358' '326912741' '348530520' '130498679' '292622140' '47221590' '348526341') )
+	self assert: (giList bioHasEqualElements: #('116414' '227369' '544028' '118083358' '326912741' '348530520' '130498679' '292622140' '47221590' '348526341'))
 	
 

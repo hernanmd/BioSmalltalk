@@ -1,7 +1,7 @@
 parse-ncbi-xml
-parseNcbiXmlBlast: aString nodes: aCollection
-	" Answer a Collection of header nodes found in anObject "
+parseNcbiXmlBlast: aString nodes: nodesCollection
+	" Parse with nodesCollection and answer a <Collection> of nodes found in aString "
 	
 	^ (BioNCBIXMLBlastParser on: aString)
-		selectNodes: aCollection;
+		selectNodes: nodesCollection;
 		parse

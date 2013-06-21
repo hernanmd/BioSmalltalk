@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioSequence",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"motif",
+		"positions",
+		"repeats",
+		"repeatStartPos"
+	],
+	"name" : "BioMicrosatellite",
+	"type" : "normal"
+}

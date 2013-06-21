@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioTools-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"start",
+		"end",
+		"length",
+		"value"
+	],
+	"name" : "BioPosition",
+	"type" : "normal"
+}

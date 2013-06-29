@@ -4,9 +4,7 @@ printOn: aStream
 	
 	super printOn: aStream.
 	self result
-		ifNil: [ 	aStream nextPut: $0 ]
-		ifNotNil: [ 
-			aStream 
-				nextPutAll: self result size asString 
-				between: $[ -> $]
-		]
+		ifNil: [ aStream nextPut: $0 ]
+		ifNotNil: [ aStream 
+					nextPutAll: self result size asString 
+					between: $[ -> $] ]

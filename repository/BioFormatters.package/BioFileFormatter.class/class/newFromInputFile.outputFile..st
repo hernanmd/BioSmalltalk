@@ -1,6 +1,7 @@
 instance creation
-newFromInputFile: aGTFile outputFile: anOutputFilename
-
+newFromInputFile: inputFile outputFile: outFilename
+	" Answer a new instance of the receiver with a BioFile and outFilename <String> "
 	^ self new 
-		initializeWithInputFile: aGTFile 
-		outputFile: anOutputFilename
+		inputFile: inputFile;
+		outputFilename: outFilename;
+		yourself

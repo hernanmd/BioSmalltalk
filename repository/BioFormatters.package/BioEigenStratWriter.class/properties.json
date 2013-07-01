@@ -1,17 +1,13 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "BioFormatter",
+	"super" : "BioMatrixFormatter",
 	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"inputFile",
-		"outputFile",
-		"outputFilename",
-		"stream",
-		"writeToFile"
+		"alleleFqs"
 	],
-	"name" : "BioFileFormatter",
+	"name" : "BioEigenStratWriter",
 	"type" : "normal"
 }

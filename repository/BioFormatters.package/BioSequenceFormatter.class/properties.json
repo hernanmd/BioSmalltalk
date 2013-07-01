@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"super" : "BioFormatter",
 	"category" : "BioFormatters-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"sequence"
+	],
 	"name" : "BioSequenceFormatter",
 	"type" : "normal"
 }

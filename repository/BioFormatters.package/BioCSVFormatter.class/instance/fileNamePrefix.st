@@ -1,5 +1,5 @@
 accessing
 fileNamePrefix
-	" Answer a String for prefixing the output file name "
+	" Answer a default prefix <String> for the output file name "
 	
 	^ 'biosmalltalk_export_csv_'

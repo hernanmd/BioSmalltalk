@@ -1,4 +1,4 @@
-BioFileFormatter has not been documented yet. The class comment should describe the purpose of the class, its collaborations and its variables.
+BioFileFormatter reads from an input file, performs formatting and write the results to an output file.
 
 Instance Variables:
 	inputFile	<ProtoObject | PseudoContext>

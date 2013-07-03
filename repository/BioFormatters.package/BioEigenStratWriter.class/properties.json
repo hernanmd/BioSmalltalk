@@ -6,7 +6,11 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"alleleFqs"
+		"alleleFqs",
+		"strName",
+		"rowIndex",
+		"gPosCounter",
+		"fCounter"
 	],
 	"name" : "BioEigenStratWriter",
 	"type" : "normal"

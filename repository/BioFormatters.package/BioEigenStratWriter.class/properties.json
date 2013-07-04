@@ -9,7 +9,6 @@
 		"alleleFqs",
 		"strName",
 		"rowIndex",
-		"gPosCounter",
 		"fCounter"
 	],
 	"name" : "BioEigenStratWriter",

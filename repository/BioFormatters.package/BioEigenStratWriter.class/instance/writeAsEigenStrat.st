@@ -1,6 +1,8 @@
 accessing
 writeAsEigenStrat
-	" Write the receiver's input file in the receiver's format "
+	" Write the receiver's input files in EigenStrat format "
 
 	self fillSNPMatrix.
-	self outputFile close
+	self exportMatrix.
+	self fillGenotypeMatrix.
+	self exportMatrix.

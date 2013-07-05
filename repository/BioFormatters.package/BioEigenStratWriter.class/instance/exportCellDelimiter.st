@@ -2,4 +2,5 @@ exporting
 exportCellDelimiter
 	" Private - See superimplementor's comment "
 	
-	self outputFile nextPut: Character tab.
+	self delimiter isNil 
+		ifFalse: [ self outputFile nextPut: Character tab ].

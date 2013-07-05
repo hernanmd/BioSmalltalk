@@ -9,7 +9,8 @@
 		"alleleFqs",
 		"strName",
 		"rowIndex",
-		"fCounter"
+		"fCounter",
+		"markers"
 	],
 	"name" : "BioEigenStratWriter",
 	"type" : "normal"

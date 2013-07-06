@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "<historical>",
 	"super" : "BioFile",
 	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],

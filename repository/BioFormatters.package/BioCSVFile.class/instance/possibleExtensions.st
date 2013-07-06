@@ -1,4 +1,5 @@
 accessing
-fileExtension
+possibleExtensions
+	" See superimplementor's comment"
 
 	^ self fileFormatterClass fileExtensionsFor: 'CSV'

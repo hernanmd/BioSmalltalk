@@ -1,6 +1,7 @@
 private
 fillSNPMatrixSTRName: row
-
+	" Private - Append separator between SNP or Microsatellite name and allele number at current row "
+	
 	(row isEmpty not and: [ row first first isLetter ])
 		ifTrue: [ self strName: row first , ':' ]
 		ifFalse: [ 

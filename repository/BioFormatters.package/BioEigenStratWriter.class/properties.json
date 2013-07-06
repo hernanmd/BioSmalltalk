@@ -10,7 +10,8 @@
 		"strName",
 		"rowIndex",
 		"fCounter",
-		"markers"
+		"markers",
+		"genoMatrix"
 	],
 	"name" : "BioEigenStratWriter",
 	"type" : "normal"

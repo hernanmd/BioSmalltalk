@@ -6,6 +6,7 @@ A BioEigenStratWriter reads
 writes
 
 -A .SNP file in EigenStrat format (from EigenSoft)
+-A .GENO file
 
 Conversion table for formats:
 
@@ -18,11 +19,11 @@ Conversion table for formats:
 Sample script
 
 | snpWriter pedFile alleleFqs fsRoot wrkFolder |
-Smalltalk garbageCollect.
 fsRoot := FileSystem disk root children at: 2.
 wrkFolder := fsRoot resolve: 'MyWorkingFolder'.
 
 pedFile := wrkFolder / 'input.ped'.
+" allele frequencies from MSTools plugin "
 alleleFqs := wrkFolder / 'input_Alleles_Fqs.csv'.
 
 snpWriter := BioEigenStratWriter new

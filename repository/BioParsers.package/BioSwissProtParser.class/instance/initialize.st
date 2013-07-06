@@ -4,6 +4,6 @@ initialize
 
 	super initialize.
 	parser := 
-		self parserForIdentifier , 
+		self identifier asParser , 
 		self parserForAccession ,
-		( self parserForEntry ==> [: r | r allButFirst ] ).
+		(self parserForEntry ==> [: r | r allButFirst ]).

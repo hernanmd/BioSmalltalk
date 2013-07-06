@@ -1,13 +1,6 @@
 initialize-release
 initialize
-
-	| options |
+	" Private - See superimplementor's comment "
 	
 	super initialize.	
-	parser := '##maf ' asParser.
-	options := 
-		self parserForNonBreakingString , 
-			$= asParser , 
-			self parserForNonBreakingString ==> [: n | ].
-
-"	( 'version=' asParser / 'scoring=' asParser / 'program=' asParser )"
+	parser := self mafHeaderParser , self mafBodyParser.

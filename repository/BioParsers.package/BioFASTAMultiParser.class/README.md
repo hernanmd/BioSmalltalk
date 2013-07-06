@@ -1,0 +1,1 @@
+Parser for a FASTA file with several sequences. This class is not intended to be used directly. See BioParser for details parsing FASTA files.

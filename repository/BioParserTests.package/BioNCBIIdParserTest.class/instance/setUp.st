@@ -1,6 +1,6 @@
-testing
+accessing
 setUp
 	" Private - See superimplementor's comment "
 
 	super setUp.
-	parser := BioGIParser new.
+	parser := self parserClass new.

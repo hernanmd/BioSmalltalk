@@ -4,5 +4,5 @@ materialize
 
 	^ self isValidMaterialization
 		ifTrue: [ Cursor read showWhile: [ 	
-					(Smalltalk at: #FLMaterializer) materializeFromFileNamed: self location ] ]
+					(self classFor: #FLMaterializer) materializeFromFileNamed: self location ] ]
 		ifFalse: [ self error: self location , ' is not a valid file for materialization' translated ]

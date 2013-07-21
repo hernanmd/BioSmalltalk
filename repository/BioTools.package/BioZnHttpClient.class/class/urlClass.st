@@ -1,4 +1,4 @@
 accessing
 urlClass
 
-	^ Smalltalk at: #ZnUrl
+	^ self classFor: #ZnUrl

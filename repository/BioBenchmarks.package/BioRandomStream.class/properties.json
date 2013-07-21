@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioRepeatStream",
+	"category" : "BioBenchmarks-Fasta",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"random",
+		"percentages"
+	],
+	"name" : "BioRandomStream",
+	"type" : "normal"
+}

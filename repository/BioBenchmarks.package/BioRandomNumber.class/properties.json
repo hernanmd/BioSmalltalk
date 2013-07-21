@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "BioBenchmarks-Fasta",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"FModulus",
+		"Increment",
+		"Modulus",
+		"Multiplier"
+	],
+	"instvars" : [
+		"seed",
+		"scale"
+	],
+	"name" : "BioRandomNumber",
+	"type" : "normal"
+}

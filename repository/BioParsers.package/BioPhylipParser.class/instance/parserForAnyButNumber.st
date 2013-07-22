@@ -1,4 +1,4 @@
 accessing-private
 parserForAnyButNumber
 
-	^ #digit asParser negate plus , self parserForNumber ==> [: n | n second ] 
+	^ #digit asParser negate plus , #number asParser ==> [: n | n second ] 

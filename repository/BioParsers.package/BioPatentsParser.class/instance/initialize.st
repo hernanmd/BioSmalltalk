@@ -7,4 +7,4 @@ initialize
 			$| asParser , 
 			self countryParser , 
 			$| asParser , 
-			self parserForNumber.
+			#number asParser.

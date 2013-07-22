@@ -1,4 +1,4 @@
-accessing
+testing
 hasAmbiguousBases: aString
 	" Answer <true> if receiver contains ambiguity codes "
 	

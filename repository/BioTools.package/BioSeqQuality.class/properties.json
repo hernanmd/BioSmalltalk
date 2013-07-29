@@ -1,15 +1,14 @@
 {
-	"commentStamp" : "HernanMoralesDurand 5/4/2013 04:47",
-	"super" : "BioObject",
+	"commentStamp" : "HernanMoralesDurand 5/4/2013 04:48",
+	"super" : "BioSequence",
 	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"seq",
-		"alphabet",
-		"name"
+		"qual",
+		"trace"
 	],
-	"name" : "BioSequence",
+	"name" : "BioSeqQuality",
 	"type" : "normal"
 }

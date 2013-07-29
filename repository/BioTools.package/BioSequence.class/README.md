@@ -1,4 +1,4 @@
-BioSequence
+BioSequence represents a sequence collection with a name and alphabet (BioAlphabet).
 
 If you need to add annotations or features to the sequence use BioSeqRecord.
 

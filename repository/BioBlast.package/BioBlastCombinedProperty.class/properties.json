@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioBlastProperty",
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBlastCombinedProperty",
+	"type" : "normal"
+}

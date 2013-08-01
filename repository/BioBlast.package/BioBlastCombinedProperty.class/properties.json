@@ -5,7 +5,11 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"propertyName1",
+		"operator",
+		"propertyName2"
+	],
 	"name" : "BioBlastCombinedProperty",
 	"type" : "normal"
 }

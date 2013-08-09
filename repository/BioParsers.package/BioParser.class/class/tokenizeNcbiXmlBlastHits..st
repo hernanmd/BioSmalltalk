@@ -1,5 +1,6 @@
 parse-ncbi-xml
-tokenizeNcbiXmlBlastHits: aString
-	" Answer a Collection of hit nodes found in aXMLString "
+tokenizeNcbiXmlBlastHits: xmlString
+	" Answer a Collection of hit nodes found in xmlString "
 	
-	^ ( BioNCBIXMLBlastParser on: aString ) tokenizeHits
+	" needs work "
+	^ (BioNCBIXMLBlastParser on: xmlString) tokenizeHits

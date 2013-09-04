@@ -4,9 +4,11 @@ printOn: aStream
 	
 	self contents isNil
 		ifTrue: [ aStream nextPutAll: 'Empty Blast Filter' ]
-		ifFalse: [ aStream
-					nextPutAll: DateAndTime current asString;
-					space;
-					nextPutAll: 'Blast filter with: ';
+		ifFalse: [ | currentTime |
+			currentTime := 	DateAndTime current.
+			 aStream
+					nextPutAll: currentTime asDate asString; space;
+					nextPutAll: currentTime asTime asString;					
+					nextPut: $:;
 					nextPutAll: self contents size asString;
 					nextPutAll: ' hits' ]

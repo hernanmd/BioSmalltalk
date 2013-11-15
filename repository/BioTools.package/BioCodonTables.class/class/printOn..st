@@ -3,4 +3,5 @@ printOn: aStream
 	" Private - See superimplementor's comment "
 	
 	super printOn: aStream.
-	aStream nextPutAll: self codonTables size asString
+	self subclasses isEmpty
+		ifTrue: [ aStream nextPutAll: self codonTables size asString ]

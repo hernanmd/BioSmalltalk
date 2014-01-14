@@ -5,4 +5,4 @@ writeOn: aStream
 	super writeOn: aStream.
 	aStream
 		nextPutAll: self sequenceString;
-		nextPut: Character cr
+		nextPutAll: GRPlatform current newline

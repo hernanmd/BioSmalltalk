@@ -11,7 +11,7 @@ named: aString forHaplotypicDNAGroups: aClassifier
 		missingData: '?'.
 	newInstance dataSection
 		addDNAGroups: arGroups.
-	newInstance structureSection
+	newInstance newStructureSection
 		addStructureName: aString;
 		addNbGroups: 1;
 		addGroups: arGroups.

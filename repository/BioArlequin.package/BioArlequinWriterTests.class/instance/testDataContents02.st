@@ -1,13 +1,13 @@
 testing
 testDataContents02
 	arFile := self arlequinFileClass new.
-	arFile profileSection
+	arFile newProfileSection
 		addTitle: 'Sample Title' translated;
 		addSampleNumber: 1;
 		addDataType: 'DNA';
 		setGenotypicData;
 		useLocusSeparator: 'WHITESPACE'.
-	arFile samplesSection
+	arFile newSamplesSection
 		addSampleName: '"BOVINOS"';
 		addSampleSize: '8';
 		addSampleData: self sequenceSample3;

@@ -7,4 +7,4 @@ writeOn: aStream delimiter: aDelimiterCharacter
 		do: [ :matrix | 
 			aStream
 				nextPutAll: matrix;
-				nextPut: Character cr ]
+				nextPutAll: GRPlatform current newline]

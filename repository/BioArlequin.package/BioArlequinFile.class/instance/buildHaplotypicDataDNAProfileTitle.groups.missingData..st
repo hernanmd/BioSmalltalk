@@ -1,7 +1,7 @@
 building
 buildHaplotypicDataDNAProfileTitle: aString groups: aNumber missingData: missingCharacter
 
-	self profileSection
+	self newProfileSection
 		addTitle: aString;
 		addSampleNumber: aNumber;
 		addDataType: 'DNA';

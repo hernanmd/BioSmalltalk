@@ -1,7 +1,7 @@
 testing
 testProfileContents2
 	arFile := self arlequinFileClass new.
-	arFile profileSection
+	arFile newProfileSection
 		addTitle: 'mtDNA sequences Old Type' translated;
 		addSampleNumber: '1';
 		unsetGenotypicData;

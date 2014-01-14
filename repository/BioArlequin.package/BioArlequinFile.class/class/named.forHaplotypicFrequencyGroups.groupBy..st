@@ -11,7 +11,7 @@ named: aString forHaplotypicFrequencyGroups: aClassifier groupBy: aSymbol
 		missingData: '?'.
 	newInstance dataSection
 		addDNAGroups: arGroups.
-	newInstance structureSection
+	newInstance newStructureSection
 		addStructureName: aString;
 		addNbGroups: arGroups size;
 		addGroups: arGroups.

@@ -2,7 +2,7 @@ testing
 testProfileSection2
 	
 	arFile := self arlequinFileClass new.
-	arFile profileSection 
+	arFile newProfileSection 
 			at: 'Title' put: 'Fake HLA data';
 			at: 'NbSamples' put: '4';
 			at: 'GenotypicData' put: '1';

@@ -1,5 +1,7 @@
 sections
 samplesSection
-	" Private - Answer a new data section "
+	" Private - Answer the receiver's [Samples] section "
 	
-	^ self newSectionNamed: BioA31SamplesSection
+	(self includesSection: BioA31SamplesSection notation)
+		ifFalse: [ samplesSection := self newSamplesSection ].
+	^ samplesSection

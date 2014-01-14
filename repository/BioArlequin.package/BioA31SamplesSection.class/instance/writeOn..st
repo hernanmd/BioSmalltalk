@@ -4,7 +4,7 @@ writeOn: aStream
 
 	| delimiter |
 	
-	delimiter := self iniFile profileSection locusSeparator value.
+	delimiter := self iniFile newProfileSection locusSeparator value.
 	self writeLabelOn: aStream.
 	self associationsDo: [ :assoc | 
 		" Label key case "

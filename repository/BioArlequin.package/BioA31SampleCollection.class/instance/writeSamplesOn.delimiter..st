@@ -4,6 +4,8 @@ writeSamplesOn: aStream delimiter: aCharacter
 
 	aStream
 		nextPut: ${;
-		nextPut: Character cr.
-	self samples do: [ :smp | smp writeOn: aStream delimiter: aCharacter ] separatedBy: [ aStream nextPut: Character cr ].
+		nextPutAll: GRPlatform current newline.
+	self samples 
+		do: [ :smp | smp writeOn: aStream delimiter: aCharacter ] 
+		separatedBy: [ aStream nextPutAll: GRPlatform current newline ].
 	aStream nextPut: $}

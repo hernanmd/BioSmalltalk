@@ -8,4 +8,4 @@ writeOn: aStream delimiter: aDelimiterCharacter
 			aStream
 				nextPut: letter;
 				nextPut: aDelimiterCharacter ].
-	aStream nextPut: Character cr
+	aStream nextPutAll: GRPlatform current newline

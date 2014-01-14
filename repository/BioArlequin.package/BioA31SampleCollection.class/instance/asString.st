@@ -4,5 +4,5 @@ asString
 
 	^ String streamContents: [ : stream |
 		self writeSamplesOn: stream 
-			delimiter: self iniFile profileSection locusSeparator value. ]
+			delimiter: self iniFile newProfileSection locusSeparator value. ]
 	

@@ -1,7 +1,7 @@
 testing
 testDataContents01
 	arFile := self arlequinFileClass new.
-	arFile profileSection
+	arFile newProfileSection
 		addTitle: 'Sample Title' translated;
 		addSampleNumber: 1;
 		addDataType: 'FREQUENCY';

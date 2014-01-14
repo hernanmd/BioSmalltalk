@@ -1,7 +1,7 @@
 building
 buildHaplotypicDataFrequencyProfileTitle: aString groups: aNumber missingData: missingCharacter
 
-	self profileSection
+	self newProfileSection
 		addTitle: aString;
 		addSampleNumber: aNumber;
 		addDataType: 'FREQUENCY';

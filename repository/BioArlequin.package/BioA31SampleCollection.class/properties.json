@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"sampleClass"
+		"sampleClass",
+		"matrix"
 	],
 	"name" : "BioA31SampleCollection",
 	"type" : "normal"

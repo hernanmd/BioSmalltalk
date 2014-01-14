@@ -9,4 +9,4 @@ writeOn: aStream delimiter: aDelimiterCharacter
 		nextPutAll: self allele1;
 		nextPut: aDelimiterCharacter;
 		nextPutAll: self allele2;
-		nextPut: Character cr
+		nextPutAll: GRPlatform current newline

@@ -1,5 +1,5 @@
 testing
-testUIDList
+testBaseUrl
 
 	| uids |
 	

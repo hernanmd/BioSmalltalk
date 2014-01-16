@@ -6,4 +6,5 @@ testIsBiologicalSequence
 	
 	self deny: 1 isBiologicalSequence.
 	self deny: $. isBiologicalSequence.
+	self deny: '    ' isBiologicalSequence.
 	self deny: OrderedCollection new isBiologicalSequence.

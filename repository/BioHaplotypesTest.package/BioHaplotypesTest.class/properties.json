@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "BioAbstractTest",
+	"category" : "BioHaplotypesTest-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"haploBlock2",
+		"haplotypes",
+		"haploBlock1"
+	],
+	"name" : "BioHaplotypesTest",
+	"type" : "normal"
+}

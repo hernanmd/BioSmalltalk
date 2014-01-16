@@ -1,5 +1,5 @@
 convenience-behavior
 classFor: aLiteralOrClass
-	" Answer the class for aLiteralOrClass or nil if doesn't exists "
+	" Refer to class comment "
 	
 	^ self class classFor: aLiteralOrClass

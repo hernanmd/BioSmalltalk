@@ -1,12 +1,11 @@
 {
 	"commentStamp" : "hfm 1/19/2011 05:07",
-	"super" : "BioDBObject",
+	"super" : "BioNCBIDownloader",
 	"category" : "BioNCBI-Databases",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"connectionSettings",
 		"dbNames",
 		"fileNames",
 		"selectedDbName"

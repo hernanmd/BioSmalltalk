@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioDBObject",
+	"category" : "BioNCBI-Databases",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"connectionSettings"
+	],
+	"name" : "BioNCBIDownloader",
+	"type" : "normal"
+}

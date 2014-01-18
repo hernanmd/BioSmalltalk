@@ -6,10 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"dbNames",
-		"fileNames",
-		"selectedDbName"
+		"chrNumber"
 	],
-	"name" : "BioBLASTDatabaseUpdater",
+	"name" : "BioHumanChrDownloader",
 	"type" : "normal"
 }

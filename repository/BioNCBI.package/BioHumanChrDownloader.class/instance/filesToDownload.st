@@ -3,6 +3,5 @@ filesToDownload
 	" Answer a Collection with the files to download "
 		
 	^ self connect
-		ifNotNil: [ self extractFileNames: self client getFileList.			
-			self fileNames asSortedCollection ]
+		ifNotNil: [ Array with: 'hs_alt_HuRef_chr' , self chrNumber asString , '.fa.gz' ]
 		ifNil: [ self inform: 'Connection failed' translated ]

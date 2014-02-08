@@ -1,3 +1,5 @@
 accessing
-serverDirectory: anObject
-	serverDirectory := anObject
+serverDirectory: aString
+	" Set aString with the receiver's server directory to CWD "
+	
+	serverDirectory := aString

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNCBIDownloader",
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"chr"
+	],
+	"name" : "BioGenomeDownloader",
+	"type" : "normal"
+}

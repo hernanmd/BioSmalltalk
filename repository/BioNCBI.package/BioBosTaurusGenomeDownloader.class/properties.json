@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioHumanChrDownloader",
+	"name" : "BioBosTaurusGenomeDownloader",
 	"type" : "normal"
 }

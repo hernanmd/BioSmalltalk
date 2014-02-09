@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioGenomeDownloader",
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioMMusculusGD",
+	"type" : "normal"
+}

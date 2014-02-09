@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioMMusculusGD",
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioMMusculusGRCm",
+	"type" : "normal"
+}

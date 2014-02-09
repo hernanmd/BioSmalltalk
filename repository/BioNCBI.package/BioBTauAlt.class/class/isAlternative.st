@@ -1,0 +1,4 @@
+testing
+isAlternative
+
+	^ true

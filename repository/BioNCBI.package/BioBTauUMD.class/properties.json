@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "BioGenomeDownloader",
+	"super" : "BioBTauGD",
 	"category" : "BioNCBI-Genomes",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioHumanChrDownloader",
+	"name" : "BioBTauUMD",
 	"type" : "normal"
 }

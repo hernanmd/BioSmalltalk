@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioBosTaurusGenomeDownloader",
+	"name" : "BioBTauGD",
 	"type" : "normal"
 }

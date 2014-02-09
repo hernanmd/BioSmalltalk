@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "BioGenomeDownloader",
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioHSapiensGD",
+	"type" : "normal"
+}

@@ -8,6 +8,6 @@ initialize
 	tablesCount := 17.
 	codonTables := OrderedCollection new: tablesCount.
 	tablesCount timesRepeat: [
-		tableSelectors := self tableSelectors copyFrom: startIndex to: startIndex + 4.
+		tableSelectors := self tableSelectors asSortedCollection copyFrom: startIndex to: startIndex + 4.
 		codonTables add: (self newCodonTable: self selectors: tableSelectors).
 		startIndex := startIndex + 5 ]

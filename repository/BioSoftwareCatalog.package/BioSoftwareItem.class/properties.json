@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "Object",
+	"category" : "BioSoftwareCatalog-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"softwareName",
+		"description",
+		"link",
+		"classifications"
+	],
+	"name" : "BioSoftwareItem",
+	"type" : "normal"
+}

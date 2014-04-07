@@ -1,0 +1,1 @@
+Allows to assign scores to subclasses. 

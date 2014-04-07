@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 4/7/2014 01:44",
+	"super" : "Object",
+	"category" : "BioOrthoXML-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioOrthoScoreDefinition",
+	"type" : "normal"
+}

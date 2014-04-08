@@ -5,14 +5,13 @@ names
 
 	| answer cNames normalizedName |
 	
-	answer := ( cNames := super names )
+	answer := (cNames := super names)
 				detect: [: aName | aName includes: $- ]
 				ifNone: [ nil ].
-	self haltIf: [ names size > 100 ].
 	^ answer
 		ifNil: [ cNames ]
 		ifNotNil: [ 
-			( names includes: ( normalizedName := answer copyReplaceAll: '-' with: ' ' ) )
+			(names includes: ( normalizedName := answer copyReplaceAll: '-' with: ' '))
 				ifFalse: [			
 					cNames 
 						add: normalizedName ;

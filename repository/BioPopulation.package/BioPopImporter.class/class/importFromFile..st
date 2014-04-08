@@ -5,8 +5,8 @@ importFromFile: rawDataFilePath
 	"
 	| parser |
 	
-	parser := STextParser on: ( self openFileNamed: rawDataFilePath  ).
+	parser := NeoCSVReader on: (self openFileNamed: rawDataFilePath) readStream.
 	parser 
-		delimiter: $;;
+		separator: $;;
 		converter: self parserConverter;
 		rowsDo: [:row | self addNewSpeciesFromCsv: row ].

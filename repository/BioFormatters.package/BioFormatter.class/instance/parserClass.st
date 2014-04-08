@@ -1,4 +1,4 @@
 accessing
 parserClass 
 
-	^ STextParser
+	^ NeoCSVReader

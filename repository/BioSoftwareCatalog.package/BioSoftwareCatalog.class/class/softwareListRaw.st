@@ -30,4 +30,9 @@ SAMtools;SAM Tools provide various utilities for manipulating alignments in the 
 SOAPdenovo;Short Oligonucleotide Analysis Package;http://soap.genomics.org.cn/soapdenovo.html;NGS (Next-Generation Sequencing) read alignment
 Trimmomatic;A flexible read trimming tool for Illumina NGS data;http://www.usadellab.org/cms/?page=trimmomatic;NGS (Next-Generation Sequencing) read alignment
 tRNAscan-SE;Search for tRNA genes in genomic sequence;http://lowelab.ucsc.edu/tRNAscan-SE/;Functional RNA
-Infernal;inference of RNA alignments;http://infernal.janelia.org/;Functional RNA'
+Infernal;inference of RNA alignments;http://infernal.janelia.org/;Functional RNA
+Bioconductor;Bioconductor provides tools for the analysis and comprehension of high-throughput genomic data. Bioconductor uses the R statistical programming language, and is open source and open development. It has two releases each year, 749 software packages, and an active user community;http://www.bioconductor.org/;Programming Library
+BioPerl;BioPerl is a collection of Perl modules that facilitate the development of Perl scripts for bioinformatics applications;http://bioperl.org/;Programming Library
+BioSmalltalk;BioSmalltalk is a collection of Smalltalk modules that facilitate the development of scripts for bioinformatics applications;http://code.google.com/p/biosmalltalk/;Programming Library
+Biopython;Biopython is a collection of Python modules that facilitate the development of Python scripts for bioinformatics applications;http://biopython.org/;Programming Library
+BioRuby;BioRuby is a collection of Ruby modules that facilitate the development of Ruby scripts for bioinformatics applications;http://bioruby.open-bio.org/;Programming Library'

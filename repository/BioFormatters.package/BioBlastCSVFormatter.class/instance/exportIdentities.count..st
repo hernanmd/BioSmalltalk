@@ -1,4 +1,4 @@
 exporting
-exportIdentities: stream count: anInteger
+exportIdentities: aStream count: anInteger
 
-	anInteger timesRepeat: [ stream nextPut: $. ].
+	anInteger timesRepeat: [ aStream nextPut: $. ].

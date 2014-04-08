@@ -1,7 +1,7 @@
 exporting
-exportHitCount: anInteger in: stream
+exportHitCount: anInteger in: aStream
 
 	anInteger timesRepeat: [ 
-		stream 
+		aStream 
 			nextPut: self delimiterSourceCharacter;
 			nextPut: $. ].

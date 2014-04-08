@@ -1,6 +1,6 @@
 exporting
 exportConsensus
-	" Private - Write a row representing the	consensus sequence "
+	" Private - Write a row representing the consensus sequence "
 	
 	stream nextPutAll: 'Consensus'.
 	self consensus do: [: letter |

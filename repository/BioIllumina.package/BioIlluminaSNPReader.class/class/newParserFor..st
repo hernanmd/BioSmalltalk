@@ -1,7 +1,6 @@
 instance creation
 newParserFor: aFile
 
-	^ (STextParser on: (self openFullFileNamed: aFile))
-		delimiter: Character tab; 
-		ignoreHeadersCount: 10;
+	^ (NeoCSVReader on: (self openFullFileNamed: aFile) readStream)
+		separator: Character tab; 
 		yourself

@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioIllumina-Core'!
+SystemOrganization addCategory: #BioIllumina!
+SystemOrganization addCategory: 'BioIllumina-Core'!

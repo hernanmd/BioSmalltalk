@@ -1,0 +1,1 @@
+Helper class for automatic code generation of wrappers

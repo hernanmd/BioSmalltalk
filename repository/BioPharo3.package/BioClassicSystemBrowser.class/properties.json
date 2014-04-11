@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectExplorer",
+	"category" : "BioPharo3-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioClassicSystemBrowser",
+	"type" : "normal"
+}

@@ -1,4 +1,4 @@
-*BioPharo3
+testing
 phylipContents01
 	" Answer a <String> with a sample test file path "
 	

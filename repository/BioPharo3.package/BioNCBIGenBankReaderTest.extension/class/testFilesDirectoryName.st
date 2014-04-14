@@ -1,4 +1,4 @@
-*BioPharo3
+accessing
 testFilesDirectoryName
 	" Answer a String where the files for testing will be placed "
 	

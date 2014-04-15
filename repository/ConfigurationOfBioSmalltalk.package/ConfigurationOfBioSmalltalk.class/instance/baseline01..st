@@ -95,7 +95,7 @@ baseline01: spec
 			package: 'BioToolsTests' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioBlastTests' with: [
-				spec requires: #('BioToolsTests' 'BioBlast' ). ];
+				spec requires: #('BioToolsTests' 'BioBlast' 'BioParserTests' ). ];
 			package: 'BioWrapperTests' with: [
 				spec requires: #('BioToolsTests' ). ];
 			package: 'BioParserTests' with: [

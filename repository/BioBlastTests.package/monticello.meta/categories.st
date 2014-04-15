@@ -1,2 +1,2 @@
 SystemOrganization addCategory: #BioBlastTests!
-SystemOrganization addCategory: #'BioBlastTests-Core'!
+SystemOrganization addCategory: 'BioBlastTests-Core'!

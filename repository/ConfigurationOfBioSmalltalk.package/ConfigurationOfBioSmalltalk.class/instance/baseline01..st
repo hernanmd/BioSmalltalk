@@ -91,7 +91,23 @@ baseline01: spec
 			package: 'BioSupport' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioPopulation' with: [
-				spec requires: #('BioTools' 'BioSupport' ). ].
+				spec requires: #('BioTools' 'BioSupport' ). ];
+			package: 'BioToolsTests' with: [
+				spec requires: #('BioTools' ). ];
+			package: 'BioBlastTests' with: [
+				spec requires: #('BioToolsTests' 'BioBlast' ). ];
+			package: 'BioWrapperTests' with: [
+				spec requires: #('BioToolsTests' ). ];
+			package: 'BioParserTests' with: [
+				spec requires: #('BioToolsTests' 'BioParsers' ). ];
+			package: 'BioEntrezTests' with: [
+				spec requires: #('BioToolsTests' 'BioEntrez' ). ];
+			package: 'BioNCBITests' with: [
+				spec requires: #('BioToolsTests' 'BioNCBI' ). ];
+			package: 'BioFormatterTests' with: [
+				spec requires: #('BioToolsTests' 'BioFormatters' ). ];
+			package: 'BioClassifierTests' with: [
+				spec requires: #('BioToolsTests' 'BioClassifier' ). ].
 		spec 
 			group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo3' );
-			group: 'Tests' with: #(). ].
+			group: 'Tests' with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' ). ].

@@ -86,30 +86,10 @@ baseline01: spec
 			package: 'BioSoftwareCatalog';
 			package: 'BioIllumina' with: [
 				spec requires: #('BioTools' ). ];
-			package: 'BioToolsTests' with: [
-				spec requires: #('BioTools' ). ];
 			package: #BioPharo3 with: [
 				spec requires: #('BioTools' ). ];
-			package: 'BioParserTests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioNCBITests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioBlastTests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioEntrezTests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioWrapperTests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioFormatterTests' with: [
-				spec requires: #('BioBlastTests' ). ];
-			package: 'BioClassifierTests' with: [
-				spec requires: #('BioToolsTests' ). ];
-			package: 'BioHaplotypesTest' with: [
-				spec requires: #('BioToolsTests' ). ];
 			package: 'BioSupport' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioPopulation' with: [
-				spec requires: #('BioTools' 'BioSupport' ). ];
-			package: 'BioPopulation-Tests' with: [
-				spec requires: #('BioToolsTests' 'BioPopulation' ). ].
+				spec requires: #('BioTools' 'BioSupport' ). ].
 		spec group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo3' ). ].

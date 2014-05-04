@@ -1,4 +1,5 @@
 text-mining
 locationsWithoutPrefixes
-
-	^ ( self locations collect: [: loc | self removePrefixes: loc ] ) gather: [: e | e ]
+	" Answer a <Collection> of Strings with receiver's locations without common prefixes "
+	
+	^ (self locations collect: [: loc | self class removePrefixes: loc ]) gather: [: e | e ]

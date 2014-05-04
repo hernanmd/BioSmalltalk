@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "hfm 1/13/2012 20:47",
+	"commentStamp" : "HernanMoralesDurand 5/2/2014 02:50",
 	"super" : "SAXHandler",
 	"category" : "BioParsers-Core",
 	"classinstvars" : [ ],

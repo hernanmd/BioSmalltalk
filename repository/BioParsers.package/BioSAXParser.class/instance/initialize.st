@@ -4,4 +4,5 @@ initialize
 
 	super initialize.
 	self initializeResults.
+	self configuration parserLimits documentReadLimit: 10000000.
 	self catchOff.	

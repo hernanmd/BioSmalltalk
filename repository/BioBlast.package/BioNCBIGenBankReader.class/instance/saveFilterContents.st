@@ -5,7 +5,7 @@ saveFilterContents
 	| downloadStatus dir |
 	
 	downloadStatus := false.
-	(contents isEmpty not and: [ ( dir := self requestDirectoryPath ) isNil not ])
+	(contents isEmpty not and: [ (dir := self requestDirectoryPath) notNil ])
 		ifTrue: [ 
 			self entrezSearchResults doWithIndex: [: bioESearchResult : index |
 				| fileName |

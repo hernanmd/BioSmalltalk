@@ -1,5 +1,5 @@
 *BioPharo3
 workingDirectory
-	" Answer a String with the default directory "
+	" Answer a <String> with the default directory "
 	
-	^ FileSystem disk workingDirectory
+	^ FileSystem disk workingDirectory asString

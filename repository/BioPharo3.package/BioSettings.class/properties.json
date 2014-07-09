@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "SettingTreeBuilder",
+	"commentStamp" : "HernanMoralesDurand 7/9/2014 15:05",
+	"super" : "Object",
 	"category" : "BioPharo3-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

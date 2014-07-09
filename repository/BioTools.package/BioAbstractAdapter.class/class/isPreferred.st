@@ -1,0 +1,4 @@
+accessing
+isPreferred
+
+	^ isPreferred

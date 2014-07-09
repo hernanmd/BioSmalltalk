@@ -1,8 +1,10 @@
 {
-	"commentStamp" : "hfm 10/12/2012 20:03",
+	"commentStamp" : "HernanMoralesDurand 7/9/2014 15:23",
 	"super" : "BioObject",
 	"category" : "BioTools-Adapters",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"isPreferred"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [

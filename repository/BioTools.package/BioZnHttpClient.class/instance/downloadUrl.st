@@ -5,10 +5,11 @@ downloadUrl
 	| cUrl |
 	
 	cUrl := self urlClass fromString: self url asString.
-	^ String streamContents: [ : str |
+	^ cUrl asString
+"	^ String streamContents: [ : str |
 		str 
 			nextPutAll: 'http://';
 			nextPutAll: cUrl host;
 			nextPut: $/.
 		cUrl hasPath
-			ifTrue: [ str nextPutAll: cUrl path ] ]
+			ifTrue: [ str nextPutAll: cUrl path ] ]"

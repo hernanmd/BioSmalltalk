@@ -4,6 +4,4 @@ baseUrl
 	
 	^ String streamContents: [: str | 
 		self isEmpty ifFalse: [
-			str 
-				nextPutAll: '&id=';
-				nextPutAll: ( $, join: self ) ] ]
+			str nextPutAll: ($, join: self) ] ]

@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"genBankDownloader"
+	],
 	"name" : "BioNCBIGenBankReader",
 	"type" : "normal"
 }

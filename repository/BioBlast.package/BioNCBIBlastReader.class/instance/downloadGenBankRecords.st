@@ -6,7 +6,6 @@ downloadGenBankRecords
 	
 	filteredResult := self contents.
 	self nextReader: self genBankReaderClass new.
-	self halt.
 	downloadStatus := self nextReader
 			genBankRecordsAsXMLFrom: filteredResult contents
 			database: self blastDbName;

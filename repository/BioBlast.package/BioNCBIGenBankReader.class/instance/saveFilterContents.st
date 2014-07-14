@@ -12,5 +12,5 @@ saveFilterContents
 				fileName := self formatFilename: dir index: index.
 				self outputToFullFile: fileName contents: bioESearchResult  ].
 			downloadStatus := true ]
-		ifFalse: [ self error: 'No contents or invalid directory path' ].
+		ifFalse: [ self error: 'Save cancelled' ].
 	^ downloadStatus

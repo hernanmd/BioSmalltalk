@@ -1,4 +1,4 @@
 comparing
 hash
 
-	^ self contents hash bitXor: self size hash
+	^ self contents hash

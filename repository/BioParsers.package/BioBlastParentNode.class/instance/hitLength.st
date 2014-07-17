@@ -1,5 +1,5 @@
 accessing hit individually
 hitLength
-	" Answer the receiver's hit length "
+	" Answer a Collection of receiver's ..."
 	
-	^ (self selectNodeNamed: 'Hit_len') blastValue.
+	^ self selectNodeNamed: 'Hit_len'.

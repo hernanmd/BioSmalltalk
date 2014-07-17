@@ -1,4 +1,5 @@
 accessing
 removeRepositoryVersions
+	" Set to nil to re-scan and populate repositories "
 
-	^ self repositoryVersions removeAll
+	repositoryVersions := nil

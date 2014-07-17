@@ -1,4 +1,7 @@
 accessing
-addRepositoryVersion: aRepositoryVersion
-	" Add a BioPopRepositoryVersion to the receiver's versions "
-	self repositoryVersions add: aRepositoryVersion
+addRepositoryVersion: repositoryVersionName
+	" Add a aRepositoryVersion to the receiver's versions "
+	
+	repositoryVersions isNil
+		ifTrue: [repositoryVersions := Set new ].
+	repositoryVersions add: (BioPopRepositoryVersion new name: repositoryVersionName)

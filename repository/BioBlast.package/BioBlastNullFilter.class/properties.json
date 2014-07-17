@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 7/17/2014 00:43",
+	"super" : "BioFilter",
+	"category" : "BioBlast-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBlastNullFilter",
+	"type" : "normal"
+}

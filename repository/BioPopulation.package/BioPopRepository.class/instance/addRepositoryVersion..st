@@ -4,4 +4,6 @@ addRepositoryVersion: repositoryVersionName
 	
 	repositoryVersions isNil
 		ifTrue: [repositoryVersions := Set new ].
-	repositoryVersions add: (BioPopRepositoryVersion new name: repositoryVersionName)
+	repositoryVersions add: (BioPopRepositoryVersion new 
+		repository: self; 
+		name: repositoryVersionName)

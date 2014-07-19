@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 7/19/2014 11:13",
 	"super" : "BioNamedObject",
 	"category" : "BioPopulation-Core",
 	"classinstvars" : [ ],
@@ -8,7 +8,8 @@
 	"instvars" : [
 		"locatedBioSpecies",
 		"bioSpecies",
-		"repository"
+		"repository",
+		"importer"
 	],
 	"name" : "BioPopRepositoryVersion",
 	"type" : "normal"

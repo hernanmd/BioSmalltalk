@@ -1,5 +1,5 @@
-as yet unclassified
+accessing
 repositoryRawSize
-	" Answer a <String> with the file path of source data for the receiver "
+	" Answer a <Number> with the size in bytes of the source data for the receiver "
 
 	^ self importer repositoryRawSize 

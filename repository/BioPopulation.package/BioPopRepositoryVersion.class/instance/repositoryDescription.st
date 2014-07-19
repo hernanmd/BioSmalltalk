@@ -1,5 +1,5 @@
-as yet unclassified
+accessing
 repositoryDescription
-	" Answer a <String> with the file path of source data for the receiver "
+	" Answer a <String> with a description of source data for the receiver "
 
 	^ self importer repositoryDescription 

@@ -4,4 +4,4 @@ newRepositoryVersionFrom: repositoryImporterClass
 	^ BioPopRepositoryVersion new 
 		repository: self; 
 		importer: repositoryImporterClass;
-		name: repositoryImporterClass repositoryVersionName
+		name: repositoryImporterClass repositoryName

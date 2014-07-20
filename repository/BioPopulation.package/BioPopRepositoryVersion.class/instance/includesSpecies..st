@@ -1,4 +1,4 @@
 testing
 includesSpecies: aString
 
-	^ ( self atSpeciesName: aString ) isNil not
+	^ (self atSpeciesName: aString) notNil

@@ -1,4 +1,4 @@
-accessing
+obsolete
 fillSpecies: species
 	" Private - "
 	^ ( BioMatrixFormatter new initMatrixRows: species size columns: 3 )

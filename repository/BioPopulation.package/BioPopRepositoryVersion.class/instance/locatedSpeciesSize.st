@@ -1,4 +1,4 @@
-testing
+accessing
 locatedSpeciesSize
 
 	^ self locatedBioSpecies size

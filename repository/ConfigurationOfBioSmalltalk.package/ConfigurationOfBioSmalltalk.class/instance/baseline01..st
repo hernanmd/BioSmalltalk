@@ -65,7 +65,7 @@ baseline01: spec
 			package: 'BioWrappers' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioParsers' with: [
-				spec requires: #('BioWrappers' ). ];
+				spec requires: #('BioWrappers' 'BioTools' ). ];
 			package: 'BioEntrez' with: [
 				spec requires: #('BioWrappers' 'BioParsers' ). ];
 			package: 'BioBlast' with: [
@@ -95,12 +95,12 @@ baseline01: spec
 				spec requires: #('BioTools' 'BioSupport' ). ];
 			package: 'BioToolsTests' with: [
 				spec requires: #('BioTools' ). ];
-			package: 'BioBlastTests' with: [
-				spec requires: #('BioToolsTests' 'BioBlast' 'BioParserTests' ). ];
 			package: 'BioWrapperTests' with: [
 				spec requires: #('BioToolsTests' ). ];
 			package: 'BioParserTests' with: [
 				spec requires: #('BioToolsTests' 'BioParsers' ). ];
+			package: 'BioBlastTests' with: [
+				spec requires: #('BioToolsTests' 'BioBlast' 'BioParserTests' ). ];
 			package: 'BioEntrezTests' with: [
 				spec requires: #('BioToolsTests' 'BioEntrez' ). ];
 			package: 'BioNCBITests' with: [

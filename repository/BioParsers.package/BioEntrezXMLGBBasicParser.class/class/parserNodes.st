@@ -1,5 +1,6 @@
 accessing
 parserNodes
+	" See superimplementor's comment "
 
 	^ #(
 	'GBSeq_definition'	

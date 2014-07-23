@@ -9,4 +9,4 @@ importFromFile: rawDataFilePath
 	parser 
 		separator: $;;
 		converter: self parserConverter;
-		do: [ : row | self addNewSpeciesFromCsv: row ].
+		do: [ : row | self addNewBreedFromCsv: row ].

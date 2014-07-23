@@ -3,7 +3,7 @@
 	"super" : "BioObject",
 	"category" : "BioPopulation-Core",
 	"classinstvars" : [
-		"newSpecies"
+		"newBreed"
 	],
 	"pools" : [ ],
 	"classvars" : [ ],

@@ -1,6 +1,11 @@
-BioBreed release.
-BioBreed initialize.
-BioBreed repositories.
-BioBreed populatedRepositories.
-(BioBreed repositoryFor: 'Cattle') repositoryVersions.
-(BioBreed repositoryFor: 'Cattle') repositoryVersionAt: 'Mason'.
+Represents a species including its synonyms and any relevant locations.
+
+Instance Variables
+	locations:		<Object>
+	synonyms:		<Object>
+
+locations
+	- xxxxx
+
+synonyms
+	- xxxxx

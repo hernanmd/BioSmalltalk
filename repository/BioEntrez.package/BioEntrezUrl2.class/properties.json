@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioUrl",
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezUrl2",
+	"type" : "normal"
+}

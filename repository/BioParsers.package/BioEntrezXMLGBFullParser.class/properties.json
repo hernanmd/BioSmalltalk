@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioEntrezXMLGenBankSeqParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEntrezXMLGBFullParser",
+	"type" : "normal"
+}

@@ -1,6 +1,6 @@
-BioBreed release.
-BioBreed initialize.
-BioBreed repositories.
-BioBreed populatedRepositories.
-(BioBreed repositoryFor: 'Cattle') repositoryVersions.
-(BioBreed repositoryFor: 'Cattle') repositoryVersionAt: 'Mason'.
+BioSpecies release.
+BioSpecies initialize.
+BioSpecies repositories.
+BioSpecies populatedRepositories.
+(BioSpecies repositoryFor: 'Cattle') repositoryVersions.
+(BioSpecies repositoryFor: 'Cattle') repositoryVersionAt: 'Mason'.

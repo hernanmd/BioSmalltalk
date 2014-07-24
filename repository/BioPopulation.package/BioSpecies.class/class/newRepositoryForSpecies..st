@@ -1,6 +1,4 @@
 initialize-release
 newRepositoryForSpecies: speciesName
 
-	^ (BioPopRepository new name: speciesName)
-		initializeRepositoryVersions;
-		yourself.
+	^ BioPopRepository new name: speciesName

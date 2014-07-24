@@ -1,4 +1,4 @@
-initialize-release
+private
 faoSpecies
 	" Answer a <Collection> of FAO species in english language "
 

@@ -2,5 +2,5 @@
 openTranscript
 	" Private - Open the system Transcript if closed "
 
-	self allowOpenTranscript
+	^ self allowOpenTranscript
 		ifTrue: [ Transcript open ].

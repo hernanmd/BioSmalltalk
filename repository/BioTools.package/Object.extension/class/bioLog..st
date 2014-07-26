@@ -2,8 +2,10 @@
 bioLog: aString
 	" Write aString to the Transcript "
 	
-	self openTranscript.
+	| trWindow |
+	trWindow := self openTranscript.
 	self streamer cr; 
 		show: DateAndTime current;
 		space;
 		show: aString.
+	^ trWindow

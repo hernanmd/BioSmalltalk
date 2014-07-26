@@ -9,7 +9,8 @@
 		"dbName",
 		"format",
 		"uids",
-		"results"
+		"results",
+		"parsedResults"
 	],
 	"name" : "BioNCBIGenBankDownloader",
 	"type" : "normal"

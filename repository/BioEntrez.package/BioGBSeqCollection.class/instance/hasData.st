@@ -1,0 +1,4 @@
+testing
+hasData
+
+	^ self notEmpty

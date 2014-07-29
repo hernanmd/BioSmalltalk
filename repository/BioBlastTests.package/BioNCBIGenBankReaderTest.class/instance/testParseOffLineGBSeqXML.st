@@ -6,7 +6,7 @@ testParseOffLineGBSeqXML
 	gbSeqReader := 
 		BioNCBIGenBankReader new 
 			parser: BioEntrezXMLGBBasicParser;
-			parseXMLDocumentsFrom: self class testFilesDirectoryName.
+			parseXMLDocumentsFromDirectory: self class testFilesDirectoryName.
 
 	self assert: ( gbSeqReader isKindOf: BioNCBIGenBankReader ).
 	self deny: gbSeqReader contents isEmpty.

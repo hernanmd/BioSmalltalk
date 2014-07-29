@@ -2,4 +2,4 @@ accessing
 selectedNodes
 
 	^ nodes
-		ifNil: [ nodes := BioNCBIBlastReader hitNodesNames ]
+		ifNil: [ nodes := self defaultNodes ]

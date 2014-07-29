@@ -7,6 +7,6 @@ tokenizeHeader
        whileFalse:[
 			| node |	
 			parser next.
-			(node := parser currentNodeUpTo: 'BlastOutput_iterations')
+			(node := parser textWhileNotTag: 'BlastOutput_iterations')
 				ifNotNil: [ self saveTag: node key value: node value ] ].
 	^ self results

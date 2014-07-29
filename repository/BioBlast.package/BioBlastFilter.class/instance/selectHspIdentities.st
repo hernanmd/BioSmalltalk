@@ -1,4 +1,4 @@
 accessing
 selectHspIdentities
 
-	^ self hits collect: #selectHspIdentities
+	^ self hits collect: #selectHspIdentity

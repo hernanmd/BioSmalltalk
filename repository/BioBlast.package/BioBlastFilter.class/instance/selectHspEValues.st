@@ -1,4 +1,4 @@
 accessing
 selectHspEValues
 
-	^ self hits collect: #selectHspEValues
+	^ self hits collect: #selectHspEValue

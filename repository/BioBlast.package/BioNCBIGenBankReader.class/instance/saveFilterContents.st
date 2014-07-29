@@ -7,8 +7,6 @@ saveFilterContents
 	(contents notEmpty and: [ (dir := self requestDirectoryPath) notNil ])
 		ifTrue: [ 
 			self saveSplittedSearchResults: dir.
-			self checkValidContents ifTrue: [ 
-				self contents: self genBankDownloader parsedResults.
-				downloadStatus := true ] ]
+			self checkValidContents ifTrue: [ downloadStatus := true ] ]
 		ifFalse: [ self error: 'Save cancelled' ].
 	^ downloadStatus

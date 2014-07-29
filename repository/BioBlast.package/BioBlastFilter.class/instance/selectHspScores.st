@@ -1,4 +1,4 @@
 accessing
 selectHspScores
 
-	^ self hits collect: #hspScores
+	^ self hits collect: #selectHspScore

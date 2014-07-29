@@ -10,7 +10,8 @@
 		"format",
 		"uids",
 		"results",
-		"parsedResults"
+		"parsedResults",
+		"reader"
 	],
 	"name" : "BioNCBIGenBankDownloader",
 	"type" : "normal"

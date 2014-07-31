@@ -1,4 +1,4 @@
-XML Pull Parser for http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd
+Abstract XML Pull Parser for http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd
 
   GBSeq represents the elements in a GenBank style report
     of a sequence with some small additions to structure and support
@@ -19,3 +19,4 @@ Usage example:
 | fileRef |
 fileRef := FileSystem workingDirectory / 'temp3' / '1.xml'.
 (BioEntrezXMLGBSeqParser on: fileRef readStream)	 collectGBSet
+

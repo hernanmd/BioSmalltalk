@@ -9,4 +9,4 @@ saveGBNode: result
 			result first key: result first value.
 			result first value: result second value.
 			result removeLast ].
-	matches add: result first
+	self matches add: result first

@@ -1,0 +1,5 @@
+accessing
+initialize
+
+	super initialize.
+	matches := Dictionary new.

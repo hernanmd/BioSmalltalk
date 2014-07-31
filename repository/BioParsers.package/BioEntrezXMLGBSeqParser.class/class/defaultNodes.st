@@ -2,7 +2,6 @@ accessing
 defaultNodes
 
 	^ #(
-	'GBSeq_primary-accession'
 	'GBSeq_accession-version'
 	
 	'GBAuthor' 

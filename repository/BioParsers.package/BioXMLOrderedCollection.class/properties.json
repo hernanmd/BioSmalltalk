@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "BioXMLParser",
+	"super" : "BioXMLResultFormatter",
 	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioNCBIXMLBlastParser",
+	"name" : "BioXMLOrderedCollection",
 	"type" : "normal"
 }

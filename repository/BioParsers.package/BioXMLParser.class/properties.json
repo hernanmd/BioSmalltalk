@@ -1,7 +1,7 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 7/29/2014 13:03",
 	"super" : "BioAbstractParser",
-	"category" : "BioParsers-Core",
+	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

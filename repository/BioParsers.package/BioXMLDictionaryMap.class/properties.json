@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioXMLResultFormatter",
-	"category" : "BioParsers-Support",
+	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

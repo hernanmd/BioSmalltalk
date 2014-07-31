@@ -13,3 +13,9 @@ XML Pull Parser for http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.dtd
     decisions have been made.
 
 See http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.mod.dtd for details
+
+Usage example:
+
+| fileRef |
+fileRef := FileSystem workingDirectory / 'temp3' / '1.xml'.
+(BioEntrezXMLGBSeqParser on: fileRef readStream)	 collectGBSet

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioObject",
-	"category" : "BioParsers-Support",
+	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

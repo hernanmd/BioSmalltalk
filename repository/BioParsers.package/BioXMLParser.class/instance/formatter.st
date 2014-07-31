@@ -2,4 +2,4 @@ accessing
 formatter
 
 	^ formatter
-		ifNil: [ formatter := BioXMLDictionaryMap new ]
+		ifNil: [ formatter := self defaultFormatterClass new ]

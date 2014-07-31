@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "BioInterfaceObject",
+	"super" : "BioPropertyObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

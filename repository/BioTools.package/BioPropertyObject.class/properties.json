@@ -8,6 +8,6 @@
 	"instvars" : [
 		"properties"
 	],
-	"name" : "BioInterfaceObject",
+	"name" : "BioPropertyObject",
 	"type" : "normal"
 }

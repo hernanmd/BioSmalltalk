@@ -1,4 +1,4 @@
 instance creation
-newFrom: aClient
+newFrom: anObject
 
-	^ self basicNew initializeWith: aClient
+	^ self basicNew initializeWith: anObject

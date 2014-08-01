@@ -6,7 +6,9 @@ saveGBNode: result
 
 	result first key = 'GBQualifier_name' 
 		ifTrue: [ 
-			result first key: result first value.
-			result first value: result second value.
-			result removeLast ].
+			result size = 1 
+				ifFalse: [ 
+					result first key: result first value.					
+					result first value: result second value. 
+					result removeLast  ] ].
 	self matches add: result first

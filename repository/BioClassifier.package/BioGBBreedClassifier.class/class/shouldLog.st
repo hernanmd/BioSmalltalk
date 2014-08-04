@@ -1,4 +1,0 @@
-private
-shouldLog
-
-	^ false

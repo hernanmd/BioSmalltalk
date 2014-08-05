@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioInterfaceObject",
+	"super" : "BioPropertyObject",
 	"category" : "BioWrappers-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

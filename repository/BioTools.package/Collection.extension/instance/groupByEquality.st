@@ -1,14 +1,14 @@
 *BioTools
 groupByEquality
 
-	| cols |
-	cols := OrderedCollection new.
-	self do: [ : r |
+	| group |
+	group := OrderedCollection new.
+	self do: [ : item |
 		| found |
-		found := cols 
-			detect: [ : c | c includes: r ]
+		found := group 
+			detect: [ : c | c includes: item ]
 			ifNone: [ nil ].
 		found
-			ifNil: [ cols add: (OrderedCollection new add: r; yourself) ]
-			ifNotNil: [ found add: r ] ].
-	^ cols
+			ifNil: [ group add: (BioGroupedCollection new add: item; yourself) ]
+			ifNotNil: [ found add: item ] ].
+	^ group

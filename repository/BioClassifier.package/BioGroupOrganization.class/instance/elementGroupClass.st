@@ -1,4 +1,5 @@
 initialize-release
 elementGroupClass
 
-	^ BioOrganization
+	^ elementGroupClass
+		ifNil: [ elementGroupClass := self defaultElementGroupClass ]

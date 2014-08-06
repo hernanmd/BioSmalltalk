@@ -5,9 +5,8 @@ isGenBankFlatFormat
 	| flatSignature |
 	
 	self reset.
-	[ flatSignature := self next: 6 ]
+	[ flatSignature := self next: 6.
+	self reset. ]
 	on: Error
-	do: [ : ex | 
-		self reset.
-		self signalInvalidObject: 'Cannot read receiver''s stream ', ex messageText ].
+	do: [ : ex | self signalInvalidObject: 'Cannot read receiver''s stream ', ex messageText ].
 	^ flatSignature beginsWith: 'LOCUS	'

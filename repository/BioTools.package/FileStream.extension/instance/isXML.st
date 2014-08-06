@@ -5,9 +5,8 @@ isXML
 	| xmlSignature |
 	
 	self reset.
-	[ xmlSignature := self next: 5 ]
+	[ xmlSignature := self next: 5.
+	self reset. ]
 	on: Error
-	do: [ : ex | 
-		self reset.
-		self signalInvalidObject: 'Cannot read receiver''s stream ' , ex messageText ].
+	do: [ : ex | self signalInvalidObject: 'Cannot read receiver''s stream ' , ex messageText ].
 	^ xmlSignature isXML

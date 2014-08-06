@@ -1,6 +1,6 @@
 accessing-blast
 alignments
-	" Answer a Collection of receiver's alignment (for the database) in each receiver's HSP node "
+	" Answer a <BioAlignment> of receiver's alignment (for the database) in each receiver's HSP node "
 	
 	| align parsedOrFilteredResults |
 	

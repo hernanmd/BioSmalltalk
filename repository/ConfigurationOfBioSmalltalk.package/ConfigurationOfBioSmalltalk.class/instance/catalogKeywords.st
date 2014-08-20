@@ -1,4 +1,4 @@
 catalog
 catalogKeywords
 	"Returns an array of symbols"
-	^ #(bioinformatics scientific api) 
+	^ #(bioinformatics biology dna science protein rna blast) 

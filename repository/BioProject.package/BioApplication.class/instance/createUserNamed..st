@@ -1,7 +1,7 @@
 accessing
-createUserNamed: aNameString
-	" Add a GTUser to the receiver's collection "
+createUserNamed: nameString
+	" Create a new user named nameString in the receiver users "
 
 	^ self applicationUsers 
-			at: aNameString
-			put: ( BioUser named: aNameString )
+		at: nameString
+		put: (BioUser named: nameString)

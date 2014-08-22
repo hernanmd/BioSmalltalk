@@ -1,6 +1,6 @@
 accessing
 userNamed: aNameString
-	" Add a GTUser to the receiver's collection "
+	" Answer a <BioUser> with user name aNameString, raise an exception if not found "
 
 	^ self users 
 		at: aNameString

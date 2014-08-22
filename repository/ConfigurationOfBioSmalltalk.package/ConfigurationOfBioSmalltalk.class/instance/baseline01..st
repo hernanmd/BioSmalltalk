@@ -4,7 +4,7 @@ baseline01: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.	
+		spec preLoadDoIt: #preLoad.
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'FFI' with: [
@@ -57,7 +57,12 @@ baseline01: spec
 				spec
 					className: #ConfigurationOfXMLWriter;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo30/main/' ].
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo30/main/' ];
+			project: 'StringExtensions' with: [
+				spec
+					className: #ConfigurationOfStringExtensions;
+					versionString: #'bleedingEdge';
+					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ].
 		spec 
 			package: 'BioTools';
 			package: 'BioNCBI' with: [
@@ -114,5 +119,5 @@ baseline01: spec
 			package: 'BioProjectTests' with: [
 				spec requires: #('BioProject' ). ].
 		spec 
-			group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo3' 'BioProject');
-			group: 'Tests' with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests'). ].
+			group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo3' 'BioProject' );
+			group: 'Tests' with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' ). ].

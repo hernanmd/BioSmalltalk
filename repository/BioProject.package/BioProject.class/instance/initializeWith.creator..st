@@ -1,5 +1,8 @@
 initialize-release
-initializeWith: aNameString creator: aGTUser
+initializeWith: aNameString creator: aBioUser
 	" Private - Create necessary objects for receiver's initialization "
 	
-	info := BioProjectInformation named: aNameString creator: aGTUser project: self.
+	info := BioProjectInformation 
+			named: aNameString 
+			creator: aBioUser 
+			project: self.

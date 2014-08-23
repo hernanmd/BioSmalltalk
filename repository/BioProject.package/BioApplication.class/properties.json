@@ -10,7 +10,8 @@
 	"instvars" : [
 		"applicationProjects",
 		"applicationUsers",
-		"currentProject"
+		"currentProject",
+		"projectClass"
 	],
 	"name" : "BioApplication",
 	"type" : "normal"

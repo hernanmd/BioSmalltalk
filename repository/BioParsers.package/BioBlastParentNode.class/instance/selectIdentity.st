@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 selectIdentity
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer the one with the highest percent identity. "

@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 selectAccessionNumbers
 	" Answer a <Collection> of accession numbers "
 	

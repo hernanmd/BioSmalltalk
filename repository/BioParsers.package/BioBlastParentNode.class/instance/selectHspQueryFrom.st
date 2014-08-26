@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 selectHspQueryFrom
 	" - "
 	

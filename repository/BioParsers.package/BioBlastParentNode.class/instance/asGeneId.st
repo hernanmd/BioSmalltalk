@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 asGeneId
 	" Answer a <Collection> of gene identifiers "
 	

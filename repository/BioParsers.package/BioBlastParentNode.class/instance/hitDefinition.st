@@ -1,4 +1,4 @@
-accessing blast hits
+accessing hits
 hitDefinition
 	" Answer a Collection of receiver's definition lines of the database sequence "
 	

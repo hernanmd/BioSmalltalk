@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 selectAccessionNumber
 	" Answer a BioAccession object "
 	

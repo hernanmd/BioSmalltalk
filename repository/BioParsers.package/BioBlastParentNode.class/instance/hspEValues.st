@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 hspEValues
 	" Answer a Collection of receiver's expect values of the HSPs "
 	

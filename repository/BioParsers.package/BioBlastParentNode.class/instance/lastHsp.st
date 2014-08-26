@@ -1,4 +1,4 @@
-hsps accessing
+accessing hsps
 lastHsp
 
 	^ self hspsNode lastHspNode

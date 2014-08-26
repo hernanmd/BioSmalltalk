@@ -1,4 +1,4 @@
-accessing hit collection
+accessing hits
 hitHsps
 	"  "
 	

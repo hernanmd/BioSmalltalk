@@ -1,7 +1,7 @@
-hsps filtering
+accessing hsps
 hspAlignLengths: aBlock
-	" Answer a Collection of hits satisfying conditions specified in aBlock for align lengths
-	in each HSP node for each HIT "
+	" Possibly deprecated "
+	" Answer a Collection of hits satisfying conditions specified in aBlock for align lengths in each HSP node for each HIT "
 	
 	| hits |
 	

@@ -26,3 +26,9 @@ Feature qualifiers parser. Disambiguates for example, the following subtree:
           <GBQualifier_value>Busha cattle</GBQualifier_value>
         </GBQualifier>
       </GBFeature_quals>
+
+Usage example:
+
+| fileRef |
+fileRef := BioObject testFilesFullDirectoryName / 'GenBankTestFiles' / 'TestGBSeq02.xml'.
+(BioEntrezXMLGBSeqFeatureQualParser on: fileRef readStream) collectGBSet

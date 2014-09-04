@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 7/31/2014 20:28",
+	"commentStamp" : "HernanMoralesDurand 9/4/2014 12:02",
 	"super" : "BioXMLParser",
 	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],

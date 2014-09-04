@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 7/31/2014 20:29",
+	"commentStamp" : "HernanMoralesDurand 9/4/2014 12:03",
 	"super" : "BioEntrezXMLGBSeqParser",
 	"category" : "BioParsers-XML",
 	"classinstvars" : [ ],

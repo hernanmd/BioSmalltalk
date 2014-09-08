@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioObject",
-	"category" : "BioClassifier-KnowledgeBase",
+	"category" : "BioClassifier-RuleEngine",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

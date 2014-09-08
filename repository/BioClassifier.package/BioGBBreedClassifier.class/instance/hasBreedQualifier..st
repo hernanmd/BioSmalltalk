@@ -6,4 +6,4 @@ hasBreedQualifier: aSubject
 	| speciesName |
 	
 	speciesName := self extractBreedQualifier: aSubject.
-	^ speciesName isEmpty not
+	^ speciesName notEmpty

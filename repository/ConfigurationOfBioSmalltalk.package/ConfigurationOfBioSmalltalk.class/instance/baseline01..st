@@ -62,7 +62,12 @@ baseline01: spec
 				spec
 					className: #ConfigurationOfStringExtensions;
 					versionString: #'bleedingEdge';
-					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ].
+					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ];
+			project: 'ProcessWrapper' with: [
+				spec
+					className: #ConfigurationOfProcessWrapper;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/hernan/ProcessWrapper/main/' ].
 		spec 
 			package: 'BioTools';
 			package: 'BioNCBI' with: [

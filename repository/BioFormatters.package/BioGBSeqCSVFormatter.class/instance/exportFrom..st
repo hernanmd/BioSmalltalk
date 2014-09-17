@@ -1,8 +1,10 @@
 accessing
 exportFrom: aCollection
-	" Export data in CSV format in aCollection "
+	" Export default features "
 
 	self initializeStream: aCollection.
-	self writeHeaderFrom: aCollection.
-	self writeRowsFrom: aCollection.
-	self outputToFile: self outputFilename contents: stream contents
+	self writeHeaderFrom: self gbKeys.
+	self writeRowsFrom: aCollection features: self gbKeys.
+	self 
+		outputToFile: self outputFilename 
+		contents: stream contents

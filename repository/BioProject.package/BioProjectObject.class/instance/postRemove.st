@@ -1,3 +1,3 @@
 accessing private
 postRemove
-	" Define in subclasses as appropiate "
+	" Do nothing - Define in subclasses as appropiate "

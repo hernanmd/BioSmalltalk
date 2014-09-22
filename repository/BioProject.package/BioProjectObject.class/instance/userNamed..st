@@ -1,5 +1,5 @@
 accessing private
-userNamed: aNameString
-	" Answer a GTUser "
+userNamed: username
+	" Answer a <BioUser> named username for the current application "
 
-	^ self application userNamed: aNameString
+	^ self application userNamed: username

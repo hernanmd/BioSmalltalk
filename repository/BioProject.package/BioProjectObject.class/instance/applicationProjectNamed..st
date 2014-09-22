@@ -1,5 +1,5 @@
 accessing private
-applicationProjectNamed: aNameString
-	" Answer a GTProjectInformation "
+applicationProjectNamed: projectName
+	" Answer a <BioProjectInformation> named projectName "
 
-	^ self application applicationProjectNamed: aNameString
+	^ self application applicationProjectNamed: projectName

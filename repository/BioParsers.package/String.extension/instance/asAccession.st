@@ -1,4 +1,4 @@
-*bioparsers
+*BioParsers
 asAccession
 	" Answer a new Accession object for the receiver. "
 

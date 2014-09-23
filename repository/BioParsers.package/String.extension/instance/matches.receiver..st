@@ -1,4 +1,4 @@
-*bioparsers
+*BioParsers
 matches: cmpSymbol receiver: recv
 
 	^ recv asLowercase

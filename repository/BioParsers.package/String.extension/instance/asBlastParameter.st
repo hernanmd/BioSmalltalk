@@ -1,4 +1,4 @@
-*bioparsers
+*BioParsers
 asBlastParameter
 
 	^ self isNumeric

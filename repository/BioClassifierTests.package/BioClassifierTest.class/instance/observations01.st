@@ -1,5 +1,5 @@
 accessing
-featureVectors01
+observations01
 
 	^ '>gi|198282148|ref|NC_011206.1| Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome
 >gi|295691862|ref|NC_014106.1| Lactobacillus crispatus ST1, complete genome

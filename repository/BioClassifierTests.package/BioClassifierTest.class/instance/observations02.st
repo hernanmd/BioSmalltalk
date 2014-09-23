@@ -1,5 +1,5 @@
 accessing
-featureVectors02
+observations02
 
 	^ { 'Japan:Shimane,Izumo,Koshi 3775' .
 'Japan:Shimane,Izumo,Koshi 3775' .

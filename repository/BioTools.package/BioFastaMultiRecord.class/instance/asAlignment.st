@@ -1,4 +1,4 @@
-as yet unclassified
+converting
 asAlignment
 	" Answer a <BioAlignment> representation of the receiver "
 	

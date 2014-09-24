@@ -2,5 +2,4 @@ accessing
 blastMethods
 	" self blastMethods "
 
-	^ self blastCategories gather: [: cat | 
-		BioBlastFilter organization listAtCategoryNamed: cat ]
+	^ self blastCategories flatCollect: [: cat | BioBlastFilter organization listAtCategoryNamed: cat ]

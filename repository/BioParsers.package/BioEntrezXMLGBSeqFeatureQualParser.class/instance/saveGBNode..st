@@ -11,4 +11,4 @@ saveGBNode: result
 					result first key: result first value.					
 					result first value: result second value. 
 					result removeLast  ] ].
-	self matches add: result first
+	self matches add: (PCTGenBankAssociation key: result first key value: result first value)

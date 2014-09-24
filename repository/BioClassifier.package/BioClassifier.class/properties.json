@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 9/23/2014 15:58",
 	"super" : "BioNamedObject",
 	"category" : "BioClassifier-Core",
 	"classinstvars" : [ ],
@@ -9,7 +9,8 @@
 		"organization",
 		"matches",
 		"mismatches",
-		"ruleBase"
+		"ruleBase",
+		"subject"
 	],
 	"name" : "BioClassifier",
 	"type" : "normal"

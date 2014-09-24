@@ -4,10 +4,9 @@ matched: aSymbol
 	
 	self matches
 		at: aSymbol
-		ifPresent: [ : elem | 
-			( matches at: aSymbol ) add: self subject ]
+		ifPresent: [ : elem | (matches at: aSymbol) add: self subject ]
 		ifAbsent: [
 			matches 
 				at: aSymbol 
-				put: ( OrderedCollection new add: self subject; yourself ) ].
-	self setSubjectAsClassified
+				put: (OrderedCollection new add: self subject; yourself) ].
+"	self setSubjectAsClassified"

@@ -1,4 +1,4 @@
 accessing
 classificationsSize
 
-	^ self organization classificationsSize
+	^ self matches sum: #size

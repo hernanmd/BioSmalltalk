@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "Association",
+	"category" : "BioParsers-XML",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioGenBankAssociation",
+	"type" : "normal"
+}

@@ -2,4 +2,4 @@ accessing-sequences
 sequences
 	" Answer a <Collection> of all receiver's job sequences "
 	
-	^ self jobs gather: #sequences
+	^ self jobs flatCollect: #sequences

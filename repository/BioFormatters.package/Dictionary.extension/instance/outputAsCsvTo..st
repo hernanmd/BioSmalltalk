@@ -1,4 +1,4 @@
-*bioformatters
+*BioFormatters
 outputAsCsvTo: aStream
 	" Write the receiver contents in the following CSV format:
 	

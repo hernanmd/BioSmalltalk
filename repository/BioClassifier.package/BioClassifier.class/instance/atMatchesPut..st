@@ -1,6 +1,6 @@
 accessing
 atMatchesPut: anObject
-	" Take an action when the receiver's subect is classified "
+	" Add anObject to the receiver's matched elements "
 	
 	self matches
 		add: anObject;

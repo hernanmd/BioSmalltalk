@@ -1,4 +1,5 @@
 testing
 hasResults
-
-	^ results isNil not
+	" Answer <true> if we have results "
+	
+	^ results notNil

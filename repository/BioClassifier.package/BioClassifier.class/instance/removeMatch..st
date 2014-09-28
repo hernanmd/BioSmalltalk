@@ -1,7 +1,7 @@
 accessing
-removeMismatch: anObject
+removeMatch: anObject
 	" Remove anObject from the matched elements "
 	
-	^ self mismatches 
+	^ self matches 
 		detect: [ : d | d includes: anObject ]
 		ifFound: [ : found | found remove: anObject ]

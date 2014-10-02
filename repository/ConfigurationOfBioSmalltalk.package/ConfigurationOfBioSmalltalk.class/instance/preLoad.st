@@ -8,4 +8,4 @@ preLoad
 	do: [ : ex | 
 		urlIndex := urlIndex + 1.
 		ex retry ].
-	self uncompress: fileRef.
+	self uncompressFiles.

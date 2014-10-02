@@ -1,6 +1,7 @@
 initialize-release
 initialize
-	" Private - Initialize receiver's file formats. self initialize "
+	" Private - Initialize receiver's file formats. 
+	self initialize "
 	
 	self registry: nil.
 	self formatCollection

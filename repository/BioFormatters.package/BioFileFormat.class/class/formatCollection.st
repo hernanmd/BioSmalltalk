@@ -24,7 +24,7 @@ formatCollection
 	#('variant of Chado XML' #() '' nil)
 	#('GAME XML' #() 'The GAME format is a rich XML format for storing sequences and their associated annotations' nil)
 	#('GCG' #('gcg') 'Accelrys GCG Wisconsin package' nil)
-	#('GenBank' #('gbank' 'genbank' 'gbff') 'GenBank plain text format' nil)
+	#('GenBank' #('gbank' 'genbank' 'gbff' 'gb' 'gbk') 'GenBank plain text format' nil)
 	#('InterProScan XML' #() '' nil)						
 	#('KEGG' #() 'KEGG: Kyoto Encyclopedia of Genes and Genomes' nil)
 	#('Large files, fasta format' #() '' nil)

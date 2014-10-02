@@ -1,5 +1,5 @@
 accessing private
-addOption: aName value: aValue
-	" Private - Add anObject to the receiver's options stack "
+addOption: optionName value: optionValue
+	" Private - Add optionName and optionValue to the receiver's options stack "
 
-	self options addLast:  '-' , aName , ' ' , aValue.
+	self options addLast:  '-' , optionName , ' ' , optionValue.

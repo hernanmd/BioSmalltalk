@@ -1,3 +1,5 @@
 accessing public
-lastStatus: anObject
-	lastStatus := anObject
+lastStatus: aBoolean
+	" Set aBoolean specifying last operation status "
+
+	lastStatus := aBoolean

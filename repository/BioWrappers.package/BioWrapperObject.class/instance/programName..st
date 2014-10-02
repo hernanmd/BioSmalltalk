@@ -1,3 +1,5 @@
 accessing
-programName: anObject
-	programName := anObject
+programName: cmdString
+	" Set cmdString specifying command name "
+	
+	programName := cmdString

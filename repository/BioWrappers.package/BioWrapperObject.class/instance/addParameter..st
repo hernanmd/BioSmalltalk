@@ -1,5 +1,5 @@
 accessing private
-addParameter: anObject
-	" Private - Add anObject to the receiver's options stack "
+addParameter: param
+	" Private - Add param to the receiver's parameters stack "
 
-	self parameters addLast: anObject
+	self parameters addLast: param

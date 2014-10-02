@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioWrapperObject",
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioGbk2FasWrapper",
+	"type" : "normal"
+}

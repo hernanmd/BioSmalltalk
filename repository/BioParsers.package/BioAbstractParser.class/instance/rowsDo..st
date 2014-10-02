@@ -4,6 +4,4 @@ rowsDo: aBlock
 	
 	self parse.
 	self results do: [ : each |
-		each isNil
-			ifFalse: [ aBlock value: each ] 
-	].
+		each isNil ifFalse: [ aBlock value: each ] ].

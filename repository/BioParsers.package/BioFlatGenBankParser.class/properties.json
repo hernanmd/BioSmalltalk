@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 10/1/2014 20:32",
+	"super" : "BioAbstractTextParser",
+	"category" : "BioParsers-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioFlatGenBankParser",
+	"type" : "normal"
+}

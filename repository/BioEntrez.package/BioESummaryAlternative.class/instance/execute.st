@@ -6,6 +6,6 @@ execute
 		ifTrue: [ 
 			self client 
 				cmdName: self baseUrl;
-				addParameters: '&version=2.0';
+				queryAt: 'version' put: '2.0';
 				execute ]
 		ifFalse: [ self signalInvalidObject: 'Invalid or insufficient parameters' translated ]

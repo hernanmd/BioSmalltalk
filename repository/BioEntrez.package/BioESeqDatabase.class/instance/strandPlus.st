@@ -2,4 +2,4 @@ accessing
 strandPlus
 	" What strand of DNA to show (1 = plus) "
 	
-	self client addParameters: '&strand=1'
+	self client queryAt: 'strand' put: '1'

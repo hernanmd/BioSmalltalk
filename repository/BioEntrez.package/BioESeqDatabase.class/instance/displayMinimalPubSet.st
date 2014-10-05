@@ -2,4 +2,4 @@ accessing
 displayMinimalPubSet
 	" get the minimal pub-set containing the gi of interest "
 	
-	self client addParameters: '&complexity=4'
+	self client queryAt: 'complexity' put: '4'

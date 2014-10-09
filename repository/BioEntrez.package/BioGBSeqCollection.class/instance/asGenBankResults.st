@@ -1,5 +1,9 @@
 converting
 asGenBankResults
+	" Answer a new results objects "
 
-	^ BioNCBIGenBankResult new result: self
+	^ (BioResultObject for: self)
+		result: self;
+		yourself
+		
 

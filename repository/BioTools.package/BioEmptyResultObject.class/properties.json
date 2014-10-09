@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioResultObject",
+	"category" : "BioTools-Query",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioEmptyResultObject",
+	"type" : "normal"
+}

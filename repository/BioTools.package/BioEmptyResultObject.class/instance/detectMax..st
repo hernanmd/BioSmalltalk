@@ -1,0 +1,4 @@
+accessing
+detectMax: aBlock 
+
+	^ nil

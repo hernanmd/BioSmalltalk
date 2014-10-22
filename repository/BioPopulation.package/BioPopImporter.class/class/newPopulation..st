@@ -1,3 +1,3 @@
 accessing
-newBreed: anObject
+newPopulation: anObject
 	newBreed := anObject

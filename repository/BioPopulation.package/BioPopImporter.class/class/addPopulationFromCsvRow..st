@@ -1,4 +1,4 @@
 accessing
-addNewBreedFromCsvRow: row
+addPopulationFromCsvRow: row
 
 	self subclassResponsibility 

@@ -1,9 +1,9 @@
 testing
 testFormats
 
+	BioFileFormat initialize.
 	self deny: (BioFileFormat isRegistered: 'InvalidDescriptionFormat').
-	
-	#('ABI' ace' 'AceDB' ALF' 
+	#('ABI' 'ace' 'AceDB' 'ALF' 
 	'BSML' 
 	'CHAOS' 'CTF' 'CSV' 'CHADO' 
 	'EMBL' 'Entrez' 'Excel' 'EXP'

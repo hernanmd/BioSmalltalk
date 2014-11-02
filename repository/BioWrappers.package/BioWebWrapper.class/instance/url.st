@@ -5,4 +5,4 @@ url
 "	^ self rawUrl
 		ifNil: [ url := self baseUrl asUrl ]"
 	^ self rawUrl
-		ifNil: [ url := self urlClass absoluteFromText: self baseUrl ]
+		ifNil: [ url := self urlClass fromString: self baseUrl ]

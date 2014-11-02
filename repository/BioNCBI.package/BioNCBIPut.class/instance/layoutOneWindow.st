@@ -2,4 +2,4 @@ accessing
 layoutOneWindow
 	" Windows layout when use it in a browser "
 	
-	self clientUrl addParameters: 'LAYOUT=OneWindow'
+	self clientUrl queryAt: 'LAYOUT' put: 'OneWindow'

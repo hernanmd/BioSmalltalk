@@ -4,4 +4,4 @@ alignmentViewFlatQueryAnchored
 	This is the option described in web page as 
 	Flat query-anchored with dots for identities "
 	
-	self clientUrl addParameters: 'ALIGNMENT_VIEW=FlatQueryAnchored'
+	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'FlatQueryAnchored'

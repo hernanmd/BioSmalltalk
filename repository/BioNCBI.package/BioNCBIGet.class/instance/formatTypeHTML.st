@@ -2,4 +2,4 @@ accessing
 formatTypeHTML
 	" Type of formatting "
 	
-	self clientUrl addParameters: 'FORMAT_TYPE=HTML'
+	self clientUrl queryAt: 'FORMAT_TYPE' put: 'HTML'

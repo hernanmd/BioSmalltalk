@@ -2,4 +2,4 @@ accessing
 formatObjectAlignment
 	" Specifies object to get "
 	
-	self clientUrl addParameters: 'FORMAT_OBJECT=Alignment'
+	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'Alignment'

@@ -6,4 +6,4 @@ BLAST searches consist of two phases, finding hits based upon a lookup table and
 
 	From: http://www.ncbi.nlm.nih.gov/BLAST/blastcgihelp.shtml#filter  "
 	
-	self clientUrl addParameters: 'FILTER=m'
+	self clientUrl queryAt: 'FILTER' put: 'm'

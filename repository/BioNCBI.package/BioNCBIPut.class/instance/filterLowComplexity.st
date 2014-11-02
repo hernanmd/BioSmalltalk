@@ -10,4 +10,4 @@ It is not unusual for nothing at all to be masked by SEG, when applied to sequen
 
 	From: http://www.ncbi.nlm.nih.gov/BLAST/blastcgihelp.shtml#filter "
 	
-	self clientUrl addParameters: 'FILTER=L'
+	self clientUrl queryAt: 'FILTER' put: 'L'

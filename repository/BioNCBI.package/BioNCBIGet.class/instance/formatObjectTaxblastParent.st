@@ -2,4 +2,4 @@ accessing
 formatObjectTaxblastParent
 	" Specifies object to get "
 	
-	self clientUrl addParameters: 'FORMAT_OBJECT=TaxblastParent'
+	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'TaxblastParent'

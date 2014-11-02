@@ -1,5 +1,5 @@
 accessing
-nucleotidePenalty: aSmallIntegerString
+nucleotidePenalty: aSmallInteger
 	" Penalty for a nucleotide mismatch (blastn only) "
 	
-	self clientUrl addParameters: 'NUCL_PENALTY=' , aSmallIntegerString
+	self clientUrl queryAt: 'NUCL_PENALTY' put: aSmallInteger asString

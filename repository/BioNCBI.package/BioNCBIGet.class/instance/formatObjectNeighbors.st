@@ -2,4 +2,4 @@ accessing
 formatObjectNeighbors
 	" Specifies object to get "
 	
-	self clientUrl addParameters: 'FORMAT_OBJECT=Neighbors'
+	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'Neighbors'

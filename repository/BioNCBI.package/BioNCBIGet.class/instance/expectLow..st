@@ -1,5 +1,5 @@
 accessing
-expectLow: aFloatString
+expectLow: aFloat
 	" Low expect value threshold for formatting "
 	
-	self clientUrl addParameters: 'EXPECT_LOW=' , aFloatString
+	self clientUrl queryAt: 'EXPECT_LOW' put: aFloat asString

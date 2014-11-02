@@ -2,4 +2,4 @@ accessing
 targetQBlast
 	" Sets target for the Info command "
 	
-	self client addParameters: 'TARGET=QBlast'
+	self client queryAt: 'TARGET' put: 'QBlast'

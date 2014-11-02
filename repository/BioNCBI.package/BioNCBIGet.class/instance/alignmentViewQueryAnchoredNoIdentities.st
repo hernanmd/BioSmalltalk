@@ -5,4 +5,4 @@ alignmentViewQueryAnchoredNoIdentities
 	Query-anchored with letters for identities
 	"
 	
-	self clientUrl addParameters: 'ALIGNMENT_VIEW=QueryAnchoredNoIdentities'
+	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'QueryAnchoredNoIdentities'

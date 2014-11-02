@@ -7,4 +7,4 @@ ESTs are short, single-read cDNA sequences. They comprise the largest pool of se
 
 Like all translating searches, the tblastn search is especially suited to working with error prone data like ESTs and draft genomic sequences from HTG because it combines BLAST statistics for hits to multiple reading frames and thus is robust to frame shifts introduced by sequencing error. "
 	
-	self clientUrl addParameters: 'PROGRAM=tblastn'
+	self clientUrl queryAt: 'PROGRAM' put: 'tblastn'

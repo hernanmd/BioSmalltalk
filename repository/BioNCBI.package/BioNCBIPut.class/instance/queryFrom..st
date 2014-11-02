@@ -1,5 +1,5 @@
 accessing
-queryFrom: aSmallIntegerString
+queryFrom: aSmallInteger
 	" Start of subsequence (one offset) "
 	
-	self clientUrl addParameters: 'QUERY_FROM=' , aSmallIntegerString
+	self clientUrl queryAt: 'QUERY_FROM' put: aSmallInteger asString

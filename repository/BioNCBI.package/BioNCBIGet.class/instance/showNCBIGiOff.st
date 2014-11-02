@@ -2,4 +2,4 @@ accessing
 showNCBIGiOff
 	" Show NCBI GI "
 	
-	self clientUrl addParameters: 'NCBI_GI=no'
+	self clientUrl queryAt: 'NCBI_GI' put: 'no'

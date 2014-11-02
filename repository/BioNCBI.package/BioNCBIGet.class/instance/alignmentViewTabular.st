@@ -2,4 +2,4 @@ accessing
 alignmentViewTabular
 	" Type of alignment view (FORMAT_OBJECT=Alignment only) "
 	
-	self clientUrl addParameters: 'ALIGNMENT_VIEW=Tabular'
+	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'Tabular'

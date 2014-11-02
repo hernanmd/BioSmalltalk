@@ -2,4 +2,4 @@ accessing
 showOverviewOff
 	" Show graphical overview "
 	
-	self clientUrl addParameters: 'SHOW_OVERVIEW=no'
+	self clientUrl queryAt: 'SHOW_OVERVIEW' put: 'no'

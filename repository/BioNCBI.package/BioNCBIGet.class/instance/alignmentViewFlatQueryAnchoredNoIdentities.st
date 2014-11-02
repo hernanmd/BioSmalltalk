@@ -4,4 +4,4 @@ alignmentViewFlatQueryAnchoredNoIdentities
 	This is the option described in web page as 
 	Flat query-anchored with letters for identities "
 	
-	self clientUrl addParameters: 'ALIGNMENT_VIEW=FlatQueryAnchoredNoIdentities'
+	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'FlatQueryAnchoredNoIdentities'

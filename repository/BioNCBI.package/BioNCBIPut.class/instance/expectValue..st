@@ -2,4 +2,4 @@ accessing
 expectValue: aFloat
 	" Expect value "
 	
-	self clientUrl addParameters: 'EXPECT=' , aFloat asString
+	self clientUrl queryAt: 'EXPECT' put: aFloat asString

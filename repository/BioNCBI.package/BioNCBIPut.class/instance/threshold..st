@@ -1,5 +1,5 @@
 accessing
-threshold: aSmallIntegerString
+threshold: aSmallInteger
 	" Threshold for extending hits "
 	
-	self clientUrl addParameters: 'THRESHOLD=' , aSmallIntegerString
+	self clientUrl queryAt: 'THRESHOLD' put: aSmallInteger asString

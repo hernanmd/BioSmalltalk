@@ -6,4 +6,4 @@ blastn
 	See http://www.ncbi.nlm.nih.gov/blast/producttable.shtml#mega for details
 	 "
 	
-	self clientUrl addParameters: 'PROGRAM=blastn'
+	self clientUrl queryAt: 'PROGRAM' put: 'blastn'

@@ -10,4 +10,4 @@ This type of search is computationally intensive and should be used only as last
     ftp.ncbi.nlm.nih.gov/blast/documents/formatdb.html
     ftp.ncbi.nlm.nih.gov/blast/documents/netblast.html	 "
 	
-	self clientUrl addParameters: 'PROGRAM=tblastn'
+	self clientUrl queryAt: 'PROGRAM' put: 'tblastn'

@@ -2,4 +2,4 @@ accessing private
 blastPlainService
 	" Blast service which needs to be performed "
 	
-	self client addParameters: 'SERVICE=plain'
+	self client queryAt: 'SERVICE' put: 'plain'

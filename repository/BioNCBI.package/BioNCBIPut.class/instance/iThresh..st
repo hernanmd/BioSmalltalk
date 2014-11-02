@@ -1,5 +1,5 @@
 accessing
-iThresh: aFloatString
+iThresh: aFloat
 	" Threshold for extending hits (PSI BLAST only) "
 	
-	self clientUrl addParameters: 'I_THRESH=' , aFloatString
+	self clientUrl queryAt: 'I_THRESH' put: aFloat asString

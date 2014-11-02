@@ -2,4 +2,4 @@ accessing
 ungappedAlignmentOff
 	" Should the ungapped alignment be performed ? "
 	
-	self clientUrl addParameters: 'UNGAPPED_ALIGNMENT=no'
+	self clientUrl queryAt: 'UNGAPPED_ALIGNMENT' put: 'no'

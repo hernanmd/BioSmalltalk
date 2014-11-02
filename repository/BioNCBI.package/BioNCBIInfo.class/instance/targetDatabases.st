@@ -2,4 +2,4 @@ accessing
 targetDatabases
 	" Sets target for the Info command "
 	
-	self client addParameters: 'TARGET=databases'
+	self client queryAt: 'TARGET' put: 'databases'

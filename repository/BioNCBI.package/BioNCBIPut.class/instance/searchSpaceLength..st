@@ -1,5 +1,5 @@
 accessing
-searchSpaceLength: aSmallIntegerString
+searchSpaceLength: aSmallInteger
 	" Effective length of the search space "
 	
-	self clientUrl addParameters: 'SEARCHSP_EFF=' , aSmallIntegerString
+	self clientUrl queryAt: 'SEARCHSP_EFF' put: aSmallInteger asString

@@ -1,5 +1,5 @@
 accessing
 hitListSize: aSmallInteger
-	" Number of hits to return "
+	" Set the number of hits to return to be aSmallInteger "
 	
-	self clientUrl addParameters: 'HITLIST_SIZE=' , aSmallInteger asString
+	self clientUrl queryAt: 'HITLIST_SIZE' put: aSmallInteger asString

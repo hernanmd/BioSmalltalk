@@ -2,4 +2,4 @@ accessing
 formatObjectSearchInfo
 	" Specifies object to get "
 	
-	self clientUrl addParameters: 'FORMAT_OBJECT=SearchInfo'
+	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'SearchInfo'

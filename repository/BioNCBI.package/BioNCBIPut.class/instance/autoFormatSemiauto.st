@@ -2,4 +2,4 @@ accessing
 autoFormatSemiauto
 	" Determines whether to format results automatically "
 	
-	self clientUrl addParameters: 'AUTO_FORMAT=Semiauto'
+	self clientUrl queryAt: 'AUTO_FORMAT' put: 'Semiauto'

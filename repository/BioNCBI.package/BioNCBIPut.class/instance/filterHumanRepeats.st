@@ -8,4 +8,4 @@ For more information please see 'Why does my search timeout on the BLAST servers
 
 	From: http://www.ncbi.nlm.nih.gov/BLAST/blastcgihelp.shtml#filter "
 	
-	self clientUrl addParameters: 'FILTER=R'
+	self clientUrl queryAt: 'FILTER' put: 'R'

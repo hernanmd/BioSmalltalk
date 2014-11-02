@@ -2,4 +2,4 @@ accessing
 formatTypeXML
 	" Type of formatting "
 	
-	self clientUrl addParameters: 'FORMAT_TYPE=XML'
+	self clientUrl queryAt: 'FORMAT_TYPE' put: 'XML'

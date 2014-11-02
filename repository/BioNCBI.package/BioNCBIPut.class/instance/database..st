@@ -1,5 +1,5 @@
 accessing
 database: aString
-	" Database name. aString should be a valid database name "
+	" Set the database parameter. Database name aString should be a valid database name "
 	
-	self clientUrl addParameters: 'DATABASE=' , aString
+	self clientUrl queryAt: 'DATABASE' put: aString

@@ -5,4 +5,4 @@ blastp
 
 For clear result in identification search, try taking off 'low complexity filter'. Unlike nucleotide BLAST, there is no comparable MEGABLAST for protein searches, so batch search via the web is not supported. To do batch protein BLAST, you can take a look at netblast (blastcl3)	 "
 	
-	self clientUrl addParameters: 'PROGRAM=blastp'
+	self clientUrl queryAt: 'PROGRAM' put: 'blastp'

@@ -2,4 +2,4 @@ accessing
 formatTypeAsn1
 	" Type of formatting "
 	
-	self clientUrl addParameters: 'FORMAT_TYPE=ASN.1'
+	self clientUrl queryAt: 'FORMAT_TYPE' put: 'ASN.1'

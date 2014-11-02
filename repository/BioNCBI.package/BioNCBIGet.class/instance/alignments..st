@@ -1,5 +1,5 @@
 accessing
-alignments: aSmallIntegerString
+alignments: aSmallInteger
 	" Number of alignments "
 	
-	self clientUrl addParameters: 'ALIGNMENTS=' , aSmallIntegerString
+	self clientUrl queryAt: 'ALIGNMENTS' put: aSmallInteger asString

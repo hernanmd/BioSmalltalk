@@ -6,4 +6,4 @@ gapCosts: spacedFloatString
 	
 	From: http://www.ncbi.nlm.nih.gov/BLAST/blastcgihelp.shtml#Reward-penalty"
 	
-	self clientUrl addParameters: 'GAPCOSTS=' , spacedFloatString
+	self clientUrl queryAt: 'GAPCOSTS' put: spacedFloatString

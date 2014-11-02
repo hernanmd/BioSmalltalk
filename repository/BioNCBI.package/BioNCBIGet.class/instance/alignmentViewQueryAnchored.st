@@ -5,4 +5,4 @@ alignmentViewQueryAnchored
 	Query-anchored with dots for identities
 	 "
 	
-	self clientUrl addParameters: 'ALIGNMENT_VIEW=QueryAnchored'
+	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'QueryAnchored'

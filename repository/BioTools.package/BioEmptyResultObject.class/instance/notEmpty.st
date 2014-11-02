@@ -1,4 +1,4 @@
 testing
-hasData
+notEmpty
 
 	^ false

@@ -15,12 +15,12 @@ testReadOffLineFilterGBSeqXML
 	self deny: gbSeqCollection isEmpty.
 
 	self 
-		assert: gbSeqCollection size = 5 
-		description: 'This BioSmalltalk release include 5 GBSeq XML "records"'.
+		assert: gbSeqCollection size = 2 
+		description: 'This BioSmalltalk release include 2 GBSeq XML "records"'.
 	
 	self 
-		assert: ( gbSeqCollection allSatisfy: [: file | file isKindOf: Dictionary ] )
+		assert: (gbSeqCollection allSatisfy: [: file | file isKindOf: Dictionary ])
 		description: 'It could change to its own <BioFile> like BioFASTAFile in the future'.
 		
-	self assert: ( gbSeqCollection noneSatisfy: #isEmpty ).
+	self assert: (gbSeqCollection noneSatisfy: #isEmpty).
 	

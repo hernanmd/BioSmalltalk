@@ -4,12 +4,10 @@ testSettings
 	| cmd |
 	
 	cmd := self ncbiClient nucleotide.
-	self assert: ( cmd isKindOf: BioNCBIPut ).
-	self assert: ( cmd client isKindOf: BioNCBIWebBlastWrapper ).
-	self assert: ( cmd client downloadUrl last: 2 ) = 'nr'.
-	
+	self assert: (cmd isKindOf: BioNCBIPut).
+	self assert: (cmd client isKindOf: BioNCBIWebBlastWrapper).
+	self assert: (cmd client downloadUrl last: 2) = 'nr'.
 	cmd query: '555'.
-	self assert: ( cmd client downloadUrl last: 3 ) = '555'.
-	
+	self assert: (cmd tokenizeParameters includes: 'QUERY=555').
 	cmd hitListSize: 10.
-	self assert: ( cmd client downloadUrl last: 2 ) = '10'.
+	self assert: (cmd tokenizeParameters includes: 'HITLIST_SIZE=10').

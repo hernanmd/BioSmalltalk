@@ -19,4 +19,6 @@ test04PutSettings
 	self assert: cmd client downloadUrl = 'http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Put&DATABASE=nr&QUERY=555&AUTO_FORMAT=Semiauto'.
 
 	cmd := self newNCBIClient nucleotide query: '555'; autoFormatFull; blastn.
-	self assert: cmd client downloadUrl = 'http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Put&DATABASE=nr&QUERY=555&AUTO_FORMAT=Fullauto&PROGRAM=blastn'.
+	self assert: (cmd tokenizeParameters includes: 'AUTO_FORMAT=Fullauto').
+	self assert: (cmd tokenizeParameters includes: 'PROGRAM=blastn').
+

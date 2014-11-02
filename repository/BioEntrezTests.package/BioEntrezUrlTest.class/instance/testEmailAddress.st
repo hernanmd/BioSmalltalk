@@ -1,9 +1,7 @@
 testing
 testEmailAddress
 
-	| url |
-	
-	url := BioEntrezUrl absoluteFromText: self baseUrl.
-	url emailAddress: 'test@test.com'.
-	
-	self assert: ( url valueForParameter: 'email' ) = 'test@test.com'
+	url := (BioEntrezUrl fromString: self baseUrl)
+		emailAddress: 'test@test.com';
+		yourself.
+	self assert: (url valueForParameter: 'email') equals: 'test@test.com'

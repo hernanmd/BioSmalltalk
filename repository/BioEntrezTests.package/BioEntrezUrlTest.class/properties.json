@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"url"
+	],
 	"name" : "BioEntrezUrlTest",
 	"type" : "normal"
 }

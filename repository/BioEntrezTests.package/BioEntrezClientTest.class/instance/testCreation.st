@@ -1,5 +1,5 @@
 testing
 testCreation
 
-	self assert: ( self entrezClient isKindOf: BioEntrezClient ).
+	self assert: (self entrezClient isKindOf: BioEntrezClient).
 

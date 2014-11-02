@@ -5,7 +5,7 @@ testBaseUrl
 	
 	" Test common usage "
 	uids := BioEntrezUIDCollection withAll: #(34577062 24475906).
-	self assert: uids baseUrl = '&id=34577062,24475906'.
+	self assert: uids baseUrl = '34577062,24475906'.
 	
 	" Test empty "
 	uids := BioEntrezUIDCollection withAll: #().

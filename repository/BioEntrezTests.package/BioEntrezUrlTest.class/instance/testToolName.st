@@ -1,9 +1,7 @@
 testing
 testToolName
 
-	| url |
-	
-	url := BioEntrezUrl absoluteFromText: self baseUrl.
-	url toolName: 'BioSmalltalk'.
-	
-	self assert: ( url valueForParameter: 'tool' ) = 'BioSmalltalk'
+	url := (BioEntrezUrl fromString: self baseUrl)
+		toolName: 'BioSmalltalk';
+		yourself.
+	self assert: (url valueForParameter: 'tool') equals: 'BioSmalltalk'

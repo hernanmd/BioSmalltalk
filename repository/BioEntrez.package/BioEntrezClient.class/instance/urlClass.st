@@ -1,4 +1,4 @@
 accessing private
 urlClass
 
-	^ BioEntrezUrl2
+	^ BioEntrezUrl

@@ -2,4 +2,4 @@ accessing public - commands
 rid: aRequestIDString
 	" Request ID "
 	
-	self getUrl addParameters: 'RID=' , aRequestIDString
+	self getUrl queryAt: 'RID' put: aRequestIDString

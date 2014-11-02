@@ -1,4 +1,0 @@
-private
-defaultNextReader
-
-	^ BioNCBIGenBankUIReader new

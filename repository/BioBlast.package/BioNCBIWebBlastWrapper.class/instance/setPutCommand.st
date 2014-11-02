@@ -7,6 +7,6 @@ setPutCommand
 		ifFalse: [ cmd isPut  
 					ifFalse: [ cmd := BioNCBIPut new client: self ] ].
 	" The PUT command should only be set once "
-	( self putUrl includesParameter: BioNCBICommand cmdString )
-		ifFalse: [ self putUrl startParameters: cmd baseUrl ].				
+	(self putUrl includesParameter: BioNCBICommand cmdString)
+		ifFalse: [ self putUrl: (self putUrl startParameters: cmd baseUrl) ].
 		

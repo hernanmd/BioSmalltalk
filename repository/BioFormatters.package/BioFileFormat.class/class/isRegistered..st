@@ -4,4 +4,4 @@ isRegistered: aString
 	
 	^ (self registry 
 		detect: [: fmt | (fmt includesExtension: aString) or: [ fmt includesName: aString ] ]
-		ifNone: [ nil ]) isNil not
+		ifNone: [ nil ]) notNil

@@ -1,5 +1,5 @@
 exporting
-export: theMatrix
+exportMatrix: theMatrix
 
 	1 to: theMatrix numberOfRows do: [: rowIndex |
 		self exportFirstCellColumnAt: rowIndex.

@@ -9,4 +9,4 @@ writeAsEigenStrat
 	self outputFile: nil.	
 	self delimiter: nil.
 	self outputFilename: (self outputFilename copyUpTo: $.) , '.geno'.
-	self export: self fillGenotypeMatrix.
+	self exportMatrix: self fillGenotypeMatrix.

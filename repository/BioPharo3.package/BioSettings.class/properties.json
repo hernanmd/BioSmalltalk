@@ -4,7 +4,9 @@
 	"category" : "BioPharo3-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [ ],
+	"classvars" : [
+		"FileExistsBehavior"
+	],
 	"instvars" : [ ],
 	"name" : "BioSettings",
 	"type" : "normal"

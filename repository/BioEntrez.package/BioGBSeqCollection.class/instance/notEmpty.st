@@ -1,4 +1,4 @@
 testing
 notEmpty
 
-	^ self notEmpty
+	^ self isEmpty not

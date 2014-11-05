@@ -1,11 +1,8 @@
 accessing-entrez
-genBankRecordsAsXMLFrom: aCollection database: databaseName
-	" With aCollection of BLASTHitNode's query the Entrez system
-	at the database used by the receiver's current results and
-	answer a String with XML contents "
+genBankRecordsAsXMLFrom: aBioBlastParentNodeCollection database: databaseName
+	" With aBioBlastParentNodeCollection of BLASTHitNode's, query the Entrez system at databaseName and answer a <String> with XML contents "
 	
-	contents := 
-		self
+	contents := self
 			genBankRecordsFrom: databaseName
 			format: #setModeXML
-			uids: ( self giListFrom: aCollection )
+			uids: (self giListFrom: aBioBlastParentNodeCollection)

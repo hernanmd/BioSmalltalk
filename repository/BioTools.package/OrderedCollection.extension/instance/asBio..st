@@ -1,4 +1,4 @@
-*biotools
+*BioTools
 asBio: aBioCollectionClass
 
 	| collection |

@@ -1,4 +1,4 @@
-*bioparsers
+*BioParsers
 asBlastValue
 
 	^ self first blastValue

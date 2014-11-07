@@ -1,5 +1,5 @@
 exporting
-fromXML: aBlastXMLString
+exportFromXML: aBlastXMLString
 	" Answer the resulting formatted <String>. Write a CSV file from aBlastXMLString"
 	
 	| hitCollection |

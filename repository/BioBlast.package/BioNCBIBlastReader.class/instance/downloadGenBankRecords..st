@@ -10,5 +10,4 @@ downloadGenBankRecords: aBioResultObjet
 		database: self blastDbName;
 		saveFilterContents.
 	trWindow close.
-	self halt.
 	^ self nextReader contents

@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"reader",
 		"alignments"
 	],
 	"name" : "BioGBBreedClassifier",

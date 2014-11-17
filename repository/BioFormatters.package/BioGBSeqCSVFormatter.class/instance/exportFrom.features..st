@@ -1,9 +1,10 @@
 accessing
-exportFrom: data features: features
+exportFrom: data features: fCollection
 
+	self features: fCollection.
 	self initializeStream: data.
-	self writeHeaderFrom: features.
-	self writeRowsFrom: data features: features.
+	self writeHeaderFrom: self features.
+	self writeRowsFrom: data.
 	self 
 		outputToFile: self outputFilename 
 		contents: stream contents.

@@ -1,5 +1,5 @@
 accessing
 identifiers
-	" Answer a Collection of identifiers of the receiver "
+	" See superimplementor's comment "
 	
-	^ #('GBSeq')
+	^ #('GBSeqCSV')

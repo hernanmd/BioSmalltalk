@@ -6,7 +6,7 @@ performNode: cmpSymbol node: nodeName withArgument: argString
 	hits := self hits.
 	nodes := OrderedCollection new: hits size.
 	hits do: [ : node | | recv |
-		recv := (node selectNodesNamed: nodeName) asBlastValue.
+		recv := (node selectNodesNamed: nodeName) blastValue.
 		(argString asBlastParameter matches: cmpSymbol receiver: recv)
 			ifTrue: [ nodes add: node ] ].
 	^ self addFilteredResultsFrom: nodes

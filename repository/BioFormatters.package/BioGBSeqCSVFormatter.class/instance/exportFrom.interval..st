@@ -1,8 +1,8 @@
 accessing
 exportFrom: aCollection interval: interval
 
+	self flag: #checkIfUseful.
 	self initializeStream: aCollection.
-	
 	" Escribir la fila de columnas "
 	self features allButLast do: [: k |
 		stream 
@@ -13,7 +13,6 @@ exportFrom: aCollection interval: interval
 		stream 
 			nextPutAll: pos asString;
 			nextPut: self delimiterSourceCharacter ].
-
 	stream cr.
 	" Escribir los valores "
 	aCollection do: [: dict |
@@ -22,7 +21,6 @@ exportFrom: aCollection interval: interval
 				nextPutAll: ( dict at: key ifAbsent: [ '-' ] );
 				nextPut: self delimiterSourceCharacter ].
 			stream cr ].
-		
 	self 
 		outputToFile: self outputFilename 
 		contents: stream contents

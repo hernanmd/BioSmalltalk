@@ -4,7 +4,7 @@ exportFrom: aCollection
 
 	self initializeStream: aCollection.
 	self writeHeaderFrom: self features.
-	self writeRowsFrom: aCollection.
+	self writeUnclassifiedRowsFrom: aCollection.
 	self 
 		outputToFile: self outputFilename 
 		contents: stream contents

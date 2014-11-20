@@ -1,5 +1,5 @@
 accessing
-exportFrom: data features: fCollection
+exportUnclassifiedRecordsFrom: data features: fCollection
 	" Export data into receiver's format using features contained in fCollection "
 	
 	self features: fCollection.

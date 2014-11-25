@@ -3,7 +3,6 @@
 	"super" : "BioNamedObject",
 	"category" : "BioPopulation-Core",
 	"classinstvars" : [
-		"breeds",
 		"initializeRepositoryOnDemand"
 	],
 	"pools" : [ ],

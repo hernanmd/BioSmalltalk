@@ -8,4 +8,4 @@ removePrefixes: locString
 	tokenizedLocation := locString findTokens: String space.
 	tokenizedLocation removeAllSuchThat: [: tokString |
 		self locationPrefixes includes: tokString ].
-	^ tokenizedLocation
+	^ tokenizedLocation joinUsing: String space.

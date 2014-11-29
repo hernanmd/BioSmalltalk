@@ -1,6 +1,6 @@
 accessing
-atSpeciesName: aString
+atBreedName: aString
 
 	^ self locatedBioSpecies 
 			detect: [: species | species includesName: aString ]
-			ifNone: [ nil ]
+			ifNone: [ BioNullBreed new ]

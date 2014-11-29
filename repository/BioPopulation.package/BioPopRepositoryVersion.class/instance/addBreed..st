@@ -1,4 +1,4 @@
 accessing
-addSpecies: aBioSpecies
+addBreed: aBioSpecies
 
 	self bioSpecies add: aBioSpecies

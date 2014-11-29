@@ -1,9 +1,9 @@
 instance creation
-name: aString if: conditionBlock true: trueRule false: falseRule
+name: aString if: conditionBlockOrSymbol true: trueRule false: falseRule
 
 	^ self new
 		name: aString;
-		condition: conditionBlock;
+		condition: conditionBlockOrSymbol;
 		nextTrue: trueRule;
 		nextFalse: falseRule;
 		yourself

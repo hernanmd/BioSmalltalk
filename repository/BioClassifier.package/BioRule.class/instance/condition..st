@@ -1,3 +1,4 @@
 accessing
-condition: anObject
-	condition := anObject
+condition: conditionBlockOrSymbol
+
+	condition := conditionBlockOrSymbol

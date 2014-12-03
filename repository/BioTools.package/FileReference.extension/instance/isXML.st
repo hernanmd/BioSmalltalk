@@ -2,4 +2,4 @@
 isXML
 	" See superimplementor's comment "
 	
-	^ self contents isXML
+	^ self isDirectory not and: [ self contents isXML ]

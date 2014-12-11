@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioA31INISection",
-	"category" : "BioArlequin-Core",
+	"category" : "BioArlequin-Sections",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [

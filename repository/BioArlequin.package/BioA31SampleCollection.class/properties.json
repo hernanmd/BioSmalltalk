@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioSampleCollection",
-	"category" : "BioArlequin-Core",
+	"category" : "BioArlequin-Sample",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

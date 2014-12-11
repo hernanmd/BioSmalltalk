@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 5/30/2010 05:31",
 	"super" : "INIFileSection",
-	"category" : "BioArlequin-Core",
+	"category" : "BioArlequin-Sections",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

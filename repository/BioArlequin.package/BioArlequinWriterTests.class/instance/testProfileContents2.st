@@ -6,11 +6,7 @@ testProfileContents2
 		addSampleNumber: '1';
 		unsetGenotypicData;
 		yourself.
-	self
-		assert:
-			arFile contents
-				=
-					'[Profile]
+	self assert: arFile contents = '[Profile]
 	Title="mtDNA sequences Old Type"
 	NbSamples=1
 	GenotypicData=0

@@ -1,11 +1,10 @@
 data samples
 haplotypeCollection1
 
-	| haploStream haploColl parser |
+	| haploStream haploColl |
 	
 	haploStream := ReadStream on: self haplotypeSample1 trimBoth.
-	haploColl := IdentityDictionary new.
-	parser := (STextParser on: haploStream) separator: Character tab.
-	parser rowsDo: [ : row |
+	haploColl := IdentityDictionary new.	
+	(self newParserFor: haploStream) rowsDo: [ : row |
 		haploColl add: (row first -> row second) ].
 	^ haploColl

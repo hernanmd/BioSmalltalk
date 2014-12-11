@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BioA31SampleParameters",
-	"category" : "BioArlequin-Core",
+	"category" : "BioArlequin-Sample",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

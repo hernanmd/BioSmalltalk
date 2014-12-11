@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 12/2/2011 13:54",
 	"super" : "BioMatrixFormatter",
-	"category" : "BioArlequin-Core",
+	"category" : "BioArlequin-Sample",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

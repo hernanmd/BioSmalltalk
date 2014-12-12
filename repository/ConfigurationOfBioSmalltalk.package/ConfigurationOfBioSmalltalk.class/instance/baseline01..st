@@ -4,7 +4,6 @@ baseline01: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'FFI' with: [
@@ -67,7 +66,12 @@ baseline01: spec
 				spec
 					className: #ConfigurationOfProcessWrapper;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/hernan/ProcessWrapper/main/' ].
+					repository: 'http://smalltalkhub.com/mc/hernan/ProcessWrapper/main/' ];
+			project: 'INIFileSupport' with: [
+				spec
+					className: #ConfigurationOfINIFileSupport;
+					versionString: #'bleedingEdge';
+					repository: 'http://smalltalkhub.com/mc/hernan/INIParser/main/' ].
 		spec 
 			package: 'BioTools';
 			package: 'BioNCBI' with: [
@@ -122,7 +126,9 @@ baseline01: spec
 			package: 'BioProject' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioProjectTests' with: [
-				spec requires: #('BioProject' ). ].
+				spec requires: #('BioProject' ). ];
+			package: 'BioArlequin' with: [
+				spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'NeoCSV' 'INIFileSupport' ). ].
 		spec 
 			group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo3' 'BioProject' );
 			group: 'Tests' with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' ). ].

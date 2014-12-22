@@ -1,5 +1,5 @@
 accessing
-downloadChr: chrString
+downloadChromosome: chrString
 	" Download the chromosome number chrNumber in the current directory "
 
 	self chr: chrString.

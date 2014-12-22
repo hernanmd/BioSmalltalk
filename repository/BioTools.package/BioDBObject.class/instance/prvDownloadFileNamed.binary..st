@@ -9,6 +9,7 @@ prvDownloadFileNamed: fileName binary: boolean
 	on: FileExistsException
 	do: [ : ex | ^ self ].
 	boolean ifTrue: [ stream binary ].
+	self flag: #needsWork. " on: TelnetProtocolError  ....: Could not enter passive mode: 421 Idle timeout (420 seconds): closing control connection "
 	[stream nextPutAll: (self client getFileNamed: fileName)]
 		ensure: [ stream close ].
 	self bioLog: 'Completed download of ' , fileName.

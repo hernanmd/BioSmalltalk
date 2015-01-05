@@ -10,7 +10,8 @@
 		"parser",
 		"samplesCollection",
 		"delimiterSourceCharacter",
-		"delimiterTargetCharacter"
+		"delimiterTargetCharacter",
+		"isValid"
 	],
 	"name" : "BioFormatter",
 	"type" : "normal"

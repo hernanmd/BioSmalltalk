@@ -1,0 +1,4 @@
+accessing
+rules
+
+	^ Array empty

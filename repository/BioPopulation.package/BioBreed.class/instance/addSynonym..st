@@ -1,6 +1,7 @@
 accessing
-addSynonym: aString
-
+addSynonym: synString
+	" Add synString as receiver's synonym "
+	
 	self synonyms 
-			add: aString;
-			yourself.
+		add: synString;
+		yourself.

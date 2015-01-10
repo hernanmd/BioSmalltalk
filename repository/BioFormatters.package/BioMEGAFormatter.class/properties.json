@@ -5,7 +5,16 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"numberOfSequences",
+		"numberOfSynonymsWithSequences",
+		"numberOfNucleotidesOrAminoacids",
+		"propertySetting",
+		"indel",
+		"identical",
+		"missing",
+		"codeTable"
+	],
 	"name" : "BioMEGAFormatter",
 	"type" : "normal"
 }

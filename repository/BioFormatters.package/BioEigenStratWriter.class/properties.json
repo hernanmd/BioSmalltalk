@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "<historical>",
 	"super" : "BioMatrixFormatter",
-	"category" : "BioFormatters-Formats",
+	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 1/9/2015 14:52",
 	"super" : "BioFileFormatter",
-	"category" : "BioFormatters-Formats",
+	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -13,8 +13,7 @@
 		"indel",
 		"identical",
 		"missing",
-		"codeTable",
-		"formatType"
+		"codeTable"
 	],
 	"name" : "BioMEGAFormatter",
 	"type" : "normal"

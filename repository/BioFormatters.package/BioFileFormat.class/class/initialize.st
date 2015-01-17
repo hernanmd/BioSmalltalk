@@ -4,7 +4,7 @@ initialize
 	self initialize "
 	
 	self registry: nil.
-	self formatCollection
+	self formatsCollection
 		do: [: formatSpec |
 				self 
 					registerFormat: formatSpec first 

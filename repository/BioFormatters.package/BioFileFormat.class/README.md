@@ -2,4 +2,10 @@ The method #formatCollection answer a <Collection> of recognized file formats. I
 
 BioFileFormat initialize.
 
+References:
+
+http://www.molecularevolution.org/resources/fileformats/converting
+http://en.wikipedia.org/wiki/List_of_phylogenetics_software
+http://assets.geneious.com/manual/8.0/GeneiousManualse15.html
+
 

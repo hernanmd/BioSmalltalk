@@ -1,3 +1,5 @@
 exporting
-outputFilename: anObject
-	^ outputFilename := anObject
+outputFilename: aString
+	" Set the receiver's output file name to be aString "
+	
+	^ outputFilename := aString

@@ -1,4 +1,4 @@
 accessing
-exportClassifiedRecordsFrom: groupedCollection features: aCollection2 
+exportClassifiedRecordsFrom: aPCTProject features: aCollection2 
 
-	self exportFrom: groupedCollection.
+	self exportFrom: aPCTProject classifier.

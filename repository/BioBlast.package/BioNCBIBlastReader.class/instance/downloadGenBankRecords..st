@@ -1,4 +1,4 @@
-as yet unclassified
+accessing
 downloadGenBankRecords: aBioResultObjet
 	" On-Line version. Answer <true> if downloading was successfull "
 	

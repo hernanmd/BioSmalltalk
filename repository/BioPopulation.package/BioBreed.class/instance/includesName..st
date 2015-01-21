@@ -2,5 +2,6 @@ testing
 includesName: aString
 	"Answer whether the receiver contains a sequence named aString."
 
-	^ (self names asLowercase includes: aString asLowercase) 
-		or: [self synonyms asLowercase includes: aString asLowercase]
+	| lcs |
+	lcs := aString asLowercase.
+	^ (self names asLowercase includes: lcs) or: [ self synonyms asLowercase includes: lcs ]

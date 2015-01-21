@@ -1,4 +1,4 @@
-GTAbstractReader is an abstract class representing the base for all essential iteration operations through a specific parser. Basically exposes a generic iterator interface with the outside world. A reader is expected to take IO objects as input, like:
+BioReader is an abstract class representing the base for all essential iteration operations using a specific parser. Basically exposes a generic iterator interface with the outside world. A reader is expected to take IO objects as input, like:
 
 -FileStreams
 -String representing a path to a file or directory

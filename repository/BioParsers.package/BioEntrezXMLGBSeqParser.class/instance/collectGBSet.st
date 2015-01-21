@@ -8,4 +8,6 @@ collectGBSet
 		parser if: 'GBSeq' peek: [ self saveGBSeq ].
 		(parser nodesIfAny: self selectedNodes) ifNotEmptyDo: [ : result | self saveGBNode: result ].
 		parser next ].
-	^ self results
+	(parser isEndDocument and: [ matches notNil ])
+		ifTrue: [ self saveGBSeq ].
+	^ self results.

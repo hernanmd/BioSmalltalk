@@ -1,9 +1,8 @@
 accessing
 mismatches
 
-	mismatches ifNil: [ mismatches := self newMatchingDictionary: #mismatches ].
-	^ mismatches 
-		at: #mismatches
+	mismatches ifNil: [ mismatches := self newMatchingDictionary: #all ].
+	^ mismatches at: #all
 
 
 		

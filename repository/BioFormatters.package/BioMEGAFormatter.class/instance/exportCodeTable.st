@@ -4,4 +4,4 @@ exportCodeTable
 	
 	self stream
 		nextPutAll: 'CodeTable=';
-		nextPut: self codeTable
+		nextPutAll: self codeTable.

@@ -2,9 +2,12 @@ From the MEGA website: "MEGA is an integrated tool for conducting sequence align
 
 This class is an exporter for the MEGA file format.
 
+MEGA Input Format may contain
+
+-DNA sequence, 
+-Protein sequence, 
+-Evolutionary distance, 
+-Phylogenetic tree data
+
  data formats for molecular sequences, distances, and phylogenetic trees separately. However, there are a number of features that are common to all MEGA data files.
 
-DNA sequence, 
-protein sequence, 
-evolutionary distance, 
-phylogenetic tree data

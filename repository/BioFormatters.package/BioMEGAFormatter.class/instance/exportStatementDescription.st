@@ -1,10 +1,10 @@
 exporting
 exportStatementDescription
 
-	(self description includes: ';')
+	(self megaDescription includes: ';')
 		ifTrue: [ self error: 'Description must not contain any ;' ].
 	self stream
 		nextPutAll: '!Description ';
-		nextPutAll: self description;
-		nextPut: $;
+		nextPutAll: self megaDescription;
+		nextPut: $;;
 		crlf

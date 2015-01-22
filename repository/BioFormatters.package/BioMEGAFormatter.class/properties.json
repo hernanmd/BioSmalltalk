@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 1/9/2015 14:52",
+	"commentStamp" : "HernanMoralesDurand 1/22/2015 03:18",
 	"super" : "BioFileFormatter",
 	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
@@ -13,7 +13,10 @@
 		"indel",
 		"identical",
 		"missing",
-		"codeTable"
+		"codeTable",
+		"formatType",
+		"title",
+		"megaDescription"
 	],
 	"name" : "BioMEGAFormatter",
 	"type" : "normal"

@@ -4,5 +4,5 @@ exportStatementTitle
 	self stream
 		nextPutAll: '!Title ';
 		nextPutAll: self title;
-		nextPut: $;
+		nextPut: $;;
 		crlf

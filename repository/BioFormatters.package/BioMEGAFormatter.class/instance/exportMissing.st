@@ -1,5 +1,5 @@
 exporting
-exportIMissing
+exportMissing
 	" Write the receiver's missing setting "
 	
 	self stream

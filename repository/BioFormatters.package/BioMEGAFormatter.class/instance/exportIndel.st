@@ -4,4 +4,5 @@ exportIndel
 	
 	self stream
 		nextPutAll: 'Indel=';
-		nextPut: self indel
+		nextPut: self indel;
+		space.

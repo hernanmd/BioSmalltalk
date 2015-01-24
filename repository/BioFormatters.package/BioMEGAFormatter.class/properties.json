@@ -16,7 +16,8 @@
 		"codeTable",
 		"formatType",
 		"title",
-		"megaDescription"
+		"megaDescription",
+		"alignments"
 	],
 	"name" : "BioMEGAFormatter",
 	"type" : "normal"

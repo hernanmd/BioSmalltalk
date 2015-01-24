@@ -6,7 +6,7 @@ export
 	self exportStatementTitle.
 	self exportStatementDescription.
 	self exportStatementFormat.
-"	self exportFromAlignment: self samplesCollection."
+	self exportFromAlignment: self alignments.
 	self 
 		outputToFullFile: self outputFilename
 		contents: self stream contents.

@@ -4,4 +4,5 @@ exportMissing
 	
 	self stream
 		nextPutAll: 'Missing=';
-		nextPut: self missing
+		nextPut: self missing;
+		space

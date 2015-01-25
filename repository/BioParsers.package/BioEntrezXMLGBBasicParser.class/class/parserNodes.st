@@ -2,9 +2,7 @@ accessing
 parserNodes
 	" See superimplementor's comment "
 
-	^ #(
-	'GBSeq_accession-version'
-	'GBAuthor'
-	'GBSeq_definition'	
-	'GBReference_journal'
-	)
+	^ { #qualifierForAccessionWithVersion .
+	#qualifierForAuthor .
+	#qualifierForDefinition .
+	# qualifierForReferenceJournal } collect: [ : selector | BioGBSeqCollection perform: selector ]

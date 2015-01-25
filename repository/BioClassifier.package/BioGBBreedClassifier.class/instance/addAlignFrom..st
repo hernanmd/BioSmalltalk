@@ -5,7 +5,7 @@ addAlignFrom: gbSeqRecord
 	| acc |
 	
 	self flag: #ArlequinExport.
-	acc := gbSeqRecord at: 'GBSeq_accession-version'.
+	acc := gbSeqRecord at: BioGBSeqCollection qualifierForAccessionWithVersion.
 	self organization
 		alignmentAt: acc 
 		put: (self alignments atAccession: acc) asString

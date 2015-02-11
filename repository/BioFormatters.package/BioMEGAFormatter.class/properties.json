@@ -17,7 +17,8 @@
 		"formatType",
 		"title",
 		"megaDescription",
-		"alignments"
+		"alignments",
+		"longestNameCount"
 	],
 	"name" : "BioMEGAFormatter",
 	"type" : "normal"

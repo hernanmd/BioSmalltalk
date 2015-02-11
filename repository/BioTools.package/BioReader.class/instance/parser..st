@@ -1,3 +1,5 @@
 accessing
-parser: anObject
-	parser := anObject
+parser: aParserClass
+	" Set the receiver's parser to aParserClass "
+	
+	parser := aParserClass

@@ -10,5 +10,4 @@ exportGroup: anAssociation
 			self 
 				buildMEGARecordId: (self bestNameFor: groupAssoc) 
 				sequence: groupAssoc key) ].
-	longestNameCount := megaRecords max: [ : mr | mr name size ].
-	self exportMegaRecords: megaRecords.
+	^ megaRecords

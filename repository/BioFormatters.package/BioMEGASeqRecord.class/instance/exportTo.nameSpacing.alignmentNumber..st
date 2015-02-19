@@ -4,6 +4,7 @@ exportTo: aWriteStream nameSpacing: anInteger  alignmentNumber: alnNumber
 	
 	aWriteStream	
 		cr;
+		nextPut: $#;
 		nextPutAll: self name;
 		nextPut: $_;
 		nextPutAll: alnNumber asString.

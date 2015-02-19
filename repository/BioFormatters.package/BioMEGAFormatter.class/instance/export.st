@@ -6,6 +6,7 @@ export
 	self exportStatementTitle.
 	self exportStatementDescription.
 	self exportStatementFormat.
+	self stream cr.
 	self exportFromAlignment: self alignments.
 	self 
 		outputToFullFile: self outputFilename

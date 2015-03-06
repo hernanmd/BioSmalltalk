@@ -1,5 +1,5 @@
 accessing
 baseUrl
-	" Answer a String with a server address to query "
+	" Private - Answer a <String> specifying a server valid addres for the receiver "
 
-	^ 'http://www.ebi.ac.uk/msd-srv/pisa/cgi-bin'
+	^ 'http://www.ebi.ac.uk/pdbe/pisa/cgi-bin'

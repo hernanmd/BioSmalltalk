@@ -1,7 +1,7 @@
 accessing
-outputToFile: aString
+outputToFile: fileName
 	" Outputs the receiver's contents to a file "
 
 	self 
-		outputToFile: aString 
+		outputToFile: fileName 
 		contents: self reader contents

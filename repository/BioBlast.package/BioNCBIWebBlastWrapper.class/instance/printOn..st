@@ -5,5 +5,6 @@ printOn: aStream
 	super printOn: aStream.
 	aStream
 		space;
-		nextPutAll: getUrl asString
+		nextPutAll: getUrl asString;
+		space;
 		between: $[ -> $].

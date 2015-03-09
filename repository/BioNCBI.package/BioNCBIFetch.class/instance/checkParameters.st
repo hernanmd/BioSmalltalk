@@ -2,6 +2,6 @@ testing
 checkParameters
 	" Answer <true> if the receiver supports client parameters "
 	
-	^ (self client rawUrl isNil not 
-			and: [ self client rawGetUrl isNil not ])
-			and: [ self client getUrl rid isEmpty not ]
+	^ (self client rawUrl notNil
+			and: [ self client rawGetUrl notNil ])
+			and: [ self client getUrl rid notEmpty ]

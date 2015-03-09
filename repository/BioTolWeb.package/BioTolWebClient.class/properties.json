@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "HernanMoralesDurand 3/8/2015 11:26",
+	"super" : "BioWebWrapper",
+	"category" : "BioTolWeb-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"groupName",
+		"nodeId"
+	],
+	"name" : "BioTolWebClient",
+	"type" : "normal"
+}

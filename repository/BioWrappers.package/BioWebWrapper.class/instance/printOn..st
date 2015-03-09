@@ -6,7 +6,6 @@ printOn: aStream
 	self rawUrl isNil
 		ifFalse: [ 
 			aStream 
-				nextPutAll: (BioWebClientEngine decode: url asString);
-				space;
+				nextPutAll: (BioWebClientEngine decode: url asString)
 				between: $[ -> $] ].
 	

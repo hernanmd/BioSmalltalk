@@ -1,0 +1,14 @@
+{
+	"category" : "BioToolsSamples-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 9/27/2012 02:29",
+	"instvars" : [
+		 ],
+	"name" : "BioESamples",
+	"pools" : [
+		 ],
+	"super" : "BioSamples",
+	"type" : "normal" }

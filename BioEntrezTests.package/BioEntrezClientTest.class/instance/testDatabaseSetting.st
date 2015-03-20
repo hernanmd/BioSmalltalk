@@ -1,0 +1,41 @@
+testing
+testDatabaseSetting
+
+	self assert: ( self entrezClient biosystems isKindOf: BioEntrezBioSystems ).
+	self assert: ( self entrezClient books isKindOf: BioEntrezBooks ).
+	self assert: ( self entrezClient cancerchromosomes isKindOf: BioEntrezCancerChromosomes ).
+	self assert: ( self entrezClient cdd isKindOf: BioEntrezConservedDomains ).
+	self assert: ( self entrezClient domains isKindOf: BioEntrezSDI ).
+	self assert: ( self entrezClient gap isKindOf: BioEntrezDBGap ).
+	self assert: ( self entrezClient gds isKindOf: BioEntrezGDS ).
+	self assert: ( self entrezClient gene isKindOf: BioEntrezGene ).
+	self assert: ( self entrezClient genome isKindOf: BioEntrezGenome ).
+	self assert: ( self entrezClient genomeprj isKindOf: BioEntrezGenomeProject ).
+	self assert: ( self entrezClient gensat isKindOf: BioEntrezGenSat ).
+	self assert: ( self entrezClient geo isKindOf: BioEntrezGEO ).
+	self assert: ( self entrezClient homologene isKindOf: BioEntrezHomoloGene ).
+	self assert: ( self entrezClient journals isKindOf: BioEntrezJournals ).
+	self assert: ( self entrezClient mesh isKindOf: BioEntrezMeSH ).
+	self assert: ( self entrezClient ncbisearch isKindOf: BioEntrezWebSite ).
+	self assert: ( self entrezClient nlmcatalog isKindOf: BioEntrezNLMCatalog ).
+	self assert: ( self entrezClient nuccore isKindOf: BioEntrezNuccore ).
+	self assert: ( self entrezClient nucest isKindOf: BioEntrezEST ).
+	self assert: ( self entrezClient nucgss isKindOf: BioEntrezGSS ).
+	self assert: ( self entrezClient omia isKindOf: BioEntrezOMIA ).
+	self assert: ( self entrezClient omim isKindOf: BioEntrezOMIM ).
+	self assert: ( self entrezClient pcassay isKindOf: BioEntrezPCAssay ).
+	self assert: ( self entrezClient pccompound isKindOf: BioEntrezPCCompound ).
+	self assert: ( self entrezClient pcsubstance isKindOf: BioEntrezPCSubstance ).
+	self assert: ( self entrezClient peptidome isKindOf: BioEntrezPeptidome ).
+	self assert: ( self entrezClient pmc isKindOf: BioEntrezPubMedCentral ).
+	self assert: ( self entrezClient popset isKindOf: BioEntrezPopSet ).
+	self assert: ( self entrezClient probe isKindOf: BioEntrezProbe ).
+	self assert: ( self entrezClient protein isKindOf: BioEntrezProtein ).
+	self assert: ( self entrezClient proteinclusters isKindOf: BioEntrezProteinClusters ).
+	self assert: ( self entrezClient pubmed isKindOf: BioEntrezPubMed ).
+	self assert: ( self entrezClient snp isKindOf: BioEntrezSNP ).
+	self assert: ( self entrezClient sra isKindOf: BioEntrezSRA ).
+	self assert: ( self entrezClient structure isKindOf: BioEntrezStructure ).
+	self assert: ( self entrezClient taxonomy isKindOf: BioEntrezTaxonomy ).
+	self assert: ( self entrezClient unigene isKindOf: BioEntrezUniGene ).
+	self assert: ( self entrezClient unists isKindOf: BioEntrezUniSTS ).

@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrezTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"reader" ],
+	"name" : "BioEntrezReaderTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

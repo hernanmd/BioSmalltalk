@@ -7,5 +7,5 @@ readFrom: aFile
 	parser := self newParserFor: aFile.
 	10 timesRepeat: [ parser skipHeader ].
 	snpCollection := OrderedCollection new.
-	parser rowsDo: [ : row | snpCollection add: (self newSnpFrom: row) ].
+	parser rowsDo: [ : row | snpCollection add: (self newSNPRowFrom: row) ].
 	^ snpCollection

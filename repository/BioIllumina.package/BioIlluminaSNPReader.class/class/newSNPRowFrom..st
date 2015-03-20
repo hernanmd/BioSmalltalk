@@ -1,5 +1,5 @@
 instance creation
-newSnpFrom: row
+newSNPRowFrom: row
 
 	^ BioIlluminaSNPObject new
                 name: row first;

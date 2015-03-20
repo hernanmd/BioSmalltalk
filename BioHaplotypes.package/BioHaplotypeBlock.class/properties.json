@@ -1,0 +1,18 @@
+{
+	"category" : "BioHaplotypes-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"markerNumbers",
+		"tagSnps",
+		"haplotypes",
+		"crossingLines",
+		"correlation" ],
+	"name" : "BioHaplotypeBlock",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

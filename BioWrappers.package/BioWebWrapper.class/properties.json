@@ -1,0 +1,15 @@
+{
+	"category" : "BioWrappers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"url",
+		"searchResult" ],
+	"name" : "BioWebWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioWrapperObject",
+	"type" : "normal" }

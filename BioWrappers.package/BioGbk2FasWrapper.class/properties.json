@@ -1,0 +1,14 @@
+{
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioGbk2FasWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioWrapperObject",
+	"type" : "normal" }

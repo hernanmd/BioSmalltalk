@@ -1,0 +1,14 @@
+{
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioClustalWWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioWrapperObject",
+	"type" : "normal" }

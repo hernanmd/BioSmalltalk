@@ -1,0 +1,18 @@
+{
+	"category" : "BioWrappers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 10/2/2014 01:38",
+	"instvars" : [
+		"lastStatus",
+		"options",
+		"parameters",
+		"programName",
+		"cmdLine" ],
+	"name" : "BioWrapperObject",
+	"pools" : [
+		 ],
+	"super" : "BioPropertyObject",
+	"type" : "normal" }

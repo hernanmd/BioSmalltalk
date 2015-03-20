@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Biosmalltalk : Smalltalk Bioinformatics Library">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Biosmalltalk</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hernanmd/BioSmalltalk">View on GitHub</a>
+
+          <h1 id="project_title">Biosmalltalk</h1>
+          <h2 id="project_tagline">Smalltalk Bioinformatics Library</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hernanmd/BioSmalltalk/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hernanmd/BioSmalltalk/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="welcome-to-the-biosmalltalk-project" class="anchor" href="#welcome-to-the-biosmalltalk-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to the BioSmalltalk project.</h3>
+
+<p>BioSmalltalk is an open source library for doing bioinformatics with Smalltalk. BioSmalltalk enables you to build bioinformatics scripts and applications using the most powerful object technology as of today, the Smalltalk programming environment. See the installation page for details about downloading the environment. </p>
+
+<p>One-liners examples:
+<code>
+'ATGCTAGT' asSequence.
+(BioSequence newDNA: 'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCTG') complement.
+(BioMutableSeq newDNA: 'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCTG') reverseComplement.
+(BioSequence newRNA: 'AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG') translate.
+BioCodonTables currentCodonTable.
+BioIUPACAmbiguousDNA codes.
+BioIUPACProtein codes
+</code></p>
+
+<ul>
+<li>If you want an easy to use and learn language (only 5 keywords).</li>
+<li>If you want to explore and manipulate your objects interactively through tools created and tested since 30 years ago...</li>
+<li>If you want to learn bioinformatics APIs while porting it to a pure object technology.</li>
+<li>If you want to explore a class hierarchy, senders and implementors of methods, references to classes, refactor code, with just two clicks.</li>
+<li>If you feel umcomfortable reading code in thousands of files</li>
+<li>If you don't want to mess anymore with folder structures, search, memorize, analyze and type commands and parameters in a console.</li>
+<li>If you don't want to visually sweep and scroll thousands of lines of code in a file.</li>
+<li>If you want to code in the object environment created by the inventor of Object-Oriented technology.</li>
+<li>If you want to code in an environmet which has brought us Generational garbage collection, Just-In-Time Compilation (JIT), Model-View-Controller (MVC), SUnit Testing framework, Traits, Lightweight Classes, Subjective Oriented Programming, and Method-Wrappers.</li>
+</ul>
+
+<h3>
+<a id="pure-objects-environment" class="anchor" href="#pure-objects-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pure objects environment</h3>
+
+<p>A goal of BioSmalltalk is to concile the benefits of a pure object environment with bioinformatics related tasks. In BioSmalltalk life scientists or non-professional programmers may develop fast without the complexities of typical programming environments.</p>
+
+<ul>
+<li>Computational reflection is first nature in Smalltalk.</li>
+<li>Pure objects: No unnecessary mixing of objects with primitive data types. No need of casting required by static typing or primitive type coercion to objects.</li>
+<li>Unique developement environment supporting source code navigation through browsers and integrated tools (Refactoring, Debugger, Introspection, Inspection, Explorers, etc.) </li>
+</ul>
+
+<p>Please visit the <a href="http://biosmalltalk.blogspot.com">BioSmalltalk Blog</a> to view usage and progress. For developers there is a Developer's Guide in the Downloads section </p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Biosmalltalk maintained by <a href="https://github.com/hernanmd">hernanmd</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

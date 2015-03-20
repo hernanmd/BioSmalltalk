@@ -1,0 +1,4 @@
+accessing
+delimiter
+
+	^ Character tab

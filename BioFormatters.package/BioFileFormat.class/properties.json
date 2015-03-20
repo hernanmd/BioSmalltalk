@@ -1,0 +1,18 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Registry" ],
+	"commentStamp" : "HernanMoralesDurand 3/7/2015 00:18",
+	"instvars" : [
+		"description",
+		"extensions",
+		"rootClass",
+		"compatibleFormats",
+		"sampleEntry" ],
+	"name" : "BioFileFormat",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

@@ -1,0 +1,16 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/7/2013 16:05",
+	"instvars" : [
+		"ignoreLinesStrategy",
+		"ignoreLinesCount",
+		"lines" ],
+	"name" : "BioCSVFile",
+	"pools" : [
+		 ],
+	"super" : "BioFile",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Naming",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 3/15/2011 15:46",
+	"instvars" : [
+		 ],
+	"name" : "BioStandardNaming",
+	"pools" : [
+		 ],
+	"super" : "BioNaming",
+	"type" : "normal" }

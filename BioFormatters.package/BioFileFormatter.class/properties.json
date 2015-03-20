@@ -1,0 +1,19 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"inputFile",
+		"outputFile",
+		"outputFilename",
+		"stream",
+		"inputStream",
+		"writeToFile" ],
+	"name" : "BioFileFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioFormatter",
+	"type" : "normal" }

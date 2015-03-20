@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioXMLFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioFileFormatter",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/7/2013 16:41",
+	"instvars" : [
+		 ],
+	"name" : "BioGoogleFusionTablesFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioCSVFormatter",
+	"type" : "normal" }

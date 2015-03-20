@@ -1,0 +1,26 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 1/22/2015 03:18",
+	"instvars" : [
+		"numberOfSequences",
+		"numberOfSynonymsWithSequences",
+		"numberOfNucleotidesOrAminoacids",
+		"propertySetting",
+		"indel",
+		"identical",
+		"missing",
+		"codeTable",
+		"formatType",
+		"title",
+		"megaDescription",
+		"alignments",
+		"longestNameCount" ],
+	"name" : "BioMEGAFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioFileFormatter",
+	"type" : "normal" }

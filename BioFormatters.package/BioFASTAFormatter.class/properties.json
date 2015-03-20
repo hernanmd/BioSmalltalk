@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/7/2013 17:05",
+	"instvars" : [
+		 ],
+	"name" : "BioFASTAFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioFileFormatter",
+	"type" : "normal" }

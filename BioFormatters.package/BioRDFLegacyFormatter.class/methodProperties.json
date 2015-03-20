@@ -1,0 +1,23 @@
+{
+	"class" : {
+		"description" : "hfm 11/18/2012 14:35",
+		"identifiers" : "hfm 6/13/2011 13:31" },
+	"instance" : {
+		"exportCellAtRow:atColumn:" : "HernanMoralesDurand 4/7/2013 16:19",
+		"exportFirstCellColumnAt:" : "hfm 9/25/2012 18:59",
+		"exportFromBLAST:" : "hfm 8/12/2011 19:27",
+		"exportIdentifiers:" : "hfm 3/14/2011 16:10",
+		"exportWeights" : "hfm 8/12/2011 19:27",
+		"fileNamePrefix" : "HernanMoralesDurand 4/7/2013 16:58",
+		"fillDataColumnsFrom:" : "hfm 7/30/2012 13:23",
+		"fillFrequenciesColumn" : "hfm 3/3/2011 14:59",
+		"fillHeaderColumns:" : "hfm 3/3/2011 15:14",
+		"fillMatrixFrom:columns:" : "hfm 2/25/2011 16:14",
+		"fillPosition:for:" : "hfm 9/25/2012 18:59",
+		"formatExtension" : "HernanMoralesDurand 12/27/2012 17:22",
+		"frequencies" : "hfm 9/25/2012 19:00",
+		"nameCharacterLimit" : "hfm 3/1/2011 18:03",
+		"nameIndex" : "hfm 3/2/2011 16:07",
+		"nameIndex:" : "hfm 3/2/2011 13:21",
+		"positionCiphers" : "hfm 3/1/2011 17:44",
+		"rowIdentifier" : "hfm 9/25/2012 18:59" } }

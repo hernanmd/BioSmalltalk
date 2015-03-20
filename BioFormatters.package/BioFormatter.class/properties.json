@@ -1,0 +1,19 @@
+{
+	"category" : "BioFormatters-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"generator",
+		"parser",
+		"samplesCollection",
+		"delimiterSourceCharacter",
+		"delimiterTargetCharacter",
+		"isValid" ],
+	"name" : "BioFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

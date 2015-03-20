@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"possibleExtensions" : "HernanMoralesDurand 8/6/2014 01:49" },
+	"instance" : {
+		"defaultIgnoreLinesStrategy" : "hfm 8/12/2011 18:46",
+		"ignoreFirstLines" : "hfm 8/12/2011 18:37",
+		"ignoreLastLines" : "hfm 8/12/2011 18:37",
+		"ignoreLinesCount" : "hfm 8/12/2011 18:25",
+		"ignoreLinesCount:" : "hfm 8/12/2011 18:25",
+		"ignoreLinesStrategy" : "hfm 8/12/2011 18:28",
+		"ignoreLinesStrategy:" : "hfm 8/12/2011 18:28",
+		"initialize" : "hfm 1/12/2012 16:38",
+		"lines" : "hfm 1/12/2012 16:37",
+		"lines:" : "hfm 1/12/2012 16:37" } }

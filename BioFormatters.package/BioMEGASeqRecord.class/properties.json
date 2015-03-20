@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/7/2015 00:21",
+	"instvars" : [
+		"alignment" ],
+	"name" : "BioMEGASeqRecord",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

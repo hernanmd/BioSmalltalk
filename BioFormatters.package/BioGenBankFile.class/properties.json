@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioGenBankFile",
+	"pools" : [
+		 ],
+	"super" : "BioFile",
+	"type" : "normal" }

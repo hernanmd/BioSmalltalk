@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"interleaved" ],
+	"name" : "BioPhylipFile",
+	"pools" : [
+		 ],
+	"super" : "BioFile",
+	"type" : "normal" }

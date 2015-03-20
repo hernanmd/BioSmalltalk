@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 8/6/2014 01:54",
+	"instvars" : [
+		 ],
+	"name" : "BioNexusFile",
+	"pools" : [
+		 ],
+	"super" : "BioFile",
+	"type" : "normal" }

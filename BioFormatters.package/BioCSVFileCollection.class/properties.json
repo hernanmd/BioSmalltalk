@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatters-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 10/1/2012 20:52",
+	"instvars" : [
+		 ],
+	"name" : "BioCSVFileCollection",
+	"pools" : [
+		 ],
+	"super" : "BioFileCollection",
+	"type" : "normal" }

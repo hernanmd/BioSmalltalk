@@ -1,0 +1,14 @@
+{
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioBTauAlt",
+	"pools" : [
+		 ],
+	"super" : "BioBTauGD",
+	"type" : "normal" }

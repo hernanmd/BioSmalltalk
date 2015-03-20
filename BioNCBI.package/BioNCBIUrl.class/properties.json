@@ -1,0 +1,14 @@
+{
+	"category" : "BioNCBI-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBIUrl",
+	"pools" : [
+		 ],
+	"super" : "BioHttpUrl",
+	"type" : "normal" }

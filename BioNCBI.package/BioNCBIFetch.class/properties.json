@@ -1,0 +1,14 @@
+{
+	"category" : "BioNCBI-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBIFetch",
+	"pools" : [
+		 ],
+	"super" : "BioNCBICommand",
+	"type" : "normal" }

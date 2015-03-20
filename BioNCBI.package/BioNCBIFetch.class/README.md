@@ -1,0 +1,1 @@
+This is the fetch operation for NCBI WWW QBlast, this is NOT an operation supported by the QBlast system but an operation class used as a Command object to support internal logging of operations and notifications.

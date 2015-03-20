@@ -1,0 +1,14 @@
+{
+	"category" : "BioNCBI-Genomes",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioBTauGD",
+	"pools" : [
+		 ],
+	"super" : "BioGenomeDownloader",
+	"type" : "normal" }

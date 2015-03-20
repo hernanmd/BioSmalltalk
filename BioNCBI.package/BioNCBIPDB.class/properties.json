@@ -1,0 +1,14 @@
+{
+	"category" : "BioNCBI-Databases",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBIPDB",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIDatabase",
+	"type" : "normal" }

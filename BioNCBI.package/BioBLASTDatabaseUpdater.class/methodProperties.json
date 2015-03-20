@@ -1,0 +1,17 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"compressedDatabasesIn:" : "hfm 1/14/2011 07:56",
+		"database:" : "hfm 4/9/2011 03:19",
+		"databases" : "hfm 1/14/2011 14:17",
+		"dbNames" : "hfm 1/13/2011 20:02",
+		"dbNames:" : "hfm 1/13/2011 19:37",
+		"defaultDirectory" : "hfm 1/14/2011 14:54",
+		"extractDatabaseNames:" : "hfm 1/14/2011 07:58",
+		"extractDbNameIn:" : "hfm 1/13/2011 20:01",
+		"extractFileNames:" : "hfm 1/15/2011 03:49",
+		"fileNames" : "hfm 1/15/2011 03:51",
+		"filesToDownload" : "HernanMoralesDurand 7/23/2013 10:11",
+		"initialize" : "HernanMoralesDurand 1/18/2014 02:46",
+		"workingDirectory" : "hfm 11/13/2012 11:00" } }

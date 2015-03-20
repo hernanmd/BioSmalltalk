@@ -1,0 +1,14 @@
+{
+	"category" : "BioTolWeb-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/9/2015 00:28",
+	"instvars" : [
+		 ],
+	"name" : "BioTolTreeStructureCommand",
+	"pools" : [
+		 ],
+	"super" : "BioTolWebCommand",
+	"type" : "normal" }

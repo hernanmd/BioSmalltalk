@@ -1,0 +1,4 @@
+accessing
+alphabetClass
+
+	^ self subclassResponsibility

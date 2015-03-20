@@ -1,0 +1,4 @@
+accessing
+nullUrlAddress
+
+	^ String empty

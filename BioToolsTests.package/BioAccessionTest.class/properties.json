@@ -1,0 +1,14 @@
+{
+	"category" : "BioToolsTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioAccessionTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

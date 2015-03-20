@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testAnnotations" : "hfm 2/28/2012 14:52",
+		"testAnnotationsClass" : "hfm 2/28/2012 14:53",
+		"testCopySeqFrom" : "hfm 2/28/2012 14:48",
+		"testCopySeqTo" : "hfm 11/17/2011 16:07",
+		"testCreate" : "hfm 10/24/2011 00:39",
+		"testEquality" : "hfm 10/24/2011 00:46",
+		"testLetterAnnotations" : "hfm 10/24/2011 03:22",
+		"testSequence" : "hfm 2/28/2012 14:51",
+		"testSetIdAndDescription" : "HernanMoralesDurand 4/2/2013 21:53" } }

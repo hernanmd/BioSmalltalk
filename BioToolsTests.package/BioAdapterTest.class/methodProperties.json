@@ -1,0 +1,21 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"adapterEngines" : "hfm 9/25/2012 12:38",
+		"defaultUrlTestAddress" : "hfm 10/22/2011 13:50",
+		"isRunningTestWebServer" : "hfm 11/11/2011 12:45",
+		"nullUrlAddress" : "hfm 11/11/2011 13:36",
+		"startTestWebServer" : "hfm 2/8/2012 21:50",
+		"stopTestWebServer" : "hfm 2/8/2012 21:50",
+		"tearDown" : "HernanMoralesDurand 3/4/2013 00:04",
+		"test02Providers" : "hfm 2/8/2012 21:51",
+		"test03Adapters" : "HernanMoralesDurand 7/31/2013 10:01",
+		"testFormatOSInterfaceAdapter" : "hfm 12/6/2012 21:57",
+		"testProviderClass" : "hfm 11/25/2011 19:32",
+		"testSettingSerializationAdapter" : "hfm 7/30/2012 13:46",
+		"testSettingWebClientAdapter" : "hfm 7/30/2012 13:46",
+		"testUsingOSInterfaceAdapter" : "hfm 9/25/2012 14:13",
+		"testUsingWebClientAdapter" : "hfm 7/30/2012 13:46",
+		"testWebDecodeUrl" : "hfm 10/1/2012 20:31",
+		"urlTestAddress" : "hfm 2/8/2012 21:38" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioToolsTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"fastaCollection" ],
+	"name" : "BioFastaMultiRecordTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

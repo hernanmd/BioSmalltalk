@@ -1,0 +1,17 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"setUp" : "HernanMoralesDurand 3/4/2013 00:04",
+		"tearDown" : "HernanMoralesDurand 3/4/2013 00:04",
+		"testAt" : "hfm 10/16/2011 18:10",
+		"testCodonTables" : "HernanMoralesDurand 4/7/2013 20:36",
+		"testDo" : "hfm 10/16/2011 18:05",
+		"testIsStartCodon" : "hfm 10/16/2011 18:05",
+		"testIsStopCodon" : "hfm 10/16/2011 18:05",
+		"testReverseTranslate" : "hfm 10/16/2011 18:06",
+		"testTableAllNames" : "hfm 10/16/2011 18:06",
+		"testTableIdentifiers" : "hfm 10/16/2011 18:06",
+		"testTableNames" : "hfm 10/16/2011 18:06",
+		"testTranslateAmbiguous" : "hfm 10/16/2011 18:06",
+		"testTranslateUnambiguous" : "hfm 10/16/2011 18:07" } }

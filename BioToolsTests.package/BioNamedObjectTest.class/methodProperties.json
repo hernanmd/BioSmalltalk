@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"setUp" : "HernanMoralesDurand 3/4/2013 00:03",
+		"testAddDuplicateName" : "HernanMoralesDurand 4/3/2013 01:05",
+		"testAddNameRemovesNullName" : "hfm 10/22/2011 13:36",
+		"testAddNames" : "hfm 3/1/2011 12:59",
+		"testAlphaName" : "hfm 11/17/2011 15:40",
+		"testEmptyName" : "hfm 4/15/2011 15:24",
+		"testName" : "hfm 3/1/2011 13:06",
+		"testNumericName" : "hfm 10/22/2011 13:30",
+		"testRemoveNullName" : "hfm 10/22/2011 13:34" } }

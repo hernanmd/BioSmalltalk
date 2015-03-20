@@ -1,0 +1,14 @@
+{
+	"category" : "BioToolsTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"adapter" ],
+	"name" : "BioAdapterTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

@@ -1,0 +1,9 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"testLetters01DNA" : "hfm 11/15/2011 04:14",
+		"testLetters02RNA" : "hfm 10/25/2011 04:00",
+		"testLetters03Protein" : "hfm 10/25/2011 04:00",
+		"testLetters04AminoacidNames" : "hfm 8/1/2011 22:03",
+		"testTranslation" : "hfm 10/16/2011 18:22" } }

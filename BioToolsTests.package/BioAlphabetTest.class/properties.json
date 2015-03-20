@@ -1,0 +1,14 @@
+{
+	"category" : "BioToolsTests-Biological",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"alphabet" ],
+	"name" : "BioAlphabetTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioEBI-PDBePISA",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioPDBePISACmd",
+	"pools" : [
+		 ],
+	"super" : "BioCommandObject",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioEBI-PDBePISA",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioPDBePISAInterfaces",
+	"pools" : [
+		 ],
+	"super" : "BioDBObject",
+	"type" : "normal" }

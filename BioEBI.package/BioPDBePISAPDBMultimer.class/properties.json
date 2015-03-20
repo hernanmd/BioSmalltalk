@@ -1,0 +1,14 @@
+{
+	"category" : "BioEBI-PDBePISA",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioPDBePISAPDBMultimer",
+	"pools" : [
+		 ],
+	"super" : "BioDBObject",
+	"type" : "normal" }

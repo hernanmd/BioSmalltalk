@@ -1,0 +1,14 @@
+{
+	"category" : "BioEBI-PDBePISA",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/9/2013 13:08",
+	"instvars" : [
+		 ],
+	"name" : "BioPDBePISAClient",
+	"pools" : [
+		 ],
+	"super" : "BioWebWrapper",
+	"type" : "normal" }

@@ -1,5 +1,6 @@
 *BioProject
-addToProject: aGTProject
+addToProject: aBioProject
+	" Add the receiver's contents to aBioProject "
 
-	aGTProject addResult: self contents
+	aBioProject addResult: self contents
 	

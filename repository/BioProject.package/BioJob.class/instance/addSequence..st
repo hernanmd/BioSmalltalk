@@ -1,7 +1,7 @@
 accessing
-addSequence: aGTSequence
-	" Add aGTSequence to the receiver's sequences "
+addSequence: aBioSequence
+	" Add aBioSequence to the receiver's sequences "
 	
-	^ ( self sequences includes: aGTSequence ) 
-		ifFalse: [ self sequences addLast: aGTSequence ]
-		ifTrue: [ self signalDuplicateObject: aGTSequence name ]
+	^ (self sequences includes: aBioSequence) 
+		ifFalse: [ self sequences addLast: aBioSequence ]
+		ifTrue: [ self signalDuplicateObject: aBioSequence name ]

@@ -1,6 +1,6 @@
-GTUser has not been documented yet. The class comment should describe the purpose of the class, its collaborations and its variables.
+BioUser represents an user with projects, and a current project, in the system.
 
 Instance Variables:
-	name	<String> Por ahora solo un String
-	projects	<Collection> <GTProjectInformation>
-	currentProject	<GTProjectt> El proyecto sobre el cual trabaja actualmente
+	name				<String>
+	projects			<Collection> of <BioProject>
+	currentProject		<BioProject>

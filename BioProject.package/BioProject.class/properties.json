@@ -1,0 +1,15 @@
+{
+	"category" : "BioProject-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"info",
+		"jobs" ],
+	"name" : "BioProject",
+	"pools" : [
+		 ],
+	"super" : "BioProjectObject",
+	"type" : "normal" }

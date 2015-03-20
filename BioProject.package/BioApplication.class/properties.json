@@ -1,0 +1,17 @@
+{
+	"category" : "BioProject-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"AppSingleton" ],
+	"commentStamp" : "HernanMoralesDurand 3/20/2015 00:53",
+	"instvars" : [
+		"applicationProjects",
+		"applicationUsers",
+		"currentProject",
+		"projectClass" ],
+	"name" : "BioApplication",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

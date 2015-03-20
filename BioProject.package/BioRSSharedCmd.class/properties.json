@@ -1,0 +1,14 @@
+{
+	"category" : "BioProject-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioRSSharedCmd",
+	"pools" : [
+		 ],
+	"super" : "BioResultSetCmd",
+	"type" : "normal" }

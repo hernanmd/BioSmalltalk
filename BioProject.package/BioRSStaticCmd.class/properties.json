@@ -1,0 +1,14 @@
+{
+	"category" : "BioProject-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioRSStaticCmd",
+	"pools" : [
+		 ],
+	"super" : "BioResultSetCmd",
+	"type" : "normal" }

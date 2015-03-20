@@ -1,0 +1,4 @@
+defaults
+defaultSearchGlobalProjects
+
+	^ true

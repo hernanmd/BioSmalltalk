@@ -1,0 +1,16 @@
+{
+	"category" : "BioProject-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"searchGlobalProjects",
+		"user",
+		"addToApplicationProjects" ],
+	"name" : "BioUserPreferences",
+	"pools" : [
+		 ],
+	"super" : "BioProjectObject",
+	"type" : "normal" }

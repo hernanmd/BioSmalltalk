@@ -1,0 +1,4 @@
+accessing public
+userClass
+
+	^ BioUser

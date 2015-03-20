@@ -1,0 +1,18 @@
+{
+	"category" : "BioProject-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/19/2015 23:59",
+	"instvars" : [
+		"creator",
+		"remover",
+		"creationDate",
+		"removalDate",
+		"modifications" ],
+	"name" : "BioProjectHistory",
+	"pools" : [
+		 ],
+	"super" : "BioProjectObject",
+	"type" : "normal" }

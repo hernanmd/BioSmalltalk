@@ -1,0 +1,14 @@
+{
+	"category" : "BioProject-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"projectInfo" ],
+	"name" : "BioCommand",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

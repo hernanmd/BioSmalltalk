@@ -1,0 +1,14 @@
+{
+	"category" : "BioProject-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioRSThrowCmd",
+	"pools" : [
+		 ],
+	"super" : "BioRSStaticCmd",
+	"type" : "normal" }

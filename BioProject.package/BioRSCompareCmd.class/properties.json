@@ -1,0 +1,14 @@
+{
+	"category" : "BioProject-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioRSCompareCmd",
+	"pools" : [
+		 ],
+	"super" : "BioRSSharedCmd",
+	"type" : "normal" }

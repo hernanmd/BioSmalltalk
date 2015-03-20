@@ -1,0 +1,20 @@
+{
+	"class" : {
+		"application" : "hfm 10/5/2011 16:53",
+		"initializeApplication" : "hfm 10/5/2011 16:53",
+		"resetApplication" : "HernanMoralesDurand 12/9/2012 18:18" },
+	"instance" : {
+		"addApplicationProject:" : "hfm 11/29/2011 03:20",
+		"addApplicationUser:" : "hfm 11/29/2011 02:34",
+		"application" : "HernanMoralesDurand 9/22/2014 00:13",
+		"applicationProjectNamed:" : "HernanMoralesDurand 9/22/2014 00:12",
+		"applicationProjects" : "hfm 11/25/2010 01:28",
+		"applicationUsers" : "hfm 11/24/2010 03:12",
+		"createProjectNamed:for:" : "HernanMoralesDurand 9/27/2014 22:59",
+		"includesUserNamed:" : "HernanMoralesDurand 9/27/2014 23:01",
+		"isBioProject" : "hfm 11/29/2011 02:55",
+		"postRemove" : "HernanMoralesDurand 9/22/2014 00:12",
+		"preRemove" : "HernanMoralesDurand 9/22/2014 00:12",
+		"release" : "HernanMoralesDurand 9/22/2014 00:24",
+		"userExists:" : "HernanMoralesDurand 9/22/2014 00:14",
+		"userNamed:" : "HernanMoralesDurand 9/22/2014 00:13" } }

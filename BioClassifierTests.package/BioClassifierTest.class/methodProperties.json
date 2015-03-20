@@ -1,0 +1,26 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"observations01" : "HernanMoralesDurand 9/23/2014 03:12",
+		"observations02" : "HernanMoralesDurand 9/23/2014 03:12",
+		"observations03" : "HernanMoralesDurand 9/23/2014 03:12",
+		"subjects01" : "HernanMoralesDurand 9/23/2014 03:12",
+		"subjects02" : "HernanMoralesDurand 9/23/2014 03:12",
+		"subjects03" : "HernanMoralesDurand 9/23/2014 03:12",
+		"testAtMatchesPut" : "HernanMoralesDurand 4/7/2013 19:03",
+		"testAtMismatchesPut" : "HernanMoralesDurand 4/7/2013 19:04",
+		"testClassesSize" : "HernanMoralesDurand 9/25/2014 14:55",
+		"testClassifyByEquality01" : "HernanMoralesDurand 9/25/2014 14:36",
+		"testClassifyByEquality02" : "HernanMoralesDurand 4/7/2013 19:19",
+		"testClassifyBySimilarity01" : "HernanMoralesDurand 4/7/2013 19:18",
+		"testElements" : "HernanMoralesDurand 4/7/2013 19:19",
+		"testGroupBy01" : "HernanMoralesDurand 4/7/2013 18:54",
+		"testGroupCreation" : "hfm 10/24/2011 22:11",
+		"testMatches" : "HernanMoralesDurand 4/7/2013 19:05",
+		"testMismatches" : "HernanMoralesDurand 4/7/2013 19:01",
+		"testNewMatchingDictionary" : "HernanMoralesDurand 4/7/2013 18:45",
+		"testSetFeatures" : "hfm 10/24/2011 22:10",
+		"trainedSet01" : "hfm 10/20/2011 17:00",
+		"trainedSet02" : "hfm 10/24/2011 21:56",
+		"trainedSet03" : "hfm 12/4/2011 02:49" } }

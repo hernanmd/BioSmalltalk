@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBILocalBlastLegacy2223",
+	"pools" : [
+		 ],
+	"super" : "BioNCBILocalBlastWrapper",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 2/5/2011 13:50",
+	"instvars" : [
+		 ],
+	"name" : "BioBlastWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioWebWrapper",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 12/1/2014 01:06",
+	"instvars" : [
+		 ],
+	"name" : "BioBlastFilter",
+	"pools" : [
+		 ],
+	"super" : "BioFilter",
+	"type" : "normal" }

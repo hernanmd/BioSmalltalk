@@ -1,0 +1,15 @@
+{
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/7/2015 00:54",
+	"instvars" : [
+		"getUrl",
+		"cmd" ],
+	"name" : "BioNCBIWebBlastWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIBlastWrapper",
+	"type" : "normal" }

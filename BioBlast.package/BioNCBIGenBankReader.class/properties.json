@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 10/21/2011 20:54",
+	"instvars" : [
+		"genBankDownloader" ],
+	"name" : "BioNCBIGenBankReader",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIReader",
+	"type" : "normal" }

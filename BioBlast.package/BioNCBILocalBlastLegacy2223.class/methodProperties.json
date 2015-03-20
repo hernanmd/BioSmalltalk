@@ -1,0 +1,19 @@
+{
+	"class" : {
+		"isLegacyVersion" : "hfm 2/13/2011 21:29",
+		"versionNumber" : "hfm 2/5/2011 13:44" },
+	"instance" : {
+		"bl2seqPath" : "hfm 11/18/2012 13:11",
+		"blastAllPath" : "hfm 11/18/2012 13:11",
+		"blastClustPath" : "hfm 11/18/2012 13:11",
+		"blastPgpPath" : "hfm 11/18/2012 13:11",
+		"copymatPath" : "hfm 11/18/2012 13:11",
+		"fastaCmdPath" : "hfm 11/18/2012 13:11",
+		"formatDbPath" : "hfm 11/18/2012 13:11",
+		"formatRpsDbPath" : "hfm 11/18/2012 13:11",
+		"impalaPath" : "hfm 11/18/2012 13:11",
+		"mainExecName" : "hfm 2/7/2011 14:43",
+		"makeMatPath" : "hfm 11/18/2012 13:11",
+		"megaBlastPath" : "hfm 11/18/2012 13:11",
+		"rpsBlastPath" : "hfm 11/18/2012 13:11",
+		"seedTopPath" : "hfm 11/18/2012 13:11" } }

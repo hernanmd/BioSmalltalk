@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioWUBlastWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioBlastWrapper",
+	"type" : "normal" }

@@ -1,0 +1,15 @@
+{
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"BlastProperties" ],
+	"commentStamp" : "hfm 11/11/2011 03:11",
+	"instvars" : [
+		"selectedNodes",
+		"parsingStrategy" ],
+	"name" : "BioNCBIBlastReader",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIReader",
+	"type" : "normal" }

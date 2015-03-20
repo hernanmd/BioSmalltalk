@@ -1,0 +1,19 @@
+{
+	"category" : "BioBlast-Remote",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 7/10/2014 21:35",
+	"instvars" : [
+		"dbName",
+		"format",
+		"uids",
+		"results",
+		"parsedResults",
+		"reader" ],
+	"name" : "BioNCBIGenBankDownloader",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

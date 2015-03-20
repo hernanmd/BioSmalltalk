@@ -1,0 +1,22 @@
+{
+	"class" : {
+		"filesFromFlatDirectory:" : "HernanMoralesDurand 4/7/2013 15:08",
+		"isPreferredFor:" : "hfm 1/12/2012 09:53" },
+	"instance" : {
+		"checkValidContents" : "HernanMoralesDurand 7/26/2014 01:59",
+		"entrezSearchResults" : "hfm 12/1/2011 16:35",
+		"genBankDownloader" : "HernanMoralesDurand 7/28/2014 05:51",
+		"genBankRecordsAsXMLFrom:database:" : "HernanMoralesDurand 11/5/2014 17:13",
+		"genBankRecordsFrom:format:uids:" : "HernanMoralesDurand 7/10/2014 21:38",
+		"giListFrom:" : "hfm 2/12/2012 06:31",
+		"parseFlatDocumentsFrom:" : "hfm 6/16/2012 02:23",
+		"parseXMLDocumentsFromCollection:" : "HernanMoralesDurand 7/28/2014 05:33",
+		"parseXMLDocumentsFromDirectory:" : "HernanMoralesDurand 11/11/2014 12:27",
+		"parsedContents" : "hfm 2/12/2012 06:36",
+		"parsedFilesCount" : "HernanMoralesDurand 8/16/2014 01:24",
+		"resultClass" : "hfm 10/5/2011 16:54",
+		"resultSizeInMb" : "hfm 2/17/2012 01:26",
+		"saveFilterContents" : "HernanMoralesDurand 10/22/2014 15:42",
+		"selectGenBankRecords:" : "hfm 3/9/2012 15:51",
+		"selectGenBankRecords:from:" : "hfm 7/28/2012 03:53",
+		"validateXMLDataSource:" : "HernanMoralesDurand 12/3/2014 02:05" } }

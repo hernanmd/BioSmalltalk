@@ -1,0 +1,4 @@
+accessing-filters
+resultClass
+
+	^ BioNCBIGenBankResult

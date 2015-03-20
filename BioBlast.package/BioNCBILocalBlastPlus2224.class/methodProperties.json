@@ -1,0 +1,26 @@
+{
+	"class" : {
+		"isLatestVersion" : "hfm 2/5/2011 12:53",
+		"isLegacyVersion" : "hfm 2/13/2011 21:30",
+		"programNames" : "hfm 2/5/2011 18:09",
+		"versionNumber" : "hfm 2/5/2011 13:44" },
+	"instance" : {
+		"blastdbaliastoolPath" : "hfm 11/18/2012 13:11",
+		"blastdbcheckPath" : "hfm 11/18/2012 13:11",
+		"blastdbcmdPath" : "hfm 11/18/2012 13:11",
+		"blastformatterPath" : "hfm 11/18/2012 13:11",
+		"blastnPath" : "hfm 11/18/2012 13:11",
+		"blastpPath" : "hfm 11/18/2012 13:11",
+		"blastxPath" : "hfm 11/18/2012 13:11",
+		"convert2blastmaskPath" : "hfm 11/18/2012 13:11",
+		"dustmaskerPath" : "hfm 11/18/2012 13:11",
+		"mainExecName" : "hfm 2/7/2011 14:50",
+		"makeblastdbPath" : "hfm 11/18/2012 13:11",
+		"makembindexPath" : "hfm 11/18/2012 13:11",
+		"psiblastPath" : "hfm 11/18/2012 13:11",
+		"rpsblastPath" : "hfm 11/18/2012 13:11",
+		"rpstblastnPath" : "hfm 11/18/2012 13:11",
+		"segmaskerPath" : "hfm 11/18/2012 13:11",
+		"tblastnPath" : "hfm 11/18/2012 13:11",
+		"tblastxPath" : "hfm 11/18/2012 13:11",
+		"windowmaskerPath" : "hfm 11/18/2012 13:11" } }

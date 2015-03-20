@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlast-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/7/2015 00:54",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBILocalBlastWrapper",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIBlastWrapper",
+	"type" : "normal" }

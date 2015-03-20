@@ -1,0 +1,21 @@
+{
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"notation",
+		"isMandatory",
+		"dataType",
+		"defaultValue",
+		"format",
+		"range",
+		"value",
+		"modified" ],
+	"name" : "BioA31Spec",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

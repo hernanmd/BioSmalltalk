@@ -1,0 +1,18 @@
+{
+	"class" : {
+		"matches:" : "hfm 5/29/2010 07:44",
+		"notation" : "hfm 5/29/2010 05:44",
+		"sampleDataId" : "hfm 5/29/2010 03:23",
+		"sampleNameId" : "hfm 5/29/2010 03:23",
+		"sampleSizeId" : "hfm 5/29/2010 03:23",
+		"sectionSpecs" : "HernanMoralesDurand 4/8/2013 02:08" },
+	"instance" : {
+		"addSampleData:" : "hfm 9/5/2011 16:18",
+		"addSampleName:" : "hfm 9/5/2011 16:18",
+		"addSampleSize:" : "HernanMoralesDurand 4/8/2013 01:52",
+		"addSamples:" : "HernanMoralesDurand 1/14/2014 20:12",
+		"at:put:" : "HernanMoralesDurand 4/7/2013 22:37",
+		"newSampleKeyNumber" : "hfm 9/5/2011 15:46",
+		"sampleKeyNumber" : "hfm 9/5/2011 15:46",
+		"writeLabelOn:" : "HernanMoralesDurand 4/8/2013 01:53",
+		"writeOn:" : "HernanMoralesDurand 12/14/2013 14:42" } }

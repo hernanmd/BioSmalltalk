@@ -1,0 +1,14 @@
+{
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 1/11/2015 04:34",
+	"instvars" : [
+		 ],
+	"name" : "BioArlequinFormatter",
+	"pools" : [
+		 ],
+	"super" : "BioMatrixFormatter",
+	"type" : "normal" }

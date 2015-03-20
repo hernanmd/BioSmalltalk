@@ -1,0 +1,15 @@
+{
+	"category" : "BioArlequin-Sample",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"sampleClass",
+		"matrix" ],
+	"name" : "BioA31SampleCollection",
+	"pools" : [
+		 ],
+	"super" : "BioSampleCollection",
+	"type" : "normal" }

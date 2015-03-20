@@ -1,0 +1,14 @@
+{
+	"category" : "BioArlequin-Sample",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/8/2013 01:50",
+	"instvars" : [
+		 ],
+	"name" : "BioA31RFLPSample",
+	"pools" : [
+		 ],
+	"super" : "BioA31Sample",
+	"type" : "normal" }

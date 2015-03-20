@@ -1,0 +1,16 @@
+{
+	"category" : "BioArlequin-Sections",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"ArlequinDataTypes",
+		"ArlequinFrequencies",
+		"ArlequinLocusSeparators" ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioA31ProfileSection",
+	"pools" : [
+		 ],
+	"super" : "BioA31INISection",
+	"type" : "normal" }

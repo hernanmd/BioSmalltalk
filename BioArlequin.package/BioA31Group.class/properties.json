@@ -1,0 +1,15 @@
+{
+	"category" : "BioArlequin-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 7/13/2011 17:47",
+	"instvars" : [
+		"group",
+		"data" ],
+	"name" : "BioA31Group",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

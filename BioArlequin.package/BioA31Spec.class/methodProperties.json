@@ -1,0 +1,25 @@
+{
+	"class" : {
+		"newTitle:isMandatory:defaultValue:" : "hfm 4/30/2010 16:31",
+		"newTitle:isMandatory:defaultValue:format:" : "hfm 4/30/2010 16:32",
+		"newTitle:isMandatory:defaultValue:range:" : "hfm 5/3/2010 14:45" },
+	"instance" : {
+		"contents" : "HernanMoralesDurand 4/8/2013 01:52",
+		"dataType" : "hfm 4/30/2010 14:16",
+		"dataType:" : "hfm 4/30/2010 14:16",
+		"defaultValue" : "hfm 4/30/2010 14:16",
+		"defaultValue:" : "hfm 4/30/2010 14:16",
+		"format" : "hfm 4/30/2010 14:42",
+		"format:" : "hfm 4/30/2010 14:42",
+		"isMandatory" : "hfm 4/30/2010 14:16",
+		"isMandatory:" : "hfm 4/30/2010 14:16",
+		"modified" : "hfm 6/10/2010 12:59",
+		"modified:" : "hfm 6/10/2010 12:59",
+		"notation" : "hfm 4/30/2010 14:16",
+		"notation:" : "hfm 4/30/2010 14:16",
+		"printOn:" : "HernanMoralesDurand 4/8/2013 01:52",
+		"range" : "hfm 5/3/2010 14:46",
+		"range:" : "hfm 5/3/2010 14:46",
+		"validate:" : "hfm 5/28/2010 12:17",
+		"value" : "hfm 5/3/2010 14:30",
+		"value:" : "hfm 5/3/2010 11:49" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioArlequin-Sample",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioA31DNASample",
+	"pools" : [
+		 ],
+	"super" : "BioA31Sample",
+	"type" : "normal" }

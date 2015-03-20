@@ -1,0 +1,15 @@
+{
+	"category" : "BioArlequin-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"arFile",
+		"matrix" ],
+	"name" : "BioArlequinWriterTests",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioArlequin-Sections",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioA31StructureSection",
+	"pools" : [
+		 ],
+	"super" : "BioA31INISection",
+	"type" : "normal" }

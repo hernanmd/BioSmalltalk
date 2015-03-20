@@ -1,0 +1,4 @@
+accessing
+locations
+
+	^ Array new

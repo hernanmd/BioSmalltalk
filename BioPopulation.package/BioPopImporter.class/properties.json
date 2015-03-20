@@ -1,0 +1,14 @@
+{
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [
+		"newBreed" ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioPopImporter",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

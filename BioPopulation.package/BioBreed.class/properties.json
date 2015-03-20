@@ -1,0 +1,15 @@
+{
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 5/2/2014 03:15",
+	"instvars" : [
+		"synonyms",
+		"locations" ],
+	"name" : "BioBreed",
+	"pools" : [
+		 ],
+	"super" : "BioNamedBreed",
+	"type" : "normal" }

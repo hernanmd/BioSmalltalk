@@ -1,0 +1,4 @@
+parsing
+urlClassForScheme: scheme
+
+	^ self

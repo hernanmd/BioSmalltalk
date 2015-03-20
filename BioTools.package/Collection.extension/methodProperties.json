@@ -1,0 +1,16 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"bioHasEqualElements:" : "HernanMoralesDurand 4/3/2013 00:24",
+		"groupByEquality" : "HernanMoralesDurand 8/5/2014 05:24",
+		"includesBeginWith:" : "HernanMoralesDurand 4/3/2013 00:21",
+		"includesBeginWithAnyOf:" : "HernanMoralesDurand 4/3/2013 00:24",
+		"includesLike:" : "HernanMoralesDurand 4/3/2013 00:28",
+		"isBioCollection" : "hfm 2/6/2012 15:47",
+		"isBioSpecialIdentifier" : "hfm 9/25/2012 18:14",
+		"isBiologicalSequence" : "hfm 9/28/2012 03:09",
+		"isDNASequence" : "hfm 10/21/2011 23:26",
+		"isProteinSequence" : "hfm 10/21/2011 23:26",
+		"isRNASequence" : "hfm 10/21/2011 23:26",
+		"outputTo:" : "hfm 6/1/2012 01:22" } }

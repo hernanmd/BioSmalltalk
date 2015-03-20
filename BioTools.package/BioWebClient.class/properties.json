@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Adapters",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioWebClient",
+	"pools" : [
+		 ],
+	"super" : "BioWebClientEngine",
+	"type" : "normal" }

@@ -1,0 +1,4 @@
+testing
+isNil
+
+	^ seq isNil

@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Exceptions",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNotFoundObject",
+	"pools" : [
+		 ],
+	"super" : "BioException",
+	"type" : "normal" }

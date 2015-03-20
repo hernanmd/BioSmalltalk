@@ -1,0 +1,1 @@
+BioSmartRefStreamSerializer is an adapter for the "classic" generic object serializer for Squeak.

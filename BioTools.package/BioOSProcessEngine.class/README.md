@@ -1,0 +1,1 @@
+BioSerializationEngine was created for accessing OS information in Squeak 4

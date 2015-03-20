@@ -1,0 +1,15 @@
+{
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 5/4/2013 04:48",
+	"instvars" : [
+		"qual",
+		"trace" ],
+	"name" : "BioSeqQuality",
+	"pools" : [
+		 ],
+	"super" : "BioSequence",
+	"type" : "normal" }

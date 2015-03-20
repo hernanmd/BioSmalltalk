@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"numberOfTaxa",
+		"numberOfCharacters",
+		"sequences" ],
+	"name" : "BioPhylip",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

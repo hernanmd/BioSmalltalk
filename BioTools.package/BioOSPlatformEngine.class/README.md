@@ -1,0 +1,1 @@
+BioOSPlatformEngine was created for accessing OS information in Pharo

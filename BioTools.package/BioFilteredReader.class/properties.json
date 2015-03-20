@@ -1,0 +1,17 @@
+{
+	"category" : "BioTools-IO",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 2/8/2012 15:03",
+	"instvars" : [
+		"filters",
+		"filterClass",
+		"queryFilters",
+		"classifier" ],
+	"name" : "BioFilteredReader",
+	"pools" : [
+		 ],
+	"super" : "BioReader",
+	"type" : "normal" }

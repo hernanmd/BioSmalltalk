@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Query",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioEmptyResultObject",
+	"pools" : [
+		 ],
+	"super" : "BioResultObject",
+	"type" : "normal" }

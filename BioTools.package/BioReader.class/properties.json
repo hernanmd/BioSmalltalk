@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-IO",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 1/20/2015 05:03",
+	"instvars" : [
+		"contents",
+		"nextReader",
+		"parser" ],
+	"name" : "BioReader",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

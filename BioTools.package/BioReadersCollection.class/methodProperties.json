@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"filesFromXMLDirectory:" : "HernanMoralesDurand 4/7/2013 15:08",
+		"newFromXMLCollection:" : "HernanMoralesDurand 4/3/2013 00:32",
+		"readerClass" : "hfm 6/21/2011 13:31" },
+	"instance" : {
+		"fileOutXMLReaders" : "HernanMoralesDurand 1/24/2015 20:08",
+		"parseDocuments" : "HernanMoralesDurand 4/3/2013 00:22",
+		"parser" : "hfm 6/15/2012 17:27",
+		"parser:" : "HernanMoralesDurand 11/11/2014 11:56",
+		"readerClass" : "hfm 6/12/2012 01:55",
+		"readerClass:" : "hfm 6/12/2012 01:55" } }

@@ -1,0 +1,12 @@
+{
+	"class" : {
+		"ambiguityCodes" : "hfm 2/7/2012 15:07",
+		"codes" : "hfm 10/25/2011 04:00" },
+	"instance" : {
+		"canTranslate" : "hfm 10/28/2011 22:11",
+		"complementaryTable" : "hfm 4/9/2011 03:19",
+		"isProtein" : "hfm 2/12/2012 18:46",
+		"printOn:" : "hfm 3/27/2011 18:33",
+		"stopSymbol" : "hfm 10/14/2011 17:13",
+		"stopSymbol:" : "hfm 10/14/2011 17:13",
+		"unknownLetter" : "HernanMoralesDurand 3/8/2015 15:10" } }

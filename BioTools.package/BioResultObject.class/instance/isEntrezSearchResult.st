@@ -1,0 +1,4 @@
+testing
+isEntrezSearchResult
+
+	^ false

@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 6/5/2011 13:27",
+	"instvars" : [
+		"size" ],
+	"name" : "BioUnknownSeq",
+	"pools" : [
+		 ],
+	"super" : "BioMutableSeq",
+	"type" : "normal" }

@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"client",
+		"forceDownload",
+		"checkMD5" ],
+	"name" : "BioDBObject",
+	"pools" : [
+		 ],
+	"super" : "BioPropertyObject",
+	"type" : "normal" }

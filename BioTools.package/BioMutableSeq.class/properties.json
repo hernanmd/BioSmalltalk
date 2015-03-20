@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 9/28/2012 00:12",
+	"instvars" : [
+		 ],
+	"name" : "BioMutableSeq",
+	"pools" : [
+		 ],
+	"super" : "BioSequence",
+	"type" : "normal" }

@@ -1,0 +1,13 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"hasProperty:" : "hfm 11/13/2012 11:03",
+		"properties" : "hfm 11/23/2012 21:02",
+		"properties:" : "hfm 11/23/2012 21:02",
+		"propertyAt:" : "hfm 11/13/2012 11:04",
+		"propertyAt:ifAbsent:" : "hfm 11/13/2012 11:04",
+		"propertyAt:ifAbsentPut:" : "hfm 11/13/2012 11:04",
+		"propertyAt:put:" : "hfm 11/13/2012 11:04",
+		"removeProperty:" : "hfm 11/13/2012 11:04",
+		"removeProperty:ifAbsent:" : "hfm 11/13/2012 11:05" } }

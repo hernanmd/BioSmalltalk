@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"table",
+		"startCodons",
+		"stopCodons" ],
+	"name" : "BioCodonTable",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

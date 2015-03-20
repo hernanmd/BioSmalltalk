@@ -1,0 +1,26 @@
+{
+	"class" : {
+		"newFromFilter:" : "hfm 7/7/2012 18:46" },
+	"instance" : {
+		"addFilter:" : "hfm 9/28/2012 02:57",
+		"addQueryFilter:" : "hfm 5/21/2012 13:58",
+		"addResult" : "hfm 6/22/2011 14:19",
+		"classifier" : "hfm 6/15/2012 16:13",
+		"classifier:" : "hfm 6/15/2012 16:13",
+		"contents" : "hfm 10/22/2011 01:09",
+		"filter" : "hfm 6/22/2011 14:19",
+		"filterClass" : "hfm 7/14/2011 17:06",
+		"filterClass:" : "hfm 7/14/2011 17:05",
+		"filters" : "hfm 6/22/2011 14:19",
+		"filtersCount" : "HernanMoralesDurand 7/5/2014 21:21",
+		"hasCumulativeFilter" : "hfm 7/23/2011 14:29",
+		"hasFilterResults" : "hfm 5/25/2012 14:50",
+		"initialResult" : "hfm 6/22/2011 14:19",
+		"lastCumulativeFilter" : "HernanMoralesDurand 4/3/2013 00:10",
+		"lastFilter" : "hfm 6/22/2011 14:19",
+		"queryFilters" : "hfm 5/21/2012 13:57",
+		"queryFilters:" : "hfm 5/21/2012 13:57",
+		"removeAllFilters" : "hfm 6/7/2012 14:47",
+		"removeFilter:" : "HernanMoralesDurand 4/3/2013 00:10",
+		"removeQueryFilter:" : "hfm 6/7/2012 01:29",
+		"result" : "hfm 6/22/2011 14:20" } }

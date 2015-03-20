@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-IO",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioBasicReader",
+	"pools" : [
+		 ],
+	"super" : "BioReader",
+	"type" : "normal" }

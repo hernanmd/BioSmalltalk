@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Adapters",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 9/27/2012 22:55",
+	"instvars" : [
+		 ],
+	"name" : "BioMaObjectSerializer",
+	"pools" : [
+		 ],
+	"super" : "BioSerializationEngine",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"version" ],
+	"name" : "BioAccession",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

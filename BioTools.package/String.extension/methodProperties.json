@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"addToAlignment:" : "hfm 9/28/2012 03:03",
+		"asAminoacidLetter" : "HernanMoralesDurand 4/2/2013 23:45",
+		"asAminoacidName" : "hfm 9/28/2012 03:36",
+		"asSequence" : "hfm 10/5/2011 16:54",
+		"asSequenceForAlphabet:" : "hfm 10/5/2011 16:54",
+		"bioReader" : "HernanMoralesDurand 12/18/2012 00:30",
+		"hasAmbiguousDNABases" : "hfm 9/28/2012 03:03",
+		"hasAmbiguousRNABases" : "HernanMoralesDurand 4/3/2013 00:35",
+		"includesDtd:" : "HernanMoralesDurand 12/17/2012 01:57",
+		"outputTo:" : "hfm 3/19/2012 22:51" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"contents" ],
+	"name" : "BioAnnotation",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

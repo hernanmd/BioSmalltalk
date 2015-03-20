@@ -1,0 +1,19 @@
+{
+	"category" : "BioTools-Query",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 8/27/2014 01:17",
+	"instvars" : [
+		"updater",
+		"history",
+		"project",
+		"result",
+		"formatters",
+		"exitStatus" ],
+	"name" : "BioResultObject",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

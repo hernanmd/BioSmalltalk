@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Alphabets",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioIUPACDNA",
+	"pools" : [
+		 ],
+	"super" : "BioIUPACComplementaryAlphabet",
+	"type" : "normal" }

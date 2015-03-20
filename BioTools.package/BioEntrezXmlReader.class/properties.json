@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-IO",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 12/18/2012 00:30",
+	"instvars" : [
+		 ],
+	"name" : "BioEntrezXmlReader",
+	"pools" : [
+		 ],
+	"super" : "BioReader",
+	"type" : "normal" }

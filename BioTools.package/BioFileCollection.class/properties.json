@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Collections",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioFileCollection",
+	"pools" : [
+		 ],
+	"super" : "BioOrderedCollection",
+	"type" : "normal" }

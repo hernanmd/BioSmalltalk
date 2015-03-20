@@ -1,0 +1,21 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"<=" : "HernanMoralesDurand 4/7/2013 20:42",
+		"=" : "HernanMoralesDurand 4/7/2013 20:09",
+		"at:" : "hfm 10/5/2011 13:01",
+		"at:ifAbsent:" : "hfm 10/5/2011 13:00",
+		"hash" : "HernanMoralesDurand 4/7/2013 20:07",
+		"isStartCodon:" : "hfm 10/8/2011 04:11",
+		"isStopCodon:" : "hfm 10/8/2011 04:11",
+		"keyAtValue:ifAbsent:" : "hfm 10/5/2011 13:16",
+		"keysAndValuesDo:" : "hfm 10/5/2011 14:43",
+		"printOn:" : "HernanMoralesDurand 4/7/2013 20:39",
+		"startCodons" : "hfm 10/5/2011 02:23",
+		"startCodons:" : "hfm 10/5/2011 02:23",
+		"stopCodons" : "hfm 10/5/2011 02:23",
+		"stopCodons:" : "hfm 10/5/2011 02:23",
+		"table" : "hfm 10/5/2011 02:23",
+		"table:" : "hfm 10/5/2011 02:23",
+		"tableId" : "hfm 10/9/2011 18:08" } }

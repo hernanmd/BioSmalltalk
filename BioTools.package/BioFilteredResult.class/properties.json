@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Query",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 8/27/2014 01:18",
+	"instvars" : [
+		"filter" ],
+	"name" : "BioFilteredResult",
+	"pools" : [
+		 ],
+	"super" : "BioResultObject",
+	"type" : "normal" }

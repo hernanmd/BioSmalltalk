@@ -1,0 +1,4 @@
+tables
+euplotidNuclearTableId
+	
+	^ 10

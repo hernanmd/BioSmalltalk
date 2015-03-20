@@ -1,0 +1,25 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		"serverAddress",
+		"serverDirectory",
+		"serverPort",
+		"useNetworkAuthentification",
+		"email",
+		"user",
+		"password",
+		"lastProxyPort",
+		"lastProxyServer",
+		"proxyPassword",
+		"proxyUser",
+		"useProxy" ],
+	"name" : "BioConnectionSettings",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

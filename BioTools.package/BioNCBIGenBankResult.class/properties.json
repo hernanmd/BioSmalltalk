@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Query",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBIGenBankResult",
+	"pools" : [
+		 ],
+	"super" : "BioWebResult",
+	"type" : "normal" }

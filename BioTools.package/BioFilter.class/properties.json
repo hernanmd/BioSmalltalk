@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-Query",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 11/11/2011 01:38",
+	"instvars" : [
+		"reader",
+		"cumulative",
+		"contents" ],
+	"name" : "BioFilter",
+	"pools" : [
+		 ],
+	"super" : "BioNamedObject",
+	"type" : "normal" }

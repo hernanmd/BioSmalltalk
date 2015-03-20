@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Collections",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 9/28/2012 00:42",
+	"instvars" : [
+		 ],
+	"name" : "BioOrderedCollection",
+	"pools" : [
+		 ],
+	"super" : "OrderedCollection",
+	"type" : "normal" }

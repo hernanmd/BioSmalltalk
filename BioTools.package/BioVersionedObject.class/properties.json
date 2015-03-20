@@ -1,0 +1,16 @@
+{
+	"category" : "BioTools-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 12/1/2014 01:10",
+	"instvars" : [
+		"versions",
+		"date",
+		"creator" ],
+	"name" : "BioVersionedObject",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

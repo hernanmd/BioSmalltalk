@@ -1,0 +1,14 @@
+{
+	"category" : "BioTools-Biological",
+	"classinstvars" : [
+		"codonTables" ],
+	"classvars" : [
+		"CurrentCodonTable" ],
+	"commentStamp" : "hfm 9/27/2012 22:48",
+	"instvars" : [
+		 ],
+	"name" : "BioCodonTables",
+	"pools" : [
+		 ],
+	"super" : "BioObject",
+	"type" : "normal" }

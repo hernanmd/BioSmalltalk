@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"displayDefault" : "HernanMoralesDurand 10/5/2014 18:30",
+		"displayMinimalBioseq" : "HernanMoralesDurand 10/5/2014 18:30",
+		"displayMinimalNucProt" : "HernanMoralesDurand 10/5/2014 18:30",
+		"displayMinimalPubSet" : "HernanMoralesDurand 10/5/2014 18:30",
+		"displayWholeBlob" : "HernanMoralesDurand 10/5/2014 18:30",
+		"fetch" : "hfm 9/28/2010 17:12",
+		"seqStart:" : "HernanMoralesDurand 10/5/2014 18:28",
+		"seqStop:" : "HernanMoralesDurand 10/5/2014 18:29",
+		"strandMinus" : "HernanMoralesDurand 10/5/2014 18:30",
+		"strandPlus" : "HernanMoralesDurand 10/5/2014 18:31" } }

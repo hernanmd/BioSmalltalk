@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioESeqCommonDb",
+	"pools" : [
+		 ],
+	"super" : "BioESeqDatabase",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioEFetchRetCmd",
+	"pools" : [
+		 ],
+	"super" : "BioEFetchCmd",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/7/2013 17:26",
+	"instvars" : [
+		 ],
+	"name" : "BioGBSeqCollection",
+	"pools" : [
+		 ],
+	"super" : "BioReadersCollection",
+	"type" : "normal" }

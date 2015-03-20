@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioEntrezPCCompound",
+	"pools" : [
+		 ],
+	"super" : "BioEntrezDatabase",
+	"type" : "normal" }

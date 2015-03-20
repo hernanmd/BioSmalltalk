@@ -1,0 +1,14 @@
+{
+	"class" : {
+		"isPreferredFor:" : "hfm 1/12/2012 10:24" },
+	"instance" : {
+		"correctedQuery" : "hfm 10/5/2011 16:54",
+		"count" : "hfm 3/10/2012 01:11",
+		"idList" : "hfm 3/10/2012 00:49",
+		"keys" : "hfm 10/12/2010 17:06",
+		"keysParserClass" : "hfm 10/5/2011 16:53",
+		"parserClass" : "hfm 2/10/2012 02:03",
+		"queryKey" : "hfm 10/22/2010 14:13",
+		"retMax" : "hfm 3/10/2012 01:11",
+		"selectNodes:in:" : "hfm 2/10/2012 03:29",
+		"webEnv" : "hfm 10/22/2010 14:13" } }

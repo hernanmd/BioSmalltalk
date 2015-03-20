@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Databases",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioEntrezUniSTS",
+	"pools" : [
+		 ],
+	"super" : "BioEntrezDatabase",
+	"type" : "normal" }

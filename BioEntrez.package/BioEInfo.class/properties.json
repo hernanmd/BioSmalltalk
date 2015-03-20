@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 10/31/2014 04:16",
+	"instvars" : [
+		 ],
+	"name" : "BioEInfo",
+	"pools" : [
+		 ],
+	"super" : "BioEntrezCommand",
+	"type" : "normal" }

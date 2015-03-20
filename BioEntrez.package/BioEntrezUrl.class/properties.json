@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 11/2/2014 16:37",
+	"instvars" : [
+		 ],
+	"name" : "BioEntrezUrl",
+	"pools" : [
+		 ],
+	"super" : "BioUrl",
+	"type" : "normal" }

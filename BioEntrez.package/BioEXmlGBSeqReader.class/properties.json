@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioEXmlGBSeqReader",
+	"pools" : [
+		 ],
+	"super" : "BioEntrezXmlReader",
+	"type" : "normal" }

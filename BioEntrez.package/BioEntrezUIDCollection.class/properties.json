@@ -1,0 +1,14 @@
+{
+	"category" : "BioEntrez-Commands",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 3/9/2013 12:31",
+	"instvars" : [
+		 ],
+	"name" : "BioEntrezUIDCollection",
+	"pools" : [
+		 ],
+	"super" : "BioWebCollection",
+	"type" : "normal" }

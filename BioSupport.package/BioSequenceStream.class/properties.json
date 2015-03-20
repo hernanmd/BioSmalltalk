@@ -1,0 +1,14 @@
+{
+	"category" : "BioSupport-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 4/9/2014 14:51",
+	"instvars" : [
+		 ],
+	"name" : "BioSequenceStream",
+	"pools" : [
+		 ],
+	"super" : "ReadWriteStream",
+	"type" : "normal" }

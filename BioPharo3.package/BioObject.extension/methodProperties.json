@@ -1,0 +1,20 @@
+{
+	"class" : {
+		"alert:" : "HernanMoralesDurand 4/11/2014 12:58",
+		"fileDirectoryClass" : "HernanMoralesDurand 4/28/2014 22:37",
+		"fileExists:" : "HernanMoralesDurand 4/10/2014 17:00",
+		"filesIn:" : "HernanMoralesDurand 4/10/2014 17:01",
+		"newFullFileNamed:" : "HernanMoralesDurand 4/10/2014 17:01",
+		"openFileNamed:" : "HernanMoralesDurand 4/29/2014 00:34",
+		"openFullFileNamed:" : "HernanMoralesDurand 4/10/2014 17:01",
+		"requestCsvFile" : "HernanMoralesDurand 4/11/2014 12:58",
+		"requestDirectoryPath" : "HernanMoralesDurand 7/22/2014 22:17",
+		"requestFastaFile" : "HernanMoralesDurand 4/11/2014 12:58",
+		"requestXmlFile" : "HernanMoralesDurand 4/11/2014 12:58",
+		"slash" : "HernanMoralesDurand 4/10/2014 17:02",
+		"workingDirectory" : "HernanMoralesDurand 7/1/2014 02:05" },
+	"instance" : {
+		"connectionRetry" : "HernanMoralesDurand 4/11/2014 12:58",
+		"fileDirectoryClass" : "HernanMoralesDurand 4/28/2014 22:37",
+		"requestDirectoryPath" : "HernanMoralesDurand 7/22/2014 22:17",
+		"slash" : "HernanMoralesDurand 7/11/2014 01:26" } }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioPharo3-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"FileExistsBehavior" ],
+	"commentStamp" : "HernanMoralesDurand 7/9/2014 15:05",
+	"instvars" : [
+		 ],
+	"name" : "BioSettings",
+	"pools" : [
+		 ],
+	"super" : "Object",
+	"type" : "normal" }

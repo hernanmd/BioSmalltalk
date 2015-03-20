@@ -1,0 +1,16 @@
+{
+	"class" : {
+		"name:if:true:false:" : "HernanMoralesDurand 11/29/2014 15:30",
+		"name:if:true:false:context:" : "HernanMoralesDurand 1/16/2015 19:58" },
+	"instance" : {
+		"evaluate:" : "HernanMoralesDurand 1/16/2015 18:57",
+		"evaluate:context:" : "HernanMoralesDurand 4/25/2014 00:38",
+		"explanation" : "hfm 7/1/2012 22:26",
+		"explanation:" : "hfm 7/1/2012 22:26",
+		"name:if:true:false:" : "HernanMoralesDurand 1/16/2015 20:47",
+		"name:if:true:false:context:" : "HernanMoralesDurand 1/16/2015 20:46",
+		"nextFalse" : "hfm 7/1/2012 23:16",
+		"nextFalse:" : "hfm 7/1/2012 23:16",
+		"nextTrue" : "hfm 7/1/2012 23:15",
+		"nextTrue:" : "hfm 7/1/2012 23:15",
+		"rules" : "HernanMoralesDurand 1/8/2015 15:24" } }

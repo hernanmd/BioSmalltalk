@@ -1,0 +1,14 @@
+{
+	"category" : "BioClassifier-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"alignments" ],
+	"name" : "BioGBBreedClassifier",
+	"pools" : [
+		 ],
+	"super" : "BioClassifier",
+	"type" : "normal" }

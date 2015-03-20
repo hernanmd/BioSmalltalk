@@ -1,0 +1,3 @@
+accessing
+nextTrue
+	^ nextTrue

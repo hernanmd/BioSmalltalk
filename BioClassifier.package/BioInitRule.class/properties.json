@@ -1,0 +1,14 @@
+{
+	"category" : "BioClassifier-RuleEngine",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioInitRule",
+	"pools" : [
+		 ],
+	"super" : "BioBinaryRule",
+	"type" : "normal" }

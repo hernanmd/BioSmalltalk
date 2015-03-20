@@ -1,0 +1,4 @@
+accessing
+setUp
+
+	BioProjectObject resetApplication.

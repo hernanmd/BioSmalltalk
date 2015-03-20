@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"newSampleSeq:" : "HernanMoralesDurand 12/9/2012 18:22",
+		"newSampleSeqRecord:" : "HernanMoralesDurand 12/9/2012 18:22",
+		"sampleSeq1" : "hfm 7/27/2012 16:28",
+		"sampleSeq2" : "hfm 7/27/2012 16:28",
+		"setUp" : "hfm 10/17/2012 22:00",
+		"test01ProjectSeqAccess" : "hfm 11/30/2011 03:49",
+		"test02ProjectAddSequence" : "hfm 10/17/2012 22:00",
+		"test03ProjectAddRepeatedSequence" : "HernanMoralesDurand 4/3/2013 01:05",
+		"test04ProjectRemoveSequence" : "hfm 11/30/2011 03:49",
+		"test05ProjectBasicAccess" : "hfm 11/30/2011 04:00" } }

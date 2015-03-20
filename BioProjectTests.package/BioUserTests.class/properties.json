@@ -1,0 +1,14 @@
+{
+	"category" : "BioProjectTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"user" ],
+	"name" : "BioUserTests",
+	"pools" : [
+		 ],
+	"super" : "TestCase",
+	"type" : "normal" }

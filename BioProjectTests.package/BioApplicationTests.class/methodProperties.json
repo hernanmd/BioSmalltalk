@@ -1,0 +1,15 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"newProjectName1" : "hfm 9/6/2010 11:17",
+		"newProjectName2" : "hfm 9/6/2010 11:17",
+		"newUser1" : "hfm 9/6/2010 11:20",
+		"newUser2" : "hfm 9/6/2010 11:25",
+		"setUp" : "hfm 10/17/2012 22:00",
+		"test1AddProject" : "hfm 11/29/2011 03:28",
+		"test2AccessingApplicationProjects" : "hfm 11/29/2011 03:25",
+		"test3AddUser" : "hfm 11/29/2011 02:33",
+		"test4AccessingApplicationProjects" : "hfm 10/5/2011 16:54",
+		"testAccessingSingleton" : "hfm 11/29/2011 02:49",
+		"testRelease" : "hfm 11/29/2011 02:51" } }

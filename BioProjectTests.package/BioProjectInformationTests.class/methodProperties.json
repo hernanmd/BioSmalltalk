@@ -1,0 +1,18 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"dateClass" : "hfm 10/5/2011 16:54",
+		"samplePrjName" : "hfm 9/3/2010 14:01",
+		"setUp" : "hfm 10/17/2012 22:00",
+		"test1OwnerAdding" : "HernanMoralesDurand 4/3/2013 01:05",
+		"test1OwnerRemove" : "hfm 11/29/2011 03:48",
+		"test1ProjectCreation" : "hfm 11/29/2011 04:10",
+		"test2ProjectAccessing" : "hfm 11/29/2011 01:55",
+		"test3ProjectRemoval" : "hfm 11/29/2011 03:38",
+		"test4ProjectRenaming" : "hfm 11/29/2011 03:39",
+		"test5ProjectSetAsCurrent" : "hfm 11/29/2011 03:40",
+		"test6ProjectAccessBetweenDates" : "hfm 11/29/2011 03:43",
+		"test7ProjectSetDate" : "hfm 11/29/2011 03:45",
+		"test8LastProjects" : "hfm 11/29/2011 03:45",
+		"test9ProjectEquality" : "hfm 11/29/2011 02:06" } }

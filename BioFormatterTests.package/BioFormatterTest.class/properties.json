@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatterTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"formatter" ],
+	"name" : "BioFormatterTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTest",
+	"type" : "normal" }

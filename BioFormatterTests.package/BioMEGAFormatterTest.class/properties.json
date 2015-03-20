@@ -1,0 +1,14 @@
+{
+	"category" : "BioFormatterTests-Formats",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioMEGAFormatterTest",
+	"pools" : [
+		 ],
+	"super" : "BioFormatterTest",
+	"type" : "normal" }

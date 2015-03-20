@@ -1,0 +1,21 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"hits01" : "hfm 2/6/2012 14:56",
+		"hits03" : "hfm 4/27/2011 20:45",
+		"hits04" : "hfm 11/11/2011 23:44",
+		"hits05" : "hfm 8/24/2011 10:58",
+		"hits06" : "hfm 8/24/2011 11:06",
+		"parserClass" : "hfm 2/6/2012 12:05",
+		"saxParseBlastNodes:" : "HernanMoralesDurand 2/17/2013 18:05",
+		"saxTokenizeBlastNodes:" : "HernanMoralesDurand 3/18/2013 21:00",
+		"test01ParsingNodes" : "HernanMoralesDurand 2/17/2013 18:05",
+		"test01QueryingNodes" : "HernanMoralesDurand 2/17/2013 18:05",
+		"test01SelectingNodes" : "HernanMoralesDurand 2/17/2013 18:05",
+		"test01TokenizeHeaders" : "HernanMoralesDurand 2/18/2013 21:16",
+		"test01TokenizeNodes" : "HernanMoralesDurand 4/3/2013 14:19",
+		"test03ParsingNodes" : "HernanMoralesDurand 3/29/2013 23:41",
+		"test04ParsingNodes" : "HernanMoralesDurand 3/29/2013 23:41",
+		"test05ParsingNodes" : "HernanMoralesDurand 3/29/2013 23:43",
+		"tokenizeBlastHeaderNodes:" : "hfm 2/6/2012 15:14" } }

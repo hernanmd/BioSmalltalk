@@ -1,0 +1,10 @@
+{
+	"class" : {
+		"testFilesDirectoryName" : "HernanMoralesDurand 4/10/2014 17:22" },
+	"instance" : {
+		"testAccessOffLineFilterGBSeqXML" : "HernanMoralesDurand 11/2/2014 17:31",
+		"testParseOffLineGBSeqXML" : "HernanMoralesDurand 7/28/2014 05:33",
+		"testReadGBSeqXML" : "hfm 10/1/2012 20:43",
+		"testReadOffLineFilterGBSeqXML" : "HernanMoralesDurand 11/2/2014 17:29",
+		"testSearchOffLineFilterGBSeqXML" : "hfm 2/28/2012 15:12",
+		"testSelectOffLineFilterGBSeqXML" : "HernanMoralesDurand 11/2/2014 17:27" } }

@@ -1,0 +1,4 @@
+accessing
+newNCBIClient
+
+	^ BioNCBIWebBlastWrapper new

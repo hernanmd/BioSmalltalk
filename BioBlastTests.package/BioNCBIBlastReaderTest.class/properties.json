@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlastTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"reader" ],
+	"name" : "BioNCBIBlastReaderTest",
+	"pools" : [
+		 ],
+	"super" : "BioNCBITests",
+	"type" : "normal" }

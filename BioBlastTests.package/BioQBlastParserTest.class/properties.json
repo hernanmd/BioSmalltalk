@@ -1,0 +1,14 @@
+{
+	"category" : "BioBlastTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioQBlastParserTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractParserTest",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"class" : {
+		 },
+	"instance" : {
+		"firstLineTokenizer" : "hfm 10/2/2012 12:07",
+		"phylipInterleavedDNA" : "hfm 10/11/2012 22:19",
+		"phylipInterleavedProtein" : "hfm 10/11/2012 22:20",
+		"speciesDNALineTokenizer" : "hfm 10/2/2012 12:36",
+		"speciesDNANamedBlockTokenizer" : "hfm 10/3/2012 17:45",
+		"testTokenizeDNASpeciesBlock" : "hfm 10/9/2012 16:06",
+		"testTokenizeDNASpeciesLine" : "hfm 10/9/2012 15:58",
+		"testTokenizeFirstLine" : "hfm 10/9/2012 01:14",
+		"testTokenizeInterleavedDNA" : "hfm 10/11/2012 22:21",
+		"testTokenizeInterleavedProtein" : "hfm 10/11/2012 22:23" } }

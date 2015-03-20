@@ -1,0 +1,14 @@
+{
+	"category" : "BioParserTests-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioPhylipParserTest",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractParserTest",
+	"type" : "normal" }

@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 10/18/2011 02:48",
+	"instvars" : [
+		"ambParser" ],
+	"name" : "BioAmbiguousBaseParser",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTextParser",
+	"type" : "normal" }

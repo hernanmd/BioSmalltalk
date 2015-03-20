@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Support",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"nodes" ],
+	"name" : "BioBlastContainerNode",
+	"pools" : [
+		 ],
+	"super" : "BioBlastNode",
+	"type" : "normal" }

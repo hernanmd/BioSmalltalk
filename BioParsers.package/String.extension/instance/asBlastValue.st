@@ -1,0 +1,4 @@
+*BioParsers
+asBlastValue
+
+	^ self asLowercase

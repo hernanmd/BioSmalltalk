@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "<historical>",
+	"instvars" : [
+		 ],
+	"name" : "BioFASTABasicParser",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIAbstractParser",
+	"type" : "normal" }

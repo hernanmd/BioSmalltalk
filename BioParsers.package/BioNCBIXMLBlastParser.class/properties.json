@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-XML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBIXMLBlastParser",
+	"pools" : [
+		 ],
+	"super" : "BioXMLParser",
+	"type" : "normal" }

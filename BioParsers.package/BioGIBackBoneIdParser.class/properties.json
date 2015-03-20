@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 7/9/2010 14:07",
+	"instvars" : [
+		 ],
+	"name" : "BioGIBackBoneIdParser",
+	"pools" : [
+		 ],
+	"super" : "BioNCBIIdParser",
+	"type" : "normal" }

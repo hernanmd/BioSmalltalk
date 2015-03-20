@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "hfm 7/9/2010 14:06",
+	"instvars" : [
+		 ],
+	"name" : "BioSwissProtParser",
+	"pools" : [
+		 ],
+	"super" : "BioAccessionParser",
+	"type" : "normal" }

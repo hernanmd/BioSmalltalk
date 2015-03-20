@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioQBlastParser",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTextParser",
+	"type" : "normal" }

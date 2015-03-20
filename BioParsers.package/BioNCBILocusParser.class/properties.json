@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioNCBILocusParser",
+	"pools" : [
+		 ],
+	"super" : "BioAccessionParser",
+	"type" : "normal" }

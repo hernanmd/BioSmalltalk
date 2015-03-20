@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-XML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BioXMLOrderedCollection",
+	"pools" : [
+		 ],
+	"super" : "BioXMLResultFormatter",
+	"type" : "normal" }

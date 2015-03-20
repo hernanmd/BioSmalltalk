@@ -1,0 +1,22 @@
+{
+	"class" : {
+		"parse:" : "hfm 2/8/2012 16:07",
+		"parseDocumentFrom:useNamespaces:" : "hfm 8/1/2011 16:06",
+		"parseFile:" : "hfm 9/22/2010 18:21",
+		"parseString:" : "hfm 9/22/2010 18:21" },
+	"instance" : {
+		"catchOff" : "hfm 9/22/2010 18:06",
+		"catchOn" : "hfm 9/22/2010 18:06",
+		"current" : "hfm 9/27/2012 02:40",
+		"current:" : "hfm 9/27/2012 02:40",
+		"estimatedResultSize" : "hfm 4/18/2011 12:08",
+		"initialize" : "HernanMoralesDurand 3/5/2015 15:32",
+		"initializeResults" : "hfm 10/3/2011 22:23",
+		"parse:" : "HernanMoralesDurand 12/15/2012 16:52",
+		"parseDocument" : "hfm 7/30/2012 13:23",
+		"parserNodes" : "HernanMoralesDurand 7/23/2014 17:13",
+		"resultClass" : "hfm 6/22/2011 14:47",
+		"results" : "hfm 6/21/2011 11:56",
+		"results:" : "hfm 6/21/2011 11:56",
+		"selectNodes:" : "hfm 2/19/2011 14:13",
+		"selectedNodes" : "hfm 6/6/2011 16:01" } }

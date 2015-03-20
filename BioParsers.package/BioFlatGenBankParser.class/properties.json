@@ -1,0 +1,14 @@
+{
+	"category" : "BioParsers-Core",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 10/1/2014 20:32",
+	"instvars" : [
+		 ],
+	"name" : "BioFlatGenBankParser",
+	"pools" : [
+		 ],
+	"super" : "BioAbstractTextParser",
+	"type" : "normal" }

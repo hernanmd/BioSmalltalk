@@ -1,0 +1,15 @@
+{
+	"category" : "BioParsers-XML",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "HernanMoralesDurand 9/4/2014 12:02",
+	"instvars" : [
+		"matches",
+		"records" ],
+	"name" : "BioEntrezXMLGBSeqParser",
+	"pools" : [
+		 ],
+	"super" : "BioXMLParser",
+	"type" : "normal" }

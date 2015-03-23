@@ -1,6 +1,6 @@
 accessing-entrez
 selectGenBankRecords: aBlock
-	" On-Line version "
+	" Select GenBank records from XML contents retrieved on-line and answer a <Collection> "
 	
 	contents := self genBankRecordsAsXML parseDocuments.
-	^ ( contents select: aBlock ) asBio: self nodesCollectionClass
+	^ (contents select: aBlock) asBio: self nodesCollectionClass

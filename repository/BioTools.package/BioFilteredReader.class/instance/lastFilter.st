@@ -1,4 +1,6 @@
 accessing filters
 lastFilter
 
-	^ self filters last
+	^ self filters notEmpty
+		ifTrue: [ self filters last ]
+		ifFalse: [ nil ]

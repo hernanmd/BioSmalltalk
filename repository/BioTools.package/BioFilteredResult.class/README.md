@@ -1,4 +1,4 @@
-A BioFilteredResult is a result wrapper utility which can hold a BioFilter.
+A BioFilteredResult is a query results wrapper contained by a BioFilter.
 
 Instance Variables
 	filter:		<BioFilter>

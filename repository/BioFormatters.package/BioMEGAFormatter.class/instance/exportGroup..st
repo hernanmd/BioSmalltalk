@@ -6,7 +6,6 @@ exportGroup: anAssociation
 	
 	" Divide sequences in 80-column group"
 	megaRecords := OrderedCollection new.
-	self halt.
 	anAssociation value associationsDo: [ : groupAssoc |
 		megaRecords add: (
 			self 

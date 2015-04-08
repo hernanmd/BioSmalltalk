@@ -2,4 +2,4 @@ accessing
 fileNamePrefix
 	" Answer a <String> with the prefix of the output file name "
 	
-	^ 'biosmalltalk_exported-fluxus-rdf_'
+	^ 'biosmalltalk_exported-mega_'

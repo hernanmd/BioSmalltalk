@@ -1,4 +1,4 @@
-GTRDFLegacyFormatter produces output files for the Fluxus Network program. The output corresponds to the RDF legacy formatted files. Example:
+Produces output files for the Fluxus Network program. The output corresponds to the RDF legacy formatted files. Example:
 
        11111111111111111111111111
        66666666666666666666666666

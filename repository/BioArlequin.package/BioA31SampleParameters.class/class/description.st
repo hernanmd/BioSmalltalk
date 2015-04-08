@@ -1,4 +1,4 @@
 accessing
 description
 
-	^ 'Arlequin samples'
+	^ 'Arlequin Matrix Formatter (Version 3.1)'

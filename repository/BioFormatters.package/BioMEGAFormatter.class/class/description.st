@@ -2,4 +2,4 @@ accessing
 description
 	" Answer a <String> identifying the receiver's class "
 	
-	^ 'Fluxus Network New RDF Format Writer'
+	^ 'MEGA Formatter (version 6)'

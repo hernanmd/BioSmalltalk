@@ -2,4 +2,4 @@ accessing
 description
 	" See superimplementor's comment "
 	
-	^ 'EigenStrat Writer'
+	^ 'EIGENSOFT Eigenstrat Formatter/Writer'

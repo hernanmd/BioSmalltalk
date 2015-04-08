@@ -1,5 +1,5 @@
 private
 filenameMatchPattern
-	" Private - Answer the pattern to match files when displaying dialogs "
+	" Private - Answer a <String> with the pattern to match files when displaying dialogs "
 
 	^ '*.'

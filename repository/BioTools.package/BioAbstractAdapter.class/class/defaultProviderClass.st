@@ -1,6 +1,6 @@
 accessing
 defaultProviderClass
-	" Private - Answer the preferred provider subclass "
+	" Private - Answer the <Class> of the preferred provider subclass "
 	
 	^ self hasAnyProvider
 		ifTrue: [ 

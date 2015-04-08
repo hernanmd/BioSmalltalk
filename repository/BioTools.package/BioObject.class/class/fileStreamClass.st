@@ -1,5 +1,5 @@
 filesystem
 fileStreamClass
-	" Private - This is platform specific "
+	" Private - Answer a helper <Stream> class to manage file related operations "
 
 	^ FileStream

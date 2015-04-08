@@ -1,5 +1,5 @@
 testing
 testFilesDirectoryName
-	" Answer a String where the files for testing will be placed "
+	" Answer a <String> of the directory name where the files for testing are located "
 
 	^ 'BioSmalltalkTestFiles'

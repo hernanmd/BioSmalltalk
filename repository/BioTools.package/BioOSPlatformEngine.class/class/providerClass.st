@@ -1,5 +1,5 @@
 accessing
 providerClass
-	" Answer a Symbol, the main external class name for this adapter "
+	" See superimplementor's comment "
 	
 	^ #Smalltalk

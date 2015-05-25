@@ -4,6 +4,6 @@ initialize
 
 	super initialize.
 	self initializeResults.
-	self parserLimits documentReadLimit: 100000000. " 100 Mbytes"
-	self externalSubsetReadLimit: 100000000.
+	self configuration parserLimits documentReadLimit: 100000000. " 100 Mbytes"
+	self externalEntityResolver externalSubsetReadLimit: 100000000.
 	self catchOff.	

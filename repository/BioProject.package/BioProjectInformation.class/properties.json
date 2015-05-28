@@ -10,7 +10,8 @@
 		"usage",
 		"credentials",
 		"project",
-		"name"
+		"name",
+		"fileName"
 	],
 	"name" : "BioProjectInformation",
 	"type" : "normal"

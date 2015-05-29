@@ -1,5 +1,5 @@
 *BioPharo3
-requestFastaFile
+requestOpenFASTAFile
 	" Open request dialog to select a FASTA file "
 	
 	^ UIManager default 

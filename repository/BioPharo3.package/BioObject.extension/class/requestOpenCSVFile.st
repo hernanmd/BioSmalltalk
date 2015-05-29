@@ -1,5 +1,5 @@
 *BioPharo3
-requestCsvFile
+requestOpenCSVFile
 	" Open request dialog to select a CSV file "
 	
 	^ UIManager default 

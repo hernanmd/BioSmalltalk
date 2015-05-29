@@ -1,5 +1,5 @@
 *BioPharo3
-requestXmlFile
+requestOpenXMLFile
 	" Open request dialog to select a XML file "
 	
 	^ UIManager default 

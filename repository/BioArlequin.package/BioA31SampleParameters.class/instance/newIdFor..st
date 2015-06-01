@@ -1,8 +1,10 @@
 private
-newIdFor: prefix
+newIdFor: groupDictionary
 
-	prvIdentifiers 
-		at: prefix
-		ifPresent: [ : elem | prvIdentifiers at: prefix put: elem + 1 ]
-		ifAbsent: [ prvIdentifiers at: prefix put: 1 ].
-	^ prefix , (prvIdentifiers at: prefix) greaseString
+	self halt.
+	groupDictionary associationsDo: [ : groupedDictionary | 
+		groupBuilder groupSamples
+			at: groupedDictionary key
+			ifPresent: [ : elem | prvIdentifiers := prvIdentifiers + 1 ]
+			ifAbsent: [ prvIdentifiers := 1 ] ].
+	^ 'h' , prvIdentifiers greaseString

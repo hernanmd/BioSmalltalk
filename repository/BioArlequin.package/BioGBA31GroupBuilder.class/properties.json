@@ -5,7 +5,10 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"haplotypesBag",
+		"groupSamples"
+	],
 	"name" : "BioGBA31GroupBuilder",
 	"type" : "normal"
 }

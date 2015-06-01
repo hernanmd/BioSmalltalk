@@ -1,6 +1,6 @@
-private
-buildSamples: aDictionary
+accessing
+buildSamples
 	" Private - Build the Arlequin samples from aDictionary "
 	
-	aDictionary associationsDo: [ : assoc |
+	self groupSamples associationsDo: [ : assoc |
 		self buildSampleFrom: assoc ]

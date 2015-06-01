@@ -10,7 +10,8 @@
 		"frequencies",
 		"sequences",
 		"prvIdentifiers",
-		"samplesPrefix"
+		"samplesPrefix",
+		"groupBuilder"
 	],
 	"name" : "BioA31SampleParameters",
 	"type" : "normal"

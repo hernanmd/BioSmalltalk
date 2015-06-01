@@ -1,4 +1,4 @@
-as yet unclassified
+accessing hsps
 percentageOverAlignment
 
 	^ self nodes collect: [: node | 

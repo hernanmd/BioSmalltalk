@@ -1,18 +1,18 @@
-accessing-blast-items
+accessing-blast
 padAlignmentIn: hit
 	" Private - See comment in #paddedAlignments "
 
-	| qFrom qTo correctedSeq |
+	| qFromIndex qToIndex correctedSeq |
 
-	qFrom := self hspQueryFromFrom: hit.
-	qTo := self hspQueryToFrom: hit.
+	qFromIndex := self hspQueryFromFrom: hit.
+	qToIndex := self hspQueryToFrom: hit.
 	correctedSeq := self hspHSeqFrom: hit.
 
-	qFrom ~= 1 
-		ifTrue: [ correctedSeq := ( BioObject generateJoin: $? repeat: qFrom - 1 ) , correctedSeq ].
-	self querySeq isNil
+	qFromIndex ~= 1 
+		ifTrue: [ correctedSeq := (BioObject generateJoin: $? repeat: qFromIndex - 1) , correctedSeq ].
+	self querySequence isNil
 		ifTrue: [ self error: 'Missing reference (query) sequence' ].
-	qTo <  self querySeq size 
-		ifTrue: [ correctedSeq := correctedSeq , ( BioObject generateJoin: $? repeat: self querySeq size - qTo )  ].
+	qToIndex <  self querySequence size 
+		ifTrue: [ correctedSeq := correctedSeq , (BioObject generateJoin: $? repeat: self querySequence size - qToIndex)  ].
 
 	^ correctedSeq

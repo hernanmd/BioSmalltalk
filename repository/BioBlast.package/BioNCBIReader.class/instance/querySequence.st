@@ -1,3 +1,3 @@
 accessing
-querySeq
+querySequence
 	^ querySeq

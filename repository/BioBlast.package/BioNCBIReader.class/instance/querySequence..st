@@ -1,3 +1,3 @@
 accessing
-querySeq: anObject
+querySequence: anObject
 	querySeq := anObject

@@ -5,17 +5,7 @@ named: aString forHaplotypicDNAGroups: aClassifier
 	
 	arGroups := self buildGroupsFrom: aClassifier.
 	self halt.
-	newInstance := self new.
-	newInstance 
-		buildHaplotypicDataDNAProfileTitle: aString
-		groups: arGroups size
-		missingData: '?'.
-	newInstance dataSection
-		addDNAGroups: arGroups.
-	newInstance newStructureSection
-		addStructureName: aString;
-		addNbGroups: 1;
-		addGroups: arGroups.
+	newInstance := self newArlequinFileNamed: aString haplotypeDNAGroups: arGroups.
 	^ BioObject
 		outputToFullFile: aString
 		contents: newInstance contents

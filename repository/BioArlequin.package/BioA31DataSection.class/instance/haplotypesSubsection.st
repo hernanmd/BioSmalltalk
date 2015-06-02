@@ -5,7 +5,7 @@ haplotypesSubsection
 	^ self 
 		at: self notation
 		ifAbsentPut: [ 
-			BioA31SamplesSection 
+			BioA31HaplotypeSection 
 				named: BioA31HaplotypeSection notation
 				on: self iniFile ].
 	

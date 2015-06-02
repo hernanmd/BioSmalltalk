@@ -1,5 +1,5 @@
 accessing
 dateClass
-	" Answer the class used to set receiver's dates "
+	" Answer the class used to access dates "
 
-	^ self classFor: #TimeStamp
+	^ self classFor: #DateAndTime

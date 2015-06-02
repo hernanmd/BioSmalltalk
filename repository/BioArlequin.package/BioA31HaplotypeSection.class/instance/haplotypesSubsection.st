@@ -3,7 +3,7 @@ haplotypesSubsection
 	" Answer a samples subsection object for adding and removing samples "
 
 	^ self 
-		at: self notation
+		at: self class notation
 		ifAbsentPut: [ 
 			BioA31HaplotypeSection 
 				named: BioA31HaplotypeSection notation

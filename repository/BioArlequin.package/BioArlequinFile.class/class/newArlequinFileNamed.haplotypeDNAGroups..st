@@ -8,7 +8,7 @@ newArlequinFileNamed: aString haplotypeDNAGroups: arGroupsCollection
 		buildHaplotypicDataDNAProfileTitle: aString
 		groups: arGroupsCollection size
 		missingData: '?'.
-	newInstance haplotypesSection 
+	newInstance haplotypesSection  
 		addHaplotypes: arGroupsCollection.
 	newInstance dataSection
 		addDNAGroups: arGroupsCollection.

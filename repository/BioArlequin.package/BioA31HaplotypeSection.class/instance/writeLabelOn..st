@@ -1,10 +1,8 @@
-writing
+printing
 writeLabelOn: aStream
 	(self shouldWriteLabelOn: aStream)
 		ifTrue: [ 
 			aStream
 				nextPut: Character cr;
-				nextPut: $[;
-				nextPutAll: self class notation;
-				nextPut: $];
+				nextPutAll: self class notation between: $[ -> $];
 				nextPut: Character cr ]

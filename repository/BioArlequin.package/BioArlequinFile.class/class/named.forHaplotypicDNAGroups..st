@@ -4,6 +4,7 @@ named: aString forHaplotypicDNAGroups: aClassifier
 	| newInstance arGroups |
 	
 	arGroups := self buildGroupsFrom: aClassifier.
+	self halt.
 	newInstance := self new.
 	newInstance 
 		buildHaplotypicDataDNAProfileTitle: aString

@@ -1,7 +1,6 @@
 accessing
 groups
-	" Answer a Collection of Arlequin groups "
+	" Answer a <Collection> of Arlequin groups "
 
 	self buildHaplotypes.
-	self buildGroupSamples.
-	^ self buildArlequinGroups.
+	^ self buildGroupSamples.

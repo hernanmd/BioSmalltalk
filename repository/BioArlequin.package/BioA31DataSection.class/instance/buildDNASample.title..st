@@ -10,6 +10,6 @@ buildDNASample: params title: groupTitle
 			addSampleData: (BioA31SampleCollection forDNA
 					identifiers: params identifiers;
 					frequencies: params frequencies;
-					sequences: params sequences
+"					sequences: params sequences"
 					yourself);
 			yourself.

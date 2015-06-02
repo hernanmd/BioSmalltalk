@@ -1,5 +1,5 @@
 instance creation
-named: aString forHaplotypicFrequencyGroups: aClassifier groupBy: aSymbol
+named: aString forHaplotypicFrequencyGroups: aClassifier
 
 	| newInstance arGroups |
 	

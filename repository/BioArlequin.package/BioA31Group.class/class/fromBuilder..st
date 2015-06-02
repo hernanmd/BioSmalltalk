@@ -2,6 +2,6 @@ instance creation
 fromBuilder: aGroupBuilder
 
 	^ aGroupBuilder groupSamples collect: [ : group | 
-		self new
+		self 
 			named: group key name
-			data: (BioGBA31SampleParameters on: aGroupBuilder) buildSamples ]
+			data: ((BioGBA31SampleParameters on: aGroupBuilder) buildSamplesAt: group value) ]

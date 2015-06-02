@@ -1,8 +1,8 @@
 instance creation
-named: aString data: aCollection
+named: aString data: sampleParams
 	" Answer a new Arlequin group "
 
 	^ self new 
-			name: aString;
-			data: aCollection;
-			yourself
+		name: aString;
+		data: sampleParams;
+		yourself

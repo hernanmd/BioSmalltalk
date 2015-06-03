@@ -1,12 +1,11 @@
 *BioPharo3
 requestFileNameForSave: extensionString
-	" Private - Request file name to the user "
+	" Private - Request file name to the user. Answer a <String> with the full path name "
 	
-	| answer |
-	
-	^ (answer := UIManager default
-		request: 'Save as...(.' , extensionString , ' extension will be appened)' translated 
-		initialAnswer: nil
-		title: 'Save Dialog' translated) isNil
-			ifTrue:[ answer ]
-			ifFalse: [ answer , '.' , extensionString ]
+	| filename |
+	filename := UITheme builder
+		fileSave: 'Save as ' , extensionString
+		extensions: (Array with: extensionString)
+		path: nil.
+	filename ifNil: [ self inform: 'Saving cancelled'. ^ self ].
+	^ filename fullName

@@ -1,4 +1,4 @@
-testing
+comparing
 = aSample
 	"Answer whether the receiver and anObject represent the same object."
 

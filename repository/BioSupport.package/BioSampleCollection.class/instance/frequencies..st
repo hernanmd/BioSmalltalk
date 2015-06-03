@@ -4,4 +4,4 @@ frequencies: aCollection
 	
 	aCollection 
 		with: self samples 
-		do: [: freq : sample | sample frequency: freq ]
+		do: [ : freq : sample | sample frequency: freq ]

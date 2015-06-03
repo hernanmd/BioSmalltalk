@@ -4,6 +4,6 @@ identifiers: aCollection
 	
 	aCollection do: [: id |
 		self samples addLast: 
-			( BioSample new 
+			(BioSample new 
 					setNameFormatStandard;
-					identifier: id ) ]
+					identifier: id) ]

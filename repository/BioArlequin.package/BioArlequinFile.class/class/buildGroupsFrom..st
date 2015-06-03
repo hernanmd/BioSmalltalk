@@ -1,4 +1,4 @@
 instance creation
 buildGroupsFrom: aClassifier
 
-	^ self subclassResponsibility
+	^ (BioA31GroupBuilder newFromClassifications: aClassifier groupByPaddedAlignment) groups.

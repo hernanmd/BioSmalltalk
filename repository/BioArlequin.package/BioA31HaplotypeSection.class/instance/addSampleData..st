@@ -4,5 +4,5 @@ addSampleData: aSampleCollection
 
 	self iniFile 
 		section: self class notation
-		at: ''
+		at: self class haplotypeListId
 		put: aSampleCollection.

@@ -1,6 +1,6 @@
 accessing
 exportFrom: aBioClassifier
 
-	BioGBArlequinFile
+	BioArlequinFile
 		named: self outputFilename
 		forHaplotypicDNAGroups: aBioClassifier

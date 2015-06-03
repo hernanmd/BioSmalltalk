@@ -1,4 +1,4 @@
 accessing
-matches: anObject
+matches: aString
 
-	^ self notationSection = anObject
+	^ self notationSection = aString or: [ self notation = aString ]

@@ -3,7 +3,7 @@ buildDNASample: params title: groupTitle
 
 	| bioA31SamplesSection |
 	
-	bioA31SamplesSection := self sampleSubsection.
+	bioA31SamplesSection := self iniFile samplesSection.
 	bioA31SamplesSection
 			addSampleName: groupTitle;
 			addSampleSize: params frequenciesSize;	

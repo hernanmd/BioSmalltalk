@@ -1,4 +1,4 @@
-adding
+accessing
 addClass: aBioOrganization
 	" Add aBioOrganization as receiver's class/label "
 

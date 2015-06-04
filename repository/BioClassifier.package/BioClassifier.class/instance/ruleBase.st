@@ -1,4 +1,5 @@
 accessing
 ruleBase
+	" Answer an instance of receiver's rule container <BioRuleBase> "
 	^ ruleBase
-		ifNil: [ ruleBase := BioRuleBase new ]
+		ifNil: [ ruleBase := self defaultRuleBase ]

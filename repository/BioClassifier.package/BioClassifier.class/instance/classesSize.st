@@ -1,4 +1,4 @@
-accessing
+accessing-organization
 classesSize
 	" Answer how many classes the receiver contains. "
 	

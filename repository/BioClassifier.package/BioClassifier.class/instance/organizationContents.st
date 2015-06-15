@@ -1,4 +1,4 @@
-accessing
+accessing-organization
 organizationContents
 
 	^ self organization contents

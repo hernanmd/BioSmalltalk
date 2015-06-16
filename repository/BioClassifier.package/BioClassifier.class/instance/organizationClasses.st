@@ -1,4 +1,6 @@
 accessing-organization
 organizationClasses
 	
-	^ self organization classes.
+	^ self organization 
+		ifNil: [ Array empty ] 
+		ifNotNil: [ self organization classes ].

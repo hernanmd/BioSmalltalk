@@ -9,8 +9,8 @@
 		"organization",
 		"matches",
 		"mismatches",
-		"ruleBase",
-		"subject"
+		"subject",
+		"currentRuleBase"
 	],
 	"name" : "BioClassifier",
 	"type" : "normal"

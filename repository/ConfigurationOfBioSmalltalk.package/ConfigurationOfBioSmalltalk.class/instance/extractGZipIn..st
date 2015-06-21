@@ -3,8 +3,8 @@ extractGZipIn: dst
 	" Uncompress fileRef contents and delete it "
 	
 	(fileRef fullName endsWith: '.gz')
-		ifTrue: [ | unzipped |
-			unzipped := GZipReadStream unzip: fileRef basename to: dst.
-			OSProcess thisOSProcess waitForCommandOutput: 'tar xvf ' , unzipped asFileReference fullName.
+		ifTrue: [ | unZipped |
+			unZipped := GZipReadStream unzip: fileRef basename to: dst.
+			self unTar: unZipped.
 			fileRef delete.
-			unzipped asFileReference delete  ].
+			unZipped asFileReference delete  ].

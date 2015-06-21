@@ -1,12 +1,8 @@
 doits
-extractZipIn: dst
-	" If fileRef is a ZIP archive, uncompress its contents in dst and delete it "
+extractZipIn: targetPath
+	" If fileRef is a ZIP archive, uncompress its contents in targetPath and delete it "
 
 	(fileRef fullName endsWith: '.zip')
-		ifTrue: [ | zipArchive |
-			zipArchive := ZipArchive new.
-			[ zipArchive 
-				readFrom: fileRef fullName;
-				extractAllTo: dst ] 
-			ensure: [ zipArchive close ].
+		ifTrue: [ 
+			self unZip: targetPath.
 			fileRef delete ].

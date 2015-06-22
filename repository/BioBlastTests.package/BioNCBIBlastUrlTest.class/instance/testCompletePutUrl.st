@@ -3,7 +3,7 @@ testCompletePutUrl
 
 	| url |
 	
-	url := BioNCBIUrl absoluteFromText: self baseUrl.
+	url := BioNCBIUrl2 absoluteFromText: self baseUrl.
 	url startParameters: 'CMD=Put'.
 	url addParameters: 'DATABASE=nr&QUERY=555&HITLIST_SIZE=10&FILTER=L&EXPECT=10&PROGRAM=blastn&SERVICE=plain'.
 	

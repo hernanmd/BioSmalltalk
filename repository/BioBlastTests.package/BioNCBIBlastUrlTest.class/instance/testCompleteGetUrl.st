@@ -3,7 +3,7 @@ testCompleteGetUrl
 
 	| url |
 	
-	url := BioNCBIUrl absoluteFromText: self baseUrl.
+	url := BioNCBIUrl2 absoluteFromText: self baseUrl.
 	url startParameters: 'CMD=Get'.
 	url addParameters: 'RID=954517013-7638-11119'.
 	

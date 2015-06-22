@@ -8,5 +8,5 @@ entrezFetchSample04
 				uids: #('AB177765.1' 'AB177791.1');
 				setFasta;
 				fetch.
-	result outputToFile: 'nuccore_seqs.fasta'
+	result dumpToFileNamed: 'nuccore_seqs.fasta'
 

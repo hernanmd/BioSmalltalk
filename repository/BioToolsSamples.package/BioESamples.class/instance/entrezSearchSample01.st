@@ -7,4 +7,4 @@ entrezSearchSample01
 	result := BioEntrezClient new nuccore
 				term: 'Opuntia AND rpl16';
 				search.
-	result outputToFile: 'searchNuccore1.xml'
+	result dumpToFileNamed: 'searchNuccore1.xml'

@@ -14,4 +14,4 @@ entrezSearchSample03
 			setUseHistory;
 			search.
 	searchResult1 
-		outputToFile: 'searchUsingHistory.xml'.
+		dumpToFileNamed: 'searchUsingHistory.xml'.

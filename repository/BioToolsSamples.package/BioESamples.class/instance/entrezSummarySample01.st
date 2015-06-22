@@ -8,5 +8,5 @@ entrezSummarySample01
 		BioEntrezClient new protein 
 			uids: #( 6678417 9507199 );
 			summary.
-	result outputToFile: 'eSummary1.xml'
+	result dumpToFileNamed: 'eSummary1.xml'
 

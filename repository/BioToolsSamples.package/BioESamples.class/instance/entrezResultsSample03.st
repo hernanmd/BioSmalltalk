@@ -19,4 +19,4 @@ entrezResultsSample03
 		fetch.
 
 	searchResult2 
-		outputToFile: 'searchFASTANuccore2.fasta'.
+		dumpToFileNamed: 'searchFASTANuccore2.fasta'.

@@ -9,5 +9,5 @@ entrezFetchSample03
 			uids: #( 11877539 11822933 );
 			setModeXML;
 			fetch.
-	result outputToFile: 'eFetch1.xml'
+	result dumpToFileNamed: 'eFetch1.xml'
 

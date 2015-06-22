@@ -10,4 +10,4 @@ pdbEPisaSample03
 	result := BioPDBePISAClient new multimer
 				pdbCode: '3gcb' assemblySet: 1 assemblyNumberInSet: 1;
 				fetch.
-	result outputToFile: 'fetchPdbEPisa_03.pdb'
+	result dumpToFileNamed: 'fetchPdbEPisa_03.pdb'

@@ -15,7 +15,7 @@ entrezResultsSample07
 			fetch.
 
 	searchResult1 
-		outputToFile: 'searchFASTANuccore7.fasta'.
+		dumpToFileNamed: 'searchFASTANuccore7.fasta'.
 		
 	searchResult2 := 
 		searchResult1 client nuccore
@@ -23,4 +23,4 @@ entrezResultsSample07
 			fetch.
 			
 	searchResult2 
-		outputToFile: 'searchGbNuccore7.gb'.
+		dumpToFileNamed: 'searchGbNuccore7.gb'.

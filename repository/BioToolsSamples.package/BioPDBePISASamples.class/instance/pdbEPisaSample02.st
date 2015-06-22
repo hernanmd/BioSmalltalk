@@ -10,4 +10,4 @@ pdbEPisaSample02
 	result := BioPDBePISAClient new multimers
 				pdbCodes: { '3gcb' . '1sar' };
 				fetch.
-	result outputToFile: 'fetchPdbEPisa_02.xml'
+	result dumpToFileNamed: 'fetchPdbEPisa_02.xml'

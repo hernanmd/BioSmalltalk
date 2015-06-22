@@ -10,4 +10,4 @@ pdbEPisaSample01
 	result := BioPDBePISAClient new interfaces
 				pdbCodes: { '3gcb' . '1sar' };
 				fetch.
-	result outputToFile: 'fetchPdbEPisa_01.xml'
+	result dumpToFileNamed: 'fetchPdbEPisa_01.xml'

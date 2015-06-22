@@ -8,5 +8,5 @@ entrezFetchSample01
 				uids: #(12800);
 				setModeText;
 				fetch.
-	result outputToFile: 'searchNuccore1.txt'
+	result dumpToFileNamed: 'searchNuccore1.txt'
 

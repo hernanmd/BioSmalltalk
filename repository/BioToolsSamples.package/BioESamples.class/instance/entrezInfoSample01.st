@@ -5,5 +5,5 @@ entrezInfoSample01
 	| result |
 	
 	result := BioEntrezClient new pubmed info.
-	result outputToFile: 'eInfo1.xml'
+	result dumpToFileNamed: 'eInfo1.xml'
 

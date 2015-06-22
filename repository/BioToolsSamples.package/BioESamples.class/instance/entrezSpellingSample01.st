@@ -8,5 +8,5 @@ entrezSpellingSample01
 		BioEntrezClient new pmc 
 			term: 'fiberblast cell grwth';
 			spell.
-	result outputToFile: 'eSpell1.xml'
+	result dumpToFileNamed: 'eSpell1.xml'
 

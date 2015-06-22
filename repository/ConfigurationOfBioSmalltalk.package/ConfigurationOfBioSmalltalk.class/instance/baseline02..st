@@ -101,7 +101,7 @@ baseline02: spec
 			package: 'BioSoftwareCatalog';
 			package: 'BioIllumina' with: [
 				spec requires: #('BioTools' ). ];
-			package: #BioPharo3 with: [
+			package: #BioPharo4 with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioSupport' with: [
 				spec requires: #('BioTools' ). ];

@@ -15,4 +15,4 @@ named: aString forHaplotypicFrequencyGroups: aClassifier
 		addStructureName: aString;
 		addNbGroups: arGroups size;
 		addGroups: arGroups.
-	^ newInstance outputToFile: aString
+	^ newInstance dumpToFileNamed: aString

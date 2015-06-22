@@ -1,3 +1,3 @@
 Instance Variables:
 	group	<ProtoObject | PseudoContext>
-	contents	<Dictionary>
+	data		<BioA31SampleParameters>

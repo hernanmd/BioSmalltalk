@@ -1,10 +1,10 @@
 instance creation
-named: aString forHaplotypicDNAGroups: aClassifier
+named: aFilename forHaplotypicDNAGroups: aClassifier
 
 	| newInstance arGroups |
 	
 	arGroups := self buildGroupsFrom: aClassifier.
-	newInstance := self newArlequinFileNamed: aString haplotypeDNAGroups: arGroups.
+	newInstance := self newArlequinFileNamed: aFilename haplotypeDNAGroups: arGroups.
 	^ BioObject
-		outputToFullFile: aString
+		dumpToDOSFileNamed: aFilename
 		contents: newInstance contents

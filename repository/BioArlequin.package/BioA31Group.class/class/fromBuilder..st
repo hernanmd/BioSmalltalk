@@ -4,4 +4,4 @@ fromBuilder: aGroupBuilder
 	^ aGroupBuilder groupSamples collect: [ : group | 
 		self 
 			named: group key name
-			data: ((BioGBA31SampleParameters on: aGroupBuilder) buildSamplesAt: group value) ]
+			data: ((BioA31SampleParameters on: aGroupBuilder) buildSamplesAt: group value) ]

@@ -15,5 +15,5 @@ http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY=555&DATABASE=nr&HITLIST_SIZE=1
 			blastPlainService;
 			formatTypeXML;
 			fetch.
-	self outputToFile: 'blastQuery01.xml' contents: search result.
+	self dumpToFileNamed: 'blastQuery01.xml' contents: search result.
 

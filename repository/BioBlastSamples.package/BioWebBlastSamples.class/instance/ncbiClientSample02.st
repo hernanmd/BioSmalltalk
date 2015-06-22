@@ -13,4 +13,4 @@ ncbiClientSample02
 			blastn;
 			formatTypeXML;
 			fetch.
-	self outputToFile: 'blastQuery02.xml' contents: search result.
+	self dumpToFileNamed: 'blastQuery02.xml' contents: search result.

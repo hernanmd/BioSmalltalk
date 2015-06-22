@@ -15,4 +15,4 @@ ncbiClientSample04
 			alignmentViewFlatQueryAnchored;
 			formatTypeXML;			
 			fetch.
-	self outputToFile: 'blastQuery04.xml' contents: search result.
+	self dumpToFileNamed: 'blastQuery04.xml' contents: search result.

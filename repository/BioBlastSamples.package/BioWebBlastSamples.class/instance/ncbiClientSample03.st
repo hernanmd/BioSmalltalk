@@ -14,4 +14,4 @@ ncbiClientSample03
 			formatTypeXML;
 			alignmentViewFlatQueryAnchoredNoIdentities;
 			fetch.
-	self outputToFile: 'blastQuery03.xml' contents: search result.
+	self dumpToFileNamed: 'blastQuery03.xml' contents: search result.

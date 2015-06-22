@@ -7,5 +7,5 @@ exportFrom: aCollection
 			each outputAsCsvTo: stream.
 			stream cr ].
 	self 
-		outputToFile: self outputFilename 
+		dumpToFileNamed: self outputFilename 
 		contents: stream contents

@@ -1,0 +1,4 @@
+*BioFormatters
+isValidForCSVFormat
+
+	^ self notEmpty.

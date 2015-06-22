@@ -9,5 +9,5 @@ exportFrom: aCollection features: featuresCollection
 			nextPutAll: assoc value size asString;
 			cr ].
 	self 
-		outputToFile: self outputFilename 
+		dumpToFileNamed: self outputFilename 
 		contents: stream contents		

@@ -7,7 +7,7 @@ export
 	self exportWeights.
 	self exportFromAlignment: self samplesCollection.
 	self 
-		outputToFullFile: self outputFilename
+		dumpToFileNamedFullPath: self outputFilename
 		contents: self stream contents.
 
 

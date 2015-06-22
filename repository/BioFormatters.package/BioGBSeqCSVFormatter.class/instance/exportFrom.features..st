@@ -7,6 +7,6 @@ exportFrom: data features: fCollection
 	self writeHeaderFrom: self features.
 	self writeUnclassifiedRowsFrom: data.
 	self 
-		outputToFile: self outputFilename 
+		dumpToFileNamed: self outputFilename 
 		contents: stream contents.
 

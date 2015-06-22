@@ -15,4 +15,4 @@ exportFromBLAST: hitCollection
 			stream nextPut: letter ].
 		stream cr ].
 	
-	self outputToFile: self outputFilename contents: stream contents
+	self dumpToFileNamed: self outputFilename contents: stream contents

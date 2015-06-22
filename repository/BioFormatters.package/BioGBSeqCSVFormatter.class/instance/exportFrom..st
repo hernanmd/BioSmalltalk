@@ -6,5 +6,5 @@ exportFrom: aCollection
 	self writeHeaderFrom: self features.
 	self writeUnclassifiedRowsFrom: aCollection.
 	self 
-		outputToFile: self outputFilename 
+		dumpToFileNamed: self outputFilename 
 		contents: stream contents

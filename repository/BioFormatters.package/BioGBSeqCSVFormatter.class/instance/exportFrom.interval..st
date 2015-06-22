@@ -22,5 +22,5 @@ exportFrom: aCollection interval: interval
 				nextPut: self delimiterSourceCharacter ].
 			stream cr ].
 	self 
-		outputToFile: self outputFilename 
+		dumpToFileNamed: self outputFilename 
 		contents: stream contents

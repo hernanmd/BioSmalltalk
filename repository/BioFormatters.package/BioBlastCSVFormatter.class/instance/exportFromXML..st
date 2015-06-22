@@ -10,5 +10,5 @@ exportFromXML: aBlastXMLString
 	self exportConsensus.
 	self exportMatrixFromBLAST: hitCollection.
 	self writeToFile
-		ifTrue: [ self outputToFile: self outputFilename contents: stream contents ].
+		ifTrue: [ self dumpToFileNamed: self outputFilename contents: stream contents ].
 	^ stream contents

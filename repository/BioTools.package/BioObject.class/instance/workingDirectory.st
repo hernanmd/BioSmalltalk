@@ -1,5 +1,5 @@
 filesystem
 workingDirectory
-	" Answer a String with the default directory "
+	" Answer a <String> representing the current working directory "
 	
 	^ self class workingDirectory

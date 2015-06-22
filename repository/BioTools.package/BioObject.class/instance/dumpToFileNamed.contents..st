@@ -1,5 +1,7 @@
 filesystem
-dumpToFileNamed: nameString contents: contentsString
-	" Outputs contentsString to a file named nameString "
+dumpToFileNamed: fileName contents: contentsString
+	" Outputs contentsString to a file named fileName "
 
-	self class outputToFile: nameString contents: contentsString
+	self class 
+		dumpToFileNamed: fileName 
+		contents: contentsString

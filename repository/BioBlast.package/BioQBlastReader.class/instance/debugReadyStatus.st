@@ -7,5 +7,5 @@ debugReadyStatus
 			self bioLog: (self results first: 20).
 			self bioLog: 'Status ' , self status.
 			self 
-				outputToFile: 'parcial' , BioNamedObject uniqueName , '.html'  
+				dumpToFileNamed: 'parcial' , BioNamedObject uniqueName , '.html'  
 				contents: self results ].

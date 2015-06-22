@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 7/9/2014 15:05",
+	"super" : "Object",
+	"category" : "BioPharo4-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"FileExistsBehavior"
+	],
+	"instvars" : [ ],
+	"name" : "BioSettings",
+	"type" : "normal"
+}

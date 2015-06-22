@@ -1,6 +1,6 @@
 filesystem
 lineEndConvention
-	" Answer #cr, #lf or #crlf "
+	" Answer a <Symbol> #cr, #lf or #crlf with the current's system line end convention "
 
 	self isRunningInUnix
 		ifTrue: [ ^ # cr ].

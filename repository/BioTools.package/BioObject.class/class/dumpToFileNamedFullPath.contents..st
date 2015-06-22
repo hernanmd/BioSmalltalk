@@ -1,5 +1,5 @@
 filesystem
-outputToFullFile: filename contents: anObject
+dumpToFileNamedFullPath: filename contents: anObject
 	" Write anObject to a file named filename representing a full path "
 	
 	| fs |

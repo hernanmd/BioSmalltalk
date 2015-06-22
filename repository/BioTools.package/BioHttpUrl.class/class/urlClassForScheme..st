@@ -1,4 +1,0 @@
-parsing
-urlClassForScheme: scheme
-
-	^ self

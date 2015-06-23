@@ -7,7 +7,9 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"classifications",
-		"groupSamples"
+		"groupSamples",
+		"haplotypes",
+		"haplotypesBag"
 	],
 	"name" : "BioA31GroupBuilder",
 	"type" : "normal"

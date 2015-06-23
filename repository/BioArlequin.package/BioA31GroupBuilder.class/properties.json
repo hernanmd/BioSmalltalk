@@ -6,10 +6,10 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"classifications",
 		"groupSamples",
 		"haplotypes",
-		"haplotypesBag"
+		"haplotypesBag",
+		"data"
 	],
 	"name" : "BioA31GroupBuilder",
 	"type" : "normal"

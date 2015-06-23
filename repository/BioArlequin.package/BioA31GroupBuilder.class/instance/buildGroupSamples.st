@@ -1,6 +1,6 @@
 private
 buildGroupSamples
 
-	groupSamples := self classifications collect: [ : classAssoc |
+	groupSamples := self data collect: [ : classAssoc |
 		classAssoc key -> (self buildSamplesFromGroupedDictionaries: classAssoc value ) ].
 	^  BioA31Group fromBuilder: self.

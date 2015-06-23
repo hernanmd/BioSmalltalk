@@ -1,4 +1,4 @@
 accessing
 data: anObject
 
-	classifications := anObject.
+	data := anObject.

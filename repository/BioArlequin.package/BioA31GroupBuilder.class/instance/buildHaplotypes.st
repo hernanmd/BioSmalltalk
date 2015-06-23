@@ -1,5 +1,5 @@
 private
 buildHaplotypes
 
-	self haplotypesBag: (self classifications flatCollect: [ : keyValue | self buildHaplotype: keyValue value ]) asBag.
+	self haplotypesBag: (self data flatCollect: [ : keyValue | self buildHaplotype: keyValue value ]) asBag.
 	

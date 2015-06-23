@@ -1,10 +1,10 @@
 private
-writeHeaderFrom: features
-	" Private - Write header row from aCollection in receiver's stream "
+writeHeaderFrom: featureCollection
+	" Private - Write header row from featureCollection in receiver's stream "
 	
-	features do: [: k |
+	featureCollection do: [: k |
 		stream 
 			nextPutAll: k;
 			nextPut: self delimiterSourceCharacter ].	
-	stream cr.	
+	stream nextPutAll: GRPlatform current newline.	
 		

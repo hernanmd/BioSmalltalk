@@ -5,4 +5,4 @@ dumpToFileNamed: filename contents: anObject
 	| fs |
 	[ fs := self newFileNamed: filename.
 	fs wantsLineEndConversion: false.
-	anObject outputTo: fs ] ensure: [ fs close ].
+	anObject dumpToStream: fs ] ensure: [ fs close ].

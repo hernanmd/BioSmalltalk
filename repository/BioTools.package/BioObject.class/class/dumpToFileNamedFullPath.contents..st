@@ -5,4 +5,4 @@ dumpToFileNamedFullPath: filename contents: anObject
 	| fs |
 	[ fs := self newFullFileNamed: filename.
 	fs wantsLineEndConversion: false.
-	anObject outputTo: fs ] ensure: [ fs close ].
+	anObject dumpToStream: fs ] ensure: [ fs close ].

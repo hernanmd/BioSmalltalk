@@ -1,5 +1,5 @@
 accessing
-outputTo: aStream
+dumpToStream: aStream
 	" Private - Write the receiver's contents into aStream "
 	
 	self sequences outputTo: aStream

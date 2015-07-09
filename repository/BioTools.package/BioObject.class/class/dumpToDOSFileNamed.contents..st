@@ -5,5 +5,5 @@ dumpToDOSFileNamed: filename contents: anObject
 	| fs |
 	[ fs := self newFullFileNamed: filename.
 		fs lineEndConvention: #crlf.
-		anObject outputTo: fs ] 
+		anObject dumpToStream: fs ] 
 	ensure: [ fs close ].

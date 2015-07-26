@@ -1,6 +1,6 @@
 accessing
 atMismatch: selectedMismatchFeatures
-	" Remove anObject from the matched elements "
+	" Answer the mismatch corresponding to selectedMismatchFeatures "
 
 	| nonEmptyFeatureValues |
 	nonEmptyFeatureValues := selectedMismatchFeatures reject: [ : featureValue | featureValue = '-' ].

@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "HernanMoralesDurand 4/7/2013 17:26",
-	"super" : "BioReadersCollection",
+	"commentStamp" : "HernanMoralesDurand 7/26/2015 05:07",
+	"super" : "BioINSDCCollection",
 	"category" : "BioEntrez-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

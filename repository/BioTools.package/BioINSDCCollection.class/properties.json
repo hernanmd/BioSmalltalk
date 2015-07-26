@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 7/26/2015 05:05",
+	"super" : "BioReadersCollection",
+	"category" : "BioTools-Collections",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioINSDCCollection",
+	"type" : "normal"
+}

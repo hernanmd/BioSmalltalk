@@ -1,5 +1,6 @@
 accessing
 fileOutXMLReaders
+	" Private - Helper method to be used inside an Inspector/Explorer to dump receiver's contents in XML files "
 
 	| helper |
 	helper := BioObject new.

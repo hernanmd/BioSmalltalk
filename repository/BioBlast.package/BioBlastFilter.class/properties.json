@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"composeOr"
+	],
 	"name" : "BioBlastFilter",
 	"type" : "normal"
 }

@@ -5,6 +5,6 @@ hits
 	^ self reader filters isEmpty
 		ifTrue: [ self reader hitHspsNodes hits ]
 		ifFalse: [ 
-			self composeOr 
-				ifTrue: [ self reader hitHspsNodes hits ]
+			self isCumulativeFilter
+				ifTrue: [ self contents result ]
 				ifFalse: [ self reader contents result ] ]

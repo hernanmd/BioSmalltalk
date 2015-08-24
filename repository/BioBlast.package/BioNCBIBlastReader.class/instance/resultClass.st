@@ -1,4 +1,4 @@
-accessing filters
+accessing-blast-filters
 resultClass
 
 	^ BioInitialResult

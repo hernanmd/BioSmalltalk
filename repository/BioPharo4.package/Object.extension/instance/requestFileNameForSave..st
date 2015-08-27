@@ -7,6 +7,8 @@ requestFileNameForSave: extensionString
 		fileSave: 'Save as ' , extensionString
 		extensions: (Array with: extensionString)
 		path: nil.
-	filename ifNil: [ self inform: 'Saving cancelled'. 
-		^ '' ].
+	filename 
+		ifNil: [ 
+			self inform: 'Saving cancelled'. 
+			^ String empty ].
 	^ filename fullName

@@ -10,8 +10,8 @@ padAlignmentIn: hit
 
 	qFromIndex ~= 1 
 		ifTrue: [ correctedSeq := (BioObject generateJoin: $? repeat: qFromIndex - 1) , correctedSeq ].
-	self querySequence isNil
-		ifTrue: [ self error: 'Missing reference (query) sequence' ].
+	self hasQuerySequence 
+		ifFalse: [ self error: 'Missing reference (query) sequence' ].
 	qToIndex <  self querySequence size 
 		ifTrue: [ correctedSeq := correctedSeq , (BioObject generateJoin: $? repeat: self querySequence size - qToIndex)  ].
 

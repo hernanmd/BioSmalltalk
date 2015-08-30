@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 8/29/2015 15:33",
+	"super" : "BioNamedObject",
+	"category" : "BioPopulation-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"currentSpecies"
+	],
+	"name" : "BioSpeciesLists",
+	"type" : "normal"
+}

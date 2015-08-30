@@ -1,6 +1,6 @@
-private
-commonSpecies
-	" Answer a <Collection> of common species names in english language "
+accessing
+commonAnimalSpecies
+	" Answer a <Collection> of common animal species names in english language "
 
 	^ #('Aardvark'
 'Elephant'

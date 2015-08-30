@@ -1,5 +1,12 @@
 printing
 printOn: aStream
+	"Append to the argument, aStream, a sequence of characters that  
+	identifies the receiver."
 
-	super printOn: aStream.
-	aStream nextPutAll: self name between: ' (' -> ')'
+	| title |
+	title := self class name.
+	aStream
+		nextPutAll: (title first isVowel ifTrue: ['an '] ifFalse: ['a ']);
+		nextPutAll: title;
+		space.
+	aStream nextPutAll: self name between: $( and: $)

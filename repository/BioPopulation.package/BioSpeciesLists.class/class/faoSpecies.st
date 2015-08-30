@@ -1,4 +1,4 @@
-private
+accessing
 faoSpecies
 	" Answer a <Collection> of FAO species in english language "
 

@@ -1,9 +1,6 @@
 private
-beforeExportView: aPCTView
+beforeExportView: anObject
 	
 	^ self isPhyloclassTalk
-		ifTrue: [ 
-			(Smalltalk at: #PCTArlequinSequenceInput) openDialogWithOwner: aPCTView.
-			aPCTView querySequence isEmpty ]
-		ifFalse: [ 
-			self beforeExportViewBioSmalltalk: aPCTView ]
+		ifTrue: [ self beforeExportViewPhyloclassTalk: anObject ]
+		ifFalse: [ self beforeExportViewBioSmalltalk: anObject ]

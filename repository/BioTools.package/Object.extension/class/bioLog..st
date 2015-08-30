@@ -5,7 +5,7 @@ bioLog: aString
 	| trWindow |
 	trWindow := self openTranscript.
 	self streamer cr; 
-		show: DateAndTime current;
+		show: DateAndTime current printYMDHMS;
 		space;
 		show: aString.
 	^ trWindow

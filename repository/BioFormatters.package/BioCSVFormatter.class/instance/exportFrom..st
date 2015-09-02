@@ -4,7 +4,7 @@ exportFrom: aCollection
 	
 	self initializeStream: aCollection.
 	aCollection do: [: each |
-			each outputAsCsvTo: stream.
+			each dumpCSVTo: stream.
 			stream cr ].
 	self 
 		dumpToFileNamedFullPath: self outputFilename 

@@ -1,5 +1,5 @@
 *BioFormatters
-outputAsCsvTo: aStream
+dumpCSVTo: aStream
 
 	self flag: #workNeeded.
 	self do: [ : each |

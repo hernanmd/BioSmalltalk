@@ -9,4 +9,4 @@ exportFrom: data features: fCollection
 	self 
 		dumpToFileNamed: self outputFilename 
 		contents: stream contents.
-
+	self bioLog: 'Exported CSV contents in file ' , self outputFilename.

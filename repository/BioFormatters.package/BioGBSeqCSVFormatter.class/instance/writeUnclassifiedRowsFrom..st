@@ -4,5 +4,6 @@ writeUnclassifiedRowsFrom: data
 	features contain all possible features in data. if data at specific feature is absent, then use a dash to specify null value "
 
 	data do: [: dict |
-		self writeFeatureRow: dict groupedFeature: 'Unrecognized' ] .
+		self dumpFeatureData: dict groupingFeature: 'Unrecognized' ] .
+	self informMessage: 'Exported CSV data to ' , self outputFilename
 	

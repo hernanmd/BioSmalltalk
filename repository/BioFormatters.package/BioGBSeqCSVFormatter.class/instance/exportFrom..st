@@ -7,4 +7,5 @@ exportFrom: aCollection
 	self writeUnclassifiedRowsFrom: aCollection.
 	self 
 		dumpToFileNamed: self outputFilename 
-		contents: stream contents
+		contents: stream contents.
+	self bioLog: 'Exported CSV contents in file ' , self outputFilename.

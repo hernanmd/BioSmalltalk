@@ -1,5 +1,5 @@
 *BioFormatters
-outputAsCsvTo: aStream
+dumpCSVTo: aStream
 	" Write the receiver contents in the following CSV format:
 	
 	key1,value1;

@@ -1,5 +1,5 @@
 exporting
-writeFeatureRow: featureDictionary groupedFeature: aString 
+dumpFeatureData: featureDictionary groupingFeature: aString 
 
 	self stream 
 		nextPut: $>;

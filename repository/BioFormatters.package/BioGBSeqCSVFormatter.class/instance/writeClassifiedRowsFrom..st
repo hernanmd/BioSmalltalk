@@ -5,5 +5,5 @@ writeClassifiedRowsFrom: data
 
 	data associationsDo: [: assoc |
 		assoc value do: [ : dict | 
-			self writeFeatureRow: dict groupedFeature: assoc key ] ] .
-	
+			self dumpFeatureData: dict groupingFeature: assoc key ] ] .
+	self informMessage: 'Exported CSV data to ' , self outputFilename

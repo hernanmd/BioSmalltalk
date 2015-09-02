@@ -4,4 +4,4 @@ printOn: aStream
 	
 	super printOn: aStream.
 	self nodes
-		ifNotNil: [ aStream nextPutAll: self nodes size asString between: $( -> $) ].
+		ifNotNil: [ aStream nextPutAll: self nodes size asString between: $( and: $) ].

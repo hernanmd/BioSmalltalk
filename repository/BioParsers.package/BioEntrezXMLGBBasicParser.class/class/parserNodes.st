@@ -5,4 +5,4 @@ parserNodes
 	^ { #qualifierForAccessionWithVersion .
 	#qualifierForAuthor .
 	#qualifierForDefinition .
-	# qualifierForReferenceJournal } collect: [ : selector | BioGBSeqCollection perform: selector ]
+	#qualifierForReferenceJournal } collect: [ : selector | BioGBSeqCollection perform: selector ]

@@ -4,4 +4,4 @@ printOn: aStream
 	
 	super printOn: aStream.
 	aStream 
-		nextPutAll: self nodeName asString between: $[ -> $]
+		nextPutAll: self nodeName asString between: $[ and: $]

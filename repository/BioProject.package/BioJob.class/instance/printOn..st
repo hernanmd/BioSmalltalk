@@ -4,5 +4,4 @@ printOn: aStream
 	
 	super printOn: aStream.
 	aStream 
-		nextPutAll: self sequenceCount asString 
-		between: ( $[ -> $] ).
+		nextPutAll: self sequenceCount asString between: $[ and: $].

@@ -4,4 +4,4 @@ printOn: aStream
 	
 	super printOn: aStream.
 	aStream 
-		nextPutAll: name asString between: $( -> $)
+		nextPutAll: name asString between: $( and: $)

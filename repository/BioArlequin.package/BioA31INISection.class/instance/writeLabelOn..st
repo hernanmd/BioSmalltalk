@@ -2,5 +2,5 @@ writing
 writeLabelOn: aStream
 
 	aStream
-		nextPutAll: self label between: $[ -> $];
+		nextPutAll: self label between: $[ and: $];
 		nextPutAll: GRPlatform current newline

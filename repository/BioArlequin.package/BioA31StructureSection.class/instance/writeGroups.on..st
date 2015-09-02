@@ -4,6 +4,6 @@ writeGroups: assoc on: aStream
 		nextPut: ${;
 		nextPut: Character cr.
 	assoc value
-		do: [ :grName | aStream nextPutAll: (grName ifNil: [ String empty ]) between: $" -> $" ]
+		do: [ :grName | aStream nextPutAll: (grName ifNil: [ String empty ]) between: $" and: $" ]
 		separatedBy: [ aStream nextPut: Character cr ].
 	aStream nextPut: $}

@@ -7,5 +7,5 @@ printOn: aStream
 		ifFalse: [ 
 			aStream 
 				nextPutAll: (BioWebClientEngine decode: url asString)
-				between: $[ -> $] ].
+				between: $[ and: $] ].
 	

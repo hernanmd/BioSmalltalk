@@ -8,6 +8,6 @@ printOn: aStream
 		nextPutAll: (title first isVowel ifTrue: [ 'an ' ] ifFalse: [ 'a ' ]);
 		nextPutAll: title.
 	aStream 
-		nextPutAll: self alphabet asString between: $( -> $);
+		nextPutAll: self alphabet asString between: $( and: $);
 		space;
-		nextPutAll: self asString between: $[ -> $]
+		nextPutAll: self asString between: $[ and: $]

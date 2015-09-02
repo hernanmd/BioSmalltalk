@@ -6,6 +6,6 @@ printOn: aStream
 	self names do: [ : n |
 		aStream 
 			nextPutAll: n
-			between: Character space -> Character space ].
+			between: Character space and: Character space ].
 	self version
 		ifNotNil: [ aStream nextPutAll: self version ].

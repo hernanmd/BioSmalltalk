@@ -5,4 +5,4 @@ printOn: aStream
 	super printOn: aStream.
 	aStream
 		space;
-		nextPutAll: self size asString between: $[ -> $]
+		nextPutAll: self size asString between: $[ and: $]

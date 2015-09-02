@@ -5,7 +5,6 @@ printOn: aStream
 	super printOn: aStream.
 	aStream 
 		space;
-		nextPutAll: self tableId asString
-		between: $[ -> $];
+		nextPutAll: self tableId asString between: $[ and: $];
 		space;
 		nextPutAll: self alphaName.

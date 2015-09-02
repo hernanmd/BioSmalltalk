@@ -5,8 +5,8 @@ printOn: aStream
 	super printOn: aStream.
 	seq ifNotNil: [
 		aStream
-			nextPutAll: self size asString between: $( -> $);
+			nextPutAll: self size asString between: $( and: $);
 			space;
-			nextPutAll: self alphabet asString between: $( -> $);
+			nextPutAll: self alphabet asString between: $( and: $);
 			space;
-			nextPutAll: seq asString between: $[ -> $] ]
+			nextPutAll: seq asString between: $[  and: $] ]

@@ -6,4 +6,4 @@ printOn: aStream
 	aStream 
 		space;
 		nextPutAll: self size asString 
-		between: $( -> $)
+		between: $( and: $)

@@ -12,5 +12,5 @@ printOn: aStream
 		nextPutAll: self classifications size asString;
 		space;
 		nextPutAll: self feature asString 
-		between: $[ -> $];
+		between: $[ and: $];
 		cr

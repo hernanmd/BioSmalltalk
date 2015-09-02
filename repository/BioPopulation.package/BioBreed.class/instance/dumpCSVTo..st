@@ -1,5 +1,5 @@
 accessing
-outputAsCsvTo: aStream
+dumpCSVTo: aStream
 	" Write the receiver contents in the following CSV format:
 	
 	name1[,name2,name3....];synonym1[,synonym2....];location1[,location2....]

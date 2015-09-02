@@ -5,5 +5,5 @@ named: aString forGroups: aClassifier
 	
 	formatter := self new
 				outputFilename: aString;
-				samplesCollection: aClassifier alignments.
+				samples: aClassifier alignments.
 	^ formatter export

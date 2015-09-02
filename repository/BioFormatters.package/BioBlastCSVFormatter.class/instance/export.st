@@ -1,4 +1,4 @@
 accessing
 export
 
-	isValid and: [ self exportFrom: self samplesCollection ]
+	isValid and: [ self exportFrom: self samples ]

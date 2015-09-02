@@ -4,4 +4,5 @@ printOn: aStream
 	
 	aStream 
 		nextPutAll: self description 
-		between: Character space -> Character space
+		between: Character space 
+		and: Character space

@@ -1,12 +1,11 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 9/2/2015 18:01",
 	"super" : "BioObject",
 	"category" : "BioFormatters-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"generator",
 		"parser",
 		"samplesCollection",
 		"delimiterSourceCharacter",

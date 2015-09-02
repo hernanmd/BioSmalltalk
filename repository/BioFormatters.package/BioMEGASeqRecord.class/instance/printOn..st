@@ -5,4 +5,4 @@ printOn: aStream
 	super printOn: aStream.
 	aStream 
 		space;
-		nextPutAll: self name between: $( -> $)
+		nextPutAll: self name between: $( and: $)

@@ -1,7 +1,7 @@
 accessing
 exportWeights
 
-	self samplesCollection anyOne size 
+	self samples anyOne size 
 		timesRepeat: [
 			 self stream 
 				nextPutAll: '10';

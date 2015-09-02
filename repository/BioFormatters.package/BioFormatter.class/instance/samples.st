@@ -1,5 +1,5 @@
 accessing
-samplesCollection
+samples
 
 	^ samplesCollection
 		ifNil: [ samplesCollection := OrderedCollection new ]

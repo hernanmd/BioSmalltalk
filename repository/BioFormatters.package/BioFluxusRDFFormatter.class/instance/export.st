@@ -5,7 +5,7 @@ export
 	self exportHeader.
 	self exportPositions.
 	self exportWeights.
-	self exportFromAlignment: self samplesCollection.
+	self exportFromAlignment: self samples.
 	self 
 		dumpToFileNamedFullPath: self outputFilename
 		contents: self stream contents.

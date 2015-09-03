@@ -4,4 +4,4 @@ export
 	
 	self isValid 
 		ifFalse: [ self informMessage: 'Current configuration is not valid for ' , self description , ' format' ]
-		ifTrue: [ self exportFrom: self inputStream ]
+		ifTrue: [ self exportFrom: self samples ]

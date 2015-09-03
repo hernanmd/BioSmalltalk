@@ -1,6 +1,6 @@
 *BioFormatters
 asFastaRecord
-	" Answer a <BioFastaRecord> "
+	" Answer a <BioFastaRecord>. Assume receiver with 3 elements: (Number String String) "
 
 	| fastaRecord |
 	fastaRecord := BioFastaRecord new.

@@ -6,4 +6,3 @@ writeClassifiedRowsFrom: data
 	data associationsDo: [: assoc |
 		assoc value do: [ : dict | 
 			self dumpFeatureData: dict groupingFeature: assoc key ] ].
-	self informMessage: 'Exported FASTA data to ' , self outputFilename

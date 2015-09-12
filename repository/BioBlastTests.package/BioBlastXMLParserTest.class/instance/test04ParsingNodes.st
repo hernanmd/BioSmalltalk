@@ -14,9 +14,9 @@ test04ParsingNodes
 	self assert: result hits size = 1.
 	
 	theHit := result hits anyOne.
-	self assert: theHit hitIdentifier blastValue = 'gi|4097247|gb|U50941.1|BTU50941'.
-	self assert: theHit hitDefinition blastValue = 'Bos taurus mitochondrial D-loop DNA'.
-	self assert: theHit hitAccession blastValue = 'U50941'.
+	self assert: theHit hitIdentifier blastValue = 'gi|4097247|gb|U50941.1|BTU50941' asLowercase.
+	self assert: theHit hitDefinition blastValue = 'Bos taurus mitochondrial D-loop DNA' asLowercase.
+	self assert: theHit hitAccession blastValue = 'U50941' asLowercase.
 	self assert: theHit hitLength blastValue = 213.
 	self assert: (theHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: theHit hitHsps size = 2.
@@ -35,8 +35,8 @@ test04ParsingNodes
 	self assert: firstHsp hspPositive blastValue = 116.
 	self assert: firstHsp hspGaps blastValue = 0.
 	self assert: firstHsp hspAlignLength blastValue = 116.
-	self assert: firstHsp hspQSeq blastValue = 'TACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGA'.
-	self assert: firstHsp hspHSeq blastValue = 'TACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGA'.
+	self assert: firstHsp hspQSeq blastValue = 'TACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGA' asLowercase.
+	self assert: firstHsp hspHSeq blastValue = 'TACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGA' asLowercase.
 	self assert: firstHsp hspMidLine blastValue = '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'.
 
 	secondHsp := theHit hitHsps nodes second.
@@ -53,7 +53,7 @@ test04ParsingNodes
 	self assert: secondHsp hspPositive blastValue = 35.
 	self assert: secondHsp hspGaps blastValue = 0.
 	self assert: secondHsp hspAlignLength blastValue = 35.
-	self assert: secondHsp hspQSeq blastValue = 'AAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
-	self assert: secondHsp hspHSeq blastValue = 'AAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
+	self assert: secondHsp hspQSeq blastValue = 'AAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
+	self assert: secondHsp hspHSeq blastValue = 'AAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
 	self assert: secondHsp hspMidLine blastValue = '|||||||||||||||||||||||||||||||||||'.
 	

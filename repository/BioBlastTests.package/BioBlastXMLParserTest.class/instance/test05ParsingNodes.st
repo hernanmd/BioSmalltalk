@@ -14,9 +14,9 @@ test05ParsingNodes
 	self assert: result hits size = 2.
 	
 	firstHit := result hits first.
-	self assert: firstHit hitIdentifier blastValue = 'gi|294959984|gb|GU947019.1|'.
-	self assert: firstHit hitDefinition blastValue = 'Bos taurus isolate CB86 mitochondrion, complete genome'.
-	self assert: firstHit hitAccession blastValue = 'GU947019'.
+	self assert: firstHit hitIdentifier blastValue = 'gi|294959984|gb|GU947019.1|' asLowercase.
+	self assert: firstHit hitDefinition blastValue = 'Bos taurus isolate CB86 mitochondrion, complete genome' asLowercase.
+	self assert: firstHit hitAccession blastValue = 'GU947019' asLowercase.
 	self assert: firstHit hitLength blastValue = 16339.
 	self assert: (firstHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: firstHit hitHsps size = 1.
@@ -35,14 +35,14 @@ test05ParsingNodes
 	self assert: theHsp hspPositive blastValue = 240.
 	self assert: theHsp hspGaps blastValue = 0.
 	self assert: theHsp hspAlignLength blastValue = 240.
-	self assert: theHsp hspQSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
-	self assert: theHsp hspHSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
+	self assert: theHsp hspQSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
+	self assert: theHsp hspHSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
 	self assert: theHsp hspMidLine blastValue = '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'.
 
 	secondHit := result hits second.
-	self assert: secondHit hitIdentifier blastValue = 'gi|311323927|gb|HM626093.1|'.
-	self assert: secondHit hitDefinition blastValue = 'Bos taurus breed Jutland breed clone 38 D-loop, partial sequence; mitochondrial'.
-	self assert: secondHit hitAccession blastValue = 'HM626093'.
+	self assert: secondHit hitIdentifier blastValue = 'gi|311323927|gb|HM626093.1|' asLowercase.
+	self assert: secondHit hitDefinition blastValue = 'Bos taurus breed Jutland breed clone 38 D-loop, partial sequence; mitochondrial' asLowercase.
+	self assert: secondHit hitAccession blastValue = 'HM626093' asLowercase.
 	self assert: secondHit hitLength blastValue = 789.
 	self assert: (secondHit hitHsps isKindOf: BioBlastParentNode).
 	self assert: secondHit hitHsps size = 1.
@@ -61,7 +61,7 @@ test05ParsingNodes
 	self assert: theHsp hspPositive blastValue = 240.
 	self assert: theHsp hspGaps blastValue = 0.
 	self assert: theHsp hspAlignLength blastValue = 240.
-	self assert: theHsp hspQSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
-	self assert: theHsp hspHSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA'.
+	self assert: theHsp hspQSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
+	self assert: theHsp hspHSeq blastValue = 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA' asLowercase.
 	self assert: theHsp hspMidLine blastValue = '||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||'.
 	

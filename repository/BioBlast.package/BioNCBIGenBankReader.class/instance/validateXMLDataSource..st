@@ -5,4 +5,4 @@ validateXMLDataSource: aString
 	Cursor read showWhile: [ 
 		(self isGenBankXMLDirectory: aString)
 			ifFalse: [ BioObject signalInvalidObject: 'Not all files in ' , aString asString , ' are XML or some of them are not recognized as XML format, please try again' ]
-			ifTrue: [ self searchResults: (aString asFileReference entries collect: #asFileReference) ] ]
+			ifTrue: [ self searchResults: (aString asFileReference entries collect: #asFileReference)  asOrderedCollection ] ]

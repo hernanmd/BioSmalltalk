@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspHitScores
 	" Answer a Collection of receiver's expect values of the HSPs "
 	

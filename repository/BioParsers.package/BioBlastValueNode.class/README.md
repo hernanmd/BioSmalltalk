@@ -1,0 +1,1 @@
+Abstract class to group common behavior of single value nodes in a BLAST tree

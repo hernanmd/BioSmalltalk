@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspsGaps
 	" Answer a Collection of receiver's number of gaps in the alignment "
 	

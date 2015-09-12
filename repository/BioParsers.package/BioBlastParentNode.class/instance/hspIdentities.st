@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspIdentities
 	" Answer a Collection of receiver's number of identities in the alignment "
 	

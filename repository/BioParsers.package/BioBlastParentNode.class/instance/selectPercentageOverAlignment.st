@@ -1,4 +1,4 @@
-accessing
+extracting - hsps
 selectPercentageOverAlignment
 
 	^ self percentageOverAlignment size > 1

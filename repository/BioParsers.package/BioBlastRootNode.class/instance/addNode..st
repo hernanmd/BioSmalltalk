@@ -1,4 +1,4 @@
 accessing
-addNode: aGTBLASTNode
+addNode: aNode
 
-	aGTBLASTNode addToParent: self last
+	aNode addToParent: self last

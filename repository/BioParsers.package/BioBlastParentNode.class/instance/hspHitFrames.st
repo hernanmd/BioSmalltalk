@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspHitFrames
 	" Answer a Collection of receiver's number of frames of the database sequence if applicable "
 	

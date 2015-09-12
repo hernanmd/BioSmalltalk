@@ -1,4 +1,5 @@
 accessing nodes
-addNode: aGTBLASTNode
-
-	self nodes add: aGTBLASTNode
+addNode: aNode
+	" Add aNode to the receiver's nodes "
+	
+	self nodes add: aNode

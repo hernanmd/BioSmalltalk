@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspAlignLengths
 	" Answer a Collection of receiver's align lengths nodes in each HSP node "
 	

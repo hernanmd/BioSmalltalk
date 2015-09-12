@@ -1,4 +1,5 @@
 initialize-release
-initialize: nodesNumber
-
-	nodes := OrderedCollection new: nodesNumber
+initialize: numberOfNodes
+	" Private - Initialize the receiver's nodes <Collection> "
+	
+	nodes := OrderedCollection new: numberOfNodes

@@ -1,4 +1,4 @@
-accessing hsps
+filtering - hsps
 hspScoreDensity
 	" Answer a Collection of receiver's scores of the HSP "
 	

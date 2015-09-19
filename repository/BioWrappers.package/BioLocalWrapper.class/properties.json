@@ -1,14 +1,11 @@
 {
-	"commentStamp" : "HernanMoralesDurand 9/14/2015 02:44",
+	"commentStamp" : "HernanMoralesDurand 9/14/2015 03:48",
 	"super" : "BioWrapperObject",
 	"category" : "BioWrappers-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"url",
-		"searchResult"
-	],
-	"name" : "BioWebWrapper",
+	"instvars" : [ ],
+	"name" : "BioLocalWrapper",
 	"type" : "normal"
 }

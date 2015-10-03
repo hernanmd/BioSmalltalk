@@ -3,5 +3,5 @@ generateMethod
 	" Write the code "
 
 	self preGenerateForOptions.
-	self compile.
+	self compileCodeStream.
 	self postGenerate.

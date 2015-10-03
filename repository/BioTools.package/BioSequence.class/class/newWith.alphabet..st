@@ -1,7 +1,6 @@
 instance creation
 newWith: aString alphabet: anAlphabet
-	" Answer a new instance of the receiver with aString as the sequence 
-	  and anAlphabet as the alphabet for the sequence "
+	" Answer a new instance of the receiver with aString as the sequence and anAlphabet as the alphabet for the sequence "
 	
 	^ anAlphabet isBehavior
 		ifTrue: [ 

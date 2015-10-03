@@ -1,12 +1,13 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 10/2/2015 22:23",
 	"super" : "BioNamedObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"set"
+		"set",
+		"consensusStrategy"
 	],
 	"name" : "BioAlignment",
 	"type" : "normal"

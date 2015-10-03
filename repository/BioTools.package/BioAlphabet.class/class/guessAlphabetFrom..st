@@ -2,8 +2,8 @@ accessing
 guessAlphabetFrom: aString
 	" Answer a class with the guessed alphabet from analyzing aString "
 	
-	<lint: 'Long methods' rationale: 'Algorithm method' author: 'hfm'>
-	<lint: 'Temporary variable names' rationale: 'Algorithm method' author: 'hfm'>
+	<lint: 'Long methods' rationale: 'Algorithm method' author: 'HernanMoralesDurand'>
+	<lint: 'Temporary variable names' rationale: 'Algorithm method' author: 'HernanMoralesDurand'>
 	
 	| normalizedString atgcCount total |
 	

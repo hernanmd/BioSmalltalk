@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioConsensusStrategy",
+	"category" : "BioTools-Helpers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioDummyConsensusStrategy",
+	"type" : "normal"
+}

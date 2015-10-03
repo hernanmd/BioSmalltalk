@@ -1,5 +1,5 @@
 accessing
 defaultUnknownElement
-	" Private - Answer an object used as representative of unknown elements in the receiver "
+	" Private - Answer a <Character> used as representative of unknown elements in the receiver "
 	
 	^ $N

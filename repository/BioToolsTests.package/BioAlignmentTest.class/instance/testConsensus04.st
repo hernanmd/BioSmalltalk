@@ -1,5 +1,5 @@
 testing
-testConsensus01
+testConsensus04
 
-	align := self sampleAlignment01.	
+	align := self sampleAlignment04.	
 	self assert: align consensus asString = 'ACTGCTAGCTAG'.

@@ -1,4 +1,4 @@
 accessing
 consensusAt: aString 
 
-	^ self consensusStrategy consensusAt: aString
+	^ self consensusStrategy consensusAt: aString asUppercase

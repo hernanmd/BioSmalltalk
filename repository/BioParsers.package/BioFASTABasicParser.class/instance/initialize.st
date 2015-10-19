@@ -5,6 +5,6 @@ initialize
 	super initialize.
 	parser := ( 
 		self parserForNonBreakingString , 
-		#newline asParser , 
+		#newline asParser ,
 		self parserForSequence ) plus end 
 		

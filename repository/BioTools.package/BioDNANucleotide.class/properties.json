@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/14/2015 04:13",
+	"super" : "BioObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"letter"
+	],
+	"name" : "BioDNANucleotide",
+	"type" : "normal"
+}

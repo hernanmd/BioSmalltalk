@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"alleleA",
+		"alleleB"
+	],
+	"name" : "BioGenotype",
+	"type" : "normal"
+}

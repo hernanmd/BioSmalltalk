@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/16/2015 03:06",
+	"super" : "BioCSVFormatter",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pedFilePath",
+		"bimFilePath",
+		"referenceAlleles"
+	],
+	"name" : "BioLAMPLDGenotypeFormatter",
+	"type" : "normal"
+}

@@ -1,5 +1,5 @@
 testing
-test11At
+testAt
 
 	self assert: ( self sequence at: 2 ) = $A.
 	self assert: ( self sequence at: 3 ) = $G.

@@ -8,8 +8,8 @@ testReverseComplement
 
 	revComp := seq1 reverseComplement.
 
-	self assert: ( revComp isKindOf: BioSequence ).
-	self assert: ( revComp alphabet isKindOf: BioIUPACDNA ).
+	self assert: (revComp isKindOf: BioSequence).
+	self assert: (revComp alphabet isKindOf: BioIUPACDNA).
 	self assert: revComp = seq2.
 	self assert: revComp asString = 'GCTAATGCCGTAGTAATTTTCCCGTCCTCCCGT'.
 
@@ -17,7 +17,7 @@ testReverseComplement
 	seq2 := BioSequence newUnambiguousDNA: 'ATGAAGGATGTTTAG'.
 	
 	self assert: seq1 reverseComplement asString = seq2 asString.
-	self assert: ( seq1 reverseComplement alphabet isKindOf: BioIUPACUnambiguousDNA ).
+	self assert: (seq1 reverseComplement alphabet isKindOf: BioIUPACUnambiguousDNA).
 	
 
 

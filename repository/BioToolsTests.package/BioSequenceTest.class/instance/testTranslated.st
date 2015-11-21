@@ -9,11 +9,11 @@ testTranslated
 	translated1 := seq1 translate.
 	translated2 := seq2 translateToStop.
 	
-	self assert: ( translated1 isKindOf: BioSequence ).
-	self assert: ( translated2 isKindOf: BioSequence ).
+	self assert: (translated1 isKindOf: BioSequence).
+	self assert: (translated2 isKindOf: BioSequence).
 
-	self assert: ( translated1 alphabet isKindOf: BioIUPACProtein ).
-	self assert: ( translated2 alphabet isKindOf: BioIUPACProtein ).
+	self assert: (translated1 alphabet isKindOf: BioIUPACProtein).
+	self assert: (translated2 alphabet isKindOf: BioIUPACProtein).
 	
 	self assert: translated1 asString = 'KSVYY*HACATH*L'.
 	self assert: translated2 asString = 'KSVYY'.

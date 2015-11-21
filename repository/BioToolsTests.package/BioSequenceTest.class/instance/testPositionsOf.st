@@ -1,5 +1,5 @@
 testing
-test12PositionsOf
+testPositionsOf
 
 	| expected |
 	

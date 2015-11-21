@@ -1,5 +1,5 @@
 testing
-test14concatSequences
+testConcat
 
 	| seq1 seq2 result |
 	

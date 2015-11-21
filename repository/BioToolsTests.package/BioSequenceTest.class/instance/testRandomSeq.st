@@ -1,5 +1,5 @@
 testing
-test13randomSeq
+testRandomSeq
 
 	| seq |
 	

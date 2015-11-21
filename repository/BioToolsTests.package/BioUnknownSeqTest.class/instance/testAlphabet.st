@@ -1,5 +1,5 @@
 testing
-test01alphabetAccess
+testAlphabet
 
 	self assert: ( self sequence alphabet isKindOf: BioAlphabet ).
 	self assert: ( self sequence unknownLetter = BioAlphabet new defaultUnknownElement ).

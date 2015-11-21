@@ -1,5 +1,5 @@
 testing
-test09equality
+testEqual
 
 	| testSeq1 |
 	testSeq1 := BioSequence newDNA: self sampleDnaString01.

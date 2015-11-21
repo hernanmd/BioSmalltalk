@@ -1,4 +1,4 @@
 testing
-test01alphabetAccess
+testAlphabet
 
 	self assert: ( self sequence alphabet isKindOf: BioAlphabet )

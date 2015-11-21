@@ -5,15 +5,15 @@ A wrapper enables configuration and makes possible the messaging of another obje
 Instance Variables
 	cmdLine:			<String>
 	lastStatus:			<Boolean>
-	options:				<Object>
-	parameters:			<Object>
+	options:				<OrderedCollection>
+	parameters:			<OrderedCollection>
 	programName:		<String>
 
 cmdLine
 	- xxxxx
 
 lastStatus
-	- xxxxx
+	- <true> if last execution was successful.
 
 options
 	- xxxxx

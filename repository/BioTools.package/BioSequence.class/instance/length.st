@@ -1,5 +1,5 @@
 accessing
 length
-	"Answer how many elements the receiver contains."
+	" Answer how many bases contains the receiver "
 	
 	^ self size

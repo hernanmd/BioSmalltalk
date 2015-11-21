@@ -1,4 +1,4 @@
 accessing
 disambiguate: letter
 
-	^ BioAmbiguousBaseParser new convertContinuousAmbiguousToSingleBase: letter
+	^ BioIUPACAmbiguousDNA ambiguousLettersMap keyAtValue: letter asString

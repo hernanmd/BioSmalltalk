@@ -1,7 +1,6 @@
 accessing
 ambiguousLettersMap
-	" Note these could appear as:
-	
+	" Answer a <Dictionary> with mappings between ambiguity codes. Note ambiguity codes could appear as:	
 	[AT]
 	[A/T]
 	W

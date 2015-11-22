@@ -1,13 +1,13 @@
 instance creation
-newWith: aString alphabet: anAlphabet
+newWith: aString alphabet: aBioAlphabet
 	" Answer a new instance of the receiver with aString as the sequence and anAlphabet as the alphabet for the sequence "
 	
-	^ anAlphabet isBehavior
+	^ aBioAlphabet isBehavior
 		ifTrue: [ 
 			self new 
 				initializeWith: aString
-				alphabet: anAlphabet new ]
+				alphabet: aBioAlphabet new ]
 		ifFalse: [
 			self new 
 				initializeWith: aString
-				alphabet: anAlphabet ]
+				alphabet: aBioAlphabet ]

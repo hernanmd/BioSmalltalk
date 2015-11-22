@@ -5,4 +5,4 @@ append: aString
 	seq := String streamContents: [ : str | 
 		str
 			nextPutAll: seq;
-			nextPutAll: aString ]
+			nextPutAll: aString asString ]

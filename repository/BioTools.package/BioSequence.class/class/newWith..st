@@ -1,5 +1,5 @@
 instance creation
 newWith: aString
-	" Answer a new instance of the receiver using aString as sequence and guessing the alphabet "
+	" Answer a new instance of the receiver using aString as sequence. Alphabet is guessed "
 	
 	^ self new initializeWith: aString

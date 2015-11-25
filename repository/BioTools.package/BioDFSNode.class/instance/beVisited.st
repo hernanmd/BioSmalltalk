@@ -1,0 +1,4 @@
+accessing
+beVisited
+
+	visited := true

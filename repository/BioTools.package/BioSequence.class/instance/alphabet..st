@@ -1,3 +1,5 @@
 accessing
-alphabet: anObject
-	alphabet := anObject
+alphabet: aBioAlphabet
+	" Set aBioAlphabet as receiver's alphabet "
+
+	alphabet := aBioAlphabet

@@ -2,4 +2,4 @@ accessing
 description
 	" Private - See superimplementor's comment "
 
-	^ 'HaploView Writer'
+	^ 'PED Writer'

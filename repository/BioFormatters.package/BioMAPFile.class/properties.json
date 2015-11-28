@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/28/2015 15:26",
+	"super" : "BioFile",
+	"category" : "BioFormatters-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioMAPFile",
+	"type" : "normal"
+}

@@ -6,6 +6,6 @@ fillSNPMatrixSTRNameColumn
 	rowIndex := 1.
 	self setParserForAlleleFqs.
 	self preallocateMatrix.
-	self parser rowsDo: [ : row |
-		self fillSNPMatrixSTRName: row ]
+	self setParserForAlleleFqs.
+	self parser rowsDo: [ : row | self fillSNPMatrixSTRName: row ]
 

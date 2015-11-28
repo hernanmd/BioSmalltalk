@@ -1,0 +1,1 @@
+http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#ped

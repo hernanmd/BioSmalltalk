@@ -16,19 +16,7 @@ Conversion table for formats:
 .bed + .pedsnp + .pedind = packedped = PLINK format
 .packedancestrymapgeno + .snp + .ind = packedancestrymap format
 
-Sample script
+Implementation notes:
 
-| snpWriter pedFile alleleFqs fsRoot wrkFolder |
-fsRoot := FileSystem disk root children at: 2.
-wrkFolder := fsRoot resolve: 'MyWorkingFolder'.
+It uses two parsers: One for the PED fie, used to fill the genotype matrix and another one for a CSV file, to fill the name and positions.
 
-pedFile := wrkFolder / 'input.ped'.
-" allele frequencies from MSTools plugin "
-alleleFqs := wrkFolder / 'input_Alleles_Fqs.csv'.
-
-snpWriter := BioEigenStratWriter new
-				alleleFqs: alleleFqs;
-				outputFilename: 'eig_output.snp';
-				pedFile: alleleFqs;
-				yourself.
-snpWriter writeAsEigenStrat.

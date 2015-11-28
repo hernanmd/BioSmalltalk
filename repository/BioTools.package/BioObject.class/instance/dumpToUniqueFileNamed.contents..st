@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 dumpToUniqueFileNamed: fileName contents: contentsString
 	" Outputs contentsString to a file named fileName "
 

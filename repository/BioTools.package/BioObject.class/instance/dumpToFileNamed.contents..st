@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 dumpToFileNamed: fileName contents: contentsString
 	" Outputs contentsString to a file named fileName "
 

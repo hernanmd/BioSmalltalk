@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 fileStreamClass
 	" See comment in class method "
 

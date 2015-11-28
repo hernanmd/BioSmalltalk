@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 dumpToFileNamed: aString
 	" Outputs the receiver's contents to a file "
 

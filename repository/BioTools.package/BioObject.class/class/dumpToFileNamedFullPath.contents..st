@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 dumpToFileNamedFullPath: filename contents: anObject
 	" Write anObject to a file named filename representing a full path "
 	

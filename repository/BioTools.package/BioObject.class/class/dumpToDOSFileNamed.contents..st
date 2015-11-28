@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 dumpToDOSFileNamed: filename contents: anObject
 	" Write anObject to a DOS file named filename representing a full path "
 	

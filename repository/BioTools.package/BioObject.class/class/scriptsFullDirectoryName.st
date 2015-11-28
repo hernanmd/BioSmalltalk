@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 scriptsFullDirectoryName
 	" Answer a full path <String> where the scripts are located "
 

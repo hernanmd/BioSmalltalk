@@ -1,5 +1,5 @@
 testing
 isBioSequence
-	"Answer whether the receiver represents a Biological sequence."
+	" Answer whether the receiver represents a Biological sequence. "
 	
 	^ false

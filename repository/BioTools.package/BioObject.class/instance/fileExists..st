@@ -1,4 +1,4 @@
-filesystem
+convenience-filesystem
 fileExists: fileName
 	" Answer <true> if fileName exists in receiver's working directory "
 	

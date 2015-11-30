@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "HernanMoralesDurand 11/28/2015 15:12",
-	"super" : "BioObject",
+	"commentStamp" : "HernanMoralesDurand 11/30/2015 20:22",
+	"super" : "BioNamedObject",
 	"category" : "BioLAMPLD-Visualization",
 	"classinstvars" : [ ],
 	"pools" : [ ],

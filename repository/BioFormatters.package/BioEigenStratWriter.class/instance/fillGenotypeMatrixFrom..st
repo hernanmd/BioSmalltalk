@@ -4,7 +4,10 @@ fillGenotypeMatrixFrom: parserForPed
 
 	" counter from marker names "
 	currentGenoCol := 1.
-	parserForPed rowsDo: [ : row | 
+	parserForPed 
+		reset;
+		text;
+		rowsDo: [ : row | 
 		| a1 a2 index maxCols currentGenoRow |
 		index := 1.		
 		a1 := 1.

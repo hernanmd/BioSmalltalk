@@ -10,6 +10,6 @@ example1
 	snpWriter := BioEigenStratWriter new
 				alleleFqs: alleleFqs;
 				outputFilename: 'eig_output.snp';
-				pedFile: alleleFqs;
+				pedFile: pedFile;
 				yourself.
 	snpWriter writeAsEigenStrat.

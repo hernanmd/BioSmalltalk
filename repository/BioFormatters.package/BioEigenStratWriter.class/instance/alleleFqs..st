@@ -1,3 +1,4 @@
 accessing
-alleleFqs: anObject
-	alleleFqs := anObject
+alleleFqs: aFileReference
+
+	alleleFqs := aFileReference

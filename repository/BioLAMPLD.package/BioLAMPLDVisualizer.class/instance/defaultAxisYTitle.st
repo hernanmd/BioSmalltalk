@@ -1,0 +1,3 @@
+defaults
+defaultAxisYTitle
+	^ 'Ref Allele'

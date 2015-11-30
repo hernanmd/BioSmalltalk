@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/28/2015 15:12",
+	"super" : "BioObject",
+	"category" : "BioLAMPLD-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dataPoints",
+		"grapher",
+		"dataSet",
+		"extent",
+		"axisXTitle",
+		"axisYTitle",
+		"parsedDataPoints",
+		"graphers"
+	],
+	"name" : "BioLAMPLDVisualizer",
+	"type" : "normal"
+}

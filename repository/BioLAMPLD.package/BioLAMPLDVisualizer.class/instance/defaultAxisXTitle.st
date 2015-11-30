@@ -1,0 +1,4 @@
+defaults
+defaultAxisXTitle
+	
+	^ 'Chromosome Position'

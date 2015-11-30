@@ -1,0 +1,3 @@
+accessing
+bimFilePath
+	^ bimFilePath

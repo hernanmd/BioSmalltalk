@@ -4,4 +4,7 @@ which: programName
 
 	" ToDo: Check which behavior with more than which.exe installed "
 	" ToDo: Compare with Locate32 "
-	^ (self executeCommand: 'which' parameter: programName) trimRight
+	| rs |
+	((rs := self executeCommand: 'which' parameter: programName) isEmpty and: [ (rs := self executeCommand: 'where' parameter: programName) isEmpty ])
+		ifTrue: [ ^ self signalNotFound: programName , ' in PATH' ].
+	^ rs trimRight

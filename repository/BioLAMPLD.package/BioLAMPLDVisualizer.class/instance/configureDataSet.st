@@ -1,4 +1,4 @@
-private
+initialization
 configureDataSet
 
 	dataSet := RTDataSet new.

@@ -1,4 +1,4 @@
-accessing
+initialization
 configureGraphers: aString 
 
 	^ (self findDataPoints: aString lines) collect: [ : admixDataPoints |
@@ -6,4 +6,4 @@ configureGraphers: aString
 			parsedDataPoints := self findBreakpoints 
 				with: self findAlleleRefCount 
 				collect: [ : bp : ac | bp @ ac ].
-			self configureGrapher ]
+			self initializeGrapher ]

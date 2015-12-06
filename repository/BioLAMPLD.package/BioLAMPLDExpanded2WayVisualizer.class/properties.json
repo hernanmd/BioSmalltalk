@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/6/2015 03:27",
-	"super" : "BioLAMPLDVisualizer",
+	"commentStamp" : "HernanMoralesDurand 12/6/2015 04:35",
+	"super" : "BioLAMPLD2WayVisualizer",
 	"category" : "BioLAMPLD-Visualization",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,6 +8,6 @@
 	"instvars" : [
 		"matrix"
 	],
-	"name" : "BioLAMPLDExpandedVisualizer",
+	"name" : "BioLAMPLDExpanded2WayVisualizer",
 	"type" : "normal"
 }

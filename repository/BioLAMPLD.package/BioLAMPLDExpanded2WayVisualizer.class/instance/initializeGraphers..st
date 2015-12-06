@@ -1,4 +1,4 @@
 initialization
 initializeGraphers: aString 
 
-	self graphers add: self configureDataSet
+	self graphers add: self initializeGrapher

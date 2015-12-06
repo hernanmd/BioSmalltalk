@@ -7,11 +7,11 @@ Usage Examples
 
 Open a visualization of an expanded file:
 
-BioLAMPLDExpandedVisualizer 
+BioLAMPLDExpanded2WayVisualizer 
 	openOnFileNamed: 'results\postlampld_ws-50.txt'
 	title: 'W = 50'.
 
 Open a visualization in a directory with expanded files :
 
-BioLAMPLDExpandedVisualizer 
+BioLAMPLDExpanded2WayVisualizer 
 	openOnDirectory: 'results'.

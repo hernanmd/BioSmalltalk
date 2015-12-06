@@ -1,6 +1,6 @@
 initialization
-initialize: aString
+initialize: aFilename
 	" Private - Initialize the receiver's data "
 
-	self name: aString.
-	self initializeDataPoints: aString asFileReference contents.
+	self name: aFilename.
+	self initializeGraphers: aFilename asFileReference contents.

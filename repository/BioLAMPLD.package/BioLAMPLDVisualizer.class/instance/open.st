@@ -8,8 +8,7 @@ open
 	self graphers doWithIndex: [ : g : index | 
 		g view: c view.
 		g build.
-		c group: index asString ].
-	c layout: (RTVerticalLineLayout new gapSize: 20).
-	self graphers doWithIndex: [ : g : index | 
-		c nameGroup: index asString as: 'Individual' , index asString ].
+		c group: index asString.
+		c nameGroup: index asString as: index asString ].
+	c layout: RTVerticalLineLayout new.
 	^ c view

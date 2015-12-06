@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/6/2015 03:27",
+	"super" : "BioLAMPLDVisualizer",
+	"category" : "BioLAMPLD-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"matrix"
+	],
+	"name" : "BioLAMPLDExpandedVisualizer",
+	"type" : "normal"
+}

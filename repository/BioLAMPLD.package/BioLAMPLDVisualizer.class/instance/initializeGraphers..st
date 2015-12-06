@@ -1,4 +1,4 @@
-accessing
-initializeDataPoints: aString 
+initialization
+initializeGraphers: aString 
 
 	self graphers addAll: (self configureGraphers: aString)

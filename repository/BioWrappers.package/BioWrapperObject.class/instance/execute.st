@@ -3,7 +3,7 @@ execute
 	"Execute the receiving action. Answer a <BioResultObject> "
 	
 	| execAnswer |
-	execAnswer := BioExecutionEngine execute: self cmdLine.
+	execAnswer := BioExecutionEngine perform: self execSelector with: self cmdLine.
 	^ BioResultObject new
 		result: execAnswer;
 		yourself

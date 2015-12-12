@@ -2,4 +2,4 @@ accessing
 programName
 
 	^ programName
-		ifNil: [ programName := self defaultProgramName ]
+		ifNil: [ programName := self execNameFor: self defaultProgramName ]

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "HernanMoralesDurand 11/18/2015 20:29",
-	"super" : "BioWrapperObject",
+	"super" : "BioLocalWrapper",
 	"category" : "BioWrappers-Programs",
 	"classinstvars" : [ ],
 	"pools" : [ ],

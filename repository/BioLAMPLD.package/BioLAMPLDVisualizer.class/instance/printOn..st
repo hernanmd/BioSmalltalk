@@ -4,4 +4,4 @@ printOn: aStream
 	
 	aStream 
 		space;
-		nextPutAll: self name fullName between: $( and: $).
+		nextPutAll: self name between: $( and: $).

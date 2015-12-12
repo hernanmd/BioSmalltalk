@@ -1,4 +1,5 @@
-Abstract class for visualization of LAMP-LD data. See subclasses for examples.
+Abstract class for visualization of LAMP-LD data. It uses the Roassal visualization engine.
+See subclasses for examples.
 
 LAMP-LD : http://bogdan.bioinformatics.ucla.edu/software/lamp/
 

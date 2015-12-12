@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioLocalWrapper",
+	"category" : "BioLAMPLD-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioLAMPLDWrapper",
+	"type" : "normal"
+}

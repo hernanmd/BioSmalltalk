@@ -2,7 +2,9 @@
 	"commentStamp" : "",
 	"super" : "BioAbstractAdapter",
 	"category" : "BioTools-Adapters",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"programLocation"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],

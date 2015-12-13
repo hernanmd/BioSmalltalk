@@ -1,6 +1,6 @@
 comparing
 = aFastaRecord
-	" Two fasta are equal if
+	" Two fasta records are equal if
 	 (a) they are the same 'kind' of thing.
 	 (b) they have the same name.
 	 (c) they have the same sequences "

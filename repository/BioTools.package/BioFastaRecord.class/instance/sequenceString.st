@@ -1,5 +1,5 @@
 accessing
 sequenceString
-	" Answer the receiver's GTSequence sequence String "
+	" Answer a <String> with the receiver's sequence "
 	
 	^ sequence asString

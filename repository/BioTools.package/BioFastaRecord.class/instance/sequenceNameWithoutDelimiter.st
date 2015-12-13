@@ -1,5 +1,5 @@
 accessing
 sequenceNameWithoutDelimiter
-	" Answer the receiver's sequence header without the $> character "
+	" Answer a <String> with the receiver's sequence header without the $> character "
 	
 	^ self name allButFirst

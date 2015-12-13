@@ -1,6 +1,6 @@
 accessing
 sequenceName
-	" Answer the receiver's sequence header "
+	" Answer a <String> with the receiver's sequence header "
 	
 	| seqName |
 	

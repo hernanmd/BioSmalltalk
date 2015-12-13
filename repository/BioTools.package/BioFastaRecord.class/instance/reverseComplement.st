@@ -5,8 +5,8 @@ reverseComplement
 	| newInstance |
 	
 	newInstance := self class basicNew.
-	newInstance 
+	^ newInstance 
 		initializeName: self sequenceName
 		sequence: self sequence reverseComplement
-		alphabet: self sequence alphabet.
-	^ newInstance
+		alphabet: self sequence alphabet;
+		yourself

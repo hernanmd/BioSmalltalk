@@ -2,4 +2,4 @@ testing
 isPreferredAdapter
 	" Private - See superimplementor's comment "
 
-	^ false
+	^ true

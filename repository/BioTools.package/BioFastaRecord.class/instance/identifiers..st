@@ -1,3 +1,5 @@
 accessing
-identifiers: anObject
-	identifiers := anObject
+identifiers: aCollection
+	" Set the receiver's identifiers to aCollection "
+
+	identifiers := aCollection

@@ -1,4 +1,4 @@
-A local wrapper wraps objects in a local environment (image).
+A local wrapper wraps commands in a local environment (image).
 
 Example
 

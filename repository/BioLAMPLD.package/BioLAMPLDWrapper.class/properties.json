@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioLocalWrapper",
+	"commentStamp" : "HernanMoralesDurand 12/13/2015 14:39",
+	"super" : "BioWrapperObject",
 	"category" : "BioLAMPLD-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

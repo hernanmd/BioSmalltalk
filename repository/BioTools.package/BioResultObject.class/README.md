@@ -1,4 +1,4 @@
-A search result is a wrapper utility to diverse query results.
+A search result is a wrapper for results.
 
 The search result object uses a reader to fetch the results which are interesting.
 

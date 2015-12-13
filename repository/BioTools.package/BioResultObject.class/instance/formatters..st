@@ -1,3 +1,4 @@
 accessing
-formatters: anObject
-	^ formatters := anObject
+formatters: aCollection
+
+	^ formatters := aCollection

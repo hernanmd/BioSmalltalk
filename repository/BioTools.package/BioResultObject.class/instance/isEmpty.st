@@ -1,5 +1,5 @@
 testing
 isEmpty
-	"Answer whether the receiver contains any elements."
+	" Answer whether the receiver contains any elements "
 		
 	^ self result isEmpty

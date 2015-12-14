@@ -4,8 +4,8 @@ dumpOnDirectory: aString
 	
 	^ aString asFileReference entries 
 		collect: [ : fname | self openOnFileNamed: fname fullName ]
-		thenDo: [ : v | 
-				RTPNGExporter new 
+		thenDo: [ : v | v inspect.
+				"RTPNGExporter new 
 					builder: v grapher view view;
 					fileName: v name , '.png';
-					exportToFile. ]
+					exportToFile." ]

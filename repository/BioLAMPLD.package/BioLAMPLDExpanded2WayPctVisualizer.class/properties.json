@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/14/2015 19:22",
+	"super" : "BioLAMPLDExpanded2WayVisualizer",
+	"category" : "BioLAMPLD-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"populationCount",
+		"homozygousRowIndex",
+		"heterozygousRowIndex",
+		"color"
+	],
+	"name" : "BioLAMPLDExpanded2WayPctVisualizer",
+	"type" : "normal"
+}

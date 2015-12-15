@@ -14,3 +14,7 @@ BioLAMPLDExpanded2WayPctVisualizer
 Open a visualization in a directory with expanded files :
 
 BioLAMPLDExpanded2WayPctVisualizer dumpOnDirectory: '2way-results-expanded'.
+
+BioLAMPLDExpanded2WayPctVisualizer 
+	openStackedOnDirectory: '2way-results-expanded' 
+	

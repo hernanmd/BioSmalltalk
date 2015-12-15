@@ -1,5 +1,5 @@
 opening
-open
+openStacked
 	" Open the receiver's window "
 
 	| c |
@@ -9,7 +9,7 @@ open
 		g view: c view.
 		g build.
 		c group: index asString ].
-"	c layout: (RTVerticalLineLayout new gapSize: 20)."
+	c layout: (RTVerticalLineLayout new gapSize: 20).
 	self graphers doWithIndex: [ : g : index | 
 		c nameGroup: index asString as: self name ].
 	^ c view

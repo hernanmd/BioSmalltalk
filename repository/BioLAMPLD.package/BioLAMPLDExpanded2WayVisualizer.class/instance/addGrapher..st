@@ -1,4 +1,4 @@
 initialization
-initializeGraphers: aString 
+addGrapher: aString 
 
 	self graphers add: self initializeGrapher

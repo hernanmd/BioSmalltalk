@@ -1,3 +1,3 @@
 defaults
 defaultExtent
-	^ 950 @ 200.
+	^ 850 @ 400.

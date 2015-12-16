@@ -1,4 +1,4 @@
-initialization
+private
 popFrequency
 	" Answer a <Collection> with allelic frequencies adding to heterozygous "
 	

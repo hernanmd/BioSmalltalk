@@ -1,7 +1,7 @@
 BioFileFormatter reads from an input file, performs formatting and write the results to an output file.
 
 Instance Variables:
-	inputFile			<ProtoObject | PseudoContext>
+	inputFile		<String | FileReference>
 	outputFile		<ProtoObject>
 	outputFilename	<String>
 	stream			<WriteStream>

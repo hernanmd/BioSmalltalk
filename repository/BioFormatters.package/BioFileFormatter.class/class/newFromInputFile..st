@@ -1,4 +1,5 @@
 instance creation
-newFromInputFile: aGTFile
+newFromInputFile: aFilenameOrFileReference
+	" Set the receiver's input file to be aFilename "
 
-	^ self new inputFile: aGTFile
+	^ self new inputFile: aFilenameOrFileReference

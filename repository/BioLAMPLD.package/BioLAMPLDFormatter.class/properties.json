@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/17/2015 03:11",
+	"super" : "BioObject",
+	"category" : "BioLAMPLD-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mapFile"
+	],
+	"name" : "BioLAMPLDFormatter",
+	"type" : "normal"
+}

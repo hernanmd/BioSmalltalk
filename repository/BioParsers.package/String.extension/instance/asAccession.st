@@ -1,5 +1,5 @@
 *BioParsers
 asAccession
-	" Answer a new Accession object for the receiver. "
+	" Answer a new <BioAccession> object for the receiver "
 
 	^ BioParser parseAccession: self

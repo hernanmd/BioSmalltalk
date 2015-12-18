@@ -1,12 +1,13 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/17/2015 03:11",
-	"super" : "BioObject",
+	"commentStamp" : "HernanMoralesDurand 12/18/2015 01:11",
+	"super" : "BioFileFormatter",
 	"category" : "BioLAMPLD-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"mapFile"
+		"mapFile",
+		"affyTxtFile"
 	],
 	"name" : "BioLAMPLDFormatter",
 	"type" : "normal"

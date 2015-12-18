@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/18/2015 02:36",
+	"super" : "BioFileFormatter",
+	"category" : "BioAffymetrix-Axiom",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"headerLineCount",
+		"refAlleleFieldName"
+	],
+	"name" : "BioAffyTXTFormatter",
+	"type" : "normal"
+}

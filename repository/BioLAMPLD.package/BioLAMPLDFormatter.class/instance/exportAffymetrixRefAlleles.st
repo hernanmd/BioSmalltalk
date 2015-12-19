@@ -1,5 +1,8 @@
 accessing
 exportAffymetrixRefAlleles
-	" Answer a <String> representing a file with reference alleles taken from Affymetrix full TXT report "
+	" Write a file with reference alleles (one allele by row) for PLINK, taken from Affymetrix full TXT report "
 
-	^ (BioAffyTXTFormatter newFromInputFile: self affyTxtFile) referenceAlleles.
+	self outputFile 
+		nextPutAll: ((BioAffyTXTFormatter newFromInputFile: self affyTxtFile) referenceAlleles joinUsing: Character cr);
+		flush;
+		close.

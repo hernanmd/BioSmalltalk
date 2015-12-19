@@ -2,4 +2,4 @@ accessing
 description
 	" See superimplementor's comment "
 	
-	^ 'LAMP-LD Genotype Format Writer'
+	^ 'LAMP-LD Writer'

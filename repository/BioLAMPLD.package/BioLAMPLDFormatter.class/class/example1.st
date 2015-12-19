@@ -5,4 +5,4 @@ example1
 	BioLAMPLDFormatter new 
 		affyTxtFile: 'Exported_Forward-Strand-Base-Call.txt';
 		outputFilename: 'refernece-alleles.txt';
-		exportAffymetrixRefAlleles.
+		exportFromAffymetrixRefAlleles.

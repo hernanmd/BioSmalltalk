@@ -1,7 +1,7 @@
 private
 buildMapArray
 
-	^ (NeoCSVReader on: (self inputFile tailn: 5) readStream)
+	^ (NeoCSVReader on: (self inputFile asFileReference tailn: 5) readStream)
 		separator: Character tab;
 		addField;
 		addField;

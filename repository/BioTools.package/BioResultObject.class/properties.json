@@ -11,7 +11,8 @@
 		"project",
 		"result",
 		"formatters",
-		"exitStatus"
+		"exitStatus",
+		"command"
 	],
 	"name" : "BioResultObject",
 	"type" : "normal"

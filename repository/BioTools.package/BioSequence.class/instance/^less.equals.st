@@ -1,5 +1,5 @@
 comparing
 <= aBioSequence
-	"Answer whether the receiver is less than the argument."
+	" Answer whether the receiver size is less than the argument "
 
 	^ self size <= aBioSequence size

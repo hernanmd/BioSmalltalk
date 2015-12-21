@@ -1,6 +1,6 @@
 accessing
 occurrencesOfLetters
-	"Answer a <Dictionary> of occurrence mappings for the receiver "
+	" Answer a <Dictionary> of occurrence mappings for the receiver "
 	
 	| occurrences |
 	

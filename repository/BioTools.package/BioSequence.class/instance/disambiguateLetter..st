@@ -1,4 +1,4 @@
-accessing
+accessing - disambiguation
 disambiguateLetter: letter
 	" Private - Answer a <String> of disambiguations for letter "
 	

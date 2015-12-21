@@ -1,6 +1,6 @@
 accessing private - protein synthesis
 translationTable: aTableIdentifier stopSymbol: stopCharacter toStop: stopBoolean cds: cdsBoolean
-	<lint: 'Long methods' rationale: 'Algorithm method' author: 'hfm'>
+	<lint: 'Long methods' rationale: 'Algorithm method' author: 'HernanMoralesDurand'>
 	
 	| seqStream codon |
 	

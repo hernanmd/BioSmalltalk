@@ -1,3 +1,5 @@
 accessing
-size: anObject
-	size := anObject
+size: anInteger
+	" Set how many elements the receiver contains "
+
+	size := anInteger

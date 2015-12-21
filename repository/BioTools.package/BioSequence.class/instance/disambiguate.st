@@ -1,4 +1,4 @@
-accessing
+accessing - disambiguation
 disambiguate
 	" Answer a <Collection> with receiver's sequence disambiguated using IUPAC ambiguity codes "
 	| expandedList startNode |

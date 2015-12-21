@@ -1,5 +1,5 @@
 accessing public - utils
 trim: aCharacter
-	" This method modifies the receiver "
+	" Modify the receiver by removing aCharacter in its sequence "
 	
 	seq := seq copyWithout: aCharacter.

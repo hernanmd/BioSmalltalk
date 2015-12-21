@@ -6,3 +6,4 @@ addToAlignment: aBioAlignment
 		name: self name;
 		addFromSequence: self;
 		yourself
+	

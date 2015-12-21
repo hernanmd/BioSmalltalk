@@ -11,4 +11,6 @@ writeFasta: aString from: inStream to: outStream lineLength: lineLength
 	      [ i == lineLength ifTrue: [ outStream cr. i := 0 ].
 	      outStream nextPut: inStream next.
 	      i := i + 1 ].
-   outStream cr
+   outStream 
+		cr;
+		flush.

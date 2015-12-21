@@ -1,6 +1,6 @@
 accessing
 unsortedMultiFastaSeq
-	" http://quma.cdb.riken.jp/help/multiFastaHelp.html "
+	" From http://quma.cdb.riken.jp/help/multiFastaHelp.html "
 
 	^ '>sequence3
 ACTCCCCGTGCGCGCCCGGCCCGTAGCGTCCTCGTCGCCGCCCCTCGTCTCGCAGCCGCAGCCCGCGTGG

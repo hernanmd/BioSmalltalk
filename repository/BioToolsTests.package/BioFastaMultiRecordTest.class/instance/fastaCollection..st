@@ -1,3 +1,4 @@
 accessing
-fastaCollection: anObject
-	fastaCollection := anObject
+fastaCollection: aCollection
+
+	fastaCollection := aCollection

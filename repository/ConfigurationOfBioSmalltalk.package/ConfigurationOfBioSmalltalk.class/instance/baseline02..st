@@ -4,14 +4,8 @@ baseline02: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.				
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
-			project: 'FFI' with: [
-				spec
-					className: #ConfigurationOfFFI;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo40/main/' ];
 			project: 'Grease' with: [
 				spec
 					className: #ConfigurationOfGrease;

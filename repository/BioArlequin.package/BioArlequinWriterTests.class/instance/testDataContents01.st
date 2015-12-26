@@ -7,7 +7,7 @@ testDataContents01
 		addDataType: 'FREQUENCY';
 		setGenotypicData;
 		useLocusSeparator: 'WHITESPACE'.
-	arFile dataSection sampleSubsection
+	arFile newDataSection sampleSubsection
 		addSampleName: 'Tharu';
 		addSampleSize: '91';
 		addSampleData: self frequency01Sample01;
@@ -19,18 +19,14 @@ testDataContents01
 		addSampleData: self frequency01Sample03;
 		yourself.
 	self assert: (arFile contents isKindOf: String).
-	self
-		assert:
-			arFile contents
-				=
-					'[Profile]
+	self assert: arFile contents = '[Profile]
 	Title="Sample Title"
 	NbSamples=1
 	DataType=FREQUENCY
 	GenotypicData=1
 	LocusSeparator=WHITESPACE
 
-[Data]
+
 [[Samples]]
 	SampleName="Tharu"
 	SampleSize=91

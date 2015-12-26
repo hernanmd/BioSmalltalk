@@ -6,4 +6,4 @@ parserForAccession
 	accessionCharacters := self parserForPredicateWith: self specialFastaChars , {$.}.
 	accession := accessionCharacters plus flatten.
 	versionNumber := ($. asParser , #digit asParser plus flatten) optional.
-	^ (accession , versionNumber) flatten ==> [ :a | (a subStrings: '.') asArray ]
+	^ (accession , versionNumber) flatten ==> [ :a | (a substrings: '.') asArray ]

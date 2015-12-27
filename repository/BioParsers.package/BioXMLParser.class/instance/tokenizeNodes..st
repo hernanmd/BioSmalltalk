@@ -4,8 +4,8 @@ tokenizeNodes: aCollection
 
 	self selectNodes: aCollection.
 	[ self parser atEnd ]
-		whileFalse:
-			[ parser next.
-			(parser currentNodeUpToAny: self selectedNodes)
-				ifNotNil: [ :node | self saveTag: node key value: node value ] ].
+		whileFalse: [ 
+			parser next.
+			(parser textWhileNotTags: self selectedNodes)
+				ifNotNil: [ : node | self saveTag: node key value: node value ] ].
 	^ self results

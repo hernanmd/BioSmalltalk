@@ -4,9 +4,8 @@ tokenizeHeader
 
 	self formatter: BioXMLDictionary new.
 	[ parser isStartTag: 'BlastOutput_iterations' ]
-       whileFalse:[
-			| node |	
+		whileFalse: [ 
 			parser next.
-			(node := parser textWhileNotTag: 'BlastOutput_iterations')
-				ifNotNil: [ self saveTag: node key value: node value ] ].
+			(parser textWhileNotTag: 'BlastOutput_iterations')
+				ifNotNil: [ : node | self saveTag: node key value: node value ] ].
 	^ self results

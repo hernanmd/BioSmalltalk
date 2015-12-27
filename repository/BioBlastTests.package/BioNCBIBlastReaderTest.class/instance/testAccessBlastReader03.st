@@ -27,5 +27,5 @@ testAccessBlastReader03
 	self assert: reader hitHsps size = 100.	
 
 	self deny: reader identities isEmpty.
-	self assert: (reader identities allSatisfy: [: ident | ident isKindOf: String ]).
+	self assert: (reader identities allSatisfy: [ : ident | ident isKindOf: String ]).
 	self assert: reader identities size = 100

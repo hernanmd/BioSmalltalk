@@ -5,11 +5,11 @@ testAccessDNAAlignments01
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.	
 	alignment := reader alignments.
-	
-	self assert: ( alignment isKindOf: BioAlignment ).
+
+	self assert: (alignment isKindOf: BioAlignment).
 	self deny: alignment isEmpty.
 
-	self assert: ( alignment names allSatisfy: [: each | ( BioAccessionParser on: each ) isAccession ] ).
-	self assert: ( alignment sequences allSatisfy: #isBioSequence ).
+	self assert: (alignment names allSatisfy: [ : each | (BioAccessionParser on: each) isAccession ]).
+	self assert: (alignment sequences allSatisfy: #isBioSequence).
 	
 

@@ -9,4 +9,3 @@ testAccessBlastReader02
 	self assert: reader blastQueryId = '47837'.
 	self assert: reader blastQueryLength = '240'.
 
-	

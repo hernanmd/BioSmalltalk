@@ -1,12 +1,12 @@
 versions
-version11: spec
-	<version: '1.1' imports: #('0.5-baseline' )>
+version12: spec
+	<version: '1.2' imports: #('0.3-baseline' )>
 
 	spec for: #'common' do: [
 		spec blessing: #'stable'.
-		spec description: 'version 1.1'.
+		spec description: 'version 1.2'.
 		spec author: 'HernanMoralesDurand'.
-		spec timestamp: '12/26/2015 04:31'.
+		spec timestamp: '12/27/2015 01:53'.
 		spec 
 			project: 'Grease' with: '1.2.4';
 			project: 'PetitParser' with: '1.14';
@@ -22,10 +22,10 @@ version11: spec
 			project: 'INIFileSupport' with: '0.1-baseline';
 			project: 'Roassal2' with: '1.20'.			
 		spec 
-			package: 'BioTools' with: 'BioTools-HernanMoralesDurand.183';
+			package: 'BioTools' with: 'BioTools-HernanMoralesDurand.184';
 			package: 'BioNCBI' with: 'BioNCBI-HernanMoralesDurand.18';
 			package: 'BioWrappers' with: 'BioWrappers-HernanMoralesDurand.39';
-			package: 'BioParsers' with: 'BioParsers-HernanMoralesDurand.92';
+			package: 'BioParsers' with: 'BioParsers-HernanMoralesDurand.94';
 			package: 'BioEntrez' with: 'BioEntrez-HernanMoralesDurand.48';
 			package: 'BioBlast' with: 'BioBlast-HernanMoralesDurand.118';
 			package: 'BioFormatters' with: 'BioFormatters-HernanMoralesDurand.92';
@@ -43,13 +43,13 @@ version11: spec
 			package: 'BioToolsTests' with: 'BioToolsTests-HernanMoralesDurand.35';
 			package: 'BioWrapperTests' with: 'BioWrapperTests-hfm.4';
 			package: 'BioParserTests' with: 'BioParserTests-HernanMoralesDurand.17';
-			package: 'BioBlastTests' with: 'BioBlastTests-HernanMoralesDurand.41';
+			package: 'BioBlastTests' with: 'BioBlastTests-HernanMoralesDurand.43';
 			package: 'BioEntrezTests' with: 'BioEntrezTests-HernanMoralesDurand.14';
 			package: 'BioNCBITests' with: 'BioNCBITests-hfm.3';
 			package: 'BioFormatterTests' with: 'BioFormatterTests-HernanMoralesDurand.21';
 			package: 'BioClassifierTests' with: 'BioClassifierTests-HernanMoralesDurand.7';
 			package: 'BioProject' with: 'BioProject-HernanMoralesDurand.28';
 			package: 'BioProjectTests' with: 'BioProjectTests-HernanMoralesDurand.7';
-			package: 'BioArlequin' with: 'BioArlequin-HernanMoralesDurand.44';
+			package: 'BioArlequin' with: 'BioArlequin-HernanMoralesDurand.45';
 			package: #BioLAMPLD with: 'BioLAMPLD-HernanMoralesDurand.17';
 			package: #BioAffymetrix with: 'BioAffymetrix-HernanMoralesDurand.1'. ].

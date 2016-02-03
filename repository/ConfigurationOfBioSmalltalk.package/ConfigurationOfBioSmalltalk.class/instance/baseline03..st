@@ -63,6 +63,11 @@ baseline03: spec
 					className: #ConfigurationOfProcessWrapper;
 					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
+			project: 'Roassal2' with: [
+				spec
+					className: #ConfigurationOfRoassal2;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];						
 			project: 'INIFileSupport' with: [
 				spec
 					className: #ConfigurationOfINIFileSupport;

@@ -58,6 +58,11 @@ baseline02: spec
 					className: #ConfigurationOfStringExtensions;
 					versionString: #'bleedingEdge';
 					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ];
+			project: 'Roassal2' with: [
+				spec
+					className: #ConfigurationOfRoassal2;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo40/main/' ];				
 			project: 'ProcessWrapper' with: [
 				spec
 					className: #ConfigurationOfProcessWrapper;

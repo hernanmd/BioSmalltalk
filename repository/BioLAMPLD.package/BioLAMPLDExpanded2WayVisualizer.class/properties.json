@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"matrix"
+		"matrix",
+		"snpCount"
 	],
 	"name" : "BioLAMPLDExpanded2WayVisualizer",
 	"type" : "normal"

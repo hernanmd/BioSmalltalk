@@ -8,5 +8,5 @@ initialize: aFilename
 	self dataPoints: fileContents lines.	
 	self snpCount: self dataPoints first size.
 	self initializeMatrix.
-	self addGrapher: fileContents.
+	self addGrapher: fileContents named: aFilename.
 	

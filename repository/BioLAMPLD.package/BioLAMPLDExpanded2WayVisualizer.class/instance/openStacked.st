@@ -11,5 +11,5 @@ openStacked
 		c group: index asString ].
 	c layout: (RTVerticalLineLayout new gapSize: 20).
 	self graphers doWithIndex: [ : g : index | 
-		c nameGroup: index asString as: self name ].
+		c nameGroup: index asString as: g title ].
 	^ c view

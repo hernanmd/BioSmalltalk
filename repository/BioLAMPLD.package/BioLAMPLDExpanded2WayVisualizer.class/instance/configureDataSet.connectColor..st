@@ -1,4 +1,4 @@
-initialization
+private
 configureDataSet: aCollection connectColor: aColor
 
 	| aDataSet |

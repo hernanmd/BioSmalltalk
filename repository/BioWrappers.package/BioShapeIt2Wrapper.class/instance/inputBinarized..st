@@ -1,4 +1,4 @@
-properties
+properties - input
 inputBinarized: inputFilename  
 	" Set bed, bim, fam input all at once to be fileName "
 

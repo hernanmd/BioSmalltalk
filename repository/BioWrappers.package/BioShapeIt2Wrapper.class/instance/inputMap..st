@@ -1,4 +1,4 @@
-properties
+properties - input
 inputMap: inputMapFilename 
 	" Set input MAP file to be inputMapFilename "
 

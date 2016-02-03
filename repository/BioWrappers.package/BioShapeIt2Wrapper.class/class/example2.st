@@ -1,5 +1,5 @@
 examples
-example1
+example2
 	" Check with binarized PLINK input files "
 
 	BioShapeIt2Wrapper new

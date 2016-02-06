@@ -11,7 +11,7 @@ version11: spec
 			project: 'Grease' with: '1.2.4';
 			project: 'PetitParser' with: '1.14';
 			project: 'OSProcess' with: '4.6.4';
-			project: 'NeoCSV' with: '13';
+			project: 'NeoCSV' with: '12';
 			project: 'NumericalMethods' with: '1.1';
 			project: 'CodeGenerator' with: '1.0';
 			project: 'XMLParser' with: '2.5.4';

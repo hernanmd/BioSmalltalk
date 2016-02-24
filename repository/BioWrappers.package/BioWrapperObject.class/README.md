@@ -2,6 +2,12 @@ A wrapper is an object which expands on what another object (the wrappee) does, 
 
 A wrapper enables configuration and makes possible the messaging of another object (i.e. an external software).
 
+You can add three types of things to a wrapped object:
+
+- Parameters
+- Options
+- Properties
+
 Instance Variables
 	cmdLine:			<String>
 	lastStatus:			<Boolean>

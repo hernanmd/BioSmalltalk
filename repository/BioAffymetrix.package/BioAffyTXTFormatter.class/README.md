@@ -8,5 +8,5 @@ Axiom full TXT reports currently starts with a header of 5 lines, example:
 ##snp-count=5585
 ##samples-per-snp=94
 
-Number of lines is configurable by setting headerLineCount
+Number of header lines to skip is configurable by setting headerLineCount
 

@@ -1,7 +1,7 @@
 accessing
-removeSequence: aGTSequence
+removeSequence: aBioSequence
 	" Remove aGTSequence from the receiver's sequences "
 
 	self sequences 
-		remove: aGTSequence
-		ifAbsent: [ self signalNotFound: aGTSequence name ]
+		remove: aBioSequence
+		ifAbsent: [ self signalNotFound: aBioSequence name ]

@@ -9,7 +9,10 @@ exportBed
 	
 	^ BioPLINKWrapper new 
 		file: self inputFile;
-		out: self inputFile;
+		out: self outputFile;
+		noPheno;
+		noParents;
+		noSex;
 		noWeb;
 		makeBed;
 		referenceAlleles: self referenceAllelesFile;

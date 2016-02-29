@@ -1,3 +1,5 @@
 accessing
-outputFile: anObject
-	^ outputFile := anObject
+outputFile: aString
+	" Set the receiver's output file name "
+
+	^ outputFile := aString

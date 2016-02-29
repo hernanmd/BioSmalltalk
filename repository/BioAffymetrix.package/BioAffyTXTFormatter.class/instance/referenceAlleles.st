@@ -6,6 +6,6 @@ referenceAlleles
 	txtArray := self buildTXTArray.
 	refAlleleIndex := txtArray first 
 		indexOf: self refAlleleFieldName 
-		ifAbsent: [ self signalNotFound: self refAlleleFieldName , ' field not found' ].
+		ifAbsent: [ ^ self signalNotFound: self refAlleleFieldName ].
 	^ (txtArray collect: [ : row | row at: refAlleleIndex ]) allButFirst
 	

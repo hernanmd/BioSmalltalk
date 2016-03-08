@@ -1,6 +1,7 @@
 accessing
-addLocation: aString
+addLocation: locationString
+	" Add locationString to the receive's locations "
 
 	self locations 
-			add: aString;
+			add: locationString;
 			yourself.

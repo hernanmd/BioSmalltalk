@@ -1,2 +1,0 @@
-tests-text-mining
-testIsFoundIn

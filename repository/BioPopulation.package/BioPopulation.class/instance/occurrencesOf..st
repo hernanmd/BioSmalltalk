@@ -1,5 +1,5 @@
 accessing
 occurrencesOf: aSequence
-	"Answer how many of the receiver's elements are equal to aSequence."
+	" Answer how many of ocurrences contains aSequence."
 
 	^ self sequences occurrencesOf: aSequence

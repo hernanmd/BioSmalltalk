@@ -9,7 +9,7 @@ testFilterBlastReader01
 
 	self assert: hits isCollection.
 	self deny: hits isEmpty.
-	self assert: (hits allSatisfy: [: each | each isKindOf: BioBlastNode ]).
+	self assert: (hits allSatisfy: [ : each | each isKindOf: BioBlastNode ]).
 
 	self assert: hits size = 87.
 	self assert: hits first nodeName = 'Hit'.

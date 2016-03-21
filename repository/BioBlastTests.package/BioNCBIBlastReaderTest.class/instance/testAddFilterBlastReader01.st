@@ -10,5 +10,5 @@ testAddFilterBlastReader01
 	self deny: reader filters isNil.
 	self assert: reader filters isCollection.
 	self deny: reader filters isEmpty.
-	self assert: ( reader filters allSatisfy: [: f | f isKindOf: BioBlastFilter ] ).
+	self assert: (reader filters allSatisfy: [ : f | f isKindOf: BioBlastFilter ]).
 

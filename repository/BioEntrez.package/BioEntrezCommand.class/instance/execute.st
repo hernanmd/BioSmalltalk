@@ -1,6 +1,6 @@
 accessing private
 execute
-	"Execute the receiving action. Answer a BioESearchResult "
+	" Execute the receiving action. Answer a BioESearchResult "
 
 	^ self checkParameters
 		ifTrue: [ 

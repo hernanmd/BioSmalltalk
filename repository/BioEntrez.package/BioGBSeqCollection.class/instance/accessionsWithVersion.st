@@ -1,4 +1,4 @@
 accessing
 accessionsWithVersion
 
-	^ self collect: [: d | d at: self class qualifierForAccessionWithVersion ]
+	^ self collect: [ : d | d at: self class qualifierForAccessionWithVersion ]

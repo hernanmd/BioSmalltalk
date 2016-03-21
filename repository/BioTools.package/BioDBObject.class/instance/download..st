@@ -1,10 +1,12 @@
 downloading
 download: fileName
 	" Download fileName from the remote site. "
-
+	
 	self connect
-		ifNotNil: [ :arg | 
+		ifNotNil: [ 
 			self prvDownload: fileName.
 			self client close.
 			self bioLog: 'Downloads completed successfully' translated ]
-		ifNil: [ self inform: 'Connection failed' translated ]
+		ifNil: [ self informMessage: 'Connection failed' translated ].
+	
+	 

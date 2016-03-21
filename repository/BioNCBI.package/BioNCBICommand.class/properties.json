@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioCommandObject",
+	"super" : "BioRemoteCommandObject",
 	"category" : "BioNCBI-Commands",
 	"classinstvars" : [ ],
 	"pools" : [ ],

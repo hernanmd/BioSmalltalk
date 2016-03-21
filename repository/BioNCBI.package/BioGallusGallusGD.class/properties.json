@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "<historical>",
+	"commentStamp" : "HernanMoralesDurand 3/21/2016 03:16",
 	"super" : "BioGenomeDownloader",
 	"category" : "BioNCBI-Genomes",
 	"classinstvars" : [ ],

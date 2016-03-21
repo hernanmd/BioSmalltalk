@@ -1,5 +1,5 @@
 accessing properties
-propertyAt: aKey
-	"Answer the property value associated with aKey."
+propertyAt: keyName
+	" Answer the property value associated with aKey. "
 	
-	^ self propertyAt: aKey ifAbsent: [ self error: 'Property not found' ]
+	^ self propertyAt: keyName ifAbsent: [ self error: 'Property not found' ]

@@ -5,7 +5,7 @@ isUpdated: fileName
 
 	| fullName |
 		
-	(self directoryExists: self workingDirectory)
+	self workingDirectory asFileReference exists
 		ifFalse: [ 
 			self newDirectory: self workingDirectory.
 			self isUpdated: fileName ].

@@ -1,5 +1,5 @@
 accessing properties
-hasProperty: aKey
-	"Test if the property aKey is present."
+hasProperty: keyName
+	" Answer <true> if property keyName is present. "
 	
-	^ properties notNil and: [ properties includesKey: aKey ]
+	^ properties notNil and: [ properties includesKey: keyName ]

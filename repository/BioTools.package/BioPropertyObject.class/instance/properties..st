@@ -1,3 +1,4 @@
 accessing
-properties: anObject
-	^ properties := anObject
+properties: aCollection
+
+	^ properties := aCollection

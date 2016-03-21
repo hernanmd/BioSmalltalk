@@ -1,5 +1,5 @@
 testing
 isFastaRecord
-	" Answer whether the receiver represents a FASTA record "
+	" See superimplementor's comment "
 
 	^ true

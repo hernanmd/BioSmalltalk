@@ -1,5 +1,5 @@
 testing
 isEmpty
-	"Answer whether the receiver contains a name."
+	" Answer whether the receiver contains a name. "
 	
 	^ self hasName not

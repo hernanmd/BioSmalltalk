@@ -1,4 +1,4 @@
-initialize-release
+initialization
 initialize
 	" Private - Initialize receiver's versioning information "
 	

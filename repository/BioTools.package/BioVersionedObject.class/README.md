@@ -3,13 +3,5 @@ A BioVersionedObject holds state related with receiver's author, date of creatio
 Instance Variables
 	creator:		<Object>
 	date:		<Date>
-	versions:		<BioVersionedObject>
+	versions:	<BioVersionedObject>
 
-creator
-	- xxxxx
-
-date
-	- xxxxx
-
-versions
-	- xxxxx

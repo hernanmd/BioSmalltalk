@@ -1,5 +1,5 @@
 accessing
 lastProjects: aNumber
-	" Answer a Collection with the last aNumber projects of the receiver "
+	" Answer a <Collection> with the last aNumber projects of the receiver "
 	
-	^ self userProjects last: aNumber
+	^ self userProjects last: aNumber asNumber

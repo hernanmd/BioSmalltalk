@@ -1,12 +1,12 @@
 accessing
-classify: anObject
-	" Answer <true> if aSubject was classified in the receiver's organization "
+classify: aSubject
+	" Answer <true> if aSubject was classified in any receiver's organization "
 	
 	| group |
 	
-	(group := self organization groupFor: anObject)
+	(group := self organization groupFor: aSubject)
 		ifNotNil: [ 
-			self atMatchesPut: anObject.
-			group addClassification: anObject ]
-		ifNil: [ self atMismatchesPut: anObject ].
+			self atMatchesPut: aSubject.
+			group addClassification: aSubject ]
+		ifNil: [ self atMismatchesPut: aSubject ].
 	^ group isNil not

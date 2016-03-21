@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 3/21/2016 02:15",
+	"super" : "BioClassifier",
+	"category" : "BioClassifier-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBinaryClassifier",
+	"type" : "normal"
+}

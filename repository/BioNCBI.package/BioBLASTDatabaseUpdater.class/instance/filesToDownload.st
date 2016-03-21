@@ -5,4 +5,4 @@ filesToDownload
 	^ self connect
 		ifNotNil: [ self extractFileNames: self client getFileList.			
 			self fileNames asSortedCollection ]
-		ifNil: [ self inform: 'Connection failed' translated ]
+		ifNil: [ self informMessage: 'Connection failed' translated ]

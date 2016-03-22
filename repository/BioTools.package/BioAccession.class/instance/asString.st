@@ -1,11 +1,10 @@
 converting
 asString
-	"Answer a String that represents the receiver."
+	" Answer a <String> that represents the receiver."
 
-	^ String
-		streamContents: [ :stream | 
+	^ String streamContents: [ : stream | 
 			stream nextPutAll: self names last.
-			(self version isNil not and: [ self version isNotEmpty ])
-				ifTrue: [ stream
-						nextPut: $.;
-						nextPutAll: self version ] ]
+			self hasVersion ifTrue: [ 
+				stream
+					nextPut: $.;
+					nextPutAll: self version asString ] ]

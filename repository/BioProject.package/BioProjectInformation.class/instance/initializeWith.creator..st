@@ -1,8 +1,8 @@
 initialize-release
-initializeWith: aNameString creator: aGTUser
+initializeWith: aNameString creator: aBioUser
 	" Private - Initialize internal's receiver state "
 
 	name := aNameString.
-	history := BioProjectHistory new creator: aGTUser.
+	history := BioProjectHistory new creator: aBioUser.
 	project := BioProject new info: self.
-	usage := BioProjectUsage new lastUser: aGTUser
+	usage := BioProjectUsage new lastUser: aBioUser

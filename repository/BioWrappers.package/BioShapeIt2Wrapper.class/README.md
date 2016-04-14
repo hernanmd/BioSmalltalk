@@ -6,6 +6,7 @@ SHAPEIT is primarily a tool for inferring haplotypes from SNP genotypes. It take
 
 Usage:
 
-All input files, being binarized PLINK (bed, bim, fam) or textual PLINK (ped, map) must share the same name.
+- The program binary must be in the PATH
+- All input files, being binarized PLINK (bed, bim, fam) or textual PLINK (ped, map) must share the same name.
 
 See examples in class side methods. 

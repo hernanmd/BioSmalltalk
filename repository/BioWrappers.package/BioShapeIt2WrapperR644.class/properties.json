@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "HernanMoralesDurand 4/14/2016 00:25",
-	"super" : "BioWrapperObject",
+	"commentStamp" : "",
+	"super" : "BioShapeIt2Wrapper",
 	"category" : "BioWrappers-Programs",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioShapeIt2Wrapper",
+	"name" : "BioShapeIt2WrapperR644",
 	"type" : "normal"
 }

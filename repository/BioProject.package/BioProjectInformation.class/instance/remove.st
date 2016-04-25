@@ -1,7 +1,6 @@
 accessing public
 remove
-	" Set the receiver's removal information and perform
-	additional actions "
+	" Set the receiver's removal information and perform additional clean up actions "
 
 	self preRemove.
 	self history removeFrom: self lastUser.

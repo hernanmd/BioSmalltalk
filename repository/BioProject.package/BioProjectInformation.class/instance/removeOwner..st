@@ -1,6 +1,6 @@
 accessing public
-removeOwner: aNameString
-	" Remove the owner named aNameString from the receiver's owner "
+removeOwner: nameString
+	" Remove the owner named nameString from the receiver's owner "
 
 	self register: BioRemoveOwnerCmd.
-	self usage removeOwner: aNameString
+	self usage removeOwner: nameString

@@ -2,7 +2,7 @@ genomic protocol
 addResults: anObject
 	" Add anObject to the receiver's search results "
 	
-	( self validate: anObject as: BioResultObject )
+	(self validate: anObject as: BioResultObject)
 		ifTrue: [ 
 			self register: BioAddResultCmd.
 			self project addResults: anObject ]

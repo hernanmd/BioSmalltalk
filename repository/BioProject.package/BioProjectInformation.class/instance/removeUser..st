@@ -1,6 +1,6 @@
 accessing public
-removeUser: aNameString
-	" Remove the user named aNameString from the receiver's users "
+removeUser: nameString
+	" Remove the user named nameString from the receiver's users "
 	
 	self register: BioRemoveUserCmd.
-	^ self usage removeUser: aNameString
+	^ self usage removeUser: nameString

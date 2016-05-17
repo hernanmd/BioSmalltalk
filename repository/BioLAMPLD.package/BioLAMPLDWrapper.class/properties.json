@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "HernanMoralesDurand 2/24/2016 02:55",
+	"commentStamp" : "HernanMoralesDurand 5/8/2016 18:23",
 	"super" : "BioWrapperObject",
 	"category" : "BioLAMPLD-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"windowSizes"
+	],
 	"name" : "BioLAMPLDWrapper",
 	"type" : "normal"
 }

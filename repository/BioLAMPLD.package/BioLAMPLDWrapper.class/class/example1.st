@@ -7,9 +7,9 @@ example1
 		unolanc2way;
 		windowSize: 50;
 		nrFounders: 2;
-		positionsFile: (samplesDir / 'positions.pos') fullName;
-		ancestralHaplotypesFile1: (samplesDir / 'population_1.ref') fullName;
-		ancestralHaplotypesFile2: (samplesDir / 'population_2.ref') fullName;
-		genotypesFile: (samplesDir / 'population.geno') fullName;
+		positionsFile:	(samplesDir / 'positions.pos') fullName;
+		addAncHapsFile:	(samplesDir / 'population_1.ref') fullName;
+		addAncHapsFile:	(samplesDir / 'population_2.ref') fullName;
+		genosFile:		(samplesDir / 'population.geno') fullName;
 		execute.
 	

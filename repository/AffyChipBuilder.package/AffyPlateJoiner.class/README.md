@@ -1,4 +1,10 @@
-AffyPlateJoiner new readAllSamples. 
+AffyPlateJoiner new
+	rootDirectory:  'c:\Users\mvs\Dropbox\IGEVET\Affymetrix\Pampita\CSVs' ;
+	readAllSamples. 
+
+AffyPlateJoiner new
+	rootDirectory:  '/usr/local/data/proyectos/microarray_igevet_2016/data/Info_Corridas_Placas(CSVs)' ;
+	readAllSamples. 
 
 grep -v -f Exclude_List.txt BOS1_Placas-1_3-transposed.txt > BOS1_Placas-1_3-filter-1.txt
 

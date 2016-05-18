@@ -1,4 +1,4 @@
 constants
 outputFilename
 
-	^ 'output.csv'
+	^ (self rootDirectory / 'output.csv') fullPath

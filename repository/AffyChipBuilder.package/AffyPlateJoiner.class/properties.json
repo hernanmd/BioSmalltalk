@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "HernanMoralesDurand 4/15/2016 11:40",
+	"super" : "Object",
+	"category" : "AffyChipBuilder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"affySamples",
+		"breedMappings",
+		"sexMappings",
+		"joinedAffySamplesId"
+	],
+	"name" : "AffyPlateJoiner",
+	"type" : "normal"
+}

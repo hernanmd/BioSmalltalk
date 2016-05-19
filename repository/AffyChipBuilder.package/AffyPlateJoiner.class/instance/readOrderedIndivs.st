@@ -5,6 +5,6 @@ readOrderedIndivs
 		(NeoCSVReader on: stream)
 			separator: Character tab;
 			rowsCollect: [ : record | 
-				(record first endsWith: '.CEL')
+				(self isIncludedInGIR: record)
 					ifTrue: [ record first ]
 					ifFalse: [  self normalizeRecord: record ] ] ]

@@ -1,4 +1,5 @@
-constants
+accessing
 sampleIDsFile
-		
-	^ 'Sample_IDs-P1-4.csv'
+	" El SampleIDs debe ser obtenido de la primera columna del PED generado por el Axiom "
+	
+	^  sampleIDsFile

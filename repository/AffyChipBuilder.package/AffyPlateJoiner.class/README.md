@@ -4,13 +4,8 @@ AffyPlateJoiner new
 
 AffyPlateJoiner new
 	rootDirectory:  '/usr/local/data/proyectos/microarray_igevet_2016/data/Info_Corridas_Placas(CSVs)' ;
+	sampleIDsFile: 'Sample_IDs-P1-4.csv';
 	readAllSamples. 
-
-grep -v -f Exclude_List.txt BOS1_Placas-1_3-transposed.txt > BOS1_Placas-1_3-filter-1.txt
-
-paste BOS1_Placas-1_3-filter-1.txt output.csv > BOS1_Placas-1_3-filter-2.txt
-
-Original Script:
 
 | illuminaAffySNPs illuminaAffyFilename affy640SNPIds affy640Header affyExportFilename rejectedSNPs |
 

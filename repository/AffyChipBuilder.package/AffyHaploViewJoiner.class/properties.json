@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "HernanMoralesDurand 5/20/2016 16:33",
+	"super" : "Object",
+	"category" : "AffyChipBuilder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"affyReportFile",
+		"haploViewReportFile",
+		"famNames",
+		"famNamesAB",
+		"df"
+	],
+	"name" : "AffyHaploViewJoiner",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 5/24/2016 22:46",
+	"super" : "BioSoftwareCatalog",
+	"category" : "BioSoftwareCatalog-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioinformaticsCA",
+	"type" : "normal"
+}

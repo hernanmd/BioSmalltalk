@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "Object",
+	"commentStamp" : "HernanMoralesDurand 5/24/2016 21:23",
+	"super" : "BioObject",
 	"category" : "BioSoftwareCatalog-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

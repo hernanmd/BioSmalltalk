@@ -1,0 +1,4 @@
+convenience-behavior
+updateBioSmalltalkFiles
+
+	ConfigurationOfBioSmalltalk project configuration preLoad.

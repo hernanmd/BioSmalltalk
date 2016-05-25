@@ -1,5 +1,7 @@
-private
-softwareListClassifiers
+initialize - release
+initializeClassifications
+	" Private - Add software items to the receiver's catalog "
+
 	" Answer a <Collection> of qualifiers to be used for classifying software items. Tags were taken from the following sites:
 http://biowulf.nih.gov/apps/
 http://www.ccmb.med.umich.edu/bioinf-core/tools	
@@ -10,7 +12,7 @@ Pathway
 Phylogenetics
 Genome Browser
 Comparative Analysis
-NGS (Next-Generation Sequencing) read alignment
+NGS Aligners
 Assembly
 Microarray
 Protein
@@ -21,3 +23,5 @@ Gene Expression
 Functional RNA
 Programming Library
 '
+
+	

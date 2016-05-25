@@ -1,4 +1,4 @@
-accessing
+initialize - release
 initializeSoftwareItems
 	" Private - Add software items to the receiver's catalog "
 

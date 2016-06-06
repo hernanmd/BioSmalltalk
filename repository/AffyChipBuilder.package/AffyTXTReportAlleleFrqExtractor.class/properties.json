@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 6/6/2016 14:00",
+	"commentStamp" : "HernanMoralesDurand 6/6/2016 14:37",
 	"super" : "Object",
 	"category" : "AffyChipBuilder",
 	"classinstvars" : [ ],
@@ -18,7 +18,8 @@
 		"rsFieldNumber",
 		"axFieldNumber",
 		"alleleFrqsFieldNumber",
-		"outputFilename"
+		"outputFilename",
+		"extractMinAlleleFrqs"
 	],
 	"name" : "AffyTXTReportAlleleFrqExtractor",
 	"type" : "normal"

@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 5/20/2016 16:33",
+	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "AffyChipBuilder",
 	"classinstvars" : [ ],
@@ -7,10 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"affyReportFile",
-		"haploViewReportFile",
-		"famNames",
-		"famNamesAB",
-		"df"
+		"haploViewReportFile"
 	],
 	"name" : "AffyHaploViewJoiner",
 	"type" : "normal"

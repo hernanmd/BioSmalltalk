@@ -1,0 +1,3 @@
+*AffyChipBuilder
+ensureOpen
+	writeStream ensureOpen.

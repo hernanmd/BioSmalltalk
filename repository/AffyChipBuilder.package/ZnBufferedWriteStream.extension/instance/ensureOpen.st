@@ -1,0 +1,4 @@
+*AffyChipBuilder
+ensureOpen
+
+	stream ensureOpen

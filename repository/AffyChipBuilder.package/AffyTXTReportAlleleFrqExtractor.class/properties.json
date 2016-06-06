@@ -1,0 +1,25 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/6/2016 14:00",
+	"super" : "Object",
+	"category" : "AffyChipBuilder",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"affyReportFile",
+		"families",
+		"famNames",
+		"famNamesAB",
+		"familyDictionary",
+		"csvWriter",
+		"extractAX",
+		"extractRS",
+		"extractAlleleFrqs",
+		"rsFieldNumber",
+		"axFieldNumber",
+		"alleleFrqsFieldNumber",
+		"outputFilename"
+	],
+	"name" : "AffyTXTReportAlleleFrqExtractor",
+	"type" : "normal"
+}

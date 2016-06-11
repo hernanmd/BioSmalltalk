@@ -1,4 +1,4 @@
 accessing
 url
 
-	^ 'http://www.shapeit.fr/'
+	^ self class url

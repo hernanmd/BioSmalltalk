@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/11/2016 01:03",
+	"super" : "BioWrapperObject",
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioPritchardStructureWrapper",
+	"type" : "normal"
+}

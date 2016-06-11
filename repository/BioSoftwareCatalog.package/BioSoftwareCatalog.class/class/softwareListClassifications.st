@@ -2,5 +2,5 @@ accessing
 softwareListClassifications
 	" Answer a <Collection> of <BioSoftwareItem> "
 	
-	^ (self classifications reject: #isEmpty) asSortedCollection 
+	^ (self initializeClassifications reject: #isEmpty) asSortedCollection 
 	

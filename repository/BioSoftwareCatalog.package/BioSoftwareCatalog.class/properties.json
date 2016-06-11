@@ -2,11 +2,13 @@
 	"commentStamp" : "HernanMoralesDurand 5/24/2016 21:23",
 	"super" : "BioObject",
 	"category" : "BioSoftwareCatalog-Core",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"items",
+		"updateOnDemand"
+	],
 	"pools" : [ ],
 	"classvars" : [
-		"Classifications",
-		"Items"
+		"Classifications"
 	],
 	"instvars" : [ ],
 	"name" : "BioSoftwareCatalog",

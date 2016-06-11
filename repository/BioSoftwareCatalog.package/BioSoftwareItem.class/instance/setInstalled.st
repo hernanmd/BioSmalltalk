@@ -1,0 +1,4 @@
+testing
+setInstalled
+
+	isInstalled := true

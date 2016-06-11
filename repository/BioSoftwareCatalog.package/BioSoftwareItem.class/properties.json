@@ -11,7 +11,8 @@
 		"isInstalled",
 		"description",
 		"link",
-		"classifications"
+		"classifications",
+		"entryPoint"
 	],
 	"name" : "BioSoftwareItem",
 	"type" : "normal"

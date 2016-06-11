@@ -7,21 +7,6 @@ http://biowulf.nih.gov/apps/
 http://www.ccmb.med.umich.edu/bioinf-core/tools	
 http://bioinformatics.ca/links_directory/
 	"
-	^ 'Linkage
-Pathway
-Phylogenetics
-Genome Browser
-Comparative Analysis
-NGS Aligners
-Assembly
-Microarray
-Protein
-Localization and Targeting
-Annotation
-Sequence Analysis
-Gene Expression
-Functional RNA
-Programming Library
-'
+	^  #('All Software')
 
 	

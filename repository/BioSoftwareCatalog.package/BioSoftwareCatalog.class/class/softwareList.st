@@ -2,6 +2,6 @@ accessing
 softwareList
 	" Answer a <Collection> of <BioSoftwareItem> "
 	
-	^ Items
-		ifNil: [ Items := self initializeSoftwareItems ]
-	
+	^ self updateOnDemand
+		ifTrue: [ self initializeSoftwareItems ]
+		ifFalse: [ items ifNil: [ items := self initializeSoftwareItems ] ]

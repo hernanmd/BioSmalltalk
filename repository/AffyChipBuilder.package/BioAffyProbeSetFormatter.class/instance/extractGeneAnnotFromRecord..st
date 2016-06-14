@@ -1,13 +1,13 @@
 report
 extractGeneAnnotFromRecord: aString 
 
-	self halt.
-	(aString splitOn: ' /// ') do: [ : ann |
-		| annots |
-		annots := ann splitOn: ' // '.
-		self families
-			detect: [ : e | e = (annots at: 2) ]
-			ifFound: [ : e | self familyDictionary 
-						at: e 
-						put: annots first ]
-			ifNone: [ self halt ] ].
+	| annTuple emblAnn nmAnn |
+	
+	annTuple := OrderedCollection new: 24.
+	aString notNil 
+		ifTrue: [ (aString splitOn: ' /// ') do: [ : annSet | annTuple add: (annSet splitOn: ' // ') ] ].
+	emblAnn := annTuple select: [ : ann | ann first beginsWith: 'ENS' ].
+	nmAnn := annTuple select: [ : ann | ann first beginsWith: 'NM' ].
+	[ emblAnn size = 12 ] whileFalse: [ emblAnn add:  #('---' '---' '---' '---' '---' '---' '---') ].
+	[ nmAnn size = 12 ] whileFalse: [ nmAnn add:  #('---' '---' '---' '---' '---' '---' '---') ].
+	^ emblAnn , nmAnn

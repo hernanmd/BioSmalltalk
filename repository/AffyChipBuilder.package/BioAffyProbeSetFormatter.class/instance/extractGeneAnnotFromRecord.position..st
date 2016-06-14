@@ -1,21 +1,15 @@
 report
 extractGeneAnnotFromRecord: record position:aNumber
 
-	| geneAnnotString |
-	geneAnnotString := record at: aNumber.	
-	self halt.
-	self extractGeneAnnotFromRecord: geneAnnotString.
-	self annotNames do: [ : annotName | 
-		| annot |
-		annot := self geneAnnotDictionary 
-					at: annotName  
-					ifPresent: [ :a | a isNil ifTrue: [ 'NULL' ] ifFalse: [ a ] ] 
-					ifAbsent: [ 'NULL' ].
-		self csvWriter 
-			ensureOpen;
-			writeField: annot trimBoth; 
-			writeSeparator;
-			flush. ].
+	| geneAnnotString geneAnnotTriplet |
 
-	self familyDictionary associationsDo: [ : assoc | assoc value: nil ].
+	geneAnnotString := record at: aNumber.	
+	geneAnnotTriplet := self extractGeneAnnotFromRecord: geneAnnotString.
+	geneAnnotTriplet do: [ : annotSet | 
+		annotSet do: [ : annotField | 
+			self csvWriter 
+				ensureOpen;
+				writeField: annotField trimBoth; 
+				writeSeparator;
+				flush. ] ] .
 	self csvWriter writeEndOfLine 

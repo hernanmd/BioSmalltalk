@@ -1,3 +1,0 @@
-accessing
-axFieldNumber
-	^ axFieldNumber

@@ -1,3 +1,3 @@
-accessing
+accessing - fields
 extractAX
 	^ extractAX

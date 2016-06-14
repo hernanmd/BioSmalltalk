@@ -1,3 +1,0 @@
-accessing
-rsFieldNumber
-	^ rsFieldNumber

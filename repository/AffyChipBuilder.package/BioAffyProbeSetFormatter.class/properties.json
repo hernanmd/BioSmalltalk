@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 6/6/2016 14:37",
+	"commentStamp" : "HernanMoralesDurand 6/14/2016 04:38",
 	"super" : "Object",
 	"category" : "AffyChipBuilder",
 	"classinstvars" : [ ],
@@ -15,12 +15,14 @@
 		"extractAX",
 		"extractRS",
 		"extractAlleleFrqs",
-		"rsFieldNumber",
-		"axFieldNumber",
-		"alleleFrqsFieldNumber",
 		"outputFilename",
-		"extractMinAlleleFrqs"
+		"extractMinAlleleFrqs",
+		"fieldNrAlleleFqy",
+		"fieldNrAXId",
+		"fieldNrRS",
+		"fieldNrGeneAnnot",
+		"extractGeneAnnot"
 	],
-	"name" : "AffyTXTReportAlleleFrqExtractor",
+	"name" : "BioAffyProbeSetFormatter",
 	"type" : "normal"
 }

@@ -1,5 +1,5 @@
-accessing
+defaults
 defaultProgramName
 	" Answer a <String> "
 
-	^ self plink
+	^ self shapeIt 

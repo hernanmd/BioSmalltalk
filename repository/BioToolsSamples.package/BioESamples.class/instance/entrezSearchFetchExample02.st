@@ -1,5 +1,5 @@
 eUtilities-search-fetch
-entrezResultsSample06
+entrezSearchFetchExample02
 	" 
 	Simplify the use of the history server. 
 	Search a gene and get the FASTA sequence from the Nuccore database

@@ -1,5 +1,5 @@
 eUtilities-search-fetch
-entrezResultsSample03
+entrezSearchFetchExample03
 	" 
 	1) Using a client to search a gene and get a Collection of Gene Identifiers from the Nuccore database
 	2) Use the obtained gene id's to fetch the results from the Nuccore database

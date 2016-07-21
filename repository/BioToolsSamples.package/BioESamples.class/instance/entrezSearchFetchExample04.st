@@ -1,5 +1,5 @@
 eUtilities-search-fetch
-entrezResultsSample07
+entrezSearchFetchExample04
 	" 
 	1) Search a gene by accession and get the FASTA sequence from the Nuccore database
 	2) With the same accession retrieve the GenBank file

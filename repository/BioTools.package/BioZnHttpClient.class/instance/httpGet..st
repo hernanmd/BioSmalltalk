@@ -4,5 +4,8 @@ httpGet: urlString
 	" (self httpGet: 'http://www.squeak.org') content "
 	
 	^ [ (self classFor: self providerClass) new get: urlString ]
-		on: ZnEntityTooLarge 
-		do: [ : ex | ex resume ].
+		on: ZnEntityTooLarge, ConnectionClosed 
+		do: [ : ex | 
+			ex isResumable 
+				ifTrue: [ ex resume ]
+				ifFalse: [ self handleNonResumableConnection: ex ] ].

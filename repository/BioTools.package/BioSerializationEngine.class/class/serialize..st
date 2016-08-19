@@ -4,7 +4,7 @@ serialize: anObject
 
 	| fileName serialization |
 	
-	(fileName := anObject name withoutBlanks) size > 100 
+	(fileName := anObject name asString withoutBlanks) size > 100 
 		ifTrue: [ fileName := anObject class asString. ].
 	fileName := fileName ,  '_' , self currentSeconds , '.obj'.
 	self bioLog: 'Serializing...' translated.

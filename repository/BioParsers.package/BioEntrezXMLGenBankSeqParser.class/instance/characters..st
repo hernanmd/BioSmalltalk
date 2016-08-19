@@ -3,8 +3,7 @@ characters: aString
 	" See superimplementor´s comment "
 
 	catchNodes 
-		ifTrue: [ 
-			self newERecordValue: aString ].
+		ifTrue: [ self newERecordValue: aString ].
 	self catchOff
 		
 

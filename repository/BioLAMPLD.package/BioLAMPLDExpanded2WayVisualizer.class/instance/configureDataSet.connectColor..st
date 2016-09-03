@@ -2,10 +2,13 @@ private
 configureDataSet: aCollection connectColor: aColor
 
 	| aDataSet |
-	aDataSet := RTStackedDataSet new.
+	aDataSet := RTDataSet new.
 	aDataSet connectColor: aColor.
+	self halt.
 	aDataSet
 		noDot;
 		points: aCollection;
-		x: (1 to: self snpCount).
+		minX: 1;
+		maxX: self snpCount.
+	self halt.
 	self grapher add: aDataSet.

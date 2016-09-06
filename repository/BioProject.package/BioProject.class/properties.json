@@ -1,12 +1,11 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "BioProjectObject",
+	"super" : "PFProjectBase",
 	"category" : "BioProject-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"info",
 		"jobs"
 	],
 	"name" : "BioProject",

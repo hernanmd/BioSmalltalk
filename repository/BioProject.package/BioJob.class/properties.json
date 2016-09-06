@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "HernanMoralesDurand 3/19/2015 23:58",
-	"super" : "BioProjectObject",
+	"super" : "Object",
 	"category" : "BioProject-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

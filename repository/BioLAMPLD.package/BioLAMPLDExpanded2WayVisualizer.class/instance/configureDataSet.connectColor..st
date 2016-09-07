@@ -2,13 +2,10 @@ private
 configureDataSet: aCollection connectColor: aColor
 
 	| aDataSet |
-	aDataSet := RTDataSet new.
+	aDataSet := RTData new.
 	aDataSet connectColor: aColor.
-	self halt.
-	aDataSet
-		noDot;
+	aDataSet dotShape circle size: 10.
+	aDataSet 
 		points: aCollection;
-		minX: 1;
-		maxX: self snpCount.
-	self halt.
+		connectUsing: (RTLine new color: (aColor alpha: 0.5); width: 5).
 	self grapher add: aDataSet.

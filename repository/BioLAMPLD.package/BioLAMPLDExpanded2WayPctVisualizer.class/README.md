@@ -4,6 +4,10 @@ It takes as input :
 - A directory with files in "Expanded LAMP-LD" format.
 - A String title 
 
+Row 1 = 11 = Color blue 
+Row 2 = 01 = Color black 
+Row 3 = 00 = Color red
+
 Usage Examples
 ==============
 

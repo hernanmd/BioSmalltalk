@@ -16,4 +16,4 @@ initializeMatrix
 						ifFalse: [ 
 							(h1 = $0 and: [ h2 = $0 ])
 								ifTrue: [ matrix at: 3 at: colIndex put: (matrix at: 3 at: colIndex) + 1 ]
-								ifFalse: [ self halt. 'Should not happen' ] ] ] ] ].
+								ifFalse: [ self error: 'Should not happen' ] ] ] ] ].

@@ -4,5 +4,5 @@ startElement: elementName attributes: attributeList
 
 	current := nil.
 	(self selectedNodes includes: elementName) ifTrue: [ 
-		(current := results nodeFor: elementName)
-			ifNotNil: [ current addToRoot: results ] ]
+		( current := results nodeFor: elementName )
+			ifNotNil: [ current addToRoot: results ]]

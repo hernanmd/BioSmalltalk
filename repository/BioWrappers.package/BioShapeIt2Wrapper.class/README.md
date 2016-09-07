@@ -1,4 +1,8 @@
-Description:
+List available wrapper classes:
+
+BioShapeIt2Wrapper releases. 
+
+Examples:
 
 See class side method.
 

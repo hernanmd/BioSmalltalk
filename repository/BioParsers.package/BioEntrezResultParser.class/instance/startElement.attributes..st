@@ -2,7 +2,7 @@ accessing
 startElement: elementName attributes: attributeList
 	" Private - See superimplementor's comment "
 	
-	( self selectedNodes includes: elementName )
+	(self selectedNodes includes: elementName)
 		ifFalse: [ ^ self ].
 	self catchOn.			
 	current := elementName

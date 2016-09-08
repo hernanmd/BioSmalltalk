@@ -1,10 +1,5 @@
 accessing
-characters: aString
-	" See superimplementor´s comment "
-
-	catchNodes 
-		ifTrue: [ 
-			self newERecordValue: aString ].
+characters: arg1
+	catchNodes
+		ifTrue: [ self newERecordValue: arg1 ].
 	self catchOff
-		
-

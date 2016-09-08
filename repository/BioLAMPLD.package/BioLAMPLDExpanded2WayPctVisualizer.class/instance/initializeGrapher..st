@@ -2,10 +2,8 @@ initialization
 initializeGrapher: titleString
 	" See superimplementor's comment "
 
-	self grapher: RTGrapher new.
-	self grapher 
-		extent: self extent;
-		title: titleString.
+	self initializeBasicGrapher: titleString.
 	self initializeDataSets.
+	self initializeTicks.
 	self initializeLegends.
 	^ self grapher

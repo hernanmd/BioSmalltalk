@@ -4,16 +4,21 @@ It takes as input :
 - A directory with files in "Expanded LAMP-LD" format.
 - A String title 
 
-Row 1 = 11 = Color blue 
+Row 1 = 11 = Color blue = Brahman 
 Row 2 = 01 = Color black 
-Row 3 = 00 = Color red
+Row 3 = 00 = Color red = Angus
 
 Usage Examples
 ==============
 
-BioLAMPLDExpanded2WayPctVisualizer 
-	openOnFileNamed: '2way-results-expanded\postlampld_ws-50.txt' 
-	title: '% Angus vs. % Brangus - Window Size = 50'.
+BioLAMPLDExpanded2WayPctVisualizer new 
+	population1Name: 'Brahman' 	color: Color blue;
+	population2Name: 'Angus'	color: Color red;
+	name: '% Angus vs. % Brangus - Window Size = 100';
+	initialize: 'c:\MHC\Distrib\LAMP-LD\LAMP-LD_workflow_4\postlampld_ws-100.txt';
+	open;
+	yourself.
+
 	
 Open a visualization in a directory with expanded files :
 

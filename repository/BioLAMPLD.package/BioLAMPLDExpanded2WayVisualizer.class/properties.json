@@ -7,7 +7,8 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"matrix",
-		"snpCount"
+		"snpCount",
+		"contents"
 	],
 	"name" : "BioLAMPLDExpanded2WayVisualizer",
 	"type" : "normal"

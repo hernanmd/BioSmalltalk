@@ -6,4 +6,5 @@ initializeGrapher: titleString
 	self initializeDataSets.
 	self initializeTicks.
 	self initializeLegends.
+	self initializeXAxisLabels.
 	^ self grapher

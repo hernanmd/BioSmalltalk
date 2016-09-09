@@ -1,5 +1,5 @@
 initialization
-initialize: aFilename
+readExpanded: aFilename
 	" Private - Initialize the receiver's data "
 
 	contents := aFilename asFileReference contents.

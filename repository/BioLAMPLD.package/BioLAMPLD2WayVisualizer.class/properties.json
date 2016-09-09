@@ -9,7 +9,19 @@
 		"population1Color",
 		"population1Name",
 		"population2Color",
-		"population2Name"
+		"population2Name",
+		"matrix",
+		"snpCount",
+		"contents",
+		"posFile",
+		"populationCount",
+		"homozygousRowIndex",
+		"heterozygousRowIndex",
+		"color",
+		"snpPositions",
+		"numberOfXTicks",
+		"numberOfYTicks",
+		"numberOfXLabels"
 	],
 	"name" : "BioLAMPLD2WayVisualizer",
 	"type" : "normal"

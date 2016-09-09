@@ -8,6 +8,6 @@ configureDataSet: aCollection connectColor: aColor
 	aDataSet 
 		points: aCollection;
 		connectUsing: (RTLine new color: (aColor alpha: 0.5); width: 4);
-		minX: 7;
-		maxX: 29.
+		x: #position;
+		y: #average.
 	self grapher add: aDataSet.

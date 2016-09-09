@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioLAMPLD-Visualization",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"position",
+		"average"
+	],
+	"name" : "BioSNPAncestry",
+	"type" : "normal"
+}

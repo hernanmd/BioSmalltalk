@@ -1,6 +1,6 @@
 versions
 version12: spec
-	<version: '1.2' imports: #('0.3-baseline' )>
+	<version: '1.2' imports: #('0.6-baseline' )>
 
 	spec for: #'common' do: [
 		spec blessing: #'stable'.
@@ -20,6 +20,7 @@ version12: spec
 			project: 'StringExtensions' with: '0.1-baseline';
 			project: 'ProcessWrapper' with: '1.1';
 			project: 'INIFileSupport' with: '0.1-baseline';
+			project: 'ProjectFramework' with: '0.1-baseline';
 			project: 'Roassal2' with: '1.20'.			
 		spec 
 			package: 'BioTools' with: 'BioTools-HernanMoralesDurand.184';
@@ -37,7 +38,7 @@ version12: spec
 			package: 'BioBenchmarks' with: 'BioBenchmarks-HernanMoralesDurand.3';
 			package: 'BioSoftwareCatalog' with: 'BioSoftwareCatalog-HernanMoralesDurand.2';
 			package: 'BioIllumina' with: 'BioIllumina-HernanMoralesDurand.5';
-			package: #BioPharo4 with: 'BioPharo4-HernanMoralesDurand.10';
+			package: 'BioPharo4' with: 'BioPharo4-HernanMoralesDurand.10';
 			package: 'BioSupport' with: 'BioSupport-HernanMoralesDurand.26';
 			package: 'BioPopulation' with: 'BioPopulation-HernanMoralesDurand.69';
 			package: 'BioToolsTests' with: 'BioToolsTests-HernanMoralesDurand.35';
@@ -51,5 +52,5 @@ version12: spec
 			package: 'BioProject' with: 'BioProject-HernanMoralesDurand.28';
 			package: 'BioProjectTests' with: 'BioProjectTests-HernanMoralesDurand.7';
 			package: 'BioArlequin' with: 'BioArlequin-HernanMoralesDurand.45';
-			package: #BioLAMPLD with: 'BioLAMPLD-HernanMoralesDurand.17';
-			package: #BioAffymetrix with: 'BioAffymetrix-HernanMoralesDurand.1'. ].
+			package: 'BioLAMPLD' with: 'BioLAMPLD-HernanMoralesDurand.17';
+			package: 'BioAffymetrix' with: 'BioAffymetrix-HernanMoralesDurand.1'. ].

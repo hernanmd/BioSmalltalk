@@ -1,6 +1,6 @@
 convenience-delimiters
 escapeDelimiters: aString
-	" Answer a String replacing the receiver's #delimiter with #replacementDelimiter in aString "
+	" Answer a <String> replacing the receiver's #delimiter with #replacementDelimiter in aString "
 	
 	| answer |
 	((answer := aString) includes: self delimiterSourceCharacter)

@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "HernanMoralesDurand 7/24/2016 18:50",
+	"commentStamp" : "HernanMoralesDurand 7/24/2016 18:51",
 	"super" : "BioFile",
 	"category" : "BioFormatters-Files",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "BioMAPFile",
+	"instvars" : [
+		"headerLinesCount"
+	],
+	"name" : "BioINPFile",
 	"type" : "normal"
 }

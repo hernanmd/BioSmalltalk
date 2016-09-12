@@ -1,0 +1,1 @@
+This is the INP file format as described by PHASE software : 

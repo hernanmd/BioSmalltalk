@@ -1,6 +1,6 @@
 convenience-delimiters
 delimiterSourceCharacter
-	" Answer a Character used to delimit fields in the receiver's result "
+	" Answer a <Character> used to delimit fields in the receiver "
 	
 	^ delimiterSourceCharacter
 		ifNil: [ delimiterSourceCharacter := $; ]

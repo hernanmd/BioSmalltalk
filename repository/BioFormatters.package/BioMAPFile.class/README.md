@@ -1,2 +1,1 @@
-This is the MAP file format as described by PLINK software : http://pngu.mgh.harvard.edu/~purcell/plink/data.shtml#map
-
+This is the INP file format as described by PHASE software : 

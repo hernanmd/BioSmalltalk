@@ -2,4 +2,4 @@ accessing
 description
 	" See superimplementor's comment "
 
-	^ 'CSV from Blast HIT Collection'
+	^ 'INP (CSV) from PHASE Software'

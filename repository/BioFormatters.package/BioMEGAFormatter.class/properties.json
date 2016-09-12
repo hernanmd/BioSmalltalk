@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 1/22/2015 03:18",
 	"super" : "BioFileFormatter",
-	"category" : "BioFormatters-Files",
+	"category" : "BioFormatters-Formatters",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

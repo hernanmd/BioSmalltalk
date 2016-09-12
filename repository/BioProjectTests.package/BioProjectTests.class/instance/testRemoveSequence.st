@@ -1,5 +1,5 @@
 testing
-test04ProjectRemoveSequence
+testRemoveSequence
 
 	| sampleSeq1 sampleSeq2 |
 	self assert: project sequences isEmpty.
@@ -11,7 +11,7 @@ test04ProjectRemoveSequence
 		
 	project removeSequence: sampleSeq1.
 	self deny: project sequences isEmpty.
-	self assert: project sequenceCount = 1.
+	self assert: project sequenceCount equals: 1.
 	self should: [ project removeSequence: sampleSeq1 ] raise: BioNotFoundObject.
 	
 	project removeSequence: sampleSeq2.

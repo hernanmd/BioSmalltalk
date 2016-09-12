@@ -1,5 +1,5 @@
-accessing
+running
 setUp
 
-	BioProjectObject resetApplication.
-	project := ( BioUser named: 'TestUser1' ) addProject: 'testProject1'.
+	BioProject resetApplication.
+	project := (BioUser named: 'TestUser1') addProject: 'testProject1'.

@@ -128,7 +128,8 @@ baseline06: spec
 				spec requires: #('BioTools' 'ProjectFramework'). ];
 			package: 'BioProjectTests' with: [
 				spec requires: #('BioProject' ). ];
-			package: 'BioSoftwareCatalog';
+			package: 'BioSoftwareCatalog' with: [
+				spec requires: ('BioTools') ];
 			package: 'BioSupport' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioTools';

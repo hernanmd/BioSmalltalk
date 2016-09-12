@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "PFProjectUser",
+	"category" : "BioProject-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioUser",
+	"type" : "normal"
+}

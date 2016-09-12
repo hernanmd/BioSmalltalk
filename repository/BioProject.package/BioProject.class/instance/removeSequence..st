@@ -1,14 +1,13 @@
 accessing-sequences
 removeSequence: aBioSequence
 	" Remove aBioSequence from the receiver's first job which includes aBioSequence "
-	
+
 	| jobOrNil |
-	
-	jobOrNil := self jobs 
-		detect: [ : job | job includesSequence: aBioSequence ]
+	jobOrNil := self jobs
+		detect: [ :job | job includesSequence: aBioSequence ]
 		ifNone: [ nil ].
 	jobOrNil
-		ifNotNilDo: [: job | 
+		ifNotNil: [ :job | 
 			job removeSequence: aBioSequence.
-			self info removeSequence: aBioSequence. ]
-		ifNil: [ self signalNotFound: 'Sequence not found ' , aBioSequence asString ]
+			self info removeSequence: aBioSequence ]
+		ifNil: [ BioObject signalNotFound: 'Sequence not found ' , aBioSequence greaseString ]

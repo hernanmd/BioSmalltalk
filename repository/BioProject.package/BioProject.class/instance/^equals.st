@@ -1,4 +1,4 @@
-testing
+comparing
 = aBioProject
 	" Answer <true> if receiver has the same name, information and usage as aBioProject "
 

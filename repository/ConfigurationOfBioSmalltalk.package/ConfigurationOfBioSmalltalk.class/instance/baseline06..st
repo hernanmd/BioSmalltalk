@@ -97,7 +97,7 @@ baseline06: spec
 			package: 'BioClassifierTests' with: [
 				spec requires: #('BioToolsTests' 'BioClassifier' ). ];
 			package: 'BioEBI' with: [
-				spec requires: #('BioTools' ). ];
+				spec requires: #('BioTools' 'BioWrappers'). ];
 			package: 'BioEntrez' with: [
 				spec requires: #('BioWrappers' 'BioParsers' ). ];
 			package: 'BioEntrezTests' with: [
@@ -111,7 +111,7 @@ baseline06: spec
 			package: 'BioIllumina' with: [
 				spec requires: #('BioTools' ). ];
 			package: #BioLAMPLD with: [
-				spec requires: #('BioTools' ). ];
+				spec requires: #('BioTools' 'BioWrappers' 'BioFormatters'). ];
 			package: 'BioNCBI' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioNCBITests' with: [

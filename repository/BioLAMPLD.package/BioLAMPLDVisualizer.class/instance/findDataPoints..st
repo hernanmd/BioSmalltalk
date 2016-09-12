@@ -4,9 +4,11 @@ findDataPoints: aCollection
 
 	| admixedDataPoints |
 	admixedDataPoints := OrderedCollection new: aCollection size.
-	1 to: aCollection size do: [ : index |
+	1 to: aCollection size do: [ :index | 
 		| admixedIndividual |
 		admixedIndividual := aCollection at: index.
-		admixedDataPoints add: ((admixedIndividual findTokens: Character space) collect: [ : dp | dp findTokens: $: ]) ].
-	^ admixedDataPoints 
-	
+		admixedDataPoints
+			add:
+				((admixedIndividual subStrings: Character space)
+					collect: [ :dp | dp subStrings: ':' ]) ].
+	^ admixedDataPoints

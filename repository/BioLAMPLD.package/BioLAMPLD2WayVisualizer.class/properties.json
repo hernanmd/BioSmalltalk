@@ -17,7 +17,6 @@
 		"populationCount",
 		"homozygousRowIndex",
 		"heterozygousRowIndex",
-		"color",
 		"snpPositions",
 		"numberOfXTicks",
 		"numberOfYTicks",

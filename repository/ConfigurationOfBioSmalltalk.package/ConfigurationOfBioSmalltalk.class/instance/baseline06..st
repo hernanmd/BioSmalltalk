@@ -123,7 +123,7 @@ baseline06: spec
 			package: #BioPharo4 with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioPopulation' with: [
-				spec requires: #('BioTools' 'BioSupport' ). ];
+				spec requires: #('BioTools' 'BioSupport' 'BioPharo4'). ];
 			package: 'BioProject' with: [
 				spec requires: #('BioTools' 'ProjectFramework'). ];
 			package: 'BioProjectTests' with: [

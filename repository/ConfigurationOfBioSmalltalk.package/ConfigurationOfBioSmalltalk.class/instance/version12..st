@@ -14,7 +14,7 @@ version12: spec
 			project: 'NeoCSV' with: '13';
 			project: 'NumericalMethods' with: '1.1';
 			project: 'CodeGenerator' with: '1.0';
-			project: 'XMLParser' with: '2.5.4';
+			project: 'XMLParser' with: '2.5.0';
 			project: 'XMLPullParser' with: '1.6';
 			project: 'XMLWriter' with: '2.6.6';
 			project: 'StringExtensions' with: '0.1-baseline';

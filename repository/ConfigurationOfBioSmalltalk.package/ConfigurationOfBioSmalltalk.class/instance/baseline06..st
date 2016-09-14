@@ -67,7 +67,7 @@ baseline06: spec
 			project: 'XMLParser' with: [
 				spec
 					className: #ConfigurationOfXMLParser;
-					versionString: #'2.5';
+					versionString: #'release-2.5';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLPullParser' with: [
 				spec

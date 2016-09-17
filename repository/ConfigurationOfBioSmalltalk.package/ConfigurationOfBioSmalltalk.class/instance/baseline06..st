@@ -72,7 +72,7 @@ baseline06: spec
 			project: 'XMLPullParser' with: [
 				spec
 					className: #ConfigurationOfXMLPullParser;
-					versionString: #'stable';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLWriter' with: [
 				spec

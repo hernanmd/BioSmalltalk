@@ -1,5 +1,5 @@
-text-mining
-locationPrefixes
+*BioPopulation
+bioLocationPrefixes
 	" Answer a <Collection> of english common territorial prefixes "
 
 	^ { 'S' . 'N' . 'C' . 'W' . 'E' .

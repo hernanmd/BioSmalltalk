@@ -1,6 +1,6 @@
-accessing public - commands
+accessing public
 execute
-	" Execute current operation and answer a result object "
+	" Execute current receiver's operation and answer a result object "
 	
 	| rs |
 	

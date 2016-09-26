@@ -7,7 +7,7 @@ exportFrom: aCollection features: featuresCollection
 			nextPutAll: assoc key;
 			nextPut: self delimiterSourceCharacter;
 			nextPutAll: assoc value size asString;
-			cr ].
+			bioCr ].
 	self 
-		dumpToFileNamed: self outputFilename 
-		contents: stream contents		
+		dumpToFileNamedFullPath: self outputFilename 
+		contents: stream contents

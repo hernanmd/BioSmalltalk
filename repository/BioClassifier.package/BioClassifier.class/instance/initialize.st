@@ -6,3 +6,4 @@ initialize
 	matches := nil.
 	mismatches := nil.
 	subject := nil.
+	self initializeName.

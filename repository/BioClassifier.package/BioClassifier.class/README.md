@@ -1,4 +1,10 @@
-A BioClassifier is xxxxxxxxx.
+A BioClassifier is a generic classifier for Bioinformatics projects.
+
+Subclasses could implement binary, multiclass, single-label, hard or soft classification. This class imposes no restriction on different types of classifiers.
+
+It provides accessing to matched and mismatched elements, an "organization" and the current item being classified called "subject".
+
+The organization object is responsible to hold the "Classes". These are NOT Smalltalk classes but Classes in the statistical classification sense (class is like a label to assign to a subject).
 
 Instance Variables
 	matches:			<Collection>

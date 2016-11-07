@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/7/2016 16:01",
+	"super" : "ComposableModel",
+	"category" : "BioPharo4-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"toolbar",
+		"mapFile",
+		"populationNameTextEdit",
+		"pedFile",
+		"textFieldForPed",
+		"textFieldForMap"
+	],
+	"name" : "BioPEDMAPFilesLoader",
+	"type" : "normal"
+}

@@ -11,7 +11,8 @@ initializeWidgets
 		items: BioSpeciesLists faoSpeciesWithChr keys;
 		label: 'Select Organism'.
 	self chrList 
-		label: 'Select Chromosome(s)'.
+		label: 'Select Chromosome(s)';
+		beMultipleSelection.
 	self toolbar 
 		firstButtonLabel: 'Ok';
 		secondButtonLabel: 'Cancel'

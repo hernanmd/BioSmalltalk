@@ -9,7 +9,8 @@
 		"identifier",
 		"sequence",
 		"frequency",
-		"formatters"
+		"formatters",
+		"markers"
 	],
 	"name" : "BioSample",
 	"type" : "normal"

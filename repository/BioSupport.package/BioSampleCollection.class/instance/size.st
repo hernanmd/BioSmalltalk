@@ -1,5 +1,5 @@
-printing
+accessing
 size
-	"Answer how many elements the receiver contains."
+	" Answer how many elements the receiver contains. "
 	
 	^ self samples size

@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "",
+	"commentStamp" : "HernanMoralesDurand 12/1/2016 05:52",
 	"super" : "BioSequence",
 	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"motif",
-		"positions",
+		"genotype",
 		"repeats",
 		"repeatStartPos"
 	],

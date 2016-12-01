@@ -1,3 +1,4 @@
 accessing
 positions: anObject
-	positions := anObject
+	
+	anObject setMicrosatelliteGenotypeFor: self

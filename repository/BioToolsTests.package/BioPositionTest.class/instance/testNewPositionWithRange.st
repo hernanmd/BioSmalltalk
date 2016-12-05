@@ -1,7 +1,7 @@
 testing
 testNewPositionWithRange
 
-	position := BioPosition new 
+	position := BioLocus new 
 		start: 100;
 		length: 10;
 		yourself.

@@ -1,7 +1,7 @@
 testing
 testSetStartEnd
 
-	position := BioPosition new 
+	position := BioLocus new 
 		start: 10;
 		end: 100;
 		yourself.

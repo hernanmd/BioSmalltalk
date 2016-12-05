@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/1/2016 05:52",
+	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:42",
 	"super" : "BioSequence",
 	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
@@ -9,8 +9,8 @@
 		"motif",
 		"genotype",
 		"repeats",
-		"repeatStartPos"
+		"locus"
 	],
-	"name" : "BioMicrosatellite",
+	"name" : "BioVNTRSequence",
 	"type" : "normal"
 }

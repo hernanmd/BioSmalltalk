@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:26",
+	"super" : "BioLocus",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"chrLocation",
+		"repeatStructure"
+	],
+	"name" : "BioMicrosatelliteLocus",
+	"type" : "normal"
+}

@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioObject",
+	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:24",
+	"super" : "BioNamedObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -11,6 +11,6 @@
 		"length",
 		"value"
 	],
-	"name" : "BioPosition",
+	"name" : "BioLocus",
 	"type" : "normal"
 }

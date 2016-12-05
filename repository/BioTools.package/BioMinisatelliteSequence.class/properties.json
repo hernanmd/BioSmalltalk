@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:47",
+	"super" : "BioVNTRSequence",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioMinisatelliteSequence",
+	"type" : "normal"
+}

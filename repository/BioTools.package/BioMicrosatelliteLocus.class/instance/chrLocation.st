@@ -1,0 +1,3 @@
+accessing - public
+chrLocation
+	^ chrLocation

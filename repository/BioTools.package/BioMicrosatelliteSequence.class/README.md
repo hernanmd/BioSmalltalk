@@ -1,7 +1,8 @@
-Represents a Microsatellite marker.
+Represents a Microsatellite marker.  A microsatellite is a tract of repetitive DNA in which certain DNA motifs (ranging in length from 2–5 base pairs) are repeated, typically 5–50 times.
+
 A microsatellite is defined by a name, fragment size range (bp), dye color, and repeat length. 
 
- BioMicrosatellite new 
+ BioMicrosatelliteSequence new 
 	name: 'BM1818';
 	alleleRangeStart: 266;
 	alleleRangeEnd: 270;
@@ -18,14 +19,6 @@ A microsatellite is defined by a name, fragment size range (bp), dye color, and 
 	positions: #(266 270);
 	yourself.
 	
-Internal Representation and Key Implementation Points.
-
-    Instance Variables
-	genotype:		<Object>
-	motif:		<Object>
-	repeatStartPos:		<Object>
-	repeats:		<Object>
-
 References 
 
 https://en.wikipedia.org/wiki/Microsatellite

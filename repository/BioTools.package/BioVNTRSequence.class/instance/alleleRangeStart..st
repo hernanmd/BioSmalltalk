@@ -1,5 +1,5 @@
 accessing
-alleleRangeStart: anInteger
-	" Set anInteger as the receiver's genotype start position "
+alleleRangeStart: anObject
+	" Set anObject as the receiver's genotype start position "
 	
-	^ self genotype alleleA: anInteger
+	^ self genotype alleleA: (self validatePosition: anObject)

@@ -1,11 +1,13 @@
 printing
 printOn: aStream
-
-	aStream
-		nextPutAll: self name asString between: $[ and: $].
-	self positions ifNotNil: [ 
-		aStream 
-			space;
-			nextPutAll: self alleleRangeStart;
-			nextPutAll: ' - ';
-			nextPutAll: self alleleRangeEnd ]
+	" Private - See superimplementor's comment "
+	
+	self genotype notNil
+		ifTrue: [ aStream nextPutAll: self genotype asString; space ].
+	(self alleleRangeStart notNil and: [ self alleleRangeEnd notNil  ])
+		ifTrue: [ 
+			aStream 
+				space;
+				nextPutAll: self alleleRangeStart asString;
+				nextPutAll: ' - ';
+				nextPutAll: self alleleRangeEnd asString ]

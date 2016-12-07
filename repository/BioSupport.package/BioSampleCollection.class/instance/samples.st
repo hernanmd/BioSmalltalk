@@ -3,4 +3,4 @@ samples
 	" Answer a <Collection> of <BioSample> "
 
 	^ samples
-		ifNil: [ samples := OrderedCollection new ]
+		ifNil: [ samples := self samplesCollectionClass new ]

@@ -1,5 +1,5 @@
 accessing-sequence
-id: anObject
+id: aString
 	" Set the receiver's identifier to be anObject "
 
-	self name: anObject
+	self name: aString

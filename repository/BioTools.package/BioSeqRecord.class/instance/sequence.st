@@ -1,5 +1,5 @@
 accessing-sequence
 sequence
-	" Answer the receiver's <BioSequence> "
+	" Answer the receiver's <BioSequence>. "
 
 	^ seq

@@ -2,4 +2,10 @@ comparing
 = anObject
 	" Answer whether the receiver and anObject represent the same object. "
 
-	^ (self == anObject and: [ self class = anObject class ]) and: [ self seq = anObject seq and: [ self id = anObject id ] ]
+	self == anObject
+		ifTrue: [ ^ true ].
+	self class = anObject class
+		ifFalse: [ ^ false ].
+	(self sequence = anObject sequence and: [ self id = anObject id ])
+		ifFalse: [ ^ false ].
+	^ true

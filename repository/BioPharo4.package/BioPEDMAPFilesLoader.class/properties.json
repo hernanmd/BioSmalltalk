@@ -11,7 +11,8 @@
 		"populationNameTextEdit",
 		"pedFile",
 		"textFieldForPed",
-		"textFieldForMap"
+		"textFieldForMap",
+		"actionBlock"
 	],
 	"name" : "BioPEDMAPFilesLoader",
 	"type" : "normal"

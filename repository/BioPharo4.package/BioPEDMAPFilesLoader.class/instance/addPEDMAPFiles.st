@@ -4,7 +4,9 @@ addPEDMAPFiles
 	
 	self validateParameters
 		ifFalse: [ ^ self ].
-	self owner 
+	self actionBlock isNil 
+		ifTrue: [ ^ self pedFile -> self mapFile ]
+		ifFalse: [ self actionBlock value: self pedFile value: self mapFile ].
 "		addPopulationName: self populationNameTextEdit pendingText;
 		addInputFile: self pedFile , self populationNameTextEdit pendingText;
 		addInputFile: self mapFile , self populationNameTextEdit pendingText.

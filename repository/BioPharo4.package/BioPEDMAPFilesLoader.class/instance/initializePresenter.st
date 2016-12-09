@@ -4,5 +4,5 @@ initializePresenter
 	
 	super initializePresenter.
 	self toolbar firstButtonAction: [ ].
-	self toolbar secondButtonAction: [ self addPEDMAPFiles ].
+	self toolbar secondButtonAction: [ ^ self addPEDMAPFiles ].
 	self toolbar thirdButtonAction: [ self delete ].

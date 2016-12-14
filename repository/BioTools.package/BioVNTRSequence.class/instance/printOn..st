@@ -3,12 +3,12 @@ printOn: aStream
     " Private - See superimplementor's comment "
    
     super printOn: aStream.
-"    self locus notNil
+    self locus notNil
         ifTrue: [
             aStream
                 nextPutAll: ' - ';
-                nextPutAll: self locus asString; space ].
-    self genotype notNil
+                nextPutAll: self locusName; space ].
+"    self genotype notNil
         ifTrue: [ aStream
                         nextPutAll: ' - ';
                         nextPutAll: self genotype asString; space ].

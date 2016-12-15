@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/15/2016 08:56",
+	"commentStamp" : "HernanMoralesDurand 12/15/2016 09:03",
 	"super" : "BioMicrosatellitePanel",
 	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioISAGPanel",
+	"name" : "BioFAOPanel",
 	"type" : "normal"
 }

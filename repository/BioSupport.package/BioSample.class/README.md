@@ -1,4 +1,4 @@
-Represents an unique sample within a population.
+Represents an unique biological (in contrast to chemical) sample within a population.
 
     Instance Variables
 	formatters:		<Object>

@@ -1,7 +1,7 @@
 tables
 chlorophyceanMitochondrialTable
-	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
-	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ self tableClass new
 add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TCT'-> 'S'; add:

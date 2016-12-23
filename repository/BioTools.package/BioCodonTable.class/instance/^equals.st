@@ -1,4 +1,4 @@
-testing
+comparing
 = codonTable
 	" Answer <true> if receiver contains the same codon table as codonTable and start/stop codons "
 

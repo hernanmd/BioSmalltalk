@@ -1,8 +1,8 @@
 tables
 vertebrateMitocondrialTable
 	" Answer the NCBI vertebrate mitochondrial codon table for DNA"
-	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
-	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ self tableClass new
 	add: 'TTT'-> 'F';

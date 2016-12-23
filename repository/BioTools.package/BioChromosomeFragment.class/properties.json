@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/23/2016 02:02",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"start",
+		"end"
+	],
+	"name" : "BioChromosomeFragment",
+	"type" : "normal"
+}

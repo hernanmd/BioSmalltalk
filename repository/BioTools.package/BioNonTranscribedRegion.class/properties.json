@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/23/2016 01:59",
+	"super" : "BioChromosomeFragment",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNonTranscribedRegion",
+	"type" : "normal"
+}

@@ -1,6 +1,6 @@
 tables
 ascidianMitochondrialTable
-	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	
 	^ self tableClass new
 add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TCT'-> 'S'; add:

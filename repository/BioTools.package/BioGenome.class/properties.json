@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "HernanMoralesDurand 12/23/2016 02:04",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"chromosomes",
+		"collectionClass",
+		"organism"
+	],
+	"name" : "BioGenome",
+	"type" : "normal"
+}

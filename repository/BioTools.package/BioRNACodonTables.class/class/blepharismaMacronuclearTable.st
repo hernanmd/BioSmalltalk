@@ -1,6 +1,6 @@
 tables
 blepharismaMacronuclearTable
-	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'hfm'>
+	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
 	^ self tableClass new

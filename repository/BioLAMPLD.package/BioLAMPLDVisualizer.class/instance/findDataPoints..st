@@ -9,6 +9,6 @@ findDataPoints: aCollection
 		admixedIndividual := aCollection at: index.
 		admixedDataPoints
 			add:
-				((admixedIndividual subStrings: Character space)
-					collect: [ :dp | dp subStrings: ':' ]) ].
+				((admixedIndividual substrings: ' ')
+					collect: [ :dp | dp substrings: ':' ]) ].
 	^ admixedDataPoints

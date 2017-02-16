@@ -2,4 +2,4 @@ opening
 open
 	" Open the receiver's window "
 
-	^ self grapher view
+	^ self grapher open

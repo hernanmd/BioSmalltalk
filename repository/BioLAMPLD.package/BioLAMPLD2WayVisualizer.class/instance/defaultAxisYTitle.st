@@ -1,4 +1,4 @@
 defaults
 defaultAxisYTitle
 
-	^ 'Allele %'
+	^ 'Haplotypes'

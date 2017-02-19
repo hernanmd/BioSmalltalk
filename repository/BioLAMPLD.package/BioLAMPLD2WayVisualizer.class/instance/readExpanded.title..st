@@ -1,6 +1,6 @@
 initialization
 readExpanded: aFilename title: aString
-	" Private - Initialize the receiver's data "
+	" Private - Read expanded output file from LAMP-LD. Use aString as title "
 
 	contents := aFilename asFileReference contents.
 	self dataPoints: contents lines.	

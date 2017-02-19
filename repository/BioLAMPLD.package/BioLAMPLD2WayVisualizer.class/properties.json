@@ -20,7 +20,8 @@
 		"snpPositions",
 		"numberOfXTicks",
 		"numberOfYTicks",
-		"numberOfXLabels"
+		"numberOfXLabels",
+		"lineWidth"
 	],
 	"name" : "BioLAMPLD2WayVisualizer",
 	"type" : "normal"

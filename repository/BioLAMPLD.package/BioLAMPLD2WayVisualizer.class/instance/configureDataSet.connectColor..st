@@ -6,8 +6,9 @@ configureDataSet: aCollection connectColor: aColor
 	"aDataSet connectColor: aColor."
 	"aDataSet dotShape circle size: 5."
 	aDataSet 
+		noDot;
 		points: aCollection;
-		connectUsing: (RTLine new color: aColor; width: 0.5);
+		connectUsing: (RTLine new color: aColor; width: self lineWidth);
 		x: #position;
 		y: #average.
 	self grapher add: aDataSet.

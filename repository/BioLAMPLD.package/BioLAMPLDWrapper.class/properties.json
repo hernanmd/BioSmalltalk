@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"windowSizes"
+		"windowSizes",
+		"positionsFileName"
 	],
 	"name" : "BioLAMPLDWrapper",
 	"type" : "normal"

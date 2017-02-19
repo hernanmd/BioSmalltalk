@@ -10,4 +10,5 @@ initializeTicks
 		withoutOrigin.
 	self grapher axisY 
 		title: self axisYTitle;
-		numberOfTicks: self numberOfYTicks
+		numberOfTicks: self numberOfYTicks;
+		noDecimal

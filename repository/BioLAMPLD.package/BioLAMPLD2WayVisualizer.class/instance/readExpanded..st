@@ -1,6 +1,6 @@
 initialization
 readExpanded: aFilename
-	" Private - Initialize the receiver's data "
+	" Private - Read expanded output file from LAMP-LD. Use aFilename as title "
 
 	self readExpanded: aFilename title: aFilename.
 	

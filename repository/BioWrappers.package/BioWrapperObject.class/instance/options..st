@@ -1,3 +1,3 @@
-accessing private
+accessing - private
 options: anObject
 	options := anObject

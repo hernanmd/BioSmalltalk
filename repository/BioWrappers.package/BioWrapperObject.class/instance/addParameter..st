@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 addParameter: param
 	" Private - Add param to the receiver's parameters stack "
 

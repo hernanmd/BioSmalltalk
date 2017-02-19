@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 propertySeparator
 	" Answer a <Character> with receiver's options separator "
 

@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 cmdLine 
 	" Answer a <String> with the full command line for executing the receiver "
 

@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 buildCmdLine
 	" Answer a <String> with receiver's full command line "
 	

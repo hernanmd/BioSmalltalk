@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 buildProperties: stream
 	" Private - Append receiver's properties to stream "
 

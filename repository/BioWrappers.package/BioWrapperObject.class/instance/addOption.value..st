@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 addOption: optionName value: optionValue
 	" Private - Add optionName and optionValue to the receiver's options stack "
 

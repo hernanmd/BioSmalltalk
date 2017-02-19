@@ -1,4 +1,4 @@
-accessing private
+accessing - private
 buildOptions: stream
 
 	self options do: [: optString |

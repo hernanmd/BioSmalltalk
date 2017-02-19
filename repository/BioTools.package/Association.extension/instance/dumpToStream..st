@@ -2,6 +2,6 @@
 dumpToStream: aStream
 	" Private - Write the receiver's contents into aStream "
 	
-	self key outputTo: aStream.
+	self key dumpToStream: aStream.
 	aStream nextPut:$;.
-	self value outputTo: aStream.
+	self value dumpToStream: aStream.

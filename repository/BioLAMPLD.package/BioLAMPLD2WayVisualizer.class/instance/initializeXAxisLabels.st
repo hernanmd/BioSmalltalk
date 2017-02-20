@@ -1,4 +1,6 @@
 accessing
 initializeXAxisLabels
 
-	self grapher axisX labelConversion: #asInteger
+	self grapher axisX 
+		color: Color black;
+		labelConversion: #asInteger

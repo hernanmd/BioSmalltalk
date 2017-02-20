@@ -9,6 +9,7 @@ initializeTicks
 		minX: self snpPositions first;
 		withoutOrigin.
 	self grapher axisY 
+		color: Color black;
 		title: self axisYTitle;
 		numberOfTicks: self numberOfYTicks;
 		noDecimal

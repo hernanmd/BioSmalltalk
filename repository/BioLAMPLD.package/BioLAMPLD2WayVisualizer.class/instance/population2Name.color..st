@@ -1,4 +1,4 @@
-initialization
+accessing
 population2Name: aString color: aColor
 
 	population2Name := aString.

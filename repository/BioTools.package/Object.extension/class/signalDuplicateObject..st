@@ -1,4 +1,4 @@
-exceptions
+*BioTools
 signalDuplicateObject: errorString
 	" See comment in BioDuplicatedObject "
 	

@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"referenceAllelesFile"
+		"referenceAllelesFile",
+		"plinkWrapper"
 	],
 	"name" : "BioLAMPLDFormatter",
 	"type" : "normal"

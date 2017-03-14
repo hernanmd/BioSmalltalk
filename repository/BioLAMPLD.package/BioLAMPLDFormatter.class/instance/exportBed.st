@@ -7,13 +7,9 @@ exportBed
 	
 	using receiver's current parameters. Answer a <BioResultObject> "
 	
-	^ BioPLINKWrapper new 
+	^ self plinkWrapper
 		file: self inputFile;
-		out: self outputFile;
-		noPheno;
-		noParents;
-		noSex;
-		noWeb;
+		out: self outputFilename;
 		makeBed;
 		referenceAlleles: self referenceAllelesFile;
 		execute

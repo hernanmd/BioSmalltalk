@@ -3,7 +3,7 @@ example3
 	" Warning - This software is only available for Unix platforms "
 	
 	| samplesDir |
-	samplesDir := BioObject testFilesFullDirectoryName.
+	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName.
 	BioLAMPLDWrapper new
 		unolanc2way;
 		windowSizes: (30 to: 150);

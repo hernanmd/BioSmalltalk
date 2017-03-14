@@ -2,7 +2,7 @@ examples
 example1
 
 	| inpFile |
-	inpFile := BioINPFile new 
+	inpFile := BioPhaseINPFile new 
 		file: 'inputFile.inp';
 		headerLinesCount: 3;
 		yourself.

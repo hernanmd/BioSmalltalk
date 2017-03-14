@@ -8,6 +8,6 @@
 	"instvars" : [
 		"headerLinesCount"
 	],
-	"name" : "BioINPFile",
+	"name" : "BioPhaseINPFile",
 	"type" : "normal"
 }

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioPLINKWrapper",
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioPLINK2Wrapper",
+	"type" : "normal"
+}

@@ -10,3 +10,6 @@ Axiom full TXT reports currently starts with a header of 5 lines, example:
 
 Number of header lines to skip is configurable by setting headerLineCount
 
+BioAffyTXTFormatter new
+	inputFile: 'AFFY_TXT-Report.txt';
+	readHeader.

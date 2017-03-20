@@ -2,4 +2,4 @@ accessing
 parameters
 
 	^ parameters
-		ifNil: [ parameters := OrderedCollection new ]
+		ifNil: [ parameters := self defaultParametersCollector ]

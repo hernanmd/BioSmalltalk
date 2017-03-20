@@ -2,4 +2,4 @@ options
 windowSize: aNumber
 	" Configure receiver's window size "
 
-	self addParameter: aNumber
+	self parameters at: 1 put: aNumber asString

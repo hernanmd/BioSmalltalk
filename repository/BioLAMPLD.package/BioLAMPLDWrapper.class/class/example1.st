@@ -4,14 +4,15 @@ example1
 	
 	| samplesDir |
 
-	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName.
+	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName / '2-way'.
 	BioLAMPLDWrapper new
 		unolanc2way;
 		windowSize: 50;
 		nrFounders: 2;
-		positionsFile:	(samplesDir / 'positions.pos') fullName;
-		addAncHapsFile:	(samplesDir / 'population_1.ref') fullName;
-		addAncHapsFile:	(samplesDir / 'population_2.ref') fullName;
-		genosFile:		(samplesDir / 'population.geno') fullName;
+		positionsFile: 	(samplesDir / 'chr.pos') fullName;
+		addPopFile: 		(samplesDir / 'pop1.hap') fullName atOrder: 1;
+		addPopFile: 		(samplesDir / 'pop2.hap') fullName atOrder: 2;
+		genosFile:		(samplesDir / 'genofile.gen') fullName;
+		outputFile:		'lamp-ld_example1.out';
 		execute.
 	

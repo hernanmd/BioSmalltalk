@@ -7,6 +7,6 @@ executeMonitoring: aCommandName
 	p := (self classFor: self providerClass) command: aCommandName.
 	[ p isComplete ] whileFalse: [
 		(Delay forSeconds: self monitoringDelay) wait.
-		self notifyExecutionProgress ].
+		Transcript show: Time now asString; cr ].
 	^ p output
 	

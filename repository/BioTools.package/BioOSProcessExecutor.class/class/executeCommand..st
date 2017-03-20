@@ -2,4 +2,6 @@ accessing
 executeCommand: aCommandName
 	" See superimplementor's comment "
 	
-	^ ((self classFor: self providerClass) command: aCommandName) output.
+	^ [ self executeOSProcessCommand: aCommandName ]
+		on: Warning "AioPlugin not present"
+		do: [ : ex | ex resume ]

@@ -4,6 +4,7 @@ example1
 	
 	| samplesDir |
 
+	self platformCheck ifFalse: [ ^ self invalidPlatform ].
 	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName / '2-way'.
 	BioLAMPLDWrapper new
 		unolanc2way;

@@ -3,6 +3,8 @@ example3
 	" Warning - This software is only available for Unix platforms "
 	
 	| samplesDir |
+	
+	self platformCheck ifFalse: [ ^ self invalidPlatform ].
 	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName.
 	BioLAMPLDWrapper new
 		unolanc2way;

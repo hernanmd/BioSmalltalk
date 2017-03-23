@@ -7,11 +7,11 @@ exportFirstCellColumnAt: rowIndex
 
 	" Header - Fill with empty spaces "	
 	( rowIndex < headerPosition and: [ rowIndex < self matrix numberOfRows ] )
-		ifTrue: [ self outputFile nextPutAll: ( BioObject generateJoin: String space repeat: 7 ) ].
+		ifTrue: [ self outputFileStream nextPutAll: ( BioObject generateJoin: String space repeat: 7 ) ].
 	
 	" Body - Fill with sequences 'names' "
 	( rowIndex >= headerPosition and: [ rowIndex <= self matrix numberOfRows ] )
 		ifTrue: [
-			self outputFile 
+			self outputFileStream 
 				nextPutAll: self rowIdentifier;
 				space ].

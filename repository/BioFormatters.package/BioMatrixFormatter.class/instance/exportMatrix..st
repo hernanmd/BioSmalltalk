@@ -5,5 +5,5 @@ exportMatrix: theMatrix
 		self exportFirstCellColumnAt: rowIndex.
 		1 to: theMatrix numberOfColumns do: [: colIndex |
 			self exportCellAtRow: rowIndex atColumn: colIndex matrix: theMatrix ].
-		self outputFile cr ].
-	self outputFile close.
+		self outputFileStream cr ].
+	self outputFileStream close.

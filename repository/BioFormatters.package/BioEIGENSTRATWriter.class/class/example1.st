@@ -7,7 +7,7 @@ example1
 	" allele frequencies from MSTools plugin "
 	alleleFqs := self testFilesFullDirectoryName / 'sample_allele_fqs.csv'.
 
-	snpWriter := BioEigenStratWriter new
+	snpWriter := BioEIGENSTRATWriter new
 				alleleFqs: alleleFqs;
 				outputFilename: 'eig_output.snp';
 				pedFile: pedFile;

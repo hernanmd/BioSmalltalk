@@ -1,7 +1,8 @@
 BioFileFormatter reads from an input file, performs formatting and write the results to an output file.
 
 Instance Variables:
-	inputFile		<String | FileReference>
+	cwd 			<String>					Current working directory.
+	inputFile		<String | FileReference> 	File name of the input file.
 	outputFile		<ProtoObject>
 	outputFilename	<String>
 	stream			<WriteStream>

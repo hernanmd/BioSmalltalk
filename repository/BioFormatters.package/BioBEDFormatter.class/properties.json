@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "HernanMoralesDurand 3/22/2017 19:09",
+	"super" : "BioFileFormatter",
+	"category" : "BioFormatters-Formatters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"properties",
+		"browser",
+		"orderIndex"
+	],
+	"name" : "BioBEDFormatter",
+	"type" : "normal"
+}

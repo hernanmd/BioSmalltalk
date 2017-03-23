@@ -3,5 +3,5 @@ newParserFor: filePath
 	" Answer a new CSV parser "
 
 	^ (self parserClass on: (self openFullFileNamed: filePath) readStream)
-		separator: self separator; 
+		separator: self delimiter; 
 		yourself

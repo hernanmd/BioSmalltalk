@@ -2,4 +2,4 @@ accessing
 fileNamePrefix
 	" Answer a String for prefixing the output file name "
 	
-	^ 'biosmalltalk_exported-FASTA_'
+	^ 'BioST-Exported-FASTA_'

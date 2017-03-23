@@ -1,3 +1,5 @@
 accessing
-inputFile: anObject
-	inputFile := anObject
+inputFile: aString
+	" Set the receiver's input file path to be aString "
+
+	inputFile := aString

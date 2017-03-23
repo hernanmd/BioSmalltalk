@@ -13,6 +13,6 @@
 		"markers",
 		"genoMatrix"
 	],
-	"name" : "BioEigenStratWriter",
+	"name" : "BioEIGENSTRATWriter",
 	"type" : "normal"
 }

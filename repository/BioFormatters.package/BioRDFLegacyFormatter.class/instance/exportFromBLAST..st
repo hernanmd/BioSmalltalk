@@ -16,5 +16,5 @@ exportFromBLAST: hitCollection
 	self fillFrequenciesColumn.
 	self exportMatrix.
 	self exportWeights.
-	self outputFile close.
+	self outputFileStream close.
 	self exportIdentifiers: hitCollection.	

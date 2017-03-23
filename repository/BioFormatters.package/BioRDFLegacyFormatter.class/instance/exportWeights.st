@@ -2,8 +2,8 @@ exporting
 exportWeights
 	" Private - Write the weight row "
 	
-	self outputFile cr.
+	self outputFileStream cr.
 	self matrix numberOfColumns 
 		timesRepeat: [
-			self outputFile
+			self outputFileStream
 				nextPutAll: '10' ]

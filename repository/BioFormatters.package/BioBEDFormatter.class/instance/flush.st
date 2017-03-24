@@ -2,4 +2,4 @@ accessing
 flush
 	" Write to disk "
 
-	self outputFileStream flush 
+	self outputFileStream flush; close.

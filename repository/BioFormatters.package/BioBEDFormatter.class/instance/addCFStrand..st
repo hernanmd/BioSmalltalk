@@ -1,7 +1,7 @@
 accessing - adding features
 addCFStrand: aCharacter
 
-	self assert: [ self orderIndex = 5 ].
+	self assert: [ self orderIndex = 6 ].
 	self assert: [ { $. . $- . $+ } includes: aCharacter ].
 	self outputFileStream 
 		space;

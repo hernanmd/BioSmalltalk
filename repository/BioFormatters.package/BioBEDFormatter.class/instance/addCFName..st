@@ -1,14 +1,9 @@
 accessing - adding features
-addCFName: colorCollection
-	" Add current feature individual color for the current data line.
-	colorCollection is a <Collection> of <Color> instances in RGB order "
+addCFName: aString
+	" Add current feature name for the current data line "
 
-	self assert: [ self orderIndex = 3 ].
+	self assert: [ self orderIndex = 4 ].
 	self outputFileStream 
 		space;
-		nextPutAll: colorCollection first;
-		nextPut: $,;
-		nextPutAll: colorCollection second;
-		nextPut: $,;
-		nextPutAll: colorCollection third.
+		nextPutAll: aString.
 	self orderIndex: self orderIndex + 1.

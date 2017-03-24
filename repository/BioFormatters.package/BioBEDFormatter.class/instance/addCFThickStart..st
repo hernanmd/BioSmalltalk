@@ -1,7 +1,7 @@
 accessing - adding features
 addCFThickStart: aNumber
 
-	self assert: [ self orderIndex = 6 ].
+	self assert: [ self orderIndex = 7 ].
 	self outputFileStream 
 		space;
 		nextPutAll: aNumber asString.

@@ -1,5 +1,5 @@
-private
-dumpCTHeader
+accessing
+dumpCTrack
 	" Private - Write custom track header line "
 
 	self properties propertiesDo: [ : prop |
@@ -8,4 +8,6 @@ dumpCTHeader
 				nextPut: $=;
 				nextPutAll: prop value;
 				space ].
-	self outputFileStream nextPutTerminator
+	self outputFileStream 
+			nextPutTerminator;
+			flush

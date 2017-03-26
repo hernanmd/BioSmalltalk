@@ -1,5 +1,10 @@
 Formatter for Affymetrix full TXT export.
 
+Currently includes methods to extract specific columns from the report (i.e. #buildSNP_AllelesAB)
+
+Details
+======
+
 Axiom full TXT reports currently starts with a header of 5 lines, example:
 
 ##package-file=\\FS3\data\Outputs\Run2\Batch3.suitcase

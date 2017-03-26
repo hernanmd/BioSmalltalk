@@ -5,15 +5,14 @@ example3
 	| samplesDir |
 	
 	self platformCheck ifFalse: [ ^ self invalidPlatform ].
-	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName.
+	samplesDir := BioLAMPLDWrapper testFilesFullDirectoryName / '2-way'.
 	BioLAMPLDWrapper new
 		unolanc2way;
 		windowSizes: (30 to: 150);
 		nrFounders: 2;
-		positionsFile: 	(samplesDir / 'chr1.pos') fullName;
-		addAncHapsFile:	(samplesDir / 'EUR_haps.ref') fullName;
-		addAncHapsFile:	(samplesDir / 'NA_haps.ref') fullName;
-		addAncHapsFile:	(samplesDir / 'YRI_haps.ref') fullName;			
-		genosFile:		(samplesDir / 'trio.gen') fullName;
+		positionsFile: 	(samplesDir / 'chr.pos') fullName;
+		addPopFile: 		(samplesDir / 'pop1.hap') fullName atOrder: 1;
+		addPopFile: 		(samplesDir / 'pop2.hap') fullName atOrder: 2;	
+		genosFile:		(samplesDir / 'genofile.gen') fullName;
 		executeWS.
 	

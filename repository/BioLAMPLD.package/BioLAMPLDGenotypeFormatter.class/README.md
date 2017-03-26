@@ -2,9 +2,9 @@ Writer for Admixed Genotype Sample (.geno or .gen) file. This is a file which co
 
 Internal Representation and Key Implementation Points.
 
-    Instance Variables
-	bimFilePath:		<String>
-	pedFilePath:		<String>
+Instance Variables
+	bimFilePath:		<String>		Path to PLINK Map (extended format)
+	pedFilePath:		<String>		Path PLINK PED
 
 Example
 

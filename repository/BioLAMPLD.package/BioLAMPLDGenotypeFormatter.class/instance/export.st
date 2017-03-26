@@ -4,4 +4,4 @@ export
 
 	self writeSampleRows.
 	self outputFileStream close.
-	self bioLog: 'Exported CSV genotype contents in file ' , self outputFilename.
+	self bioLog: 'Exported genotype contents in file ' , self outputFilename.

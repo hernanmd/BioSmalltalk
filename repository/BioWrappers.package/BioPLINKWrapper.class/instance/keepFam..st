@@ -1,4 +1,4 @@
-properties
+properties - filtering
 keepFam: fileName  
 	" Set the family to keep to fileName "
 

@@ -1,0 +1,1 @@
+Wrapper for PLINK software version "2" (or 1.90 actually). See superclass for additional documentation.

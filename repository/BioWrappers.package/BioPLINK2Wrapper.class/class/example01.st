@@ -1,5 +1,5 @@
 examples
-example1
+example01
 
 	BioPLINKWrapper new 
 		file: 'myInputFile'; 	"Do not specify .ped extension !"

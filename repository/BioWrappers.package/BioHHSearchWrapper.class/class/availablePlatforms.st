@@ -1,5 +1,5 @@
 accessing
 availablePlatforms
-	" Answer a <Collection> with receiver's supported platforms. "
+	" Private - See superimplementor's comment "
 	
 	^ #('Unix' 'MacOS')

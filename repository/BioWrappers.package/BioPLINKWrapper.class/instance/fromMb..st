@@ -1,4 +1,4 @@
-properties
+properties - filtering
 fromMb: mbNumber
 	" Set the lower limit variant ID to mbNumber "
 

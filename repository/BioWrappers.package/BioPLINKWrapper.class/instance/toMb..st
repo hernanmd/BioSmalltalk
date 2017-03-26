@@ -1,4 +1,4 @@
-properties
+properties - filtering
 toMb: mbNumber
 	" Set the upper limit variant ID to mbNumber "
 

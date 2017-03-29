@@ -1,3 +1,5 @@
 accessing
-snpCount: anObject
-	snpCount := anObject
+snpCount: aNumber
+	" Set the receiver's count of SNPs to be aNumber "
+
+	snpCount := aNumber

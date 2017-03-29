@@ -1,4 +1,4 @@
 defaults
 defaultAxisXTitle
 	
-	^ 'Chromosome Position'
+	^ 'Chr position in Mb'

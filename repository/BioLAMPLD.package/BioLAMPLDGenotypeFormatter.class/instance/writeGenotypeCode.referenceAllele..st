@@ -1,7 +1,7 @@
 accessing
 writeGenotypeCode: pedLine referenceAllele: refAllele
 
-	(pedLine allButFirst: 2) do: [ : spacedAlleles |
+	(pedLine allButFirst: self columnsToSkip) do: [ : spacedAlleles |
 		self outputFileStream 
 			nextPutAll: (refAllele asDNANucleotide asLAMPLDGenotypeCode: (BioGenotype withSpacedAlleles: spacedAlleles)) asString ].
-	self outputFileStream cr.
+	self outputFileStream nextPutTerminator.

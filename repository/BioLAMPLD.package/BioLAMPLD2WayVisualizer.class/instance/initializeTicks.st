@@ -3,6 +3,7 @@ initializeTicks
 
 	self grapher axisX 
 		title: self axisXTitle;
+"		titlePosition: (500 @ 0)."
 		numberOfTicks: self numberOfXTicks;
 		numberOfLabels: self numberOfXLabels.
 	self grapher

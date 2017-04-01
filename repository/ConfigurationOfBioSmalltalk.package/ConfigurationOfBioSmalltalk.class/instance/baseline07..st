@@ -4,7 +4,7 @@ baseline07: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.
+		spec preLoadDoIt: #preLoad.		
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
@@ -56,7 +56,7 @@ baseline07: spec
 			project: 'ProjectFramework' with: [
 				spec
 					className: #ConfigurationOfProjectFramework;
-					versionString: #'development';
+					versionString: #'stable';
 					loads: #('Basic' );
 					repository: 'http://smalltalkhub.com/mc/hernan/ProjectFramework/main/' ];
 			project: 'Roassal2' with: [
@@ -67,7 +67,7 @@ baseline07: spec
 			project: 'StringExtensions' with: [
 				spec
 					className: #ConfigurationOfStringExtensions;
-					versionString: #'bleedingEdge';
+					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ];
 			project: 'XMLParser' with: [
 				spec

@@ -1,6 +1,6 @@
 private
 buildTXTArray
 
-	^ (NeoCSVReader on: (self inputFile asFileReference tailn: self headerLineCount) readStream)
+	^ (NeoCSVReader on: self inputFile asFileReference readStream)
 		separator: Character tab;
 		upToEnd.

@@ -1,5 +1,5 @@
 instance creation
-openOnDirectory: aString
+openOnDirectory: aString action: aBlock
 	" Create a visualization for each file contained in aString. All files must be in LAMP-LD output format "
 
 	^ [  : job | 
@@ -7,7 +7,7 @@ openOnDirectory: aString
 		index := 0.
 		job title: 'Starting.'.
 		aString asFileReference entries
-			collect: [ :fileEntry | self openOnFileNamed: fileEntry fullName title: fileEntry fullName ]
+			collect: aBlock
 			thenDo: [ : fileEntry | 
 				index := index + 1.
 				job

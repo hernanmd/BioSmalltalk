@@ -1,8 +1,10 @@
 printing
 printOn: aStream
+	" Private - See superimplementor's comment "
 
-	super printOn: aStream.
 	aStream
-		space;
-		nextPutAll: self position asString between: ${ and: $};
-		nextPutAll: self average asString between: $( and: $)
+		nextPutAll: 'Pos: ';
+		nextPutAll: self position asString;
+		nextPutTerminator;
+		nextPutAll: 'Avg: ';
+		nextPutAll: self average asString		

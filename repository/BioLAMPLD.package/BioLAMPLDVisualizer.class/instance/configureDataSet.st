@@ -1,7 +1,7 @@
 initialization
 configureDataSet
 
-	dataSet := RTDataSet new.
+	dataSet := RTData new.
 	dataSet dotShape color: Color blue.
 	dataSet connectUsing: ((RTMultiLine new withVerticallAttachPoint; orthoHorizontal)
 		color: (Color blue);

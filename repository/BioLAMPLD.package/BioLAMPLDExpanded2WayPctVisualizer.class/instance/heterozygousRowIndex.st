@@ -1,0 +1,4 @@
+accessing
+heterozygousRowIndex
+
+	^ heterozygousRowIndex

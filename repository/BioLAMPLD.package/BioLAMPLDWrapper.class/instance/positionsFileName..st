@@ -1,3 +1,5 @@
 accessing
-positionsFileName: anObject
-	positionsFileName := anObject
+positionsFileName: aString
+	" Set the receiver's position file to aString file path "
+
+	positionsFileName := aString

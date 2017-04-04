@@ -11,17 +11,9 @@
 		"population2Color",
 		"population2Name",
 		"matrix",
-		"snpCount",
-		"contents",
-		"posFile",
 		"populationCount",
 		"homozygousRowIndex",
-		"heterozygousRowIndex",
-		"snpPositions",
-		"numberOfXTicks",
-		"numberOfYTicks",
-		"numberOfXLabels",
-		"lineWidth"
+		"heterozygousRowIndex"
 	],
 	"name" : "BioLAMPLD2WayVisualizer",
 	"type" : "normal"

@@ -13,7 +13,16 @@
 		"axisXTitle",
 		"axisYTitle",
 		"parsedDataPoints",
-		"graphers"
+		"graphers",
+		"numberOfXLabels",
+		"numberOfYTicks",
+		"numberOfXTicks",
+		"lineWidth",
+		"posFile",
+		"gapSize",
+		"contents",
+		"snpCount",
+		"snpPositions"
 	],
 	"name" : "BioLAMPLDVisualizer",
 	"type" : "normal"

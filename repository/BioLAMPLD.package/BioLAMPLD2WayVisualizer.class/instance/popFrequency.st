@@ -14,6 +14,5 @@ popFrequency
 		popArray add: (BioSNPAncestry new
 			position: pos;
 			average: avg;
-			yourself)
-	].
+			yourself) ].
 	^ popArray

@@ -7,7 +7,7 @@ openOnDirectory: aString
 		index := 0.
 		job title: 'Starting.'.
 		aString asFileReference entries
-			collect: [ :fileEntry | self openOnFileNamed: fileEntry fullName title: fileEntry fullName ]
+			collect: [ :fileEntry | self openOnCompactFileNamed: fileEntry fullName positionsFile: (self findPositionsFileIn: aString) title: fileEntry fullName ]
 			thenDo: [ : fileEntry | 
 				index := index + 1.
 				job

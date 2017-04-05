@@ -1,4 +1,4 @@
 testing
 testFilesFullDirectoryName
 
-	^ super testFilesFullDirectoryName / 'lamp-ld'
+	^ super testFilesFullDirectoryName / 'lamp-ld' / 'input_files'

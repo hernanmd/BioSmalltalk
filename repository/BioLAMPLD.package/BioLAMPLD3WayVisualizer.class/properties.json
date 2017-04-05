@@ -5,7 +5,10 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"population3Name",
+		"population3Color"
+	],
 	"name" : "BioLAMPLD3WayVisualizer",
 	"type" : "normal"
 }

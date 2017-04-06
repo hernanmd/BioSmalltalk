@@ -1,5 +1,5 @@
 properties - filtering
-chr: aNumberOrCharacter  
-	" Set the output to filter chromosome aNumberOrCharacter "
+chr: aCollectionOrInterval  
+	" Set the output to filter chromosome aCollectionOrInterval "
 
-	self propertyAt: 'chr' ifAbsentPut: [ aNumberOrCharacter ]
+	self propertyAt: 'chr' ifAbsentPut: [ aCollectionOrInterval asPLINKParameter ]

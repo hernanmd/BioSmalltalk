@@ -1,16 +1,15 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:42",
+	"commentStamp" : "HernanMoralesDurand 4/9/2017 02:54",
 	"super" : "BioSequence",
-	"category" : "BioTools-VNTR",
+	"category" : "BioTools-Repeats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"motif",
 		"genotype",
 		"repeats",
 		"locus"
 	],
-	"name" : "BioVNTRSequence",
+	"name" : "BioRepeatSequence",
 	"type" : "normal"
 }

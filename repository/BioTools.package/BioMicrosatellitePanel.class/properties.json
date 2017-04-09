@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 12/14/2016 11:07",
 	"super" : "BioNamedObject",
-	"category" : "BioTools-VNTR",
+	"category" : "BioTools-Repeats",
 	"classinstvars" : [
 		"table"
 	],

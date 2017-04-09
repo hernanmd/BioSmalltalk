@@ -1,10 +1,3 @@
-BioMinisatelliteSequence new 
-	name: '';
-	alleleRangeStart: 266;
-	alleleRangeEnd: 270;
-	sequence: 'TG';
-	yourself.
-
 Public API and Key Messages
 
 - message one   

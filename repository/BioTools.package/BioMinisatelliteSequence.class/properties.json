@@ -1,7 +1,7 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:47",
-	"super" : "BioVNTRSequence",
-	"category" : "BioTools-VNTR",
+	"commentStamp" : "HernanMoralesDurand 4/9/2017 02:38",
+	"super" : "BioRepeatSequence",
+	"category" : "BioTools-Repeats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

@@ -3,4 +3,4 @@ for: aBioGBSeqCollection
 
 	^ aBioGBSeqCollection isEmpty 	
 		ifTrue: [ BioEmptyResultObject new ]
-		ifFalse: [ BioNCBIGenBankResult new ]
+		ifFalse: [ self halt. BioNCBIGenBankResult new ]

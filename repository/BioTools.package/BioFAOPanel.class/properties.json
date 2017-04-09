@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 12/15/2016 09:03",
 	"super" : "BioMicrosatellitePanel",
-	"category" : "BioTools-VNTR",
+	"category" : "BioTools-Repeats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

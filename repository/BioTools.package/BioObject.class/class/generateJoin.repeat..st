@@ -1,4 +1,4 @@
-accessing
+convenience-utilities
 generateJoin: repValue repeat: repNumber
 	" Generate, join and answer anObject repetition times 
 	(BioObject generateJoin: 2 repeat: 4) = '2222'

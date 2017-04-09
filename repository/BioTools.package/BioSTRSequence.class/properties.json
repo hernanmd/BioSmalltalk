@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/15/2016 08:56",
-	"super" : "BioMicrosatellitePanel",
+	"commentStamp" : "HernanMoralesDurand 4/9/2017 02:28",
+	"super" : "BioRepeatSequence",
 	"category" : "BioTools-Repeats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioISAGPanel",
+	"name" : "BioSTRSequence",
 	"type" : "normal"
 }

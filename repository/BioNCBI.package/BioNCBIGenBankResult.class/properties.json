@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioWebResult",
+	"category" : "BioNCBI-Helpers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNCBIGenBankResult",
+	"type" : "normal"
+}

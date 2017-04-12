@@ -5,6 +5,6 @@ processGenBankRecords
 	[ self parsedResults: (self reader parseXMLDocumentsFromCollection: self results) parsedContents.
 	self informMessage: 'Dowloaded GenBank records are valid' translated ]
 	on: XMLWellFormednessException 
-	do: [ : ex | self inform: 'XML is not well formed, if you downloaded data please try again'.
+	do: [ : ex | self informMessage: 'XML is not well formed, if you downloaded data please try again'.
 		^ nil ].
 	^ self results

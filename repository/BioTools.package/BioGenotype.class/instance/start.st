@@ -1,5 +1,5 @@
 accessing
-locus
+start
 	" Answer the receiver's <BioLocus> "
 
-	^ locus
+	^ self locus start

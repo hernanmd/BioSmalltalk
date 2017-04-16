@@ -1,3 +1,5 @@
 accessing
-locus: anObject
-	locus := anObject
+locus: aBioLocus
+	" Set the receiver's locus to be aBioLocus "
+
+	locus := aBioLocus

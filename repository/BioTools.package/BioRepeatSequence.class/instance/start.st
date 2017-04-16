@@ -1,5 +1,5 @@
 accessing
-alleleRangeStart
+start
 	" Answer an <Integer> with the receiver's genotype start position "
 	
-	^ self genotype alleleA
+	^ self genotype start

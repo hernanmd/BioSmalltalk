@@ -4,7 +4,7 @@ markersForGoat
 
 	^ (self markersForSpecies at: 'goat') 
 		collect: [ : markerInfo | 			
-			(BioMicrosatelliteLocus newNamed: markerInfo first)
+			(BioLocus newNamed: markerInfo first)
 				start: markerInfo second;
 				end: markerInfo third;
 				yourself ]

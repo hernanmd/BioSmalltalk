@@ -5,5 +5,5 @@ name: nameString sequence: seqString motif: motifString repeats: repNumber repea
 	^ (self newAmbiguousDNA: seqString named: nameString)
 		motif: motifString;
 		repeats: repNumber;
-		alleleRangeStart: repStartNumber;
+		start: repStartNumber;
 		yourself

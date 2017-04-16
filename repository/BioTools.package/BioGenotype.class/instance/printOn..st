@@ -1,10 +1,11 @@
-as yet unclassified
+printing
 printOn: aStream
+	" Private - See superimplementor's comment "
 
 	aStream 
-		nextPut: alleleA;
+		nextPutAll: alleleA asString;
 		space;
-		nextPut: alleleB;
+		nextPutAll: alleleB asString;
 		nextPutAll: ' @ ';
 		nextPutAll: locus asString;
 		space

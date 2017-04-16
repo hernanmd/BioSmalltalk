@@ -1,4 +1,4 @@
-Represents a Microsatellite marker.  A microsatellite is a tract of repetitive DNA in which certain DNA motifs (ranging in length from 2е base pairs) are repeated, typically 5е0 times.
+Represents a Microsatellite DNA.  A microsatellite is a region of nuclear DNA in which certain DNA motifs (ranging in length from 2 to 5 base pairs) are repeated.
 
 A microsatellite is defined by a name, fragment size range (bp), dye color, and repeat length. 
 

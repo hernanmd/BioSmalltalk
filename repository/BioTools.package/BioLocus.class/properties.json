@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/4/2016 16:24",
+	"commentStamp" : "HernanMoralesDurand 4/16/2017 02:57",
 	"super" : "BioNamedObject",
 	"category" : "BioTools-Core",
 	"classinstvars" : [ ],
@@ -9,7 +9,8 @@
 		"start",
 		"end",
 		"length",
-		"value"
+		"value",
+		"chrLocation"
 	],
 	"name" : "BioLocus",
 	"type" : "normal"

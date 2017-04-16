@@ -1,5 +1,5 @@
 accessing
-alleleRangeEnd
+end
 	" Answer an <Integer> with the receiver's genotype end position "
 	
-	^ self genotype alleleB
+	^ self genotype end

@@ -1,8 +1,8 @@
 instance creation
-newLocus: aBioMicrosatelliteLocus markers: anObject
+newLocus: aBioLocus markers: anObject
 	" Answer a new object representing a Microsatellite marker "
 	
 	^ self new
-		locus: aBioMicrosatelliteLocus;
+		locus: aBioLocus;
 		positions: anObject;
 		yourself

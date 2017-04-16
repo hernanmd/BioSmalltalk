@@ -2,5 +2,5 @@
 setMicrosatelliteGenotypeFor: aBioMicrosatellite
 
 	aBioMicrosatellite
-		alleleRangeStart: self key;
-		alleleRangeEnd: self value.
+		start: self key;
+		end: self value.

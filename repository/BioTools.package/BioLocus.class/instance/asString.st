@@ -1,4 +1,4 @@
-accessing
+converting
 asString
 	" Answer a <String> representation of the receiver "
 	

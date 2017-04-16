@@ -1,7 +1,9 @@
 private
-validatePosition: aString 
+validatePosition: anObject
 	" Answer a <Number> matching aString "
 
-	^ (aString notNil and: [ aString isAllDigits ])
+	anObject isNumber 
+		ifTrue: [ ^ anObject ].
+	^ (anObject notNil and: [ anObject isAllDigits ])
 		ifFalse: [ self nullValue negated ]
-		ifTrue: [ aString asNumber ]
+		ifTrue: [ anObject asNumber ]

@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 4/9/2017 02:54",
+	"commentStamp" : "HernanMoralesDurand 4/16/2017 02:21",
 	"super" : "BioSequence",
 	"category" : "BioTools-Repeats",
 	"classinstvars" : [ ],
@@ -8,7 +8,8 @@
 	"instvars" : [
 		"genotype",
 		"repeats",
-		"locus"
+		"locus",
+		"repeatStructure"
 	],
 	"name" : "BioRepeatSequence",
 	"type" : "normal"

@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "HernanMoralesDurand 4/17/2017 09:57",
+	"super" : "BioObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"sequence",
+		"start",
+		"end",
+		"strand",
+		"location",
+		"score",
+		"frame",
+		"primaryTag",
+		"sourceTag"
+	],
+	"name" : "BioSequenceFeature",
+	"type" : "normal"
+}

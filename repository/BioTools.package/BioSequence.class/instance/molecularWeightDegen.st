@@ -6,29 +6,29 @@ molecularWeightDegen
 	lowerBoundsSequence := self asMutableSequence.
 	upperBoundsSequence := self asMutableSequence.
 	"replace all other degenerates with lightest base possible in lowerBoundsSequence"
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'r' with: 'a').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'y' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 's' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'w' with: 't').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'k' with: 't').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'm' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'b' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'd' with: 't').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'h' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'v' with: 'c').
-	lowerBoundsSequence seq: (lowerBoundsSequence copyReplaceAll: 'n' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'r' with: 'a').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'y' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 's' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'w' with: 't').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'k' with: 't').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'm' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'b' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'd' with: 't').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'h' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'v' with: 'c').
+	lowerBoundsSequence sequence: (lowerBoundsSequence copyReplaceAll: 'n' with: 'c').
 
 	"replace all other degenerates with heaviest base possible in upperBoundsSequence"
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'r' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'y' with: 't').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 's' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'w' with: 'a').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'k' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'm' with: 'a').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'b' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'd' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'h' with: 'a').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'v' with: 'g').
-	upperBoundsSequence seq: (upperBoundsSequence copyReplaceAll: 'n' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'r' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'y' with: 't').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 's' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'w' with: 'a').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'k' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'm' with: 'a').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'b' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'd' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'h' with: 'a').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'v' with: 'g').
+	upperBoundsSequence sequence: (upperBoundsSequence copyReplaceAll: 'n' with: 'g').
 
 	^ { lowerBoundsSequence molecularWeightNonDegen . upperBoundsSequence molecularWeightNonDegen }

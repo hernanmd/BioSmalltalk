@@ -1,0 +1,3 @@
+accessing
+defaultMotifRange
+	^ self subclassResponsibility

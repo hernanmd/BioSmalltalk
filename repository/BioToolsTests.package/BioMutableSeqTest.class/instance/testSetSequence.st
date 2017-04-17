@@ -5,5 +5,5 @@ testSetSequence
 
 	testMutSeq1 := BioMutableSeq new.
 	self assert: testMutSeq1 isNil.
-	testMutSeq1 seq: 'ACTGACGTAC'.
-	self assert: testMutSeq1 asString = 'ACTGACGTAC'.
+	testMutSeq1 sequence: 'ACTGACGTAC'.
+	self assert: testMutSeq1 asString equals: 'ACTGACGTAC'.

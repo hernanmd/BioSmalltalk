@@ -7,7 +7,7 @@ useWebEnv
 	
 	webEnv := self setUseHistory; search.
 	newInstance := self class new.
-	( newInstance perform: self url dbName asSymbol ) client: newInstance.
+	(newInstance perform: self url dbName asSymbol) client: newInstance.
 	[ newInstance webEnv: webEnv ]
 	on: BioErrorSpecificationObject
 	do: [ : ex | ^ self lastStatus: ex messageText ].

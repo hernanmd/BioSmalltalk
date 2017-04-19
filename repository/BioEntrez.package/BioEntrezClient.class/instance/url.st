@@ -1,4 +1,4 @@
-accessing public
+accessing private
 url
 	"Answer the value of url"
 

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 4/16/2017 02:57",
 	"super" : "BioNamedObject",
-	"category" : "BioTools-Core",
+	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

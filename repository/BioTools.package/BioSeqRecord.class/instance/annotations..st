@@ -1,3 +1,3 @@
-accessing-sequence
+accessing - sequence annotations
 annotations: anObject
 	annotations := anObject

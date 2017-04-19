@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 10/23/2011 23:41",
 	"super" : "BioNamedObject",
-	"category" : "BioTools-Core",
+	"category" : "BioTools-Sequences",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -11,8 +11,8 @@
 		"annotations",
 		"description",
 		"letterAnnotations",
-		"features",
-		"dbxRefs"
+		"dbxRefs",
+		"sequenceFeatures"
 	],
 	"name" : "BioSeqRecord",
 	"type" : "normal"

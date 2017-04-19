@@ -1,5 +1,6 @@
-accessing
+accessing - sequence features
 features
 	" Answer a <Collection> of receiver's <BioSeqFeature> "
 
-	^ features
+	^ sequenceFeatures
+		ifNil: [ sequenceFeatures := self sequenceFeaturesClass new ]

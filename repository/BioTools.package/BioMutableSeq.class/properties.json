@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 9/28/2012 00:12",
 	"super" : "BioSequence",
-	"category" : "BioTools-Biological",
+	"category" : "BioTools-Sequences",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

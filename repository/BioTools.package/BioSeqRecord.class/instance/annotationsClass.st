@@ -1,4 +1,4 @@
-accessing-sequence
+accessing - sequence annotations
 annotationsClass
 
 	^ Dictionary

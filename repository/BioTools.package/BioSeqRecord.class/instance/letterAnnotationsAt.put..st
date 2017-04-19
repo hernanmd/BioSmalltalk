@@ -1,4 +1,4 @@
-accessing-sequence
+accessing - sequence annotations
 letterAnnotationsAt: aKey put: aCollection
 	" At aKey add aCollection to the receiver's per-letter annotation for the sequence. aCollection must match the length of the receiver's sequence length "
 	

@@ -9,7 +9,9 @@
 		"genotype",
 		"repeats",
 		"locus",
-		"repeatStructure"
+		"repeatStructure",
+		"maxMotifSize",
+		"minMotifSize"
 	],
 	"name" : "BioRepeatSequence",
 	"type" : "normal"

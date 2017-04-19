@@ -1,4 +1,4 @@
-accessing-sequence
+accessing - sequence annotations
 removeLetterAnnotations
 	" Completely remove all the letter annotations from the receiver "
 

@@ -1,3 +1,3 @@
-accessing
+accessing - sequence features
 features: anObject
-	features := anObject
+	sequenceFeatures := anObject

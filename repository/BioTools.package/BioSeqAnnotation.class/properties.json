@@ -1,13 +1,13 @@
 {
-	"commentStamp" : "HernanMoralesDurand 3/22/2016 04:23",
+	"commentStamp" : "HernanMoralesDurand 4/18/2017 02:58",
 	"super" : "BioNamedObject",
-	"category" : "BioTools-Core",
+	"category" : "BioTools-Sequences",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"contents"
 	],
-	"name" : "BioAnnotation",
+	"name" : "BioSeqAnnotation",
 	"type" : "normal"
 }

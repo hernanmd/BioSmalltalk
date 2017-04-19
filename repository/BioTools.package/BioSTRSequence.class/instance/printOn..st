@@ -4,4 +4,4 @@ printOn: aStream
 	
 	aStream
 		nextPutAll: self motif between: $( and: $);
-		nextPutAll: self motifSize asString
+		nextPutAll: self repeats asString

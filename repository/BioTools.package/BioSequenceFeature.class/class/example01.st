@@ -4,7 +4,7 @@ example01
 
 	^ self new
 		start: 10;
-		end: 2;
+		end: 20;
 		strand: 1;
 		name: 'hs.1';
 		primaryTag: 'CDS';

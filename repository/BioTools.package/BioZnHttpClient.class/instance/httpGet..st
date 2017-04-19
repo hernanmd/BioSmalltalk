@@ -6,5 +6,5 @@ httpGet: urlString
 	UIManager default informUserDuring: [ : bar |
 		bar label: 'Downloading...'.
 		^ [ (self classFor: self providerClass) new get: urlString ]
-		on: HTTPProgress, ZnEntityTooLarge, ConnectionClosed 
+		on: HTTPProgress, ZnEntityTooLarge, ConnectionClosed, ZnLineTooLong 
 		do: [ : ex | self handleWebClientException: ex progressBar: bar ] ]

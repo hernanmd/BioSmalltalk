@@ -9,6 +9,7 @@ exportFromXML: aBlastXMLString
 	self exportPositions: hitCollection.
 	self exportConsensus.
 	self exportMatrixFromBLAST: hitCollection.
-	self writeToFile
-		ifTrue: [ self dumpToFileNamed: self outputFilename contents: stream contents ].
+	self 
+		dumpToFileNamed: self outputFilename 
+		contents: stream contents.
 	^ stream contents

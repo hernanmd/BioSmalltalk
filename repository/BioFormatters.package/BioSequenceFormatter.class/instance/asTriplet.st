@@ -10,5 +10,5 @@ asTriplet
 							nextPutAll: (self sequence copyFrom: startIndex to: startIndex + 2);
 							nextPut: self delimiterTargetCharacter ] ].
 		self sequence size \\ 3 ~= 0 
-			ifTrue: [ stream nextPutAll: (self sequence last: self sequence size \\ 3) ]].
+			ifTrue: [ stream nextPutAll: (self sequence last: self sequence size \\ 3) ] ].
 	^ answer trimBoth

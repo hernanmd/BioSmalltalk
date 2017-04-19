@@ -1,11 +1,13 @@
 {
-	"commentStamp" : "HernanMoralesDurand 9/3/2016 04:55",
+	"commentStamp" : "HernanMoralesDurand 4/18/2017 22:57",
 	"super" : "BioFileFormatter",
 	"category" : "BioFormatters-Formatters",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
-	"name" : "BioMAPFormatter",
+	"instvars" : [
+		"sequenceFeature"
+	],
+	"name" : "BioGFF3Formatter",
 	"type" : "normal"
 }

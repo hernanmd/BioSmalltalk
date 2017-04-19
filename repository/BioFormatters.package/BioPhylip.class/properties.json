@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "HernanMoralesDurand 8/18/2015 17:36",
+	"super" : "BioNamedObject",
+	"category" : "BioFormatters-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"numberOfTaxa",
+		"numberOfCharacters",
+		"sequences"
+	],
+	"name" : "BioPhylip",
+	"type" : "normal"
+}

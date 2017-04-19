@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 10/1/2014 20:26",
 	"super" : "BioNamedObject",
-	"category" : "BioFormatters-Files",
+	"category" : "BioFormatters-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

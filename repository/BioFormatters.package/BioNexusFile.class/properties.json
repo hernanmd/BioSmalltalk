@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"blocks"
+	],
 	"name" : "BioNexusFile",
 	"type" : "normal"
 }

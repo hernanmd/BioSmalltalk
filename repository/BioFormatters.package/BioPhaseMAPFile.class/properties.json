@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioMAPFile",
+	"name" : "BioPhaseMAPFile",
 	"type" : "normal"
 }

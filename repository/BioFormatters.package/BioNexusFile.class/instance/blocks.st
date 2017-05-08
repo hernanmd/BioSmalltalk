@@ -1,3 +1,5 @@
 accessing
 blocks
-	" Answer a <Collection> of blocks in the receiver "
+	" Answer a <Collection> of <BioNexusBlock> in the receiver "
+	
+	^ blocks

@@ -14,7 +14,7 @@ fillGenotypeMatrixFrom: parserForPed
 		a2 := 2.		
 		maxCols := row size - 6.		
 		currentGenoRow := 0.		
-		[a1 <= maxCols and: [ a2 <= maxCols ]]
+		[ a1 <= maxCols and: [ a2 <= maxCols ] ]
 			whileTrue: [ 
 				| alArray alPos |
 				alPos := self alPositionsForMarker: index.				

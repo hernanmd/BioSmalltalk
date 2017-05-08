@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 5/7/2017 19:11",
+	"super" : "BioWrapperObject",
+	"category" : "BioWrappers-Programs",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioBayAreaWrapper",
+	"type" : "normal"
+}

@@ -3,7 +3,7 @@ buildProperties: stream
 	" Private - Append receiver's properties to stream "
 
 	self properties
-		ifNotNil: [ 
+		ifNotNil: [ :arg | 
 			self properties
 				associationsDo: [ :assoc | 
 					stream space.

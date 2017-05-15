@@ -2,4 +2,4 @@ testing
 isSTRSequence
 	" Answer <true> if the receiver represents a STR sequence "
 	
-	^ self
+	^ true

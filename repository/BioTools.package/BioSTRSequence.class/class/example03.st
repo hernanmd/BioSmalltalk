@@ -5,4 +5,5 @@ example03
 		name: 'BM1818';
 		motif: 'TG';
 		positions: 266 -> 270;
-		yourself.
+		yourself;
+		inspect

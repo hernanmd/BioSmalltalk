@@ -5,7 +5,7 @@ markersForSpecies
 	^ Dictionary new
 		at: 'cattle' 	put: self markerAlleleRangesForCattle;
 		at: 'dog' 		put: self markerAlleleRangesForDog;
-		at: 'sheep' 		put: self markerAlleleRangesForSheep;
+		at: 'sheep' 	put: self markerAlleleRangesForSheep;
 		at: 'goat' 		put: self markerAlleleRangesForGoat;
 		at: 'pig' 		put: self markerAlleleRangesForPig;
 		yourself

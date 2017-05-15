@@ -8,6 +8,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioMicrosatellitePanel",
+	"name" : "BioPanel",
 	"type" : "normal"
 }

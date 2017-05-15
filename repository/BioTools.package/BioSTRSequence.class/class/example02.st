@@ -6,4 +6,5 @@ example02
 		motif: 'TG';
 		start: 266;
 		end: 270;
-		yourself.
+		yourself;
+		inspect

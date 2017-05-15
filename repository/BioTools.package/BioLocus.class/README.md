@@ -4,7 +4,7 @@ Internal Representation and Key Implementation Points.
 
     Instance Variables
 	end:			<Object>
-	length:		<Object>
+	length:		<Number>
 	start:		<Object>
 	value:		<Object>
 

@@ -4,6 +4,7 @@ headerContents
 	This is to avoid reading the entire file (which could be huge) to
 	process the meta nodes which are located at the header of the XML "
 	
-	^ self results first: 3500
-
+	^ [  self results first: 3500 ]
+	on: SubscriptOutOfBounds 
+	do: [ : ex | self results first: 200 ]
 	

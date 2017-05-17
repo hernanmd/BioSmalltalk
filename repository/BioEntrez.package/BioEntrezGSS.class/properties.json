@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioESeqCommonDb",
+	"super" : "BioESSGSSDb",
 	"category" : "BioEntrez-Databases",
 	"classinstvars" : [ ],
 	"pools" : [ ],

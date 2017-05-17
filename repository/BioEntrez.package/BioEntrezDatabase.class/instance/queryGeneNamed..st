@@ -6,4 +6,4 @@ queryGeneNamed: aGeneName
 		stream 
 			nextPutAll: aGeneName; 
 			space;
-			nextPutAll: '[GENE]' ]
+			nextPutAll: self qualifierForGene ]

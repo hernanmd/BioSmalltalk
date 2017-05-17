@@ -1,5 +1,5 @@
 accessing - organism qualifiers
-queryHuman
+queryMusMusculus
 	" Answer a <String> to search specific organism in Entrez "
 
-	^ 'human' , self qualifierForOrganism
+	^ 'Mus musculus' , self qualifierForOrganism

@@ -1,5 +1,5 @@
 accessing - organism qualifiers
-queryHuman
+queryArabidopsisThaliana
 	" Answer a <String> to search specific organism in Entrez "
 
-	^ 'human' , self qualifierForOrganism
+	^ 'Arabidopsis thaliana' , self qualifierForOrganism

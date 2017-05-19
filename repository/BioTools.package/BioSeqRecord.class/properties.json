@@ -12,7 +12,9 @@
 		"description",
 		"letterAnnotations",
 		"dbxRefs",
-		"sequenceFeatures"
+		"sequenceFeatures",
+		"annotationsClass",
+		"sequenceFeaturesClass"
 	],
 	"name" : "BioSeqRecord",
 	"type" : "normal"

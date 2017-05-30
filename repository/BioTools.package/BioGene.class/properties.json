@@ -1,15 +1,14 @@
 {
-	"commentStamp" : "HernanMoralesDurand 12/23/2016 03:33",
+	"commentStamp" : "HernanMoralesDurand 5/30/2017 23:49",
 	"super" : "BioNamedObject",
 	"category" : "BioTools-Biological",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"fragments",
-		"genome",
-		"genes"
+		"chromosome",
+		"proteins"
 	],
-	"name" : "BioChromosome",
+	"name" : "BioGene",
 	"type" : "normal"
 }

@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 7/17/2014 00:43",
 	"super" : "BioFilter",
-	"category" : "BioBlast-Core",
+	"category" : "BioBlast-Local",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

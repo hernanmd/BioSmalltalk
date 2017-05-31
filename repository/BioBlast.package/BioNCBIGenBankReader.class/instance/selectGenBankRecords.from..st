@@ -6,8 +6,8 @@ selectGenBankRecords: selectBlock from: aDataSource
 	
 	tmpResults := OrderedCollection new.
 	contents
-		ifNil: [ contents := ( BioGBSeqCollection filesFromXMLDirectory: aDataSource ) parseDocuments ].
+		ifNil: [ contents := (BioGBSeqCollection filesFromXMLDirectory: aDataSource) parseDocuments ].
 	contents do: [: seqRecord | 
-		( selectBlock value: seqRecord )
+		(selectBlock value: seqRecord)
 			ifTrue: [ tmpResults add: seqRecord ] ].
 	^ tmpResults asBio: BioGBSeqCollection

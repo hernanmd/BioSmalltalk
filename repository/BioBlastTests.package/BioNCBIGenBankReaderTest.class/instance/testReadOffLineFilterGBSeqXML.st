@@ -7,9 +7,8 @@ testReadOffLineFilterGBSeqXML
 		BioNCBIGenBankReader new 
 			selectGenBankRecords: [: obj | true ] 
 			from: self class testFilesDirectoryName.
-
 	self 
-		assert: ( gbSeqCollection isKindOf: BioGBSeqCollection ) 
+		assert: (gbSeqCollection isKindOf: BioGBSeqCollection) 
 		description: 'A <Collection> of <Dictionary> of GBSeq nodes/values associations. To access BioSearchResult objects use methods beggining with #search...'.
 
 	self deny: gbSeqCollection isEmpty.

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/1/2017 01:28",
+	"super" : "BioFileFormatter",
+	"category" : "BioFormatters-Formatters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNewickFormatter",
+	"type" : "normal"
+}

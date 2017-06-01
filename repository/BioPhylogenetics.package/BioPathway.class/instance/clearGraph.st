@@ -1,0 +1,4 @@
+accessing
+clearGraph
+
+	graph := nil

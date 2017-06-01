@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 8/6/2014 01:54",
+	"super" : "BioFile",
+	"category" : "BioPhylogenetics-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"blocks"
+	],
+	"name" : "BioNexusFile",
+	"type" : "normal"
+}

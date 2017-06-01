@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 3/7/2015 00:21",
+	"super" : "BioNamedObject",
+	"category" : "BioPhylogenetics-Formatters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"alignment"
+	],
+	"name" : "BioMEGASeqRecord",
+	"type" : "normal"
+}

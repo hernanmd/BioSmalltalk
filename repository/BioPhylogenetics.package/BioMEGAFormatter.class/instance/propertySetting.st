@@ -1,0 +1,4 @@
+accessing
+propertySetting
+	
+	^ propertySetting

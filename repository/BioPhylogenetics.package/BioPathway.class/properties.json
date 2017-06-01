@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/1/2017 22:44",
+	"super" : "BioNamedObject",
+	"category" : "BioPhylogenetics-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"relations",
+		"graph",
+		"undirected",
+		"index"
+	],
+	"name" : "BioPathway",
+	"type" : "normal"
+}

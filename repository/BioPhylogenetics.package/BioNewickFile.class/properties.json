@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioFile",
+	"category" : "BioPhylogenetics-Files",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioNewickFile",
+	"type" : "normal"
+}

@@ -12,7 +12,9 @@
 		"identifier",
 		"refBase",
 		"altBase",
-		"quality"
+		"quality",
+		"filter",
+		"info"
 	],
 	"name" : "BioVCFRecord",
 	"type" : "normal"

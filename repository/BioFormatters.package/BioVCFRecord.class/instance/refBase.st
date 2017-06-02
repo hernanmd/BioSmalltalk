@@ -1,0 +1,5 @@
+accessing
+refBase
+	" Answer a <String> of reference base(s). Each base must be one of A,C,G,T,N (case insensitive).  Multiple bases are permitted. The  value  in  the  POS  field  refers  to  the  position  of  the  first  base  in  the  String.   For  simple  insertions  and deletions in which either the REF or one of the ALT alleles would otherwise be null/empty, the REF and ALT Strings must include the base before the event (which must be reflected in the POS field),  unless the event occurs at position 1 on the contig in which case it must include the base after the event; this padding base is not required (although it is permitted) for e.g.  complex substitutions or other events where all alleles have at least one base represented in their Strings.  If any of the ALT alleles is a symbolic allele (an angle-bracketed ID String “<ID>”) then the padding base is required and POS denotes the coordinate of the base preceding the polymorphism.  Tools processing VCF files are not required to preserve case in the allele Strings.  (String, Required). "
+
+	^ refBase

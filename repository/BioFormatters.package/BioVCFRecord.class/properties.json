@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/2/2017 09:36",
+	"super" : "BioNamedObject",
+	"category" : "BioFormatters-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"positions",
+		"position",
+		"chromosome",
+		"identifier",
+		"refBase",
+		"altBase",
+		"quality"
+	],
+	"name" : "BioVCFRecord",
+	"type" : "normal"
+}

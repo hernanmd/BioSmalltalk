@@ -10,4 +10,5 @@ addMetaFormatFloat: formatIdString number: aNumber description: descriptionStrin
 		nextPutAll: ',Type=Float';
 		nextPutAll: ',Description=';
 		nextPutAll: descriptionString;
+		nextPut: $>;		
 		bioCr

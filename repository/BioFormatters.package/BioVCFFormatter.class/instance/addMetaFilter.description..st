@@ -7,4 +7,5 @@ addMetaFilter: filterIdString description: descriptionString
 		nextPutAll: filterIdString;
 		nextPutAll: ',Description=';
 		nextPutAll: descriptionString;
+		nextPut: $>;		
 		bioCr

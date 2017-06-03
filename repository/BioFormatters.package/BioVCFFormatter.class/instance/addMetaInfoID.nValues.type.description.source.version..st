@@ -15,4 +15,5 @@ addMetaInfoID: stringID nValues: nValInteger type: stringType description: descr
 		nextPutAll: sourceString;
 		nextPutAll: ',Version=';
 		nextPutAll: versionString;
+		nextPut: $>;		
 		bioCr.

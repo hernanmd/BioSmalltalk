@@ -11,4 +11,5 @@ addMetaFormat: formatIdString number: aNumber type: typeString description: desc
 		nextPutAll: typeString;
 		nextPutAll: ',Description=';
 		nextPutAll: descriptionString;
+		nextPut: $>;		
 		bioCr

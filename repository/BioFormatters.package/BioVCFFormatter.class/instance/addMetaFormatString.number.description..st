@@ -10,4 +10,5 @@ addMetaFormatString: formatIdString number: aNumber description: descriptionStri
 		nextPutAll: ',Type=String';
 		nextPutAll: ',Description=';
 		nextPutAll: descriptionString;
+		nextPut: $>;		
 		bioCr

@@ -14,4 +14,5 @@ addMetaIntegerFloatID: stringID nValues: nValInteger description: descriptionStr
 		nextPutAll: sourceString;
 		nextPutAll: ',Version=';
 		nextPutAll: versionString;
+		nextPut: $>;		
 		bioCr.

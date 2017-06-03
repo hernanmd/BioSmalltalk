@@ -3,6 +3,6 @@ setInfoDB
 	" Set dbSNP membership "
 
 	self hasInfoFields
-		ifTrue: [ self info nextPut: $; ].
-	self info 
+		ifTrue: [ self infoStream nextPut: $; ].
+	self infoStream 
 		nextPutAll: 'DB'

@@ -3,7 +3,7 @@ setInfoNS: aNumber
 	" Set aNumber of samples with data"
 
 	self hasInfoFields
-		ifTrue: [ self info nextPut: $; ].
-	self info
+		ifTrue: [ self infoStream nextPut: $; ].
+	self infoStream
 		nextPutAll: 'NS=';
 		nextPutAll: aNumber asString 

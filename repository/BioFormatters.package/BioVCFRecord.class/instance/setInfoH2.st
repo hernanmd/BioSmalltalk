@@ -3,6 +3,6 @@ setInfoH2
 	" Set hapmap2 membership "
 
 	self hasInfoFields
-		ifTrue: [ self info nextPut: $; ].
-	self info 
+		ifTrue: [ self infoStream nextPut: $; ].
+	self infoStream 
 		nextPutAll: 'H2'

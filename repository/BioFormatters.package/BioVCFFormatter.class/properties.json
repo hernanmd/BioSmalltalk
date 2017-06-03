@@ -5,9 +5,7 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"sourceProgram"
-	],
+	"instvars" : [ ],
 	"name" : "BioVCFFormatter",
 	"type" : "normal"
 }

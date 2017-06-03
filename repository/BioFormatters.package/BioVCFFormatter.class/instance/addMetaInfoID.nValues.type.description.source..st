@@ -13,4 +13,5 @@ addMetaInfoID: stringID nValues: nValInteger type: stringType description: descr
 		nextPutAll: (descriptionString surroundedBy: $");
 		nextPutAll: ',Source=';
 		nextPutAll: sourceString;
+		nextPut: $>;		
 		bioCr.

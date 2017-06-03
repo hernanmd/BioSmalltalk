@@ -1,6 +1,6 @@
 accessing - meta
 addMetaAltID: stringID description: descriptionString
-	" Add the Alternative allele eld format "
+	" Add the Alternative allele field format "
 
 	self deny: (stringID includesAnyOf: String space).
 	self stream
@@ -8,4 +8,5 @@ addMetaAltID: stringID description: descriptionString
 		nextPutAll: stringID;
 		nextPutAll: ',Description=';
 		nextPutAll: (descriptionString surroundedBy: $");
+		nextPut: $>;		
 		bioCr

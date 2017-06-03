@@ -1,3 +1,5 @@
 accessing
-delimiter: anObject
-	delimiter := anObject
+delimiter: aCharacter
+	" Set aCharacter as delimiter for the receiver's fields "
+
+	delimiter := aCharacter

@@ -1,6 +1,6 @@
 accessing
 parseDocuments
-	" Answer a Collection of Dictionaries with qualifier -> value associations "
+	" Answer a <Collection> of <Dictionary> with qualifier -> value associations "
 	
 	| collection |
 	

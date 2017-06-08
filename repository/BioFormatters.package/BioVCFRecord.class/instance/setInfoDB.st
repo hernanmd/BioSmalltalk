@@ -2,7 +2,6 @@ accessing - info
 setInfoDB
 	" Set dbSNP membership "
 
-	self hasInfoFields
-		ifTrue: [ self infoStream nextPut: $; ].
+	self appendInfoDelimiter.
 	self infoStream 
 		nextPutAll: 'DB'

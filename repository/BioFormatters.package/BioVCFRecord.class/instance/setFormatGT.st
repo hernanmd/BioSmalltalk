@@ -4,6 +4,5 @@ setFormatGT
 	/ : genotype unphased 
 	| : genotype phased "
 
-	self hasFormatField
-		ifTrue: [ self formatStream nextPut: $: ].
+	self appendFormatDelimiter.
 	self formatStream nextPutAll: 'GT'

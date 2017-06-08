@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "BioNamedObject",
+	"category" : "BioFormatters-Support",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"vcfRecord",
+		"genotype",
+		"readDepth",
+		"haplotypeQuality",
+		"genotypeQuality"
+	],
+	"name" : "BioVCFRecordSample",
+	"type" : "normal"
+}

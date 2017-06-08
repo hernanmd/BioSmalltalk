@@ -1,0 +1,3 @@
+accessing
+haplotypeQuality
+	^ haplotypeQuality

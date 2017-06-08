@@ -1,4 +1,4 @@
-accessing - info
+accessing - format
 formatStream
 	" Answer a <Stream> with additional information. See #formatString "
 

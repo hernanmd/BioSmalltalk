@@ -1,7 +1,11 @@
 examples
-example03
+example04
 	" Example with FORMAT and INFO records "
-	
+
+	| genotypes |
+	genotypes := { 
+		BioVCFRecordSample example01 .
+		BioVCFRecordSample example02 }.
 	^ BioVCFRecord new
 		chromosome: 20;
 		position: 14370;
@@ -19,5 +23,6 @@ example03
 		setFormatGQ;
 		setFormatDP;
 		setFormatHQ;
+		addGenotypes: genotypes;
 		yourself;
 		inspect

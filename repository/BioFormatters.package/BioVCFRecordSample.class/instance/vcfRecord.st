@@ -1,0 +1,3 @@
+accessing
+vcfRecord
+	^ vcfRecord

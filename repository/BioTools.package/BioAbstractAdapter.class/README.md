@@ -1,12 +1,16 @@
-BioAbstractAdapter defines the interface and abstract behavior for Adapters in BioSmalltalk.
+BioAbstractAdapter defines the interface and abstract behavior for Adapters in BioSmalltalk. An adapter is composed of a "provider" which refers to the external class (the adaptee).
 
-Providers refers to the external classes which are adaptee.
-Adapters refers to the final subclasses acting as adapters.
+Final subclasses are the adapters.
 
-One should never name the final subclasses, instead write the corresponding adapter superclass, for example, to serialize your objects, use:
+Usage:  To use an adapter interface, one should never refer to the name of the final subclasses (the adapters). Instead refer to the the corresponding adapter superclass, for example, to serialize your objects, use:
 
 BioSerializationEngine serialize: anObject.
 
-to get the contents at an URL:
+Instead of 
+
+BioFLSerializer ...
+BioSIXXSerializer ..
+
+Another example, to get the contents at an URL:
 
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet

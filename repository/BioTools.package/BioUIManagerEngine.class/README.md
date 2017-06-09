@@ -1,0 +1,1 @@
+UIManager is a dispatcher used in Pharo for UI interactivity with users.

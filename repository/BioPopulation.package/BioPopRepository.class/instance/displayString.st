@@ -1,4 +1,4 @@
-accessing
+displaying
 displayString
 
 	^ String streamContents: [ : stream | 

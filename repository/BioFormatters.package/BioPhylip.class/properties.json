@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 8/18/2015 17:36",
 	"super" : "BioNamedObject",
-	"category" : "BioFormatters-Support",
+	"category" : "BioFormatters-Formatters-PHYLIP",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

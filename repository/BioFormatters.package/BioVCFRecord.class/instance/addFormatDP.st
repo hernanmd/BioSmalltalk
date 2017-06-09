@@ -1,6 +1,5 @@
 accessing - format
-setFormatDP
+addFormatDP
 	" Set read depth at this position for this sample (Integer) "
 
-	self appendFormatDelimiter.
-	self formatStream nextPutAll: 'DP'
+	self formats add: 'DP'

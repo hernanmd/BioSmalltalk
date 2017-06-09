@@ -1,5 +1,5 @@
 accessing - format
-setFormatHQ
+printFormatHQ
 	" Set the haplotype qualities, two comma separated phred qualities (Integers) "
 
 	self appendFormatDelimiter.

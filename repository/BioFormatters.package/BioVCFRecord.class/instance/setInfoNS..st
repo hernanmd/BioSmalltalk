@@ -2,7 +2,4 @@ accessing - info
 setInfoNS: aNumber
 	" Set aNumber of samples with data"
 
-	self appendInfoDelimiter.
-	self infoStream
-		nextPutAll: 'NS=';
-		nextPutAll: aNumber asString 
+	self info at: 'NS' put: aNumber

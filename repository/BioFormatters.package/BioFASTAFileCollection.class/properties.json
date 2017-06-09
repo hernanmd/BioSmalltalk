@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "hfm 10/1/2012 21:30",
 	"super" : "BioFileCollection",
-	"category" : "BioFormatters-Core",
+	"category" : "BioFormatters-Formatters-FASTA",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

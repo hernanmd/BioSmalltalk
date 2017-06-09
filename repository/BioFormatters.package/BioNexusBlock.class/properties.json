@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 5/8/2017 01:43",
 	"super" : "BioNamedObject",
-	"category" : "BioFormatters-Support",
+	"category" : "BioFormatters-Formatters-NEXUS",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

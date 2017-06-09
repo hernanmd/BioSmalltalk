@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 8/12/2015 01:27",
 	"super" : "BioFile",
-	"category" : "BioFormatters-Files",
+	"category" : "BioFormatters-Formatters-PHYLIP",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

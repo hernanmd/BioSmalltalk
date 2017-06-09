@@ -19,10 +19,10 @@ example04
 		setInfoAF: 0.5;
 		setInfoDB;
 		setInfoH2;
-		setFormatGT;
-		setFormatGQ;
-		setFormatDP;
-		setFormatHQ;
+		addFormatGT;
+		addFormatGQ;
+		addFormatDP;
+		addFormatHQ;
 		addGenotypes: genotypes;
 		yourself;
 		inspect

@@ -2,6 +2,4 @@ accessing - info
 setInfoH3
 	" Set hapmap3 membership "
 
-	self appendInfoDelimiter.
-	self infoStream 
-		nextPutAll: 'H3'
+	self info at: 'H3' put: nil

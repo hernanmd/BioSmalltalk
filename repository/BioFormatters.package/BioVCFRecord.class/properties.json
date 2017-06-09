@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "HernanMoralesDurand 6/2/2017 09:36",
 	"super" : "BioObject",
-	"category" : "BioFormatters-Support",
+	"category" : "BioFormatters-Formatters-VCF",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -15,8 +15,7 @@
 		"quality",
 		"filter",
 		"formats",
-		"formatStream",
-		"infoStream"
+		"samples"
 	],
 	"name" : "BioVCFRecord",
 	"type" : "normal"

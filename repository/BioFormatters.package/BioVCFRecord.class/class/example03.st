@@ -15,9 +15,9 @@ example03
 		setInfoAF: 0.5;
 		setInfoDB;
 		setInfoH2;
-		setFormatGT;
-		setFormatGQ;
-		setFormatDP;
-		setFormatHQ;
+		addFormatGT;
+		addFormatGQ;
+		addFormatDP;
+		addFormatHQ;
 		yourself;
 		inspect

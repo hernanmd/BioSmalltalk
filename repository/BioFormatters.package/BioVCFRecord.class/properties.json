@@ -15,7 +15,8 @@
 		"quality",
 		"filter",
 		"formats",
-		"samples"
+		"samples",
+		"infos"
 	],
 	"name" : "BioVCFRecord",
 	"type" : "normal"

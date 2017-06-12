@@ -4,7 +4,7 @@ pdbCode: aString assemblySet: setNumber assemblyNumberInSet: asmNumberOrCollecti
 	
 	| urlParamString |
 	
-	urlParamString := String streamContents: [: str | 
+	urlParamString := String streamContents: [ : str | 
 		str 
 			nextPut: $?;
 			nextPutAll: aString asLowercase;

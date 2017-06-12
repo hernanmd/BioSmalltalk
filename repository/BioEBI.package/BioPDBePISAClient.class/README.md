@@ -1,4 +1,4 @@
-BioPDBePISAClient is a client to the PDBePISA (Protein Interfaces, Surfaces and Assemblies) service provided by the EBI. 
+BioPDBePISAClient is a client to the PDBePISA (Protein Interfaces, Surfaces and Assemblies) service provided by the EBI.  See class side examples for sample code.
 
 You may find more documentation here:
 

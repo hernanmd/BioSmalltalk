@@ -1,1 +1,2 @@
-Represents a Collection of BioSample.
+Represents a generic container of biological samples.
+

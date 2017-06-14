@@ -1,5 +1,10 @@
-accessing
+defaults
 defaultDirectory
-	" Answer a String with the receiver's server directory to CWD "
+	" Answer a <String> with the receiver's server directory to CWD "
 	
-	^ 'genomes/' , self organismName , '/CHR_' , self chrAsString
+	^ String streamContents: [ : stream |
+			stream
+				nextPutAll: 'genomes/';
+				nextPutAll: self organismName;
+				nextPutAll: '/CHR_';
+				nextPutAll: self chrDirAsString ]

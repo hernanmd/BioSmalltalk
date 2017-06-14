@@ -1,7 +1,6 @@
 accessing
 isUpdated: fileName
-	" Answer <true> if modification time of remote fileName is newer
-	than modification time of receiver's copy of fileName "
+	" Answer <true> if modification time of remote fileName is newer than modification time of receiver's copy of fileName "
 
 	| fullName |
 		

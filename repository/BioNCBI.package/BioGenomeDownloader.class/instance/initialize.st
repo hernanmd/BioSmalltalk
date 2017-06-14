@@ -5,6 +5,8 @@ initialize
 	super initialize.
 	forceDownload := false.
 	checkMD5 := false.
+	self beChrFileZeroPrefixed.
+	self beChrDirZeroPrefixed.
 	self connectionSettings
 			user: self defaultUser;
 			password: self defaultPassword;

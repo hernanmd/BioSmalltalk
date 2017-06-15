@@ -122,7 +122,7 @@ baseline011: spec
 			package: 'BioNCBITests' with: [
 				spec requires: #('BioToolsTests' 'BioNCBI' ). ];
 			package: 'BioNGS' with: [
-				spec requires: #('BioTools' ). ];
+				spec requires: #('BioTools' 'BioWrappers'). ];
 			package: 'BioParserTests' with: [
 				spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' with: [
@@ -130,7 +130,7 @@ baseline011: spec
 			package: #BioPharo4 with: [
 				spec requires: #('BioTools' ). ];
 			package: #BioPhylogenetics with: [
-				spec requires: #('BioTools' ). ];
+				spec requires: #('BioTools' 'BioFormatters'). ];
 			package: 'BioPopulation' with: [
 				spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
 			package: 'BioProject' with: [

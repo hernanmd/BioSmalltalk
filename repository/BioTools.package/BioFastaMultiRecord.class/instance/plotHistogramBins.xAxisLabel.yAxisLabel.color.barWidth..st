@@ -4,7 +4,7 @@ plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color
 	| bins minPoint g ds |
 	
 	bins := self groupedBySeqLengthDistribution: binNumber.
-	minPoint := ((bins reject: #isEmpty) detectMin: [ : c | c size ]) anyOne size.
+	minPoint := ((bins reject: #isEmpty) detectMin: [ : c | c size ]) anyOne size - 28.
 
 	" Build diagram "
 	g := RTGrapher new 

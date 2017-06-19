@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "HernanMoralesDurand 3/22/2017 15:37",
+	"super" : "BioFileFormatter",
+	"category" : "BioFormatters-Formatters",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"logpCol",
+		"gpeaks",
+		"nbases",
+		"ylim",
+		"bedFormatter",
+		"chrNumber"
+	],
+	"name" : "BioRehhLogPValueCollector",
+	"type" : "normal"
+}

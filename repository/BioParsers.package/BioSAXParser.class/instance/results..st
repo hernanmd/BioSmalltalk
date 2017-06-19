@@ -1,3 +1,5 @@
 accessing
-results: anObject
-	^ results := anObject
+results: aCollection
+	" Set the receiver's results to be aCollection "
+
+	^ results := aCollection

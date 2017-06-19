@@ -1,5 +1,5 @@
 accessing
 selectNodes: aCollection
-	"Set the value of choosenNodes"
+	" Select aCollection of nodes to be parsed by the receiver "
 
 	selectedNodes := aCollection

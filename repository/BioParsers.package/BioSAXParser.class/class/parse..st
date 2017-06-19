@@ -2,7 +2,7 @@ instance creation
 parse: anObject
 	" Parse anObject. This is for cases where you want to set parser parameters before parsing the document #parseDocument "
 	
-	| driver parser |
+	| parser |
 
 	" driver := SAXDriver on: anObject readStream. "
 	" driver validating: true. "

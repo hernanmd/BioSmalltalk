@@ -1,5 +1,5 @@
 parse-ncbi-xml
-parseNcbiXmlGBSeq: aString
+parseFullNcbiXmlGBSeq: aString
 	" Answer a <Collection> of header nodes found in aString "
-	
-	^ BioEntrezXMLGBBasicParser parse: aString
+
+	^ BioEntrezXMLGBFullParser parse: aString

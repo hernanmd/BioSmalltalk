@@ -1,12 +1,12 @@
 private
 collectLogPPeaks
 
-	| index |
+	| index lpstart |
 	
 	self gpeaks: OrderedCollection new.
 	index := 1.
 	[ index + 1 = self logpCol size ] whileFalse: [ 
-		| pend pstart lpstart |
+		| pend pstart |
 		pend := self logpCol at: index + 1.
 		pstart := self logpCol at: index.
 		(pend third asNumber - pstart third asNumber > self nbases)

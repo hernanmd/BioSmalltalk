@@ -1,0 +1,4 @@
+accessing
+gcContent
+
+	self shouldBeImplemented 

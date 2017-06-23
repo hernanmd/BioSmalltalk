@@ -1,7 +1,7 @@
 testing
 testTranscription
 
-	| seqStrand seqTranscribed comp |
+	| seqStrand seqTranscribed |
 	
 	seqStrand := BioSequence newUnambiguousDNA: 'ATGAGCATTAAGTGA'.
 	seqTranscribed := BioSequence newUnambiguousRNA: 'AUGAGCAUUAAGUGA'.

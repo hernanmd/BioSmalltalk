@@ -1,3 +1,5 @@
+Acts as a global repository of organisms.
+
 BioSpecies release.
 BioSpecies initialize.
 BioSpecies repositories.

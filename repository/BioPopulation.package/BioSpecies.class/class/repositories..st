@@ -1,3 +1,5 @@
 accessing
-repositories: anObject
-	Repositories := anObject
+repositories: aCollection
+	" Set the receiver's repositories to be aCollection "
+	
+	Repositories := aCollection

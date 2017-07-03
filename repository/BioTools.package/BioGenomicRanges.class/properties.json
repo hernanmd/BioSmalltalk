@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 6/20/2017 04:28",
+	"super" : "BioNamedObject",
+	"category" : "BioTools-Sequences",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioGenomicRanges",
+	"type" : "normal"
+}

@@ -4,7 +4,6 @@ baseline011: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
@@ -63,6 +62,7 @@ baseline011: spec
 				spec
 					className: #ConfigurationOfRoassal2;
 					versionString: #'stable';
+					loads: #('NoGlamour' );
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'StringExtensions' with: [
 				spec
@@ -73,6 +73,7 @@ baseline011: spec
 				spec
 					className: #ConfigurationOfXMLParser;
 					versionString: #'release-2.5';
+					loads: #('Core' );
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLPullParser' with: [
 				spec
@@ -83,6 +84,7 @@ baseline011: spec
 				spec
 					className: #ConfigurationOfXMLWriter;
 					versionString: #'stable';
+					loads: #('Core' );
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ].
 		spec 
 			package: #BioAffymetrix with: [
@@ -122,7 +124,7 @@ baseline011: spec
 			package: 'BioNCBITests' with: [
 				spec requires: #('BioToolsTests' 'BioNCBI' ). ];
 			package: 'BioNGS' with: [
-				spec requires: #('BioTools' 'BioWrappers'). ];
+				spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioParserTests' with: [
 				spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' with: [
@@ -130,7 +132,7 @@ baseline011: spec
 			package: #BioPharo4 with: [
 				spec requires: #('BioTools' ). ];
 			package: #BioPhylogenetics with: [
-				spec requires: #('BioTools' 'BioFormatters'). ];
+				spec requires: #('BioTools' 'BioFormatters' ). ];
 			package: 'BioPopulation' with: [
 				spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
 			package: 'BioProject' with: [

@@ -4,7 +4,7 @@ baseline011: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.			
+		spec preLoadDoIt: #preLoad.		
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
@@ -141,7 +141,7 @@ baseline011: spec
 			package: 'BioTools' with: [
 				spec requires: #('CommonUtils' 'StringExtensions' ). ];
 			package: 'BioToolsSamples' with: [
-				spec requires: #('BioTools' ). ];
+				spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' with: [
 				spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' with: [

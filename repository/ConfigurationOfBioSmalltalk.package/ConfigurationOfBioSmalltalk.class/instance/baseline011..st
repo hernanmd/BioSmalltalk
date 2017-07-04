@@ -64,7 +64,7 @@ baseline011: spec
 					className: #ConfigurationOfRoassal2;
 					versionString: #'stable';
 					loads: #('NoGlamour' );
-					repository: 'http://smalltalkhub.com/mc/ObjectProfile/Roassal2/main/' ];
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'StringExtensions' with: [
 				spec
 					className: #ConfigurationOfStringExtensions;

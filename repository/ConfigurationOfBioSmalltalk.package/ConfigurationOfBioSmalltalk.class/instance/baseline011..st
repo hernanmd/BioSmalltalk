@@ -4,6 +4,7 @@ baseline011: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
+		spec preLoadDoIt: #preLoad.		
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
@@ -63,7 +64,7 @@ baseline011: spec
 					className: #ConfigurationOfRoassal2;
 					versionString: #'stable';
 					loads: #('NoGlamour' );
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
+					repository: 'http://smalltalkhub.com/mc/ObjectProfile/Roassal2/main/' ];
 			project: 'StringExtensions' with: [
 				spec
 					className: #ConfigurationOfStringExtensions;

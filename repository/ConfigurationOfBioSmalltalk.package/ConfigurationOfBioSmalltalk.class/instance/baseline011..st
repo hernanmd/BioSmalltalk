@@ -4,88 +4,86 @@ baseline011: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.		
+		spec preLoadDoIt: #preLoad.			
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
 				spec
 					className: #ConfigurationOfCodeGenerator;
-					versionString: #'stable';
+					versionString: '1.0';
 					repository: 'http://smalltalkhub.com/mc/hernan/CodeGenerator/main/' ];
 			project: 'CommonUtils' with: [
 				spec
 					className: #ConfigurationOfCommonUtils;
-					versionString: #'stable';
+					versionString: '1.1';
 					repository: 'http://smalltalkhub.com/mc/hernan/CommonUtils/main/' ];
 			project: 'Grease' with: [
 				spec
 					className: #ConfigurationOfGrease;
-					versionString: #'stable';
+					versionString: '1.2.7';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'INIFileSupport' with: [
 				spec
 					className: #ConfigurationOfINIFileSupport;
-					versionString: #'bleedingEdge';
+					versionString: '0.1-baseline';
 					repository: 'http://smalltalkhub.com/mc/hernan/INIParser/main/' ];
 			project: 'NeoCSV' with: [
 				spec
 					className: #ConfigurationOfNeoCSV;
-					versionString: #'stable';
+					versionString: '13';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'NumericalMethods' with: [
 				spec
 					className: #ConfigurationOfNumericalMethods;
-					versionString: #'stable';
+					versionString: '1.1';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo30/main/' ];
 			project: 'OSProcess' with: [
 				spec
 					className: #ConfigurationOfOSProcess;
-					versionString: #'stable';
+					versionString: '4.6.4';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'PetitParser' with: [
 				spec
 					className: #ConfigurationOfPetitParser;
-					versionString: #'stable';
+					versionString: '2.0';
 					loads: #('Core' );
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ];
 			project: 'ProcessWrapper' with: [
 				spec
 					className: #ConfigurationOfProcessWrapper;
-					versionString: #'stable';
+					versionString: '1.2';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'ProjectFramework' with: [
 				spec
 					className: #ConfigurationOfProjectFramework;
-					versionString: #'stable';
+					versionString: '1.0';
 					loads: #('Basic' );
 					repository: 'http://smalltalkhub.com/mc/hernan/ProjectFramework/main/' ];
 			project: 'Roassal2' with: [
 				spec
 					className: #ConfigurationOfRoassal2;
-					versionString: #'stable';
+					versionString: '1.44';
 					loads: #('NoGlamour' );
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'StringExtensions' with: [
 				spec
 					className: #ConfigurationOfStringExtensions;
-					versionString: #'stable';
+					versionString: '1.1';
 					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ];
 			project: 'XMLParser' with: [
 				spec
 					className: #ConfigurationOfXMLParser;
-					versionString: #'release-2.5';
-					loads: #('Core' );
+					versionString: '2.5.2';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLPullParser' with: [
 				spec
 					className: #ConfigurationOfXMLPullParser;
-					versionString: #'development';
+					versionString: '1.0-baseline';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLWriter' with: [
 				spec
 					className: #ConfigurationOfXMLWriter;
-					versionString: #'stable';
-					loads: #('Core' );
+					versionString: '2.7.5';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ].
 		spec 
 			package: #BioAffymetrix with: [
@@ -124,16 +122,12 @@ baseline011: spec
 				spec requires: #('BioTools' ). ];
 			package: 'BioNCBITests' with: [
 				spec requires: #('BioToolsTests' 'BioNCBI' ). ];
-			package: 'BioNGS' with: [
-				spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioParserTests' with: [
 				spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' with: [
 				spec requires: #('BioWrappers' 'BioTools' ). ];
 			package: #BioPharo4 with: [
 				spec requires: #('BioTools' ). ];
-			package: #BioPhylogenetics with: [
-				spec requires: #('BioTools' 'BioFormatters' ). ];
 			package: 'BioPopulation' with: [
 				spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
 			package: 'BioProject' with: [

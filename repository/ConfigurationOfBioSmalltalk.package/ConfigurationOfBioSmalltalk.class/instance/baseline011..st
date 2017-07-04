@@ -56,7 +56,7 @@ baseline011: spec
 			project: 'ProjectFramework' with: [
 				spec
 					className: #ConfigurationOfProjectFramework;
-					versionString: '1.0';
+					versionString: #'development';
 					loads: #('Basic' );
 					repository: 'http://smalltalkhub.com/mc/hernan/ProjectFramework/main/' ];
 			project: 'Roassal2' with: [

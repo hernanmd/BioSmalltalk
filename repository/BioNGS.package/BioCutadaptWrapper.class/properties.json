@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BioWrapperObject",
+	"category" : "BioNGS-Trimming",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BioCutadaptWrapper",
+	"type" : "normal"
+}

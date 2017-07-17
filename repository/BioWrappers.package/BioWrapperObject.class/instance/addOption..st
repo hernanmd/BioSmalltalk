@@ -1,5 +1,5 @@
 accessing - private
-addOption: anObject
+addOption: aString
 	" Private - Add anObject to the receiver's options stack "
 
-	self options addLast: anObject
+	self options addLast: aString

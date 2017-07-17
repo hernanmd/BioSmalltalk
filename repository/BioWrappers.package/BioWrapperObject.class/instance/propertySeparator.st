@@ -1,5 +1,6 @@
-accessing - private
+accessing
 propertySeparator
-	" Answer a <Character> with receiver's options separator "
+	" Answer a <Character> with receiver's properties separator "
 
-	^ $=
+	^ propertySeparator
+		ifNil: [ propertySeparator := self defaultPropertySeparator ]

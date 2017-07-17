@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 2/24/2016 02:09",
+	"commentStamp" : "HernanMoralesDurand 7/17/2017 06:21",
 	"super" : "BioPropertyObject",
 	"category" : "BioWrappers-Core",
 	"classinstvars" : [ ],
@@ -10,7 +10,8 @@
 		"options",
 		"parameters",
 		"programName",
-		"cmdLine"
+		"cmdLine",
+		"propertySeparator"
 	],
 	"name" : "BioWrapperObject",
 	"type" : "normal"

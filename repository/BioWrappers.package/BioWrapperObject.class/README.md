@@ -5,8 +5,10 @@ A wrapper enables configuration and makes possible the messaging of another obje
 You can add three types of things to a wrapped object:
 
 - Parameters
-- Options
-- Properties
+- Options 		An option has only a name.
+- Properties 		A property has a name and a value, delimited by a #propertySeparator
+
+The key method for wrapper debugging is #buildCmdLine.
 
 Instance Variables
 	cmdLine:			<String>

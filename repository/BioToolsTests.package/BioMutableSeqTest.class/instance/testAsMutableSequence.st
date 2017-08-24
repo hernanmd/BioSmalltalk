@@ -3,8 +3,6 @@ testAsMutableSequence
 
 	| testSeq1 |
 
-	self should: [ self sequence sequence: 'actcagtagctagctagtcagc' ] raise: MessageNotUnderstood.
-
 	self assert: self sequence asString equals: self sampleDnaString01.
 	testSeq1 := self sequence asMutableSequence.
 	self assert: (testSeq1 isKindOf: BioMutableSeq).

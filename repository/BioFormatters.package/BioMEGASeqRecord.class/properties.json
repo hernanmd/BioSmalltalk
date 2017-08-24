@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 8/24/2017 02:35",
+	"super" : "BioSeqRecord",
+	"category" : "BioFormatters-Formatters-MEGA",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"alignment"
+	],
+	"name" : "BioMEGASeqRecord",
+	"type" : "normal"
+}

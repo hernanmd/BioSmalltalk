@@ -1,0 +1,4 @@
+accessing
+numberOfSynonymsWithSequences
+	
+	^ numberOfSynonymsWithSequences

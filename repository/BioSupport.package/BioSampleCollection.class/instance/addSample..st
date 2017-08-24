@@ -3,6 +3,6 @@ addSample: aString
 	" Add a <BioSample> identified by aString to the receiver "
 
 	self samples add: 
-		(BioSample new 
+		(self sampleClass new 
 			identifier: aString;
 			yourself)

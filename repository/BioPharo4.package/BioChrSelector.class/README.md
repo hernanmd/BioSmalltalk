@@ -1,5 +1,5 @@
 Helper class to select an organism and its corresponding chromosome(s)
 
-BioChrSelector new 
-	openWithSpec
-
+| selector |
+selector := BioChrSelector open.
+selector selection

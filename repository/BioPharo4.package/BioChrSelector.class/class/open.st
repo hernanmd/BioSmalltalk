@@ -1,6 +1,13 @@
 opening
 open
+	" Display the receiver "
 
-	self new 
+	| newSelector |
+	
+	newSelector := self new.
+	newSelector
 		openWithSpec;
-		centered
+		centered.
+	newSelector window modalRelativeTo: World.
+	newSelector window whenClosedDo: [ ^ newSelector chrList selectedItem ].
+	^ newSelector.

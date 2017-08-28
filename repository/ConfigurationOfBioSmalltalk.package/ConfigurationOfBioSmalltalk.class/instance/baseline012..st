@@ -1,6 +1,6 @@
 baselines
-baseline011: spec
-	<version: '0.11-baseline'>
+baseline012: spec
+	<version: '0.12-baseline'>
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
@@ -10,17 +10,17 @@ baseline011: spec
 			project: 'CodeGenerator' with: [
 				spec
 					className: #ConfigurationOfCodeGenerator;
-					versionString: '1.0';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/hernan/CodeGenerator/main/' ];
 			project: 'CommonUtils' with: [
 				spec
 					className: #ConfigurationOfCommonUtils;
-					versionString: '1.1';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/hernan/CommonUtils/main/' ];
 			project: 'Grease' with: [
 				spec
 					className: #ConfigurationOfGrease;
-					versionString: '1.2.7';
+					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'INIFileSupport' with: [
@@ -31,14 +31,13 @@ baseline011: spec
 			project: 'NeoCSV' with: [
 				spec
 					className: #ConfigurationOfNeoCSV;
-					versionString: '13';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
+					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'OSProcess' with: [
 				spec
 					className: #ConfigurationOfOSProcess;
-					versionString: '4.6.4';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'PetitParser' with: [
 				spec
 					className: #ConfigurationOfPetitParser;
@@ -48,7 +47,7 @@ baseline011: spec
 			project: 'ProcessWrapper' with: [
 				spec
 					className: #ConfigurationOfProcessWrapper;
-					versionString: '1.2';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'ProjectFramework' with: [
 				spec
@@ -59,29 +58,29 @@ baseline011: spec
 			project: 'Roassal2' with: [
 				spec
 					className: #ConfigurationOfRoassal2;
-					versionString: '1.44';
+					versionString: #'stable';
 					loads: #('NoGlamour' );
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'StringExtensions' with: [
 				spec
 					className: #ConfigurationOfStringExtensions;
-					versionString: '1.1';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/hernan/StringExtensions/main/' ];
 			project: 'XMLParser' with: [
 				spec
 					className: #ConfigurationOfXMLParser;
-					versionString: '2.5.2';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
+					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'XMLPullParser' with: [
 				spec
 					className: #ConfigurationOfXMLPullParser;
-					versionString: '1.0-baseline';
+					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
 			project: 'XMLWriter' with: [
 				spec
 					className: #ConfigurationOfXMLWriter;
-					versionString: '2.7.5';
+					versionString: #'stable';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ].
 		spec 
 			package: #BioAffymetrix with: [

@@ -4,5 +4,5 @@ writeOn: aStream delimiter: aDelimiterCharacter
 	aStream 
 		nextPutAll: self identifier;
 		nextPut: aDelimiterCharacter;
-		nextPutAll: self frequency greaseString;
+		nextPutAll: self frequency asString;
 		nextPut: aDelimiterCharacter

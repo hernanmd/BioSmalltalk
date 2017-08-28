@@ -6,5 +6,5 @@ buildHaplotypicDataDNAProfileTitle: aString groups: aNumber missingData: missing
 		addSampleNumber: aNumber;
 		addDataType: 'DNA';
 		unsetGenotypicData;
-		useMissingData: missingCharacter greaseString;
+		useMissingData: missingCharacter asString;
 		useLocusSeparator: 'WHITESPACE'.

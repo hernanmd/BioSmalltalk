@@ -6,7 +6,7 @@ printOn: aStream
 		nextPutAll: self class name;
 		space;
 		nextPut: $(;
-		nextPutAll: self contents greaseString;
+		nextPutAll: self contents asString;
 		nextPut: $)
 
 	

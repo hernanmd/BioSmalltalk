@@ -6,5 +6,5 @@ buildHaplotypicDataFrequencyProfileTitle: aString groups: aNumber missingData: m
 		addSampleNumber: aNumber;
 		addDataType: 'FREQUENCY';
 		unsetGenotypicData;
-		useMissingData: missingCharacter greaseString;
+		useMissingData: missingCharacter asString;
 		useLocusSeparator: 'WHITESPACE'.

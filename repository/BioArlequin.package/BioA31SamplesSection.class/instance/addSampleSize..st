@@ -4,4 +4,4 @@ addSampleSize: aNumber
 	self iniFile 
 		section: self sampleKeyNumber
 		at: self class sampleSizeId key
-		put: aNumber greaseString	
+		put: aNumber asString	

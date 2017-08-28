@@ -5,5 +5,5 @@ addFrequency: aString
 	| configuration |
 	configuration := self configurationAt: self class frequencyId.
 	(configuration validate: aString)
-		ifTrue: [ self at: self class frequencyId put: aString greaseString ]
+		ifTrue: [ self at: self class frequencyId put: aString asString ]
 		ifFalse: [ self bioLog: aString , ' value is not listed as a valid frequency string' ]

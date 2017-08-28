@@ -12,4 +12,3 @@ addSequence: aBioSequence
 			| job |
 			job := self jobs first.
 			job addSequence: aBioSequence ].
-	self info addSequence: aBioSequence.

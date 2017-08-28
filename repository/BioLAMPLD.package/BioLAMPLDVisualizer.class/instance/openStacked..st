@@ -7,10 +7,10 @@ openStacked: aGapSize
 	self graphers keysAndValuesDo: [ : index : g | 
 		g view: c view.
 		g build.
-		c group: index greaseString ].
+		c group: index asString ].
 	c layout: (RTVerticalLineLayout new gapSize: aGapSize).	
 	self graphers keysAndValuesDo: [ : index : g | 
 		c
-			 nameGroup: index greaseString 
+			 nameGroup: index asString 
 			as: g title ].
 	c view inspect.

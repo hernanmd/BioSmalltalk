@@ -5,10 +5,6 @@ defaultSpec
 	^ SpecLayout composed
 		newColumn: [ : col |
 			col 
-				newRow: [ : row |
-					row
-						newColumn: #organismList width: 200;
-						addVSplitter;				
-						newColumn: #chrList ];
+				newRow: #selector;
 				newRow: #toolbar height: self toolbarHeight ];
 		yourself

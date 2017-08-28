@@ -5,5 +5,5 @@ addSampleNumber: aNumber
 	| configuration |
 	configuration := self configurationAt: self class sampleNumberId.
 	(configuration validate: aNumber asNumber)
-		ifTrue: [ self at: self class sampleNumberId put: aNumber greaseString ]
+		ifTrue: [ self at: self class sampleNumberId put: aNumber asString ]
 		ifFalse: [ self bioLog: aNumber greaseString , ' value out of range for NbSamples' ]

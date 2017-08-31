@@ -5,5 +5,5 @@ dataModel
 	
 	dm := Dictionary new.
 	BioPanel subclasses do: [ : panelClass | 
-			dm at: panelClass panelName put: panelClass availableSpecies ].
+			dm at: panelClass panelName put: panelClass ].
 	^ dm

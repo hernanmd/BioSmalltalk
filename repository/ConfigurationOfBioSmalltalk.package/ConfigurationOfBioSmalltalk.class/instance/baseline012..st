@@ -44,6 +44,11 @@ baseline012: spec
 					versionString: '2.0';
 					loads: #('Core' );
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ];
+			project: 'PolyMath' with: [
+				spec
+					className: #ConfigurationOfPolyMath;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'ProcessWrapper' with: [
 				spec
 					className: #ConfigurationOfProcessWrapper;

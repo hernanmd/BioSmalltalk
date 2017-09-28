@@ -32,5 +32,10 @@ plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color
 		fromPoint: minPoint;
 		color: Color black;
 		title: axisXLabel.
+		
+"    g datasets do: #offsetForBarCharts.
+    g minX: 0.
+    g maxX: g getMaxNumberOfPoints."
+		
 	" Open visualization in a new window "
 	g open.

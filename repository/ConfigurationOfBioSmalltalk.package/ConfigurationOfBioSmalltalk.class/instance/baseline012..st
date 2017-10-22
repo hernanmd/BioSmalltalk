@@ -4,7 +4,7 @@ baseline012: spec
 
 	spec for: #'common' do: [
 		spec blessing: #'baseline'.
-		spec preLoadDoIt: #preLoad.		
+		spec preLoadDoIt: #preLoad.
 		spec repository: 'http://smalltalkhub.com/mc/hernan/BioSmalltalk/main/'.
 		spec 
 			project: 'CodeGenerator' with: [
@@ -21,7 +21,6 @@ baseline012: spec
 				spec
 					className: #ConfigurationOfGrease;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'INIFileSupport' with: [
 				spec
@@ -65,7 +64,6 @@ baseline012: spec
 					className: #ConfigurationOfRoassal2;
 					versionString: #'stable';
 					loads: #('NoGlamour' );
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 			project: 'StringExtensions' with: [
 				spec
@@ -86,7 +84,7 @@ baseline012: spec
 				spec
 					className: #ConfigurationOfXMLWriter;
 					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ].
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
 		spec 
 			package: #BioAffymetrix with: [
 				spec requires: #('BioFormatters' 'BioTools' ). ];

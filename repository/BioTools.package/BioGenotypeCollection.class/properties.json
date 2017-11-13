@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "HernanMoralesDurand 11/13/2017 17:15",
+	"super" : "BioObject",
+	"category" : "BioTools-Biological",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"genotypes"
+	],
+	"name" : "BioGenotypeCollection",
+	"type" : "normal"
+}

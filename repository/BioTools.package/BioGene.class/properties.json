@@ -7,7 +7,12 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"chromosome",
-		"proteins"
+		"proteins",
+		"entrezGeneID",
+		"ensemblGeneID",
+		"geneBankAccession",
+		"unigeneClusterID",
+		"sequences"
 	],
 	"name" : "BioGene",
 	"type" : "normal"

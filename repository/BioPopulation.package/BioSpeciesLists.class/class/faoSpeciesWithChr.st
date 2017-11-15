@@ -1,6 +1,6 @@
 accessing
 faoSpeciesWithChr
-	" Answer a <Collection> of FAO species in english language "
+	" Answer a <Collection> of FAO species in english language, and the number of haploid chromosomes "
 
 	^ Dictionary newFromPairs: { 
 	'Ass' . 31 .

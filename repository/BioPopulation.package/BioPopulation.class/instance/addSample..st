@@ -1,5 +1,5 @@
 accessing
-addSample: aSample
-	" Add aSample to the receiver population "
+addSample: aString
+	" Add a Sample identified by aString to the receiver's population "
 
-	self samples add: aSample
+	self samples addSample: aString

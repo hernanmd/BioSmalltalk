@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "hfm 6/7/2010 19:27",
-	"super" : "BioObject",
+	"super" : "BioNamedObject",
 	"category" : "BioPopulation-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

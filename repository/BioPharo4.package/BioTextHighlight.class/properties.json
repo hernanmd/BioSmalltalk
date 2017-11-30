@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TextHighlight",
+	"category" : "BioPharo4-Morphic",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"colors"
+	],
+	"name" : "BioTextHighlight",
+	"type" : "normal"
+}

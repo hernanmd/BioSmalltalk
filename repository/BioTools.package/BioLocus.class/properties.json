@@ -10,7 +10,8 @@
 		"end",
 		"length",
 		"value",
-		"chrLocation"
+		"chrLocation",
+		"position"
 	],
 	"name" : "BioLocus",
 	"type" : "normal"

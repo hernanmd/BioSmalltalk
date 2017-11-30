@@ -3,7 +3,7 @@ beforeExportViewBioSmalltalk: aPCTView
 
 	| labelText answer|
 	labelText := 'Arlequin format requires a reference sequence to be specified to proper padding of the resulting alignment'.
-	^ (answer := UIManager default request: labelText) isEmptyOrNil 
+	^ (answer := BioInteractorEngine request: labelText) isEmptyOrNil 
 		ifFalse: [ 
 			aPCTView querySequence: answer.
 			true  ]

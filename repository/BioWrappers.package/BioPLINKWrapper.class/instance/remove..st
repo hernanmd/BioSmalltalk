@@ -4,4 +4,4 @@ remove: fileName
 
 	fileName asFileReference exists 
 		ifFalse: [ fileName asFileReference writeStreamDo: [ : stream | stream nextPutAll: fileName ] ].
-	self propertyAt: 'remove' ifAbsentPut: [ fileName ]
+	self propertyAt: 'remove' ifAbsentPut: [ self buildPath: fileName ]

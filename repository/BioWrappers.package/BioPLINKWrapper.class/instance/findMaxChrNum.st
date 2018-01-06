@@ -4,5 +4,5 @@ findMaxChrNum
 	
 	^ self options 
 		detect: [ : opt | self validOrganisms includes: opt ]
-		ifFound: [ : o | o maxChrNum ]
+		ifFound: [ : o | BioSpeciesLists faoSpeciesWithChr at: o capitalized ]
 		ifNone: [ 23 ]

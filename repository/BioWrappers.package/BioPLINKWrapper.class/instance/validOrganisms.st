@@ -4,5 +4,5 @@ validOrganisms
 
 	| ro |
 	
-	ro := self class superclass organization.
+	ro := self class organization.
 	^ ro listAtCategoryNamed: 'options - organisms'

@@ -4,4 +4,4 @@ keep: fileName
 
 	fileName asFileReference exists 
 		ifFalse: [ fileName asFileReference writeStreamDo: [ : stream | stream nextPutAll: fileName ] ].
-	self propertyAt: 'keep' ifAbsentPut: [ fileName ]
+	self propertyAt: 'keep' ifAbsentPut: [ self buildPath: fileName ]

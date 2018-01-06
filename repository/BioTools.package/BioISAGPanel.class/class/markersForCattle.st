@@ -1,8 +1,8 @@
 accessing - cattle
 markersForCattle
-	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
+	" Answer a <Collection> of <BioLocus> for the receiver's panel "
 
-	^ (self markersForSpecies at: 'cattle') 
+	^ (self markersForSpecies: 'cattle') 
 		collect: [ : markerInfo | 
 			(BioLocus newNamed: markerInfo first)
 				start: markerInfo second;

@@ -1,4 +1,0 @@
-accessing
-sequenceString
-
-	^ self sequence

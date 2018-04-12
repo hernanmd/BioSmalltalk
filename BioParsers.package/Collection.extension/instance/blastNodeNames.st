@@ -1,4 +1,0 @@
-*BioParsers
-blastNodeNames
-
-	^ self

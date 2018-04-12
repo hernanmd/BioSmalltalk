@@ -1,4 +1,0 @@
-accessing
-repositoryVersions
-
-	^ self versions

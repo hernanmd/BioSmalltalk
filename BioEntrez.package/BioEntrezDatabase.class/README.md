@@ -1,1 +1,0 @@
-Abstract superclass for the NCBI Entrez system databases

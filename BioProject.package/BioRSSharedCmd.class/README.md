@@ -1,1 +1,0 @@
-Groups commands where some results which are applied to other results

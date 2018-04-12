@@ -1,4 +1,0 @@
-tables
-bacterialTableId
-	
-	^ 11

@@ -1,3 +1,0 @@
-accessing
-serverDirectory
-	^ serverDirectory

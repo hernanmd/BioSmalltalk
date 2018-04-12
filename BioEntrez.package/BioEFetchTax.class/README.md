@@ -1,1 +1,0 @@
-http://www.ncbi.nlm.nih.gov/corehtml/query/static/efetchtax_help.html

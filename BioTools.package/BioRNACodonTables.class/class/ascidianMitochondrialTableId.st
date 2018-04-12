@@ -1,4 +1,0 @@
-tables
-ascidianMitochondrialTableId
-	
-	^ 13

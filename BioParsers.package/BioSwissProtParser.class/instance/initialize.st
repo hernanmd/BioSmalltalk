@@ -1,9 +1,0 @@
-initialize-release
-initialize
-	" Private - See superimplementor's comment "
-
-	super initialize.
-	parser := 
-		self identifier asParser , 
-		self parserForAccession ,
-		(self parserForEntry ==> [: r | r allButFirst ]).

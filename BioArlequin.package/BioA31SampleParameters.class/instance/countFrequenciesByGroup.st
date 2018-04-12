@@ -1,4 +1,0 @@
-private
-countFrequenciesByGroup
-
-	^ true

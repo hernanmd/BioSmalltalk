@@ -1,9 +1,0 @@
-{
-	"class" : {
-		"ambiguityCodes" : "hfm 11/17/2011 15:34",
-		"ambiguousLettersMap" : "hfm 10/17/2011 02:33",
-		"codes" : "hfm 10/25/2011 04:00",
-		"complementaryCases" : "hfm 9/28/2012 20:05",
-		"isAmbiguousAlphabet" : "hfm 11/13/2011 00:07" },
-	"instance" : {
-		"printOn:" : "hfm 3/27/2011 18:35" } }

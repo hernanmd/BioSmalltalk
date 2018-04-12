@@ -1,4 +1,0 @@
-accessing
-complementaryCases
-
-	^ Array empty

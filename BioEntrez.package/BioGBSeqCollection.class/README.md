@@ -1,1 +1,0 @@
-BioGBSeqCollection contains a <Collection> of <Dictionary>

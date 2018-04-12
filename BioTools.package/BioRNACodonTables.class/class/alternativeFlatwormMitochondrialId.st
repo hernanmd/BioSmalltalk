@@ -1,4 +1,0 @@
-tables
-alternativeFlatwormMitochondrialId
-	
-	^ 9

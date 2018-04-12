@@ -1,4 +1,0 @@
-accessing
-providerClass
-
-	self subclassResponsibility

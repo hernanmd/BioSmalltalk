@@ -1,4 +1,0 @@
-accessing
-catchOff
-
-	catchNodes := false

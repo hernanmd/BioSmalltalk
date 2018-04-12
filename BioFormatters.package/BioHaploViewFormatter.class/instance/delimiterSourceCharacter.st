@@ -1,4 +1,0 @@
-accessing
-delimiterSourceCharacter
-
-	^ Character tab

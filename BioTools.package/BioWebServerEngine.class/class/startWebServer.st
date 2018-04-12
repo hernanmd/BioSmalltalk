@@ -1,4 +1,0 @@
-accessing
-startWebServer
-
-	self adapterClass startWebServer

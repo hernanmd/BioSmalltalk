@@ -1,1 +1,0 @@
-Used for cancelled queries

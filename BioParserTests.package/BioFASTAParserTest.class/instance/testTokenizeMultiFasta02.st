@@ -1,9 +1,0 @@
-testing-tokenizer
-testTokenizeMultiFasta02
-
-	self assert: ( ( self parserClass tokenizeMultiFasta: self multiFastaSeq02 ) bioHasEqualElements: #( 
-		#( '>first sequence record' 'TACGAGAATAATTTCTCATCATCCAGCTTTAACACAAAATTCGCA') 
-		#( '>second sequence record' 'CAGTTTTCGTTAAGAGAACTTAACATTTTCTTATGACGTAAATGAAGTTTATATATAAATTTCCTTTTTATTGGA') 
-		#( '>third sequence record' 'GAACTTAACATTTTCTTATGACGTAAATGAAGTTTATATATAAATTTCCTTTTTATTGGATAATATGCCTATGCCGCATAATTTTTATATCTTTCTCCTAACAAAACATTCGCTTGTAAA') ) ).
-	
-	

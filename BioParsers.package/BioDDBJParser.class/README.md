@@ -1,1 +1,0 @@
-dbj|accession|locus

@@ -1,5 +1,0 @@
-class initialization
-complementaryTableClass
-
-	^ Dictionary
-	

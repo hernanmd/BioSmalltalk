@@ -1,1 +1,0 @@
-pat|country|number

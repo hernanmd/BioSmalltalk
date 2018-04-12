@@ -1,5 +1,0 @@
-*biotools
-isBlastXMLFormat
-	" Only answer <true> when the receiver's contents *looks like* a NCBI Blast format, not performing any validity check "
-	
-	^ self isXML and: [ self nextLine; nextMatchAllAnyOf: self blastXMLDtdLocations ]

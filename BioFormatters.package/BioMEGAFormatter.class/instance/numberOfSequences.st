@@ -1,4 +1,0 @@
-accessing
-numberOfSequences
-	
-	^ numberOfSequences

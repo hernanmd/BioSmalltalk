@@ -1,4 +1,0 @@
-private
-dateClass
-
-	^ BioProjectHistory dateClass

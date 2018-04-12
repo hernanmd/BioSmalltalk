@@ -1,8 +1,0 @@
-{
-	"class" : {
-		 },
-	"instance" : {
-		"testParseAmbiguousSequenceWithSeparators" : "hfm 10/5/2011 16:54",
-		"testParseAmbiguousSequenceWithoutSeparators" : "hfm 10/5/2011 16:54",
-		"testTokenizeAmbiguousSequenceWithoutSeparators" : "hfm 3/27/2011 22:33",
-		"testTokenizeDelimitedAmbiguousSequence" : "hfm 3/28/2011 00:55" } }

@@ -1,1 +1,0 @@
-Abstract class for BioSmalltalk parsers

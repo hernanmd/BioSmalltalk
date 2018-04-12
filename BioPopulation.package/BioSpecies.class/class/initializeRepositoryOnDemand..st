@@ -1,3 +1,0 @@
-initialize-release
-initializeRepositoryOnDemand: anObject
-	initializeRepositoryOnDemand := anObject

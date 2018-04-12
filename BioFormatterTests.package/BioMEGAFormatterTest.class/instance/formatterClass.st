@@ -1,4 +1,0 @@
-accessing
-formatterClass
-	
-	^ BioMEGAFormatter 

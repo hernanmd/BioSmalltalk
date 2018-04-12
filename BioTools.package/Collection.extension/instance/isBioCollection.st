@@ -1,4 +1,0 @@
-*BioTools
-isBioCollection
-
-	^ false

@@ -1,4 +1,0 @@
-tables
-ciliateNuclearTableId
-	
-	^ 6

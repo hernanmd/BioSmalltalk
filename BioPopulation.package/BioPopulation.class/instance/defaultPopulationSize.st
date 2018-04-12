@@ -1,4 +1,0 @@
-accessing
-defaultPopulationSize
-
-	^ 100	

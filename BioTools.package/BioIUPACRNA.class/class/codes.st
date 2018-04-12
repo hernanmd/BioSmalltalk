@@ -1,4 +1,0 @@
-accessing
-codes
-
-	^ String empty

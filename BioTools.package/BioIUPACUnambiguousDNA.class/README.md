@@ -1,1 +1,0 @@
-BioIUPACUnambiguousDNA is an Alphabet allowing only the A,T,G,C letters

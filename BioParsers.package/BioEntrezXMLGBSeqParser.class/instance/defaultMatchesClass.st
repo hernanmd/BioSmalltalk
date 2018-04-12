@@ -1,4 +1,0 @@
-accessing
-defaultMatchesClass
-
-	^ Dictionary

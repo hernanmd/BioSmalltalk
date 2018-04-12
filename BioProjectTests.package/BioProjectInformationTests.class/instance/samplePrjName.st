@@ -1,4 +1,0 @@
-private
-samplePrjName
-
-	^ 'testProject1'

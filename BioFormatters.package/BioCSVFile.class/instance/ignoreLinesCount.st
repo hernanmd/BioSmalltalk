@@ -1,3 +1,0 @@
-accessing
-ignoreLinesCount
-	^ ignoreLinesCount

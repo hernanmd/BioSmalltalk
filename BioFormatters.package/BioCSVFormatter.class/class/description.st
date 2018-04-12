@@ -1,4 +1,0 @@
-accessing
-description
-
-	^ 'Generic CSV'

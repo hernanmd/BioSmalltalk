@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "HernanMoralesDurand 4/14/2018 16:17",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfBioSmalltalk",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfBioSmalltalk",
+	"type" : "normal"
+}

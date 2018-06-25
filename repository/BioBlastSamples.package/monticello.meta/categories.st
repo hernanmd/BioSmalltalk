@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioBlastSamples-Core'!
+SystemOrganization addCategory: #BioBlastSamples!
+SystemOrganization addCategory: 'BioBlastSamples-Core'!

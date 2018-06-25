@@ -1,7 +1,7 @@
-private
+doits
 ensureMetacelloFileDownload
 
-	Metacello new
+	Metacello new           
 		baseline: 'MetacelloFileDownload';              
- 		repository: 'github://hernanmd/MetacelloFileDownload';          
+		repository: 'github://hernanmd/MetacelloFileDownload';          
 		load.

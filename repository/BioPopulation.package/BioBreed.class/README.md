@@ -1,8 +1,8 @@
-Represents a species including its synonyms and any relevant locations.
+Represents a species breed including its synonyms and any relevant locations.
 
 Instance Variables
-	locations:		<Object>
-	synonyms:		<Object>
+	locations:		<Collection>
+	synonyms:		<Collection>
 
 locations
 	- xxxxx

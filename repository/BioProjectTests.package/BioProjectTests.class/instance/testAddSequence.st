@@ -2,9 +2,7 @@ testing
 testAddSequence
 
 	| sampleSeq1 sampleSeq2 |
-	
-	BioProject resetApplication.
-	project := (BioUser named: 'TestUser1') addProject: 'testProject1'.	
+
 	self assert: project sequences isEmpty.
 
 	sampleSeq1 := self sampleSeq1.

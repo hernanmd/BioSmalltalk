@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioToolsSamples-Core'!
+SystemOrganization addCategory: #BioToolsSamples!
+SystemOrganization addCategory: 'BioToolsSamples-Core'!

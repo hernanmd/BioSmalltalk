@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioProjectTests-Core'!
+SystemOrganization addCategory: #BioProjectTests!
+SystemOrganization addCategory: 'BioProjectTests-Core'!

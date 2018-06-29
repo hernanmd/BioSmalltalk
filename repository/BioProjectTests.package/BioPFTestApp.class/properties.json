@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "HernanMoralesDurand 6/26/2018 20:25",
-	"super" : "PFProjectUser",
-	"category" : "BioProject-Core",
+	"super" : "PFProjectApplication",
+	"category" : "BioProjectTests-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioUser",
+	"name" : "BioPFTestApp",
 	"type" : "normal"
 }

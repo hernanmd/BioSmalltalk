@@ -11,6 +11,8 @@ baseline: spec
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
 			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
+			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ];
+
 
 			configuration: 'OSSubprocess' with: [ spec 	versionString: #stable; repository: 'github://marianopeck/OSSubprocess/repository' ];
 				
@@ -32,12 +34,6 @@ baseline: spec
 					versionString: '2.0';
 					loads: #('Core' );
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ];
-
-			project: 'PolyMath' with: [
-				spec
-					className: #ConfigurationOfPolyMath;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 
 			project: 'Roassal2' with: [
 				spec

@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioEBI-PDBePISA'!
+SystemOrganization addCategory: #BioEBI!
+SystemOrganization addCategory: 'BioEBI-PDBePISA'!

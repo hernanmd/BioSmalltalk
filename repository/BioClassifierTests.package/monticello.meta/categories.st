@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioClassifierTests-Core'!
+SystemOrganization addCategory: #BioClassifierTests!
+SystemOrganization addCategory: 'BioClassifierTests-Core'!

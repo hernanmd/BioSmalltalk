@@ -7,6 +7,5 @@ removeSequence: aBioSequence
 		detect: [ :job | job includesSequence: aBioSequence ]
 		ifNone: [ nil ].
 	jobOrNil
-		ifNotNil: [ :job | 
-			job removeSequence: aBioSequence ]
-		ifNil: [ BioObject signalNotFound: 'Sequence not found ' , aBioSequence asString ]
+		ifNotNil: [ :job | job removeSequence: aBioSequence ]
+		ifNil: [ BioObject signalNotFound: 'Sequence not found ' , aBioSequence greaseString ]

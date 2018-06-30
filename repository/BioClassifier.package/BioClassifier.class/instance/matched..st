@@ -9,4 +9,3 @@ matched: aSymbol
 			matches 
 				at: aSymbol 
 				put: (OrderedCollection new add: self subject; yourself) ].
-"	self setSubjectAsClassified"

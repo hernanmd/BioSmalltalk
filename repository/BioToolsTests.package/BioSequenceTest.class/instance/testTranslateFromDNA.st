@@ -15,13 +15,13 @@ testTranslateFromDNA
 	self assert: (translated1 alphabet isKindOf: BioIUPACProtein).
 	self assert: (translated2 alphabet isKindOf: BioIUPACProtein).
 	
-	self assert: translated1 asString = 'KSVYY*HACATH*L'.
-	self assert: translated2 asString = 'KSVYY'.
+	self assert: translated1 asString equals: 'KSVYY*HACATH*L'.
+	self assert: translated2 asString equals: 'KSVYY'.
 
 	seq3 := BioSequence newAmbiguousDNA: 'CGACGTCTTCGTACGGGACTAGCTCGTGTCGGTCGC'.
 	seq4 := BioSequence newProtein: 'RRLRTGLARVGR'.
 
-	self assert: seq3 translate = seq4.
+	self assert: seq3 translate equals: seq4.
 
 
 

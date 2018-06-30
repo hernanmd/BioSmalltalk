@@ -6,6 +6,6 @@ testNewPrototype
 	self assert: (prototype isKindOf: BioSequence).
 	
 	self assert: (prototype alphabet isKindOf: self sequence alphabet class).
-	self assert: self sequence size = prototype size.
-	self assert: self sequence asString = prototype asString.
+	self assert: self sequence size equals: prototype size.
+	self assert: self sequence asString equals: prototype asString.
 	

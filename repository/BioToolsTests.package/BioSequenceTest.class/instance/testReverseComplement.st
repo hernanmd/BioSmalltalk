@@ -10,13 +10,13 @@ testReverseComplement
 
 	self assert: (revComp isKindOf: BioSequence).
 	self assert: (revComp alphabet isKindOf: BioIUPACDNA).
-	self assert: revComp = seq2.
-	self assert: revComp asString = 'GCTAATGCCGTAGTAATTTTCCCGTCCTCCCGT'.
+	self assert: revComp equals: seq2.
+	self assert: revComp asString equals: 'GCTAATGCCGTAGTAATTTTCCCGTCCTCCCGT'.
 
 	seq1 := BioSequence newUnambiguousDNA: 'CTAAACATCCTTCAT'.
 	seq2 := BioSequence newUnambiguousDNA: 'ATGAAGGATGTTTAG'.
 	
-	self assert: seq1 reverseComplement asString = seq2 asString.
+	self assert: seq1 reverseComplement asString equals: seq2 asString.
 	self assert: (seq1 reverseComplement alphabet isKindOf: BioIUPACUnambiguousDNA).
 	
 

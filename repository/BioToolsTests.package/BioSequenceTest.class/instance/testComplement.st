@@ -8,11 +8,11 @@ testComplement
 
 	comp := seq1 complement.
 
-	self assert: 'TACTCGTAATTCACT' asSequence complementary = 'ATGAGCATTAAGTGA'.
-	self assert: ( comp isKindOf: BioSequence ).
-	self assert: ( comp alphabet isKindOf: BioIUPACDNA ).
-	self assert: comp = seq2.
-	self assert: comp asString = 'ATGAGCATTAAGTGA'.
+	self assert: 'TACTCGTAATTCACT' asSequence complementary equals: 'ATGAGCATTAAGTGA'.
+	self assert: (comp isKindOf: BioSequence).
+	self assert: (comp alphabet isKindOf: BioIUPACDNA).
+	self assert: comp equals: seq2.
+	self assert: comp asString equals: 'ATGAGCATTAAGTGA'.
 
 
 

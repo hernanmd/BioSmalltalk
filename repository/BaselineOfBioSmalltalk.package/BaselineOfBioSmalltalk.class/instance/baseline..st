@@ -8,6 +8,7 @@ baseline: spec
 		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
 		spec 
+			baseline: 'CommonUtils'			with: [ spec repository: 'github://hernanmd/CommonUtils/repository' ];
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
 			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];

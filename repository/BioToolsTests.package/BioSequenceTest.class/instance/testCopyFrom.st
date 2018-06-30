@@ -6,4 +6,4 @@ testCopyFrom
 	testSeq1 := self sequence copyFrom: 2.
 
 	self deny: self sequence = testSeq1.
-	self assert: self sequence asString allButFirst = testSeq1 asString.
+	self assert: self sequence asString allButFirst equals: testSeq1 asString.

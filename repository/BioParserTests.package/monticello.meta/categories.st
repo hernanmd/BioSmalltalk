@@ -1,2 +1,2 @@
 SystemOrganization addCategory: #BioParserTests!
-SystemOrganization addCategory: #'BioParserTests-Core'!
+SystemOrganization addCategory: 'BioParserTests-Core'!

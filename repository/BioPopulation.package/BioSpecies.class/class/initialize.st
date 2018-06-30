@@ -6,4 +6,4 @@ initialize
 	BioSpeciesLists currentSpeciesList 
 		do: [ : organismName | self addRepositoryNamed: organismName  ]
 		displayingProgress: 'Initializing population repositories'.
-	self bioLog: 'Imported repositories: ' , BioPopRepositoryVersion allInstances size asString.
+	self bioLog: 'Imported repositories: ' , self repositories size asString.

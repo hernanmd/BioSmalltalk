@@ -1,5 +1,5 @@
 accessing
-codes
+ambiguityCodes
 	" See superimplementor's comment "
 	
-	^ 'GATCBDSW'
+	^ String empty

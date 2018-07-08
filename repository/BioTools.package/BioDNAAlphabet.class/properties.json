@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "HernanMoralesDurand 7/8/2018 04:14",
-	"super" : "BioIUPACDNA",
+	"commentStamp" : "HernanMoralesDurand 7/8/2018 04:50",
+	"super" : "BioAlphabet",
 	"category" : "BioTools-Alphabets",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioIUPACUnambiguousDNA",
+	"name" : "BioDNAAlphabet",
 	"type" : "normal"
 }

@@ -2,4 +2,4 @@ accessing
 codes
 	" See superimplementor's comment "
 	
-	^ 'GATCBDSW'
+	^ 'ACGT'

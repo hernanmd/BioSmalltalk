@@ -6,8 +6,6 @@ buildFrequencies: k
 	
 	freqArray := (Array new: self alphabet size ** k) atAllPut: 0.
 	1 to: self size - k + 1 do: [ : i |
-		| pattern |
-		pattern := self copyFrom: i to: k + i - 1.
-		j := self indexOfPattern: pattern.
+		j := (self copyFrom: i to: k + i - 1) asNumber.
 		freqArray at: j put: (freqArray at: j) + 1 ].
 	^ freqArray 

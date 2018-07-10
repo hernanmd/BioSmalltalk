@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioNCBITests-Core'!
+SystemOrganization addCategory: #BioNCBITests!
+SystemOrganization addCategory: 'BioNCBITests-Core'!

@@ -1,1 +1,2 @@
-SystemOrganization addCategory: #'BioWrapperTests-Core'!
+SystemOrganization addCategory: #BioWrapperTests!
+SystemOrganization addCategory: 'BioWrapperTests-Core'!

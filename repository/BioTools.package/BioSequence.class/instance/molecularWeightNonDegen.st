@@ -1,10 +1,10 @@
 accessing
 molecularWeightNonDegen
 
-	| g a t c |
+	| dict |
 	
-	g := self occurrencesOf: $g.
-	a := self occurrencesOf: $a.
-	t := self occurrencesOf: $t.
-	c := self occurrencesOf: $c.
-	^ (g * 329.21) + (a * 313.21) + (t * 304.2) + (c * 289.18) + 17.01.
+	dict := self occurrencesOfLetters.
+	^ ((dict at: $G) * 329.21) + 
+		((dict at: $A) * 313.21) + 
+		((dict at: $T) * 304.2) + 
+		((dict at: $C) * 289.18) + 17.01.

@@ -13,9 +13,6 @@ baseline: spec
 			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
 			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ];
-
-
-			configuration: 'OSSubprocess' with: [ spec 	versionString: #stable; repository: 'github://marianopeck/OSSubprocess/repository' ];
 				
 			project: 'INIFileSupport' with: [
 				spec
@@ -62,7 +59,10 @@ baseline: spec
 				
 		spec
 			for: #(unix macos)
-			do: [ spec
+			do: [
+				spec configuration: 'OSSubprocess' with: [ spec 	versionString: #stable; 
+repository: 'github://marianopeck/OSSubprocess/repository' ];
+				spec
 					package: 'BioWrappers'
 					with: [ spec requires: #('OSSubprocess') ] ].
 
@@ -73,7 +73,8 @@ baseline: spec
 					with: [ spec requires: #('ProcessWrapper') ] ].
 
 		spec 
-			package: #BioAffymetrix 				with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
+			package: 'BioAffymetrix' 				with: [ spec requires: 
+#('BioFormatters' 'BioTools' ). ];
 			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'NeoCSV' 'INIFileSupport' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioBlast' 					with: [ spec requires: #('BioWrappers' 'BioParsers' 'BioEntrez' ). ];
@@ -88,13 +89,15 @@ baseline: spec
 			package: 'BioFormatters' 			with: [ spec requires: #('BioParsers' ). ];
 			package: 'BioHaplotypes' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioIllumina' 				with: [ spec requires: #('BioTools' ). ];
-			package: #BioLAMPLD 					with: [ spec requires: #('BioTools' 'BioWrappers' 'BioFormatters' ). ];
+			package: 'BioLAMPLD' 					with: [ spec requires: 
+#('BioTools' 'BioWrappers' 'BioFormatters' ). ];
 			package: 'BioNCBI' 					with: [ spec requires: #('BioTools' ). ];
 			package: 'BioNCBITests' 				with: [ spec requires: #('BioToolsTests' 'BioNCBI' ). ];
 			package: 'BioNGS' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioParserTests' 			with: [ spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
-			package: #BioPharo4 					with: [ spec requires: #('BioTools' ). ];
+			package: 'BioPharo4' 					with: [ spec requires: 
+#('BioTools' ). ];
 			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
 			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];

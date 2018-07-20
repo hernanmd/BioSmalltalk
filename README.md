@@ -9,7 +9,7 @@ See [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentatio
 ```smalltalk
 Metacello new
     baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
     load
 ```
 

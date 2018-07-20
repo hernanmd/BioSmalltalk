@@ -7,10 +7,10 @@ See [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentatio
 ## Stable version
 
 ```smalltalk
-Metacello new                                                                                                                                                 
-        configuration: 'BioSmalltalk';                                                                                                                        
-        repository: 'github://hernanmd/BioSmalltalk/repository';                                                                                              
-        load. 
+Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk';
+    load
 ```
 
 ## Baseline String

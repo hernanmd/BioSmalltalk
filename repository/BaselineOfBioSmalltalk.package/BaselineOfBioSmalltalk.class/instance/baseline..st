@@ -60,15 +60,26 @@ baseline: spec
 		spec
 			for: #(unix macos)
 			do: [
-				spec configuration: 'OSSubprocess' with: [ spec 	versionString: #stable; 
-repository: 'github://marianopeck/OSSubprocess/repository' ];
+				spec 
+					configuration: 'OSSubprocess' 
+					with: [ 
+						spec 
+							versionString: #stable; 
+							repository: 'github://marianopeck/OSSubprocess/repository' ].
 				spec
 					package: 'BioWrappers'
 					with: [ spec requires: #('OSSubprocess') ] ].
 
 		spec
 			for: #Windows
-			do: [ spec
+			do: [ 
+				spec
+					project: 'ProcessWrapper' with: [
+						spec
+							className: #ConfigurationOfProcessWrapper;
+							versionString: #'development';
+							repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
+				spec
 					package: 'BioWrappers'
 					with: [ spec requires: #('ProcessWrapper') ] ].
 

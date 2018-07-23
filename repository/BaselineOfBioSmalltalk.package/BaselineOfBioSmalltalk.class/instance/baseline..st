@@ -14,6 +14,12 @@ baseline: spec
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
 			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ];
 				
+			project: 'ProcessWrapper' with: [
+				spec
+					className: #ConfigurationOfProcessWrapper;
+					versionString: #'stable';
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
+						
 			project: 'INIFileSupport' with: [
 				spec
 					className: #ConfigurationOfINIFileSupport;
@@ -73,12 +79,6 @@ baseline: spec
 		spec
 			for: #Windows
 			do: [ 
-				spec
-					project: 'ProcessWrapper' with: [
-						spec
-							className: #ConfigurationOfProcessWrapper;
-							versionString: #'development';
-							repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
 				spec
 					package: 'BioWrappers'
 					with: [ spec requires: #('ProcessWrapper') ] ].

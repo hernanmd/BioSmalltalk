@@ -1,7 +1,6 @@
 accessing
 gcSkew: wLength
-	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
-	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
+	" Answer a <Collection> with <Float> representing ratios. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength. Answer 0.0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
 	
 	| ranges index |
 	ranges := OrderedCollection new: wLength.

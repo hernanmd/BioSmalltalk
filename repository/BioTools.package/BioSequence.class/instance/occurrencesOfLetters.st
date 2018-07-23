@@ -5,7 +5,7 @@ occurrencesOfLetters
 	| occurrences |
 	
 	occurrences := Dictionary new.
-	self asString do: [ : each | 
+	self do: [ : each | 
 		occurrences 
 			at: each asUppercase 
 			put: (occurrences at: each asUppercase ifAbsentPut: [ 0 ]) + 1 ].

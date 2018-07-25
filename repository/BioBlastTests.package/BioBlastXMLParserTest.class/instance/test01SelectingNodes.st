@@ -8,7 +8,7 @@ test01SelectingNodes
 	
 	self assert: queryRs isCollection.
 	self deny: queryRs isEmpty.
-	self assert: queryRs size = 3.
-	self assert: queryRs first blastValue = 240.
-	self assert: queryRs second blastValue = 240.
-	self assert: queryRs third blastValue = 99.
+	self assert: queryRs size equals: 3.
+	self assert: queryRs first blastValue equals: 240.
+	self assert: queryRs second blastValue equals: 240.
+	self assert: queryRs third blastValue equals: 99.

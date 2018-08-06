@@ -1,9 +1,5 @@
 {
-	"commentStamp" : "HernanMoralesDurand 3/21/2016 03:14",
-	"super" : "BioPropertyObject",
-	"category" : "BioTools-Core",
-	"classinstvars" : [ ],
-	"pools" : [ ],
+	"classtraitcomposition" : "BioFTPDownloader classTrait",
 	"classvars" : [ ],
 	"instvars" : [
 		"client",
@@ -12,5 +8,11 @@
 		"connectionSettings"
 	],
 	"name" : "BioDBObject",
-	"type" : "normal"
+	"commentStamp" : "HernanMoralesDurand 3/21/2016 03:14",
+	"super" : "BioPropertyObject",
+	"traitcomposition" : "BioFTPDownloader",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "BioTools-Core"
 }

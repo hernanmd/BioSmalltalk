@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "HernanMoralesDurand 3/8/2015 15:07",
-	"super" : "BioAlphabet",
+	"super" : "BioComplementaryAlphabet",
 	"category" : "BioTools-Alphabets",
 	"classinstvars" : [ ],
 	"pools" : [ ],

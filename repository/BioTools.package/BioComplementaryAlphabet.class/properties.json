@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "",
-	"super" : "BioIUPACAlphabet",
+	"commentStamp" : "HernanMoralesDurand 8/4/2018 17:58",
+	"super" : "BioAlphabet",
 	"category" : "BioTools-Alphabets",
 	"classinstvars" : [
 		"complementaryTable"
@@ -8,6 +8,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BioIUPACComplementaryAlphabet",
+	"name" : "BioComplementaryAlphabet",
 	"type" : "normal"
 }

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "BioIUPACComplementaryAlphabet",
+	"super" : "BioIUPACAlphabet",
 	"category" : "BioTools-Alphabets",
 	"classinstvars" : [ ],
 	"pools" : [ ],

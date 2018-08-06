@@ -5,4 +5,4 @@ asFastaRecord
 	
 	^ BioFastaRecord
 		named: self lines first
-		sequence: ((self lines allButFirst) joinUsing: Character cr) withoutCRs
+		sequence: (self lines allButFirst joinUsing: Character cr) withoutCRs

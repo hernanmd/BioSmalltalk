@@ -1,4 +1,4 @@
-accessing
+downloading
 url
 	" Answer a Http Url with the receiver's configured URL "
 

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "<historical>",
-	"super" : "BioGenomeDownloader",
+	"super" : "BioNCBIGenomeDownloader",
 	"category" : "BioNCBI-Genomes",
 	"classinstvars" : [ ],
 	"pools" : [ ],

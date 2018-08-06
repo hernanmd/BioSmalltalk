@@ -1,5 +1,5 @@
-actions
-search
+downloading
+fetch
 	" Answer the result of the command applied on the receiver "
 
-	^ self client search
+	^ self client fetch

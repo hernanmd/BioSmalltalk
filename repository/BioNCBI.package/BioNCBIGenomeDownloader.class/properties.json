@@ -15,6 +15,6 @@
 		"chrZeroPrefixed",
 		"chrDirZeroPrefixed"
 	],
-	"name" : "BioGenomeDownloader",
+	"name" : "BioNCBIGenomeDownloader",
 	"type" : "normal"
 }

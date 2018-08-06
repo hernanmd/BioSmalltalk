@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "HernanMoralesDurand 12/22/2014 01:26",
-	"super" : "BioGenomeDownloader",
+	"super" : "BioNCBIGenomeDownloader",
 	"category" : "BioNCBI-Genomes",
 	"classinstvars" : [ ],
 	"pools" : [ ],

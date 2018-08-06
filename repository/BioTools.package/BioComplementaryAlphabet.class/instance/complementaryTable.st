@@ -1,5 +1,5 @@
 accessing private
 complementaryTable
-	" Answer the receiver's complementary table "
+	" Answer a <Collection> with the receiver's complementary table "
 
 	^ self class complementaryTable

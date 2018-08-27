@@ -1,9 +1,15 @@
 sections-profile
 profileSample2
 
-	^ '[Profile]
-	Title="Fake HLA data"
-	NbSamples=4
-	GenotypicData=1
-	GameticPhase=0
-'
+	^ String streamContents: [ : stream |
+		stream 
+			nextPutAll: '[Profile]';
+			nextPutTerminator;
+			nextPutAll: '	Title="Fake HLA data"';
+			nextPutTerminator;
+			nextPutAll: '	NbSamples=4';
+			nextPutTerminator;
+			nextPutAll: '	GenotypicData=1';
+			nextPutTerminator;
+			nextPutAll: '	GameticPhase=0';
+			nextPutTerminator ]

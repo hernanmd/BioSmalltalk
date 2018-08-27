@@ -4,7 +4,7 @@ printOn: aStream
 	
 	super printOn: aStream.
 	aStream 
-		nextPutAll: self name between: $( and: $);
+		nextPutAll: self projectName between: $( and: $);
 		space;
 		nextPutAll: 'Jobs: ';
 		nextPutAll: self jobsCount asString

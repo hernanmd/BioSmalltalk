@@ -1,4 +1,4 @@
-testing
+tests
 testProfileContents2
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
@@ -6,8 +6,4 @@ testProfileContents2
 		addSampleNumber: '1';
 		unsetGenotypicData;
 		yourself.
-	self assert: arFile contents = '[Profile]
-	Title="mtDNA sequences Old Type"
-	NbSamples=1
-	GenotypicData=0
-'
+	self assert: arFile contents equals: self profileSample3.

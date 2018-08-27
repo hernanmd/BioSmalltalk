@@ -9,8 +9,8 @@ testProfileSection2
 			at: 'GameticPhase' put: '0';
 			yourself.
 
-	self assert: arFile contents = self profileSample2.
-	self assert: ((arFile section: 'Profile') at: 'Title') = 'Fake HLA data'.
-	self assert: ((arFile section: 'Profile') at: 'NbSamples') = '4'.
-	self assert: ((arFile section: 'Profile') at: 'GenotypicData') = '1'.
-	self assert: ((arFile section: 'Profile') at: 'GameticPhase') = '0'.
+	self assert: arFile contents equals: self profileSample2.
+	self assert: ((arFile section: 'Profile') at: 'Title') equals: 'Fake HLA data'.
+	self assert: ((arFile section: 'Profile') at: 'NbSamples') equals: '4'.
+	self assert: ((arFile section: 'Profile') at: 'GenotypicData') equals: '1'.
+	self assert: ((arFile section: 'Profile') at: 'GameticPhase') equals: '0'.

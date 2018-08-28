@@ -1,7 +1,7 @@
 testing
 testDisplayWholeBlob
-
 	self entrezClient: BioEntrezClient new nucest.
-
 	self entrezClient displayWholeBlob.
-	self assert: ( self entrezClient valueForParameter: 'complexity' ) = '0'.
+	self
+		assert: (self entrezClient valueForParameter: 'complexity')
+		equals: '0'

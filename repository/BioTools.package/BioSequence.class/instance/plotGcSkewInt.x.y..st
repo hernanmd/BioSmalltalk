@@ -1,4 +1,4 @@
-as yet unclassified
+ploting
 plotGcSkewInt: extentPoint x: xLabel y: yLabel
 	" Plot receiver's GC skew "
 

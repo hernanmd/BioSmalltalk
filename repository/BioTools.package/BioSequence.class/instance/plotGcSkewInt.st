@@ -1,4 +1,4 @@
-as yet unclassified
+ploting
 plotGcSkewInt
 	" Plot receiver's GC skew "
 

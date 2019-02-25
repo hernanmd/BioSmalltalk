@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "BioAffymetrix-Axiom",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"id",
+		"chr",
+		"position",
+		"markers"
+	],
+	"name" : "BioAffyProbeSetRecord",
+	"type" : "normal"
+}

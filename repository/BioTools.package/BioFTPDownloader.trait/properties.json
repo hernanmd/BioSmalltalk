@@ -3,5 +3,7 @@
 	"traitcomposition" : "BioDownloader",
 	"classtraitcomposition" : "BioDownloader classTrait",
 	"category" : "BioTools-Helpers",
-	"name" : "BioFTPDownloader"
+	"classinstvars" : [ ],
+	"name" : "BioFTPDownloader",
+	"instvars" : [ ]
 }

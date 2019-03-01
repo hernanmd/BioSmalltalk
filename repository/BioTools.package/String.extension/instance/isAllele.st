@@ -1,0 +1,10 @@
+*BioTools
+isAllele
+
+	^ #(
+	'AA' 'AC' 'AG' 'AT'
+	'CA' 'CC' 'CG' 'CT'
+	'GA' 'GC' 'GG' 'GT'
+	'TA' 'TC' 'TG' 'TT'
+	'---'
+	) includes: self

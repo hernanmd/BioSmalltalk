@@ -2,5 +2,5 @@ private
 buildTXTArray
 
 	^ (NeoCSVReader on: self inputFile asFileReference readStream)
-		separator: Character tab;
+		separator: self delimiter;
 		upToEnd.

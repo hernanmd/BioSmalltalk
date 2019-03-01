@@ -1,2 +1,2 @@
 SystemOrganization addCategory: #BioAffymetrix!
-SystemOrganization addCategory: 'BioAffymetrix-Axiom'!
+SystemOrganization addCategory: #'BioAffymetrix-Axiom'!

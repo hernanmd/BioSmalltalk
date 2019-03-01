@@ -1,4 +1,4 @@
-accessing
+accessing-header
 headerLineCount
+
 	^ headerLineCount
-		ifNil: [ headerLineCount := 6 ]

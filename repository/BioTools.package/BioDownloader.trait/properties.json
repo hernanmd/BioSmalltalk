@@ -1,5 +1,7 @@
 {
-	"name" : "BioDownloader",
 	"commentStamp" : "HernanMoralesDurand 8/4/2018 16:36",
-	"category" : "BioTools-Helpers"
+	"classinstvars" : [ ],
+	"category" : "BioTools-Helpers",
+	"instvars" : [ ],
+	"name" : "BioDownloader"
 }

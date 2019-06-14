@@ -33,7 +33,7 @@ baseline: spec
 
 		spec 
 			package: 'BioAffymetrix' 			with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
-			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'NeoCSV' 'INIFileSupport' ). ];
+			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'INIFileSupport' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioBlast' 					with: [ spec requires: #('BioWrappers' 'BioParsers' 'BioEntrez' ). ];
 			package: 'BioBlastSamples' 			with: [ spec requires: #('BioToolsSamples' ). ];

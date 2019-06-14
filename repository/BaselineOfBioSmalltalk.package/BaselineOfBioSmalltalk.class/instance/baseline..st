@@ -12,50 +12,12 @@ baseline: spec
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
 			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
-			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ];
+			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ].
 				
-			project: 'INIFileSupport' with: [
-				spec
-					className: #ConfigurationOfINIFileSupport;
-					versionString: '0.1-baseline';
-					repository: 'http://smalltalkhub.com/mc/hernan/INIParser/main/' ];
-				
-			project: 'NeoCSV' with: [
-				spec
-					className: 'ConfigurationOfNeoCSV';
-					version: #stable;
-					repository: 'github://svenvc/NeoCVS:master/repository' ];
-				
-			project: 'PetitParser' with: [
-				spec
-					className: #ConfigurationOfPetitParser;
-					versionString: '2.0';
-					loads: #('Core' );
-					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ];
-
-			project: 'Roassal2' with: [
-				spec
-					className: #ConfigurationOfRoassal2;
-					versionString: #'stable';
-					loads: #('NoGlamour' );
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
-
-			project: 'XMLParser' with: [
-				spec
-					className: #ConfigurationOfXMLParser;
-					versionString: '2.5.2';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
-			project: 'XMLPullParser' with: [
-				spec
-					className: #ConfigurationOfXMLPullParser;
-					versionString: #'development';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
-	
-			project: 'XMLWriter' with: [
-				spec
-					className: #ConfigurationOfXMLWriter;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
+		self projectSpecForINIParser: spec.
+		self projectSpecForPetitParser: spec.				
+		self projectSpecForRoassal: spec.
+		self projectSpecsForXML: spec.
 				
 		spec
 			for: #(Unix MacOS)

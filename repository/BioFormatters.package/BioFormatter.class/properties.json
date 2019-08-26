@@ -10,7 +10,8 @@
 		"samplesCollection",
 		"delimiterSourceCharacter",
 		"delimiterTargetCharacter",
-		"isValid"
+		"isValid",
+		"fileNamePrefix"
 	],
 	"name" : "BioFormatter",
 	"type" : "normal"

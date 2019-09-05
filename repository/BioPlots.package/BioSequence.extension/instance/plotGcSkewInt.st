@@ -1,4 +1,4 @@
-as yet unclassified
+*BioPlots
 plotGcSkewInt
 	" Plot receiver's GC skew "
 

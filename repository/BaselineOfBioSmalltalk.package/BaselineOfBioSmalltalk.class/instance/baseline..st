@@ -63,8 +63,47 @@ baseline: spec
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];
-			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ). ].
+			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' );
+			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ] ].
 
 		spec 
-			group: 'Core' with: #('BioTools' 'BioNCBI' 'BioWrappers' 'BioEntrez' 'BioBlast' 'BioParsers' 'BioFormatters' 'BioPopulation' 'BioClassifier' 'BioEBI' 'BioToolsSamples' 'BioBlastSamples' 'BioHaplotypes' 'BioBenchmarks' 'BioSoftwareCatalog' 'BioIllumina' 'BioPharo4' 'BioProject' 'BioNGS' );
-			group: 'Tests' with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' ). ].
+			group: 'Core' 
+			with: #(
+				'BioTools' 
+				'BioNCBI' 
+				'BioWrappers' 
+				'BioEntrez' 
+				'BioBlast' 
+				'BioParsers' 
+				'BioFormatters' 
+				'BioClassifier' 
+				'BioEBI' 
+				'BioToolsSamples' 
+				'BioBlastSamples' 
+				'BioHaplotypes' 
+				'BioBenchmarks' 
+				'BioIllumina' 
+				'BioPharo4' 
+				'BioNGS' );
+
+			group: 'Basic'
+			with: #(
+				'BioTools' 
+				'BioNCBI'
+				'BioParsers'
+				'BioFormatters');
+
+			group: 'PopulationGenomics'
+			with: #(
+				'BioTools'
+				'BioPopulation'
+				'BioHaplotypes' 
+				'BioLAMPLD');
+
+			group: 'Projects'
+			with: #(
+				'BioProject'
+				'BioSoftwareCatalog');
+				
+			group: 'Tests' 
+			with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' ). ].

@@ -1,4 +1,4 @@
-accessing
+*BioPlots
 plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color: aColor barWidth: barWidth
 
 	| bins minPoint g ds |

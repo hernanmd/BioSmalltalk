@@ -1,1 +1,0 @@
-BioSerializationEngine is the superclass for all known serializers. Behavior of serializers includes materialization and compression (compression is not implemented currently).

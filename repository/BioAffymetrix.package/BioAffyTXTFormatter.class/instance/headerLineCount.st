@@ -1,4 +1,0 @@
-accessing-header
-headerLineCount
-
-	^ headerLineCount

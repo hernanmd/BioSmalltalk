@@ -1,1 +1,0 @@
-A BioOrthoDatabaseTest is a test class for testing the behavior of BioOrthoDatabase

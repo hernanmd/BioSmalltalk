@@ -1,1 +1,0 @@
-The structure exists only to specify those nodes which are present in the XML and are part of the hits results tree. This way we can build the tree keeping the original structure of the XML results.

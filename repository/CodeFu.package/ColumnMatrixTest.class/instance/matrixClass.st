@@ -1,4 +1,0 @@
-fixture
-matrixClass
-
-	^ColumnMatrix

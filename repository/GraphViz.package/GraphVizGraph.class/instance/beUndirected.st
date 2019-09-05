@@ -1,4 +1,0 @@
-accessing
-beUndirected
-
-	directed := false

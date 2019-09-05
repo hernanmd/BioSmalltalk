@@ -1,3 +1,0 @@
-accessing
-samplesPrefix
-	^ samplesPrefix

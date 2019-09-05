@@ -1,4 +1,0 @@
-defaults
-defaultFileListPrefix
-
-	self subclassResponsibility 

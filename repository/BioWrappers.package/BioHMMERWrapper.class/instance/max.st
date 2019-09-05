@@ -1,8 +1,0 @@
-options
-max
-	"WARNING: This is code generated automatically.
- On: 6 December 2012 - 6:34:17 pm"
-
-	"Turn all heuristic filters off (less speed, more power)"
-
-	 ^ self addOption: 'max'

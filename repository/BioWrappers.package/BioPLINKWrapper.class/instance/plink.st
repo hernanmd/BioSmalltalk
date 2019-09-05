@@ -1,5 +1,0 @@
-programs
-plink
-	" Answer a <String> with the command line name "
-
-	^ self class plink

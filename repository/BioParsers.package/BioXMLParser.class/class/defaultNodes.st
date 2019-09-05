@@ -1,4 +1,0 @@
-accessing
-defaultNodes
-
-	self subclassResponsibility

@@ -1,4 +1,0 @@
-removing
-removeStopwords
-
-	self subclassResponsibility

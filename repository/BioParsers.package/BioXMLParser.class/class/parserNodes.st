@@ -1,4 +1,0 @@
-accessing
-parserNodes
-
-	^ self defaultNodes

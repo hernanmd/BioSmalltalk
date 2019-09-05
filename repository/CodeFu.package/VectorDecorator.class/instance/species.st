@@ -1,4 +1,0 @@
-private
-species
-
-	^vector species

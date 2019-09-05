@@ -1,4 +1,0 @@
-private
-vectorSpecies
-
-	^ArrayVector "FloatVector"

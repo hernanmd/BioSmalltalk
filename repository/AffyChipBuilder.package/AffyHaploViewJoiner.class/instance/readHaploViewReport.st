@@ -1,5 +1,0 @@
-accessing
-readHaploViewReport
-
-	self haploViewReport
-	

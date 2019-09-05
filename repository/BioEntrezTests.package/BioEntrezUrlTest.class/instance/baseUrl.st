@@ -1,4 +1,0 @@
-testing
-baseUrl
-
-	^ BioEntrezClient baseUrl

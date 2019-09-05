@@ -1,1 +1,0 @@
-BioClassicSystemBrowser can be used when other browser systems (like OmniBrowser) fail to open. Use it from the World Menu

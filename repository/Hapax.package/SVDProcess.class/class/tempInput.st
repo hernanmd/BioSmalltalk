@@ -1,4 +1,0 @@
-constants
-tempInput
-
-	^'svd-input'

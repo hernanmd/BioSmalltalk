@@ -1,4 +1,0 @@
-accessing
-locationsWithoutPrefixes
-
-	^ Array new

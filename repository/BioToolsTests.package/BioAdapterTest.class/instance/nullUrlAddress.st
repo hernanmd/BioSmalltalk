@@ -1,4 +1,0 @@
-accessing
-nullUrlAddress
-
-	^ String empty

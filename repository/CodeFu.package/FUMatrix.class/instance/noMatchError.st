@@ -1,4 +1,0 @@
-private
-noMatchError
-
-	Error raise

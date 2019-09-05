@@ -1,4 +1,0 @@
-accessing
-threshold
-
-	^self  subclassResponsibility

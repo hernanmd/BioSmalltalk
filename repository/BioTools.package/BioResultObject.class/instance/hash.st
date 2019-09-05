@@ -1,5 +1,0 @@
-comparing
-hash
-	" Answer an <Integer> that is related to the identity of the receiver. "
-
-	^ self result hash bitXor: self names hash

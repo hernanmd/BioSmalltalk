@@ -1,3 +1,0 @@
-accessing-sequence
-description
-	^ description

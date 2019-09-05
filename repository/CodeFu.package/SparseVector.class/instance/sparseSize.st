@@ -1,4 +1,0 @@
-accessing
-sparseSize
-
-	^contents size

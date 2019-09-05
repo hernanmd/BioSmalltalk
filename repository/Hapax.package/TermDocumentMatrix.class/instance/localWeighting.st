@@ -1,3 +1,0 @@
-weighting
-localWeighting
-	^localWeighting

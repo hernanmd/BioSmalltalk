@@ -1,4 +1,0 @@
-converting
-openInteractive
-
-	self displayCostume openInWorld

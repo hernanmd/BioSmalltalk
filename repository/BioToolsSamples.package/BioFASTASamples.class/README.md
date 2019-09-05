@@ -1,1 +1,0 @@
-Sample scripts for accessing data formatted in FASTA format

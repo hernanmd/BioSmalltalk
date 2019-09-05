@@ -1,3 +1,0 @@
-accessing
-gpeaks
-	^ gpeaks

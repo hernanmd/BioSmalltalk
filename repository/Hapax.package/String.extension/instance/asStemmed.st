@@ -1,4 +1,0 @@
-*hapax
-asStemmed
-
-	^self stem

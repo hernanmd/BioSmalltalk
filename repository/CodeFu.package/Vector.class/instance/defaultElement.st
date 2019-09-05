@@ -1,4 +1,0 @@
-private
-defaultElement
-
-	^Float zero

@@ -1,3 +1,0 @@
-accessing - tags
-primaryTag
-	^ primaryTag

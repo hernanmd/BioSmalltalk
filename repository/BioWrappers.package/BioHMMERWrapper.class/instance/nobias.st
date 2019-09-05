@@ -1,8 +1,0 @@
-options
-nobias
-	"WARNING: This is code generated automatically.
- On: 6 December 2012 - 6:34:17 pm"
-
-	"turn off composition bias filter"
-
-	 ^ self addOption: 'nobias'

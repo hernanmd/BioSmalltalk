@@ -1,4 +1,0 @@
-defaults
-defaultMinMotifSize
-	
-	^ 100

@@ -1,1 +1,0 @@
-Serves as a Null Object for empty or missing results.

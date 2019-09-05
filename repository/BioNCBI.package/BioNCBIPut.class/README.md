@@ -1,1 +1,0 @@
-http://www.ncbi.nlm.nih.gov/blast/Doc/node5.html

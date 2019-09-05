@@ -1,4 +1,0 @@
-private
-noModificationError
-
-	Error raise

@@ -1,4 +1,0 @@
-accessing parser
-parserClass
-
-	^ BioEntrezXMLGBBasicParser

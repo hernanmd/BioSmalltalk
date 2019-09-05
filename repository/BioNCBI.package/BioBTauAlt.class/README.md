@@ -1,1 +1,0 @@
-Genomic DNA sequence released by The Bovine Genome Sequencing Consortium

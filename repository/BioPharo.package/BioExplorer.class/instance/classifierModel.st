@@ -1,4 +1,0 @@
-accessing
-classifierModel
-
-	^ classifierModel

@@ -1,4 +1,0 @@
-private
-checkInvariant
-
-	^number respondsToArithmetic

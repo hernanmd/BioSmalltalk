@@ -1,4 +1,0 @@
-accessing
-rowSize
-
-	^partialColumns size

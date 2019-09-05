@@ -1,4 +1,0 @@
-testing
-setInstalled
-
-	isInstalled := true

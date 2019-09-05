@@ -1,1 +1,0 @@
-Represent the definition of a score. A score is defined by an identifier and a description. Scores can can assigned to groups in context of the membership to a certain group. 

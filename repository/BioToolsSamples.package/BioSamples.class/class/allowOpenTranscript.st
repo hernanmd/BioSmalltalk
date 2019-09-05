@@ -1,4 +1,0 @@
-accessing private
-allowOpenTranscript
-
-	^ true

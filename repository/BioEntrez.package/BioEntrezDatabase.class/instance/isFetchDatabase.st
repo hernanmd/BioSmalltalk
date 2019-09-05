@@ -1,4 +1,0 @@
-testing
-isFetchDatabase
-
-	^ false

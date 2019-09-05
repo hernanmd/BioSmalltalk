@@ -1,1 +1,0 @@
-sp|accesion|entry

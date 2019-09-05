@@ -1,1 +1,0 @@
-This class supports parsing DNA sequences with degenerate bases as sent from Illumina, i.e. of the form : 'A[A/C]CTG' or 'AT[A/C]TA[C/A]'.

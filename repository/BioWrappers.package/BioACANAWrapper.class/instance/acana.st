@@ -1,6 +1,0 @@
-programs
-acana
-	"WARNING: This is code generated automatically.
- On: 8 November 2012 - 9:58:11 pm"
-
-	^ 'acana'

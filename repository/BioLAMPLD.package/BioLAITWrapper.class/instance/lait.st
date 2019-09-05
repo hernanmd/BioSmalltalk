@@ -1,4 +1,0 @@
-programs
-lait
-
-	^ 'lait.pl'

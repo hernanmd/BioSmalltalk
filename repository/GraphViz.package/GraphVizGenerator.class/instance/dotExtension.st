@@ -1,4 +1,0 @@
-accessing
-dotExtension
-
-	^ '.txt'

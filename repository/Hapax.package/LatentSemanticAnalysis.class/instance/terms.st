@@ -1,4 +1,0 @@
-accessing
-terms
-
-	^tdm terms

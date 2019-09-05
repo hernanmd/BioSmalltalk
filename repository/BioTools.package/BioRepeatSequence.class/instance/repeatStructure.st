@@ -1,3 +1,0 @@
-accessing - private
-repeatStructure
-	^ repeatStructure

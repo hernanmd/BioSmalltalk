@@ -1,3 +1,0 @@
-accessing
-skipStopWords
-	^ skipStopWords

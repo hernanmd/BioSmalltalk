@@ -1,4 +1,0 @@
-private
-nonHapaxes
-
-	^#('human' 'interface' 'computer' 'user' 'system' 'response' 'time' 'eps' 'survey' 'trees' 'graph' 'minors')

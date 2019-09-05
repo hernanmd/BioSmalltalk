@@ -1,4 +1,0 @@
-accessing
-termSize
-
-	^self rowSize

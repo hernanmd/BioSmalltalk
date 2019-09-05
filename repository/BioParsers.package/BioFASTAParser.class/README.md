@@ -1,1 +1,0 @@
-Parser for several FASTA file format elements. This class is not intended to be used directly. See BioParser for details parsing FASTA files.

@@ -1,4 +1,0 @@
-private
-bits
-
-	^bits

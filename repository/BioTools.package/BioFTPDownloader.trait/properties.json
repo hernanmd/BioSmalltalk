@@ -1,9 +1,0 @@
-{
-	"commentStamp" : "",
-	"traitcomposition" : "BioDownloader",
-	"classtraitcomposition" : "BioDownloader classTrait",
-	"category" : "BioTools-Helpers",
-	"classinstvars" : [ ],
-	"name" : "BioFTPDownloader",
-	"instvars" : [ ]
-}

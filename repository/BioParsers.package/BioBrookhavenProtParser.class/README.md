@@ -1,1 +1,0 @@
-pdb|entry|chain

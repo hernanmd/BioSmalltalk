@@ -1,4 +1,0 @@
-testing
-atEnd
-
-	^ repeatPtr >= repeatLimit

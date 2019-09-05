@@ -1,4 +1,0 @@
-accessing mathematical
-s
-
-	^S

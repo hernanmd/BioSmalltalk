@@ -1,8 +1,0 @@
-properties
-EvL: n
-	"WARNING: This is code generated automatically.
- On: 6 December 2012 - 6:34:17 pm"
-
-	"length of sequences for Viterbi Gumbel mu fit  [200]  (n>0)"
-
-	 ^ self propertyAt: 'EvL' ifAbsentPut: [ n ]

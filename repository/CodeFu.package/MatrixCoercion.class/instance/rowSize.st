@@ -1,4 +1,0 @@
-accessing
-rowSize
-
-	self noDimensionError

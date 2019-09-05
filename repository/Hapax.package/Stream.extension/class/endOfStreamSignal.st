@@ -1,3 +1,0 @@
-*hapax
-endOfStreamSignal
-	^ EndOfStream 

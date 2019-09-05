@@ -1,4 +1,0 @@
-defaults
-defaultConsensusStrategy
-
-	^ BioDummyConsensusStrategy new

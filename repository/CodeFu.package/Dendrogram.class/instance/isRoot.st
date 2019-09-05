@@ -1,4 +1,0 @@
-testing
-isRoot
-
-	^parent == nil

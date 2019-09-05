@@ -1,4 +1,0 @@
-testing
-hasSize: aSize
-
-	^true

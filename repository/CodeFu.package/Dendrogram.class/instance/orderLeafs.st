@@ -1,4 +1,0 @@
-seriation
-orderLeafs
-
-	^self subclassResponsibility

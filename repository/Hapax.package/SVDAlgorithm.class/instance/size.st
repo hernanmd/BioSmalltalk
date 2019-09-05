@@ -1,4 +1,0 @@
-sorting
-size
-
-	^S size

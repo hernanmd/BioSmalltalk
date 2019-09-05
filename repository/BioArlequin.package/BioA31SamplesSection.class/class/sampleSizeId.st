@@ -1,4 +1,0 @@
-accessing
-sampleSizeId
-
-	^ 'SampleSize' -> 'The size of the sample (For haplotypic data, the sample size is equal to the haploid sample size. For genotypic data, the sample size should be equal to the number of diploid individuals present in the sample. When absolute frequencies are entered, the size of each sample will be checked against the sum of all haplotypic frequencies will check. If a discrepancy is found, a Warning message is issued in the log file, and the sample size is set to the sum of haplotype frequencies. When relative frequencies are specified, no such check is possible, and the sample size is used to convert relative frequencies to absolute frequencies'

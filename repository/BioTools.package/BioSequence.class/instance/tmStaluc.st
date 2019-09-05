@@ -1,4 +1,0 @@
-accessing
-tmStaluc
-
-	self shouldBeImplemented

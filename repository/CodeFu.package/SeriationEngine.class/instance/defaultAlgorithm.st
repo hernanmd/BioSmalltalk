@@ -1,4 +1,0 @@
-algorithm
-defaultAlgorithm
-
-	^self orderDendrogramLeaves

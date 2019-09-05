@@ -1,8 +1,0 @@
-properties
-F1: x
-	"WARNING: This is code generated automatically.
- On: 6 December 2012 - 6:34:17 pm"
-
-	"Stage 1 (MSV) threshold: promote hits w/ P <= F1  [0.02]"
-
-	 ^ self propertyAt: 'F1' ifAbsentPut: [ x ]

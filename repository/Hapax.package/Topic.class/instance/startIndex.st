@@ -1,4 +1,0 @@
-accessing
-startIndex
-
-	^cluster index

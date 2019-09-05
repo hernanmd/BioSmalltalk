@@ -1,4 +1,0 @@
-*BioFormatters
-isValidForCSVFormat
-
-	^ self notEmpty.

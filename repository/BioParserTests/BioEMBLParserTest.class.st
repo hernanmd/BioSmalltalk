@@ -1,0 +1,32 @@
+Class {
+	#name : #BioEMBLParserTest,
+	#superclass : #BioAbstractParserTest,
+	#instVars : [
+		'emblParser'
+	],
+	#category : 'BioParserTests-Core'
+}
+
+{ #category : #testing }
+BioEMBLParserTest >> emblSeq01 [
+	" From http://www.genomatix.de/online_help/help/sequence_formats.html "
+
+	^ 'An example sequence in EMBL format is:
+
+ID   AB000263 standard; RNA; PRI; 368 BP.
+XX
+AC   AB000263;
+XX
+DE   Homo sapiens mRNA for prepro cortistatin like peptide, complete cds.
+XX
+SQ   Sequence 368 BP;
+     acaagatgcc attgtccccc ggcctcctgc tgctgctgct ctccggggcc acggccaccg        60
+     ctgccctgcc cctggagggt ggccccaccg gccgagacag cgagcatatg caggaagcgg       120
+     caggaataag gaaaagcagc ctcctgactt tcctcgcttg gtggtttgag tggacctccc       180
+     aggccagtgc cgggcccctc ataggagagg aagctcggga ggtggccagg cggcaggaag       240
+     gcgcaccccc ccagcaatcc gcgcgccggg acagaatgcc ctgcaggaac ttcttctgga       300
+     agaccttctc ctcctgcaaa taaaacctca cccatgaatg ctcacgcaag tttaattaca       360
+     gacctgaa                                                                368
+//
+'
+]

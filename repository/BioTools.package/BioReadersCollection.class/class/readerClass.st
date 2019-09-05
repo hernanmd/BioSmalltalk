@@ -1,4 +1,0 @@
-accessing
-readerClass
-
-	^ self subclassResponsibility

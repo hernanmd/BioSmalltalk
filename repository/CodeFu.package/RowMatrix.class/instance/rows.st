@@ -1,4 +1,0 @@
-accessing vectorwise
-rows
-
-	^rows

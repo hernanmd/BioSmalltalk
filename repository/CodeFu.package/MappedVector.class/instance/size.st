@@ -1,4 +1,0 @@
-accessing
-size
-
-	^indices size

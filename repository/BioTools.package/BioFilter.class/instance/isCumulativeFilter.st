@@ -1,4 +1,0 @@
-testing
-isCumulativeFilter
-
-	^ cumulative

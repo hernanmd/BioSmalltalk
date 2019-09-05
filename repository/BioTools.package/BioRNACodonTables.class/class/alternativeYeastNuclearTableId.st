@@ -1,4 +1,0 @@
-tables
-alternativeYeastNuclearTableId
-	
-	^ 12

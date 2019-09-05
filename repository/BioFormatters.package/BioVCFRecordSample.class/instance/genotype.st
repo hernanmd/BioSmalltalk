@@ -1,3 +1,0 @@
-accessing
-genotype
-	^ genotype

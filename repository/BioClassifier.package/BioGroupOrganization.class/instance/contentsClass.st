@@ -1,4 +1,0 @@
-initialize-release
-contentsClass
-
-	^ OrderedCollection

@@ -1,1 +1,0 @@
-BioWebClientEngine is the superclass for HTTP clients, which lets to make request and get both the response content and the response headers

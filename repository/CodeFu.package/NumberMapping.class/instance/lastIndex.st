@@ -1,4 +1,0 @@
-adding
-lastIndex
-
-	^forth size

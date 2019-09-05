@@ -1,4 +1,0 @@
-accessing
-beDirected
-
-	directed := true

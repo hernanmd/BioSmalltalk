@@ -1,6 +1,0 @@
-accessing
-url
-	"WARNING: This is code generated automatically.
- On: 8 November 2012 - 9:58:04 pm"
-
-	^ 'http://hmmer.janelia.org/'

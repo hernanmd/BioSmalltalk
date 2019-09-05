@@ -1,4 +1,0 @@
-tables
-echinodermMitochondrialTableId
-	
-	^ 9

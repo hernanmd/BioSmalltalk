@@ -1,8 +1,0 @@
-options
-nonull2
-	"WARNING: This is code generated automatically.
- On: 6 December 2012 - 6:34:18 pm"
-
-	"turn off biased composition score corrections"
-
-	 ^ self addOption: 'nonull2'

@@ -1,4 +1,0 @@
-generating
-commandLineForFormat: outputFormat
-
-	self subclassResponsibility

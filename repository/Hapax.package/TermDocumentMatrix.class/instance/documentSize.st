@@ -1,4 +1,0 @@
-accessing
-documentSize
-
-	^self columnSize

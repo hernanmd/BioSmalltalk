@@ -1,3 +1,0 @@
-*codefu
-asDouble
-	^ self asFloat

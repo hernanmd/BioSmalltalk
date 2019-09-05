@@ -1,4 +1,0 @@
-vector functions
-unitVector
-
-	^vector

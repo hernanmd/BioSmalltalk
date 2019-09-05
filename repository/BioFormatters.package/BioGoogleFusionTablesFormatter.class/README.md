@@ -1,1 +1,0 @@
-The Google Fusion Tables format is described here: http://www.google.com/drive/start/apps.html#fusiontables

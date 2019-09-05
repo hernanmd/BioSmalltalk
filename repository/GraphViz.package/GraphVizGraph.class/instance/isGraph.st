@@ -1,4 +1,0 @@
-testing
-isGraph
-
-	^ true

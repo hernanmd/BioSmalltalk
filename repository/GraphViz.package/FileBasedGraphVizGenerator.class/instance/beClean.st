@@ -1,4 +1,0 @@
-accessing
-beClean
-
-	deleteIntermediateFiles  := true

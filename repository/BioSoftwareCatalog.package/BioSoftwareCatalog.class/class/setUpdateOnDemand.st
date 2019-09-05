@@ -1,4 +1,0 @@
-accessing
-setUpdateOnDemand
-
-	updateOnDemand := true

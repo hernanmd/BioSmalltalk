@@ -22,7 +22,7 @@ Metacello new
     load: #('Basic')
 ```
 
-# Population Genomics packages
+## Population Genomics packages
 
 ```smalltalk
 Metacello new
@@ -31,7 +31,7 @@ Metacello new
     load: #('PopulationGenomics')
 ```
 
-# Test packages
+## Test packages
 
 ```smalltalk
 Metacello new
@@ -79,7 +79,7 @@ If you'd like to make some changes yourself, see the following:
 
 This software is licensed under the MIT License.
 
-Copyright Hernán Morales, 2018.
+Copyright Hernán Morales, 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the 

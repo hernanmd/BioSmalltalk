@@ -12,7 +12,7 @@ Class {
 	#instVars : [
 		'consensus'
 	],
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }

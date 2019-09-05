@@ -15,7 +15,7 @@ Class {
 	#instVars : [
 		'features'
 	],
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }

@@ -11,7 +11,7 @@ this way contained FASTA files can be manipulated through specific methods in Bi
 Class {
 	#name : #BioFASTAFileCollection,
 	#superclass : #BioFileCollection,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#category : 'BioFormatters-Formatters-FASTA'
 }
 
 { #category : #accessing }

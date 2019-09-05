@@ -5,7 +5,7 @@ A standard naming is a null namer, only trims a name.
 Class {
 	#name : #BioStandardNaming,
 	#superclass : #BioNaming,
-	#category : #'BioFormatters-Naming'
+	#category : 'BioFormatters-Naming'
 }
 
 { #category : #accessing }

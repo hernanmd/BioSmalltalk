@@ -29,7 +29,7 @@ Class {
 	#classVars : [
 		'Registry'
 	],
-	#category : #'BioFormatters-Files'
+	#category : 'BioFormatters-Files'
 }
 
 { #category : #accessing }

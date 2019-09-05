@@ -14,7 +14,7 @@ Class {
 		'isValid',
 		'fileNamePrefix'
 	],
-	#category : #'BioFormatters-Core'
+	#category : 'BioFormatters-Core'
 }
 
 { #category : #utilities }

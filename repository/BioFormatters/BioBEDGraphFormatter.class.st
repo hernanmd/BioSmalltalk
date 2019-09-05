@@ -6,7 +6,7 @@ transcriptome data.
 Class {
 	#name : #BioBEDGraphFormatter,
 	#superclass : #BioBEDFormatter,
-	#category : #'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED'
 }
 
 { #category : #accessing }

@@ -18,7 +18,7 @@ Class {
 		'bedFormatter',
 		'chrNumber'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #examples }

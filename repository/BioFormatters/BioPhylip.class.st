@@ -37,7 +37,7 @@ Class {
 		'numberOfCharacters',
 		'sequences'
 	],
-	#category : #'BioFormatters-Formatters-PHYLIP'
+	#category : 'BioFormatters-Formatters-PHYLIP'
 }
 
 { #category : #accessing }

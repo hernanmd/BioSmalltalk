@@ -38,7 +38,7 @@ Class {
 	#instVars : [
 		'samplesSize'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

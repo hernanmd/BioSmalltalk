@@ -10,7 +10,7 @@ Class {
 	#instVars : [
 		'stream'
 	],
-	#category : #'BioFormatters-Core'
+	#category : 'BioFormatters-Core'
 }
 
 { #category : #accessing }

@@ -6,7 +6,7 @@ Format writer for FASTA objects. See class side for examples
 Class {
 	#name : #BioFASTAFormatter,
 	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#category : 'BioFormatters-Formatters-FASTA'
 }
 
 { #category : #accessing }

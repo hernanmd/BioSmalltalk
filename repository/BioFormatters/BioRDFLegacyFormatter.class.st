@@ -30,7 +30,7 @@ Class {
 		'positionCiphers',
 		'nameIndex'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

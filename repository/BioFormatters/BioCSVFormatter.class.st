@@ -5,7 +5,7 @@ Abstract class for CSV format writers
 Class {
 	#name : #BioCSVFormatter,
 	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }

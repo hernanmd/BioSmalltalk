@@ -22,7 +22,7 @@ Class {
 		'cwd',
 		'outputFileStream'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #'instance creation' }

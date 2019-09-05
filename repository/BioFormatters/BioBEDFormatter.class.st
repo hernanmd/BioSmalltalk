@@ -17,7 +17,7 @@ Class {
 		'browser',
 		'orderIndex'
 	],
-	#category : #'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED'
 }
 
 { #category : #accessing }

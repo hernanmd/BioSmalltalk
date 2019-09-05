@@ -14,7 +14,7 @@ Class {
 		'capitalize',
 		'skipStopWords'
 	],
-	#category : #'BioFormatters-Naming'
+	#category : 'BioFormatters-Naming'
 }
 
 { #category : #accessing }

@@ -10,7 +10,7 @@ Class {
 	#instVars : [
 		'sequence'
 	],
-	#category : #'BioFormatters-Core'
+	#category : 'BioFormatters-Core'
 }
 
 { #category : #accessing }

@@ -14,7 +14,7 @@ myFasta contents.
 Class {
 	#name : #BioFASTAFile,
 	#superclass : #BioFile,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#category : 'BioFormatters-Formatters-FASTA'
 }
 
 { #category : #accessing }

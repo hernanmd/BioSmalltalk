@@ -22,7 +22,7 @@ Class {
 		'matrix',
 		'delimiter'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

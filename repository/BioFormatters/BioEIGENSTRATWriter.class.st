@@ -34,7 +34,7 @@ Class {
 		'markers',
 		'genoMatrix'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

@@ -23,7 +23,7 @@ Class {
 		'ignoreLinesCount',
 		'lines'
 	],
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV'
 }
 
 { #category : #testing }

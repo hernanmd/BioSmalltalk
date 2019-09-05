@@ -5,7 +5,7 @@ Reader/writer for format MAP, as described by the PLINK software.
 Class {
 	#name : #BioMAPFormatter,
 	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

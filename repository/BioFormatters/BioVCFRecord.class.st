@@ -20,7 +20,7 @@ Class {
 		'samples',
 		'infos'
 	],
-	#category : #'BioFormatters-Formatters-VCF'
+	#category : 'BioFormatters-Formatters-VCF'
 }
 
 { #category : #examples }

@@ -6,7 +6,7 @@ BioSmalltalk Variant Call Format parser/writer according to The Variant Call For
 Class {
 	#name : #BioVCFFormatter,
 	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-VCF'
+	#category : 'BioFormatters-Formatters-VCF'
 }
 
 { #category : #examples }

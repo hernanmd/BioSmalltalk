@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'interleaved'
 	],
-	#category : #'BioFormatters-Formatters-PHYLIP'
+	#category : 'BioFormatters-Formatters-PHYLIP'
 }
 
 { #category : #accessing }

@@ -12,7 +12,7 @@ Class {
 	#instVars : [
 		'dataLinesCount'
 	],
-	#category : #'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED'
 }
 
 { #category : #accessing }

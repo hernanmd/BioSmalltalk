@@ -10,7 +10,7 @@ Class {
 	#instVars : [
 		'alignment'
 	],
-	#category : #'BioFormatters-Formatters-MEGA'
+	#category : 'BioFormatters-Formatters-MEGA'
 }
 
 { #category : #accessing }

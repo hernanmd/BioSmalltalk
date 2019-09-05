@@ -5,7 +5,7 @@ Extension of the BED format which enhances track details supporting links and lo
 Class {
 	#name : #BioBEDDetailFormatter,
 	#superclass : #BioBEDFormatter,
-	#category : #'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED'
 }
 
 { #category : #accessing }

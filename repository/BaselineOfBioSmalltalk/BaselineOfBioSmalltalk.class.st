@@ -51,50 +51,64 @@ BaselineOfBioSmalltalk >> baseline: spec [
 ]
 
 { #category : #baselines }
+BaselineOfBioSmalltalk >> baselineAllGroup: spec [
+
+	spec
+		group: 'Basic'
+		with: #(
+			'Core' 
+			'Tests'
+			'PopulationGenomics'
+			'Projects')
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
+
+	spec
+		group: 'Basic'
+		with: #(
+			'BioTools' 
+			'BioNCBI'
+			'BioBlast'
+			'BioParsers'
+			'BioFormatters'
+			'BioPharo7')
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
+
+	spec 
+		group: 'Core' 
+		with: #(
+			'BioTools' 
+			'BioNCBI' 
+			'BioWrappers' 
+			'BioEntrez' 
+			'BioBlast' 
+			'BioParsers' 
+			'BioFormatters' 
+			'BioClassifier' 
+			'BioEBI' 
+			'BioToolsSamples' 
+			'BioBlastSamples' 
+			'BioHaplotypes' 
+			'BioBenchmarks' 
+			'BioIllumina' 
+			'BioPharo4'
+			'BioNGS' )
+]
+
+{ #category : #baselines }
 BaselineOfBioSmalltalk >> baselineGroups: spec [
 
-		spec 
-			group: 'Core' 
-			with: #(
-				'BioTools' 
-				'BioNCBI' 
-				'BioWrappers' 
-				'BioEntrez' 
-				'BioBlast' 
-				'BioParsers' 
-				'BioFormatters' 
-				'BioClassifier' 
-				'BioEBI' 
-				'BioToolsSamples' 
-				'BioBlastSamples' 
-				'BioHaplotypes' 
-				'BioBenchmarks' 
-				'BioIllumina' 
-				'BioPharo4' 
-				'BioNGS' );
-
-			group: 'Basic'
-			with: #(
-				'BioTools' 
-				'BioNCBI'
-				'BioParsers'
-				'BioFormatters');
-
-			group: 'PopulationGenomics'
-			with: #(
-				'BioTools'
-				'BioPopulation'
-				'BioHaplotypes' 
-				'BioLAMPLD');
-
-			group: 'Projects'
-			with: #(
-				'BioProject'
-				'BioSoftwareCatalog');
-				
-			group: 'Tests' 
-			with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' ). 
-
+	self baselineCoreGroup: spec.
+	self baselineBasicGroup: spec.
+	self baselinePopGenGroup: spec.
+	self baselineProjectsGroup: spec.
+	self baselineTestsGroup: spec.
+	self baselineAllGroup: spec.
 ]
 
 { #category : #baselines }
@@ -139,17 +153,46 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioParserTests' 			with: [ spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
 			package: 'BioPharo4' 					with: [ spec requires: #('BioTools' ). ];
+			package: 'BioPharo7' 					with: [ spec requires: #('BioTools' ). ];								
 			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
 			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools' ). ];
-			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath'). ];
+			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser'). ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];
 			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ];
 			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ].
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselinePopGenGroup: spec [
+
+	spec
+		group: 'PopulationGenomics'
+		with: #(
+			'BioTools'
+			'BioPopulation'
+			'BioHaplotypes' 
+			'BioLAMPLD')
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselineProjectsGroup: spec [
+
+	spec
+		group: 'Projects'
+		with: #('BioProject' 'BioSoftwareCatalog')
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
+
+	spec			
+		group: 'Tests' 
+		with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' )
 ]
 
 { #category : #accessing }
@@ -252,6 +295,7 @@ BaselineOfBioSmalltalk >> projectSpecsForXML: spec [
 					className: #ConfigurationOfXMLParser;
 					versionString: '2.5.2';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
+
 			project: 'XMLPullParser' with: [
 				spec
 					className: #ConfigurationOfXMLPullParser;

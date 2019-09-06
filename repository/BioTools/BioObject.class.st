@@ -20,15 +20,6 @@ BioObject class >> allFinalClasses [
 	^ self allSubclasses select: [ : ea | ea subclasses isEmpty ]
 ]
 
-{ #category : #'convenience-behavior' }
-BioObject class >> classFor: aLiteralOrClass [
-	" Answer the class for aLiteralOrClass or nil if doesn't exists "
-
-	^ aLiteralOrClass isLiteral
-		ifTrue: [ Smalltalk at: aLiteralOrClass asSymbol ifAbsent: [ nil ] ]
-		ifFalse: [ aLiteralOrClass ].
-]
-
 { #category : #'convenience-date' }
 BioObject class >> currentSeconds [
  	" Answer a <String> with the number of seconds since 1 January 1901 "
@@ -50,13 +41,6 @@ BioObject class >> dataFilesFullDirectoryName [
 	^ self workingDirectory asFileReference / self dataFilesDirectoryName
 ]
 
-{ #category : #'convenience-date' }
-BioObject class >> dateClass [
-	" Answer the class used to access dates "
-
-	^ self classFor: #DateAndTime
-]
-
 { #category : #'convenience-filesystem' }
 BioObject class >> dumpToDOSFileNamed: filename contents: anObject [
 	" Write anObject to a DOS file named filename representing a full path "
@@ -73,8 +57,7 @@ BioObject class >> dumpToFileNamed: filename contents: anObject [
 	" Write anObject to a file named filename in the current directory "
 	
 	| fs |
-	fs := [ 
-		self newFileNamed: filename.
+ 	[ 	fs := self newFileNamed: filename.
 		anObject dumpToStream: fs 
 	] ensure: [ fs close ].
 ]
@@ -210,14 +193,6 @@ BioObject class >> testFilesFullDirectoryName [
 	" Answer a <String> of the full path directory name where the files for testing are located "
 
 	^ self workingDirectory asFileReference / self testFilesDirectoryName
-]
-
-{ #category : #'convenience-behavior' }
-BioObject class >> updateBioSmalltalkFiles [
-
-	(Smalltalk hasClassNamed: #ConfigurationOfBioSmalltalk)
-		ifTrue: [ (self classFor: #ConfigurationOfBioSmalltalk) project configuration preLoad ]
-		ifFalse: [ ^ self informMessage: 'Cannot update BioSmalltalk because Configuration is not installed' ]
 ]
 
 { #category : #'convenience-behavior' }

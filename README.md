@@ -13,6 +13,44 @@ Metacello new
     load
 ```
 
+## Basic packages
+
+```smalltalk
+Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
+    load: #('Basic')
+```
+
+## Population Genomics packages
+
+```smalltalk
+Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
+    load: #('PopulationGenomics')
+```
+
+## Test packages
+
+```smalltalk
+Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
+    load: #('Tests')
+```
+
+## Troubleshoot install
+
+```smalltalk
+[ Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
+    load ]
+on: IceGenericError 
+do: [ : ex | ex retry ]
+```
+
 ## Baseline String
 
 If you want to add the BioSmalltalk to your Metacello Baselines or Configurations, copy and paste the following expression:
@@ -41,7 +79,7 @@ If you'd like to make some changes yourself, see the following:
 
 This software is licensed under the MIT License.
 
-Copyright Hernán Morales, 2018.
+Copyright Hernán Morales, 2019.
 
 Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the 

@@ -144,7 +144,7 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools' ). ];
-			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' ). ];
+			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath'). ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];

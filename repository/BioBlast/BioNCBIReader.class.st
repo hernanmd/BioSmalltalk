@@ -37,11 +37,11 @@ BioNCBIReader >> addResult [
 
 	| newResult |
 	
-	newResult := ( self resultClass new reader: self ) result: self parsedContents.
+	newResult := (self resultClass new reader: self) result: self parsedContents.
 	results ifNil: [ results := OrderedCollection new].
 	(results includes: newResult)
 		ifFalse: [ results add: newResult ].
-	^newResult
+	^ newResult
 ]
 
 { #category : #'accessing filters' }

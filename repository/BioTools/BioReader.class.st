@@ -79,15 +79,11 @@ BioReader class >> newFromFlatPath: aFileLocationOrString [
 ]
 
 { #category : #'instance creation' }
-BioReader class >> newFromXML: aFileLocationOrString [
+BioReader class >> newFromXML: aString [
 	" Answer a new reader using file located at aFileLocationOrString "
 
-	| streamContents |
-	
-	(streamContents := aFileLocationOrString contents) isXML
-		ifFalse: [ streamContents := self openFullFileNamed: aFileLocationOrString ].
 	^ self new
-		results: streamContents contents;
+		results: aString;
 		yourself
 ]
 
@@ -99,12 +95,12 @@ BioReader class >> newFromXMLCollection: xmlCollection [
 ]
 
 { #category : #'instance creation' }
-BioReader class >> newFromXMLPath: aFileLocationOrString [
+BioReader class >> newFromXMLFile: aFileLocation [
 	" Answer a new receiver's instance using contents located at aFileLocationOrString "
 
-	^ (aFileLocationOrString contents isXML)
-		ifTrue: [ self newFromXML: aFileLocationOrString ]
-		ifFalse: [ self newFromDirectory: aFileLocationOrString ]
+	^ self new
+		results: (self openFullFileNamed: aFileLocation) contents;
+		yourself
 
 ]
 

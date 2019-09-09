@@ -30,7 +30,7 @@ BioNCBIBlastReaderTest >> testAccessBlastReader01 [
 	self 
 		assert: (reader hitHspsNodes isKindOf: BioBlastNode)
 		description: 'Answer the nodes inside a root BioBlastNode'.
-	self assert: reader hitHspsNodes hits size = 100.	
+	self assert: reader hitHspsNodes hits size equals: 100.	
 
 	self deny: reader hitResults isEmpty.
 	self 
@@ -44,11 +44,11 @@ BioNCBIBlastReaderTest >> testAccessBlastReader02 [
 	" Accessing meta-information about the BLAST "
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
-	self assert: reader blastDbName = 'nr'.
-	self assert: reader blastProgramVersion = 'BLASTN 2.2.23+'.
-	self assert: reader blastQueryDef = 'No definition line'.
-	self assert: reader blastQueryId = '47837'.
-	self assert: reader blastQueryLength = '240'.
+	self assert: reader blastDbName equals: 'nr'.
+	self assert: reader blastProgramVersion equals: 'BLASTN 2.2.23+'.
+	self assert: reader blastQueryDef equals: 'No definition line'.
+	self assert: reader blastQueryId equals: '47837'.
+	self assert: reader blastQueryLength equals: '240'.
 
 
 ]
@@ -65,25 +65,25 @@ BioNCBIBlastReaderTest >> testAccessBlastReader03 [
 
 	self deny: reader hitAccessions isEmpty.	
 	self assert: (reader hitAccessions allSatisfy: [ : a | a isKindOf: BioAccession ]).
-	self assert: reader hitAccessions size = 100.
+	self assert: reader hitAccessions size equals: 100.
 	
 	self deny: reader hitAccessionsAsTokens isEmpty.	
 	self assert: (reader hitAccessionsAsTokens allSatisfy: [ : a | a isKindOf: Array ]).	
-	self assert: reader hitAccessionsAsTokens size = 100.
+	self assert: reader hitAccessionsAsTokens size equals: 100.
 	
 	self deny: reader hitAccessionsAsString isEmpty.	
 	self assert: (reader hitAccessionsAsString allSatisfy: [ : a | a isKindOf: String ]).	
-	self assert: reader hitAccessionsAsString size = 100.
+	self assert: reader hitAccessionsAsString size equals: 100.
 	
 	self deny: reader hitHsps isEmpty.
 	self 
 		assert: (reader hitHsps allSatisfy: [ : a | a isKindOf: BioBlastNode ])
 		description: 'Answer the nodes as a Collection of BioBlastNode hits'.
-	self assert: reader hitHsps size = 100.	
+	self assert: reader hitHsps size equals: 100.	
 
 	self deny: reader identities isEmpty.
 	self assert: (reader identities allSatisfy: [ : ident | ident isKindOf: String ]).
-	self assert: reader identities size = 100
+	self assert: reader identities size equals: 100
 ]
 
 { #category : #testing }
@@ -112,7 +112,7 @@ BioNCBIBlastReaderTest >> testAccessFilter [
 	
 	emptyFilter := reader filter.
 	self assert: (emptyFilter isKindOf: BioBlastFilter).
-	self assert: emptyFilter reader = reader.
+	self assert: emptyFilter reader equals: reader.
 	self assert: emptyFilter contents isNil.
 ]
 
@@ -130,7 +130,7 @@ BioNCBIBlastReaderTest >> testAccessFilterBlastReader01 [
 	self assert: (reader contents isKindOf: BioFilteredResult).
 	
 	self deny: ft isEmpty.
-	self assert: ft size = 87.
+	self assert: ft size equals: 87.
 	
 
 ]
@@ -157,11 +157,11 @@ BioNCBIBlastReaderTest >> testAccessNode [
 	
 	nodeContents := reader accessNode: 'Iteration_iter-num'.
 	self assert: (nodeContents isKindOf: Collection).
-	self assert: nodeContents anyOne = '1'.
+	self assert: nodeContents anyOne equals: '1'.
 	
 	nodeContents := reader accessNode: 'Hit_def'.
 	self assert: (nodeContents isKindOf: Collection).
-	self assert: nodeContents size = 100.
+	self assert: nodeContents size equals: 100.
 	self assert: (nodeContents allSatisfy: [ : str | str beginsWithSubCollection: 'Bos' ])
 
 
@@ -214,8 +214,8 @@ BioNCBIBlastReaderTest >> testFilterBlastReader01 [
 	self deny: hits isEmpty.
 	self assert: (hits allSatisfy: [ : each | each isKindOf: BioBlastNode ]).
 
-	self assert: hits size = 87.
-	self assert: hits first nodeName = 'Hit'.
+	self assert: hits size equals: 87.
+	self assert: hits first nodeName equals: 'Hit'.
 	self assert: hits first nodes isCollection
 ]
 

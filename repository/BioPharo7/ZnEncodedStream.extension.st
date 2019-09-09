@@ -1,8 +1,8 @@
 Extension { #name : #ZnEncodedStream }
 
-{ #category : #'*BioAffymetrix' }
+{ #category : #'*BioPharo7' }
 ZnEncodedStream >> nextPutTerminator [
 	" Append a line ending terminator to the receiver "
 
-	self nextPutAll: (String perform: self platformTerminator)
+	self wrappedStream nextPutAll: (String perform: self platformTerminator)
 ]

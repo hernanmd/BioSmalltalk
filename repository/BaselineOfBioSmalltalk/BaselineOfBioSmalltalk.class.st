@@ -46,7 +46,12 @@ BaselineOfBioSmalltalk >> baseline: spec [
 				
 		self baselineOSDeps: spec.
 		self baselinePackages: spec.
-		self baselineGroups: spec ]
+		self baselineGroups: spec ].
+
+	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
+		spec package: #'BioPharo4' with: [ spec requires: #('BioTools') ]. ].
+	spec for: #(#'pharo7.x') do: [ 
+		spec package: #'BioPharo7' with: [ spec requires: #('BioTools') ] ].
 
 ]
 

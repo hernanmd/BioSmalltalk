@@ -6,3 +6,9 @@ ZnEncodedStream >> nextPutTerminator [
 
 	self wrappedStream nextPutAll: (String perform: self platformTerminator)
 ]
+
+{ #category : #'*BioPharo7' }
+ZnEncodedStream >> reset [
+
+	self position: 0
+]

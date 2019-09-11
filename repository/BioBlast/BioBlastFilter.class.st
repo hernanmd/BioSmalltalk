@@ -416,6 +416,12 @@ BioBlastFilter >> selectHspPositives [
 ]
 
 { #category : #accessing }
+BioBlastFilter >> selectHspQSeqs [
+
+	^ self hits collect: #selectHspQSeq
+]
+
+{ #category : #accessing }
 BioBlastFilter >> selectHspQueryFroms [
 
 	^ self hits collect: #selectHspQueryFrom

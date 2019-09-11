@@ -616,7 +616,7 @@ BioBlastParentNode >> selectHspHitFrom [
 	
 	^ self hspHitFrom size > 1
 		ifFalse: [ self hspHitFrom anyOne blastValue ]
-		ifTrue: [ (self hspHitFrom detectMax: [: hspHitFrom | hspHitFrom blastValue size ]) blastValue ]
+		ifTrue: [ (self hspHitFrom detectMax: [: hspHitFrom | hspHitFrom blastValue ]) blastValue ]
 ]
 
 { #category : #'extracting - hsps' }
@@ -625,7 +625,7 @@ BioBlastParentNode >> selectHspHitTo [
 
 	^ self hspHitTo size > 1
 		ifFalse: [ self hspHitTo anyOne blastValue ]
-		ifTrue: [ (self hspHitTo detectMax: [ : hspHitFrom | hspHitFrom blastValue size ]) blastValue ]
+		ifTrue: [ (self hspHitTo detectMax: [ : hspHitFrom | hspHitFrom blastValue ]) blastValue ]
 
 
 ]
@@ -691,7 +691,7 @@ BioBlastParentNode >> selectHspQueryFrom [
 
 	^ self hspQueryFrom size > 1
 		ifFalse: [ self hspQueryFrom anyOne blastValue ]
-		ifTrue: [ (self hspQueryFrom detectMax: [ : hspq | hspq blastValue size ]) blastValue ]
+		ifTrue: [ (self hspQueryFrom detectMax: [ : hspq | hspq blastValue ]) blastValue ]
 
 ]
 
@@ -701,7 +701,7 @@ BioBlastParentNode >> selectHspQueryTo [
 	
 	^ self hspQueryTo size > 1
 		ifFalse: [ self hspQueryTo anyOne blastValue ]
-		ifTrue: [ (self hspQueryTo detectMax: [ : hspq | hspq blastValue size ]) blastValue ]
+		ifTrue: [ (self hspQueryTo detectMax: [ : hspq | hspq blastValue ]) blastValue ]
 
 ]
 

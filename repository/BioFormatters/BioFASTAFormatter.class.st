@@ -152,7 +152,7 @@ BioFASTAFormatter >> sizeFrom: collection [
 BioFASTAFormatter >> validate: aCollection [ 
 	" See superimplementor's comment "
 	
-	isValid := aCollection allSatisfy: [ : item | item isValidForFastaFormat ].
+	isValid := aCollection allSatisfy: #isValidForFastaFormat.
 	super validate: aCollection
 
 	

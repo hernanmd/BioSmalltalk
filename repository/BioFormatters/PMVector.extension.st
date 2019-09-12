@@ -2,18 +2,14 @@ Extension { #name : #PMVector }
 
 { #category : #'*BioFormatters' }
 PMVector >> asFastaRecord [
-	" Answer a <BioFastaRecord>. Assume receiver with 3 elements: (Number String String) "
+	" Answer a <BioFastaRecord>. Assume receiver with 18 elements "
 
-	| fastaRecord |
-	fastaRecord := BioFastaRecord new.
-	self do: [ : each |
-		each isNumber
-			ifFalse: [
-				each isBiologicalSequence 
-					ifFalse: [ fastaRecord name: each ]
-					ifTrue: [ fastaRecord sequence: each ]
-			] ].
-	^ fastaRecord
+	^ BioFastaRecord new 
+		name: self fourth;
+		" Alignment string for the SUBJECT "
+		sequence: (self at: 17);
+		yourself.
+
 ]
 
 { #category : #'*BioFormatters' }

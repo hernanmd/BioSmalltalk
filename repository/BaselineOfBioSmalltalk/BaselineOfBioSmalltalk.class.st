@@ -77,8 +77,7 @@ BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 			'BioNCBI'
 			'BioBlast'
 			'BioParsers'
-			'BioFormatters'
-			'BioPharo7')
+			'BioFormatters')
 ]
 
 { #category : #baselines }
@@ -159,12 +158,12 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
 			package: 'BioPharo4' 					with: [ spec requires: #('BioTools' ). ];
 			package: 'BioPharo7' 					with: [ spec requires: #('BioTools' ). ];								
-			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport' 'BioPharo4' ). ];
+			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport'). ];
 			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools' ). ];
-			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser'). ];
+			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser' 'XMLPullParser'). ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];

@@ -31,6 +31,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		spec blessing: #'baseline'. 
 		
 		spec preLoadDoIt: #preLoad.
+		spec postLoadDoIt: #'postLoad'.
 		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
 		spec 
@@ -270,7 +271,16 @@ BaselineOfBioSmalltalk >> platformFilesUrl [
 ]
 
 { #category : #doits }
+BaselineOfBioSmalltalk >> postLoad [
+	" Private - If Pharo >=7 set the FileDialog package as default "
+
+	(Smalltalk hasClassNamed: #FDMorphicUIManager) ifTrue: [
+		(Smalltalk at: #FDMorphicUIManager) new beDefault ].
+]
+
+{ #category : #doits }
 BaselineOfBioSmalltalk >> preLoad [
+	" Private - See superimplementor's comment "
 
     self ensureMetacelloFileDownload.
     super preLoad.

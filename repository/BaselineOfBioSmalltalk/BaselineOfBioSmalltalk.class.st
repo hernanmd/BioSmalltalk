@@ -59,7 +59,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 
 	spec
-		group: 'Basic'
+		group: 'All'
 		with: #(
 			'Core' 
 			'Tests'

@@ -38,6 +38,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
 			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
+			baseline: 'FileDialog' 			with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ];	
 			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ].
 				
 		self projectSpecForINIParser: spec.
@@ -183,7 +184,7 @@ BaselineOfBioSmalltalk >> baselinePharo: spec [
 	spec for: #'pharo7.x' do: [ 
 		spec 
 			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
-			package: 'BioPharo7'	with: [ spec requires: #('BioTools') ];
+			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
 			group: 'Basic' with: #('BioPharo7') ].
 
 ]

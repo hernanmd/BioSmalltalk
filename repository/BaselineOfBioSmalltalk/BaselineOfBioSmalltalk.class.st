@@ -50,13 +50,11 @@ BaselineOfBioSmalltalk >> baseline: spec [
 
 	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
 		spec 
-			package: #'BioTools' with: [ spec requires: #('BioPharo4') ];
 			package: 'BioPharo4';
 			group: 'Basic' with: #('BioPharo4')  ].
 
 	spec for: #'pharo7.x' do: [ 
 		spec 
-			package: #'BioTools' with: [ spec requires: #('BioPharo7') ];
 			package: 'BioPharo7';
 			group: 'Basic' with: #('BioPharo7') ].
 

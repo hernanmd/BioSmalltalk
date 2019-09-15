@@ -1,6 +1,6 @@
 Extension { #name : #DateAndTime }
 
-{ #category : #'*BioPharo7' }
+{ #category : #'*BioPharoCommon' }
 DateAndTime >> printYMDHMS [
 	" Answer the receiver's date <String> in user-friendly format "
 

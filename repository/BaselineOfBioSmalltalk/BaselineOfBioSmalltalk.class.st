@@ -28,7 +28,8 @@ BaselineOfBioSmalltalk >> baseline: spec [
 	<baseline>
 
 	spec for: #'common' do: [
-		spec blessing: #'baseline'.
+		spec blessing: #'baseline'. 
+		
 		spec preLoadDoIt: #preLoad.
 		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
@@ -48,15 +49,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		self baselinePackages: spec.
 		self baselineGroups: spec ].
 
-	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
-		spec 
-			package: 'BioPharo4';
-			group: 'Basic' with: #('BioPharo4')  ].
-
-	spec for: #'pharo7.x' do: [ 
-		spec 
-			package: 'BioPharo7';
-			group: 'Basic' with: #('BioPharo7') ].
+	self baselinePharo: spec.
 
 ]
 
@@ -79,6 +72,7 @@ BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 		group: 'Basic'
 		with: #(
 			'BioTools' 
+			'BioPharoCommon'
 			'BioNCBI'
 			'BioBlast'
 			'BioParsers'
@@ -91,13 +85,10 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 	spec 
 		group: 'Core' 
 		with: #(
-			'BioTools' 
-			'BioNCBI' 
+			'Basic'
+		
 			'BioWrappers' 
 			'BioEntrez' 
-			'BioBlast' 
-			'BioParsers' 
-			'BioFormatters' 
 			'BioClassifier' 
 			'BioEBI' 
 			'BioToolsSamples' 
@@ -105,7 +96,6 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioHaplotypes' 
 			'BioBenchmarks' 
 			'BioIllumina' 
-			'BioPharo4'
 			'BioNGS' )
 ]
 
@@ -140,6 +130,7 @@ BaselineOfBioSmalltalk >> baselineOSDeps: spec [
 BaselineOfBioSmalltalk >> baselinePackages: spec [
 
 		spec 
+		
 			package: 'BioAffymetrix' 			with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
 			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'INIFileSupport' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
@@ -161,19 +152,40 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioNGS' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioParserTests' 			with: [ spec requires: #('BioToolsTests' 'BioParsers' ). ];
 			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
-			package: 'BioPharo4' 					with: [ spec requires: #('BioTools' ). ];
-			package: 'BioPharo7' 					with: [ spec requires: #('BioTools' ). ];								
+			package: 'BioPharoCommon' 			with: [ spec requires: #('BioTools' ). ];									
+			package: 'BioPharo4' 					with: [ spec requires: #('BioPharoCommon' ). ];
+			package: 'BioPharo7' 					with: [ spec requires: #('BioPharoCommon' ). ];
+			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ];												
 			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport'). ];
 			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools' ). ];
-			package: 'BioTools' 					with: [ spec requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser' 'XMLPullParser'). ];
+			package: 'BioTools' 					with: [ spec 
+																	requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser' 'XMLPullParser');
+																	includes: #('BioPharoCommon') ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];
-			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ];
-			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ].
+			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ]
+
+]
+
+{ #category : #baselines }
+BaselineOfBioSmalltalk >> baselinePharo: spec [
+
+	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
+		spec 
+			package: 'BioTools'	with: [ spec includes: #('BioPharo4') ];
+			package: 'BioPharo4'	with: [ spec requires: #('BioTools') ];
+			group: 'Basic' with: #('BioPharo4')  ].
+
+	spec for: #'pharo7.x' do: [ 
+		spec 
+			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
+			package: 'BioPharo7'	with: [ spec requires: #('BioTools') ];
+			group: 'Basic' with: #('BioPharo7') ].
+
 ]
 
 { #category : #baselines }
@@ -182,7 +194,7 @@ BaselineOfBioSmalltalk >> baselinePopGenGroup: spec [
 	spec
 		group: 'PopulationGenomics'
 		with: #(
-			'BioTools'
+			'Core'
 			'BioPopulation'
 			'BioHaplotypes' 
 			'BioLAMPLD')
@@ -193,7 +205,10 @@ BaselineOfBioSmalltalk >> baselineProjectsGroup: spec [
 
 	spec
 		group: 'Projects'
-		with: #('BioProject' 'BioSoftwareCatalog')
+		with: #(
+			'Core'
+			'BioProject' 
+			'BioSoftwareCatalog')
 ]
 
 { #category : #baselines }
@@ -201,7 +216,19 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 
 	spec			
 		group: 'Tests' 
-		with: #('BioToolsTests' 'BioBlastTests' 'BioWrapperTests' 'BioParserTests' 'BioEntrezTests' 'BioNCBITests' 'BioFormatterTests' 'BioClassifierTests' 'BioProjectTests' )
+		with: #(
+			'Core'	
+			'Projects'
+
+			'BioToolsTests' 
+			'BioBlastTests' 
+			'BioWrapperTests' 
+			'BioParserTests' 
+			'BioEntrezTests' 
+			'BioNCBITests' 
+			'BioFormatterTests' 
+			'BioClassifierTests' 
+			'BioProjectTests' )
 ]
 
 { #category : #accessing }

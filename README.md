@@ -4,16 +4,16 @@ See [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentatio
 
 # Installation
 
-## Stable version
+## Basic packages
 
 ```smalltalk
 Metacello new
     baseline: 'BioSmalltalk';
     repository: 'github://hernanmd/biosmalltalk/repository';
-    load
+    load: #('Basic')
 ```
 
-## Basic packages
+## Core packages
 
 ```smalltalk
 Metacello new
@@ -40,18 +40,29 @@ Metacello new
     load: #('Tests')
 ```
 
+## All packages version
+
+```smalltalk
+Metacello new
+    baseline: 'BioSmalltalk';
+    repository: 'github://hernanmd/biosmalltalk/repository';
+    load: #('All').
+```
+
 ## Troubleshoot install
 
 You could try the script below to install BioSmalltalk if you experience one of these exceptions:
 
   - IceGenericError: Failed to connect to github.com: Interrupted system call.
   - IceGenericError: SecureTransport error: connection closed via error
+  - IceGenericError: unexpected return value from ssl handshake -9806
 
 
 ```smalltalk
 [ Metacello new
     baseline: 'BioSmalltalk';
     repository: 'github://hernanmd/biosmalltalk/repository';
+    onWarningLog;
     load ]
 on: IceGenericError 
 do: [ : ex | ex retry ]

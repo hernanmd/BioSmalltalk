@@ -1,6 +1,6 @@
 Extension { #name : #RPackage }
 
-{ #category : #'*BioPharo4' }
+{ #category : #'*BioPharoCommon' }
 RPackage >> isPackageTag [
 
 	^ true

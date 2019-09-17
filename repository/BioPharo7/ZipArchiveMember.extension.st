@@ -1,6 +1,6 @@
 Extension { #name : #ZipArchiveMember }
 
-{ #category : #'*BioPharo4' }
+{ #category : #'*BioPharo7' }
 ZipArchiveMember >> extractInDirectory: aDirectory overwrite: overwriteAll [
 	"Extract this entry into the given directory. Answer #okay, #failed, #abort, or #retryWithOverwrite."
 	| path fileDir file  localName |

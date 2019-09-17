@@ -8,13 +8,6 @@ Object >> alert: aString [
 ]
 
 { #category : #'*BioPharo4' }
-Object class >> alert: aString [
-	"Open an alert dialog."
-
-	^ UITheme builder alert: aString
-]
-
-{ #category : #'*BioPharo4' }
 Object >> openFullFileNamed: fileName [
 	" Answer a FileStream for fileName in the image directory. Assume the file exists "
 	

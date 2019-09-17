@@ -44,8 +44,8 @@ Metacello new
 
 You could try the script below to install BioSmalltalk if you experience one of these exceptions:
 
-IceGenericError: Failed to connect to github.com: Interrupted system call.
-IceGenericError: SecureTransport error: connection closed via error
+  - IceGenericError: Failed to connect to github.com: Interrupted system call.
+  - IceGenericError: SecureTransport error: connection closed via error
 
 
 ```smalltalk

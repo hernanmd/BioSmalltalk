@@ -42,6 +42,12 @@ Metacello new
 
 ## Troubleshoot install
 
+You could try the script below to install BioSmalltalk if you experience one of these exceptions:
+
+IceGenericError: Failed to connect to github.com: Interrupted system call.
+IceGenericError: SecureTransport error: connection closed via error
+
+
 ```smalltalk
 [ Metacello new
     baseline: 'BioSmalltalk';
@@ -53,12 +59,20 @@ do: [ : ex | ex retry ]
 
 ## Baseline String
 
-If you want to add the BioSmalltalk to your Metacello Baselines or Configurations, copy and paste the following expression:
+If you want to add BioSmalltalk to your Metacello Baselines or Configurations, copy and paste the following expression:
 
         " ... "
         spec
                 baseline: 'BioSmalltalk' 
                 with: [ spec repository: 'github://hernanmd/BioSmalltalk/repository' ];
+        " ... "
+
+If you want to add a BioSmalltalk installation group to your Metacello Baselines or Configurations, copy and paste the following expression, replacing Basic with the group of your interest:
+
+        " ... "
+        spec
+                baseline: 'BioSmalltalk' 
+                with: [ spec load: #('Basic'); repository: 'github://hernanmd/BioSmalltalk/repository' ];
         " ... "
 
 # Contribute

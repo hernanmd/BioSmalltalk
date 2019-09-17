@@ -164,7 +164,7 @@ BioMEGAFormatter >> export [
 	self exportHeader.
 	self exportStatementTitle.
 	self exportStatementDescription.
-	self exportStatementFormat.
+	"self exportStatementFormat."
 	self stream cr.
 	self exportFromAlignment: self alignments.
 	self 

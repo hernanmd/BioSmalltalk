@@ -20,6 +20,12 @@ ZnCharacterReadStream >> isBlastXMLFormat [
 ]
 
 { #category : #'*BioPharo7' }
+ZnCharacterReadStream >> name [ 
+
+	^ self wrappedStream name
+]
+
+{ #category : #'*BioPharo7' }
 ZnCharacterReadStream >> nextMatchAll: aColl [
     "Answer true if next N objects are the ones in aColl,
      else false.  Advance stream of true, leave as was if false."

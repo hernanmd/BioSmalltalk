@@ -72,7 +72,7 @@ BioProjectTests >> testJobs [
 	self assert: project jobs isEmpty.
 	self assert: project jobsCount equals: 0.
 	self assert: project isProject.
-	self assert: (project name isKindOf: String).
+	self assert: (project projectName isKindOf: String).
 	
 ]
 

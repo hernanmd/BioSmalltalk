@@ -366,30 +366,78 @@ BioSequenceTest >> testMostFrequentKmer [
 
 { #category : #testing }
 BioSequenceTest >> testMostFrequentKmerMismatches [
-
-	self assert: ((('AAAAAAAAAA' asSequence mostFrequentKmer: 2 mismatches: 1) asArray collect: #asString) includesAllOf: #('AA' 'AC' 'AG' 'CA' 'AT' 'GA' 'TA')).
-	self assert: (((('ATA' asSequence mostFrequentKmer: 3 mismatches: 1) asArray sorted collect: #asString) hasEqualElements: #('GTA' 'ACA' 'AAA' 'ATC' 'ATA' 'AGA' 'ATT' 'CTA' 'TTA' 'ATG') sorted)).
-	self assert: ((('AAT' asSequence mostFrequentKmer: 3 mismatches: 0) asArray collect: #asString) hasEqualElements: #('AAT')).
-	self assert: ((('TAGCG' asSequence mostFrequentKmer: 2 mismatches: 1) asArray sorted collect: #asString) hasEqualElements: #('GG' 'TG') sorted).
-	
-	self assert: (('ACGTTGCATGTCGCATGATGCATGAGAGCT' asSequence mostFrequentKmer: 4 mismatches: 1) asArray sorted hasEqualElements: #('GATG' 'ATGC' 'ATGT') sorted).
-	self assert: (('AGTCAGTC' asSequence mostFrequentKmer: 4 mismatches: 2) asArray sorted hasEqualElements: #('TCTC' 'CGGC' 'AAGC' 'TGTG' 'GGCC' 'AGGT' 'ATCC' 'ACTG' 'ACAC' 'AGAG' 'ATTA' 'TGAC' 'AATT' 'CGTT' 'GTTC' 'GGTA' 'AGCA' 'CATC') sorted).
-	self assert: (('AATTAATTGGTAGGTAGGTA' asSequence mostFrequentKmer: 4 mismatches: 0) asArray sorted hasEqualElements: #('GGTA')).
-
+	self
+		assert:
+			((('AAAAAAAAAA' asSequence mostFrequentKmer: 2 mismatches: 1) asArray
+				collect: #asString)
+				includesAll: #('AA' 'AC' 'AG' 'CA' 'AT' 'GA' 'TA')).
+	self
+		assert:
+			((('ATA' asSequence mostFrequentKmer: 3 mismatches: 1) asArray sorted
+				collect: #asString)
+				hasEqualElements: #('GTA' 'ACA' 'AAA' 'ATC' 'ATA' 'AGA' 'ATT' 'CTA' 'TTA' 'ATG') sorted).
+	self
+		assert:
+			((('AAT' asSequence mostFrequentKmer: 3 mismatches: 0) asArray
+				collect: #asString) hasEqualElements: #('AAT')).
+	self
+		assert:
+			((('TAGCG' asSequence mostFrequentKmer: 2 mismatches: 1) asArray
+				sorted collect: #asString) hasEqualElements: #('GG' 'TG') sorted).
+	self
+		assert:
+			(('ACGTTGCATGTCGCATGATGCATGAGAGCT' asSequence
+				mostFrequentKmer: 4
+				mismatches: 1) asArray sorted
+				hasEqualElements: #('GATG' 'ATGC' 'ATGT') sorted).
+	self
+		assert:
+			(('AGTCAGTC' asSequence mostFrequentKmer: 4 mismatches: 2) asArray
+				sorted
+				hasEqualElements:
+					#('TCTC' 'CGGC' 'AAGC' 'TGTG' 'GGCC' 'AGGT' 'ATCC' 'ACTG' 'ACAC' 'AGAG' 'ATTA' 'TGAC' 'AATT' 'CGTT' 'GTTC' 'GGTA' 'AGCA' 'CATC')
+						sorted).
+	self
+		assert:
+			(('AATTAATTGGTAGGTAGGTA' asSequence mostFrequentKmer: 4 mismatches: 0)
+				asArray sorted hasEqualElements: #('GGTA'))
 ]
 
 { #category : #testing }
 BioSequenceTest >> testMostFrequentKmerRevCompMismatches [
-
-	self assert: ((('ACGTTGCATGTCGCATGATGCATGAGAGCT' asDNASimpleSequence mostFrequentKmerRevComp: 4 mismatches: 1) asArray collect: #asString) includesAllOf: #('ACAT' 'ATGT')).
-	self assert: (((('AAAAAAAAAA' asDNASimpleSequence mostFrequentKmerRevComp: 2 mismatches: 1) asArray sorted collect: #asString) hasEqualElements: #('AT' 'TA'	) sorted)).
-	self assert: ((('AGTCAGTC' asDNASimpleSequence mostFrequentKmerRevComp: 4 mismatches: 2) asArray sorted collect: #asString) hasEqualElements: #('AATT' 'GGCC') sorted).
-	self assert: ((('ATA' asDNASimpleSequence mostFrequentKmerRevComp: 3 mismatches: 1) asArray sorted collect: #asString) hasEqualElements: #('GAT' 'CTA' 'TAG' 'TTA' 'ATT' 'ATA' 'AGA' 'GTA' 'ACA' 'ATC' 'TCT' 'CAT' 'TGT' 'TTT' 'ATG' 'TAT' 'TAA' 'AAT' 'AAA' 'TAC') sorted).
-	
-	self assert: (('AAT' asDNASimpleSequence mostFrequentKmerRevComp: 3 mismatches: 0) asArray sorted hasEqualElements: #('AAT' 'ATT') sorted).
-	self assert: (('TAGCG' asDNASimpleSequence mostFrequentKmerRevComp: 2 mismatches: 1) asArray sorted hasEqualElements: #('CA' 'CC' 'GG' 'TG') sorted).
-
-
+	self
+		assert:
+			((('ACGTTGCATGTCGCATGATGCATGAGAGCT' asDNASimpleSequence
+				mostFrequentKmerRevComp: 4
+				mismatches: 1) asArray collect: #asString)
+				includesAll: #('ACAT' 'ATGT')).
+	self
+		assert:
+			((('AAAAAAAAAA' asDNASimpleSequence
+				mostFrequentKmerRevComp: 2
+				mismatches: 1) asArray sorted collect: #asString)
+				hasEqualElements: #('AT' 'TA') sorted).
+	self
+		assert:
+			((('AGTCAGTC' asDNASimpleSequence
+				mostFrequentKmerRevComp: 4
+				mismatches: 2) asArray sorted collect: #asString)
+				hasEqualElements: #('AATT' 'GGCC') sorted).
+	self
+		assert:
+			((('ATA' asDNASimpleSequence mostFrequentKmerRevComp: 3 mismatches: 1)
+				asArray sorted collect: #asString)
+				hasEqualElements:
+					#('GAT' 'CTA' 'TAG' 'TTA' 'ATT' 'ATA' 'AGA' 'GTA' 'ACA' 'ATC' 'TCT' 'CAT' 'TGT' 'TTT' 'ATG' 'TAT' 'TAA' 'AAT' 'AAA' 'TAC')
+						sorted).
+	self
+		assert:
+			(('AAT' asDNASimpleSequence mostFrequentKmerRevComp: 3 mismatches: 0)
+				asArray sorted hasEqualElements: #('AAT' 'ATT') sorted).
+	self
+		assert:
+			(('TAGCG' asDNASimpleSequence mostFrequentKmerRevComp: 2 mismatches: 1)
+				asArray sorted hasEqualElements: #('CA' 'CC' 'GG' 'TG') sorted)
 ]
 
 { #category : #testing }

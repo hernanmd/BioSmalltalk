@@ -37,10 +37,14 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		spec 
 			baseline: 'CommonUtils'			with: [ spec repository: 'github://hernanmd/CommonUtils/repository' ];
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
-			baseline: 'CodeGenerator' 		with: [ spec repository: 'github://hernanmd/CodeGenerator/repository' ];
+			baseline: 'CodeGenerator' 		with: [ spec 
+																	repository: 'github://hernanmd/CodeGenerator/repository';
+																	load: #('Smalltalk-Generators') ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
 			baseline: 'FileDialog' 			with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ];	
-			baseline: 'PolyMath'	 			with: [ spec repository: 'github://PolyMathOrg/PolyMath:master/src' ].
+			baseline: 'PolyMath'	 			with: [ spec 
+																	repository: 'github://PolyMathOrg/PolyMath:master/src';
+																	load: #('Core' 'Extensions' 'Accuracy') ].
 				
 		self projectSpecForINIParser: spec.
 		self projectSpecForPetitParser: spec.				
@@ -162,7 +166,7 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
-			package: 'BioSupport' 				with: [ spec requires: #('BioTools' ). ];
+			package: 'BioSupport' 				with: [ spec requires: #('BioTools' 'CodeGenerator'). ];
 			package: 'BioTools' 					with: [ spec 
 																	requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser' 'XMLPullParser');
 																	includes: #('BioPharoCommon') ];

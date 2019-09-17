@@ -39,12 +39,12 @@ BaselineOfBioSmalltalk >> baseline: spec [
 			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
 			baseline: 'CodeGenerator' 		with: [ spec 
 																	repository: 'github://hernanmd/CodeGenerator/repository';
-																	load: #('Smalltalk-Generators') ];
+																	loads: #('Smalltalk-Generators') ];
 			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
 			baseline: 'FileDialog' 			with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ];	
 			baseline: 'PolyMath'	 			with: [ spec 
 																	repository: 'github://PolyMathOrg/PolyMath:master/src';
-																	load: #('Core' 'Extensions' 'Accuracy') ].
+																	loads: #('Core' 'Extensions' 'Accuracy') ].
 				
 		self projectSpecForINIParser: spec.
 		self projectSpecForPetitParser: spec.				

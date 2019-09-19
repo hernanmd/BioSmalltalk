@@ -20,11 +20,11 @@ There are several ways to install the **BioSmalltalk**. At minimum, you need a w
 
 
 **Group**|**BioTools**|**BioParsers**|**BioWrappers**|**BioFormatters**|**BioClassifier**|**BioNCBI**|**BioBlast**|**BioEntrez**
------|-----|-----|-----|-----|-----|-----|-----
-All|-|-|-| -| -| -| -|-|
-Basic|-|-|-|-|-|-|-|-|
-Core|-|-|-|-|-|-|-|-|
-Tests|-|-|-|-|-|-|-|-|
+-----|-----|-----|-----|-----|-----|-----|-----|-----
+All|-|-|-| -| -| -| -|-|-
+Basic|-|-|-|-|-|-|-|-|-
+Core|-|-|-|-|-|-|-|-|-
+Tests|-|-|-|-|-|-|-|-|-
 
 To evaluate the following scripts, open a "Playground" window by clicking an empty area in the Pharo window and select Tools -> Playground. To actually evaluate the pasted script, click on the upper right green arrow or highlight the script code and right click for options.
 

@@ -1,0 +1,14 @@
+language: smalltalk
+sudo: false
+
+os:
+  - linux
+
+smalltalk:
+  - Pharo-stable
+  - Pharo-7.0
+  - Pharo64-7.0
+
+branches:
+  only:
+    - master

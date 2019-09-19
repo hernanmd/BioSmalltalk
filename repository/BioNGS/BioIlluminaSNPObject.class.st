@@ -28,7 +28,7 @@ Class {
 		'x',
 		'y'
 	],
-	#category : 'BioIllumina-Core'
+	#category : #'BioNGS-Illumina'
 }
 
 { #category : #accessing }

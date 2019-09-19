@@ -101,7 +101,6 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioBlastSamples' 
 			'BioHaplotypes' 
 			'BioBenchmarks' 
-			'BioIllumina' 
 			'BioNGS' )
 ]
 
@@ -151,7 +150,6 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioFormatterTests' 		with: [ spec requires: #('BioToolsTests' 'BioFormatters' ). ];
 			package: 'BioFormatters' 			with: [ spec requires: #('BioParsers' ). ];
 			package: 'BioHaplotypes' 			with: [ spec requires: #('BioTools' ). ];
-			package: 'BioIllumina' 				with: [ spec requires: #('BioTools' ). ];
 			package: 'BioLAMPLD' 					with: [ spec requires: #('BioTools' 'BioWrappers' 'BioFormatters' ). ];
 			package: 'BioNCBI' 					with: [ spec requires: #('BioTools' ). ];
 			package: 'BioNCBITests' 				with: [ spec requires: #('BioToolsTests' 'BioNCBI' ). ];

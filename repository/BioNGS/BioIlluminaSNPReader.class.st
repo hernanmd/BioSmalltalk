@@ -6,7 +6,7 @@ BioIlluminaSNPReader readFrom: '/path/to/your/snp_report.csv'
 Class {
 	#name : #BioIlluminaSNPReader,
 	#superclass : #BioObject,
-	#category : 'BioIllumina-Core'
+	#category : #'BioNGS-Illumina'
 }
 
 { #category : #'instance creation' }

@@ -1,13 +1,15 @@
-# BioSmalltalk
-
-See [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentation
+[![license-badge](https://img.shields.io/badge/license-MIT-blue.svg)](https://img.shields.io/badge/license-MIT-blue.svg)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Build Status](https://travis-ci.org/hernanmd/BioSmalltalk.svg?branch=master)](https://travis-ci.org/hernanmd/BioSmalltalk)
+[![Coverage Status](https://coveralls.io/repos/github/hernanmd/BioSmalltalk/badge.svg?branch=master)](https://coveralls.io/github/hernanmd/BioSmalltalk?branch=master)
 
 # Table of Contents
 
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Implementation notes](#implementation-note)
+- [Contribute](#contribute)
 - [License](#license)
 
 # Description
@@ -109,6 +111,10 @@ If you want to add a BioSmalltalk installation group to your Metacello Baselines
                 baseline: 'BioSmalltalk' 
                 with: [ spec load: #('Basic'); repository: 'github://hernanmd/BioSmalltalk/repository' ];
         " ... "
+
+# Usage
+
+Please see [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentation
 
 # Contribute
 

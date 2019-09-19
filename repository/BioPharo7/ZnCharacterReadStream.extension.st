@@ -20,6 +20,22 @@ ZnCharacterReadStream >> isBlastXMLFormat [
 ]
 
 { #category : #'*BioPharo7' }
+ZnCharacterReadStream >> isXML [ 
+	" See superimplementor's comment "
+	
+	| xmlSignature |
+	
+	self reset.
+	[ 
+		xmlSignature := self next: 5.
+		self reset
+	]
+	on: Error
+	do: [ : ex | self signalInvalidObject: 'Cannot read receiver''s stream ' , ex messageText ].
+	^ xmlSignature isXML
+]
+
+{ #category : #'*BioPharo7' }
 ZnCharacterReadStream >> name [ 
 
 	^ self wrappedStream name
@@ -44,4 +60,11 @@ ZnCharacterReadStream >> nextMatchAllAnyOf: aCollection [
 
 	^ aCollection anySatisfy: [ : subCol | self nextMatchAll: subCol  ].
 
+]
+
+{ #category : #'*BioPharo7' }
+ZnCharacterReadStream >> readStream [ 
+	" Compatibility with SAXParser "
+
+	^ self
 ]

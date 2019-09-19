@@ -194,7 +194,7 @@ BioResultObject >> newFilter [
 BioResultObject >> notEmpty [
 	"Answer whether the receiver contains any elements."
 
-	^ self result notNil and: [ self notEmpty ]
+	^ self result notNil and: [ self contents notEmpty ]
 ]
 
 { #category : #accessing }

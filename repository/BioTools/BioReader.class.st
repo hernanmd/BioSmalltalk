@@ -30,7 +30,7 @@ BioReader class >> filesFromXMLDirectory: aDirectoryString [
 
 	^ (self filesIn: aDirectoryString) asFileCollection
 			select: [ : file | file isXML ]
-			thenCollect: [ : file | self newFromXML: file ]
+			thenCollect: [ : file | self newFromXML: file contents ]
 ]
 
 { #category : #'instance creation' }
@@ -153,7 +153,7 @@ BioReader >> dumpToStream: aStream [
 BioReader >> hasContents [
 	" Answer <true> if the receiver's contents is not empty "
 
-	^ contents isNil not and: [ contents isEmpty not ]
+	^ self contents notNil and: [ self contents notEmpty ]
 ]
 
 { #category : #accessing }

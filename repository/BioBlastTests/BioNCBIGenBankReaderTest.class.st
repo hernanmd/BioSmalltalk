@@ -28,10 +28,11 @@ BioNCBIGenBankReaderTest >> testAccessOffLineFilterGBSeqXML [
 			selectGenBankRecords: [: obj | true ] 
 			from: self class testFilesDirectoryName.
 
-	self assert: (gbSeqCollection first at: 'GBAuthor') = 'Bruniche-Olsen,A.'.
-	self assert: (gbSeqCollection first at: 'GBReference_journal') =  'Submitted (04-JUL-2010) Zoology, University of Tasmania, Private Bag 5, Hobart, Tasmania 7001, Australia'.
-	self assert: (gbSeqCollection last at: 'GBAuthor' ) = 'Ferretti,L.'.
-	self assert: (gbSeqCollection last at: 'GBSeq_accession-version') =  'HQ184030.1'.
+	self assert: (gbSeqCollection first at: 'GBAuthor' ) = 'Ferretti,L.'.
+	self assert: (gbSeqCollection first at: 'GBSeq_accession-version') =  'HQ184030.1'.
+	self assert: (gbSeqCollection last at: 'GBAuthor') = 'Bruniche-Olsen,A.'.
+	self assert: (gbSeqCollection last at: 'GBReference_journal') =  'Submitted (04-JUL-2010) Zoology, University of Tasmania, Private Bag 5, Hobart, Tasmania 7001, Australia'.
+
 
 	
 
@@ -66,7 +67,7 @@ BioNCBIGenBankReaderTest >> testReadGBSeqXML [
 	gbXMLCollection := BioNCBIGenBankReader filesFromXMLDirectory: self class testFilesDirectoryName.
 	
 	self 
-		assert: ( gbXMLCollection isKindOf: BioFileCollection ) 
+		assert: (gbXMLCollection isKindOf: BioFileCollection) 
 		description: 'It could change to its own <Collection> like BioCSVFileCollection and BioFASTAFileCollection in the future'.
 
 	self deny: gbXMLCollection isEmpty.
@@ -76,10 +77,10 @@ BioNCBIGenBankReaderTest >> testReadGBSeqXML [
 		description: 'This BioSmalltalk release include 2 GBSeq XML files'.
 	
 	self 
-		assert: ( gbXMLCollection allSatisfy: [: file | file isKindOf: BioNCBIGenBankReader ] )
+		assert: (gbXMLCollection allSatisfy: [: file | file isKindOf: BioNCBIGenBankReader ])
 		description: 'It could change to its own <BioFile> like BioFASTAFile in the future'.
 		
-	self assert: ( gbXMLCollection allSatisfy: #hasContents ).
+	self assert: (gbXMLCollection allSatisfy: #hasContents).
 
 ]
 

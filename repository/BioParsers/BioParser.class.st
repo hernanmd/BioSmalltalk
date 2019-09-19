@@ -313,7 +313,7 @@ BioParser class >> tokenizeNcbiXmlEntrezResultKeys: aString [
 BioParser class >> tokenizeNcbiXmlEntrezSearchResult: aString [
 	" Answer a Collection of hit nodes found in aXMLString "
 	
-	^ BioEntrezResultParser parse: aString
+	^ BioEntrezXMLGBFullParser parse: aString
 ]
 
 { #category : #'parse-ncbi-xml' }

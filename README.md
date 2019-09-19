@@ -19,12 +19,12 @@ BioSmalltalk is an Open-Source (MIT-licensed) library for Bioinformatics using S
 There are several ways to install the **BioSmalltalk**. At minimum, you need a working Pharo virtual image installed in your system. Check the [Pharo website](http://www.pharo.org) for installation information regarding the Pharo Open-Source system. Once Pharo is launched you have the following installation options:
 
 
-**Group**|**Sequences**|**Population Genomics**|**Tests**|**Morphic**|**Wrappers**|**Pharo**|**Samples**
+**Group**|**BioTools**|**BioParsers**|**BioWrappers**|**BioFormatters**|**BioClassifier**|**BioNCBI**|**BioBlast**|**BioEntrez**
 -----|-----|-----|-----|-----|-----|-----|-----
-All|-|-|-| -| -| -| -
-Basic|-|-|-|-|-|-|-
-Core|-|-|-|-|-|-|-
-Tests|-|-|-|-|-|-|-
+All|-|-|-| -| -| -| -|-|
+Basic|-|-|-|-|-|-|-|-|
+Core|-|-|-|-|-|-|-|-|
+Tests|-|-|-|-|-|-|-|-|
 
 To evaluate the following scripts, open a "Playground" window by clicking an empty area in the Pharo window and select Tools -> Playground. To actually evaluate the pasted script, click on the upper right green arrow or highlight the script code and right click for options.
 

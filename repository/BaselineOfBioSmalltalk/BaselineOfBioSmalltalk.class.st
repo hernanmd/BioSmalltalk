@@ -34,21 +34,15 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		spec postLoadDoIt: #'postLoad'.
 		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
-		spec 
-			baseline: 'CommonUtils'			with: [ spec repository: 'github://hernanmd/CommonUtils/repository' ];
-			baseline: 'ProjectFramework' 	with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ];			
-			baseline: 'CodeGenerator' 		with: [ spec 
-																	repository: 'github://hernanmd/CodeGenerator/repository';
-																	loads: #('Smalltalk-Generators') ];
-			baseline: 'StringExtensions' 	with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ];
-			baseline: 'FileDialog' 			with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ];	
-			baseline: 'PolyMath'	 			with: [ spec 
-																	repository: 'github://PolyMathOrg/PolyMath:master/src';
-																	loads: #('Core' 'Extensions' 'Accuracy') ].
-				
+		self projectSpecForCommonUtils: spec.
+		self projectSpecForProjectFramework: spec.
+		self projectSpecForCodeGenerator: spec.
+		self projectSpecForStringExtensions: spec.
+		self projectSpecForFileDialog: spec.
+		self projectSpecForPolyMath: spec.
 		self projectSpecForINIParser: spec.
 		self projectSpecForPetitParser: spec.				
-		self projectSpecForRoassal: spec.
+		self projectSpecForRoassal2: spec.
 		self projectSpecsForXML: spec.
 				
 		self baselineOSDeps: spec.
@@ -59,7 +53,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 
 ]
 
-{ #category : #baselines }
+{ #category : #groups }
 BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 
 	spec
@@ -71,7 +65,7 @@ BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 			'Projects')
 ]
 
-{ #category : #baselines }
+{ #category : #groups }
 BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 
 	spec
@@ -85,7 +79,7 @@ BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 			'BioFormatters')
 ]
 
-{ #category : #baselines }
+{ #category : #groups }
 BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 
 	spec 
@@ -104,7 +98,7 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioNGS' )
 ]
 
-{ #category : #baselines }
+{ #category : #groups }
 BaselineOfBioSmalltalk >> baselineGroups: spec [
 
 	self baselineCoreGroup: spec.
@@ -121,21 +115,20 @@ BaselineOfBioSmalltalk >> baselineOSDeps: spec [
 	spec
 		for: #(Unix MacOS)
 		do: [
-			self osSubprocess: spec.
+			self projectSpecForOsSubprocess: spec.
 			spec package: 'BioWrappers' with: [ spec requires: #('OSSubprocess') ] ].
 
 	spec
 		for: #Windows
 		do: [ 
-			self processWrapper: spec.
+			self projectSpecForProcessWrapper: spec.
 			spec package: 'BioWrappers' with: [ spec requires: #('ProcessWrapper') ] ].
 ]
 
 { #category : #baselines }
 BaselineOfBioSmalltalk >> baselinePackages: spec [
 
-		spec 
-		
+		spec
 			package: 'BioAffymetrix' 			with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
 			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'INIFileSupport' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
@@ -251,17 +244,6 @@ BaselineOfBioSmalltalk >> ensureMetacelloFileDownload [
 		load.
 ]
 
-{ #category : #baselines }
-BaselineOfBioSmalltalk >> osSubprocess: spec [
-	spec 
-		configuration: 'OSSubprocess' 
-		with: [ 
-			spec
-				versionString: #stable;
-				repository: 'github://marianopeck/OSSubprocess/repository' ]
-
-]
-
 { #category : #doits }
 BaselineOfBioSmalltalk >> platformFilesUrl [
 	" Answer a <Collection> of download URLs for the current platform "
@@ -288,17 +270,33 @@ BaselineOfBioSmalltalk >> preLoad [
     super preLoad.
 ]
 
-{ #category : #baselines }
-BaselineOfBioSmalltalk >> processWrapper: spec [
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForCodeGenerator: spec [
+
 	spec 
-		configuration: 'ProcessWrapper' 
-		with: [ 
-			spec
-				versionString: #stable;
-				repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ]
+		baseline: 'CodeGenerator'
+		with: [ spec 
+						repository: 'github://hernanmd/CodeGenerator/repository';
+						loads: #('Smalltalk-Generators') ]
 ]
 
-{ #category : #baselines }
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForCommonUtils: spec [
+
+	spec 
+		baseline: 'CommonUtils'
+		with: [ spec repository: 'github://hernanmd/CommonUtils/repository' ]
+]
+
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForFileDialog: spec [
+
+	spec
+		baseline: 'FileDialog' 
+		with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ]
+]
+
+{ #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 
 	spec
@@ -310,7 +308,18 @@ BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 					repository: 'http://smalltalkhub.com/mc/hernan/INIParser/main/' ].
 ]
 
-{ #category : #baselines }
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
+	spec 
+		configuration: 'OSSubprocess' 
+		with: [ 
+			spec
+				versionString: #stable;
+				repository: 'github://marianopeck/OSSubprocess/repository' ]
+
+]
+
+{ #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 
 	spec
@@ -322,20 +331,52 @@ BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
 ]
 
-{ #category : #baselines }
-BaselineOfBioSmalltalk >> projectSpecForRoassal: spec [
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForPolyMath: spec [
 
 	spec
-		project: 'Roassal2' 
-		with: [
-			spec
-				className: #ConfigurationOfRoassal2;
-				versionString: #'stable';
-				loads: #('NoGlamour' );
-				repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
+		baseline: 'PolyMath'	
+		with: [ spec 
+						repository: 'github://PolyMathOrg/PolyMath:master/src';
+						loads: #('Core' 'Extensions' 'Accuracy') ].
 ]
 
-{ #category : #baselines }
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForProcessWrapper: spec [
+	spec 
+		configuration: 'ProcessWrapper' 
+		with: [ 
+			spec
+				versionString: #stable;
+				repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ]
+]
+
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForProjectFramework: spec [
+
+	spec 
+		baseline: 'ProjectFramework' 
+		with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ]
+]
+
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForRoassal2: spec [
+
+	spec
+		baseline: 'Roassal2' 
+		with: [ spec repository: 'github://ObjectProfile/Roassal2/src' ].
+
+]
+
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
+
+	spec
+		baseline: 'StringExtensions' 
+		with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ]
+]
+
+{ #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecsForXML: spec [
 
 	spec

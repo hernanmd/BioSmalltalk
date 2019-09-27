@@ -20,15 +20,20 @@ BioSmalltalk is an Open-Source (MIT-licensed) library for Bioinformatics using S
 
 There are several ways to install the **BioSmalltalk**. At minimum, you need a working Pharo virtual image installed in your system. Check the [Pharo website](http://www.pharo.org) for installation information regarding the Pharo Open-Source system. Once Pharo is launched you have the following installation options:
 
+## Installation Matrix
 
-**Group**|**BioTools**|**BioParsers**|**BioWrappers**|**BioFormatters**|**BioClassifier**|**BioNCBI**|**BioBlast**|**BioEntrez**
------|-----|-----|-----|-----|-----|-----|-----|-----
-All|-|-|-| -| -| -| -|-|-
-Basic|-|-|-|-|-|-|-|-|-
-Core|-|-|-|-|-|-|-|-|-
-Tests|-|-|-|-|-|-|-|-|-
+**Group**|**BioTools**|**BioParsers**|**BioWrappers**|**BioFormatters**|**BioClassifier**|**BioNCBI**|**BioBlast**|**BioEntrez**|**BioNGS**|**BioProject**
+-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----
+All|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y
+Basic|Y|Y|N|Y|N|Y|Y|N|N|N
+Core|Y|Y|Y|Y|Y|Y|Y|Y|Y|N
+Projects|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y
+Tests|-|-|-|-|-|-|-|-|-|-
 
-To evaluate the following scripts, open a "Playground" window by clicking an empty area in the Pharo window and select Tools -> Playground. To actually evaluate the pasted script, click on the upper right green arrow or highlight the script code and right click for options.
+To paste the following scripts, open a "Playground" window with (Cmd + O + I) or by clicking an empty area in the Pharo window and select Tools -> Playground. To evaluate a script, click on the upper right green arrow or highlight the script code and right click for options.
+
+For additional help using Pharo please check the excellent [free Pharo books](http://books.pharo.org/), the [awesome-pharo lists](https://github.com/pharo-open-documentation/awesome-pharo) and the [wiki](https://github.com/pharo-open-documentation/pharo-wiki). 
+For a quick reference of the syntax, check the [Pharo Cheat Sheet](http://files.pharo.org/media/pharoCheatSheet.pdf)
 
 ## Basic packages
 
@@ -45,7 +50,7 @@ Metacello new
 Metacello new
     baseline: 'BioSmalltalk';
     repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('Basic')
+    load: #('Core')
 ```
 
 ## Population Genomics packages

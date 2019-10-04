@@ -3,17 +3,17 @@ SmalltalkCISpec {
     SCIMetacelloLoadSpec {
       #baseline : 'BioSmalltalk',
       #directory : 'repository',
-	  #onWarningLog : true,	  
+      #onWarningLog : true,	  
       #load : [ 'default' ],
       #platforms : [  #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'BioSmalltalk*' ]
+       #packages : [ 'Bio*Tests' ]
     },
     #include : {
-       #packages : [ 'BioSmalltalk*' ]
+       #packages : [ 'Bio*Tests' ]
     }
   }
 }

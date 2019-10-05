@@ -246,11 +246,15 @@ BaselineOfBioSmalltalk >> ensureMetacelloFileDownload [
 
 { #category : #doits }
 BaselineOfBioSmalltalk >> platformFilesUrl [
-	" Answer a <Collection> of download URLs for the current platform "
+	" Private - See superimplementor's comment "
 
-	^ Smalltalk os isWin32 
-		ifTrue: [ #('https://github.com/biosmalltalk/biopharo/raw/develop/test_files/BioSmalltalkTestFiles.zip') ]
-		ifFalse: [ #('https://github.com/biosmalltalk/biopharo/raw/develop/test_files/BioSmalltalkTestFiles.tar.gz') ].
+	^ Array with: (String streamContents: [ : stream |		
+		stream 			
+			nextPutAll: 'https://github.com/hernanmd/BioSmalltalk/raw/master/resources/BioSmalltalkResourceFiles';
+			nextPutAll: (
+				Smalltalk os isWin32 					
+					ifTrue: [ '.zip' ]
+					ifFalse: [ '.tar.gz' ]) ]).
 
 ]
 

@@ -4,7 +4,7 @@ SmalltalkCISpec {
       #baseline : 'BioSmalltalk',
       #directory : 'repository',
       #onWarningLog : true,	  
-      #load : [ 'default' ],
+      #load : [ 'All' ],
       #platforms : [  #pharo ]
     }
   ],

@@ -30,12 +30,14 @@ Core|Y|Y|Y|Y|Y|Y|Y|Y|Y|N
 Projects|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y
 Tests|-|-|-|-|-|-|-|-|-|-
 
-To paste the following scripts, open a "Playground" window with (Cmd + O + I) or by clicking an empty area in the Pharo window and select Tools -> Playground. To evaluate a script, click on the upper right green arrow or highlight the script code and right click for options.
+To paste the following expressions inside Pharo, open a "Playground" window with (Cmd + O + I) or by clicking an empty area in the Pharo window and select Tools -> Playground. 
+
+To evaluate a expression, click on the upper right green arrow or highlight the script code and right click for options.
 
 For additional help using Pharo please check the excellent [free Pharo books](http://books.pharo.org/), the [awesome-pharo lists](https://github.com/pharo-open-documentation/awesome-pharo) and the [wiki](https://github.com/pharo-open-documentation/pharo-wiki). 
 For a quick reference of the syntax, check the [Pharo Cheat Sheet](http://files.pharo.org/media/pharoCheatSheet.pdf)
 
-## Basic packages
+## Install Basic Packages
 
 ```smalltalk
 Metacello new
@@ -44,7 +46,7 @@ Metacello new
     load: #('Basic')
 ```
 
-## Core packages
+## Install Core Packages
 
 ```smalltalk
 Metacello new
@@ -53,7 +55,7 @@ Metacello new
     load: #('Core')
 ```
 
-## Population Genomics packages
+## Install Population Genomics Packages
 
 ```smalltalk
 Metacello new
@@ -62,7 +64,7 @@ Metacello new
     load: #('PopulationGenomics')
 ```
 
-## Test packages
+## Install Test Packages
 
 ```smalltalk
 Metacello new
@@ -71,7 +73,7 @@ Metacello new
     load: #('Tests')
 ```
 
-## All packages version
+## Install All Packages
 
 ```smalltalk
 Metacello new
@@ -80,9 +82,9 @@ Metacello new
     load: #('All').
 ```
 
-## Troubleshoot install
+## Troubleshoot Install
 
-You could try the script below to install BioSmalltalk if you experience one of these exceptions:
+You could try the expression below to install BioSmalltalk if you experience one of these exceptions:
 
   - IceGenericError: Failed to connect to github.com: Interrupted system call.
   - IceGenericError: SecureTransport error: connection closed via error

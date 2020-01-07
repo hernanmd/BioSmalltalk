@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'seqRecord'
 	],
-	#category : 'BioToolsTests-Core'
+	#category : #'BioTools-Tests-Core'
 }
 
 { #category : #testing }

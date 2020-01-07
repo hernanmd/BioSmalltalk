@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'sequence'
 	],
-	#category : 'BioToolsTests-Biological'
+	#category : #'BioTools-Tests-Biological'
 }
 
 { #category : #accessing }

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'namedObject'
 	],
-	#category : 'BioToolsTests-Core'
+	#category : #'BioTools-Tests-Core'
 }
 
 { #category : #accessing }

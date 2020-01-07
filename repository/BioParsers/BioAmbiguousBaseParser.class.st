@@ -1,5 +1,5 @@
 "
-This class supports parsing DNA sequences with degenerate bases as sent from Illumina, i.e. of the form : 'A[A/C]CTG' or 'AT[A/C]TA[C/A]'.
+This class supports parsing DNA sequences with degenerate bases, i.e. of the form : 'A[A/C]CTG' or 'AT[A/C]TA[C/A]'.
 "
 Class {
 	#name : #BioAmbiguousBaseParser,
@@ -7,7 +7,7 @@ Class {
 	#instVars : [
 		'ambParser'
 	],
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing-parsers' }
@@ -28,10 +28,8 @@ BioAmbiguousBaseParser >> buildResults: aCollection [
 
 { #category : #'accessing-parsers' }
 BioAmbiguousBaseParser >> convertAmbiguousToSingleBase: ambTokens [
-	" Take a String of the form '[A/C]' and convert it to 
-	a single base letter as specified by the IUPAC nomenclature.
-	Answer a String "
-	
+	" Take a String of the form '[A/C]' and convert it to a single base letter as specified by the IUPAC nomenclature. Answer a <String> "
+
 	| amb |
 
 	amb := ambTokens allButFirst allButLast.

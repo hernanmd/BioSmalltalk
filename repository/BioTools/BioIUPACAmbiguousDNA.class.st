@@ -27,42 +27,37 @@ BioIUPACAmbiguousDNA class >> ambiguousLettersMap [
 		add: 'AC' -> 'M';
 		add: 'CA' -> 'M';
 		add: 'GT' -> 'K';
-		add: 'TG' -> 'K';		
+		add: 'TG' -> 'K';
 		add: 'AG' -> 'R';
-		add: 'GA' -> 'R';		
+		add: 'GA' -> 'R';
 		add: 'CT' -> 'Y';
 		add: 'TC' -> 'Y';
-		
 		add: 'CGT' -> 'B';
 		add: 'CTG' -> 'B';
 		add: 'GCT' -> 'B';
 		add: 'GTC' -> 'B';
 		add: 'TGC' -> 'B';
 		add: 'TCG' -> 'B';
-		
 		add: 'AGT' -> 'D';
 		add: 'ATG' -> 'D';
 		add: 'GAT' -> 'D';
 		add: 'GTA' -> 'D';
 		add: 'TGA' -> 'D';
 		add: 'TCA' -> 'D';
-		
 		add: 'CAT' -> 'H';
 		add: 'CTA' -> 'H';
 		add: 'ACT' -> 'H';
 		add: 'ATC' -> 'H';
 		add: 'TAC' -> 'H';
 		add: 'TCA' -> 'H';
-		
 		add: 'CGA' -> 'V';
 		add: 'CAG' -> 'V';
 		add: 'GCA' -> 'V';
 		add: 'GAC' -> 'V';
 		add: 'AGC' -> 'V';
 		add: 'ACG' -> 'V';
-		
-		yourself.
-
+		add: 'ACGT' -> 'N';
+		yourself
 ]
 
 { #category : #accessing }

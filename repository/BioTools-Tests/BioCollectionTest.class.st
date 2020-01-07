@@ -1,7 +1,7 @@
 Class {
 	#name : #BioCollectionTest,
 	#superclass : #BioAbstractTest,
-	#category : 'BioToolsTests-Core'
+	#category : #'BioTools-Tests-Core'
 }
 
 { #category : #testing }
@@ -31,9 +31,9 @@ BioCollectionTest >> testAsFileDirectoryCollection [
 { #category : #testing }
 BioCollectionTest >> testAsLowercase [
 
-	self assert: 'This is A SAMPLE COLLECTION' asLowercase = 'this is a sample collection'.
-	self assert: '' asLowercase = ''.
-	self assert: #('SAMPLE' 'string' 'For' 'teSTING') asLowercase = #('sample' 'string' 'for' 'testing').
+	self assert: 'This is A SAMPLE COLLECTION' asLowercase equals: 'this is a sample collection'.
+	self assert: '' asLowercase equals: ''.
+	self assert: #('SAMPLE' 'string' 'For' 'teSTING') asLowercase equals: #('sample' 'string' 'for' 'testing').
 	
 ]
 

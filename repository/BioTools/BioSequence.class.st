@@ -22,6 +22,15 @@ Class {
 	#category : #'BioTools-Sequences'
 }
 
+{ #category : #'accessing - disambiguation' }
+BioSequence class >> disambiguateLetter: letter [
+	" Private - Answer a <String> of disambiguations for letter "
+	
+	^ BioIUPACAmbiguousDNA ambiguousLettersMap 
+		keyAtValue: letter asString
+		ifAbsent: [ letter asString ]
+]
+
 { #category : #convenience }
 BioSequence class >> expected: m probabilitySeqOfSize: n patternLength: k alphabetSize: a occurrences: t [
 	" Answer a <Float> representing the expected k-mer occurrences in m (random) strings of length n formed from an alphabet of a letters.
@@ -594,11 +603,12 @@ BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 
     currentDFSNode beVisited.
     currentDFSNode remainingSeqSize > 0
-		ifTrue: [ " construct neighbors of currentDFSNode based on remaining sequence "
-			(self disambiguateLetter: (currentDFSNode remainingSeqAt: 1)) do: [ : nucleotide |
+		ifTrue: [ 
+			" construct neighbors of currentDFSNode based on remaining sequence "
+			(self class disambiguateLetter: (currentDFSNode remainingSeqAt: 1)) do: [ : nucleotide |
 				currentDFSNode neighbors add: 
 					(BioDFSNode 
-						newWith: currentDFSNode cumulSeq , nucleotide asString 
+						newWith: (String streamContents: [ : stream | stream nextPutAll: currentDFSNode cumulSeq; nextPutAll: nucleotide asString ])
 						remaining: currentDFSNode remainSeq allButFirst) ].
         "# implement recursive DFS"
 			currentDFSNode neighbors do: [ : neighbor | 
@@ -620,15 +630,6 @@ BioSequence >> disambiguate [
 	self dfsExpandSeq: startNode cumSequences: expandedList.
 	^ expandedList
 
-]
-
-{ #category : #'accessing - disambiguation' }
-BioSequence >> disambiguateLetter: letter [
-	" Private - Answer a <String> of disambiguations for letter "
-	
-	^ BioIUPACAmbiguousDNA ambiguousLettersMap 
-		keyAtValue: letter asString
-		ifAbsent: [ letter asString ]
 ]
 
 { #category : #accessing }

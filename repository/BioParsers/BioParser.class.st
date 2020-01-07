@@ -197,6 +197,13 @@ BioParser class >> tokenizeAccession: aString [
 ]
 
 { #category : #'instance creation' }
+BioParser class >> tokenizeAmbiguousLettersToSeparators: aSequenceString [
+	" Tokenize aString containing an ambiguous sequence without separators, i.e. [ACT] "
+	
+	^ (BioAmbiguousBaseParser on: aSequenceString) tokenizeWithoutSeparators
+]
+
+{ #category : #'instance creation' }
 BioParser class >> tokenizeAmbiguousWithSeparators: aSequenceString [
 	" Tokenize aString containing an ambiguous sequence delimited with separators, i.e. [A/C/T] "
 	
@@ -207,7 +214,7 @@ BioParser class >> tokenizeAmbiguousWithSeparators: aSequenceString [
 BioParser class >> tokenizeAmbiguousWithoutSeparators: aSequenceString [
 	" Tokenize aString containing an ambiguous sequence without separators, i.e. [ACT] "
 	
-	^ ( BioAmbiguousBaseParser on: aSequenceString ) tokenizeWithoutSeparators
+	^ (BioAmbiguousBaseParser on: aSequenceString) tokenizeWithoutSeparators
 ]
 
 { #category : #'parse-csv' }

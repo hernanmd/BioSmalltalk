@@ -1,7 +1,7 @@
 Class {
 	#name : #BioUnknownSeqTest,
 	#superclass : #BioAbstractSequenceTest,
-	#category : 'BioToolsTests-Biological'
+	#category : #'BioTools-Tests-Biological'
 }
 
 { #category : #accessing }

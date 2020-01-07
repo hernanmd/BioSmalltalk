@@ -31,13 +31,6 @@ BioDNAAlphabet class >> complementaryCases [
 ]
 
 { #category : #testing }
-BioDNAAlphabet >> canTranslate [
-	" Answer <true> if the receiver can be translated into proteins (amino acid sequences) "
-	
-	^ true
-]
-
-{ #category : #testing }
 BioDNAAlphabet >> isDNA [
 	" Private - See superimplementor's comment "
 

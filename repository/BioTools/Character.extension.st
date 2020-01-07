@@ -27,6 +27,27 @@ Character >> asDNANucleotide [
 ]
 
 { #category : #'*BioTools' }
+Character >> asDisambiguatedDNA [
+	" Answer a <String> matching the receiver's disambiguated DNA letter. For example M -> AC "
+
+	^ BioSequence disambiguateLetter: self asString
+]
+
+{ #category : #'*BioTools' }
+Character >> asDisambiguatedDNAFormatted [
+	" Answer a <String>. If the receiver represents an DNA ambiguous letter, then answer will match the receiver's disambiguated DNA letter. For example M -> AC. Otherwise, answer the receiver "
+
+	^ String streamContents: [ : stream |
+		(BioIUPACAmbiguousDNA ambiguityCodes includes: self)
+			ifTrue: [ 
+				stream
+					nextPut: $[;
+					nextPutAll: ('/' join: self asDisambiguatedDNA);
+					nextPut: $] ]
+			ifFalse: [ stream nextPutAll: self asString ] ]
+]
+
+{ #category : #'*BioTools' }
 Character >> isBiologicalSequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	

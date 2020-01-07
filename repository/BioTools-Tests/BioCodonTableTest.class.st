@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'table'
 	],
-	#category : 'BioToolsTests-Biological'
+	#category : #'BioTools-Tests-Biological'
 }
 
 { #category : #running }

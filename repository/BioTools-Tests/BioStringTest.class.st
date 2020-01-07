@@ -1,7 +1,7 @@
 Class {
 	#name : #BioStringTest,
 	#superclass : #BioAbstractTest,
-	#category : 'BioToolsTests-Biological'
+	#category : #'BioTools-Tests-Biological'
 }
 
 { #category : #testing }

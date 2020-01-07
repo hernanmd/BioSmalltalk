@@ -130,24 +130,24 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 
 		spec
 			package: 'BioAffymetrix' 			with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
-			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioToolsTests' 'INIFileSupport' ). ];
+			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioTools-Tests' 'INIFileSupport' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioBlast' 					with: [ spec requires: #('BioWrappers' 'BioParsers' 'BioEntrez' ). ];
 			package: 'BioBlastSamples' 			with: [ spec requires: #('BioToolsSamples' ). ];
-			package: 'BioBlastTests' 			with: [ spec requires: #('BioToolsTests' 'BioBlast' 'BioParserTests' ). ];
+			package: 'BioBlastTests' 			with: [ spec requires: #('BioTools-Tests' 'BioBlast' 'BioParserTests' ). ];
 			package: 'BioClassifier' 			with: [ spec requires: #('BioTools' ). ];
-			package: 'BioClassifierTests' 		with: [ spec requires: #('BioToolsTests' 'BioClassifier' ). ];
+			package: 'BioClassifierTests' 		with: [ spec requires: #('BioTools-Tests' 'BioClassifier' ). ];
 			package: 'BioEBI' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioEntrez' 					with: [ spec requires: #('BioWrappers' 'BioParsers' ). ];
-			package: 'BioEntrezTests' 			with: [ spec requires: #('BioToolsTests' 'BioEntrez' ). ];
-			package: 'BioFormatterTests' 		with: [ spec requires: #('BioToolsTests' 'BioFormatters' ). ];
+			package: 'BioEntrezTests' 			with: [ spec requires: #('BioTools-Tests' 'BioEntrez' ). ];
+			package: 'BioFormatterTests' 		with: [ spec requires: #('BioTools-Tests' 'BioFormatters' ). ];
 			package: 'BioFormatters' 			with: [ spec requires: #('BioParsers' ). ];
 			package: 'BioHaplotypes' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioLAMPLD' 					with: [ spec requires: #('BioTools' 'BioWrappers' 'BioFormatters' ). ];
 			package: 'BioNCBI' 					with: [ spec requires: #('BioTools' ). ];
-			package: 'BioNCBITests' 				with: [ spec requires: #('BioToolsTests' 'BioNCBI' ). ];
+			package: 'BioNCBITests' 				with: [ spec requires: #('BioTools-Tests' 'BioNCBI' ). ];
 			package: 'BioNGS' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
-			package: 'BioParserTests' 			with: [ spec requires: #('BioToolsTests' 'BioParsers' ). ];
+			package: 'BioParserTests' 			with: [ spec requires: #('BioTools-Tests' 'BioParsers' ). ];
 			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
 			package: 'BioPharoCommon' 			with: [ spec requires: #('BioTools' ). ];									
 			package: 'BioPharo4' 					with: [ spec requires: #('BioPharoCommon' ). ];
@@ -162,8 +162,8 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 																	requires: #('CommonUtils' 'StringExtensions' 'PetitParser' 'PolyMath' 'XMLParser' 'XMLPullParser');
 																	includes: #('BioPharoCommon') ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
-			package: 'BioToolsTests' 			with: [ spec requires: #('BioTools' ). ];
-			package: 'BioWrapperTests' 			with: [ spec requires: #('BioToolsTests' ). ];
+			package: 'BioTools-Tests' 			with: [ spec requires: #('BioTools' ). ];
+			package: 'BioWrapperTests' 			with: [ spec requires: #('BioTools-Tests' ). ];
 			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ]
 
 ]

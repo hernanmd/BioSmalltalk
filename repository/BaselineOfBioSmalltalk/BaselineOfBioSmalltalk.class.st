@@ -316,10 +316,7 @@ BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 	spec 
 		configuration: 'OSSubprocess' 
-		with: [ 
-			spec
-				versionString: #stable;
-				repository: 'github://marianopeck/OSSubprocess/repository' ]
+		with: [ spec repository: 'github://marianopeck/OSSubprocess/repository' ]
 
 ]
 

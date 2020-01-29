@@ -217,7 +217,7 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'Core'	
 			'Projects'
 
-			'BioToolsTests' 
+			'BioTools-Tests' 
 			'BioBlastTests' 
 			'BioWrapperTests' 
 			'BioParserTests' 

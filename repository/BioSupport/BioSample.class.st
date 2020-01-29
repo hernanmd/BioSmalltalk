@@ -13,15 +13,16 @@ Represents an unique biological (in contrast to chemical) sample within a popula
 "
 Class {
 	#name : #BioSample,
-	#superclass : #BioObject,
+	#superclass : #BioMaterial,
 	#instVars : [
 		'identifier',
+		'descriptions',
 		'sequence',
 		'frequency',
 		'formatters',
 		'markers'
 	],
-	#category : 'BioSupport-Core'
+	#category : #'BioSupport-Core'
 }
 
 { #category : #comparing }
@@ -69,6 +70,16 @@ BioSample >> currentNamingStrategy [
 BioSample >> defaultNamingStrategy [
 
 	^ BioStandardNaming 
+]
+
+{ #category : #accessing }
+BioSample >> descriptions [
+	^ descriptions
+]
+
+{ #category : #accessing }
+BioSample >> descriptions: anObject [
+	descriptions := anObject
 ]
 
 { #category : #accessing }

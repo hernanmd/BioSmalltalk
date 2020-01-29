@@ -9,9 +9,11 @@ Class {
 	#instVars : [
 		'samples',
 		'sequences',
-		'region'
+		'region',
+		'description',
+		'organism'
 	],
-	#category : 'BioPopulation-Core'
+	#category : #'BioPopulation-Core'
 }
 
 { #category : #accessing }
@@ -49,10 +51,30 @@ BioPopulation >> defaultPopulationSize [
 ]
 
 { #category : #accessing }
+BioPopulation >> description [
+	^ description
+]
+
+{ #category : #accessing }
+BioPopulation >> description: anObject [
+	description := anObject
+]
+
+{ #category : #accessing }
 BioPopulation >> occurrencesOf: aSequence [
 	" Answer how many of ocurrences contains aSequence."
 
 	^ self sequences occurrencesOf: aSequence
+]
+
+{ #category : #accessing }
+BioPopulation >> organism [
+	^ organism
+]
+
+{ #category : #accessing }
+BioPopulation >> organism: anObject [
+	organism := anObject
 ]
 
 { #category : #printing }

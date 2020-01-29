@@ -394,11 +394,5 @@ BaselineOfBioSmalltalk >> projectSpecsForXML: spec [
 				spec
 					className: #ConfigurationOfXMLPullParser;
 					versionString: #'development';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ];
-	
-			project: 'XMLWriter' with: [
-				spec
-					className: #ConfigurationOfXMLWriter;
-					versionString: #'stable';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ].
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ]
 ]

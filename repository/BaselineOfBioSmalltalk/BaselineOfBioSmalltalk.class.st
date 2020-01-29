@@ -384,11 +384,11 @@ BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
 BaselineOfBioSmalltalk >> projectSpecsForXML: spec [
 
 	spec
-			project: 'XMLParser' with: [
+"			project: 'XMLParser' with: [
 				spec
 					className: #ConfigurationOfXMLParser;
 					versionString: '2.5.2';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];"
 
 			project: 'XMLPullParser' with: [
 				spec

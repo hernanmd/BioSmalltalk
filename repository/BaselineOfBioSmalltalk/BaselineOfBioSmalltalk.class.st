@@ -316,7 +316,7 @@ BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 	spec 
 		configuration: 'OSSubprocess' 
-		with: [ spec repository: 'github://marianopeck/OSSubprocess/repository' ]
+		with: [ spec repository: 'github://pharo-contributions/OSSubprocess/repository' ]
 
 ]
 

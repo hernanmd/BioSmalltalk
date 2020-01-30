@@ -36,7 +36,7 @@ BioEntrezXMLGBSeqParser >> collectGBSet [
 	parser reset.
 	[ parser isEndDocument ] whileFalse: [
 		parser if: 'GBSeq' peek: [ self saveGBSeq ].
-		(parser nodesIfAny: self selectedNodes) ifNotEmptyDo: [ : result | self saveGBNode: result ].
+		(parser nodesIfAny: self selectedNodes) ifNotEmpty: [ : result | self saveGBNode: result ].
 		parser next ].
 	(parser isEndDocument and: [ matches notNil ])
 		ifTrue: [ self saveGBSeq ].

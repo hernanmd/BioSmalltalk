@@ -73,7 +73,7 @@ BioXMLParser >> parse [
 	[ parser atEnd ] whileFalse: [
 		| node |
 		parser next.
-		( node := parser currentNodeUpToAny: self selectedNodes )
+		(node := parser currentNodeUpToAny: self selectedNodes)
 			ifNotNil: [ self saveTag: node key value: node value ] ].
 	^ self results
 ]

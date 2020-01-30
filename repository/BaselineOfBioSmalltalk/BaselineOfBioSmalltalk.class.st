@@ -408,8 +408,10 @@ BaselineOfBioSmalltalk >> projectSpecForXMLPharo8: spec [
 
 	spec
 		baseline: 'XMLParser' 
-		with: [ spec repository: 'github://pharo-contributions/XML-XMLParser/src' ].
-		
+		with: [ 
+			spec 
+				repository: 'github://pharo-contributions/XML-XMLParser/src';
+				loads: 'Core' ].
 	spec
 		project: 'XMLPullParser' with: [
 			spec

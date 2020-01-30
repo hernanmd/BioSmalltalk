@@ -43,8 +43,8 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		self projectSpecForINIParser: spec.
 		self projectSpecForPetitParser: spec.				
 		self projectSpecForRoassal2: spec.
-		self projectSpecsForXML: spec.
-				
+		
+		self baselineXMLDeps: spec.
 		self baselineOSDeps: spec.
 		self baselinePackages: spec.
 		self baselineGroups: spec ].
@@ -228,6 +228,14 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioProjectTests' )
 ]
 
+{ #category : #specs }
+BaselineOfBioSmalltalk >> baselineXMLDeps: spec [
+
+	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x') do: [ self projectSpecForXMLPharo7: spec ].
+	spec for: #'pharo8.x' do: [ self projectSpecForXMLPharo8: spec. ].
+
+]
+
 { #category : #accessing }
 BaselineOfBioSmalltalk >> customProjectAttributes [
 	Smalltalk os isMacOS ifTrue: [ ^ #(#MacOS) ].
@@ -379,18 +387,33 @@ BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
 ]
 
 { #category : #specs }
-BaselineOfBioSmalltalk >> projectSpecsForXML: spec [
+BaselineOfBioSmalltalk >> projectSpecForXMLPharo7: spec [
 
 	spec
-"			project: 'XMLParser' with: [
+			project: 'XMLParser' with: [
 				spec
 					className: #ConfigurationOfXMLParser;
 					versionString: '2.5.2';
-					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];"
+					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main/' ];
 
 			project: 'XMLPullParser' with: [
 				spec
 					className: #ConfigurationOfXMLPullParser;
 					versionString: #'development';
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ]
+]
+
+{ #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForXMLPharo8: spec [
+
+	spec
+		baseline: 'XMLParser' 
+		with: [ spec repository: 'github://pharo-contributions/XML-XMLParser/src' ].
+		
+	spec
+		project: 'XMLPullParser' with: [
+			spec
+				className: #ConfigurationOfXMLPullParser;
+				versionString: #'development';
+				repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ]
 ]

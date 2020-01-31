@@ -18,7 +18,7 @@ BioSmalltalk is an Open-Source (MIT-licensed) library for Bioinformatics using S
 
 # Installation
 
-There are several ways to install the **BioSmalltalk**. At minimum, you need a working Pharo virtual image installed in your system. Check the [Pharo website](http://www.pharo.org) for installation information regarding the Pharo Open-Source system. Once Pharo is launched you have the following installation options:
+There are several ways to install **BioSmalltalk**. At minimum, you need a working Pharo virtual image installed in a system. Check the [Pharo website](http://www.pharo.org) for installation information regarding the Pharo Open-Source system. Once Pharo is launched you have the following installation options:
 
 ## Installation Matrix
 
@@ -37,69 +37,48 @@ To evaluate a expression, click on the upper right green arrow or highlight the 
 For additional help using Pharo please check the excellent [free Pharo books](http://books.pharo.org/), the [awesome-pharo lists](https://github.com/pharo-open-documentation/awesome-pharo) and the [wiki](https://github.com/pharo-open-documentation/pharo-wiki). 
 For a quick reference of the syntax, check the [Pharo Cheat Sheet](http://files.pharo.org/media/pharoCheatSheet.pdf)
 
-## Install Basic Packages
+## Installation Script
+
+You can uncomment the specific loading group in the following expression by removing the # prepended character, and add it to the group currently uncommented. The script should be evaluated inside the Pharo image. The current Pharo version 8.x is supported.
 
 ```smalltalk
-Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('Basic')
-```
-
-## Install Core Packages
-
-```smalltalk
-Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('Core')
-```
-
-## Install Population Genomics Packages
-
-```smalltalk
-Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('PopulationGenomics')
-```
-
-## Install Test Packages
-
-```smalltalk
-Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('Tests')
-```
-
-## Install All Packages
-
-```smalltalk
-Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    load: #('All').
+| count |
+count := 1.
+Transcript open.
+[ true ] whileTrue: [
+	[
+		^ Metacello new
+			baseline: 'BioSmalltalk';
+			repository: 'github://hernanmd/biosmalltalk/repository';
+			onConflictUseLoaded;
+			onWarningLog;
+            # load: #('Core')
+            # load: #('PopulationGenomics')
+            # load: #('Tests')
+		 	# load: #('Basic')
+            load: #('All').
+	]
+	on: IceGenericError "Failed to connect to github.com: Interrupted system call"
+	do: [ : ex |
+			MetacelloNotification signal:
+				String cr ,
+				ex description,
+				String cr ,
+				'RETRYING ',
+				count asString.
+			(Delay forSeconds: 2) wait.
+			ex retry
+		].
+	count := count + 1 ]
 ```
 
 ## Troubleshoot Install
 
-You could try the expression below to install BioSmalltalk if you experience one of these exceptions:
+Please add an issue if the installation expression above does not work due to one of these exceptions:
 
   - IceGenericError: Failed to connect to github.com: Interrupted system call.
   - IceGenericError: SecureTransport error: connection closed via error
   - IceGenericError: unexpected return value from ssl handshake -9806
-
-
-```smalltalk
-[ Metacello new
-    baseline: 'BioSmalltalk';
-    repository: 'github://hernanmd/biosmalltalk/repository';
-    onWarningLog;
-    load ]
-on: IceGenericError 
-do: [ : ex | ex retry ]
-```
 
 ## Baseline String
 
@@ -141,7 +120,7 @@ If you'd like to make some changes yourself, see the following:
 
 This software is licensed under the MIT License.
 
-Copyright Hernán Morales, 2019.
+Copyright Hernán Morales, 2011-2020.
 
 Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the 

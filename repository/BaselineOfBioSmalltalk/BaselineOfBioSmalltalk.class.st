@@ -43,8 +43,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		self projectSpecForINIParser: spec.
 		self projectSpecForPetitParser: spec.				
 		self projectSpecForRoassal2: spec.
-		
-		self baselineXMLDeps: spec.
+
 		self baselineOSDeps: spec.
 		self baselinePackages: spec.
 		self baselineGroups: spec ].
@@ -172,16 +171,20 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 BaselineOfBioSmalltalk >> baselinePharo: spec [
 
 	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
+		self projectSpecForXMLPharo7: spec.
 		spec 
 			package: 'BioTools'	with: [ spec includes: #('BioPharo4') ];
 			package: 'BioPharo4'	with: [ spec requires: #('BioTools') ];
 			group: 'Basic' with: #('BioPharo4')  ].
 
 	spec for: #'pharo7.x' do: [ 
+		self projectSpecForXMLPharo7: spec.
 		spec 
 			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
 			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
 			group: 'Basic' with: #('BioPharo7') ].
+
+	spec for: #'pharo8.x' do: [ self projectSpecForXMLPharo8: spec. ].
 
 ]
 
@@ -226,14 +229,6 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioFormatterTests' 
 			'BioClassifierTests' 
 			'BioProjectTests' )
-]
-
-{ #category : #specs }
-BaselineOfBioSmalltalk >> baselineXMLDeps: spec [
-
-	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x' #'pharo7.x') do: [ self projectSpecForXMLPharo7: spec ].
-	spec for: #'pharo8.x' do: [ self projectSpecForXMLPharo8: spec. ].
-
 ]
 
 { #category : #accessing }

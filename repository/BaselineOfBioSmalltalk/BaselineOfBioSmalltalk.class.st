@@ -184,7 +184,12 @@ BaselineOfBioSmalltalk >> baselinePharo: spec [
 			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
 			group: 'Basic' with: #('BioPharo7') ].
 
-	spec for: #'pharo8.x' do: [ self projectSpecForXMLPharo8: spec. ].
+	spec for: #'pharo8.x' do: [ 
+		self projectSpecForXMLPharo8: spec.
+		spec 
+			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
+			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
+			group: 'Basic' with: #('BioPharo7') ].
 
 ]
 

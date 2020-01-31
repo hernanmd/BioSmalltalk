@@ -37,38 +37,44 @@ To evaluate a expression, click on the upper right green arrow or highlight the 
 For additional help using Pharo please check the excellent [free Pharo books](http://books.pharo.org/), the [awesome-pharo lists](https://github.com/pharo-open-documentation/awesome-pharo) and the [wiki](https://github.com/pharo-open-documentation/pharo-wiki). 
 For a quick reference of the syntax, check the [Pharo Cheat Sheet](http://files.pharo.org/media/pharoCheatSheet.pdf)
 
-## Installation Script
+## Installation From CLI Using Pharo Installer
 
-You can uncomment the specific loading group in the following expression by removing the # prepended character, and add it to the group currently uncommented. The script should be evaluated inside the Pharo image. The current Pharo version 8.x is supported.
+```bash
+pi install BioSmalltalk
+```
 
+## Installation From Pharo Using Metacello Script
+
+You can uncomment the specific loading group in the following expression by removing the # prepended character, and add it to the group currently uncommented. Check the installation matrix above to know about the options. The script should be evaluated inside the Pharo image. The current Pharo version 8.x is supported.
+
+[//]: # (pi)
 ```smalltalk
 | count |
 count := 1.
 Transcript open.
-[ true ] whileTrue: [
-	[
+[ true ] whileTrue: [ [
 		^ Metacello new
 			baseline: 'BioSmalltalk';
 			repository: 'github://hernanmd/biosmalltalk/repository';
 			onConflictUseLoaded;
 			onWarningLog;
-            # load: #('Core')
-            # load: #('PopulationGenomics')
-            # load: #('Tests')
-		 	# load: #('Basic')
-            load: #('All').
+			load: #('All').
+                        "load: #('Core')"
+                        "load: #('PopulationGenomics')"
+                        "load: #('Tests')"
+                        "load: #('Basic')"
 	]
 	on: IceGenericError "Failed to connect to github.com: Interrupted system call"
 	do: [ : ex |
-			MetacelloNotification signal:
-				String cr ,
-				ex description,
-				String cr ,
-				'RETRYING ',
-				count asString.
-			(Delay forSeconds: 2) wait.
-			ex retry
-		].
+		MetacelloNotification signal:
+	        	String cr ,
+			ex description,
+			String cr ,
+			'RETRYING ',
+			count asString.
+		(Delay forSeconds: 2) wait.
+		ex retry
+	].
 	count := count + 1 ]
 ```
 

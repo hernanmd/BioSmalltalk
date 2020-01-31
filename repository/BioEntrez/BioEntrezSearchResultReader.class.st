@@ -5,7 +5,7 @@ Helper class to easy reading entrez search results
 Class {
 	#name : #BioEntrezSearchResultReader,
 	#superclass : #BioEntrezXmlReader,
-	#category : 'BioEntrez-Core'
+	#category : #'BioEntrez-Core'
 }
 
 { #category : #private }
@@ -44,7 +44,7 @@ BioEntrezSearchResultReader >> idList [
 BioEntrezSearchResultReader >> keys [
 	" Answer a <Collection> with the search results keys (node names) "
 	
-	^ (self keysParserClass parse: self results) parseDocument
+	^ self keysParserClass parse: self results
 
 ]
 

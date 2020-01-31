@@ -659,7 +659,7 @@ BioSequence >> gcContent [
 			ifTrue: [ cCount := cCount + 1]
 			ifFalse: [ each asUppercase = $G 
 				ifTrue: [ gCount := gCount + 1 ] ] ].
-	^ ((gCount + cCount / self size) * 100) round: 6
+	^ (((gCount + cCount / self size) * 100) round: 6) asScaledDecimal
 	
 
 ]

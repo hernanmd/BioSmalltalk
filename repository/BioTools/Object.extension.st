@@ -35,13 +35,6 @@ Object class >> bioLog: aString [
 ]
 
 { #category : #'*BioTools' }
-Object >> bioLog: aString event: aDescriptionString [
-	" Write aString and aDescriptionString to a streamer "
-	
-	self class bioLog: aString event: aDescriptionString
-]
-
-{ #category : #'*BioTools' }
 Object class >> bioLog: aString event: aDescriptionString [
 	" Write aString to the streamer "
 	
@@ -52,6 +45,13 @@ Object class >> bioLog: aString event: aDescriptionString [
 		show: aString;
 		tab;
 		show: aDescriptionString
+]
+
+{ #category : #'*BioTools' }
+Object >> bioLog: aString event: aDescriptionString [
+	" Write aString and aDescriptionString to a streamer "
+	
+	self class bioLog: aString event: aDescriptionString
 ]
 
 { #category : #'*BioTools' }

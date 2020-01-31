@@ -124,6 +124,13 @@ BioFastaMultiRecord >> groupedBySeqLength [
 	^ self records groupedBy: #size
 ]
 
+{ #category : #testing }
+BioFastaMultiRecord >> hasGaps [
+	" Answer <true> if any of the receiver's records contains any gap "
+	
+	^ self sequences anySatisfy: #hasGaps
+]
+
 { #category : #comparing }
 BioFastaMultiRecord >> hash [
 	" Private - hash is implemented because #= is implemented "
@@ -194,6 +201,13 @@ BioFastaMultiRecord >> molecularWeight [
 	^ self collect: #molecularWeight
 ]
 
+{ #category : #accessing }
+BioFastaMultiRecord >> occurrencesOfLetters [
+	" Answer a <Dictionary> of occurrence mappings for the receiver "
+	
+	^ (self collect: [ : fr | fr sequenceName ->  fr occurrencesOfLetters ]) asDictionary
+]
+
 { #category : #printing }
 BioFastaMultiRecord >> printOn: aStream [
 	" Private - See superimplementor's comment "
@@ -262,7 +276,7 @@ BioFastaMultiRecord >> sequenceStrings [
 
 { #category : #accessing }
 BioFastaMultiRecord >> sequences [
-	" Answer a <Collection> with the receiver's sequences "
+	" Answer a <Collection> of <BioFastaRecord> with the receiver's sequences "
 
 	^ sequences
 		ifNil: [ sequences := OrderedCollection new ]

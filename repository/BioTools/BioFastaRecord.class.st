@@ -5,7 +5,7 @@ Class {
 		'sequence',
 		'identifiers'
 	],
-	#category : 'BioTools-Core'
+	#category : #'BioTools-Core'
 }
 
 { #category : #'instance creation' }
@@ -192,6 +192,12 @@ BioFastaRecord >> gcContent [
 	" Refer to comment in #gcContent "
 	
 	^ self sequence gcContent
+]
+
+{ #category : #testing }
+BioFastaRecord >> hasGaps [
+
+	^ self sequenceString includes: '-'
 ]
 
 { #category : #comparing }

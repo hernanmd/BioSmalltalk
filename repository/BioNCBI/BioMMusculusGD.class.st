@@ -1,7 +1,7 @@
 Class {
 	#name : #BioMMusculusGD,
-	#superclass : #BioNCBIGenomeDownloader,
-	#category : 'BioNCBI-Genomes'
+	#superclass : #BioNCBIChrGD,
+	#category : #'BioNCBI-Genomes'
 }
 
 { #category : #accessing }

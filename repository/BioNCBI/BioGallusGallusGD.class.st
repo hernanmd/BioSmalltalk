@@ -5,8 +5,8 @@ The NCBI reference sequence for the mitochondrial genome was also included in th
 "
 Class {
 	#name : #BioGallusGallusGD,
-	#superclass : #BioNCBIGenomeDownloader,
-	#category : 'BioNCBI-Genomes'
+	#superclass : #BioNCBIChrGD,
+	#category : #'BioNCBI-Genomes'
 }
 
 { #category : #accessing }

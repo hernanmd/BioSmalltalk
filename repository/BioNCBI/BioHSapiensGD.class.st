@@ -8,8 +8,8 @@ BioHSapiensGD new downloadChromosome: 22.
 "
 Class {
 	#name : #BioHSapiensGD,
-	#superclass : #BioNCBIGenomeDownloader,
-	#category : 'BioNCBI-Genomes'
+	#superclass : #BioNCBIChrGD,
+	#category : #'BioNCBI-Genomes'
 }
 
 { #category : #accessing }

@@ -1,8 +1,8 @@
 "
-Abstract superclass for specific genome downloaders
+Abstract superclass for downloading Genomes from the NCBI FTP servers. 
+Subclasses implement specific organism genome downloaders.
 
-Instance Variables
-	chr:		<Integer>
+
 
 
 "
@@ -10,16 +10,12 @@ Class {
 	#name : #BioNCBIGenomeDownloader,
 	#superclass : #BioNCBIDownloader,
 	#instVars : [
-		'chr',
 		'organismName',
 		'version',
 		'downloadFormats',
-		'chromosomes',
-		'fileListPrefix',
-		'chrZeroPrefixed',
-		'chrDirZeroPrefixed'
+		'fileListPrefix'
 	],
-	#category : 'BioNCBI-Genomes'
+	#category : #'BioNCBI-Genomes'
 }
 
 { #category : #testing }
@@ -38,100 +34,33 @@ BioNCBIGenomeDownloader >> asnFormatExtension [
 
 ]
 
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> beChrDirNotZeroPrefixed [
-	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
-
-	^ chrDirZeroPrefixed := false
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> beChrDirZeroPrefixed [
-	" Set a <Boolean> specifying if chromosome numbers directories are prefixed with 0 "
-
-	^ chrDirZeroPrefixed := true
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> beChrFileNotZeroPrefixed [
-	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
-
-	^ chrZeroPrefixed := false
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> beChrFileZeroPrefixed [
-	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
-
-	^ chrZeroPrefixed := true
-]
-
 { #category : #downloading }
 BioNCBIGenomeDownloader >> buildFileList [
-	" Private - Answer a <Collection> of files to download "
+	" Private - Answer a <Collection> of files to download appending formats to each file name "
 
-	self downloadFormats isEmpty 
-		ifTrue: [ self downloadFormats: self defaultDownloadFormats ].
+	self downloadFormats isEmpty and: [ self downloadFormats: self defaultDownloadFormats ].
 	^ self downloadFormats collect: [ : format |
 		String streamContents: [ : stream | 
 			stream
-				nextPutAll: self fileListPrefix;
-				nextPutAll: self version;
-				nextPutAll: '_chr';
-				nextPutAll: self chrAsString;
+				nextPutAll: self buildFilePath;
 				nextPutAll: format ] ].
 ]
 
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chr [
-	^ chr
-]
+{ #category : #downloading }
+BioNCBIGenomeDownloader >> buildFilePath [
+	" Answer a <String> representing the path to the file to download "
 
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chr: anObject [
-	chr := anObject
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chrAsString [
-	" Private - Adapt because NCBI store directories as 01,02,...22 "
-	
-	(#('X' 'x' 'Y' 'y' 'MT' 'mt' 'Un' 'UN' 'un') includes: self chr) 
-		ifTrue: [ ^ self chr asString ].
-	^ ((self chr between: 1 and: 9) and: [ self isChrZeroPrefixed ])
-		ifTrue: [ '0' , self chr asString ]
-		ifFalse: [ self chr asString ]
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chrDirAsString [
-	" Private - Adapt because NCBI store directories as 01,02 "
-	
-	(#('X' 'x' 'Y' 'y' 'MT' 'mt' 'Un' 'UN' 'un') includes: self chr) 
-		ifTrue: [ ^ self chr asString ].
-	^ ((self chr between: 1 and: 9) and: [ self isChrDirZeroPrefixed ])
-		ifTrue: [ '0' , self chr asString ]
-		ifFalse: [ self chr asString ]
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chromosomes [
-	" Answer a <Collection> of <String> each one representing a chromosome name to download "
-
-	^ chromosomes
-		ifNil: [ chromosomes := self defaultChromosomes ]
-
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> chromosomes: anObject [
-	^ chromosomes := anObject
+	self subclassResponsibility 
 ]
 
 { #category : #defaults }
-BioNCBIGenomeDownloader >> defaultChromosomes [
+BioNCBIGenomeDownloader >> defaultCDSDownloadFormats [
+	" By default we download all types of formats found in the NCBI's FTP "
 
-	^ 1 to: self maxChr
+	^ 	{ 
+			self featureCDSFromGenomicFormatExtension .
+			self featureCDSTranslatedFormatExtension
+		}
 
 ]
 
@@ -139,17 +68,39 @@ BioNCBIGenomeDownloader >> defaultChromosomes [
 BioNCBIGenomeDownloader >> defaultDirectory [
 	" Answer a <String> with the receiver's server directory to CWD "
 	
-	^ String streamContents: [ : stream |
-			stream
-				nextPutAll: 'genomes/';
-				nextPutAll: self organismName;
-				nextPutAll: '/CHR_';
-				nextPutAll: self chrDirAsString ]
+	^ 'genomes/'
 
 ]
 
 { #category : #defaults }
 BioNCBIGenomeDownloader >> defaultDownloadFormats [
+	" By default we download all types of formats found in the NCBI's FTP "
+
+	^ Array streamContents: [ : stream |
+		stream nextPutAll: self defaultGenomicDownloadFormats]
+
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> defaultFeaturesDownloadFormats [
+	" By default we download all types of formats found in the NCBI's FTP "
+
+	^ 	{ 
+			self featureTableFormatExtension .
+			self featureCountFormatExtension
+		}
+
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> defaultFileListPrefix [
+
+	self subclassResponsibility 
+
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> defaultGenomicDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
 	^ { 
@@ -163,56 +114,11 @@ BioNCBIGenomeDownloader >> defaultDownloadFormats [
 ]
 
 { #category : #defaults }
-BioNCBIGenomeDownloader >> defaultFileListPrefix [
+BioNCBIGenomeDownloader >> defaultProteinDownloadFormats [
+	" By default we download all types of formats found in the NCBI's FTP "
 
-	self subclassResponsibility 
+	^ Array empty
 
-]
-
-{ #category : #downloading }
-BioNCBIGenomeDownloader >> downloadAllChromosomes [
-	" Download all chromosomes found for the receiver "
-
-	[ 
-		self chromosomes
-			do: [ : chrNum | 
-				self chr: chrNum.
-				self connectionSettings serverDirectory: self defaultDirectory.
-				self download ]
-			displayingProgress: 'Downloading all chromosomes for ' , self organismName
-	]
-		forkAt: Processor userBackgroundPriority 
-		named: 'Downloading all chromosomes...' 
-]
-
-{ #category : #downloading }
-BioNCBIGenomeDownloader >> downloadChromosome: chrString [
-	" Download the chromosome number chrNumber in the current directory "
-
-	self chr: chrString.
-	[ 
-		self connectionSettings serverDirectory: self defaultDirectory.
-		self download 
-	]
-	 	forkAt: Processor userBackgroundPriority 
- 		named: 'Downloading ' , self organismName , ' chromosome ' , self chrAsString.
-
-]
-
-{ #category : #downloading }
-BioNCBIGenomeDownloader >> downloadChromosomes: chrInterval [
-	" Download the chromosome number chrNumber in the current directory "
-
-	[ 
-		chrInterval 
-			do: [ : chrId | 		
-				self chr: chrId.			
-				self connectionSettings serverDirectory: self defaultDirectory.
-				self download  ]
-			displayingProgress: 'Downloading ' , self organismName , ' chromosomes...' 
-	]
- 		forkAt: Processor userBackgroundPriority 
-		named: 'Downloading ' , self organismName , ' chromosome '
 ]
 
 { #category : #downloading }
@@ -235,6 +141,33 @@ BioNCBIGenomeDownloader >> downloadFormats: aCollection [
 BioNCBIGenomeDownloader >> fastaFormatExtension [
 
 	^ '.fa.gz'
+
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> featureCDSFromGenomicFormatExtension [
+
+	^ '_cds_from_genomic.fna.gz'
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> featureCDSTranslatedFormatExtension [
+
+	^ '_translated_cds.faa.gz'
+
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> featureCountFormatExtension [
+
+	^ '_feature_count.txt.gz'
+
+]
+
+{ #category : #'download - formats' }
+BioNCBIGenomeDownloader >> featureTableFormatExtension [
+
+	^ '_feature_table.txt.gz'
 
 ]
 
@@ -264,6 +197,12 @@ BioNCBIGenomeDownloader >> filesToDownload [
 		ifNil: [ self informMessage: 'Connection failed' translated ]
 ]
 
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> gbffFormatExtension [
+
+	^ '_genomic.gbff.gz'
+]
+
 { #category : #'download - formats' }
 BioNCBIGenomeDownloader >> gbkFormatExtension [
 	" Answer a <String> with the extension of GenBank flat file format (annotation + sequence), compressed "
@@ -282,6 +221,24 @@ BioNCBIGenomeDownloader >> gbsFormatExtension [
 
 ]
 
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> gffFormatExtension [
+
+	^ '_genomic.gff.gz'
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> gpffFormatExtension [
+
+	^ '_protein.gpff'
+]
+
+{ #category : #defaults }
+BioNCBIGenomeDownloader >> gtfFormatExtension [
+
+	^ '_genomic.gtf.gz'
+]
+
 { #category : #initialization }
 BioNCBIGenomeDownloader >> initialize [
 	" Private - Initialize receiver's settings "
@@ -289,26 +246,10 @@ BioNCBIGenomeDownloader >> initialize [
 	super initialize.
 	forceDownload := false.
 	checkMD5 := false.
-	self beChrFileZeroPrefixed.
-	self beChrDirZeroPrefixed.
 	self connectionSettings
 			user: self defaultUser;
 			password: self defaultPassword;
 			serverAddress: self defaultServerName
-]
-
-{ #category : #testing }
-BioNCBIGenomeDownloader >> isChrDirZeroPrefixed [
-	" Answer a <Boolean> specifying if chromosome numbers are prefixed with 0 "
-
-	^ chrDirZeroPrefixed
-]
-
-{ #category : #testing }
-BioNCBIGenomeDownloader >> isChrZeroPrefixed [
-	" Answer a <Boolean> specifying if chromosome numbers are prefixed with 0 "
-
-	^ chrZeroPrefixed
 ]
 
 { #category : #accessing }
@@ -318,8 +259,7 @@ BioNCBIGenomeDownloader >> isUpdated: fileName [
 	| fullName |
 		
 	fullName := (FileSystem workingDirectory / fileName) fullName.
-	^ (self fileExists: fullName)
-		and: [ (self openFileNamed: fileName) directoryEntry modificationTime < (self client getMdtm: fileName) ]
+	^ (self fileExists: fullName) and: [ fileName asFileReference modificationTime < (self client getMdtm: fileName) ]
 ]
 
 { #category : #accessing }
@@ -327,13 +267,6 @@ BioNCBIGenomeDownloader >> latestVersionFound [
 	" Answer a <String> with the receiver's latest found version in remote database "
 
 	self subclassResponsibility 
-]
-
-{ #category : #accessing }
-BioNCBIGenomeDownloader >> maxChr [
-	" Answer maximum number of chromosomes for the receiver "
-
-	^ self class maxChr
 ]
 
 { #category : #'download - formats' }

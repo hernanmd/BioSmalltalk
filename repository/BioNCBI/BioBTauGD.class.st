@@ -1,11 +1,11 @@
 "
-A BioHCDownloader is a class for downloading Bos Taurus  chromosomes from NCBI
+Abstract class for downloading Bos Taurus chromosomes from NCBI
 
 "
 Class {
 	#name : #BioBTauGD,
-	#superclass : #BioNCBIGenomeDownloader,
-	#category : 'BioNCBI-Genomes'
+	#superclass : #BioNCBIChrGD,
+	#category : #'BioNCBI-Genomes'
 }
 
 { #category : #accessing }

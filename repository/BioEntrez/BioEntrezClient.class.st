@@ -10,7 +10,7 @@ BioEntrezClient new <dbNameSelector>	"" See accessing public - databases  ""
 Class {
 	#name : #BioEntrezClient,
 	#superclass : #BioWebWrapper,
-	#category : 'BioEntrez-Core'
+	#category : #'BioEntrez-Core'
 }
 
 { #category : #'accessing-private' }
@@ -81,7 +81,7 @@ BioEntrezClient >> dbName: aString [
 BioEntrezClient >> domains [
 	" Set and answer the receiver's working database "
 		
-	^ self database: ( BioEntrezSDI new client: self )
+	^ self database: (BioEntrezSDI new client: self)
 
 		
 
@@ -156,7 +156,7 @@ BioEntrezClient >> gene [
 BioEntrezClient >> genome [
 	" Set and answer the receiver's working database "
 		
-	^ self database: ( BioEntrezGenome new client: self )
+	^ self database: (BioEntrezGenome new client: self)
 
 		
 
@@ -426,8 +426,7 @@ BioEntrezClient >> pubmed [
 
 { #category : #'accessing public - commands' }
 BioEntrezClient >> search [
-	" Answer a GTESearchResult with the list of UIDs matching the query in a diven database,
-	along with the term translation of the query "
+	" Answer a <BioESearchResult> with the list of UIDs matching the query in a diven database, along with the term translation of the query "
 
 	^ self execute: BioESearch
 ]
@@ -466,7 +465,7 @@ BioEntrezClient >> setUseHistory [
 BioEntrezClient >> snp [
 	" Set and answer the receiver's working database "
 		
-	^ self database: ( BioEntrezSNP new client: self )
+	^ self database: (BioEntrezSNP new client: self)
 
 		
 

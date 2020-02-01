@@ -9,6 +9,20 @@ Class {
 }
 
 { #category : #accessing }
+BioMAFFTWrapper class >> defaultProgramName [
+	" Private - See superimplementor's comment "
+
+	^ self mafft
+]
+
+{ #category : #accessing }
+BioMAFFTWrapper class >> mafft [
+	" See superimplementor's comment "
+
+	^ 'mafft'
+]
+
+{ #category : #accessing }
 BioMAFFTWrapper class >> softwareName [
 	" See superimplementor's comment "
 
@@ -64,6 +78,12 @@ BioMAFFTWrapper >> globalpair [
 
 	^ self addOption: 'globalpair'
 
+]
+
+{ #category : #accessing }
+BioMAFFTWrapper >> input: anObject [
+
+	anObject asMAFFTWrapperInput: self
 ]
 
 { #category : #accessing }

@@ -74,6 +74,13 @@ BioFastaMultiRecord >> asAlignment [
 		 
 ]
 
+{ #category : #accessing }
+BioFastaMultiRecord >> asMAFFTWrapperInput: aBioMAFFTWrapper [
+
+	self dumpToStream: 'in.tmp' asFileReference writeStream.
+	aBioMAFFTWrapper addParameter: 'in.tmp'
+]
+
 { #category : #converting }
 BioFastaMultiRecord >> asString [
 	" Answer the String representation of the receiver." 	

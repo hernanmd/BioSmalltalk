@@ -4,5 +4,5 @@ Extension { #name : #MacOSXPlatform }
 MacOSXPlatform >> execNameFor: aString [
 	" Private - See superimplementor's comment "
 	
-	^ aString , '.app'
+	^ aString
 ]

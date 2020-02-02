@@ -53,6 +53,13 @@ BioMAFFTWrapper >> clustalout [
 
 ]
 
+{ #category : #defaults }
+BioMAFFTWrapper >> defaultPropertySeparator [
+	" Private - See superimplementor's comment "
+	
+	^ Character space
+]
+
 { #category : #accessing }
 BioMAFFTWrapper >> fastapair [
 	"  All pairwise alignments are computed with FASTA (Pearson and Lipman 1988). FASTA is required. Default: off (6mer distance is used) "

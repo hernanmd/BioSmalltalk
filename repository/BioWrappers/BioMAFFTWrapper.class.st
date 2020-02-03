@@ -110,14 +110,6 @@ BioMAFFTWrapper >> localpair [
 
 ]
 
-{ #category : #programs }
-BioMAFFTWrapper >> mafft [
-	"WARNING: This is code generated automatically.
- On: 8 November 2012 - 9:58:12 pm"
-
-	^ 'mafft'
-]
-
 { #category : #accessing }
 BioMAFFTWrapper >> maxiterate: aNumber [
 	" Number cycles of iterative refinement are performed. Default: 0  "

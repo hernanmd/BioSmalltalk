@@ -53,7 +53,7 @@ BioOSSubProcessExecutor class >> executeOSSubProcessCommand: aCommandName [
 
 	| osSubProcess teeCmd |
 	
-	osSubProcess := (self classFor: self providerClass) new command: aCommandName.
+	osSubProcess := (self classFor: self providerClass) new shellCommand: aCommandName.
 	^ osSubProcess run
 ]
 

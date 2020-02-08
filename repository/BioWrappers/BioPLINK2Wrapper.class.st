@@ -4,7 +4,7 @@ Wrapper for PLINK software version ""2"" (or 1.90 actually). See superclass for 
 Class {
 	#name : #BioPLINK2Wrapper,
 	#superclass : #BioPLINKWrapper,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #examples }

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioClustalWWrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Aligners'
 }
 
 { #category : #accessing }

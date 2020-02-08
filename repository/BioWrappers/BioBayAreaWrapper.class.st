@@ -6,7 +6,7 @@ BayArea infers the biogeographic histories of taxa sharing a phylogeny, using Ma
 Class {
 	#name : #BioBayAreaWrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #programs }

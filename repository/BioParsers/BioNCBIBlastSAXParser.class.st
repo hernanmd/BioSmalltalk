@@ -1,17 +1,18 @@
 Class {
 	#name : #BioNCBIBlastSAXParser,
 	#superclass : #BioSAXParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
-{ #category : #content }
+{ #category : #'handling - content' }
 BioNCBIBlastSAXParser >> characters: aString [
-	"This call corresponds to the Java SAX call characters(char[] ch, int start, int length)."
-	
+	" This call corresponds to the Java SAX call characters(char[] ch, int start, int length)."
+
 	current
 		ifNotNil: [ 
-			current blastValue: aString.
-			results addNode: current ]
+			aString withBlanksCondensed ifNotEmpty: [
+				current blastValue: aString.
+				results addNode: current ] ]
 ]
 
 { #category : #private }
@@ -21,7 +22,7 @@ BioNCBIBlastSAXParser >> estimatedResultSize [
 	^ 500
 ]
 
-{ #category : #content }
+{ #category : #'handling - content' }
 BioNCBIBlastSAXParser >> resultClass [
 	" Private - See superimplementor's comment "
 	
@@ -36,7 +37,7 @@ BioNCBIBlastSAXParser >> selectNodes: aCollection [
 	selectedNodes := aCollection , BioBlastStructureNode nodes
 ]
 
-{ #category : #content }
+{ #category : #'handling - content' }
 BioNCBIBlastSAXParser >> startElement: elementName attributeList: attributeList [
 	" Private - Included because older version of the SAX parser contains this method "
 
@@ -46,7 +47,7 @@ BioNCBIBlastSAXParser >> startElement: elementName attributeList: attributeList 
 				ifNotNil: [ :arg | current addToRoot: results ] ]
 ]
 
-{ #category : #content }
+{ #category : #'handling - content' }
 BioNCBIBlastSAXParser >> startElement: elementName attributes: attributeList [
 	" Probably obsolete "
 

@@ -17,7 +17,7 @@ BioPLINKWrapper new
 Class {
 	#name : #BioPLINKWrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #defaults }

@@ -17,7 +17,7 @@ MacOS:
 Class {
 	#name : #BioACANAWrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Aligners'
 }
 
 { #category : #accessing }

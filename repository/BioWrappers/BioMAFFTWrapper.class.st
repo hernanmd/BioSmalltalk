@@ -5,7 +5,7 @@ See https://mafft.cbrc.jp/alignment/software/manual/manual.html for details
 Class {
 	#name : #BioMAFFTWrapper,
 	#superclass : #BioWrapperObject,
-	#category : #'BioWrappers-Programs'
+	#category : #'BioWrappers-Aligners'
 }
 
 { #category : #accessing }

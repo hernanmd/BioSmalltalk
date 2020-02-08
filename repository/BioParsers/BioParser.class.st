@@ -43,7 +43,7 @@ Format of database identifiers
 Class {
 	#name : #BioParser,
 	#superclass : #BioObject,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'parse-ncbi-identifiers' }
@@ -156,7 +156,7 @@ BioParser class >> saxParseNcbiXmlBlast: anObject nodes: aCollection [
 BioParser class >> saxParseNcbiXmlBlastNodes: anObject [
 	" Answer a Collection of header nodes found in anObject "
 	
-	^ BioNCBIBlastSAXParser new
+	^ BioNCBIBlastSAXParser newParser
 		selectNodes: BioNCBIBlastReader hitNodesNames;
 		parse: anObject
 ]
@@ -184,7 +184,7 @@ BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: nodes conditionBlock
 BioParser class >> saxTokenizeNcbiXmlBlastNodes: anObject [
 	" Answer a Collection of nodes found in anObject "
 	
-	^ BioNCBIBlastSAXTokenizer new
+	^ BioNCBIBlastSAXTokenizer newParser
 		selectNodes: BioNCBIBlastReader hitNodesNames;
 		parse: anObject
 ]

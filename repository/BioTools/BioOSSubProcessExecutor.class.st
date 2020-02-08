@@ -51,7 +51,7 @@ BioOSSubProcessExecutor class >> executeMonitoring: aCommandName [
 BioOSSubProcessExecutor class >> executeOSSubProcessCommand: aCommandName [
 	" Private - Execute aCommandName and answer a <String> with any output returned "
 
-	| osSubProcess teeCmd |
+	| osSubProcess |
 	
 	osSubProcess := (self classFor: self providerClass) new shellCommand: aCommandName.
 	^ osSubProcess run

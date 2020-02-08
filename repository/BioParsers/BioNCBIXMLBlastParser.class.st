@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBIXMLBlastParser,
 	#superclass : #BioXMLParser,
-	#category : 'BioParsers-XML'
+	#category : #'BioParsers-XML'
 }
 
 { #category : #'initialize-release' }
@@ -19,7 +19,7 @@ BioNCBIXMLBlastParser >> scanHits [
 
 	[ parser isEndTag: 'Hit' ]
 		whileFalse: [ 
-			( self selectedNodes includes: parser tag )
+			(self selectedNodes includes: parser tag)
 				ifTrue: [ self saveTag: parser tag value: parser text ].
 			parser next ]
 ]

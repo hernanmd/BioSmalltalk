@@ -1,7 +1,7 @@
 Class {
 	#name : #BioPLINK1Wrapper,
 	#superclass : #BioPLINKWrapper,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #examples }

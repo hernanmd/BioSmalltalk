@@ -17,7 +17,7 @@ See examples in class side methods.
 Class {
 	#name : #BioShapeIt2Wrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #accessing }

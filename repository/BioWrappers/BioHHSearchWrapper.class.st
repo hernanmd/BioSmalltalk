@@ -3,12 +3,13 @@ The HH-suite is an open-source software package for sensitive protein sequence s
 
 It contains programs that can search for similar protein sequences in protein sequence databases
 
+hhsearch 			Search an HHsearch database of HMMs with a query MSA or HMM.
 
 "
 Class {
 	#name : #BioHHSearchWrapper,
 	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Programs'
 }
 
 { #category : #accessing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioShapeIt2WrapperR727,
 	#superclass : #BioShapeIt2Wrapper,
-	#category : 'BioWrappers-Programs'
+	#category : #'BioWrappers-Popgen'
 }
 
 { #category : #programs }

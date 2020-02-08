@@ -4,9 +4,10 @@ Root superclass for all SAX parsers in BioSmalltalk.
 The catchNodes instance variable is a workaround to a StAX-like parsing feature because at the time of this writing there was no solid StAX support in Smalltalk. Indeed, a StAX parser allows to select or filter specific nodes in a XML, while SAX is commonly and thought to be used as a read-all solution. The catchNodes is a flag to enable the selection of custom nodes.
 
 Instance Variables:
-	results	<Object>
-	catchNodes	<Boolean>
+	results			<Object>
+	catchNodes		<Boolean>
 	selectedNodes	<Object>
+	current 			<Object>		Holds an object representing a node element in the XML tree. 
 "
 Class {
 	#name : #BioSAXParser,
@@ -17,8 +18,17 @@ Class {
 		'selectedNodes',
 		'current'
 	],
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
+
+{ #category : #'instance creation' }
+BioSAXParser class >> newParser [
+	" Use this special method because SAXHandler>>new was invalidated with Error exception "
+
+	^ self basicNew
+			initialize;
+			yourself
+]
 
 { #category : #'instance creation' }
 BioSAXParser class >> parse: anObject [
@@ -70,7 +80,7 @@ BioSAXParser class >> parseString: aString [
 
 { #category : #accessing }
 BioSAXParser >> catchOff [
-	" Private - Guard for activating parsing of nodes in the receiver "
+	" Private - Guard for deactivating parsing of nodes in the receiver "
 
 	catchNodes := false
 ]
@@ -112,11 +122,12 @@ BioSAXParser >> initialize [
 
 	super initialize.
 	self initializeResults.
+	self initializeSAXHandler.
 	self configuration parserLimits documentReadLimit: 100000000. " 100 Mbytes"
 	self configuration decodesCharacters: false.
 	self configuration isValidating: false.	
 	self externalEntityResolver externalSubsetReadLimit: 100000000.
-	self catchOff.	
+	self catchOff.
 ]
 
 { #category : #initialize }
@@ -124,6 +135,19 @@ BioSAXParser >> initializeResults [
 	" Private - Initialize receiver's results "
 
 	results := self resultClass new: self estimatedResultSize
+]
+
+{ #category : #initialize }
+BioSAXParser >> initializeSAXHandler [
+	" Private - Code '''COPIED''' from SAXHandler>>on: beacuse sometimes we need to setup a parser BEFORE passing aStream as required now by SAXHandler "
+
+	documentURI := nil.
+	configuration
+		ifNil: [self configuration: self configurationClass new]
+		ifNotNil: [self configuration: configuration copy].
+	hasParser := false.
+	isInContent := false.
+	isInCDataSection := false.
 ]
 
 { #category : #accessing }
@@ -136,9 +160,9 @@ BioSAXParser >> input: aString [
 BioSAXParser >> parse: anObject [
 	" Parse anObject. This is for cases where you want to set parser parameters before parsing the document #parseDocument "
 	
-	| driver |
+	"	| driver |
 
-	" driver := SAXDriver on: anObject readStream. "
+	driver := SAXDriver on: anObject readStream. "
 	" driver validating: true. "
 	" parser := self new driver: driver. "
 	self input: anObject readStream.

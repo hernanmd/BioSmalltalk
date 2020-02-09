@@ -44,15 +44,22 @@ BioBlastNode class >> allNodeWithDescriptions [
 ]
 
 { #category : #accessing }
+BioBlastNode class >> findElementNodeFor: aString [
+	" Answer an element node instance matching aString "
+
+	^ self allContentSubclasses 
+		detect: [ : cls | cls nodeNames includes: aString ] 
+		ifFound: [ : found | found new nodeName: aString  ]
+		ifNone: [ nil ]
+]
+
+{ #category : #accessing }
 BioBlastNode class >> nodeFor: aString [
-	" Answer a new instances of a subclass corresponding to aString "
+	" Answer a new instance of a subclass corresponding to element named aString "
 	
 	^ (#('Hsp' 'Hit_hsps' 'Hit') includes: aString)
 		ifTrue: [ BioBlastParentNode new nodeName: aString ]
-		ifFalse: [ 	| found |
-			(found := self allContentSubclasses detect: [ : cls | cls nodeNames includes: aString ]	ifNone: [ nil ]) isNil
-				ifFalse: [ found new nodeName: aString ]
-				ifTrue: [ nil "self error: 'Cannot find class for ' , aString asString" ] ]
+		ifFalse: [ self findElementNodeFor: aString ]
 ]
 
 { #category : #accessing }
@@ -63,15 +70,14 @@ BioBlastNode class >> nodeNames [
 
 { #category : #accessing }
 BioBlastNode class >> nodesWithDescriptions [
-	" Answer a Collection of receiver nodes with corresponding description "
+	" Answer a <Collection> of receiver nodes with corresponding description "
 	
 	| answer |
 	
 	answer := Dictionary new.
 	self nodeNames 
 		with: self nodeDescriptions 
-		do: [ : nodeName : description |
-				answer add: ( nodeName -> description ) ].
+		do: [ : nodeName : description | answer add: ( nodeName -> description ) ].
 	^ answer
 ]
 

@@ -147,7 +147,7 @@ BioParser class >> parsePhylipInterleavedProtein: aPhylipString [
 BioParser class >> saxParseNcbiXmlBlast: anObject nodes: aCollection [
 	" Answer a Collection of nodes found in anObject "
 	
-	^ BioNCBIBlastSAXParser new
+	^ BioNCBIBlastSAXParser newParser
 		selectNodes: aCollection;
 		parse: anObject
 ]
@@ -165,7 +165,7 @@ BioParser class >> saxParseNcbiXmlBlastNodes: anObject [
 BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: aBlock [
 	" Answer a Collection of nodes found in anObject "
 	
-	^ BioNCBIBlastSAXTokenizer new
+	^ BioNCBIBlastSAXTokenizer newParser
 		selectNodes: aBlock;
 		parse: anObject
 ]
@@ -174,7 +174,7 @@ BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: aBlock [
 BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: nodes conditionBlock: aBlock [
 	" Answer a Collection of nodes found in anObject "
 	
-	^ BioNCBIBlastSAXTokenizer new
+	^ BioNCBIBlastSAXTokenizer newParser
 		conditionBlock: aBlock;
 		selectNodes: nodes;
 		parse: anObject

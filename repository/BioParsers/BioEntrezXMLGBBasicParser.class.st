@@ -4,7 +4,7 @@ This is a basic parser which can parse accession, definition and sequence nodes 
 Class {
 	#name : #BioEntrezXMLGBBasicParser,
 	#superclass : #BioEntrezXMLGenBankSeqParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -29,6 +29,6 @@ BioEntrezXMLGBBasicParser >> defaultNodes [
 { #category : #accessing }
 BioEntrezXMLGBBasicParser >> endElement: elementName [
 
-	( super endElement: elementName )
+	(super endElement: elementName)
 		ifTrue: [ self results add: self eRecord. ]
 ]

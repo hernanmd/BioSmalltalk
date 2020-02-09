@@ -1,7 +1,7 @@
 Class {
 	#name : #BioEntrezXMLGBFullParser,
 	#superclass : #BioEntrezXMLGenBankSeqParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -21,6 +21,6 @@ BioEntrezXMLGBFullParser >> defaultNodes [
 { #category : #accessing }
 BioEntrezXMLGBFullParser >> endElement: elementName [
 
-	( super endElement: elementName )
+	(super endElement: elementName)
 		ifTrue: [ self results add: self eRecord. ]
 ]

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'reader'
 	],
-	#category : 'BioBlastTests-Core'
+	#category : #'BioBlastTests-Core'
 }
 
 { #category : #accessing }
@@ -22,20 +22,23 @@ BioNCBIGenBankReaderTest class >> testXMLFilesDirectoryName [
 
 { #category : #testing }
 BioNCBIGenBankReaderTest >> testAccessOffLineFilterGBSeqXML [
-
 	| gbSeqCollection |
-	gbSeqCollection := BioNCBIGenBankReader new 
-			selectGenBankRecords: [: obj | true ] 
-			from: self class testFilesDirectoryName.
-
-	self assert: (gbSeqCollection first at: 'GBAuthor' ) = 'Ferretti,L.'.
-	self assert: (gbSeqCollection first at: 'GBSeq_accession-version') =  'HQ184030.1'.
-	self assert: (gbSeqCollection last at: 'GBAuthor') = 'Bruniche-Olsen,A.'.
-	self assert: (gbSeqCollection last at: 'GBReference_journal') =  'Submitted (04-JUL-2010) Zoology, University of Tasmania, Private Bag 5, Hobart, Tasmania 7001, Australia'.
-
-
-	
-
+	gbSeqCollection := BioNCBIGenBankReader new
+		selectGenBankRecords: [ :obj | true ]
+		from: self class testFilesDirectoryName.
+	self
+		assert: (gbSeqCollection first at: 'GBAuthor')
+		equals: 'Ferretti,L.'.
+	self
+		assert: (gbSeqCollection first at: 'GBSeq_accession-version')
+		equals: 'HQ184032.1'.
+	self
+		assert: (gbSeqCollection last at: 'GBAuthor')
+		equals: 'Bruniche-Olsen,A.'.
+	self
+		assert: (gbSeqCollection last at: 'GBReference_journal')
+		equals:
+			'Submitted (04-JUL-2010) Zoology, University of Tasmania, Private Bag 5, Hobart, Tasmania 7001, Australia'
 ]
 
 { #category : #testing }
@@ -100,8 +103,8 @@ BioNCBIGenBankReaderTest >> testReadOffLineFilterGBSeqXML [
 	self deny: gbSeqCollection isEmpty.
 
 	self 
-		assert: gbSeqCollection size = 2 
-		description: 'This BioSmalltalk release include 2 GBSeq XML "records"'.
+		assert: gbSeqCollection size = 5 
+		description: 'This BioSmalltalk release include 5 GBSeq XML records in 2 files'.
 	
 	self 
 		assert: (gbSeqCollection allSatisfy: [: file | file isKindOf: Dictionary ])
@@ -131,18 +134,17 @@ BioNCBIGenBankReaderTest >> testSearchOffLineFilterGBSeqXML [
 
 { #category : #testing }
 BioNCBIGenBankReaderTest >> testSelectOffLineFilterGBSeqXML [
-
 	| gbSeqCollection |
-	
-	gbSeqCollection := BioNCBIGenBankReader new 
-			selectGenBankRecords: [: obj | ( obj at: 'GBAuthor' ) =  'Ferretti,L.' ] 
-			from: self class testFilesDirectoryName.
-
+	gbSeqCollection := BioNCBIGenBankReader new
+		selectGenBankRecords: [ :obj | (obj at: 'GBAuthor') = 'Ferretti,L.' ]
+		from: self class testFilesDirectoryName.
 	self deny: gbSeqCollection isEmpty.
-	self assert: gbSeqCollection size equals: 1.
-	self assert: (gbSeqCollection last at: 'GBAuthor') = 'Ferretti,L.'.
-	self assert: (gbSeqCollection last at: 'GBReference_journal') = 'Submitted (25-AUG-2010) Dipartimento di Genetica e Microbiologia, University of Pavia, Via Ferrata, 1, Pavia 27100, Italy'.
-
-	
-
+	self assert: gbSeqCollection size equals: 3.
+	self
+		assert: (gbSeqCollection last at: 'GBAuthor')
+		equals: 'Ferretti,L.'.
+	self
+		assert: (gbSeqCollection last at: 'GBReference_journal')
+		equals:
+			'Submitted (25-AUG-2010) Dipartimento di Genetica e Microbiologia, University of Pavia, Via Ferrata, 1, Pavia 27100, Italy'
 ]

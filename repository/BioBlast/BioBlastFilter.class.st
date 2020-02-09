@@ -8,7 +8,7 @@ It contains utility methods for easy querying of Blast filtered results. For exa
 Class {
 	#name : #BioBlastFilter,
 	#superclass : #BioFilter,
-	#category : 'BioBlast-Local'
+	#category : #'BioBlast-Local'
 }
 
 { #category : #accessing }
@@ -335,7 +335,7 @@ BioBlastFilter >> selectGenBankRecords: aBlock [
 
 { #category : #'filtering-entrez' }
 BioBlastFilter >> selectGenBankRecords: aBlock from: aDataSource [
-	" Answer a Collection of GenBank records from aDataSource satisfying condition in aBlock "
+	" Answer a <Collection> of GenBank records from aDataSource satisfying condition in aBlock "
 	
 	^ self reader 
 			selectGenBankRecords: self lastResult result

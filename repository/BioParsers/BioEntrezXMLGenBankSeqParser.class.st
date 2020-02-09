@@ -1,10 +1,13 @@
+"
+This parser checks nodes containing keyword ""GBSeq"". When found a new entrez record (eRecord) is added to the results Collection. If not found it means GBSeq is an element container, so record values are set in the current eRecord (#saveERecordValue:)
+"
 Class {
 	#name : #BioEntrezXMLGenBankSeqParser,
 	#superclass : #BioEntrezResultParser,
 	#instVars : [
 		'eRecord'
 	],
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }

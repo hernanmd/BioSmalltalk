@@ -129,7 +129,7 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 
 		spec
 			package: 'BioAffymetrix' 			with: [ spec requires: #('BioFormatters' 'BioTools' ). ];
-			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioTools-Tests' 'INIFileSupport' ). ];
+			package: 'BioArlequin' 				with: [ spec requires: #('BioTools' 'BioFormatters' 'BioSupport' 'BioTools-Tests' 'INIFile' ). ];
 			package: 'BioBenchmarks' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioBlast' 					with: [ spec requires: #('BioWrappers' 'BioParsers' 'BioEntrez' ). ];
 			package: 'BioBlastSamples' 			with: [ spec requires: #('BioToolsSamples' ). ];

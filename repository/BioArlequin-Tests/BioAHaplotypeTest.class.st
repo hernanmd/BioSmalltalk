@@ -1,11 +1,11 @@
 Class {
-	#name : #BioAHaplotypeTests,
+	#name : #BioAHaplotypeTest,
 	#superclass : #TestCase,
-	#category : 'BioArlequin-Tests'
+	#category : #'BioArlequin-Tests'
 }
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeCollection1 [
+BioAHaplotypeTest >> haplotypeCollection1 [
 
 	| haploStream haploColl |
 	
@@ -18,7 +18,7 @@ BioAHaplotypeTests >> haplotypeCollection1 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeCollection2 [
+BioAHaplotypeTest >> haplotypeCollection2 [
 
 	| haploStream haploColl |
 	
@@ -31,7 +31,7 @@ BioAHaplotypeTests >> haplotypeCollection2 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeSample1 [
+BioAHaplotypeTest >> haplotypeSample1 [
 
 	^ '               	AM_1  	1 1 0 0 1 1 1 1 1 1 1
                	AM_2  	1 1 0 0 1 1 1 1 1 1 1
@@ -51,7 +51,7 @@ BioAHaplotypeTests >> haplotypeSample1 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeSample2 [
+BioAHaplotypeTest >> haplotypeSample2 [
 
 	^ '1  1000010000100010001001100100000110
 2  1010010000100010001001100100000100
@@ -112,7 +112,7 @@ BioAHaplotypeTests >> haplotypeSample2 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeSample3 [
+BioAHaplotypeTest >> haplotypeSample3 [
 
 	^ '			1 Yap- A
 			2 Yap- B
@@ -123,7 +123,7 @@ BioAHaplotypeTests >> haplotypeSample3 [
 ]
 
 { #category : #testing }
-BioAHaplotypeTests >> haplotypeSection1 [
+BioAHaplotypeTest >> haplotypeSection1 [
 
 	^ '[[HaplotypeDefinition]]
          HaplList={
@@ -146,7 +146,7 @@ BioAHaplotypeTests >> haplotypeSection1 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> haplotypeSection2 [
+BioAHaplotypeTest >> haplotypeSection2 [
 
 	^ '[[HaplotypeDefinition]]
 
@@ -212,7 +212,7 @@ BioAHaplotypeTests >> haplotypeSection2 [
 ]
 
 { #category : #'data samples' }
-BioAHaplotypeTests >> newParserFor: haploStream [
+BioAHaplotypeTest >> newParserFor: haploStream [
 	" Answer a parser opened for haploStream  "
 
 	^ (NeoCSVReader on: haploStream) 

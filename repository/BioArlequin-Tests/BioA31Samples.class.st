@@ -1,7 +1,7 @@
 Class {
 	#name : #BioA31Samples,
 	#superclass : #Object,
-	#category : 'BioArlequin-Tests'
+	#category : #'BioArlequin-Tests'
 }
 
 { #category : #'accessing - files' }

@@ -20,7 +20,7 @@ Class {
 	#classVars : [
 		'LastVersionLoad'
 	],
-	#category : 'BaselineOfBioSmalltalk'
+	#category : #BaselineOfBioSmalltalk
 }
 
 { #category : #baselines }
@@ -200,6 +200,7 @@ BaselineOfBioSmalltalk >> baselinePopGenGroup: spec [
 		group: 'PopulationGenomics'
 		with: #(
 			'Core'
+			'BioArlequin'
 			'BioPopulation'
 			'BioHaplotypes' 
 			'BioLAMPLD')
@@ -233,7 +234,8 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioNCBITests' 
 			'BioFormatterTests' 
 			'BioClassifierTests' 
-			'BioProjectTests' )
+			'BioProjectTests'
+			'BioArlequin-Tests' )
 ]
 
 { #category : #accessing }

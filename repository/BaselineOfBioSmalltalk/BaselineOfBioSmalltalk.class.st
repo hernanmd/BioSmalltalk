@@ -137,6 +137,7 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioClassifier' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioClassifierTests' 		with: [ spec requires: #('BioTools-Tests' 'BioClassifier' ). ];
 			package: 'BioEBI' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
+			package: 'BioArlequin-Tests'		with: [ spec requires: #('BioArlequin'). ];
 			package: 'BioEntrez' 					with: [ spec requires: #('BioWrappers' 'BioParsers' ). ];
 			package: 'BioEntrezTests' 			with: [ spec requires: #('BioTools-Tests' 'BioEntrez' ). ];
 			package: 'BioFormatterTests' 		with: [ spec requires: #('BioTools-Tests' 'BioFormatters' ). ];

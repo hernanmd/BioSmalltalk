@@ -94,7 +94,8 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioBlastSamples' 
 			'BioHaplotypes' 
 			'BioBenchmarks' 
-			'BioNGS' )
+			'BioNGS'
+			'BioPlots' )
 ]
 
 { #category : #groups }

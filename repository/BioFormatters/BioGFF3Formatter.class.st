@@ -15,7 +15,7 @@ Class {
 	#instVars : [
 		'sequenceFeature'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #'instance creation' }
@@ -31,8 +31,8 @@ BioGFF3Formatter class >> fromSequenceFeature: aBioSequenceFeature [
 BioGFF3Formatter >> asString [
 	" Answer a <String> representation of the receiver "
 
-	^ String streamContents: [ : stream |
-		stream 
+	^ String streamContents: [ : outStream |
+		outStream 
 			nextPutAll: self sequenceFeature name; 
 			nextPut: self delimiter;
 			nextPutAll: self sequenceFeature sourceTag;

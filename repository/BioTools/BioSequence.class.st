@@ -17,7 +17,9 @@ Class {
 		'seq',
 		'alphabet',
 		'name',
-		'sequenceRecord'
+		'sequenceRecord',
+		'gcContent',
+		'gcSkew'
 	],
 	#category : #'BioTools-Sequences'
 }
@@ -651,6 +653,21 @@ BioSequence >> from: start to: stop do: aClosure [
 { #category : #accessing }
 BioSequence >> gcContent [
 	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
+
+	^ gcContent 
+		ifNil: [ gcContent := self gcContentCalc ]
+	
+
+]
+
+{ #category : #accessing }
+BioSequence >> gcContent: anObject [
+	gcContent := anObject
+]
+
+{ #category : #accessing }
+BioSequence >> gcContentCalc [
+	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
 	| cCount gCount |	
 	cCount := 0.
 	gCount := 0.
@@ -693,12 +710,27 @@ BioSequence >> gcSkew [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
 	
-	^ self gcSkew: 1
+	^ gcSkew
+		ifNil: [ gcSkew := self gcSkewCalc ]
 
 ]
 
 { #category : #accessing }
-BioSequence >> gcSkew: wLength [
+BioSequence >> gcSkew: anObject [
+	gcSkew := anObject
+]
+
+{ #category : #accessing }
+BioSequence >> gcSkewCalc [
+	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
+	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
+	
+	^ self gcSkewCalc: 1
+
+]
+
+{ #category : #accessing }
+BioSequence >> gcSkewCalc: wLength [
 	" Answer a <Collection> with <Float> representing ratios. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength. Answer 0.0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
 	
 	| ranges index |

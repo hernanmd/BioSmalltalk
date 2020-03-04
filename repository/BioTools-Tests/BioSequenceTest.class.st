@@ -252,6 +252,15 @@ BioSequenceTest >> testGcContent [
 
 ]
 
+{ #category : #testing }
+BioSequenceTest >> testGcContentCalc [
+
+	self assert: 'gacgatcggtattcgtag' asSequence gcContent equals: 50.0.
+
+
+
+]
+
 { #category : #'tests-accessing' }
 BioSequenceTest >> testGcSkewInt [
 

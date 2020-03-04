@@ -10,7 +10,7 @@ Class {
 	#name : #BioFastaMultiRecord,
 	#superclass : #BioNamedObject,
 	#instVars : [
-		'sequences'
+		'records'
 	],
 	#category : #'BioTools-Core'
 }
@@ -42,16 +42,16 @@ BioFastaMultiRecord >> = aFastaMultiRecord [
 	self == aFastaMultiRecord ifTrue: [ ^ true ].
 	self class = aFastaMultiRecord class ifFalse: [ ^ false ].
 	self size = aFastaMultiRecord size ifFalse: [ ^ false ] .
-	self sequences with: aFastaMultiRecord sequences do: [ : record1 : record2 |
+	self records with: aFastaMultiRecord records do: [ : record1 : record2 |
 		record1 = record2 ifFalse: [ ^ false ] ].
 	^ true
 ]
 
 { #category : #accessing }
-BioFastaMultiRecord >> addFastaRecord: aFastaRecord [
-	" Add aFastaRecord to the receiver. "
+BioFastaMultiRecord >> addFastaRecord: aBioFastaRecord [
+	" Add aBioFastaRecord to the receiver. "
 	
-	self sequences add: aFastaRecord
+	self records add: aBioFastaRecord
 ]
 
 { #category : #accessing }
@@ -93,7 +93,7 @@ BioFastaMultiRecord >> asString [
 BioFastaMultiRecord >> collect: aBlock [
 	" Evaluate aBlock with each of the receiver's fasta record as the argument. "
 	
-	^ self sequences collect: aBlock
+	^ self records collect: aBlock
 ]
 
 { #category : #accessing }
@@ -107,14 +107,14 @@ BioFastaMultiRecord >> contents [
 BioFastaMultiRecord >> do: aBlock [
 	" Evaluate aBlock with each of the receiver's fasta record as the argument "
 	
-	self sequences do: aBlock
+	self records do: aBlock
 ]
 
 { #category : #accessing }
 BioFastaMultiRecord >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 	
-	self sequences dumpToStream: aStream
+	self records dumpToStream: aStream
 ]
 
 { #category : #accessing }
@@ -135,21 +135,21 @@ BioFastaMultiRecord >> groupedBySeqLength [
 BioFastaMultiRecord >> hasGaps [
 	" Answer <true> if any of the receiver's records contains any gap "
 	
-	^ self sequences anySatisfy: #hasGaps
+	^ self records anySatisfy: #hasGaps
 ]
 
 { #category : #comparing }
 BioFastaMultiRecord >> hash [
 	" Private - hash is implemented because #= is implemented "
 
-	^ self sequences hash bitXor: self size hash
+	^ self records hash bitXor: self size hash
 ]
 
 { #category : #comparing }
 BioFastaMultiRecord >> includes: aFastaRecord [
 	" Answer whether aFastaRecord is one of the receiver's elements. "
 	
-	^ self sequences includes: aFastaRecord
+	^ self records includes: aFastaRecord
 ]
 
 { #category : #testing }
@@ -171,7 +171,7 @@ BioFastaMultiRecord >> initializeWith: aCollection [
 BioFastaMultiRecord >> isEmpty [
 	" Answer whether the receiver contains any elements. "
 	
-	^ self sequences isEmpty
+	^ self records isEmpty
 ]
 
 { #category : #testing }
@@ -185,7 +185,7 @@ BioFastaMultiRecord >> isFastaMultiRecord [
 BioFastaMultiRecord >> isSorted [
 	" Answer <true> if the receiver is sorted by sequence name "
 	
-	^ self sequences isSorted
+	^ self records isSorted
 ]
 
 { #category : #comparing }
@@ -197,7 +197,7 @@ BioFastaMultiRecord >> like: aFastaMultiRecord [
 	self 			== aFastaMultiRecord 			ifTrue: [ ^ true ].
 	self class 	= aFastaMultiRecord class 	ifFalse: [ ^ false ].
 	self size 	= aFastaMultiRecord size 	ifFalse: [ ^ false ] .
-	self sequences allSatisfy: [ : record | aFastaMultiRecord includes: record ].
+	self records allSatisfy: [ : record | aFastaMultiRecord includes: record ].
 	^ true
 ]
 
@@ -226,10 +226,15 @@ BioFastaMultiRecord >> printOn: aStream [
 
 { #category : #accessing }
 BioFastaMultiRecord >> records [
-	" Answer the receiver's <Collection> of <BioSequence> "
-	
-	^ self sequences
+	" Answer a <Collection> of <BioFastaRecord> with the receiver's sequences "
 
+	^ records
+		ifNil: [ records := OrderedCollection new ]
+]
+
+{ #category : #accessing }
+BioFastaMultiRecord >> records: anObject [
+	records := anObject
 ]
 
 { #category : #accessing }
@@ -250,7 +255,7 @@ BioFastaMultiRecord >> renameFromDictionary: aDictionary [
 BioFastaMultiRecord >> reverseComplement [
 	" Answer a copy of the receiver's sequence complemented and with element order reversed. "
 	
-	^ self class basicNew initializeWith: (self sequences collect: #reverseComplement)
+	^ self class basicNew initializeWith: (self records collect: #reverseComplement)
 
 ]
 
@@ -262,8 +267,7 @@ BioFastaMultiRecord >> select: aBlock [
 	
 	| newInstance |
 	
-	(newInstance := self class new) 
-		sequences: (self sequences select: aBlock).
+	(newInstance := self class new) records: (self records select: aBlock).
 	^ newInstance
 ]
 
@@ -271,36 +275,28 @@ BioFastaMultiRecord >> select: aBlock [
 BioFastaMultiRecord >> sequenceNames [
 	" Answer a <Collection> with receiver's sequence headers "
 	
-	^ self sequences collect: #name
+	^ self records collect: #sequenceName
 ]
 
 { #category : #accessing }
 BioFastaMultiRecord >> sequenceStrings [
 	" Answer a <Collection> with receiver's sequence strings "
 	
-	^ self sequences collect: #sequenceString
+	^ self records collect: #sequenceString
 ]
 
 { #category : #accessing }
 BioFastaMultiRecord >> sequences [
-	" Answer a <Collection> of <BioFastaRecord> with the receiver's sequences "
+	" Answer a <Collection> of <BioSequence> with the receiver's sequences "
 
-	^ sequences
-		ifNil: [ sequences := OrderedCollection new ]
-]
-
-{ #category : #accessing }
-BioFastaMultiRecord >> sequences: aCollection [
-	" Set the receiver's sequences to be aCollection "
-
-	sequences := aCollection
+	^ self records collect: #sequence
 ]
 
 { #category : #accessing }
 BioFastaMultiRecord >> size [
 	" Answer an <Integer> with the number of records in the receiver "
 	
-	^ self sequences size
+	^ self records size
 ]
 
 { #category : #converting }
@@ -310,6 +306,6 @@ BioFastaMultiRecord >> sort [
 	| newFastaCollection |
 	
 	newFastaCollection := self class basicNew.
-	newFastaCollection sequences: (self sequences asSortedCollection: [ : a : b | a name < b name ]).
+	newFastaCollection records: (self records asSortedCollection: [ : a : b | a name < b name ]).
 	^ newFastaCollection
 ]

@@ -114,6 +114,16 @@ BioArlequinFile >> buildHaplotypicDataFrequencyProfileTitle: aString groups: aNu
 		useLocusSeparator: 'WHITESPACE'.
 ]
 
+{ #category : #review }
+BioArlequinFile >> contents [
+	" Answer a String with receiver's output contents "
+
+	^ String streamContents: [ : s |
+			| output |
+			self writeOn: (output := WriteStream on: String new).
+			s nextPutAll: output contents ]
+]
+
 { #category : #sections }
 BioArlequinFile >> dataSection [
 	" Private - Set and answer a new data section "

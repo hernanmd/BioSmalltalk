@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'fastaRecord'
 	],
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Core'
 }
 
 { #category : #accessing }
@@ -17,26 +17,26 @@ BioFASTAParserTest >> setUp [
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseMultiFasta01 [
 
-	| seqName seqString |
+	| seqString |
 	
 	seqString := self multiFastaSeq01.
 
 	fastaRecord := BioFastaMultiRecord new.
-	fastaRecord sequences
-		add: ( BioFastaRecord named: self multiFastaSeq01Header01 sequence: self multiFastaSeq01Body01 );
-		add: ( BioFastaRecord named: self multiFastaSeq01Header02 sequence: self multiFastaSeq01Body02 ).
+	fastaRecord records
+		add: (BioFastaRecord named: self multiFastaSeq01Header01 sequence: self multiFastaSeq01Body01);
+		add: (BioFastaRecord named: self multiFastaSeq01Header02 sequence: self multiFastaSeq01Body02).
 
 	parseResult := self parserClass parseMultiFasta: self multiFastaSeq01.
-	self assert: ( parseResult isKindOf: BioFastaMultiRecord ).
+	self assert: (parseResult isKindOf: BioFastaMultiRecord).
 	self deny: parseResult sequences isEmpty.		
-	self assert: parseResult sequences size = 2.	
-	self assert: parseResult = fastaRecord.
-	self assert: parseResult sequenceNames asArray = 
-				( Array with: self multiFastaSeq01Header01 
-						with: self multiFastaSeq01Header02 ).
-	self assert: parseResult sequenceStrings asArray = 
-				( Array with: self multiFastaSeq01Body01 asCondensedString 
-						with: self multiFastaSeq01Body02 asCondensedString ).	
+	self assert: parseResult sequences size equals: 2.	
+	self assert: parseResult equals: fastaRecord.
+	self assert: parseResult sequenceNames asArray equals: 
+				(Array with: self multiFastaSeq01Header01 allButFirst 
+						with: self multiFastaSeq01Header02 allButFirst).
+	self assert: parseResult sequenceStrings asArray equals: 
+				(Array with: self multiFastaSeq01Body01 asCondensedString 
+						with: self multiFastaSeq01Body02 asCondensedString).	
 ]
 
 { #category : #'testing-builder' }
@@ -47,54 +47,54 @@ BioFASTAParserTest >> testParseMultiFasta02 [
 	seqString := self multiFastaSeq02.
 
 	fastaRecord := BioFastaMultiRecord new.
-	fastaRecord sequences
-		add: ( BioFastaRecord named: self multiFastaSeq02Header01 sequence: self multiFastaSeq02Body01 );
-		add: ( BioFastaRecord named: self multiFastaSeq02Header02 sequence: self multiFastaSeq02Body02 );
-		add: ( BioFastaRecord named: self multiFastaSeq02Header03 sequence: self multiFastaSeq02Body03 ).		
+	fastaRecord records
+		add: (BioFastaRecord named: self multiFastaSeq02Header01 sequence: self multiFastaSeq02Body01);
+		add: (BioFastaRecord named: self multiFastaSeq02Header02 sequence: self multiFastaSeq02Body02);
+		add: (BioFastaRecord named: self multiFastaSeq02Header03 sequence: self multiFastaSeq02Body03).		
 
 	parseResult := self parserClass parseMultiFasta: self multiFastaSeq02.
-	self assert: ( parseResult isKindOf: BioFastaMultiRecord ).
-	self deny: parseResult sequences isEmpty.		
-	self assert: parseResult sequences size = 3.
-	self assert: parseResult = fastaRecord.
-	self assert: parseResult sequenceNames asArray = 
-						( Array 
-							with: self multiFastaSeq02Header01 
-							with: self multiFastaSeq02Header02
-							with: self multiFastaSeq02Header03 ).
+	self assert: (parseResult isKindOf: BioFastaMultiRecord).
+	self deny: parseResult records isEmpty.		
+	self assert: parseResult records size equals: 3.
+	self assert: parseResult equals: fastaRecord.
+	self assert: parseResult sequenceNames asArray equals: 
+						(Array 
+							with: self multiFastaSeq02Header01 allButFirst
+							with: self multiFastaSeq02Header02 allButFirst
+							with: self multiFastaSeq02Header03 allButFirst).
 
-	self assert: parseResult sequenceStrings asArray = 
-						( Array 
+	self assert: parseResult sequenceStrings asArray equals: 
+						(Array 
 							with: self multiFastaSeq02Body01 asCondensedString
 							with: self multiFastaSeq02Body02 asCondensedString
-							with: self multiFastaSeq02Body03 asCondensedString ).	
+							with: self multiFastaSeq02Body03 asCondensedString).	
 ]
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseMultiFasta03 [
 
-	| seqName seqString |
+	| seqString |
 	
 	seqString := self multiFastaSeq03.
 
 	fastaRecord := BioFastaMultiRecord new.
-	fastaRecord sequences
-		add: ( BioFastaRecord named: self multiFastaSeq03Header01 sequence: self multiFastaSeq03Body01 );
-		add: ( BioFastaRecord named: self multiFastaSeq03Header02 sequence: self multiFastaSeq03Body02 ).
+	fastaRecord records
+		add: (BioFastaRecord named: self multiFastaSeq03Header01 sequence: self multiFastaSeq03Body01);
+		add: (BioFastaRecord named: self multiFastaSeq03Header02 sequence: self multiFastaSeq03Body02).
 
 	parseResult := self parserClass parseMultiFasta: self multiFastaSeq03.
-	self assert: ( parseResult isKindOf: BioFastaMultiRecord ).
-	self deny: parseResult sequences isEmpty.		
-	self assert: parseResult sequences size = 2.
-	self assert: parseResult = fastaRecord.
-	self assert: parseResult sequenceNames asArray = 
-						( Array 
-							with: self multiFastaSeq03Header01 
-							with: self multiFastaSeq03Header02 ).
-	self assert: parseResult sequenceStrings asArray = 
-						( Array 
+	self assert: (parseResult isKindOf: BioFastaMultiRecord).
+	self deny: parseResult records isEmpty.		
+	self assert: parseResult records size equals: 2.
+	self assert: parseResult equals: fastaRecord.
+	self assert: parseResult sequenceNames asArray equals: 
+						(Array 
+							with: self multiFastaSeq03Header01 allButFirst 
+							with: self multiFastaSeq03Header02 allButFirst).
+	self assert: parseResult sequenceStrings asArray equals: 
+						(Array 
 							with: self multiFastaSeq03Body01 asCondensedString
-							with: self multiFastaSeq03Body02 asCondensedString ).	
+							with: self multiFastaSeq03Body02 asCondensedString).	
 	
 ]
 

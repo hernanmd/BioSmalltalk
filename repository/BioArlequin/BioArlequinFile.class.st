@@ -1,13 +1,13 @@
 Class {
 	#name : #BioArlequinFile,
-	#superclass : #INISectionsFile,
+	#superclass : #INIFile,
 	#instVars : [
 		'dataSection',
 		'sampleKeyNumber',
 		'samplesSection',
 		'haplotypesSection'
 	],
-	#category : 'BioArlequin-Core'
+	#category : #'BioArlequin-Core'
 }
 
 { #category : #'instance creation' }

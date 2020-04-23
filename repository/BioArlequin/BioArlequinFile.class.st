@@ -181,6 +181,15 @@ BioArlequinFile >> newSamplesSection [
 	^ self newSectionNamed: BioA31SamplesSection
 ]
 
+{ #category : #review }
+BioArlequinFile >> newSectionNamed: aSectionClass [
+	" Private - Delegate naming of section a aSectionClass. Answer a new data section for aSectionClass "
+	
+	^ aSectionClass
+			named: aSectionClass notationSection 
+			on: self
+]
+
 { #category : #sections }
 BioArlequinFile >> newStructureSection [
 	" Private - Set and answer a new Structure section "

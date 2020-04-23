@@ -422,7 +422,7 @@ BioArlequinWriterTest >> testProfileContents1 [
 BioArlequinWriterTest >> testProfileContents2 [
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
-		addTitle: 'mtDNA sequences Old Type' translated;
+		addTitle: 'mtDNA sequences Old Type';
 		addSampleNumber: '1';
 		unsetGenotypicData.
 	self assert: arFile contents equals: self profileSample3.

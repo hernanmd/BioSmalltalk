@@ -1,7 +1,6 @@
 Trait {
 	#name : #BioFTPDownloader,
 	#traits : 'BioDownloader',
-	#classTraits : 'BioDownloader classTrait',
 	#category : 'BioTools-Helpers'
 }
 

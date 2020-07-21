@@ -137,10 +137,9 @@ BioSeqRecord >> description: anObject [
 
 { #category : #'accessing - sequence features' }
 BioSeqRecord >> features [
-	" Answer a <Collection> of receiver's <BioSeqFeature> "
+	" See comment in sequenceFeatures "
 
-	^ sequenceFeatures
-		ifNil: [ sequenceFeatures := self sequenceFeaturesClass new ]
+	^ self sequenceFeatures
 ]
 
 { #category : #'accessing - sequence features' }
@@ -275,6 +274,14 @@ BioSeqRecord >> sequence: aBioSequence [
 	" Set the receiver's sequence to be aBioSequence "
 
 	seq := aBioSequence
+]
+
+{ #category : #'accessing - sequence features' }
+BioSeqRecord >> sequenceFeatures [
+	" Answer the receiver's sequence features object "
+
+	^ sequenceFeatures
+		ifNil: [ sequenceFeatures := self sequenceFeaturesClass new ]
 ]
 
 { #category : #'accessing - sequence features' }

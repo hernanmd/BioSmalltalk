@@ -113,5 +113,5 @@ BioAbstractSequenceTest >> sequence: aString alphabet: anAlphabetClass [
 BioAbstractSequenceTest >> setUp [
 
 	super setUp.
-	sequence := BioSequence newWith: self sampleDnaString01
+	self sequence: (BioSequence newWith: self sampleDnaString01)
 ]

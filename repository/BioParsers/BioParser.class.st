@@ -83,6 +83,13 @@ BioParser class >> parseFasta: aFastaString [
 	^ (BioFASTABasicParser on: aFastaString) parse
 ]
 
+{ #category : #'parse-fasta' }
+BioParser class >> parseFastaFile: aFilepath [
+	" Parse aFastaString and answer a single fasta instance "
+
+	^ (BioFASTABasicParser on: aFilepath contents) parse
+]
+
 { #category : #'parse-ncbi-genbank' }
 BioParser class >> parseFlatGenBank: aGenBankString [
 	" Parse aGenBankString and answer a single fasta instance "

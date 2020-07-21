@@ -600,6 +600,24 @@ BioSequence >> defaultAlphabetClass [
 	^ BioAlphabet
 ]
 
+{ #category : #converting }
+BioSequence >> degenerateBasesAsMultibases [
+	" Answer a <String> converting the receiver's degenerate bases in IUPAC notation to non-degenerate codes in the form [G/C] for S for example "
+	
+	^ (String streamContents: [ : stream |
+			self do: [ : letter | 
+				(BioIUPACAmbiguousDNA ambiguityCodes includes: letter)
+					ifTrue: [ 
+						stream
+							nextPutAll: '[';
+							nextPutAll: ('/' join: (BioIUPACAmbiguousDNA ambiguousLettersMap keyAtValue: letter asString));
+							nextPutAll: ']' ]
+					ifFalse: [ 
+						stream
+							nextPutAll: letter asString ] ] ])
+
+]
+
 { #category : #'accessing - disambiguation' }
 BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 
@@ -671,7 +689,7 @@ BioSequence >> gcContentCalc [
 	| cCount gCount |	
 	cCount := 0.
 	gCount := 0.
-	self asString do: [ : each | 
+	self do: [ : each | 
 		each asUppercase = $C 
 			ifTrue: [ cCount := cCount + 1]
 			ifFalse: [ each asUppercase = $G 
@@ -1174,6 +1192,7 @@ BioSequence >> sequenceRecord [
 	" Answer the receiver's <BioSeqRecord> "
 
 	^ sequenceRecord
+		ifNil: [ sequenceRecord := BioSeqRecord new: self ]
 ]
 
 { #category : #'accessing - sequence record' }

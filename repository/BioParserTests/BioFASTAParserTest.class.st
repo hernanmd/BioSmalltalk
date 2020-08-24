@@ -42,7 +42,7 @@ BioFASTAParserTest >> testParseMultiFasta01 [
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseMultiFasta02 [
 
-	| seqName seqString |
+	| seqString |
 	
 	seqString := self multiFastaSeq02.
 

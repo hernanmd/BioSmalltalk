@@ -30,7 +30,7 @@ Class {
 		'positionCiphers',
 		'nameIndex'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }
@@ -84,7 +84,7 @@ BioRDFLegacyFormatter >> exportFromBLAST: hitCollection [
 	| columns |
 
 	columns := self fillDataColumnsFrom: hitCollection.
-	self needsWork.	" Adapt to take positions specified by user "
+	self flag: #needsWork.	" Adapt to take positions specified by user "
 	positionCiphers := columns last numberOfDigits.
 	self initMatrixRows: hitCollection size + positionCiphers + 1
 		columns: columns size + 3.	" 2 spaces + 1 character for the frequency column"

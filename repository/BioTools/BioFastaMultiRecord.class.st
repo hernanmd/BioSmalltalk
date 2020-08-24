@@ -138,6 +138,15 @@ BioFastaMultiRecord >> hasGaps [
 	^ self records anySatisfy: #hasGaps
 ]
 
+{ #category : #testing }
+BioFastaMultiRecord >> hasSameLength [
+	" Answer <true> if all sequences in the receiver has the same size "
+	
+	| seqSize |
+	seqSize := self sequences anyOne size.
+	^ self sequences allSatisfy: [ : each | each size = seqSize ]
+]
+
 { #category : #comparing }
 BioFastaMultiRecord >> hash [
 	" Private - hash is implemented because #= is implemented "

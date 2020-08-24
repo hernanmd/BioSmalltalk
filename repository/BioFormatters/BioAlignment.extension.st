@@ -6,7 +6,7 @@ BioAlignment >> asPhylip [
 	
 	^ BioPhylip new
 		numberOfTaxa: self size;
-		numberOfCharacters: self numberOfCharacters;
+		numberOfCharacters: self numberOfBases;
 		sequences: self sequences;
 		yourself
 ]

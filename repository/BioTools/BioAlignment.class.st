@@ -161,12 +161,26 @@ BioAlignment >> atAlignments: alignInterval [
 ]
 
 { #category : #accessing }
-BioAlignment >> atColumn: aColumnNumber [
-	" Answer a Collection with the receiver's sequences at aColumnNumber position "
+BioAlignment >> atColumn: aColumnSpec [
+	" Answer a <BioSequence> with the receiver's sequences at aColumnSpec position(s) "
 	
-	^ (aColumnNumber between: 1 and: self alignMaxSize)
-		ifTrue: [ (set collect: [ : seq | seq at: aColumnNumber ]) joinUsing: String empty ]
-		ifFalse: [ self signalInvalidObject: aColumnNumber asString , ' is out of range in the receiver''s sequences' ]
+	^ BioSequence newWith: (aColumnSpec atColumnFromBioAlignment: self)
+]
+
+{ #category : #accessing }
+BioAlignment >> atColumns: aColumnRangeSpec [
+	" Answer a <String> with the receiver's sequences at aColumnSpec position(s) "
+	
+	^ aColumnRangeSpec atColumnFromBioAlignment: self
+]
+
+{ #category : #enumerating }
+BioAlignment >> collect: aBlock [ 
+	" Evaluate aBlock with each of the receiver's elements as the argument.  
+	Collect the resulting values into a collection like the receiver. Answer  
+	the new collection."
+
+	^ set collect: aBlock
 ]
 
 { #category : #accessing }
@@ -175,18 +189,18 @@ BioAlignment >> consensus [
 
 	| consensusSeq |
 	
-	consensusSeq := BioMutableSeq newWith: (String new: self numberOfCharacters) alphabet: BioIUPACAmbiguousDNA.
-	1 to: self numberOfCharacters do: [ : index | consensusSeq at: index put: (self consensusAt: (self atColumn: index)) ].
+	consensusSeq := BioMutableSeq newWith: (String new: self numberOfBases) alphabet: BioIUPACAmbiguousDNA.
+	1 to: self numberOfBases do: [ : index | consensusSeq at: index put: (self consensusAt: (self atColumn: index)) ].
     ^ consensusSeq
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 BioAlignment >> consensusAt: aString [ 
 
 	^ self consensusStrategy consensusAt: aString asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 BioAlignment >> consensusStrategy [
 
 	^ consensusStrategy
@@ -263,7 +277,7 @@ BioAlignment >> longestConsecutive: aCharacter [
 ]
 
 { #category : #accessing }
-BioAlignment >> numberOfCharacters [
+BioAlignment >> numberOfBases [
 	" Answer a <Number> with the receiver's sequence size (considering all having the same size) "
 	
 	^ self sequences first size
@@ -318,7 +332,7 @@ BioAlignment >> sequences [
 	^ set
 ]
 
-{ #category : #accessing }
+{ #category : #private }
 BioAlignment >> signalAlignmentNotFound: accessionString [
 	" Private - Signal an exception "
 	

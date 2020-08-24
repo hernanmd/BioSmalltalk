@@ -100,18 +100,16 @@ BioFASTAParserTest >> testParseMultiFasta03 [
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseMultiFasta07 [
-
 	fastaRecord := BioFastaMultiRecord new
 		addFastaRecord: (BioFastaRecord named: '>Sample sequence 1' sequence: 'garkbdctymvhu');
 		addFastaRecord: (BioFastaRecord named: '>Sample sequence 2' sequence: 'ctymvhgarkbda');
 		addFastaRecord: (BioFastaRecord named: '>Sample sequence 3' sequence: 'ccccccccccga');
 		yourself.
-	parseResult := self parserClass parseMultiFasta: self multiFastaSeq07 .
+	parseResult := self parserClass parseMultiFasta: self multiFastaSeq07.
 	self assert: (parseResult isKindOf: BioFastaMultiRecord).
-	self deny: parseResult sequences isEmpty.		
-	self assert: parseResult sequences size = 3.
-	self assert: parseResult = fastaRecord.
-
+	self deny: parseResult sequences isEmpty.
+	self assert: parseResult sequences size equals: 3.
+	self assert: parseResult equals: fastaRecord
 ]
 
 { #category : #'testing-builder' }
@@ -127,36 +125,31 @@ BioFASTAParserTest >> testParseSingleFasta01 [
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseSingleFasta02 [
-
-	fastaRecord := BioFastaRecord 
-					named: self multiFastaSeq01Header01
-					sequence: self multiFastaSeq01Body01.
-
+	fastaRecord := BioFastaRecord
+		named: self multiFastaSeq01Header01
+		sequence: self multiFastaSeq01Body01.
 	parseResult := self parserClass parseFasta: self fastaSeq01.
-	self assert: ( parseResult isKindOf: BioFastaRecord ).
-	self assert: parseResult = fastaRecord.
-	self assert: parseResult name = self multiFastaSeq01Header01.
-	self assert: parseResult sequence asString = self multiFastaSeq01Body01 asCondensedString.	
-	
+	self assert: (parseResult isKindOf: BioFastaRecord).
+	self assert: parseResult equals: fastaRecord.
+	self assert: parseResult name equals: self multiFastaSeq01Header01.
+	self
+		assert: parseResult sequence asString
+		equals: self multiFastaSeq01Body01 asCondensedString
 ]
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseSingleFasta04 [
-	
 	| seqName seqString |
-	
 	seqName := '>YAL068C-7235.2170 Putative promoter sequence'.
 	seqString := 'TACGAGAATAATTTCTCATCATCCAGCTTTAACACAAAATTCGCACAGTTTTCGTTAAGAGAACTTAACATTTTCTTATGACGTAAATGAAGTTTATATATAAATTTCCTTTTTATTGGA'.
-
-	fastaRecord := BioFastaRecord 
-					named: seqName
-					sequence: seqString.
-
+	fastaRecord := BioFastaRecord named: seqName sequence: seqString.
 	parseResult := self parserClass parseFasta: self fastaSeq04.
-	self assert: ( parseResult isKindOf: BioFastaRecord ).
-	self assert: parseResult = fastaRecord.
-	self assert: parseResult name = seqName.
-	self assert: parseResult sequence asString = seqString asCondensedString.
+	self assert: (parseResult isKindOf: BioFastaRecord).
+	self assert: parseResult equals: fastaRecord.
+	self assert: parseResult name equals: seqName.
+	self
+		assert: parseResult sequence asString
+		equals: seqString asCondensedString
 ]
 
 { #category : #'testing-builder' }

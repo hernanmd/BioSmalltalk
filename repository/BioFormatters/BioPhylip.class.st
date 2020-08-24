@@ -37,7 +37,7 @@ Class {
 		'numberOfCharacters',
 		'sequences'
 	],
-	#category : 'BioFormatters-Formatters-PHYLIP'
+	#category : #'BioFormatters-Formatters-PHYLIP'
 }
 
 { #category : #accessing }
@@ -58,7 +58,7 @@ BioPhylip >> asString [
 	^ String streamContents: [ : stream |
 		stream nextPutAll: self numberOfTaxa asString;
 			space;
-			nextPutAll: self numberOfCharacters asString;
+			nextPutAll: self numberOfBases asString;
 			cr.
 		self taxonIdentifiers with: (self sequences first: self numberOfTaxa) do: [ : id : seq |
 			stream 
@@ -70,7 +70,7 @@ BioPhylip >> asString [
 ]
 
 { #category : #accessing }
-BioPhylip >> numberOfCharacters [
+BioPhylip >> numberOfBases [
 	" Answer an <Integer> with the receiver number of characters in the matrix "
 	
 	^ numberOfCharacters

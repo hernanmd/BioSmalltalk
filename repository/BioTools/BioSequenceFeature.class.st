@@ -19,7 +19,7 @@ Internal Representation and Key Implementation Points.
 "
 Class {
 	#name : #BioSequenceFeature,
-	#superclass : #BioObject,
+	#superclass : #BioNamedObject,
 	#instVars : [
 		'sequence',
 		'start',
@@ -47,7 +47,7 @@ BioSequenceFeature class >> example01 [
 		primaryTag: 'CDS';
 		sourceTag: 'genscan';
 		score: 30;
-		tag: ('Parent' -> 'Gene1');
+		addTag: 'Parent' -> 'Gene1';
 		yourself
 ]
 

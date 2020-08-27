@@ -18,13 +18,14 @@ BioNamedObjectTest >> setUp [
 
 { #category : #testing }
 BioNamedObjectTest >> testAddDuplicateName [
-
 	namedObject name: 'accessionName1'.
-	self assert: namedObject name = 'accessionName1'.
-	
-	" Add duplicated name "
-	self shouldnt:	[ namedObject addName: 'accessionName2' ] 		raise: BioDuplicatedObject.	
-	self should: 	[ namedObject addName: 'accessionName1' ] 		raise: BioDuplicatedObject.
+	self assert: namedObject name equals: 'accessionName1'.
+	self
+		shouldnt: [ namedObject addName: 'accessionName2' ]
+		raise: BioDuplicatedObject.
+	self
+		should: [ namedObject addName: 'accessionName1' ]
+		raise: BioDuplicatedObject
 ]
 
 { #category : #testing }
@@ -40,72 +41,60 @@ BioNamedObjectTest >> testAddNameRemovesNullName [
 
 { #category : #testing }
 BioNamedObjectTest >> testAddNames [
-
 	namedObject name: 'accessionName1'.
-	self assert: namedObject name = 'accessionName1'.
-	" Add a name "
-	namedObject addName: 'accessionName2'.	
+	self assert: namedObject name equals: 'accessionName1'.
+	namedObject addName: 'accessionName2'.
 	" Preserve the preferred name "
-	self assert: namedObject name = 'accessionName1'.
-	self assert: namedObject preferredName = 'accessionName1'.
-	
-	" Names were added correctly "
-	self assert: namedObject names asOrderedCollection = ( OrderedCollection with: 'accessionName1' with: 'accessionName2' ).
-	
+	self assert: namedObject name equals: 'accessionName1'.
+	self assert: namedObject preferredName equals: 'accessionName1'.
+	self
+		assert: namedObject names asOrderedCollection
+		equals: (OrderedCollection with: 'accessionName1' with: 'accessionName2')
 ]
 
 { #category : #testing }
 BioNamedObjectTest >> testAlphaName [
-
 	namedObject := BioAccession new.
-	namedObject 
+	namedObject
 		addName: '425';
 		addName: 'alpha'.
-	self assert: namedObject alphaName = 'alpha'.
-	
+	self assert: namedObject alphaName equals: 'alpha'.
 	namedObject := BioAccession new.
-	self assert: namedObject alphaName = namedObject nullName.
-
+	self assert: namedObject alphaName equals: namedObject nullName.
 	namedObject addName: String new.
-	self assert: namedObject alphaName = String empty.	
-	
+	self assert: namedObject alphaName equals: String empty
 ]
 
 { #category : #testing }
 BioNamedObjectTest >> testEmptyName [
-
 	| nullName |
-	
 	nullName := 'Unnamed ' , namedObject class name.
-	self assert: namedObject name = nullName.
-	self deny: namedObject hasName.
-
+	self assert: namedObject name equals: nullName.
+	self deny: namedObject hasName
 ]
 
 { #category : #testing }
 BioNamedObjectTest >> testName [
-
 	namedObject name: 'accessionName1'.
-	self assert: namedObject name = 'accessionName1'.
-	self assert: namedObject preferredName = 'accessionName1'.
-	self assert: namedObject names asOrderedCollection = ( OrderedCollection with: 'accessionName1' ).
-	
+	self assert: namedObject name equals: 'accessionName1'.
+	self assert: namedObject preferredName equals: 'accessionName1'.
+	self
+		assert: namedObject names asOrderedCollection
+		equals: (OrderedCollection with: 'accessionName1')
 ]
 
 { #category : #testing }
 BioNamedObjectTest >> testNumericName [
-
 	namedObject := BioAccession new.
-	namedObject 
-		addName: 'alpha';	
+	namedObject
+		addName: 'alpha';
 		addName: '425'.
-	self assert: namedObject numericName = '425'.
-
+	self assert: namedObject numericName equals: '425'.
 	namedObject := BioAccession new.
-	namedObject 
-		addName: 'alpha';	
+	namedObject
+		addName: 'alpha';
 		addName: 425.
-	self assert: namedObject numericName = 425.
+	self assert: namedObject numericName equals: 425
 ]
 
 { #category : #testing }

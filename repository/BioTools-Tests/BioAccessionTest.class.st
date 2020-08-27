@@ -6,15 +6,19 @@ Class {
 
 { #category : #testing }
 BioAccessionTest >> testAsString [
-
-	self assert: (BioAccession new 
-					name: 'AF288373';
-					version: 2;
-					yourself) asString = 'AF288373.2'.
-	self assert: (BioAccession new 
-					name: String empty;
-					yourself) asString = String empty.
-
+	self
+		assert:
+			(BioAccession new
+				name: 'AF288373';
+				version: 2;
+				yourself) asString
+		equals: 'AF288373.2'.
+	self
+		assert:
+			(BioAccession new
+				name: String empty;
+				yourself) asString
+		equals: String empty
 ]
 
 { #category : #testing }
@@ -78,36 +82,27 @@ BioAccessionTest >> testIsVersioned [
 
 { #category : #testing }
 BioAccessionTest >> testName [
-	
 	| accession |
-	
-	accession := BioAccession new 
-					name: 'AF288373';
-					version: 2;
-					yourself.
-	self assert: accession name = 'AF288373'.
-
+	accession := BioAccession new
+		name: 'AF288373';
+		version: 2;
+		yourself.
+	self assert: accession name equals: 'AF288373'.
 	accession := BioAccession new.
-	self assert: accession asString = accession nullName.
-
-
+	self assert: accession asString equals: accession nullName
 ]
 
 { #category : #testing }
 BioAccessionTest >> testVersion [
-	
 	| accession |
-	
-	accession := BioAccession new 
-					name: 'AF288373';
-					version: 2;
-					yourself.
-	self assert: accession version = 2.
-
-	accession := BioAccession new 
-					name: 'AF288373';
-					yourself.
+	accession := BioAccession new
+		name: 'AF288373';
+		version: 2;
+		yourself.
+	self assert: accession version equals: 2.
+	accession := BioAccession new
+		name: 'AF288373';
+		yourself.
 	self deny: accession isVersioned.
-	self assert: accession version isNil.
-
+	self assert: accession version isNil
 ]

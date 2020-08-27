@@ -10,6 +10,23 @@ BioSequenceTest >> alphabetClass [
 	^ BioAlphabet
 ]
 
+{ #category : #test }
+BioSequenceTest >> testAccessionName [
+
+	self sequence accessionName: 'ABC234.1'.
+	self assert: self sequence accessionName equals: 'ABC234.1'.
+]
+
+{ #category : #test }
+BioSequenceTest >> testAddSeqFeature [
+
+	| seqFeature |
+	
+	seqFeature := BioSequenceFeature example01.
+	self sequence addSeqFeature: seqFeature .
+	self assert: (self sequence sequenceFeatures includes: seqFeature).
+]
+
 { #category : #testing }
 BioSequenceTest >> testAllButFirst [
 
@@ -60,6 +77,23 @@ BioSequenceTest >> testAmbiguityCodes [
 	self deny: sequence ambiguityCodes isNil.
 	self deny: sequence ambiguityCodes isEmpty.
 	self assert: (sequence ambiguityCodes includes: $N).
+]
+
+{ #category : #test }
+BioSequenceTest >> testAminoacidNames [
+
+	self assert: (self sequence aminoacidNames bioHasEqualElements: #('Cysteine' 'Alanine' 'Glycine' 'Threonine' 'Cysteine' 'Alanine' 'Threonine' 'Glycine' 'Cysteine' 'Threonine' 'Alanine' 'Glycine')).
+]
+
+{ #category : #test }
+BioSequenceTest >> testAsFastaRecord [
+
+	| fastaRecord |
+	
+	fastaRecord := 	BioFastaRecord
+		named: self sequence name
+		sequence: self sequence asString.
+	self assert: self sequence asFastaRecord equals: fastaRecord.
 ]
 
 { #category : #testing }

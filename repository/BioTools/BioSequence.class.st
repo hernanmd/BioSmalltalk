@@ -280,8 +280,21 @@ BioSequence >> = anObject [
 		ifTrue: [ ^ true ].
 	self class = anObject class
 		ifFalse: [ ^ false ].
-	^ self asString = anObject asString 
-		and: [ alphabet = anObject alphabet ]
+	^ self asString = anObject asString and: [ alphabet = anObject alphabet ]
+]
+
+{ #category : #accessing }
+BioSequence >> accessionName [
+	" Answer a <String> representing the receiver's accession number, if available. Otherwise answer an empty string "
+	
+	^ self sequenceRecord name
+]
+
+{ #category : #accessing }
+BioSequence >> accessionName: aString [
+	" Set aString to represent the receiver's accession number "
+	
+	^ self sequenceRecord name: aString
 ]
 
 { #category : #'accessing - sequence record' }
@@ -459,8 +472,7 @@ BioSequence >> at: anInteger put: aLetter [
 
 { #category : #'accesing public - protein synthesis' }
 BioSequence >> backTranscribe [
-	" Answer a new instance of the receiver's with the receiver's sequence 
-	transcribed to its corresponding DNA, adjusting the alphabet "
+	" Answer a new instance of the receiver's with the receiver's sequence transcribed to its corresponding DNA, adjusting the alphabet "
 	
 	^ self class 
 		newWith: self backTranscription 
@@ -472,7 +484,11 @@ BioSequence >> backTranscribe [
 BioSequence >> backTranscription [ 
 	" Answer a String with the back transcription of the receiver's sequence "
 	
-	^ seq asUppercase copyReplaceAll: 'U' with: 'T'
+	| backTranscript |
+	
+	backTranscript := seq asUppercase copyReplaceAll: 'U' with: 'T'.
+	backTranscript := backTranscript copyReplaceAll: 'u' with: 't'.
+	^ backTranscript
 ]
 
 { #category : #accessing }
@@ -1055,7 +1071,6 @@ BioSequence >> mostFrequentKmerRevComp: k mismatches: d [
 
 { #category : #accessing }
 BioSequence >> name [
-	 <lint: 'Inconsistent method classification' rationale: 'Object>>name in testing' author: 'hfm'>
 
 	^ name
 

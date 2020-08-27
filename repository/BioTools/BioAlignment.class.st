@@ -68,14 +68,14 @@ BioAlignment >> alignMaxSize [
 
 { #category : #accessing }
 BioAlignment >> alignMinSize [
-	"Answer the minimum length of sequences in the alignment "
+	" Answer the minimum length of sequences in the alignment "
 	
-	^ (self sequences detectMin: [ : seq | seq size ]) size
+	^ (self sequences detectMin: #size) size
 ]
 
 { #category : #accessing }
 BioAlignment >> anyOne [ 
-	"Answer a representative sample of the receiver "
+	" Answer a <BioSequence> representative sample of the receiver "
 
 	^ set anyOne
 ]
@@ -122,12 +122,12 @@ BioAlignment >> at: anObject [
 ]
 
 { #category : #accessing }
-BioAlignment >> atAccession: accessionString [
-	" Answer a <BioSequence> identified by accessionString "
+BioAlignment >> atAccession: aBioAccession [
+	" Answer a <BioSequence> identified by aBioAccession "
 	
 	^ set 
-		detect: [ : sequence | sequence name asLowercase = accessionString asLowercase ]
-		ifNone: [ self signalAlignmentNotFound: accessionString ]
+		detect: [ : sequence | sequence accessionName name = aBioAccession name ]
+		ifNone: [ self signalAlignmentNotFound: aBioAccession name ]
 ]
 
 { #category : #accessing }
@@ -153,12 +153,12 @@ BioAlignment >> atAlignment: alignNumber [
 ]
 
 { #category : #accessing }
-BioAlignment >> atAlignments: alignInterval [
+BioAlignment >> atAlignments: anInterval [
 	" Answer a Collection with the receiver's sequences at alignNumber position "
 	
-	^ (alignInterval between: 1 and: self size)
-		ifTrue: [ self copyFrom: alignInterval first to: alignInterval last ]
-		ifFalse: [ self signalInvalidObject: alignInterval asString , ' is out of range in the receiver''s sequences' ]
+	^ (anInterval first >= 1 and: [ anInterval last <= self numberOfBases ])
+		ifTrue: [ self copyFrom: anInterval first to: anInterval last ]
+		ifFalse: [ self signalInvalidObject: anInterval asString , ' is out of range in the receiver''s sequences' ]
 ]
 
 { #category : #accessing }
@@ -173,6 +173,13 @@ BioAlignment >> atColumns: aColumnRangeSpec [
 	" Answer a <String> with the receiver's sequences at aColumnSpec position(s) "
 	
 	^ aColumnRangeSpec atColumnFromBioAlignment: self
+]
+
+{ #category : #accessing }
+BioAlignment >> beReference [
+	" Set the receiver's to be a reference alignment "
+	
+	self isReference: true.
 ]
 
 { #category : #enumerating }
@@ -242,7 +249,7 @@ BioAlignment >> do: aBlockClosure displayingProgress: aString [
 
 { #category : #accessing }
 BioAlignment >> first [
-	"Return the first element in the receiver"
+	" Return a <BioSequence> representing the first element in the receiver "
 
 	^ self at: 1
 ]
@@ -257,7 +264,7 @@ BioAlignment >> initialize [
 
 { #category : #testing }
 BioAlignment >> isEmpty [
-	"Answer whether the receiver contains any elements."
+	" Answer whether the receiver contains any elements. "
 	
 	^ set isEmpty
 ]
@@ -267,6 +274,7 @@ BioAlignment >> isReference [
 	" Answer a <Boolean> if the receiver represents a reference alignment, an usually well-annotated set of sequences "
 
 	^ isReference
+		ifNil: [ isReference := false ]
 ]
 
 { #category : #testing }
@@ -307,7 +315,10 @@ BioAlignment >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
 	super printOn: aStream.
-	aStream space.
+	aStream
+		space;
+		nextPutAll: self size between: $[ and: $];
+		space.
 	set do: [ : seq |
 		aStream 
 			cr;

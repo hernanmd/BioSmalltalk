@@ -62,120 +62,105 @@ BioAlignmentTest >> sampleAlignment04 [
 ]
 
 { #category : #testing }
-BioAlignmentTest >> testAddSequence01 [
-
-	align := self sampleAlignment01.
-	self assert: align size = 3.
-	self assert: align sequenceNames asArray = #('Alpha' 'Beta' 'Gamma').
-	self assert: align sequenceStrings asArray = #('ACTGCTAGCTAG' 'ACT-CTAGCTAG' 'ACTGCTAGATAG').
-]
-
-{ #category : #testing }
-BioAlignmentTest >> testAddSequence02 [
-
-	align := self sampleAlignment01.	
-	self assert: align size = 3.
-	self assert: (align sequenceNames bioHasEqualElements: #('Alpha' 'Beta' 'Gamma' )).
-	self assert: (align sequenceStrings bioHasEqualElements: #('ACTGCTAGCTAG' 'ACT-CTAGCTAG' 'ACTGCTAGATAG')).
-]
-
-{ #category : #testing }
-BioAlignmentTest >> testAddSequence03 [
-
-	| seqNames |
-	
-	seqNames := (1 to: 5) collect: #asString.
-	align := self sampleAlignment03.	
-	self assert: align size = 5.
-	self assert: (align sequenceNames bioHasEqualElements: seqNames).
-	self assert: (align sequenceStrings bioHasEqualElements: #('ACTGCTAGCTAG' 'ACT-CTAGCTAG' 'ACTGCTAGATAG' 'ACTGCTTGCTAG' 'ACTGCTTGATAG')).
-]
-
-{ #category : #testing }
 BioAlignmentTest >> testAtColumn [
+	align := self sampleAlignment01.
+	self assert: ((align atColumn: 2) isKindOf: BioSequence).
+	self assert: (align atColumn: 4) equals: 'G-G' asSequence.
+	self
+		should: [ align atColumn: 20000 ]
+		raise: BioErrorSpecificationObject.
+	self should: [ align atColumn: 0 ] raise: BioErrorSpecificationObject
+]
+
+{ #category : #testing }
+BioAlignmentTest >> testConsensus [
 
 	align := self sampleAlignment01.
-	
-	self assert: ( ( align atColumn: 2 ) isKindOf: String ).
-	self assert: ( align atColumn: 4 ) = 'G-G'.
-	self should: [ align atColumn: 20000 ] raise: BioErrorSpecificationObject.
-	self should: [ align atColumn: 0 ] raise: BioErrorSpecificationObject.	
-
-]
-
-{ #category : #testing }
-BioAlignmentTest >> testConsensus01 [
-
-	align := self sampleAlignment01.	
-	self assert: align consensus asString = 'ACTGCTAGCTAG'.
-
-]
-
-{ #category : #testing }
-BioAlignmentTest >> testConsensus04 [
-
-	align := self sampleAlignment04.	
-	self assert: align consensus asString = 'ACTGCTAGCTAG'.
+	self assert: align consensus asString equals: 'ACTGCTAGCTAG'.
+	align := self sampleAlignment04.
+	self assert: align consensus asString equals: 'ACTGCTAGCTAG'
 
 ]
 
 { #category : #testing }
 BioAlignmentTest >> testCopyFrom [
-
 	| set |
-	
 	align := self sampleAlignment01.
-	
-	set :=  align copyFrom: 2 to: 3.
-	self assert: ( set isKindOf: Collection ).
-	self assert: set size = 2.
-	self assert: ( set allSatisfy: [: elem | elem isKindOf: BioSequence ] ).
-	self assert: set first name = 'Beta'.
-	self assert: set second name = 'Gamma'.
-	
+	set := align copyFrom: 2 to: 3.
+	self assert: (set isKindOf: Collection).
+	self assert: set size equals: 2.
+	self assert: (set allSatisfy: [ :elem | elem isKindOf: BioSequence ]).
+	self assert: set first name equals: 'Beta'.
+	self assert: set second name equals: 'Gamma'.
 	align := self sampleAlignment02.
 	set := align copyFrom: 1 to: 4.
-	self assert: set size = 4.
-	self assert: ( set allSatisfy: [: elem | elem isKindOf: BioSequence ] ).
-	
+	self assert: set size equals: 4.
+	self assert: (set allSatisfy: [ :elem | elem isKindOf: BioSequence ]).
 	self should: [ align copyFrom: 5 to: 3 ] raise: BioException.
 	self should: [ align copyFrom: 0 to: 2 ] raise: Error.
-	self should: [ align copyFrom: (-1) to: 1 ] raise: Error.
-	
-
+	self should: [ align copyFrom: -1 to: 1 ] raise: Error
 ]
 
 { #category : #testing }
 BioAlignmentTest >> testSequenceAsFastaString [
-
 	align := self sampleAlignment01.
-	self assert: align asMultiFastaString = '>Alpha
+	self
+		assert: align asMultiFastaString
+		equals:
+			'>Alpha
 ACTGCTAGCTAG
 >Beta
 ACT-CTAGCTAG
 >Gamma
 ACTGCTAGATAG
 '
-
 ]
 
 { #category : #testing }
 BioAlignmentTest >> testSequenceAsPhylipString [
-
 	align := self sampleAlignment01.
-	self assert: align asPhylipString = '3 12
+	self
+		assert: align asPhylipString
+		equals:
+			'3 12
 Alpha     ACTGCTAGCTAG
 Beta      ACT-CTAGCTAG
 Gamma     ACTGCTAGATAG
 '
+]
+
+{ #category : #testing }
+BioAlignmentTest >> testSequenceNames [
+
+	align := self sampleAlignment01.
+	self
+		assert: align sequenceNames asArray
+		equals: #('Alpha' 'Beta' 'Gamma').
 
 ]
 
 { #category : #testing }
-BioAlignmentTest >> testSequences03 [
+BioAlignmentTest >> testSequenceStrings [
+
+	align := self sampleAlignment01.
+	self
+		assert: align sequenceStrings asArray
+		equals: #('ACTGCTAGCTAG' 'ACT-CTAGCTAG' 'ACTGCTAGATAG')
+]
+
+{ #category : #testing }
+BioAlignmentTest >> testSequences [
 
 	align := self sampleAlignment01.	
 	self assert: (align sequences isKindOf: Collection).
 	self deny: align sequences isEmpty.
+
+]
+
+{ #category : #testing }
+BioAlignmentTest >> testSize [
+
+	align := self sampleAlignment01.
+	self assert: align size equals: 3.
 
 ]

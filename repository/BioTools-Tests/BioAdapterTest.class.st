@@ -76,28 +76,21 @@ BioAdapterTest >> tearDown [
 ]
 
 { #category : #testing }
-BioAdapterTest >> test02Providers [
-
-	self adapterEngines do: [: sCls | 
-		self should: [ sCls providerClass ] raise: Error.
-		self assert: ( sCls allSubclasses allSatisfy: [: cls | cls respondsTo: #providerClass ] ).
-		self assert: ( sCls validAdapters allSatisfy: [ : cls | ( BioObject classFor: cls providerClass ) isBehavior ] ).		
-		self assert: ( sCls hasAnyProvider isKindOf: Boolean ).		
-		sCls hasAnyProvider
-			ifTrue: [	
-				self assert: ( sCls allSubclasses anySatisfy: [: cls | Smalltalk hasClassNamed: cls providerClass asString ] ) ]
-			ifFalse: [
-				self deny: ( sCls allSubclasses anySatisfy: [: cls | Smalltalk hasClassNamed: cls providerClass asString ] ) ] 
-		].
-]
-
-{ #category : #testing }
-BioAdapterTest >> test03Adapters [
+BioAdapterTest >> testAdapter [
 
 	self adapterEngines do: [: sCls | 
 		sCls validAdapters isEmpty
-			ifFalse: [ self assert: sCls adapterClass isBehavior.
-					self deny: sCls adapter isBehavior ] ].
+			ifFalse: [ self deny: sCls adapter isBehavior ] ].
+
+
+]
+
+{ #category : #testing }
+BioAdapterTest >> testAdapterClass [
+
+	self adapterEngines do: [: sCls | 
+		sCls validAdapters isEmpty
+			ifFalse: [ self assert: sCls adapterClass isBehavior ] ].
 
 
 ]
@@ -125,6 +118,17 @@ BioAdapterTest >> testProviderClass [
 	self assert: (concreteAdapters allSatisfy: [: adptClass | adptClass respondsTo: #providerClass ]).
 	self assert: (concreteAdapters allSatisfy: [: adptClass | adptClass providerClass isKindOf: Symbol ]).
 
+	self adapterEngines do: [: sCls | 
+		self should: [ sCls providerClass ] raise: Error.
+		self assert: ( sCls allSubclasses allSatisfy: [: cls | cls respondsTo: #providerClass ] ).
+		self assert: ( sCls validAdapters allSatisfy: [ : cls | ( BioObject classFor: cls providerClass ) isBehavior ] ).		
+		self assert: ( sCls hasAnyProvider isKindOf: Boolean ).		
+		sCls hasAnyProvider
+			ifTrue: [	
+				self assert: ( sCls allSubclasses anySatisfy: [: cls | Smalltalk hasClassNamed: cls providerClass asString ] ) ]
+			ifFalse: [
+				self deny: ( sCls allSubclasses anySatisfy: [: cls | Smalltalk hasClassNamed: cls providerClass asString ] ) ] 
+		].
 ]
 
 { #category : #testing }

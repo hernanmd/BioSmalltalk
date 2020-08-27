@@ -10,7 +10,8 @@ Class {
 	#superclass : #BioNamedObject,
 	#instVars : [
 		'set',
-		'consensusStrategy'
+		'consensusStrategy',
+		'isReference'
 	],
 	#category : #'BioTools-Core'
 }
@@ -185,7 +186,8 @@ BioAlignment >> collect: aBlock [
 
 { #category : #accessing }
 BioAlignment >> consensus [
-	" Consensus sequence is the calculated order of most frequent residues, either nucleotide or amino acid, found at each position in a sequence alignment. Only DNA and RNA sequences are valid "
+	" Consensus sequence is the calculated order of most frequent residues, either nucleotide or amino acid, found at each position in a sequence alignment. Only DNA and RNA sequences are valid. 
+	Answer a <BioSequence> representing the consensus sequence "
 
 	| consensusSeq |
 	
@@ -195,9 +197,11 @@ BioAlignment >> consensus [
 ]
 
 { #category : #private }
-BioAlignment >> consensusAt: aString [ 
+BioAlignment >> consensusAt: anObject [ 
+	" See comment in bioConsensusFor: "
 
-	^ self consensusStrategy consensusAt: aString asUppercase
+	^ anObject bioConsensusFor: self 
+
 ]
 
 { #category : #private }
@@ -243,7 +247,7 @@ BioAlignment >> first [
 	^ self at: 1
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioAlignment >> initialize [
 	" Private - Initialize the receiver's contents "
 
@@ -256,6 +260,20 @@ BioAlignment >> isEmpty [
 	"Answer whether the receiver contains any elements."
 	
 	^ set isEmpty
+]
+
+{ #category : #testing }
+BioAlignment >> isReference [
+	" Answer a <Boolean> if the receiver represents a reference alignment, an usually well-annotated set of sequences "
+
+	^ isReference
+]
+
+{ #category : #testing }
+BioAlignment >> isReference: aBoolean [
+	" Set aBoolean to <true> if the receiver represents a reference alignment, an usually well-annotated set of sequences "
+	
+	isReference := aBoolean
 ]
 
 { #category : #accessing }

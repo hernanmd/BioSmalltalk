@@ -476,6 +476,13 @@ BioSequence >> backTranscription [
 ]
 
 { #category : #accessing }
+BioSequence >> bioConsensusFor: aBioAlignment [ 
+	" Answer a <Character> representing a consensus base for the receiver "
+
+	^ aBioAlignment consensusStrategy consensusAt: self asString asUppercase
+]
+
+{ #category : #accessing }
 BioSequence >> buildFrequencies: k [
 	" Generates a frequency array by first initializing every element in the frequency array to zero (4k operations) and then making a single pass down receiver's sequence (approximately |sequence size| · k operations). 
 	For each k-mer Pattern that we encounter, we add 1 to the value of the frequency array corresponding to Pattern "

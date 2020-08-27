@@ -28,6 +28,19 @@ BioSequenceTest >> testAddSeqFeature [
 ]
 
 { #category : #testing }
+BioSequenceTest >> testAddToAlignment [ 
+
+	| align1 |
+	
+	align1 := BioAlignment new.
+	(BioSequence newAmbiguousDNA: 'ACAGTAGCTAGC') addToAlignment: align1.
+	
+	self assert: (align1 isKindOf: BioAlignment).
+	self deny: align1 isEmpty.
+	self assert: (align1 sequenceStrings includes: 'ACAGTAGCTAGC')
+]
+
+{ #category : #testing }
 BioSequenceTest >> testAllButFirst [
 
 	| seqWithoutFirst seqStringWithoutFirst |
@@ -55,6 +68,15 @@ BioSequenceTest >> testAllButLast [
 BioSequenceTest >> testAlphabet [
 
 	self assert: (self sequence alphabet isKindOf: BioAlphabet).
+]
+
+{ #category : #testing }
+BioSequenceTest >> testAlphabetCodes [
+
+	sequence := BioSequence newAmbiguousDNA: 'ACAGTAGCTAGC'.
+	self assert: (sequence alphabetCodes isKindOf: String).
+	self deny: sequence alphabetCodes isEmpty.
+	self assert: sequence alphabetCodes equals: 'ABCDGHKMNRSTVWY'
 ]
 
 { #category : #testing }
@@ -100,6 +122,22 @@ BioSequenceTest >> testAsFastaRecord [
 BioSequenceTest >> testAsLowercase [
 
 	self assert: (self sequence asLowercase asString allSatisfy: [: car | car isLowercase ]).	
+]
+
+{ #category : #testing }
+BioSequenceTest >> testAsMutableSequence [
+	| testSeq1 |
+	self assert: self sequence asString equals: self sampleDnaString01.
+	testSeq1 := self sequence asMutableSequence.
+	self assert: (testSeq1 isKindOf: BioMutableSeq).
+	self assert: (self sequence isKindOf: BioSequence).
+	self assert: self sequence asString equals: testSeq1 asString.
+	self deny: self sequence asString identicalTo: testSeq1 asString.
+	self deny: self sequence equals: testSeq1.
+	testSeq1 at: 1 put: $T.
+	self assert: (testSeq1 at: 1) equals: $T.
+	testSeq1 at: 2 put: $G.
+	self assert: (testSeq1 at: 2) equals: $G
 ]
 
 { #category : #testing }
@@ -226,6 +264,15 @@ BioSequenceTest >> testConcat [
 
 
 
+]
+
+{ #category : #testing }
+BioSequenceTest >> testContents [
+
+	sequence := BioSequence newAmbiguousDNA: 'ACAGTAGCTAGC'.
+	self
+		assert: sequence contents
+		equals: 'ACAGTAGCTAGC'
 ]
 
 { #category : #testing }
@@ -370,6 +417,19 @@ BioSequenceTest >> testHasAmbiguousBases [
 	self assert: seq2 hasAmbiguousBases.
 ]
 
+{ #category : #test }
+BioSequenceTest >> testHotspotRegionsLeftRight [
+
+	| seq1 hotspotRegions |
+	seq1 := BioSequence newAmbiguousDNA: 'ATAATCGGTGCCCCCGACATAGCATTCCCACGAATAAACAACATAAGCTTCTGACTCCTCCCACCATCATTCCTCCTTCTACTCGCCTCATCCACTGTAGAAGCTGGCGCTGGTACGGGTTGAACCGTATACCCACCTCTAGCAGGCAACCTAGCCCACGCCGGAGCCTCAGTGGACCTGGCTATCTTCTCACTTCACCTGGC[C/T]GGTGTCTCCTCCATCCTCGGAGCCATTAACTTCATTACCACAGCCATCAACATAAAACCCCCCGCACTCTCACAATACCAAACCCCACTTTTCGTCTGATCAGTCCTAATTACCGCCATCCTGCTCCTCCTATCACTCCCCGTCCTCGCCGCCGGCATCACAATGCTACTAACCGACCGAAACCTAAACACCACATTCTTTGA'.
+	hotspotRegions := seq1 hotspotRegionsLeft: 200 right: 200.
+	self assert: (hotspotRegions isKindOf: Collection).
+	self deny: hotspotRegions isEmpty.
+	self assert: hotspotRegions first equals: 'ATAATCGGTGCCCCCGACATAGCATTCCCACGAATAAACAACATAAGCTTCTGACTCCTCCCACCATCATTCCTCCTTCTACTCGCCTCATCCACTGTAGAAGCTGGCGCTGGTACGGGTTGAACCGTATACCCACCTCTAGCAGGCAACCTAGCCCACGCCGGAGCCTCAGTGGACCTGGCTATCTTCTCACTTCACCTGGC'.
+	self assert: hotspotRegions third equals: 'GGTGTCTCCTCCATCCTCGGAGCCATTAACTTCATTACCACAGCCATCAACATAAAACCCCCCGCACTCTCACAATACCAAACCCCACTTTTCGTCTGATCAGTCCTAATTACCGCCATCCTGCTCCTCCTATCACTCCCCGTCCTCGCCGCCGGCATCACAATGCTACTAACCGACCGAAACCTAAACACCACATTCTTTGA'.
+
+]
+
 { #category : #testing }
 BioSequenceTest >> testIsDNASequence [
 
@@ -387,6 +447,13 @@ BioSequenceTest >> testIsDNASequence [
 
 
 
+]
+
+{ #category : #test }
+BioSequenceTest >> testIsEmpty [ 
+
+	self deny: (BioSequence newAmbiguousDNA: self sampleDnaString03) isEmpty.
+	self assert: (BioSequence newAmbiguousDNA: String empty) isEmpty.
 ]
 
 { #category : #testing }

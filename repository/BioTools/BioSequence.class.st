@@ -683,6 +683,15 @@ BioSequence >> do: aClosure [
 
 ]
 
+{ #category : #copying }
+BioSequence >> findHotspots [
+	" Answer a <Collection> of the receiver's substrings tokenized by hostspots : [ ] "
+	
+	^ seq findTokens: '[]'
+
+	
+]
+
 { #category : #accessing }
 BioSequence >> from: start to: stop do: aClosure [
 	" Evaluate aBlock for all elements between start and stop (inclusive). "
@@ -826,6 +835,13 @@ BioSequence >> hash [
 
 	^ seq hash bitXor: alphabet hash
 
+]
+
+{ #category : #copying }
+BioSequence >> hotspotRegionsLeft: leftSize right: rightSize [
+	" Answer a <Collection> with the receiver's subcollections such as the left and right flanking regions of a hostpot are at least leftSize and rightSize respectively "
+
+	^ self findHotspots tripleSelect: [ : a : b : c | a size >= leftSize and: [ c size >= rightSize ] ].
 ]
 
 { #category : #accessing }

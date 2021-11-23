@@ -8,7 +8,7 @@ Class {
 		'population3Name',
 		'population3Color'
 	],
-	#category : 'BioLAMPLD-Visualization'
+	#category : #'BioLAMPLD-Visualization'
 }
 
 { #category : #private }
@@ -32,7 +32,7 @@ BioLAMPLD3WayVisualizer >> findAlleleRefCount [
 { #category : #initialization }
 BioLAMPLD3WayVisualizer >> initializeMatrix [
 
-	matrix := DhbMatrix rows: 4 columns: self snpCount.
+	matrix := PMMatrix rows: 4 columns: self snpCount.
 	matrix atAllPut: 0.
 	1 to: self snpCount do: [ : colIndex | 
 		dataPoints pairsDo: [ :hapArray1 :hapArray2 | 

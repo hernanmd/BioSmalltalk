@@ -3,26 +3,26 @@ gnl|database|identifier
 
 "
 Class {
-	#name : #BioGeneralParser,
+	#name : #BioNCBIGenericIdParser,
 	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
-BioGeneralParser class >> identifier [
+BioNCBIGenericIdParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'gnl|'
 ]
 
 { #category : #'initialize-release' }
-BioGeneralParser >> databaseParser [
+BioNCBIGenericIdParser >> databaseParser [
 
 	^ self parserForNonFastaString
 ]
 
 { #category : #'initialize-release' }
-BioGeneralParser >> initialize [
+BioNCBIGenericIdParser >> initialize [
 	" Private - See superimplementor's comment "
 
 	super initialize.

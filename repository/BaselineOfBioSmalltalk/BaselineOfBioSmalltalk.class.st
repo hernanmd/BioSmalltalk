@@ -107,6 +107,7 @@ BaselineOfBioSmalltalk >> baselineGroups: spec [
 	self baselineProjectsGroup: spec.
 	self baselineTestsGroup: spec.
 	self baselineAllGroup: spec.
+	spec group: 'default' with: #('All').
 ]
 
 { #category : #baselines }

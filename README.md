@@ -30,7 +30,6 @@ For a quick reference of the syntax, check the [Pharo Cheat Sheet](http://files.
 
 You can uncomment the specific loading group in the following expression by removing the # prepended character, and add it to the group currently uncommented. Check the installation matrix above to know about the options. The script should be evaluated inside the Pharo image. The current Pharo version 8.x is supported.
 
-[//]: # (pi)
 ```smalltalk
 EpMonitor disableDuring: [
 	Metacello new
@@ -38,46 +37,9 @@ EpMonitor disableDuring: [
 		onWarningLog;
 		repository: 'github://hernanmd/biosmalltalk/repository';
 		baseline: 'BioSmalltalk';
-		load ] 
+		load ].
 ```
-
-## Troubleshoot Install
-
-```smalltalk
-| count |
-count := 1.
-Transcript open.
-[ true ] whileTrue: [ [
-		^ Metacello new
-			baseline: 'BioSmalltalk';
-			repository: 'github://hernanmd/biosmalltalk/repository';
-			onConflictUseLoaded;
-			onWarningLog;
-			load: #('All').
-                        "load: #('Core')"
-                        "load: #('PopulationGenomics')"
-                        "load: #('Tests')"
-                        "load: #('Basic')"
-	]
-	on: IceGenericError "Failed to connect to github.com: Interrupted system call"
-	do: [ : ex |
-		MetacelloNotification signal:
-	        	String cr ,
-			ex description,
-			String cr ,
-			'RETRYING ',
-			count asString.
-		(Delay forSeconds: 2) wait.
-		ex retry
-	].
-	count := count + 1 ]
-```
-
-Please add an issue if the installation expression above does not work due to one of these exceptions:
-
-  - IceGenericError: Failed to connect to github.com: Interrupted system call.
-  - IceGenericError: SecureTransport error: connection closed via error
-  - IceGenericError: unexpected return value from ssl handshake -9806
+In case of problems check [Troubleshoot Install](./TROUBLESHOOT.md)
 
 ## Baseline String
 
@@ -121,7 +83,7 @@ If you'd like to make some changes yourself, see the following:
 
 This software is licensed under the MIT License.
 
-Copyright Hernán Morales, 2011-2021.
+Copyright Hernán Morales, 2011-2022.
 
 Permission is hereby granted, free of charge, to any person obtaining
  a copy of this software and associated documentation files (the 

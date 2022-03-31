@@ -8,7 +8,6 @@
 
 - [Description](#description)
 - [Installation](#installation)
-  - [Troubleshoot Install](#troubleshoot-install)
 - [Usage](#usage)
 - [Contribute](#contribute)
 - [License](#license)

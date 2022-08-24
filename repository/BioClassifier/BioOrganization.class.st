@@ -14,12 +14,12 @@ Class {
 		'matchedElements',
 		'feature'
 	],
-	#category : 'BioClassifier-Core'
+	#category : #'BioClassifier-Core'
 }
 
 { #category : #accessing }
 BioOrganization >> addClassification: anObject [
-	" Add anObject to the receiver's matches. Answer the receiver "
+	"Add anObject to the receiver's matches. Answer the receiver"
 
 	self classifications add: anObject
 ]
@@ -56,14 +56,14 @@ BioOrganization >> groupBy: selector [
 
 { #category : #accessing }
 BioOrganization >> matchClass [
-	" Private - Answer the container class for matched elements "
+	"Private - Answer a <Collection class> used to store matched elements"
 
 	^ OrderedCollection
 ]
 
 { #category : #printing }
 BioOrganization >> printOn: aStream [
-	" Private - See superimplementor's comment "
+	"Private - See superimplementor's comment"
 	
 	super printOn: aStream.
 	aStream
@@ -85,9 +85,9 @@ BioOrganization >> releaseClassifications [
 	matchedElements := nil
 ]
 
-{ #category : #printing }
+{ #category : #accessing }
 BioOrganization >> size [
-	" Answer how many objects had organized or classified the receiver "
+	"Answer a <Number> representing how many objects had organized or classified the receiver"
 
 	^ self classifications size
 ]

@@ -12,7 +12,7 @@ Class {
 		'querySeq',
 		'results'
 	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #private }
@@ -70,7 +70,7 @@ BioNCBIReader >> parsedContents [
 		ifFalse: [ rs ]
 ]
 
-{ #category : #private }
+{ #category : #'accessing parser' }
 BioNCBIReader >> parserClass [
 	" Answer a multi-purpose parser class. Override if necessary "
 

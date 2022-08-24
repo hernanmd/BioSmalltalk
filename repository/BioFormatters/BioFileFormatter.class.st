@@ -22,7 +22,7 @@ Class {
 		'cwd',
 		'outputFileStream'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #'instance creation' }
@@ -48,7 +48,7 @@ BioFileFormatter class >> identifier [
 
 { #category : #accessing }
 BioFileFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver. The first identifier should match with an identifier in the #formatCollection to be available for file exporting "
+	" Answer a <Collection> of identifiers of the receiver. The first identifier should match with an identifier in the #formatCollection to be available for file exporting "
 	
 	^ Array empty
 ]

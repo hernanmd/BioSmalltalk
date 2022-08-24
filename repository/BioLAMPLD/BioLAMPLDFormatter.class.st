@@ -10,7 +10,7 @@ Class {
 		'referenceAllelesFile',
 		'plinkWrapper'
 	],
-	#category : 'BioLAMPLD-Core'
+	#category : #'BioLAMPLD-Core'
 }
 
 { #category : #accessing }
@@ -77,7 +77,7 @@ BioLAMPLDFormatter class >> example4 [
 
 { #category : #accessing }
 BioLAMPLDFormatter class >> identifiers [
-	" Answer a <Collection> of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('LAMP-LD')
 ]

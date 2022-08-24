@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBIIdParserTest,
 	#superclass : #BioAbstractParserTest,
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Core'
 }
 
 { #category : #accessing }
@@ -27,9 +27,10 @@ BioNCBIIdParserTest >> testAllIdentifiers [
 	| identifiers |
 	
 	identifiers := self parserClass allIdentifiers.
-	
 	self assert: (identifiers isKindOf: Collection).
-	self assert: (identifiers hasEqualElements: #('pdb' 'bbs' 'gi' 'gnl' 'lcl' 'pat' 'pir' 'prf' 'sp' 'dbj' 'emb' 'gb' 'ref')).
+	self 
+		assertCollection: identifiers 
+		hasSameElements: #('pdb' 'bbs' 'gi' 'gnl' 'lcl' 'pat' 'pir' 'prf' 'sp' 'dbj' 'emb' 'gb' 'ref').
 ]
 
 { #category : #testing }

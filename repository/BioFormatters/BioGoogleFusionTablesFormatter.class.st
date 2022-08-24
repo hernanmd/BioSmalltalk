@@ -4,7 +4,7 @@ The Google Fusion Tables format is described here: http://www.google.com/drive/s
 Class {
 	#name : #BioGoogleFusionTablesFormatter,
 	#superclass : #BioCSVFormatter,
-	#category : 'BioFormatters-Formatters-CSV'
+	#category : #'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }
@@ -16,7 +16,7 @@ BioGoogleFusionTablesFormatter class >> description [
 
 { #category : #accessing }
 BioGoogleFusionTablesFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('Google Fusion Tables')
 ]

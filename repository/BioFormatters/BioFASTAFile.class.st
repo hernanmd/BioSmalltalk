@@ -1,20 +1,19 @@
 "
 The FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes. The format also allows for sequence names and comments to precede the sequences. The format originates from the FASTA software package, but has now become a standard in the field of bioinformatics.
 
-To create a FASTA file specify the full path string:
+To create a FASTA file specifying the full path string and access its contents:
 
+```language=Pharo
 | myFasta |
 myFasta := BioFASTAFile on: 'c:\myFiles\Test001.fasta'.
-
-To access its contents
-
 myFasta contents.
+```
 
 "
 Class {
 	#name : #BioFASTAFile,
 	#superclass : #BioFile,
-	#category : 'BioFormatters-Formatters-FASTA'
+	#category : #'BioFormatters-Formatters-FASTA'
 }
 
 { #category : #accessing }

@@ -209,6 +209,7 @@ BioFastaRecord >> hash [
 
 { #category : #accessing }
 BioFastaRecord >> identifiers [
+	"Answer a <Collection> of identifiers of the receiver"
 
 	^ identifiers
 		ifNil: [ identifiers := Dictionary new ]

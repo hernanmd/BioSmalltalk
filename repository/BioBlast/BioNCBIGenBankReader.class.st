@@ -10,7 +10,7 @@ Class {
 	#instVars : [
 		'genBankDownloader'
 	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #'instance creation' }
@@ -92,7 +92,7 @@ BioNCBIGenBankReader >> isGenBankXMLDirectory: aString [
 
 { #category : #accessing }
 BioNCBIGenBankReader >> parseCSVFileFrom: aFilename [
-	" Parse documents located at aFilename in the internal CSV format, and update the receiver's contents with the result "
+	"Parse documents located at aFilename in the internal CSV format, and update the receiver's contents with the result"
 	
 	| csvReader dictionary header answer |
 	csvReader := (NeoCSVReader on: (self openFullFileNamed: aFilename) readStream)
@@ -100,7 +100,7 @@ BioNCBIGenBankReader >> parseCSVFileFrom: aFilename [
 		yourself.
 	answer := OrderedCollection new: 3000.
 	header := csvReader readHeader reject: #isNil.
-	csvReader rowsDo:  [ : row | 
+	csvReader do:  [ : row | 
 		| rowValues |
 		(rowValues := row reject: #isNil) size = header size ifTrue: [ 
 			dictionary := Dictionary new.
@@ -115,15 +115,6 @@ BioNCBIGenBankReader >> parseFlatDocumentFrom: aDataSource [
 	" Parse documents located at aDataSource and update the receiver's contents with the result "
 	
 	self shouldBeImplemented 
-]
-
-{ #category : #accessing }
-BioNCBIGenBankReader >> parseFlatDocumentsFrom: aDataSource [
-	" Parse documents located at aDataSource and update the receiver's contents with the result "
-	
-	self contents: ((BioGBSeqCollection filesFromFlatDirectory: aDataSource) 
-			parser: self classifier parserClass;
-			parseDocuments)
 ]
 
 { #category : #accessing }

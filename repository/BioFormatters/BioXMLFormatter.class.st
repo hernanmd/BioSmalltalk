@@ -1,7 +1,7 @@
 Class {
 	#name : #BioXMLFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }
@@ -13,14 +13,14 @@ BioXMLFormatter class >> description [
 
 { #category : #accessing }
 BioXMLFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'xml'
 ]
 
 { #category : #accessing }
 BioXMLFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('XML')
 ]

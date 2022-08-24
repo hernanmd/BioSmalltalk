@@ -7,7 +7,7 @@ Class {
 		'ridParser',
 		'rtoeParser'
 	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #'accessing-get' }
@@ -53,7 +53,7 @@ BioQBlastReader >> isValid [
 	^ true
 ]
 
-{ #category : #'accessing private' }
+{ #category : #'accessing parser' }
 BioQBlastReader >> parserClass [
 	" Private - See superimplementor's comment "
 	

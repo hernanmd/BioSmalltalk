@@ -228,6 +228,29 @@ BioArlequinFile >> samplesSection [
 ]
 
 { #category : #accessing }
+BioArlequinFile >> section: sectionString [
+
+	^ (BioA31INISection classFor: sectionString) named: sectionString on: self
+]
+
+{ #category : #private }
+BioArlequinFile >> section: label at: keyString put: valueString [
+
+	^ (self ensureSectionDictionary: label)
+			at: keyString 
+			put: valueString
+]
+
+{ #category : #accessing }
+BioArlequinFile >> sectionsDo: aBlock [
+
+	self sectionDictionaries do: [ : assoc | 
+		| sectionClass |
+		sectionClass := BioA31INISection classFor: assoc key.
+		aBlock value: (sectionClass on: self label: assoc key) ]
+]
+
+{ #category : #accessing }
 BioArlequinFile >> subSectionsTopClass [
 
 	^ BioA31INISection

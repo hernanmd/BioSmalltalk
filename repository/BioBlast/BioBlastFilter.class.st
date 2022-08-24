@@ -93,14 +93,13 @@ BioBlastFilter >> alignsPositivesWithThresholdDiff: aNumber [
 { #category : #'filtering-blast-alignments' }
 BioBlastFilter >> alignsWithLengthBetween: minAlignLength and: maxAlignLength [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned between maxAlignLength and minAlignLength "
-	<userComment: 'Select hits with alignments between a given range. In the BlastOutput XML file it matches with the Hsp_align-len node. The Hsp_align-len is an integer value which contains the length of the alignment used. If there are multiple HSPs, this will answer a Number with the one with the highest alignment.'>
+	<userComment: 	'Select hits with alignments between a given range. In the BlastOutput XML file it matches with the Hsp_align-len node. The Hsp_align-len is an integer value which contains the length of the alignment used. If there are multiple HSPs, this will answer a Number with the one with the highest alignment.'>
 
 	| collection |
-	collection := self hits
-		select: [ :node | 
-			| alignSize |
-			alignSize := node selectHspAlign.
-			alignSize >= minAlignLength and: [ alignSize <= maxAlignLength ] ].
+	collection := self hits select: [ :node | 
+		              | alignSize |
+		              alignSize := node selectHspAlign.
+		              alignSize between: minAlignLength and: maxAlignLength ].
 	^ self addFilteredResultsFrom: collection
 ]
 
@@ -126,8 +125,7 @@ BioBlastFilter >> alignsWithMinLength: minAlignLength [
 
 { #category : #accessing }
 BioBlastFilter >> atHitAccession: aString [
-	" Answer the <BlastNode> in the receiver's hits matching aString accession number. 
-	See also comment in #asAccessionString "
+	" Answer the <BlastNode> in the receiver's hits matching aString accession number. 	See also comment in #asAccessionString "
 
 	^ self hits detect: [ : node | node asAccessionString = aString asAccessionStringWithoutVersion asLowercase ]
 ]

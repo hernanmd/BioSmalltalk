@@ -14,12 +14,6 @@ BioSmalltalk contains:
 Class {
 	#name : #BaselineOfBioSmalltalk,
 	#superclass : #BaselineOf,
-	#instVars : [
-		'fileRef'
-	],
-	#classVars : [
-		'LastVersionLoad'
-	],
 	#category : #BaselineOfBioSmalltalk
 }
 

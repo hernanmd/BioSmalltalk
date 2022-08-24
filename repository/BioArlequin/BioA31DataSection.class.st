@@ -1,7 +1,7 @@
 Class {
 	#name : #BioA31DataSection,
 	#superclass : #BioA31INISection,
-	#category : 'BioArlequin-Sections'
+	#category : #'BioArlequin-Sections'
 }
 
 { #category : #accessing }
@@ -13,7 +13,7 @@ BioA31DataSection class >> notation [
 
 { #category : #subsections }
 BioA31DataSection >> sampleSubsection [
-	" Answer a samples subsection object for adding and removing samples "
+	"Answer a <BioA31SamplesSection> for adding and removing samples"
 
 	^ self 
 		at: self class notation
@@ -27,7 +27,7 @@ BioA31DataSection >> sampleSubsection [
 
 { #category : #subsections }
 BioA31DataSection >> structureSubsection [
-	" Answer a samples subsection object for adding and removing samples "
+	" Answer a <BioA31StructureSection> for adding and removing samples "
 
 	^ self 
 		at: self class notation

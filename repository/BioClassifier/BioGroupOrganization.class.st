@@ -7,7 +7,7 @@ Class {
 		'strategy',
 		'elementGroupClass'
 	],
-	#category : 'BioClassifier-Core'
+	#category : #'BioClassifier-Core'
 }
 
 { #category : #'instance creation' }
@@ -72,14 +72,14 @@ BioGroupOrganization >> asBioGroupOrganization [
 
 { #category : #'accessing-output' }
 BioGroupOrganization >> classesSize [
-	" Answer how many classes <BioOrganization> the receiver contains "
+	"Answer a <Number> representing how many classes <BioOrganization> the receiver contains "
 
 	^ self contents size
 ]
 
 { #category : #'accessing-output' }
 BioGroupOrganization >> classificationsSize [
-	" Answer how many classes <BioOrganization> the receiver contains "
+	"Answer a <Number> representing how many classes <BioOrganization> the receiver contains"
 
 	^ self contents sum: #size
 ]
@@ -92,6 +92,7 @@ BioGroupOrganization >> collect: aBlockOrSymbol [
 
 { #category : #'accessing-output' }
 BioGroupOrganization >> contents [
+	"Answer a <Collection> with the contained groups in the receiver"
 
 	^ contents
 		ifNil: [ contents := self contentsClass new ]
@@ -134,7 +135,7 @@ BioGroupOrganization >> elementGroupClass: anObject [
 
 { #category : #'accessing-output' }
 BioGroupOrganization >> features [
-	" Answer the receiver contents features "
+	"Answer a <Collection> with the receiver's features"
 	
 	^ self contents collect: #feature
 ]
@@ -169,7 +170,7 @@ BioGroupOrganization >> groupFor: anObject feature: featureName [
 
 { #category : #testing }
 BioGroupOrganization >> includes: anObject [
-	"Answer whether anObject is one of the receiver's elements."
+	"Answer <true> whether anObject is one of the receiver's elements."
 	
 	^ self contents includes: anObject
 ]

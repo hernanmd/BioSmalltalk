@@ -43,7 +43,7 @@ Class {
 		'mismatches',
 		'subject'
 	],
-	#category : 'BioClassifier-Core'
+	#category : #'BioClassifier-Core'
 }
 
 { #category : #accessing }
@@ -179,14 +179,11 @@ BioClassifier >> hasClassifications [
 		or: [ self mismatches notNil and: [ self mismatches notEmpty ] ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioClassifier >> initialize [
-	" Private - Reset receiver to an initial state "
+	"Private - Reset receiver to an initial state"
 
 	super initialize.
-	matches := nil.
-	mismatches := nil.
-	subject := nil.
 	self initializeName.
 
 ]
@@ -348,7 +345,6 @@ BioClassifier >> releaseClassifications [
 	self organization releaseClassifications.
 	self mismatches: nil.
 	self matches: nil.
-	self alignments: nil
 ]
 
 { #category : #accessing }

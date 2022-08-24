@@ -22,7 +22,7 @@ Class {
 		'matrix',
 		'delimiter'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }
@@ -34,7 +34,7 @@ BioMatrixFormatter class >> description [
 
 { #category : #accessing }
 BioMatrixFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'txt'
 

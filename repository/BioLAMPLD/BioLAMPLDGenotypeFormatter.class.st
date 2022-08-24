@@ -24,7 +24,7 @@ Class {
 		'referenceAlleles',
 		'columnsToSkip'
 	],
-	#category : 'BioLAMPLD-Core'
+	#category : #'BioLAMPLD-Core'
 }
 
 { #category : #accessing }
@@ -36,14 +36,14 @@ BioLAMPLDGenotypeFormatter class >> description [
 
 { #category : #accessing }
 BioLAMPLDGenotypeFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'geno'
 ]
 
 { #category : #accessing }
 BioLAMPLDGenotypeFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('lampld')
 ]

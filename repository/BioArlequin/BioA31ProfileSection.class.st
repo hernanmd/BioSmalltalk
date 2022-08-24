@@ -6,7 +6,7 @@ Class {
 		'ArlequinFrequencies',
 		'ArlequinLocusSeparators'
 	],
-	#category : 'BioArlequin-Sections'
+	#category : #'BioArlequin-Sections'
 }
 
 { #category : #accessing }
@@ -213,7 +213,8 @@ BioA31ProfileSection >> addSampleNumber: aNumber [
 BioA31ProfileSection >> addTitle: aString [
 	" Set a value for the Title configuration "
 	
-	self at: self class titleId
+	self 
+		at: self class titleId
 		put: aString
 ]
 

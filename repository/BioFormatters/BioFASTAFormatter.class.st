@@ -6,7 +6,7 @@ Format writer for FASTA objects. See class side for examples
 Class {
 	#name : #BioFASTAFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters-FASTA'
+	#category : #'BioFormatters-Formatters-FASTA'
 }
 
 { #category : #accessing }
@@ -32,14 +32,14 @@ TAATATGCCTATGCCGCATAATTTTTATATCTTTCTCCTAACAAAACATTCGCTTGTAAA');
 
 { #category : #accessing }
 BioFASTAFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'fasta'
 ]
 
 { #category : #accessing }
 BioFASTAFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('FASTA')
 ]
@@ -50,9 +50,9 @@ BioFASTAFormatter >> dumpFeatureData: featureDictionary groupingFeature: aString
 	self stream 
 		nextPut: $>;
 		nextPutAll: (featureDictionary at: BioGBSeqCollection qualifierForAccessionWithVersion);
-		cr;
+		bioCr;
 		nextPutAll: (featureDictionary at: BioGBSeqCollection qualifierForAlignedSequence);
-		cr
+		bioCr
 ]
 
 { #category : #accessing }
@@ -80,15 +80,14 @@ BioFASTAFormatter >> exportFromBLAST: hitCollection [
 	| blastAlignLength |
 	
 	blastAlignLength := hitCollection first alignLength asNumber.
-	stream := WriteStream on: ( String new: ( hitCollection size + 1 ) * ( blastAlignLength + 1 ) ).	
+	stream := WriteStream on: (String new: (hitCollection size + 1) * (blastAlignLength + 1)).	
 	hitCollection do: [: hitNode |
 		stream 
 			nextPut: $>;
 			nextPutAll: hitNode hitDefinition;
 			cr.
-		hitNode hSequence do: [: letter |
-			stream nextPut: letter ].
-		stream cr ].
+		hitNode hSequence do: [: letter |	stream nextPut: letter ].
+		stream bioCr ].
 	
 	self dumpToFileNamed: self outputFilename contents: stream contents
 
@@ -96,15 +95,17 @@ BioFASTAFormatter >> exportFromBLAST: hitCollection [
 
 { #category : #exporting }
 BioFASTAFormatter >> exportFromIlluminaAlleleReport: aFilename [
-	" Write a time-stamped file in the receiver's format from aFilename "
+	"Write a time-stamped file in the receiver's format from aFilename"
 	
 	| fs |
 	
 	parser := self parserClass on: aFilename asFileReference readStream.
-	parser ignoreHeaderLine; delimiter: $;.
+	parser 
+		skipHeader; 
+		delimiter: $;.
 	fs := self newFileNamed: self outputFilename.
-	
-	parser rowsDo: [: row |
+
+	parser do: [: row |
 		fs 
 			nextPut: $>;
 			nextPutAll: row first;
@@ -113,9 +114,8 @@ BioFASTAFormatter >> exportFromIlluminaAlleleReport: aFilename [
 			nextPut: $|;
 			nextPutAll: row fourth;
 			cr.
-		row fifth do: [: letter | 
-			fs nextPut: letter ]
-		fs cr ].
+		row fifth do: [: letter | fs nextPut: letter ].
+		fs bioCr ].
 	fs close.
 ]
 
@@ -136,10 +136,16 @@ BioFASTAFormatter >> fileNamePrefix [
 
 { #category : #accessing }
 BioFASTAFormatter >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'fa'
 
+]
+
+{ #category : #exporting }
+BioFASTAFormatter >> parserClass [
+
+	^ NeoCSVReader 
 ]
 
 { #category : #'initialize-release' }

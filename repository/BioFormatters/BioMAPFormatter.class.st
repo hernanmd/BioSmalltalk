@@ -5,7 +5,7 @@ Reader/writer for format MAP, as described by the PLINK software.
 Class {
 	#name : #BioMAPFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }
@@ -25,7 +25,7 @@ BioMAPFormatter class >> exampleReadMAP1 [
 
 { #category : #accessing }
 BioMAPFormatter class >> formatExtension [
-	" Private - Answer a <String> corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'map'
 
@@ -33,7 +33,7 @@ BioMAPFormatter class >> formatExtension [
 
 { #category : #accessing }
 BioMAPFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('MAP')
 ]

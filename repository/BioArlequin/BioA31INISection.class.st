@@ -1,21 +1,24 @@
 "
 Abstract class for a INI file section corresponding to the Arlequin 3.1 input file format
 
-#configurationAt:		Support for getting default values and validate properties.
-						Each time a setting is read, this message is sent to get the default value.
-						Each time a setting is written, this meesage is sent to check if the value corresponding
-						that setting is valid with its specification found in the class side.
-
-Send #configurationAt: to obtain the specification at that setting
-Send #at:				to obtain the value at that setting
-
-#sectionSpecs			Specifications for validate settings
+- Send `#configurationAt:` to obtain the specification at the parameter setting.
+- Send `#at:` to obtain the value at that setting.
+- configurationAt:	Support for getting default values and validate properties.
+  - Each time a setting is read, this message is sent to get the default value.
+  - Each time a setting is written, this meesage is sent to check if the value corresponding that setting is valid with its specification found in the class side.
+- `sectionSpecs` are specifications to validate settings.
 "
 Class {
 	#name : #BioA31INISection,
 	#superclass : #INIFileSection,
-	#category : 'BioArlequin-Sections'
+	#category : #'BioArlequin-Sections'
 }
+
+{ #category : #accessing }
+BioA31INISection class >> classFor: aString [
+
+	^ self allSubclasses detect: [ : c | c matches: aString ]
+]
 
 { #category : #accessing }
 BioA31INISection class >> matches: aString [
@@ -32,18 +35,27 @@ BioA31INISection class >> notationSection [
 { #category : #accessing }
 BioA31INISection >> at: keyString [
 
-	^ self 
-		at: (keyString isVariableBinding ifTrue: [ keyString key ] ifFalse: [ keyString ])
-	 	ifAbsent: [ self error: 'No value specified for key in section' ]
+	^ self
+		  at: (self realKey: keyString)
+		  ifAbsent: [ self error: 'No value specified for key in section' ]
+]
+
+{ #category : #accessing }
+BioA31INISection >> at: keyString ifAbsentPut: aFullBlockClosure [
+
+	| realKey |
+	realKey := self realKey: keyString.
+	^ self at: realKey ifAbsent: [ 
+		  self at: realKey put: aFullBlockClosure value ]
 ]
 
 { #category : #accessing }
 BioA31INISection >> at: keyString put: valueString [
 
-	^ self iniFile 
-		section: self label 
-			at: (keyString isVariableBinding ifTrue: [ keyString key ] ifFalse: [ keyString ])
-			put: valueString
+	^ self iniFile
+		  section: self label
+		  at: (self realKey: keyString)
+		  put: valueString
 ]
 
 { #category : #accessing }
@@ -57,7 +69,16 @@ BioA31INISection >> configurationAt: aConfigurationString [
 ]
 
 { #category : #accessing }
+BioA31INISection >> realKey: keyString [
+
+	^ keyString isVariableBinding
+		  ifTrue: [ keyString key ]
+		  ifFalse: [ keyString ]
+]
+
+{ #category : #accessing }
 BioA31INISection >> sectionSpecs [
+	"Answer a <Collection> of <BioA31Spec>"
 
 	^ self class sectionSpecs
 ]
@@ -108,7 +129,7 @@ BioA31INISection >> writeOn: aStream [
 BioA31INISection >> writeQuoted: assoc on: aStream [
 
 	(self shouldQuote: assoc key)
-		ifTrue: [ aStream nextPutAll: (assoc value ifNil: [ '' ]) between: $" and: $" ]
-		ifFalse: [ aStream nextPutAll: (assoc value ifNil: [ '' ]) ].
+		ifTrue: [ aStream nextPutAll: (assoc value ifNil: [ '' ]) forArlequinValue ]
+		ifFalse: [ aStream nextPutAll: (assoc value asString ifNil: [ '' ]) ].
 	aStream nextPutTerminator
 ]

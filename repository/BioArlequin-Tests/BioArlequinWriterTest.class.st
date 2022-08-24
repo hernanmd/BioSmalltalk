@@ -159,15 +159,15 @@ BioArlequinWriterTest >> profileSample1 [
 		stream 
 			nextPutAll: '[Profile]';
 			nextPutTerminator;
-			nextPutAll: '	Title="Titulo de Prueba"';
-			nextPutTerminator;
 			nextPutAll: '	NbSamples=1';
-			nextPutTerminator;
-			nextPutAll: '	DataType=DNA';
 			nextPutTerminator;			
 			nextPutAll: '	GenotypicData=1';
 			nextPutTerminator;
+			nextPutAll: '	DataType=DNA';
+			nextPutTerminator;
 			nextPutAll: '	LocusSeparator=WHITESPACE';
+			nextPutTerminator;
+			nextPutAll: '	Title="Titulo de Prueba"';
 			nextPutTerminator ]
 
 ]
@@ -181,31 +181,31 @@ BioArlequinWriterTest >> profileSample2 [
 			nextPutTerminator;
 			nextPutAll: '	Title="Fake HLA data"';
 			nextPutTerminator;
+			nextPutAll: '	GameticPhase=0';				
+			nextPutTerminator;
 			nextPutAll: '	NbSamples=4';
 			nextPutTerminator;
 			nextPutAll: '	GenotypicData=1';
-			nextPutTerminator;
-			nextPutAll: '	GameticPhase=0';
 			nextPutTerminator ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'sections-profile' }
 BioArlequinWriterTest >> profileSample3 [
 
 	^ String streamContents: [ : stream |
 		stream 
 			nextPutAll: '[Profile]';
-			nextPutTerminator;
+			cr;
 			nextPutAll: '	Title="mtDNA sequences Old Type"';
-			nextPutTerminator;
+			cr;
 			nextPutAll: '	NbSamples=1';
-			nextPutTerminator;
+			cr;
 			nextPutAll: '	GenotypicData=0';
-			nextPutTerminator ]
+			cr ]
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #'sections-profile' }
 BioArlequinWriterTest >> profileSample4 [
 
 	^ String streamContents: [ : stream |
@@ -413,8 +413,8 @@ BioArlequinWriterTest >> testProfileContents1 [
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
 		at: 'Title' put: 'mtDNA sequences Old Type';
-		at: 'NbSamples' put: '1';
-		at: 'GenotypicData' put: '0'.
+		at: 'NbSamples' put: 1;
+		at: 'GenotypicData' put: 0.
 	self assert: arFile contents equals: self profileSample3.
 ]
 
@@ -433,7 +433,7 @@ BioArlequinWriterTest >> testProfileContents3 [
 
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
-		addTitle: 'Titulo de Prueba' translated;
+		addTitle: 'Titulo de Prueba';
 		addSampleNumber: 1;
 		addDataType: 'DNA';
 		setGenotypicData;

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioPHASECSVFormatter,
 	#superclass : #BioCSVFormatter,
-	#category : 'BioFormatters-Formatters-PHASE'
+	#category : #'BioFormatters-Formatters-PHASE'
 }
 
 { #category : #accessing }
@@ -24,7 +24,7 @@ BioPHASECSVFormatter class >> example1 [
 
 { #category : #accessing }
 BioPHASECSVFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('INP')
 ]

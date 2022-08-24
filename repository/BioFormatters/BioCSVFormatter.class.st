@@ -5,7 +5,7 @@ Abstract class for CSV format writers
 Class {
 	#name : #BioCSVFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters-CSV'
+	#category : #'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }
@@ -17,14 +17,14 @@ BioCSVFormatter class >> description [
 
 { #category : #accessing }
 BioCSVFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'csv'
 ]
 
 { #category : #accessing }
 BioCSVFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 
 	^ #('CSV' 'Comma Separated Values' 'Comma Delimited File' 'Tab Delimited File')
 ]

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioA31SamplesSection,
 	#superclass : #BioA31INISection,
-	#category : 'BioArlequin-Sections'
+	#category : #'BioArlequin-Sections'
 }
 
 { #category : #accessing }
@@ -100,16 +100,15 @@ BioA31SamplesSection >> addSamples: aBioA31SampleCollection [
 
 { #category : #accessing }
 BioA31SamplesSection >> at: keyString put: valueString [
+
 	" Specialized to support non-unique entries in a section "
 
 	| properKey |
-	
-	properKey := keyString isVariableBinding ifTrue: [ keyString key ] ifFalse: [ keyString ].
-	^ self iniFile 
-			section: self sampleKeyNumber
-			at: properKey
-			put: valueString			
-
+	properKey := self realKey: keyString.
+	^ self iniFile
+		  section: self sampleKeyNumber
+		  at: properKey
+		  put: valueString
 ]
 
 { #category : #accessing }
@@ -169,11 +168,12 @@ BioA31SamplesSection >> writeOn: aStream [
 			nextPutAll: assoc key;
 			nextPut: $=.
 		assoc value isString 
-			ifTrue: [ self writeQuoted: assoc on: aStream ]				" Value case "
+			" Value case "
+			ifTrue: [ self writeQuoted: assoc on: aStream ]
+			" Matrix case "
 			ifFalse: [ assoc value 
 						writeSamplesOn: aStream 
-						delimiter: delimiter ]								" Matrix case "
-		]
+						delimiter: delimiter ] ]
 					
 
 ]

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBIBlastUrlTest,
 	#superclass : #BioNCBITests,
-	#category : 'BioBlastTests-Core'
+	#category : #'BioBlastTests-Core'
 }
 
 { #category : #accessing }
@@ -39,6 +39,7 @@ BioNCBIBlastUrlTest >> testCompletePutUrl [
 		queryAt: 'PROGRAM' put: 'blastn';
 		queryAt: 'SERVICE' put: 'plain'.
 	
-	self assert: (BioWebClientEngine decode: url asString) =  
-		'http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Put&SERVICE=plain&PROGRAM=blastn&FILTER=L&QUERY=555&DATABASE=nr&HITLIST_SIZE=10&EXPECT=10'
+	self 
+		assert: (BioWebClientEngine decode: url asString)
+		equals: 'http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Put&DATABASE=nr&QUERY=555&HITLIST_SIZE=10&FILTER=L&EXPECT=10&PROGRAM=blastn&SERVICE=plain'
 ]

@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'url'
 	],
-	#category : 'BioEntrezTests-Core'
+	#category : #'BioEntrezTests-Core'
 }
 
 { #category : #testing }
@@ -35,14 +35,18 @@ BioEntrezUrlTest >> testCompleteUrl [
 		cmdName: 'esearch.fcgi';
 		addParameters: '&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
 
-	self assert: (BioWebClientEngine decode: url asString) equals: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?term=science[journal]+AND+breast+cancer+AND+2009[pdat]&db=nuccore'.
+	self 
+		assert: (BioWebClientEngine decode: url asString) 
+		equals: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
 		
 	url := (BioEntrezUrl fromString: self baseUrl)
 		dbName: 'nuccore';
 		cmdName: 'esearch.fcgi';
 		addParameters: 'term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
 		
-	self assert: (BioWebClientEngine decode: url asString) equals: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?term=science[journal]+AND+breast+cancer+AND+2009[pdat]&db=nuccore'.
+	self 
+		assert: (BioWebClientEngine decode: url asString) 
+		equals: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
 ]
 
 { #category : #testing }

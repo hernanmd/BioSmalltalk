@@ -15,7 +15,7 @@ Class {
 	#instVars : [
 		'features'
 	],
-	#category : 'BioFormatters-Formatters-CSV'
+	#category : #'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }
@@ -27,7 +27,7 @@ BioGBSeqCSVFormatter class >> description [
 
 { #category : #accessing }
 BioGBSeqCSVFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('GBSeqCSV')
 ]

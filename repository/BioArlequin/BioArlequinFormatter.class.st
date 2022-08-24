@@ -6,7 +6,7 @@ Writer for Arlequin Software project files.
 Class {
 	#name : #BioArlequinFormatter,
 	#superclass : #BioMatrixFormatter,
-	#category : 'BioArlequin-Core'
+	#category : #'BioArlequin-Core'
 }
 
 { #category : #accessing }
@@ -18,7 +18,7 @@ BioArlequinFormatter class >> description [
 
 { #category : #accessing }
 BioArlequinFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'arp'
 
@@ -26,7 +26,7 @@ BioArlequinFormatter class >> formatExtension [
 
 { #category : #accessing }
 BioArlequinFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	" Answer a <Collection> of identifiers of the receiver "
 	
 	^ #('Arlequin')
 ]

@@ -12,7 +12,7 @@ Class {
 	#instVars : [
 		'jobs'
 	],
-	#category : 'BioProject-Core'
+	#category : #'BioProject-Core'
 }
 
 { #category : #comparing }
@@ -105,7 +105,7 @@ BioProject >> release [
 
 { #category : #'accessing-sequences' }
 BioProject >> removeSequence: aBioSequence [
-	" Remove aBioSequence from the receiver's first job which includes aBioSequence "
+	"Remove aBioSequence from the receiver's first job which includes aBioSequence"
 
 	| jobOrNil |
 	jobOrNil := self jobs
@@ -113,7 +113,7 @@ BioProject >> removeSequence: aBioSequence [
 		ifNone: [ nil ].
 	jobOrNil
 		ifNotNil: [ :job | job removeSequence: aBioSequence ]
-		ifNil: [ BioObject signalNotFound: 'Sequence not found ' , aBioSequence greaseString ]
+		ifNil: [ BioObject signalNotFound: 'Sequence not found ' , aBioSequence asString ]
 ]
 
 { #category : #'accessing-sequences' }

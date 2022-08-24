@@ -1,7 +1,7 @@
 Class {
 	#name : #BioFlatGenBankFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }
@@ -13,14 +13,14 @@ BioFlatGenBankFormatter class >> description [
 
 { #category : #accessing }
 BioFlatGenBankFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'gb'
 ]
 
 { #category : #accessing }
 BioFlatGenBankFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('GenBank')
 ]

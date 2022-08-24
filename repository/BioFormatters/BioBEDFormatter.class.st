@@ -17,7 +17,7 @@ Class {
 		'browser',
 		'orderIndex'
 	],
-	#category : 'BioFormatters-Formatters-BED'
+	#category : #'BioFormatters-Formatters-BED'
 }
 
 { #category : #accessing }
@@ -102,7 +102,7 @@ BioBEDFormatter class >> example02 [
 
 { #category : #accessing }
 BioBEDFormatter class >> formatExtension [
-	" Private - Answer a <String> corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'bed'
 ]

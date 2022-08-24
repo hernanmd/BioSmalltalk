@@ -11,7 +11,7 @@ Class {
 		'getUrl',
 		'cmd'
 	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #accessing }
@@ -168,14 +168,13 @@ BioNCBIWebBlastWrapper >> pdb [
 
 { #category : #printing }
 BioNCBIWebBlastWrapper >> printOn: aStream [
-	" Private - See superimplementor´s comment "
-	
+	"Private - See superimplementor´s comment"
+
 	super printOn: aStream.
 	aStream
-		space;
+		<< ' [';
 		nextPutAll: getUrl asString;
-		space;
-		between: $[ -> $].
+		<< '] '
 ]
 
 { #category : #'accessing public - commands' }

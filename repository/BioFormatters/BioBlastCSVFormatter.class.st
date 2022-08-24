@@ -12,7 +12,7 @@ Class {
 	#instVars : [
 		'consensus'
 	],
-	#category : 'BioFormatters-Formatters-CSV'
+	#category : #'BioFormatters-Formatters-CSV'
 }
 
 { #category : #accessing }
@@ -24,7 +24,7 @@ BioBlastCSVFormatter class >> description [
 
 { #category : #accessing }
 BioBlastCSVFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('BlastReportCSV')
 ]

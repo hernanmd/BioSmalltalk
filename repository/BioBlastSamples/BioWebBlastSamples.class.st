@@ -11,7 +11,7 @@ and browse to the directory where the output is located.
 Class {
 	#name : #BioWebBlastSamples,
 	#superclass : #BioSamples,
-	#category : 'BioBlastSamples-Core'
+	#category : #'BioBlastSamples-Core'
 }
 
 { #category : #compiling }
@@ -22,12 +22,8 @@ BioWebBlastSamples class >> acceptsLoggingOfCompilation [
 { #category : #blast }
 BioWebBlastSamples >> blastResultsSample01 [
 
-	| xmlBlastOutput |
-	
-	xmlBlastOutput := 
-		FileStream readOnlyFileNamed: 'c:\1FNVBPN501S-Alignment.xml'.
 	^ BioNCBIBlastReader new
-		results: xmlBlastOutput;
+		results: '1FNVBPN501S-Alignment.xml' asFileReference;
 		hitNodes
 ]
 

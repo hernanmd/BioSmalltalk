@@ -1,6 +1,7 @@
 "
 The case for the following example is an output file sent by Illumina and you want to export to HaploView format by Chromosome.
 
+```language=Pharo
 | inputCol exporter |
 
 inputCol := Dictionary newFromPairs: {
@@ -27,10 +28,12 @@ inputCol := Dictionary newFromPairs: {
 	'resultChromo29.txt' . 294200 }.
 
 BioHaploViewFormatter
-	folder: 'c:\Desarrollo\IlluminaDB\'
+	folder: 'c:\IlluminaDB\'
 	newOnInputFiles: inputCol 
 	samples: #( 2734 2736 2737 2739 2744 2749 2750 2754 2762 2764 2765 2770 2777 2784 2790 2805 2810 2811 2814 2817 )
 	affectionStatuses: #(1 2 1 2 2 2 1 2 2 2 1 1 1 2 1 1 1 2 1 2).
+```
+
 "
 Class {
 	#name : #BioHaploViewFormatter,
@@ -38,7 +41,7 @@ Class {
 	#instVars : [
 		'samplesSize'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : #'BioFormatters-Formatters'
 }
 
 { #category : #accessing }

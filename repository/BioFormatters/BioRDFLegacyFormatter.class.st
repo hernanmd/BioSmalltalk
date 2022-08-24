@@ -42,7 +42,7 @@ BioRDFLegacyFormatter class >> description [
 
 { #category : #accessing }
 BioRDFLegacyFormatter class >> identifiers [
-	" Answer a Collection of identifiers of the receiver "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('Obsolete Fluxus' 'Obsolete Network')
 ]
@@ -217,7 +217,7 @@ BioRDFLegacyFormatter >> fillPosition: colIndex for: maxDigits [
 
 { #category : #accessing }
 BioRDFLegacyFormatter >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'rdf'
 

@@ -19,7 +19,7 @@ Class {
 		'matrix',
 		'iniFile'
 	],
-	#category : 'BioArlequin-Sample'
+	#category : #'BioArlequin-Sample'
 }
 
 { #category : #'instance creation' }
@@ -123,9 +123,9 @@ BioA31SampleCollection >> writeSamplesOn: aStream delimiter: aCharacter [
 
 	aStream
 		nextPut: ${;
-		nextPutAll: GRPlatform current newline.
+		bioCr.
 	self samples 
 		do: [ :smp | smp writeOn: aStream delimiter: aCharacter ] 
-		separatedBy: [ aStream nextPutAll: GRPlatform current newline ].
+		separatedBy: [ aStream bioCr ].
 	aStream nextPut: $}
 ]

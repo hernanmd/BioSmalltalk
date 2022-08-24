@@ -4,7 +4,7 @@ Class {
 	#classVars : [
 		'HaplListValues'
 	],
-	#category : 'BioArlequin-Sections'
+	#category : #'BioArlequin-Sections'
 }
 
 { #category : #private }
@@ -56,7 +56,7 @@ BioA31HaplotypeSection >> addHaplotypes: groupCollection [
 
 { #category : #private }
 BioA31HaplotypeSection >> addSampleData: aSampleCollection [
-	" Add aSampleCollection to the receiver "
+	"Add aSampleCollection to the receiver"
 
 	self iniFile 
 		section: self class notation
@@ -67,7 +67,7 @@ BioA31HaplotypeSection >> addSampleData: aSampleCollection [
 
 { #category : #'adding configurations' }
 BioA31HaplotypeSection >> addTitle: aString [
-	" Set a value for the Title configuration "
+	"Set a value for the Title configuration"
 	
 	self at: self class haplotypeListNameId put: aString
 ]

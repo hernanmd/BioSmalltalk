@@ -162,7 +162,7 @@ BioNCBIBlastReaderTest >> testAccessNode [
 	nodeContents := reader accessNode: 'Hit_def'.
 	self assert: (nodeContents isKindOf: Collection).
 	self assert: nodeContents size equals: 100.
-	self assert: (nodeContents allSatisfy: [ : str | str beginsWithSubCollection: 'Bos' ])
+	self assert: (nodeContents allSatisfy: [ : str | str beginsWith: 'Bos' ])
 
 
 ]

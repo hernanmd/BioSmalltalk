@@ -1,14 +1,14 @@
 "
-From the MEGA website: ""MEGA is an integrated tool for conducting sequence alignment, inferring phylogenetic trees, estimating divergence times, mining online databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses."".
+From the MEGA website: _""MEGA is an integrated tool for conducting sequence alignment, inferring phylogenetic trees, estimating divergence times, mining online databases, estimating rates of molecular evolution, inferring ancestral sequences, and testing evolutionary hypotheses""_
 
 This class is an exporter for the MEGA file format.
 
 MEGA Input Format may contain
 
--DNA sequence, 
--Protein sequence, 
--Evolutionary distance, 
--Phylogenetic tree data
+- DNA sequence, 
+- Protein sequence, 
+- Evolutionary distance, 
+- Phylogenetic tree data
 
  data formats for molecular sequences, distances, and phylogenetic trees separately. However, there are a number of features that are common to all MEGA data files.
  
@@ -32,7 +32,7 @@ Class {
 		'propertySetting',
 		'title'
 	],
-	#category : 'BioFormatters-Formatters-MEGA'
+	#category : #'BioFormatters-Formatters-MEGA'
 }
 
 { #category : #accessing }
@@ -89,14 +89,14 @@ BioMEGAFormatter class >> forDataTypeRNA [
 
 { #category : #accessing }
 BioMEGAFormatter class >> formatExtension [
-	" Private - Answer a String corresponding for the receiver's file output format "
+	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'meg'
 ]
 
 { #category : #accessing }
 BioMEGAFormatter class >> identifiers [
-	" See superimplementor's comment "
+	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('MEGA6')
 ]

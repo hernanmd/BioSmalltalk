@@ -19,7 +19,7 @@ Class {
 		'samplesPrefix',
 		'groupBuilder'
 	],
-	#category : 'BioArlequin-Sample'
+	#category : #'BioArlequin-Sample'
 }
 
 { #category : #accessing }
@@ -114,6 +114,8 @@ BioA31SampleParameters >> haplotypeSequences [
 
 { #category : #accessing }
 BioA31SampleParameters >> identifiers [
+	"Answer a <Collection> of identifiers of the receiver"
+
 	^ identifiers
 ]
 

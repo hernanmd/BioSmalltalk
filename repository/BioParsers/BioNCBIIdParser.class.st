@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBIIdParser,
 	#superclass : #BioNCBIAbstractParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -10,7 +10,7 @@ BioNCBIIdParser class >> allIdentifiers [
 
 	^ ((self allFinalClasses collect: #identifier) 
 		select: #isString)
-		collect: [: id | (id endsWithSubCollection: '|') 
+		collect: [: id | (id endsWith: '|') 
 			ifTrue: [ id allButLast ] 
 			ifFalse: [ id ] ]
 ]

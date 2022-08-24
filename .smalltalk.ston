@@ -2,18 +2,14 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'BioSmalltalk',
-      #directory : 'repository',
-      #onWarningLog : true,	  
-      #load : [ 'All' ],
-      #platforms : [  #pharo ]
+      #directory : 'src',
+      #platforms : [ #pharo ]
     }
   ],
   #testing : {
     #coverage : {
-       #packages : [ 'Bio*Tests' ]
-    },
-    #include : {
-       #packages : [ 'Bio*Tests' ]
+      #packages : [ 'Bio*' ],
+      #format: #lcov
     }
   }
 }

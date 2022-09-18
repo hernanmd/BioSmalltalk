@@ -13,13 +13,12 @@ Running the local versions require you have installed previously the BLAST clien
 Class {
 	#name : #BioBlastWrapper,
 	#superclass : #BioWebWrapper,
-	#category : 'BioBlast-Local'
+	#category : #'BioBlast-Local'
 }
 
 { #category : #wrappers }
 BioBlastWrapper class >> ncbi [
-	" Answer a class suitable for interfacing with the NCBI
-	version of the receiver "
+	"Answer a <Class> suitable for interfacing with the NCBI version of the receiver"
 	
 	^ BioNCBIBlastWrapper
 ]
@@ -43,4 +42,11 @@ BioBlastWrapper >> isPresent [
 	" Answer <true> if the receiver's is actually installed in the system "
 	
 	^ (self programNamed: self mainExecName) notNil
+]
+
+{ #category : #testing }
+BioBlastWrapper >> mainExecName [
+	"Answer a <String> with the name of the receiver's executable"
+	
+	self subclassResponsibility
 ]

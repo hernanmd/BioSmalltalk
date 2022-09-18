@@ -44,7 +44,7 @@ Class {
 		'propertySeparator',
 		'cwd'
 	],
-	#category : 'BioWrappers-Core'
+	#category : #'BioWrappers-Core'
 }
 
 { #category : #accessing }
@@ -396,10 +396,10 @@ BioWrapperObject >> programName: cmdString [
 
 { #category : #private }
 BioWrapperObject >> programNamed: aString [
-	" Answer a String with the full path to the receiver's binary "
+	"Answer a <String> with the full path to the receiver's binary "
 	" (self locator userBinaries / (self execNameFor: programName)) resolve "
 
-	^ "BioExecutionEngine locateProgram: ("self execNameFor: aString ")"
+	^ BioExecutionEngine locateProgram: (self execNameFor: aString)
 
 ]
 

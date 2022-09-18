@@ -14,6 +14,24 @@ Class {
 }
 
 { #category : #converting }
+BioAccession >> asFastaRecord [
+	"Retrieve the sequence identified by the receiver and answer a <BioFastaRecord> with it"
+
+	| eClient eWebEnv eResponse |
+
+	eWebEnv := BioEntrezClient new nuccore
+			term: self asString;
+			setUseHistory;
+			search.
+	eClient := BioEntrezClient new nuccore.
+	eResponse := eClient
+		webEnv: eWebEnv;
+		setFasta;
+		fetch.
+	^ eResponse result asFastaRecord 
+]
+
+{ #category : #converting }
 BioAccession >> asString [
 	" Answer a <String> that represents the receiver."
 

@@ -35,10 +35,10 @@ BioNCBIBlastClientTest >> test01InterfacesClientAccess [
 	| blastInterface |
 	blastInterface := BioBlastWrapper.
 	self assert: blastInterface wrappers isCollection.
-	self assert: blastInterface ncbi = BioNCBIBlastWrapper.
-	self assert: blastInterface ncbi local = BioNCBILocalBlastWrapper.
+	self assert: blastInterface ncbi equals: BioNCBIBlastWrapper.
+	self assert: blastInterface ncbi local equals: BioNCBILocalBlastWrapper.
 	self assert: blastInterface wu remote isNil.
-	self assert: blastInterface ncbi remote = BioNCBIWebBlastWrapper
+	self assert: blastInterface ncbi remote equals: BioNCBIWebBlastWrapper
 ]
 
 { #category : #testing }
@@ -48,7 +48,7 @@ BioNCBIBlastClientTest >> test02LatestLocalClientAccess [
 	
 	blastInterface := BioBlastWrapper.
 	
-	self assert: blastInterface ncbi local latest class = BioNCBILocalBlastPlus2224.
+	self assert: blastInterface ncbi local latest class equals: BioNCBILocalBlastPlus2224.
 	self assert: blastInterface ncbi local latest blastxPath isString.
 	self assert: blastInterface ncbi local latest blastnPath isString.
 	self assert: blastInterface ncbi local latest blastpPath isString.
@@ -67,7 +67,7 @@ BioNCBIBlastClientTest >> test02LegacyLocalClientAccess [
 	
 	blastInterface := BioBlastWrapper.
 	
-	self assert: blastInterface ncbi local legacy class = BioNCBILocalBlastLegacy2223.	
+	self assert: blastInterface ncbi local legacy class equals: BioNCBILocalBlastLegacy2223.	
 	self assert: blastInterface ncbi local legacy blastAllPath isString.
 	self assert: blastInterface ncbi local legacy bl2seqPath isString.
 	self assert: blastInterface ncbi local legacy blastClustPath isString.

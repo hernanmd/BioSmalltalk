@@ -1,12 +1,12 @@
 "
 BioIUPACDNAExtended
 
-From IUPACData.py
+Inspired from IUPACData.py
 
-#   B == 5-bromouridine
-#   D == 5,6-dihydrouridine
-#   S == thiouridine
-#   W == wyosine
+-  B == 5-bromouridine
+-  D == 5,6-dihydrouridine
+-  S == thiouridine
+-  W == wyosine
  
 "
 Class {

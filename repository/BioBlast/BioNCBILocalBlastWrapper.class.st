@@ -12,7 +12,7 @@ Both have the same version numbers, so there it is a 2.2.23 version for BLAST le
 Class {
 	#name : #BioNCBILocalBlastWrapper,
 	#superclass : #BioNCBIBlastWrapper,
-	#category : 'BioBlast-Local'
+	#category : #'BioBlast-Local'
 }
 
 { #category : #testing }
@@ -23,9 +23,9 @@ BioNCBILocalBlastWrapper class >> isLatestVersion [
 
 { #category : #'instance creation' }
 BioNCBILocalBlastWrapper class >> latest [
-	" Answer a new instance of the receiver's latest version "
+	"Answer a new instance of the receiver representing the latest version"
 	
-	^ ( self allSubclasses detect: [: cls | cls isLatestVersion ] ) new
+	^ (self allSubclasses detect: [: cls | cls isLatestVersion ]) new
 ]
 
 { #category : #'instance creation' }

@@ -1,6 +1,29 @@
 Extension { #name : #BioSequence }
 
 { #category : #'*BioPlots' }
+BioSequence >> plotBarChart [
+
+	| c menMeans lb |
+	c := RSChart new.
+	c extent: 300@200.
+	menMeans := self occurrencesOfLetters values.
+	c barHeights: menMeans.
+	c addDecoration: (RSHorizontalTick new fromNames: self occurrencesOfLetters keys).
+	c addDecoration: RSVerticalTick new integer.
+	c ylabel: 'Nucleotide frequency'.
+	c xlabel: 'Nucleotides'.
+	c title: self name.
+	c build.
+	lb := RSLegend new.
+	lb layout horizontal.
+	lb container: c canvas.
+	lb build.
+	^ c canvas
+	
+	
+]
+
+{ #category : #'*BioPlots' }
 BioSequence >> plotGcSkewInt [
 	" Plot receiver's GC skew "
 

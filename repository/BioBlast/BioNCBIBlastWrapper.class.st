@@ -5,15 +5,15 @@ A BioNCBIBlastWrapper is an abstract class for local and remote NCBI Blast wrapp
 Class {
 	#name : #BioNCBIBlastWrapper,
 	#superclass : #BioBlastWrapper,
-	#category : 'BioBlast-Local'
+	#category : #'BioBlast-Local'
 }
 
 { #category : #'instance creation' }
 BioNCBIBlastWrapper class >> local [
-	" Answer the corresponding subclass for local usage "
+	"Answer a <Class> for local BLAST usage"
 	
 	^ BioNCBILocalBlastWrapper
-	
+
 ]
 
 { #category : #'instance creation' }

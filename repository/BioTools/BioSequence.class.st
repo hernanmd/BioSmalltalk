@@ -1258,6 +1258,13 @@ BioSequence >> sizeExcludeTerminals [
 	^ count
 ]
 
+{ #category : #accessing }
+BioSequence >> splitByCodons [
+	"Answer a <Collection> with the receiver splitted at stop codons"
+	
+	^ self sequence findTokens: $*
+]
+
 { #category : #'accessing private' }
 BioSequence >> stopSymbol [
 	" Answer a terminator <Character> "
@@ -1386,14 +1393,6 @@ BioSequence >> translateWithTableId: aTableIdentifier stopSymbol: stopCharacter 
 				toStop: stopBoolean 
 				cds: cdsBoolean)
 		alphabet: BioIUPACProtein new
-
-]
-
-{ #category : #'accessing private - protein synthesis' }
-BioSequence >> translation [
-	" Answer a <String> translated from the receiver's sequence as DNA to Protein "
-	
-	^ self translator translate: seq asUppercase.
 
 ]
 

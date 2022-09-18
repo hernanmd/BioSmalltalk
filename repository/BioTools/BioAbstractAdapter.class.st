@@ -1,21 +1,25 @@
 "
-BioAbstractAdapter defines the interface and abstract behavior for Adapters in BioSmalltalk. An adapter is composed of a ""provider"" which refers to the external class (the adaptee).
+Defines the interface and abstract behavior for Adapters. An adapter is composed of a ""provider"" which refers to the external class (the adaptee). 
 
-Final subclasses are the adapters.
+# Usage
 
-Usage:  To use an adapter interface, one should never refer to the name of the final subclasses (the adapters). Instead refer to the the corresponding adapter superclass, for example, to serialize your objects, use:
+Refer to the the corresponding adapter superclass, omitting specific adapter subclasses. For example, to serialize your objects, use:
 
+```language=Pharo
 BioSerializationEngine serialize: anObject.
-
+```
 Instead of 
 
+```language=Pharo
 BioFLSerializer ...
 BioSIXXSerializer ..
+```
 
 Another example, to get the contents at an URL:
 
+```language=Pharo
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
-
+```
 "
 Class {
 	#name : #BioAbstractAdapter,
@@ -38,7 +42,7 @@ BioAbstractAdapter class >> adapter [
 
 { #category : #'accessing-adapters' }
 BioAbstractAdapter class >> adapterClass [
-	" Answer the preferred subclass for providing the receiver's services "
+	"Answer the preferred subclass for providing the receiver's services"
 	
 	^ self validAdapters 
 			detect: [ : cls | cls isPreferredAdapter ]
@@ -96,8 +100,9 @@ BioAbstractAdapter class >> providerClass [
 { #category : #testing }
 BioAbstractAdapter class >> providerIsAvailable [
 	" Answer <true> if the receiver is available in this system "
-	
-	^ (Smalltalk hasClassNamed: self providerClass asString) or: [ Smalltalk includesKey: self providerClass asSymbol ]
+
+	^ (Smalltalk hasClassNamed: self providerClass asString) or: [ 
+		  Smalltalk globals includesKey: self providerClass asSymbol ]
 ]
 
 { #category : #'accessing-adapters' }

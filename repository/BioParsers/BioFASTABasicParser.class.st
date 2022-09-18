@@ -4,7 +4,7 @@ This class is not intended to be used directly
 Class {
 	#name : #BioFASTABasicParser,
 	#superclass : #BioNCBIAbstractParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing private' }
@@ -12,7 +12,7 @@ BioFASTABasicParser >> buildFastaRecord: aCollection [
 
 	^ BioFastaRecord 
 		named: aCollection first
-		sequence: ( self seqFrom: aCollection last ) 
+		sequence: (self seqFrom: aCollection last) 
 ]
 
 { #category : #'accessing private' }

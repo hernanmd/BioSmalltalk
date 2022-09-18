@@ -13,6 +13,12 @@ Class {
 	#category : #'BioTools-Core'
 }
 
+{ #category : #accessing }
+BioObject class >> alert: aString [ 
+
+	self inform: aString.
+]
+
 { #category : #'convenience-behavior' }
 BioObject class >> allFinalClasses [
 	" Answer a <Collection> with receiver's leaf classes (classes without subclasses) "

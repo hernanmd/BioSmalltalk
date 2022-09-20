@@ -28,15 +28,17 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		spec postLoadDoIt: #'postLoad'.
 		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
-		self projectSpecForCommonUtils: spec.
-		self projectSpecForProjectFramework: spec.
-		self projectSpecForCodeGenerator: spec.
-		self projectSpecForStringExtensions: spec.
-		self projectSpecForFileDialog: spec.
-		self projectSpecForPolyMath: spec.
-		self projectSpecForINIParser: spec.
-		self projectSpecForPetitParser: spec.				
-		self projectSpecForRoassal2: spec.
+		self 
+			projectSpecForCommonUtils: spec;
+			projectSpecForDataDrameInspector: spec;
+			projectSpecForProjectFramework: spec;
+			projectSpecForCodeGenerator: spec;
+			projectSpecForStringExtensions: spec;
+			projectSpecForFileDialog: spec;
+			projectSpecForPolyMath: spec;
+			projectSpecForINIParser: spec;
+			projectSpecForPetitParser: spec;
+			projectSpecForRoassal2: spec.
 
 		self baselineOSDeps: spec.
 		self baselinePackages: spec.
@@ -300,11 +302,20 @@ BaselineOfBioSmalltalk >> projectSpecForCommonUtils: spec [
 ]
 
 { #category : #specs }
+BaselineOfBioSmalltalk >> projectSpecForDataDrameInspector: spec [
+
+	spec 
+		baseline: 'AIDataFrameInspector' 
+		with: [ spec repository: 'github://pharo-ai/data-inspector/src' ]
+
+]
+
+{ #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecForFileDialog: spec [
 
 	spec
 		baseline: 'FileDialog' 
-		with: [ spec repository: 'github://peteruhnak/file-dialog/repository' ]
+		with: [ spec repository: 'github://hernanmd/file-dialog/repository' ]
 ]
 
 { #category : #specs }
@@ -329,12 +340,12 @@ BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 
 	spec
-			project: 'PetitParser' with: [
-				spec
-					className: #ConfigurationOfPetitParser;
-					versionString: '2.0';
-					loads: #('Core' );
-					repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
+		project: 'PetitParser' with: [
+			spec
+				className: #ConfigurationOfPetitParser;
+				versionString: '2.0';
+				loads: #('Core' );
+				repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
 ]
 
 { #category : #specs }
@@ -349,12 +360,11 @@ BaselineOfBioSmalltalk >> projectSpecForPolyMath: spec [
 
 { #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecForProcessWrapper: spec [
+
 	spec 
-		configuration: 'ProcessWrapper' 
-		with: [ 
-			spec
-				versionString: #stable;
-				repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo60/main' ]
+		baseline: 'ProcessWrapper' 
+		with: [ spec repository: 'github://hernanmd/ProcessWrapper' ]
+
 ]
 
 { #category : #specs }

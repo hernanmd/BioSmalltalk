@@ -1,7 +1,7 @@
 "
-BioNCBIBlastReader is a reader over a collection of NCBI BLAST hits
+Represents a reader over a collection of NCBI BLAST hits.
 
-hspNodes		<Collection>	of High Scoring Pairs XML node names, which will be the ones ""catched"" by the receiver.
+It contains a `Collection` of _High Scoring Pairs_ XML node names, which will be the ones ""catched"" by the receiver.
 "
 Class {
 	#name : #BioNCBIBlastReader,
@@ -15,8 +15,8 @@ Class {
 
 { #category : #'accessing-nodes' }
 BioNCBIBlastReader class >> allNodeNames [
-	" Answer a Collection of Strings with all the receiver's node names "
-		
+	"Answer a <Collection> of <String> with all the receiver's node names"
+
 	^ self allNodes keys
 ]
 
@@ -309,14 +309,14 @@ BioNCBIBlastReader >> hitAccessionsAsTokens [
 
 { #category : #'accessing-blast' }
 BioNCBIBlastReader >> hitHsps [
-	" Answer a <Collection> of BioBlastNode from the receiver's results (each HSP is contained in its respective HIT node) "
+	"Answer a <Collection> of <BioBlastNode> from the receiver's results (each HSP is contained in its respective HIT node)"
 
-	^ ( self selectHspNodesIn: self results ) nodes
+	^ (self selectHspNodesIn: self results) nodes
 ]
 
 { #category : #'accessing-blast' }
 BioNCBIBlastReader >> hitHspsNodes [
-	" Answer a BioBlastNode from the receiver's results (each HSP is contained in its respective HIT node) "
+	"Answer a <BioBlastNode> from the receiver's results (each HSP is contained in its respective HIT node)"
 
 	^ self selectHspNodesIn: self results
 ]
@@ -501,6 +501,12 @@ BioNCBIBlastReader >> resultClass [
 ]
 
 { #category : #private }
+BioNCBIBlastReader >> selectAllNodes [
+
+	self selectedNodes: self class allNodeNames
+]
+
+{ #category : #private }
 BioNCBIBlastReader >> selectHeaderNodesIn: aDocumentString [
 	" Private - Answer a Collection with meta-information about the current document aDocumentStringOrLocation "
 	
@@ -509,7 +515,7 @@ BioNCBIBlastReader >> selectHeaderNodesIn: aDocumentString [
 
 { #category : #private }
 BioNCBIBlastReader >> selectHspNodesIn: anObject [
-	" Answer a BioBlastRootNode with HSP nodes parsed from anObject "
+	"Answer a <BioBlastRootNode> with HSP nodes parsed from anObject"
 
 	self parsingStrategy ifNil: [ self setStAXParser ].
 	^ BioParser perform: self parsingStrategy withArguments: {anObject . BioNCBIBlastReader hitNodesNames}

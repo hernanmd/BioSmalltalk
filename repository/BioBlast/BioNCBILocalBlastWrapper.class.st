@@ -12,6 +12,9 @@ Both have the same version numbers, so there it is a 2.2.23 version for BLAST le
 Class {
 	#name : #BioNCBILocalBlastWrapper,
 	#superclass : #BioNCBIBlastWrapper,
+	#instVars : [
+		'queryFastaFilename'
+	],
 	#category : #'BioBlast-Local'
 }
 
@@ -45,16 +48,22 @@ BioNCBILocalBlastWrapper >> blastp [
 ]
 
 { #category : #'accessing private' }
-BioNCBILocalBlastWrapper >> database: aDatabaseName [
-
-	self propertyAt: 'db' put: aDatabaseName
-]
-
-{ #category : #'accessing private' }
 BioNCBILocalBlastWrapper >> dbSwissProt [
 	"Set the receiver's database to UniProt"
 
-	self database: 'swissprot'
+	self dbLocation
+		ifNotNil: [ self database: (self dbLocation asFileReference / 'swissprot') fullName ]
+		ifNil: [ self database: 'swissprot' ]
+
+]
+
+{ #category : #'accessing - public' }
+BioNCBILocalBlastWrapper >> execute [
+
+	| bioResult |
+	bioResult := super execute.
+	self queryFastaFilename asFileReference ensureDelete.
+	^ bioResult.
 ]
 
 { #category : #'accessing private' }
@@ -81,7 +90,23 @@ BioNCBILocalBlastWrapper >> outfmt: aNumber [
 
 { #category : #initialization }
 BioNCBILocalBlastWrapper >> query: aSequenceString [
-	"Set the receiver's query sequence to aSequenceString"
+	"Set the receiver's query sequence to aSequenceString. We create a temporary file because the command line does not seem to accept plain query strings."
 
-	self propertyAt: 'query' put: aSequenceString
+	self queryFastaFilename asFileReference writeStreamDo: [ : stream |
+		stream << aSequenceString ].
+	self propertyAt: 'query' put: self queryFastaFilename.
+]
+
+{ #category : #accessing }
+BioNCBILocalBlastWrapper >> queryFastaFilename [
+	"Answer a random <String> representing a FASTA file name"
+
+	^ queryFastaFilename
+		ifNil: [ queryFastaFilename := UUIDGenerator new next asString36 , '.fna' ]
+]
+
+{ #category : #accessing }
+BioNCBILocalBlastWrapper >> queryFastaFilename: anObject [
+
+	queryFastaFilename := anObject
 ]

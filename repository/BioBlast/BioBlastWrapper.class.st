@@ -12,7 +12,10 @@ Running the local versions require you have installed previously the BLAST clien
 "
 Class {
 	#name : #BioBlastWrapper,
-	#superclass : #BioWebWrapper,
+	#superclass : #BioWrapperObject,
+	#instVars : [
+		'dbLocation'
+	],
 	#category : #'BioBlast-Local'
 }
 
@@ -41,6 +44,48 @@ BioBlastWrapper class >> wu [
 	" Answer a class suitable for interfacing with the WU version of the receiver "
 	
 	^ BioWUBlastWrapper
+]
+
+{ #category : #operations }
+BioBlastWrapper >> database [
+
+	^ self propertyAt: 'db'
+]
+
+{ #category : #'accessing private' }
+BioBlastWrapper >> database: aDatabaseName [
+
+	self propertyAt: 'db' put: aDatabaseName
+]
+
+{ #category : #accessing }
+BioBlastWrapper >> dbLocation [
+	"Answer a <FileReference> specifying the location of the database files"
+
+	^ dbLocation
+]
+
+{ #category : #accessing }
+BioBlastWrapper >> dbLocation: aString [
+	"Set the location where the receiver will look for a BLAST database"
+
+	dbLocation := aString.
+	(self hasProperty: 'db')
+		ifTrue: [ self database: (self dbLocation asFileReference / self database) fullName ]
+
+]
+
+{ #category : #'accessing - public' }
+BioBlastWrapper >> execute [
+	"Execute the receiver configured action. Answer a <BioResultObject>"
+	
+	| execAnswer |
+
+	execAnswer := BioExecutionEngine perform: self execSelector with: self cmdLine.
+	^ BioResultObject new
+		command: self cmdLine;
+		result: execAnswer;
+		yourself
 ]
 
 { #category : #testing }

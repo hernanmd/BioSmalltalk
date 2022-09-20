@@ -62,10 +62,17 @@ BioOSSubProcessExecutor class >> executeMonitoring: aCommandName [
 BioOSSubProcessExecutor class >> executeOSSubProcessCommand: aCommandName [
 	" Private - Execute aCommandName and answer a <String> with any output returned "
 
-	| osSubProcess |
+	| osSubProcess output |
 	
-	osSubProcess := (self classFor: self providerClass) new shellCommand: aCommandName.
-	^ osSubProcess run
+	osSubProcess := (self classFor: self providerClass) new 
+		shellCommand: aCommandName;
+		redirectStdout;
+		redirectStderr;
+	    runAndWaitOnExitDo: [ :process :outString :errString  |
+ 	       output := errString 
+				ifNotEmpty: [ errString ]
+				ifEmpty: [ outString ] ].
+	^ output trimBoth
 ]
 
 { #category : #testing }
@@ -95,8 +102,9 @@ BioOSSubProcessExecutor class >> locateProgramNamed: programName [
 		redirectStdout;
 		redirectStderr;
 	    runAndWaitOnExitDo: [ :process :outString :errString  |
- 	       errString ifNotEmpty: [ : err | err inspect ].
- 	       output := outString ].
+ 	       output := errString 
+				ifNotEmpty: [ errString ]
+				ifEmpty: [ outString ] ].
 	^ output trimBoth
 
 ]

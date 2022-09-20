@@ -6,7 +6,7 @@ If you already have a XML file with results from a BLAST, see BioBLASTResultRead
 "
 Class {
 	#name : #BioNCBIWebBlastWrapper,
-	#superclass : #BioNCBIBlastWrapper,
+	#superclass : #BioWebWrapper,
 	#instVars : [
 		'getUrl',
 		'cmd'

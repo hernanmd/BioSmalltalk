@@ -5,30 +5,31 @@ Class {
 		'maxRetry',
 		'requestCount'
 	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #private }
 BioWebBlastResult >> executeFirstRequest: aClient [
-	" Private - The first BLAST request is used to get the RID and RTOE "
+	"Private - The first BLAST request is used to get the RID and RTOE"
 
 	| rid |
 	
 	requestCount := 0.
 	self bioLog: 'Fetching NCBI BLAST request identifier...'.
-	self reader 
-			results: aClient url activate.
+	self reader results: aClient url activate.
 
 	rid := self reader rid	.
 	self bioLog: 'RTOE = ' , self reader rtoe.
 	self bioLog: 'RID = ' , rid.
 
+	self bioLog: 'Delaying for the first request at least 20 seconds'.
+	(Delay forSeconds: 20) wait.
 	aClient 
 		rid: rid;
 		fetch. 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #accessing }
 BioWebBlastResult >> executeFor: aClient [
 	" Private - Perform the actual search using aClient parameters "
 	
@@ -45,7 +46,7 @@ BioWebBlastResult >> executeQuery: aClient [
 
 	self reader selectStatus
 		ifTrue: [ 
-			self result: ( BioNCBIBlastReader newFrom: self ).
+			self result: (BioNCBIBlastReader newFrom: self).
 			self beSuccess.
 			self bioLog: 'Finished successfully' translated ]
 		ifFalse: [ 

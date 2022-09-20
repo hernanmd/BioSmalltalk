@@ -2,12 +2,13 @@ Extension { #name : #BioSequence }
 
 { #category : #'*BioPlots' }
 BioSequence >> plotBarChart [
+	"Answer a <RSCanvas> which can be inspected to visualize the receiver's composition of nucleotides"
 
-	| c menMeans lb |
+	| c nucs lb |
 	c := RSChart new.
 	c extent: 300@200.
-	menMeans := self occurrencesOfLetters values.
-	c barHeights: menMeans.
+	nucs := self occurrencesOfLetters values.
+	c barHeights: nucs.
 	c addDecoration: (RSHorizontalTick new fromNames: self occurrencesOfLetters keys).
 	c addDecoration: RSVerticalTick new integer.
 	c ylabel: 'Nucleotide frequency'.

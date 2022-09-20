@@ -23,6 +23,12 @@ BioBlastWrapper class >> ncbi [
 	^ BioNCBIBlastWrapper
 ]
 
+{ #category : #'instance creation' }
+BioBlastWrapper class >> newNCBILocalWrapper [
+
+	^ self ncbi local latest
+]
+
 { #category : #accessing }
 BioBlastWrapper class >> wrappers [
 	" Answer a <Collection> of selectors to access wrapped receiver's programs "

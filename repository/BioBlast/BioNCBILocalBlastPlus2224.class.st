@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBILocalBlastPlus2224,
 	#superclass : #BioNCBILocalBlastWrapper,
-	#category : 'BioBlast-Local'
+	#category : #'BioBlast-Local'
 }
 
 { #category : #testing }
@@ -85,9 +85,9 @@ BioNCBILocalBlastPlus2224 >> blastnPath [
 
 { #category : #path }
 BioNCBILocalBlastPlus2224 >> blastpPath [
-	" Answer a String with the full path to the receiver's binary "
+	"Answer a <String> with the full path to the receiver's binary"
 	
-	^  self programNamed: 'blastp'
+	^ self programNamed: 'blastp'
 ]
 
 { #category : #path }

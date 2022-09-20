@@ -70,7 +70,7 @@ BioExecutionEngine class >> executeMonitoring: aCommandName [
 
 { #category : #accessing }
 BioExecutionEngine class >> locateProgram: programName [
-	" Answer a <String> with the full qualified path to programName if can be located by the which command "
+	"Answer a <String> with the full qualified path to programName if can be located by the which command"
 	
 	^ self adapterClass locateProgram: programName
 ]

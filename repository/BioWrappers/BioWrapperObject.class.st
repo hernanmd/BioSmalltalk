@@ -42,7 +42,9 @@ Class {
 		'programName',
 		'cmdLine',
 		'propertySeparator',
-		'cwd'
+		'cwd',
+		'isDoubleDashOptions',
+		'isDoubleDashProperties'
 	],
 	#category : #'BioWrappers-Core'
 }
@@ -194,11 +196,11 @@ BioWrapperObject >> buildProperties: stream [
 
 { #category : #'accessing - private' }
 BioWrapperObject >> buildPropertySeparator: assoc into: stream [
-	" Private - if parameter 'name' is just a single character, then use a dash as property specifier, otherwise (it is a word) use doble dash "
+	"Private - Use a dash or double dash as property separator"
 
-	assoc key size = 1
-		ifTrue: [ stream nextPut: $- ]
-		ifFalse: [ stream nextPutAll: '--' ]
+	self isDoubleDashProperties
+		ifTrue: [ stream nextPutAll: '--' ]
+		ifFalse: [ stream nextPut: $- ]
 ]
 
 { #category : #'accessing - private' }
@@ -336,6 +338,22 @@ BioWrapperObject >> formatPlatformPath: aPath [
 	^ BioOSInterfaceEngine formatPlatformPath: aPath
 ]
 
+{ #category : #testing }
+BioWrapperObject >> isDoubleDashOptions [
+	"Answer <true> if the receiver uses double dashes to specify options"
+
+	^ isDoubleDashOptions
+		ifNil: [ isDoubleDashOptions := true ]
+]
+
+{ #category : #testing }
+BioWrapperObject >> isDoubleDashProperties [
+	"Answer <true> if the receiver uses double dashes to specify options"
+
+	^ isDoubleDashProperties
+		ifNil: [ isDoubleDashProperties := true ]
+]
+
 { #category : #private }
 BioWrapperObject >> isExecCygwin [
 
@@ -403,7 +421,7 @@ BioWrapperObject >> programNamed: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - private' }
 BioWrapperObject >> propertySeparator [
 	" Answer a <Character> with receiver's properties separator "
 
@@ -411,7 +429,7 @@ BioWrapperObject >> propertySeparator [
 		ifNil: [ propertySeparator := self defaultPropertySeparator ]
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing - private' }
 BioWrapperObject >> propertySeparator: aCharacter [
 	" Set the receiver's delimiter between property name and values "
 
@@ -430,6 +448,20 @@ BioWrapperObject >> url [
 	" Answer a <String> representing receiver's URL "
 
 	^ self class url
+]
+
+{ #category : #accessing }
+BioWrapperObject >> useSingleDashOptions [
+	"Specify the receiver will use single dash to specify options"
+
+	isDoubleDashOptions := false
+]
+
+{ #category : #accessing }
+BioWrapperObject >> useSingleDashProperties [
+	"Specify the receiver will use single dash to specify property names"
+
+	isDoubleDashProperties := false
 ]
 
 { #category : #accessing }

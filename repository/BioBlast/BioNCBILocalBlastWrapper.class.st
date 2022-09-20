@@ -36,3 +36,52 @@ BioNCBILocalBlastWrapper class >> legacy [
 				select: [: cls | cls isLegacyVersion ] )
 					detectMax: [: cls | cls versionNumber ] ) new
 ]
+
+{ #category : #accessing }
+BioNCBILocalBlastWrapper >> blastp [
+	"Set the receiver's program to be executed to blastp"
+
+	self programName: self blastpPath
+]
+
+{ #category : #'accessing private' }
+BioNCBILocalBlastWrapper >> database: aDatabaseName [
+
+	self propertyAt: 'db' put: aDatabaseName
+]
+
+{ #category : #'accessing private' }
+BioNCBILocalBlastWrapper >> dbSwissProt [
+	"Set the receiver's database to UniProt"
+
+	self database: 'swissprot'
+]
+
+{ #category : #'accessing private' }
+BioNCBILocalBlastWrapper >> formatTypeXML [ 
+	"Set the receiver's database to UniProt"
+
+	self outfmt: '5'
+]
+
+{ #category : #initialization }
+BioNCBILocalBlastWrapper >> initialize [
+
+	super initialize.
+	self propertySeparator: Character space.
+	self useSingleDashProperties.
+
+]
+
+{ #category : #'accessing private' }
+BioNCBILocalBlastWrapper >> outfmt: aNumber [
+
+	self propertyAt: 'outfmt' put: aNumber
+]
+
+{ #category : #initialization }
+BioNCBILocalBlastWrapper >> query: aSequenceString [
+	"Set the receiver's query sequence to aSequenceString"
+
+	self propertyAt: 'query' put: aSequenceString
+]

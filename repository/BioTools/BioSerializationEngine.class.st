@@ -8,7 +8,7 @@ Class {
 		'doCompression',
 		'location'
 	],
-	#category : 'BioTools-Adapters'
+	#category : #'BioTools-Adapters'
 }
 
 { #category : #'instance creation' }
@@ -71,8 +71,7 @@ BioSerializationEngine >> doCompressionIn: aFilename [
 BioSerializationEngine >> isValidMaterialization [
 	" Answer <true> if the receiver's location is valid for materialization "
 
-	^ self fileStreamClass isAFileNamed: self location
-
+	^ self location asFileReference isFuel
 ]
 
 { #category : #accessing }

@@ -14,7 +14,7 @@ Class {
 		'url',
 		'searchResult'
 	],
-	#category : 'BioWrappers-Core'
+	#category : #'BioWrappers-Core'
 }
 
 { #category : #'accessing-private' }
@@ -48,8 +48,7 @@ BioWebWrapper >> cmdName: aString [
 
 { #category : #'accessing private' }
 BioWebWrapper >> database: aBioDatabase [
-	" Set the receiver's database to be aBioDatabase.
-	Answer aBioDatabase  "
+	"Set the receiver's database to be aBioDatabase. Answer aBioDatabase"
 
 	self url dbName: aBioDatabase dbName.
 	^ aBioDatabase
@@ -75,14 +74,13 @@ BioWebWrapper >> execute [
 { #category : #printing }
 BioWebWrapper >> printOn: aStream [
 	" Private - See superimplementor's comment "
-	
+
 	super printOn: aStream.
-	self rawUrl isNil
-		ifFalse: [ 
-			aStream 
-				nextPutAll: (BioWebClientEngine decode: url asString)
-				between: $[ and: $] ].
-	
+	self rawUrl ifNotNil: [ 
+		aStream
+			nextPutAll: (BioWebClientEngine decode: url asString)
+			between: $[
+			and: $] ]
 ]
 
 { #category : #'accessing public' }

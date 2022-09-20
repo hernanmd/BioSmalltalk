@@ -106,13 +106,13 @@ BioQBlastReader >> rid [
 
 { #category : #'accessing-put' }
 BioQBlastReader >> rtoe [
-	" Answer a String with the Request Time of Execution in seconds "
+	"Answer a <String> with the Request Time of Execution in seconds"
 	
 	| lastRtoe |
 	
 	self bioLog: 'Parsing RTOE...'.
 	lastRtoe := self parserForRTOE parse: self results.
-	^ ( lastRtoe beginsWith: 'Error' )
+	^ (lastRtoe beginsWith: 'Error')
 		ifFalse: [ 
 			self bioLog: 'New RTOE = ' , lastRtoe.
 			rtoe := lastRtoe ]
@@ -125,18 +125,16 @@ BioQBlastReader >> rtoe [
 
 { #category : #'accessing-get' }
 BioQBlastReader >> selectStatus [
-	" Private - Wait for the results until ready, answer <true> if results sent
-	are ready and valid "
+	"Private - Wait for the results until ready, answer <true> if results sent are ready and valid"
 	
 	| waiting |
 
 	self shouldWaitForResults
 		ifTrue: [ 
-			waiting := self delaySeconds.
+			waiting := self delaySeconds + 100.
 			self bioLog: 'QBLAST: Delaying retry for ' , waiting asString , ' seconds'.
-			( Delay forSeconds: waiting ) wait.
-			^  false
-		].
+			(Delay forSeconds: waiting) wait.
+			^  false ].
 	^ true
 
 
@@ -146,7 +144,7 @@ BioQBlastReader >> selectStatus [
 BioQBlastReader >> shouldWaitForResults [
 	" Private - Answer <true> if results contains status information "
 	
-	^ ( self statusParser parser matches: self results ) 
+	^ (self statusParser parser matches: self results) 
 			or: [ self parserForQBlastInfoBegin matches: self results ]
 
 
@@ -155,7 +153,7 @@ BioQBlastReader >> shouldWaitForResults [
 
 { #category : #'accessing-get' }
 BioQBlastReader >> status [
-	" Answer a String with the result of the remote job "
+	"Answer a <String> with the result of the remote job"
 	
 	^ self statusParser parse: self results
 ]

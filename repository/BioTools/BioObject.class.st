@@ -60,12 +60,14 @@ BioObject class >> dumpToDOSFileNamed: filename contents: anObject [
 
 { #category : #'convenience-filesystem' }
 BioObject class >> dumpToFileNamed: filename contents: anObject [
-	" Write anObject to a file named filename in the current directory "
+	"Write anObject to a file named filename in the current directory"
 	
-	| fs |
- 	[ 	fs := self newFileNamed: filename.
-		anObject dumpToStream: fs 
-	] ensure: [ fs close ].
+	| stream |
+	
+	stream := (self newFileNamed: filename) writeStream.
+	[ anObject dumpToStream: stream ]
+	ensure: [ stream close ]
+
 ]
 
 { #category : #'convenience-filesystem' }
@@ -75,13 +77,6 @@ BioObject class >> dumpToFileNamedFullPath: filename contents: anObject [
 	| fs |
 	[ fs := self newFullFileNamed: filename.
 	anObject dumpToStream: fs ] ensure: [ fs close ].
-]
-
-{ #category : #'convenience-filesystem' }
-BioObject class >> fileStreamClass [
-	" Private - Answer a helper <Stream> class to manage file related operations "
-
-	^ FileStream
 ]
 
 { #category : #private }
@@ -169,8 +164,8 @@ BioObject class >> newFileNamed: fileName [
 	" Answer a <FileStream> for a new fileName in the receiver's configured folder.
 	fileName MUST NOT be an absolute path. If you have absolute path use #newFullFileNamed: "
 	
-	^ (self fileStreamClass newFileNamed: self workingDirectory , self slash , fileName) 
-		yourself.
+	^ self workingDirectory asFileReference / fileName  
+
 ]
 
 { #category : #scripts }
@@ -252,7 +247,7 @@ BioObject >> dumpToFileNamed: aString [
 
 { #category : #'convenience-filesystem' }
 BioObject >> dumpToFileNamed: fileName contents: contentsString [
-	" Outputs contentsString to a file named fileName "
+	"Outputs contentsString to a file named fileName"
 
 	self class 
 		dumpToFileNamed: fileName 
@@ -291,13 +286,6 @@ BioObject >> fileExists: fileName [
 	" Answer <true> if fileName exists in receiver's working directory "
 	
 	^ self class fileExists: fileName
-]
-
-{ #category : #'convenience-filesystem' }
-BioObject >> fileStreamClass [
-	" See comment in class method "
-
-	^ self class fileStreamClass
 ]
 
 { #category : #'convenience-filesystem' }

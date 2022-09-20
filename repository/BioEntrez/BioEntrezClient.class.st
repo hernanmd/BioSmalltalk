@@ -439,9 +439,9 @@ BioEntrezClient >> searchResultClass [
 
 { #category : #'accessing private' }
 BioEntrezClient >> setEmail [
-	" Answer a String for identifying this application "
+	"Answer a String for identifying this application"
 	
-	^ self url emailAddress: 'informatica.igevet@fcv.unlp.edu.ar'.
+	^ self url emailAddress: 'biosmalltalk@gmail.com'.
 ]
 
 { #category : #'accessing private' }

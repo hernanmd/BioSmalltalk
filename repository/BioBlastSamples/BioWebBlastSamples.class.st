@@ -19,7 +19,7 @@ BioWebBlastSamples class >> acceptsLoggingOfCompilation [
 	^ true
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> blastResultsSample01 [
 
 	^ BioNCBIBlastReader new
@@ -27,7 +27,7 @@ BioWebBlastSamples >> blastResultsSample01 [
 		hitNodes
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> blastResultsSample02 [
 
 	^ '<?xml version="1.0"?>
@@ -10531,7 +10531,7 @@ S2: 79 (35.0 bits)
 '
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> ncbiClientSample01 [
 "
 http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY=555&DATABASE=nr&HITLIST_SIZE=10&FILTER=L&EXPECT=10&FORMAT_TYPE=HTML&PROGRAM=blastn&CLIENT=web&SERVICE=plain&NCBI_GI=on&PAGE=Nucleotides&CMD=Put
@@ -10553,7 +10553,7 @@ http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?QUERY=555&DATABASE=nr&HITLIST_SIZE=1
 
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> ncbiClientSample02 [
 
 	| search |
@@ -10572,7 +10572,7 @@ BioWebBlastSamples >> ncbiClientSample02 [
 
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> ncbiClientSample03 [
 
 	| search |
@@ -10589,14 +10589,16 @@ BioWebBlastSamples >> ncbiClientSample03 [
 			alignmentViewFlatQueryAnchoredNoIdentities;
 			fetch.
 	self dumpToFileNamed: 'blastQuery03.xml' contents: search result.
+	search inspect.
 
 ]
 
-{ #category : #blast }
+{ #category : #examples }
 BioWebBlastSamples >> ncbiClientSample04 [
-
+	<example>
 	| search |
 	
+	'blastQuery04.xml' asFileReference ensureDelete.
 	search := 
 		BioNCBIWebBlastWrapper new nucleotide
 			query: 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAGGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTACCA';
@@ -10610,6 +10612,7 @@ BioWebBlastSamples >> ncbiClientSample04 [
 			formatTypeXML;			
 			fetch.
 	self dumpToFileNamed: 'blastQuery04.xml' contents: search result.
+	search result inspect
 
 ]
 

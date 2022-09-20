@@ -10,10 +10,7 @@ Class {
 		'selectedNodes',
 		'parsingStrategy'
 	],
-	#classVars : [
-		'BlastProperties'
-	],
-	#category : 'BioBlast-Remote'
+	#category : #'BioBlast-Remote'
 }
 
 { #category : #'accessing-nodes' }

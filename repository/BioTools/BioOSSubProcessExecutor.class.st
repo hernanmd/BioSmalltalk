@@ -14,6 +14,17 @@ BioOSSubProcessExecutor class >> executeCommand: aCommandName [
 ]
 
 { #category : #accessing }
+BioOSSubProcessExecutor class >> executeCommand: aCommandName parameter: parameterName [
+	"See superimplementor's comment"
+
+	^ self executeOSSubProcessCommand: (String streamContents: [ : stream |
+		stream 
+			<< aCommandName trimBoth;
+			space;
+			<< parameterName trimBoth ])
+]
+
+{ #category : #accessing }
 BioOSSubProcessExecutor class >> executeMonitoring: aCommandName [
 	" See superimplementor's comment "
 	
@@ -62,6 +73,32 @@ BioOSSubProcessExecutor class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ self isRunningInUnix
+]
+
+{ #category : #accessing }
+BioOSSubProcessExecutor class >> locateProgram: programName [
+	" Answer a <String> with the full qualified path to programName if can be located by the which command "
+	
+	^ self programLocation isEmpty
+		ifTrue: [ self locateProgramNamed: programName ]
+		ifFalse: [ self programLocation ].
+
+]
+
+{ #category : #accessing }
+BioOSSubProcessExecutor class >> locateProgramNamed: programName [
+	"Answer a <String> with the path to programName, if located, or an empty String otherwise"
+
+	| command output |
+	command := OSSUnixSubprocess new
+		shellCommand: 'where ' , programName;
+		redirectStdout;
+		redirectStderr;
+	    runAndWaitOnExitDo: [ :process :outString :errString  |
+ 	       errString ifNotEmpty: [ : err | err inspect ].
+ 	       output := outString ].
+	^ output trimBoth
+
 ]
 
 { #category : #accessing }

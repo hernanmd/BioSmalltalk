@@ -57,9 +57,8 @@ BioFileFormatter class >> identifiers [
 BioFileFormatter class >> linesCount: aFilename [
 	" Answer a <Number> how many lines contains aFilename"
 
-	^ self fileStreamClass
-		readOnlyFileNamed: aFilename
-		do: [ :file | | endings count |
+	^ aFilename asFileReference readStreamDo: [ :file | 
+			| count |
 			count := 0.
 			file binary.
 			file contents do: [ :c | c = 10 ifTrue: [ count := count + 1 ] ].
@@ -116,7 +115,7 @@ BioFileFormatter >> dumpToFileNamed: aFilename contents: contentsString [
 	" See superimplementor's comment "
 
 	self writeToFile
-		ifTrue: [ self dumpToFileNamed: aFilename contents: contentsString ].
+		ifTrue: [ super dumpToFileNamed: aFilename contents: contentsString ].
 ]
 
 { #category : #accessing }

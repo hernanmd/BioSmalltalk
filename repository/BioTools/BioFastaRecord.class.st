@@ -300,8 +300,8 @@ BioFastaRecord >> sequence [
 
 { #category : #accessing }
 BioFastaRecord >> sequence: aBioSequence [
-	" Set the receiver's sequence to aBioSequence "
-	
+	"Set the receiver's sequence to aBioSequence"
+
 	sequence := aBioSequence
 ]
 
@@ -335,4 +335,11 @@ BioFastaRecord >> size [
 	" Answer a <Number> with the size of the receiver's sequence "
 
 	^ self sequence size
+]
+
+{ #category : #accessing }
+BioFastaRecord >> translate [
+	"Answer the receiver's <BioSequence> translated to its corresponding Protein, adjusting the alphabet."
+	
+	^ self sequence translate.
 ]

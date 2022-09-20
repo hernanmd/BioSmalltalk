@@ -495,7 +495,7 @@ BioPLINKWrapper >> plink [
 	^ self class plink
 ]
 
-{ #category : #'accessing-private' }
+{ #category : #'accessing - private' }
 BioPLINKWrapper >> propertySeparator [
 	" Private - See superclass comment "
 

@@ -22,16 +22,14 @@ BioNCBIWebBlastWrapper class >> baseUrl [
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> aluRepeats [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
-	^ self database: ( BioNCBIALURepeats new client: self )
+	^ self database: (BioNCBIALURepeats new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> chromosome [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIChromosome new client: self)
 ]
@@ -69,38 +67,35 @@ BioNCBIWebBlastWrapper >> delete [
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> envNt [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
-	^ self database: ( BioNCBIEnvNT new client: self )
+	^ self database: (BioNCBIEnvNT new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> est [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
-	^ self database: ( BioNCBIEST new client: self )
+	^ self database: (BioNCBIEST new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> estOthers [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIESTOthers new client: self)
 ]
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> fetch [
-	" Answer a list of UIDs with the corresponding data records "
+	"Answer a list of UIDs with the corresponding data records"
 
 	^ self execute: BioNCBIFetch
 ]
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> get [
-	" The 'Get' command gets formated results from QBlast "
+	"The 'Get' command gets formated results from QBlast"
 
 	self setGetCommand.
 	^ cmd
@@ -108,7 +103,7 @@ BioNCBIWebBlastWrapper >> get [
 
 { #category : #'accessing private' }
 BioNCBIWebBlastWrapper >> getUrl [
-	" Answer the value of url for the get command "
+	"Answer the value of url for the get command"
 	
 	^ getUrl
 		ifNil: [ getUrl := self urlClass fromString: self baseUrl ]	
@@ -121,47 +116,42 @@ BioNCBIWebBlastWrapper >> getUrl: anObject [
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> gss [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIGSS new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> htgs [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIHTGS new client: self)
 ]
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> info [
-	" The 'Info' provides up-to-date information about NCBI Blast.  "
+	"The 'Info' provides up-to-date information about NCBI Blast."
 
 	^ self execute: BioNCBIInfo
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> nucleotide [
-	" Set the receiver's working database. 
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 	
 	^ self database: (BioNCBINucleotideCollection new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> pat [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIPat new client: self)
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> pdb [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIPDB new client: self)
 ]
@@ -179,7 +169,7 @@ BioNCBIWebBlastWrapper >> printOn: aStream [
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> put [
-	" The 'Put' command - Sends search requests to QBlast "
+	"The 'Put' command - Sends search requests to QBlast"
 
 	self setPutCommand.
 	^ cmd
@@ -187,21 +177,21 @@ BioNCBIWebBlastWrapper >> put [
 
 { #category : #'accessing private' }
 BioNCBIWebBlastWrapper >> putUrl [
-	" Answer the value of url for the PUT command "
+	"Answer the value of url for the PUT command"
 	
 	^ self url
 ]
 
 { #category : #'accessing private' }
 BioNCBIWebBlastWrapper >> putUrl: anUrl [
-	" Set the value of url for the PUT command "
+	"Set the value of url for the PUT command"
 	
 	url := anUrl
 ]
 
 { #category : #'accessing private' }
 BioNCBIWebBlastWrapper >> rawGetUrl [
-	" Answer the value of url for the get command "
+	"Answer the value of url for the get command"
 	
 	^ getUrl
 ]
@@ -216,8 +206,7 @@ BioNCBIWebBlastWrapper >> refSeqGenomic [
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> refSeqRNA [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIRefSeqRNA new client: self)
 ]
@@ -238,27 +227,23 @@ BioNCBIWebBlastWrapper >> searchResultClass [
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> setGetCommand [
 	" Set the receiver's command to GET "
-	
-	cmd isNil
-		ifTrue: [ cmd := BioNCBIGet new client: self ]
-		ifFalse: [ cmd isGet
-					ifFalse: [ cmd := BioNCBIGet new client: self ] ].
-	( self getUrl includesParameter: BioNCBICommand cmdString )
-		ifFalse: [ self getUrl startParameters: cmd baseUrl ].				
+
+	cmd
+		ifNil: [ cmd := BioNCBIGet new client: self ]
+		ifNotNil: [ 	cmd isGet ifFalse: [ cmd := BioNCBIGet new client: self ] ].
+	(self getUrl includesParameter: BioNCBICommand cmdString) 
+		ifFalse: [ self getUrl startParameters: cmd baseUrl ]
 ]
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> setPutCommand [
-	" Set the receiver's command to GET "
-	
-	cmd isNil
-		ifTrue: [ cmd := BioNCBIPut new client: self ]
-		ifFalse: [ cmd isPut  
-					ifFalse: [ cmd := BioNCBIPut new client: self ] ].
-	" The PUT command should only be set once "
-	(self putUrl includesParameter: BioNCBICommand cmdString)
-		ifFalse: [ self putUrl: (self putUrl startParameters: cmd baseUrl) ].
-		
+	"Set the receiver's command to GET"
+
+	cmd
+		ifNil: [ cmd := BioNCBIPut new client: self ]
+		ifNotNil: [ cmd isPut ifFalse: [ cmd := BioNCBIPut new client: self ] ].
+	(self putUrl includesParameter: BioNCBICommand cmdString) ifFalse: [ 
+		self putUrl: (self putUrl startParameters: cmd baseUrl) ]
 ]
 
 { #category : #'accessing private' }
@@ -278,16 +263,14 @@ BioNCBIWebBlastWrapper >> urlClass [
 
 { #category : #'accessing public - commands' }
 BioNCBIWebBlastWrapper >> web [
-	" The 'Web' generates NCBI BLAST HTML pages.
-	Parameters accepted: PAGE and all parameters corresponding to HTML elements.  "
+	"The 'Web' generates NCBI BLAST HTML pages. Parameters accepted: PAGE and all parameters corresponding to HTML elements."
 
 	^ self execute: BioNCBIWeb
 ]
 
 { #category : #'accessing public - databases' }
 BioNCBIWebBlastWrapper >> wgs [
-	" Set the receiver's working database.
-	Answer a <BioCommandObject> for specifying operations "
+	"Set the receiver's working database. Answer a <BioCommandObject> for specifying operations"
 		
 	^ self database: (BioNCBIWGS new client: self)
 ]

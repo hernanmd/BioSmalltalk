@@ -118,7 +118,7 @@ BioACANAWrapper >> outputFilename: aString [
 	self propertyAt: 'O' ifAbsentPut: [ aString ]
 ]
 
-{ #category : #'accessing-private' }
+{ #category : #'accessing - private' }
 BioACANAWrapper >> propertySeparator [
 	" Private - See superclass comment "
 

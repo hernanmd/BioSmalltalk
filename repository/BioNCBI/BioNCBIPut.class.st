@@ -4,7 +4,7 @@ http://www.ncbi.nlm.nih.gov/blast/Doc/node5.html
 Class {
 	#name : #BioNCBIPut,
 	#superclass : #BioNCBICSCommand,
-	#category : 'BioNCBI-Commands'
+	#category : #'BioNCBI-Commands'
 }
 
 { #category : #accessing }
@@ -290,6 +290,7 @@ BioNCBIPut >> query: aString [
 	" Sequence query (queries if MegaBlast page).
 	aString is Accession(s), gi(s), or FASTA sequence(s) "
 	
+	self bioLog: 'Using query sequence: ' , aString asString.
 	self client queryAt: 'QUERY' put: aString trimBoth withoutCRs
 ]
 

@@ -38,7 +38,7 @@ BioNCBIGenBankReader class >> newFromCSVFile: csvFilename [
 
 { #category : #accessing }
 BioNCBIGenBankReader >> checkValidContents [
-	" Answer <true> if contents were correctly downloaded "
+	"Answer <true> if contents were correctly downloaded"
 	
 	^ self genBankDownloader checkValidContents
 ]
@@ -53,7 +53,7 @@ BioNCBIGenBankReader >> genBankDownloader [
 
 { #category : #'accessing-entrez' }
 BioNCBIGenBankReader >> genBankRecordsAsXMLFrom: aBioBlastParentNodeCollection database: databaseName [
-	" With aBioBlastParentNodeCollection of BLASTHitNode's, query the Entrez system at databaseName and answer a <String> with XML contents "
+	"With aBioBlastParentNodeCollection of BLASTHitNode's, query the Entrez system at databaseName and answer a <String> with XML contents"
 	
 	contents := self
 			genBankRecordsFrom: databaseName
@@ -64,8 +64,7 @@ BioNCBIGenBankReader >> genBankRecordsAsXMLFrom: aBioBlastParentNodeCollection d
 
 { #category : #'accessing-entrez' }
 BioNCBIGenBankReader >> genBankRecordsFrom: dbSymbol format: formatSymbol uids: anArray [
-	" Fetch Entrez records from database named dbSymbol in format formatSymbol
-	using UIDs from anArray. anArray is splitted if exceeds #entrezUrlUidLimit "
+	"Fetch Entrez records from database named dbSymbol in format formatSymbol 	using UIDs from anArray. anArray is splitted if exceeds #entrezUrlUidLimit"
 
 	^ self genBankDownloader
 		genBankSplitRecordsFrom: dbSymbol 
@@ -77,7 +76,7 @@ BioNCBIGenBankReader >> genBankRecordsFrom: dbSymbol format: formatSymbol uids: 
 
 { #category : #'accessing-entrez' }
 BioNCBIGenBankReader >> giListFrom: anObject [
-	" Answer a Collection with the gene identifiers numbers from anObject "
+	"Answer a <Collection> with the gene identifiers numbers from anObject"
 
 	^ anObject contents 
 		collect: [: id | BioParser tokenizeGi: id hitIdentifier blastValue ]
@@ -119,7 +118,7 @@ BioNCBIGenBankReader >> parseFlatDocumentFrom: aDataSource [
 
 { #category : #accessing }
 BioNCBIGenBankReader >> parseXMLDocumentsFromCollection: aCollection [
-	" Parse documents located at aDataSource and update the receiver's contents with the result "
+	"Parse documents located at aDataSource and update the receiver's contents with the result"
 	
 	self contents: ((BioGBSeqCollection newFromXMLCollection: aCollection) 
 			parser: self parser;
@@ -162,7 +161,7 @@ BioNCBIGenBankReader >> resultClass [
 
 { #category : #accessing }
 BioNCBIGenBankReader >> resultSizeInMb [
-	" Answer the size of the result set in megabytes "
+	"Answer the size of the result set in megabytes"
 
 	| answer |
 	(answer := (contents sum: #size) / 1048576) asInteger = 0

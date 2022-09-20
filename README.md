@@ -60,7 +60,7 @@ If you want to add a BioSmalltalk installation group to your Metacello Baselines
 
 # Usage
 
-Please see [BioSmalltalk web site](https://biosmalltalk.github.io/web) for documentation
+Please see [BioSmalltalk web site](https://biosmalltalk.github.io) for documentation
 
 # Contribute
 

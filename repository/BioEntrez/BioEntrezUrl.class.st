@@ -7,7 +7,7 @@ This class should not be used directly, instead, see BioEntrezClient class.
 Class {
 	#name : #BioEntrezUrl,
 	#superclass : #BioUrl,
-	#category : 'BioEntrez-Core'
+	#category : #'BioEntrez-Core'
 }
 
 { #category : #accessing }
@@ -35,7 +35,7 @@ BioEntrezUrl >> emailAddress: aString [
 
 { #category : #accessing }
 BioEntrezUrl >> entrezParameters [
-	" Private - Answer a Collection with Strings representing valid Entrez parameters "
+	"Private - Answer a <Collection> of <String> representing valid Entrez parameters"
 	
 	^ ((BioEntrezCommand withAllSubclasses collect: #validParameters) 
 				joinUsing: Array empty) asSet
@@ -43,7 +43,7 @@ BioEntrezUrl >> entrezParameters [
 
 { #category : #accessing }
 BioEntrezUrl >> parameters [
-	" Answer a <Collection> with the receiver's parameter names "
+	"Answer a <Collection> with the receiver's parameter names"
 
 	^ self hasQuery 
 		ifTrue: [ self query keys ]
@@ -52,7 +52,7 @@ BioEntrezUrl >> parameters [
 
 { #category : #accessing }
 BioEntrezUrl >> queryKey: aKeyString [
-	" Append aKeyString for setting the remote query key "
+	"Append aKeyString for setting the remote query key"
 
 	aKeyString isEmpty
 		ifFalse: [ self queryAt: 'query_key' put: aKeyString ]
@@ -61,7 +61,7 @@ BioEntrezUrl >> queryKey: aKeyString [
 
 { #category : #accessing }
 BioEntrezUrl >> setUseHistory [
-	" Append aString for setting the usehistory value to true "
+	"Append a string to set the usehistory value to true"
 
 	self queryAt: 'usehistory' put: 'y'
 ]

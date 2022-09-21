@@ -22,9 +22,9 @@ BioEntrezClient class >> baseUrl [
 
 { #category : #'accessing public - databases' }
 BioEntrezClient >> biosample [
-	" Set and answer the receiver's working database "
+	"Set and answer the receiver's working database"
 		
-	^ self database: ( BioEntrezSample new client: self )
+	^ self database: (BioEntrezSample new client: self)
 
 		
 
@@ -34,7 +34,7 @@ BioEntrezClient >> biosample [
 BioEntrezClient >> biosystems [
 	" Set and answer the receiver's working database "
 		
-	^ self database: ( BioEntrezBioSystems new client: self )
+	^ self database: (BioEntrezBioSystems new client: self)
 
 		
 
@@ -311,7 +311,7 @@ BioEntrezClient >> omim [
 
 { #category : #accessing }
 BioEntrezClient >> parameters [
-	" Answer a Collection with the receiver's configured parameters "
+	"Answer a <Collection> with the receiver's configured parameters"
 	
 	^ self url parameters
 ]
@@ -480,9 +480,9 @@ BioEntrezClient >> spell [
 
 { #category : #'accessing public - databases' }
 BioEntrezClient >> sra [
-	" Set and answer the receiver's working database "
+	"Set and answer the receiver's working database"
 		
-	^ self database: ( BioEntrezSRA new client: self )
+	^ self database: (BioEntrezSRA new client: self)
 
 		
 

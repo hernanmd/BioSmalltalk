@@ -93,7 +93,7 @@ BioClassifier >> atMatchClass: className put: instanceObject [
 
 { #category : #accessing }
 BioClassifier >> atMatches [
-	" Answer a <Collection> with the default matched elements "
+	"Answer a <Collection> with the default matched elements"
 	
 	^ self matches 
 		at: #default
@@ -111,7 +111,7 @@ BioClassifier >> atMatchesPut: anObject [
 
 { #category : #accessing }
 BioClassifier >> atMismatch: selectedMismatchFeatures [
-	" Answer the mismatch corresponding to selectedMismatchFeatures "
+	"Answer the mismatch corresponding to selectedMismatchFeatures"
 
 	| nonEmptyFeatureValues |
 	nonEmptyFeatureValues := selectedMismatchFeatures reject: [ : featureValue | featureValue = '-' ].
@@ -122,11 +122,9 @@ BioClassifier >> atMismatch: selectedMismatchFeatures [
 
 { #category : #accessing }
 BioClassifier >> atMismatchesPut: anObject [
-	" Take an action when the receiver's subect cannot be classified "
+	"Take an action when the receiver's subect cannot be classified"
 	
-	self mismatches 
-		add: anObject;
-		yourself
+	self mismatches add: anObject
 
 ]
 

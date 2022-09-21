@@ -69,7 +69,7 @@ BioNCBIBlastReader class >> isPreferredFor: aString [
 
 { #category : #'accessing-blast' }
 BioNCBIBlastReader >> alignments [
-	" Answer a <BioAlignment> of receiver's alignment (for the database) in each receiver's HSP node "
+	"Answer a <BioAlignment> of receiver's alignment (for the database) in each receiver's HSP node"
 	
 	| align parsedOrFilteredResults |
 	

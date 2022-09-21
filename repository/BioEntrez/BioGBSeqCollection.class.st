@@ -5,11 +5,15 @@ BioGBSeqCollection is a <Collection> of <Dictionary> which serves to access GenB
 Class {
 	#name : #BioGBSeqCollection,
 	#superclass : #BioINSDCCollection,
-	#category : 'BioEntrez-Core'
+	#instVars : [
+		'bioGBSeqCollection'
+	],
+	#category : #'BioEntrez-Core'
 }
 
 { #category : #accessing }
 BioGBSeqCollection class >> qualifierForAccessionWithVersion [
+	"Answer a <String> describing the node used for accession numbers with versions"
 
 	^ 'GBSeq_accession-version'
 ]
@@ -23,25 +27,29 @@ BioGBSeqCollection class >> qualifierForAlignedSequence [
 
 { #category : #accessing }
 BioGBSeqCollection class >> qualifierForAuthor [
+	"Answer a <String> describing the node used for authors"
 
 	^ 'GBAuthor'
 ]
 
 { #category : #accessing }
 BioGBSeqCollection class >> qualifierForDefinition [
-
+	"Answer a <String> describing the node used for sequence definition"
+	
 	^ 'GBSeq_definition'
 ]
 
 { #category : #accessing }
 BioGBSeqCollection class >> qualifierForReferenceJournal [
+	"Answer a <String> describing the node used for reference journals"
 
 	^ 'GBReference_journal'
 ]
 
 { #category : #accessing }
 BioGBSeqCollection class >> qualifierForReferenceTitle [
-
+	"Answer a <String> describing the node used for reference titles"
+	
 	^ 'GBReference_title'
 ]
 
@@ -53,22 +61,26 @@ BioGBSeqCollection class >> qualifierForXRefId [
 
 { #category : #accessing }
 BioGBSeqCollection class >> readerClass [ 
-	" Private - See superimplementor's comment "
+	"Private - See superimplementor's comment"
 
 	^ BioEXmlGBSeqReader
 ]
 
 { #category : #accessing }
 BioGBSeqCollection >> accessionsWithVersion [
+	"Answer a <Collection> of <String>"
 
-	^ self collect: [ : d | d at: self class qualifierForAccessionWithVersion ]
+	^ self collect: [ : d | 
+		d at: self class qualifierForAccessionWithVersion ifAbsent: [ String empty ] ]
 ]
 
 { #category : #accessing }
 BioGBSeqCollection >> atAccession: accesionString [
-	" Answer a <Dictionary> identified by accessionString "
+	"Answer a <Dictionary> identified by accessionString "
 
-	^ self detect: [ : d | (d at: self class qualifierForAccessionWithVersion) = accesionString ]
+	^ self
+		detect: [ : d | (d at: self class qualifierForAccessionWithVersion ifAbsent: [ nil ]) = accesionString ]
+		
 ]
 
 { #category : #accessing }
@@ -87,6 +99,8 @@ BioGBSeqCollection >> collectAt: keyName ifAbsent: absentBlock [
 BioGBSeqCollection >> features [
 	" Detect the record with most features and answer a sorted <Collection> of <String> with them "
 	
-	^ (self detectMax: [ : d | d value size ]) features asSortedCollection
+	^ (self detectMax: [ : d | d value size ])
+		ifNil: [ Array empty ]
+		ifNotNil: [ : maxCol | maxCol features asSortedCollection ]
 	
 ]

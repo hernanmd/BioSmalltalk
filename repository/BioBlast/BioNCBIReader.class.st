@@ -17,7 +17,7 @@ Class {
 
 { #category : #private }
 BioNCBIReader class >> allowOpenTranscript [
-	" Answer <true> if receiver is allowd to open a Transcript window to report log "
+	"Answer <true> if receiver is allowd to open a Transcript window to report log"
 
 	^ true
 ]
@@ -46,7 +46,7 @@ BioNCBIReader >> addResult [
 
 { #category : #'accessing filters' }
 BioNCBIReader >> filter [
-	" Answer a filterer for selecting specific results from the receiver "
+	"Answer a filterer for selecting specific results from the receiver"
 	
 	^ ( self filters notEmpty and: [ self hasCumulativeFilter ] )
 		ifFalse: [ self filterClass newFromReader: self ]
@@ -55,7 +55,7 @@ BioNCBIReader >> filter [
 
 { #category : #testing }
 BioNCBIReader >> hasResults [
-	" Answer <true> if we have results "
+	"Answer <true> if we have results"
 	
 	^ results notNil
 ]
@@ -89,9 +89,14 @@ BioNCBIReader >> querySequence: anObject [
 ]
 
 { #category : #accessing }
+BioNCBIReader >> resultClass [
+	^ self subclassResponsibility
+]
+
+{ #category : #accessing }
 BioNCBIReader >> searchResults [
 
-	^ ( results isNil or: [ results isEmpty ] )
+	^ (results isNil or: [ results isEmpty ])
 		ifTrue: [ results := self parsedContents ]
 		ifFalse: [ results ]
 
@@ -104,7 +109,7 @@ BioNCBIReader >> searchResults: anObject [
 
 { #category : #accessing }
 BioNCBIReader >> searchResultsSize [
-	" Answer a <Number> with the receiver's count of hits "
+	"Answer a <Number> with the receiver's count of hits"
 
 	^ self searchResults last size
 

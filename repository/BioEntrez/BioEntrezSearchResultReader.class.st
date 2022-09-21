@@ -18,7 +18,7 @@ BioEntrezSearchResultReader class >> isPreferredFor: aString [
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> correctedQuery [
-	" Answer a <String> with the corrected query spelling suggestion "
+	"Answer a <String> with the corrected query spelling suggestion"
 	
 	^ [ self accessNode: 'CorrectedQuery' ]
 	on: BioNotFoundObject
@@ -28,21 +28,21 @@ BioEntrezSearchResultReader >> correctedQuery [
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> count [
-	" Answer a <String> with the number of search results "
-	
+	"Answer a <String> with the number of search results"
+
 	^ (self accessNode: 'Count') first
 ]
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> idList [
-	" Answer a <Collection> with GenBank identifiers "
+	"Answer a <Collection> with GenBank identifiers"
 	
 	^ (self accessNodes: 'Id') at: 'Id'
 ]
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> keys [
-	" Answer a <Collection> with the search results keys (node names) "
+	"Answer a <Collection> with the search results keys (node names)"
 	
 	^ self keysParserClass parse: self results
 
@@ -54,7 +54,7 @@ BioEntrezSearchResultReader >> keysParserClass [
 	^ BioEResultKeysParser
 ]
 
-{ #category : #'accessing private' }
+{ #category : #'accessing parser' }
 BioEntrezSearchResultReader >> parserClass [
 	" Private - See superimplementor's comment "
 	
@@ -70,13 +70,13 @@ BioEntrezSearchResultReader >> queryKey [
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> retMax [
-	" Answer a String with number of record retrieved
+	"Answer a <String> with number of records retrieved
 	See http://www.ncbi.nlm.nih.gov/corehtml/query/static/esummary_help.html#DisplayNumbers for details "
 	
 	^ (self accessNode: 'RetMax') first
 ]
 
-{ #category : #'accessing private' }
+{ #category : #'accessing parser' }
 BioEntrezSearchResultReader >> selectNodes: nodesCollection in: anObject [
 
 	^ self parserClass 
@@ -86,7 +86,7 @@ BioEntrezSearchResultReader >> selectNodes: nodesCollection in: anObject [
 
 { #category : #accessing }
 BioEntrezSearchResultReader >> webEnv [
-	" Answer a <String> with Entrez search result web environment "
-	
+	"Answer a <String> with Entrez search result web environment"
+
 	^ self accessNode: 'WebEnv'
 ]

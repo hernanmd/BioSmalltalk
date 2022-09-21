@@ -2,7 +2,7 @@ SmalltalkCISpec {
   #loading : [
     SCIMetacelloLoadSpec {
       #baseline : 'BioSmalltalk',
-      #directory : 'src',
+      #directory : 'repository',
       #platforms : [ #pharo ]
     }
   ],

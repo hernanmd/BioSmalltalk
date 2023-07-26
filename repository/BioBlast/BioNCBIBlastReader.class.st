@@ -29,14 +29,62 @@ BioNCBIBlastReader class >> allNodes [
 { #category : #'accessing-nodes' }
 BioNCBIBlastReader class >> headerNodes [
 
-  ^ ((Dictionary new) add: ('BlastOutput_query-ID'->'SeqId of query'); add: ('BlastOutput_version'->'Program Version'); add: ('Parameters_filter'->'Filtering options (-F)'); add: ('Parameters_gap-open'->'Gap opening cost (-G)'); add: ('BlastOutput_query-def'->'Definition line of query'); add: ('BlastOutput_reference'->'BLAST Reference'); add: ('Parameters_gap-extend'->'Gap extension cost (-E)'); add: ('Parameters_sc-mismatch'->'Mismatch score for NT (-q)'); add: ('Parameters_sc-match'->'Match score for NT (-r)'); add: ('Parameters_expect'->'Expectation threshold (-e)'); add: ('BlastOutput_query-len'->'Length of query sequence'); add: ('BlastOutput_db'->'BLAST Database Name'); add: ('BlastOutput_program'->'BLAST program: blastp, tblastx etc.'); yourself)
+	^ Dictionary new
+		  add: 'BlastOutput_query-ID' -> 'SeqId of query';
+		  add: 'BlastOutput_version' -> 'Program Version';
+		  add: 'Parameters_filter' -> 'Filtering options (-F)';
+		  add: 'Parameters_gap-open' -> 'Gap opening cost (-G)';
+		  add: 'BlastOutput_query-def' -> 'Definition line of query';
+		  add: 'BlastOutput_reference' -> 'BLAST Reference';
+		  add: 'Parameters_gap-extend' -> 'Gap extension cost (-E)';
+		  add: 'Parameters_sc-mismatch' -> 'Mismatch score for NT (-q)';
+		  add: 'Parameters_sc-match' -> 'Match score for NT (-r)';
+		  add: 'Parameters_expect' -> 'Expectation threshold (-e)';
+		  add: 'BlastOutput_query-len' -> 'Length of query sequence';
+		  add: 'BlastOutput_db' -> 'BLAST Database Name';
+		  add: 'BlastOutput_program' -> 'BLAST program: blastp, tblastx etc.';
+		  yourself
 ]
 
 { #category : #'accessing-nodes' }
 BioNCBIBlastReader class >> hitHspsNodes [
+
 	" Answer a Dictionary with key containing a String with the HSP node name and a description String as value "
-	
-	^ Dictionary new add: ('Hsp_bit-score'->''); add: ('Hsp_hit-to'->'Offset of database sequence at the end of the alignment (one-offset)'); add: ('Hsp_query-to'->'Offset of query at the end of the alignment (one-offset)'); add: ('Hsp_gaps'->'Number of gaps in the alignment'); add: ('Hsp_align-len'->'Length of the alignment used'); add: ('Hsp_pattern-to'->'End of phi-blast pattern on the query (one-offset)'); add: ('Hsp_midline'->'Formatting middle line as normally seen in BLAST report'); add: ('Hsp_hit-from'->'Offset of database sequence at the start of the alignment (one-offset)'); add: ('Hsp_num'->'Ordinal number of the HSP, one-offset'); add: ('Hsp_identity'->'Number of identities in the alignment'); add: ('Hsp_hit-frame'->'Frame of the database sequence if applicable'); add: ('Hsp_evalue'->'Expect value of the HSP'); add: ('Hsp_qseq'->'Alignment string for the query'); add: ('Hsp_query-frame'->'Frame of the query if applicable'); add: ('Hsp_query-from'->'Offset of query at the start of the alignment (one-offset)'); add: ('Hsp_score'->'Score (in bits) of the HSP'); add: ('Hsp_hseq'->'Alignment string for the database'); add: ('Hsp_positive'->'Number of positive (conservative) substitutions in the alignment'); add: ('Hsp_density'->'Score density'); add: ('Hsp_pattern-from'->'Start of phi-blast pattern on the query (one-offset)'); yourself
+
+	^ Dictionary new
+		  add: 'Hsp_bit-score' -> '';
+		  add: 'Hsp_hit-to'
+			  ->
+				  'Offset of database sequence at the end of the alignment (one-offset)';
+		  add: 'Hsp_query-to'
+			  -> 'Offset of query at the end of the alignment (one-offset)';
+		  add: 'Hsp_gaps' -> 'Number of gaps in the alignment';
+		  add: 'Hsp_align-len' -> 'Length of the alignment used';
+		  add: 'Hsp_pattern-to'
+			  -> 'End of phi-blast pattern on the query (one-offset)';
+		  add: 'Hsp_midline'
+			  -> 'Formatting middle line as normally seen in BLAST report';
+		  add: 'Hsp_hit-from'
+			  ->
+				  'Offset of database sequence at the start of the alignment (one-offset)';
+		  add: 'Hsp_num' -> 'Ordinal number of the HSP, one-offset';
+		  add: 'Hsp_identity' -> 'Number of identities in the alignment';
+		  add:
+			  'Hsp_hit-frame' -> 'Frame of the database sequence if applicable';
+		  add: 'Hsp_evalue' -> 'Expect value of the HSP';
+		  add: 'Hsp_qseq' -> 'Alignment string for the query';
+		  add: 'Hsp_query-frame' -> 'Frame of the query if applicable';
+		  add: 'Hsp_query-from'
+			  -> 'Offset of query at the start of the alignment (one-offset)';
+		  add: 'Hsp_score' -> 'Score (in bits) of the HSP';
+		  add: 'Hsp_hseq' -> 'Alignment string for the database';
+		  add: 'Hsp_positive'
+			  ->
+				  'Number of positive (conservative) substitutions in the alignment';
+		  add: 'Hsp_density' -> 'Score density';
+		  add: 'Hsp_pattern-from'
+			  -> 'Start of phi-blast pattern on the query (one-offset)';
+		  yourself
 ]
 
 { #category : #'accessing-nodes' }
@@ -48,9 +96,36 @@ BioNCBIBlastReader class >> hitHspsNodesNames [
 
 { #category : #'accessing-nodes' }
 BioNCBIBlastReader class >> hitNodes [
-	" Answer a Dictionary mapping XML node names with a useful description "
+	" Answer a <Dictionary> mapping XML node names with a useful description "
 
-	^ (Dictionary new) add: ('Hit_accession'->'Accession of the database sequence (e.g., "AAF57408")'); add: ('Hsp_hit-to'->'Offset of database sequence at the end of the alignment (one-offset)'); add: ('Hit_hsps'->'Serves as container of each HIT information'); add: ('Hsp_gaps'->'Number of gaps in the alignment'); add: ('Hsp_query-to'->'Offset of query at the end of the alignment (one-offset)'); add: ('Hsp_align-len'->'Length of the alignment used'); add: ('Hsp'->'Serves as container of each HIT information'); add: ('Hsp_midline'->'Formatting middle line as normally seen in BLAST report'); add: ('Hsp_hit-from'->'Offset of database sequence at the start of the alignment (one-offset)'); add: ('Hsp_pattern-to'->'End of phi-blast pattern on the query (one-offset)'); add: ('Hit_len'->'Length of the database sequence'); add: ('Hsp_identity'->'Number of identities in the alignment'); add: ('Hsp_num'->'Ordinal number of the HSP, one-offset'); add: ('Hit_num'->'Ordinal number of the hit, with one-offset (e.g., "1, 2...")'); add: ('Hsp_hit-frame'->'Frame of the database sequence if applicable'); add: ('Hsp_evalue'->'Expect value of the HSP'); add: ('Hit_id'->'Identifier of the database sequence (e.g., "gi|7297267|gb|AAF52530.1|")'); add: ('Hit_def'->'Definition line of the database sequence (e.g., "(AE003618) CG6717 gene...")'); add: ('Hsp_qseq'->'Alignment string for the query'); add: ('Hsp_hseq'->'Alignment string for the database'); add: ('Hsp_query-frame'->'Frame of the query if applicable'); add: ('Hsp_query-from'->'Offset of query at the start of the alignment (one-offset)'); add: ('Hsp_density'->'Score density'); add: ('Hsp_positive'->'Number of positive (conservative) substitutions in the alignment'); add: ('Hsp_score'->'Score (in bits) of the HSP'); add: ('Hsp_pattern-from'->'Start of phi-blast pattern on the query (one-offset)'); yourself
+	^ Dictionary new
+		  add: 'Hit_accession' -> 'Accession of the database sequence (e.g., "AAF57408")';
+		  add: 'Hsp_hit-to' -> 'Offset of database sequence at the end of the alignment (one-offset)';
+		  add: 'Hit_hsps' -> 'Serves as container of each HIT information';
+		  add: 'Hsp_gaps' -> 'Number of gaps in the alignment';
+		  add: 'Hsp_query-to' -> 'Offset of query at the end of the alignment (one-offset)';
+		  add: 'Hsp_align-len' -> 'Length of the alignment used';
+		  add: 'Hsp' -> 'Serves as container of each HIT information';
+		  add: 'Hsp_midline' -> 'Formatting middle line as normally seen in BLAST report';
+		  add: 'Hsp_hit-from' -> 'Offset of database sequence at the start of the alignment (one-offset)';
+		  add: 'Hsp_pattern-to' -> 'End of phi-blast pattern on the query (one-offset)';
+		  add: 'Hit_len' -> 'Length of the database sequence';
+		  add: 'Hsp_identity' -> 'Number of identities in the alignment';
+		  add: 'Hsp_num' -> 'Ordinal number of the HSP, one-offset';
+		  add: 'Hit_num' -> 'Ordinal number of the hit, with one-offset (e.g., "1, 2...")';
+		  add: 'Hsp_hit-frame' -> 'Frame of the database sequence if applicable';
+		  add: 'Hsp_evalue' -> 'Expect value of the HSP';
+		  add: 'Hit_id' -> 'Identifier of the database sequence (e.g., "gi|7297267|gb|AAF52530.1|")';
+		  add: 'Hit_def' -> 'Definition line of the database sequence (e.g., "(AE003618) CG6717 gene...")';
+		  add: 'Hsp_qseq' -> 'Alignment string for the query';
+		  add: 'Hsp_hseq' -> 'Alignment string for the database';
+		  add: 'Hsp_query-frame' -> 'Frame of the query if applicable';
+		  add: 'Hsp_query-from' -> 'Offset of query at the start of the alignment (one-offset)';
+		  add: 'Hsp_density' -> 'Score density';
+		  add: 'Hsp_positive' -> 'Number of positive (conservative) substitutions in the alignment';
+		  add: 'Hsp_score' -> 'Score (in bits) of the HSP';
+		  add: 'Hsp_pattern-from' -> 'Start of phi-blast pattern on the query (one-offset)';
+		  yourself
 ]
 
 { #category : #'accessing-nodes' }

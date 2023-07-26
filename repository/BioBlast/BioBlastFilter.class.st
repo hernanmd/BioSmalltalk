@@ -59,7 +59,7 @@ BioBlastFilter >> addFilteredResultsFrom: collection [
 
 { #category : #accessing }
 BioBlastFilter >> alignments [
-	" Answer the <BioAlignment> of the receiver "
+	"Answer the receiver's <BioAlignment>"
 
 	^ self reader alignments
 ]

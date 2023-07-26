@@ -2,7 +2,7 @@ Class {
 	#name : #BioEntrezUrlTest,
 	#superclass : #BioAbstractTest,
 	#instVars : [
-		'url'
+		'entrezUrl'
 	],
 	#category : #'BioEntrezTests-Core'
 }
@@ -14,15 +14,22 @@ BioEntrezUrlTest >> baseUrl [
 ]
 
 { #category : #testing }
+BioEntrezUrlTest >> setUp [
+
+	super setUp.
+	entrezUrl := BioEntrezUrl fromString: self baseUrl
+]
+
+{ #category : #testing }
 BioEntrezUrlTest >> testBaseUrl [
 
-	self assert: ( BioEGlobalQuery baseUrl isKindOf: String ).
+	self assert: (BioEGlobalQuery baseUrl isKindOf: String).
 	self deny: BioEGlobalQuery baseUrl isEmpty.
 	
-	self assert: ( BioEInfo baseUrl isKindOf: String ).
+	self assert: (BioEInfo baseUrl isKindOf: String).
 	self deny: BioEInfo baseUrl isEmpty.
 
-	self assert: ( BioESearch baseUrl isKindOf: String ).
+	self assert: (BioESearch baseUrl isKindOf: String).
 	self deny: BioESearch baseUrl isEmpty.
 
 ]
@@ -30,6 +37,7 @@ BioEntrezUrlTest >> testBaseUrl [
 { #category : #testing }
 BioEntrezUrlTest >> testCompleteUrl [
 	
+	| url |
 	url := (BioEntrezUrl fromString: self baseUrl)
 		dbName: 'nuccore';
 		cmdName: 'esearch.fcgi';
@@ -52,44 +60,50 @@ BioEntrezUrlTest >> testCompleteUrl [
 { #category : #testing }
 BioEntrezUrlTest >> testCreation [
 
-	url := BioEntrezUrl fromString: self baseUrl , 'db=pubmed&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
-	self assert: (url isKindOf: BioEntrezUrl).
-	self assert: (url asString isKindOf: String).
-	self assert: url scheme equals: 'https'.
-	self assert: url authority equals: 'eutils.ncbi.nlm.nih.gov'.
+	entrezUrl := BioEntrezUrl fromString: self baseUrl , 'db=pubmed&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
+	self assert: (entrezUrl isKindOf: BioEntrezUrl).
+	self assert: (entrezUrl asString isKindOf: String).
+	self assert: entrezUrl scheme equals: 'https'.
+	self assert: entrezUrl authority equals: 'eutils.ncbi.nlm.nih.gov'.
 
 ]
 
 { #category : #testing }
 BioEntrezUrlTest >> testDbName [
 
-	url := (BioEntrezUrl fromString: self baseUrl)
+	entrezUrl
 			dbName: 'nuccore';
 			yourself.
-	self assert: url dbName equals: 'nuccore'
+	self assert: entrezUrl dbName equals: 'nuccore'
 ]
 
 { #category : #testing }
 BioEntrezUrlTest >> testEmailAddress [
 
-	url := (BioEntrezUrl fromString: self baseUrl)
+	entrezUrl
 		emailAddress: 'test@test.com';
 		yourself.
-	self assert: (url valueForParameter: 'email') equals: 'test@test.com'
+	self assert: (entrezUrl valueForParameter: 'email') equals: 'test@test.com'
+]
+
+{ #category : #tests }
+BioEntrezUrlTest >> testEntrezParameters [
+
+	self deny: entrezUrl entrezParameters isEmpty.
+	self assert: (entrezUrl entrezParameters noneSatisfy: #isEmpty).
+	self assert: (entrezUrl entrezParameters allSatisfy: #isString).
 ]
 
 { #category : #testing }
 BioEntrezUrlTest >> testParameters [
 
-	url := BioEntrezUrl fromString: self baseUrl.
+	self assert: (entrezUrl parameters isKindOf: Collection).
+	self assert: (entrezUrl parameters isEmpty).
 	
-	self assert: (url parameters isKindOf: Collection).
-	self assert: (url parameters isEmpty).
-	
-	url setUseHistory.
-	self assert: (url parameters isKindOf: Collection).
-	self deny: (url parameters isEmpty).
-	self assert: url parameters equals: (Array with: 'usehistory')
+	entrezUrl setUseHistory.
+	self assert: (entrezUrl parameters isKindOf: Collection).
+	self deny: (entrezUrl parameters isEmpty).
+	self assert: entrezUrl parameters equals: (Array with: 'usehistory')
 	
 
 ]
@@ -97,8 +111,8 @@ BioEntrezUrlTest >> testParameters [
 { #category : #testing }
 BioEntrezUrlTest >> testToolName [
 
-	url := (BioEntrezUrl fromString: self baseUrl)
+	entrezUrl
 		toolName: 'BioSmalltalk';
 		yourself.
-	self assert: (url valueForParameter: 'tool') equals: 'BioSmalltalk'
+	self assert: (entrezUrl valueForParameter: 'tool') equals: 'BioSmalltalk'
 ]

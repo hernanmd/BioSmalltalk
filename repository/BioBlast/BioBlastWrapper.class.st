@@ -48,12 +48,14 @@ BioBlastWrapper class >> wu [
 
 { #category : #operations }
 BioBlastWrapper >> database [
+	"Answer a <String> with the current receiver's database"
 
 	^ self propertyAt: 'db'
 ]
 
 { #category : #'accessing private' }
 BioBlastWrapper >> database: aDatabaseName [
+	"Set the receiver's database to be aDatabaseName"
 
 	self propertyAt: 'db' put: aDatabaseName
 ]
@@ -90,7 +92,7 @@ BioBlastWrapper >> execute [
 
 { #category : #testing }
 BioBlastWrapper >> isPresent [
-	" Answer <true> if the receiver's is actually installed in the system "
+	"Answer <true> if the receiver's is actually installed in the system"
 	
 	^ (self programNamed: self mainExecName) notNil
 ]

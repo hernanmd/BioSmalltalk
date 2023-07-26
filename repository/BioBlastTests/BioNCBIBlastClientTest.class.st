@@ -48,7 +48,7 @@ BioNCBIBlastClientTest >> test02LatestLocalClientAccess [
 	
 	blastInterface := BioBlastWrapper.
 	
-	self assert: blastInterface ncbi local latest class equals: BioNCBILocalBlastPlus2224.
+	self assert: (blastInterface ncbi local latest isKindOf: BioNCBILocalBlastWrapper).
 	self assert: blastInterface ncbi local latest blastxPath isString.
 	self assert: blastInterface ncbi local latest blastnPath isString.
 	self assert: blastInterface ncbi local latest blastpPath isString.

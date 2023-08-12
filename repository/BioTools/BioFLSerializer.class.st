@@ -29,7 +29,12 @@ BioFLSerializer class >> providerClass [
 BioFLSerializer >> initializeWith: aProviderClass [
 	" Private - See superimplementor's comment "
 	
-	super initializeWith: aProviderClass newDefault
+	| serializer |
+	serializer := (aProviderClass respondsTo: #newDefault)
+		ifFalse: [ aProviderClass default ]
+		ifTrue: [ aProviderClass newDefault ].
+
+	super initializeWith: serializer
 ]
 
 { #category : #accessing }

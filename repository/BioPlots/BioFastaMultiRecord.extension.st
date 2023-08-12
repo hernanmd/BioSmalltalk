@@ -1,13 +1,34 @@
 Extension { #name : #BioFastaMultiRecord }
 
 { #category : #'*BioPlots' }
-BioFastaMultiRecord >> groupedBySeqLengthDistribution: aNumber [
-	" Answer a <Collection> of <BioFastaRecord> grouped by sequence length "
+BioFastaMultiRecord >> plot [
+	" Open a window displaying an historgram of the receiver's sequences.
+	X-axis represent the bins with sequence lengths (using the Roassal's default bin length
+	Y-axis represent the amount of bases in each bin "
+
+	^ self
+		plotHistogramBins: 20 
+		xAxisLabel: 'Sequence lengths (bp)'
+		yAxisLabel: 'Sequence Count'.
+]
+
+{ #category : #'*BioPlots' }
+BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel [
+
+	| c plot |
 	
-	^ RTDistribution new 
-		objects: self records;
-		metric: #size;
-		frequencyWithAmountOfIntervals: aNumber
+	plot := RSHistogramPlot new 
+		x: (self records collect: #size);
+		yourself.
+	c := RSChart new
+	   title: ('Histogram of {1} FASTA sequences' format: { self size asString });
+		"colors: (RSColorPalette sequential perform: colorPaletteSelector);"
+		ylabel: axixYLabel;
+		xlabel: axisXLabel;
+		addPlot: plot;
+		addDecoration: RSVerticalTick new;
+		addDecoration: RSHorizontalTick new doNotUseNiceLabel;
+		open.
 ]
 
 { #category : #'*BioPlots' }
@@ -22,44 +43,20 @@ BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxis
 ]
 
 { #category : #'*BioPlots' }
-BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color: aColor barWidth: barWidth [
+BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color: colorPaletteSelector barWidth: barWidth [
 
-	| bins minPoint g ds |
+	| c plot |
 	
-	bins := self groupedBySeqLengthDistribution: binNumber.
-	minPoint := ((bins reject: #isEmpty) detectMin: [ : c | c size ]) anyOne size - 28.
-
-	" Build diagram "
-	g := RTGrapher new 
-			extent: 500 @ 200; 
-			minX: minPoint;
-			withoutOrigin;
-			yourself.
-	ds := RTData new
-		points: bins;
-		x: [ : c | c ifEmpty: [ minPoint ] ifNotEmpty: [ : d | d anyOne size ] ];
-		y: #size.
-	ds barShape 
-		borderColor: Color black;
-		color: aColor;
-		width: barWidth.
-	g add: ds.
-
-	" Configure axis settings "
-	g axisY 
-		title: axixYLabel;
-		color: Color black;	
-		noDecimal.
-	g axisX 
-		noDecimal;	
-		fromPoint: minPoint;
-		color: Color black;
-		title: axisXLabel.
-		
-"    g datasets do: #offsetForBarCharts.
-    g minX: 0.
-    g maxX: g getMaxNumberOfPoints."
-		
-	" Open visualization in a new window "
-	g open.
+	plot := RSHistogramPlot new 
+		x: (self records collect: #size);
+		yourself.
+	c := RSChart new
+	   title: ('Histogram of {1} FASTA sequences' format: { self size asString });
+		"colors: (RSColorPalette sequential perform: colorPaletteSelector);"
+		ylabel: axixYLabel;
+		xlabel: axisXLabel;
+		addPlot: plot;
+		addDecoration: RSVerticalTick new;
+		addDecoration: RSHorizontalTick new doNotUseNiceLabel;
+		open.
 ]

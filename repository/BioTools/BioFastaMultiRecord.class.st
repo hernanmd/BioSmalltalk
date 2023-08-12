@@ -18,7 +18,7 @@ Class {
 { #category : #examples }
 BioFastaMultiRecord class >> examplePlotHistogram [
 
-	(BioParser parseMultiFastaFile: BioObject testFilesDirectoryName asFileReference / 'ls_orchid.fasta') 
+	(BioParser parseMultiFastaFile: BioObject testFilesFullDirectoryName / 'ls_orchid.fasta') 
 		plotHistogramBins: 20 
 		xAxisLabel: 'Sequence lengths (bp)'
 		yAxisLabel: 'Count' 

@@ -107,11 +107,13 @@ BioAlignment >> asString [
 	
 	^ String streamContents: [ : stream |
 		self sequences do: [ : seq | 
-			stream 
-				nextPutAll: seq asString;
-				space;
-				nextPutAll: seq name;
-				cr ] ]
+			stream nextPutAll: seq asString.
+			seq name 
+				ifNotNil: [ : seqName | 
+					stream 
+						space;
+						nextPutAll: seqName ].
+			stream cr ] ]
 ]
 
 { #category : #accessing }

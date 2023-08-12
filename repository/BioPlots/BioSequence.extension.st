@@ -1,6 +1,13 @@
 Extension { #name : #BioSequence }
 
 { #category : #'*BioPlots' }
+BioSequence >> addFromRSBuilder: aBioRSBaseBuilder [ 
+	" Double dispatch to the Roassal builder "
+
+	aBioRSBaseBuilder addSequenceString: self sequence
+]
+
+{ #category : #'*BioPlots' }
 BioSequence >> plotBarChart [
 	"Answer a <RSCanvas> which can be inspected to visualize the receiver's composition of nucleotides"
 

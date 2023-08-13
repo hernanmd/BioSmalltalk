@@ -5,7 +5,7 @@ gb|accession|locus
 Class {
 	#name : #BioGBParser,
 	#superclass : #BioAbstractALParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -23,5 +23,5 @@ BioGBParser >> initialize [
 	parser := 
 		self parserForIdentifier , 
 		self parserForAccession ,
-		( self parserForLocus ==> [: r | r allButFirst anyOne ] ).
+		(self parserForLocus ==> [: r | r allButFirst anyOne ]).
 ]

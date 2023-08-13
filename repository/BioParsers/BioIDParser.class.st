@@ -5,31 +5,31 @@ This class is not intended to be used directly.
 
 "
 Class {
-	#name : #BioNCBIAbstractParser,
+	#name : #BioIDParser,
 	#superclass : #BioFASTAParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing-parsers' }
-BioNCBIAbstractParser >> parserForCompositeId [
+BioIDParser >> parserForCompositeId [
 
 	^ BioCompositeIDParser new parser
 ]
 
 { #category : #'accessing-parsers' }
-BioNCBIAbstractParser >> parserForDdbj [
+BioIDParser >> parserForDdbj [
 
 	^ BioDDBJParser new parser
 ]
 
 { #category : #'accessing-parsers' }
-BioNCBIAbstractParser >> parserForEmbl [
+BioIDParser >> parserForEmbl [
 
 	^ BioEMBLParser new parser
 ]
 
 { #category : #'accessing-parsers' }
-BioNCBIAbstractParser >> parserForGenBank [
+BioIDParser >> parserForGenBank [
 	" This is GB "
 	
 	^ BioGBParser new parser

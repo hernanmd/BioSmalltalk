@@ -13,8 +13,7 @@ BioFASTAMultiParser >> buildResults: aCollection [
 
 	aCollection first isString
 		ifTrue: [ 
-			self resultsForParse 
-				addFastaRecord: (BioFastaRecord 
+			self resultsForParse addFastaRecord: (BioFastaRecord 
 					named: aCollection first
 					sequence: (self seqFrom: aCollection last)) ]
 		ifFalse: [ aCollection do: [ : seq | self buildResults: seq ] ].

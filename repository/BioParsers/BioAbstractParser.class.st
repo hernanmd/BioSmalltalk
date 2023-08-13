@@ -10,7 +10,7 @@ Class {
 		'results',
 		'status'
 	],
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'instance creation' }
@@ -68,8 +68,7 @@ BioAbstractParser >> expression: anObject [
 
 { #category : #'initialize-release' }
 BioAbstractParser >> initializeWith: aString [
-	" Private - Set the receiver's target expression to be parsed
-	to aString "
+	" Private - Set the receiver's target expression to be parsed to aString "
 	
 	expression := aString
 ]

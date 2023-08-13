@@ -1,12 +1,44 @@
 Extension { #name : #PPPredicateObjectParser }
 
 { #category : #'*BioParsers' }
+PPPredicateObjectParser class >> dnaAmbiguousLetter [
+	" Answer a parser for a DNA letter, using ambiguous IUPAC nomenclature "
+	
+	^ self anyOf: 
+		BioIUPACAmbiguousDNA codes asUppercase , 
+		BioIUPACAmbiguousDNA codes asLowercase
+		
+]
+
+{ #category : #'*BioParsers' }
+PPPredicateObjectParser class >> dnaAmbiguousLetterGapped [
+	" Answer a parser for a DNA letter, using ambiguous IUPAC nomenclature "
+	
+	^ self anyOf: 
+		BioIUPACAmbiguousDNA codes asUppercase , 
+		BioIUPACAmbiguousDNA codes asLowercase ,
+		'-'
+		
+]
+
+{ #category : #'*BioParsers' }
 PPPredicateObjectParser class >> dnaLetter [
 	" Answer a parser for a DNA letter, using unambiguous IUPAC nomenclature "
 	
 	^ self anyOf: 
 		BioIUPACUnambiguousDNA codes asUppercase , 
 		BioIUPACUnambiguousDNA codes asLowercase
+		
+]
+
+{ #category : #'*BioParsers' }
+PPPredicateObjectParser class >> dnaLetterAllowingMissing [
+	" Answer a parser for a DNA letter, using unambiguous IUPAC nomenclature "
+	
+	^ self anyOf: 
+		BioIUPACUnambiguousDNA codes asUppercase , 
+		BioIUPACUnambiguousDNA codes asLowercase ,
+		'-'
 		
 ]
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #BioNCBIIdParser,
-	#superclass : #BioNCBIAbstractParser,
+	#superclass : #BioIDParser,
 	#category : #'BioParsers-Core'
 }
 

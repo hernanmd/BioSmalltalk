@@ -2,7 +2,8 @@ Class {
 	#name : #BioRSBaseBuilder,
 	#superclass : #RSAbstractContainerBuilder,
 	#instVars : [
-		'bases'
+		'bases',
+		'sequenceSize'
 	],
 	#category : #BioPlots
 }
@@ -40,6 +41,7 @@ BioRSBaseBuilder >> addSequence: aBioSequence [
 { #category : #adding }
 BioRSBaseBuilder >> addSequenceString: aString [ 
 
+	self sequenceSize: (aString size max: self sequenceSize).
 	aString do: [ : letter | self addBase: letter ]
 ]
 
@@ -47,6 +49,12 @@ BioRSBaseBuilder >> addSequenceString: aString [
 BioRSBaseBuilder >> bases [
 
 	^ bases
+]
+
+{ #category : #accessing }
+BioRSBaseBuilder >> bases: anObject [
+
+	bases := anObject
 ]
 
 { #category : #rendering }
@@ -86,5 +94,23 @@ BioRSBaseBuilder >> initialize [
 { #category : #rendering }
 BioRSBaseBuilder >> renderIn: canvas [
 
-	canvas addAll: self bases
+	canvas addAll: self bases.
+	RSGridLayout new
+		gapSize: 0;
+		lineItemsCount: self sequenceSize;
+		on: canvas shapes.
+	canvas @ RSCanvasController.
+]
+
+{ #category : #accessing }
+BioRSBaseBuilder >> sequenceSize [
+
+	^ sequenceSize
+		ifNil: [ sequenceSize := 0 ]
+]
+
+{ #category : #accessing }
+BioRSBaseBuilder >> sequenceSize: anObject [
+
+	sequenceSize := anObject
 ]

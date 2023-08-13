@@ -4,11 +4,7 @@ BioAbstractTextParser is an abstract class which groups common behavior for subc
 Class {
 	#name : #BioAbstractTextParser,
 	#superclass : #BioAbstractParser,
-	#classVars : [
-		'Cr',
-		'Lf'
-	],
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing private' }
@@ -43,6 +39,13 @@ BioAbstractTextParser >> parserForAccession [
 	accession := accessionCharacters plus flatten.
 	versionNumber := ($. asParser , #digit asParser plus flatten) optional.
 	^ (accession , versionNumber) flatten ==> [ :a | (a substrings: '.') asArray ]
+]
+
+{ #category : #'accessing-parsers' }
+BioAbstractTextParser >> parserForDNAAlignment [
+	" Answer a parser for alignments, meaning sequences containing gaps "
+
+	^ #dnaAmbiguousLetterGapped asParser
 ]
 
 { #category : #'accessing-parsers' }

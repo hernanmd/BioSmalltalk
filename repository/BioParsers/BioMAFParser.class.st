@@ -6,10 +6,10 @@ This is work in progress
 Class {
 	#name : #BioMAFParser,
 	#superclass : #BioAbstractTextParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioMAFParser >> initialize [
 	" Private - See superimplementor's comment "
 	

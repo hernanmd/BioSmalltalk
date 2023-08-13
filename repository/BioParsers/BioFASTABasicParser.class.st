@@ -3,7 +3,7 @@ This class is not intended to be used directly
 "
 Class {
 	#name : #BioFASTABasicParser,
-	#superclass : #BioNCBIAbstractParser,
+	#superclass : #BioIDParser,
 	#category : #'BioParsers-Core'
 }
 
@@ -19,12 +19,12 @@ BioFASTABasicParser >> buildFastaRecord: aCollection [
 BioFASTABasicParser >> buildResults: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
-	^ ( aCollection first isString or: [ aCollection size <= 3 ] )
+	^ (aCollection first isString or: [ aCollection size <= 3 ])
 		ifTrue: [ self buildFastaRecord: aCollection first ]
 		ifFalse: [ aCollection collect: [ : seq | self buildResults: seq ] ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : #accessing }
 BioFASTABasicParser >> buildTokens: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -37,7 +37,7 @@ BioFASTABasicParser >> buildTokens: aCollection [
 	^ self results		
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioFASTABasicParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -45,7 +45,7 @@ BioFASTABasicParser >> initialize [
 	parser := ( 
 		self parserForNonBreakingString , 
 		#newline asParser ,
-		self parserForSequence ) plus end 
+		self parserForSequence) plus end 
 		
 
 ]
@@ -54,7 +54,9 @@ BioFASTABasicParser >> initialize [
 BioFASTABasicParser >> parserForSequence [
 	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
 
-	^ (#word asParser plus flatten , #newline asParser plus optional ==> [ :nodes | (nodes copyWithout: Character cr) ]) min: 1
+	^ (#word asParser plus flatten , 
+		#newline asParser plus optional ==> [ :nodes | (nodes copyWithout: Character cr) ]) 
+			min: 1
 ]
 
 { #category : #'accessing private' }
@@ -68,7 +70,7 @@ BioFASTABasicParser >> seqFrom: aCollection [
 
 { #category : #'accessing private' }
 BioFASTABasicParser >> sequenceClass [
-	" Answer the class used to build sequences "
+	" Answer a <Class> used to represent biological sequences "
 	
 	^ BioSequence
 ]
@@ -81,13 +83,27 @@ BioFASTABasicParser >> sequenceCollectionFrom: aCollection [
 
 { #category : #'accessing-public' }
 BioFASTABasicParser >> sequenceInfo [
-	" Answer a String with the receiver's parsed information or description found in the header "
+	" Answer a <String> with the receiver's parsed information or description found in the header "
 
 	self parse.
 	^ self results sequenceName
 ]
 
-{ #category : #'accessing private' }
+{ #category : #initialization }
+BioFASTABasicParser >> setParserForDNAAlignment [
+	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
+
+	self parser: self parserForDNAAlignment
+]
+
+{ #category : #initialization }
+BioFASTABasicParser >> setParserForDNASequence [
+	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
+
+	self parser: self parserForSequence
+]
+
+{ #category : #accessing }
 BioFASTABasicParser >> tokenize [
 	" Private - Answer a String with the receiver's expression tokenized "
 	

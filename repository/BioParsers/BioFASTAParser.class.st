@@ -4,17 +4,17 @@ Parser for several FASTA file format elements. This class is not intended to be 
 Class {
 	#name : #BioFASTAParser,
 	#superclass : #BioAbstractTextParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing-parsers' }
 BioFASTAParser >> parserForAnyDescriptionLine [
 
-	| separator token p |
+	| separator token |
 
 	separator := $| asParser ==> [ : n | nil ].
 	token := separator negate plus flatten.
-	^ ( token separatedBy: separator ) ==> [ :nodes | ( nodes copyWithout: nil ) collect: #trimBoth ].
+	^ (token separatedBy: separator) ==> [ :nodes | ( nodes copyWithout: nil ) collect: #trimBoth ].
 		
 ]
 
@@ -28,7 +28,7 @@ BioFASTAParser >> parserForAnyDescriptionText [
 { #category : #'accessing-parsers' }
 BioFASTAParser >> parserForDescriptionLine [
 
-	^ ( $> asParser , self parserForAnyDescriptionLine , #newline asParser ) end
+	^ ($> asParser , self parserForAnyDescriptionLine , #newline asParser) end
 		
 
 ]
@@ -50,8 +50,7 @@ BioFASTAParser >> parserForNonFastaString [
 
 { #category : #'accessing private' }
 BioFASTAParser >> specialFastaChars [
-	" Answer a Collection with Characters with special
-	meaning for the FASTA definition line format "
+	" Answer a Collection with Characters with special meaning for the FASTA definition line format "
 	
 	^ Array 
 		with: Character cr 

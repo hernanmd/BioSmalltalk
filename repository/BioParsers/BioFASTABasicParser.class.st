@@ -89,20 +89,6 @@ BioFASTABasicParser >> sequenceInfo [
 	^ self results sequenceName
 ]
 
-{ #category : #initialization }
-BioFASTABasicParser >> setParserForDNAAlignment [
-	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
-
-	self parser: self parserForDNAAlignment
-]
-
-{ #category : #initialization }
-BioFASTABasicParser >> setParserForDNASequence [
-	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
-
-	self parser: self parserForSequence
-]
-
 { #category : #accessing }
 BioFASTABasicParser >> tokenize [
 	" Private - Answer a String with the receiver's expression tokenized "

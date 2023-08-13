@@ -20,12 +20,12 @@ BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxis
 	plot := RSHistogramPlot new 
 		x: (self records collect: #size);
 		yourself.
-	c := RSChart new
+	c := RSCompositeChart new
 	   title: ('Histogram of {1} FASTA sequences' format: { self size asString });
 		"colors: (RSColorPalette sequential perform: colorPaletteSelector);"
 		ylabel: axixYLabel;
 		xlabel: axisXLabel;
-		addPlot: plot;
+		add: plot;
 		addDecoration: RSVerticalTick new;
 		addDecoration: RSHorizontalTick new doNotUseNiceLabel;
 		open.

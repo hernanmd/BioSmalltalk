@@ -15,18 +15,17 @@ BioSequence >> plotBarChart [
 	c := RSChart new.
 	c extent: 300@200.
 	nucs := self occurrencesOfLetters values.
-	c barHeights: nucs.
+	c add: (RSAbstractChart barHeights: nucs).
 	c addDecoration: (RSHorizontalTick new fromNames: self occurrencesOfLetters keys).
 	c addDecoration: RSVerticalTick new integer.
 	c ylabel: 'Nucleotide frequency'.
 	c xlabel: 'Nucleotides'.
 	c title: self name.
-	c build.
 	lb := RSLegend new.
 	lb layout horizontal.
 	lb container: c canvas.
 	lb build.
-	^ c canvas
+	c open.
 	
 	
 ]

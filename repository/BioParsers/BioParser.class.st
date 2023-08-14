@@ -122,9 +122,10 @@ BioParser class >> parseMultiFastaAlignment: aFastaString [
 
 { #category : #'parse-fasta' }
 BioParser class >> parseMultiFastaAlignmentFile: aFastaFullFileLocation [
-	" Parse aFastaFullFileLocation representing a <String> containing a file with multiple sequences in FASTA format. Answer a <BioFastaMultiRecord> object "
+	" Parse aFastaFullFileLocation representing a <String> containing a file with multiple sequences in FASTA format. Answer a <BioAlignment> object "
 	
-	^ (BioMultiFASTAAlignmentParser on: (self openFullFileNamed: aFastaFullFileLocation) contents) parse
+	^ (BioMultiFASTAAlignmentParser
+		on: (self openFullFileNamed: aFastaFullFileLocation) contents) parse asAlignment
 ]
 
 { #category : #'parse-fasta' }

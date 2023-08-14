@@ -305,6 +305,13 @@ BioAlignment >> longestConsecutive: aCharacter [
 ]
 
 { #category : #accessing }
+BioAlignment >> maxSequenceLength [
+	"Answer a <Number> representing the sequence of maximum length in the receiver."
+	
+	^ self sequences max: #size
+]
+
+{ #category : #accessing }
 BioAlignment >> numberOfBases [
 	" Answer a <Number> with the receiver's sequence size (considering all having the same size) "
 	

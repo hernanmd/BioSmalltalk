@@ -41,7 +41,6 @@ BioRSBaseBuilder >> addSequence: aBioSequence [
 { #category : #adding }
 BioRSBaseBuilder >> addSequenceString: aString [ 
 
-	self sequenceSize: (aString size max: self sequenceSize).
 	aString do: [ : letter | self addBase: letter ]
 ]
 
@@ -73,6 +72,7 @@ BioRSBaseBuilder >> colorMap [
 { #category : #rendering }
 BioRSBaseBuilder >> fromAlignment: aBioAlignment [
 
+	self sequenceSize: aBioAlignment maxSequenceLength.
 	aBioAlignment do: [ : aBioSequence | 
 		self addSequence: aBioSequence].
 ]

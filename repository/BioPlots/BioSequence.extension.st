@@ -8,7 +8,7 @@ BioSequence >> addFromRSBuilder: aBioRSBaseBuilder [
 ]
 
 { #category : #'*BioPlots' }
-BioSequence >> plotBarChart [
+BioSequence >> plot [
 	"Answer a <RSCanvas> which can be inspected to visualize the receiver's composition of nucleotides"
 
 	| c nucs lb |

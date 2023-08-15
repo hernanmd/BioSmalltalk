@@ -295,13 +295,13 @@ BioAlignment >> last [
 
 { #category : #accessing }
 BioAlignment >> longestConsecutive: aCharacter [
-	" Answer the length of the longest substring containing only letter for each element of aCharacter.
+	" Answer the sequence in the receiver with the longest substring containing only letter for each element of aCharacter.
 	
 	From Biostrings: 
 		v = c('AAACTGTGFG', 'GGGAATT', 'CCAAAAAAAAAATT')
 		longestConsecutive(v, 'A') "
 
-	self shouldBeImplemented
+	self sequences max: [ : seq | seq longestConsecutive: aCharacter ]
 ]
 
 { #category : #accessing }

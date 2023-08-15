@@ -73,8 +73,7 @@ BioRSBaseBuilder >> colorMap [
 BioRSBaseBuilder >> fromAlignment: aBioAlignment [
 
 	self sequenceSize: aBioAlignment maxSequenceLength.
-	aBioAlignment do: [ : aBioSequence | 
-		self addSequence: aBioSequence].
+	aBioAlignment do: [ : aBioSequence | self addSequence: aBioSequence].
 ]
 
 { #category : #rendering }

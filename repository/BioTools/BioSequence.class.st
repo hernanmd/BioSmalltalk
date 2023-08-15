@@ -617,6 +617,13 @@ BioSequence >> copyTo: stopInteger [
 	
 ]
 
+{ #category : #'accessing - checksum' }
+BioSequence >> crc32 [
+	"Answer a <Number> with the CRC checksum (edundancy check) for the receiver's sequence"
+
+	^ CRC crc32FromCollection: self asString
+]
+
 { #category : #'accessing private' }
 BioSequence >> defaultAlphabetClass [
 
@@ -821,6 +828,24 @@ BioSequence >> gcSkewInt [
 	^ skews
 ]
 
+{ #category : #'accessing - checksum' }
+BioSequence >> gcg [
+	"Answer a <Number> with the GCG checksum (edundancy check) for the receiver's sequence"
+
+	| index checksum |
+
+	index := 0.
+	checksum := 0.
+
+	self do: [ :char |
+		index := index + 1.
+		checksum := checksum + (index * (char asUppercase asciiValue)).
+		index = 57
+			ifTrue: [ index := 0 ] ].
+
+	^ checksum \\ 10000.
+]
+
 { #category : #testing }
 BioSequence >> hasAmbiguousBases [
 	" Answer <true> if receiver contains ambiguity codes "
@@ -961,10 +986,191 @@ BioSequence >> kmersCount: patString mismatches: d [
 ]
 
 { #category : #accessing }
+BioSequence >> lcc [
+	"Answer a <Collection> of <Float> with the Local Composition Complexity (LCC) value for the receiver. Assume the receiver is unambiguous sequence "
+
+	| l4 lccValues |
+	l4 := 4 log.  
+	lccValues := OrderedCollection new: 4.
+
+	'ACTG' do: [ : nuc |
+		| occCount |
+	
+		lccValues add: ((occCount := self occurrencesOf: nuc) = 0
+			ifTrue: [ 0 ]
+			ifFalse: [ occCount / self size * (occCount / self size log) / l4 ]) negated ].
+
+	^ lccValues
+]
+
+{ #category : #accessing }
+BioSequence >> lccWSize: wsize [
+
+	| l4 compone lccsal window cant_a cant_c cant_t cant_g term_a term_c term_t term_g tail |
+        
+	l4 := (4 log).
+	compone := #(0).
+	lccsal := OrderedCollection new.
+        
+	1 to: wsize do: [ : i |
+		compone := compone , (((i + 1) / wsize) * ((i + 1) / wsize log) / l4) asArray ].
+        
+		window := seq first: wsize.
+		cant_a := (window occurrencesOf: 'A').
+		cant_c := (window occurrencesOf: 'C').
+		cant_t := (window occurrencesOf: 'T').
+		cant_g := (window occurrencesOf: 'G').
+		term_a := compone at: cant_a + 1.
+		term_c := compone at: cant_c + 1.
+		term_t := compone at: cant_t + 1.
+		term_g := compone at: cant_g + 1.
+		lccsal add: (term_a + term_c + term_t + term_g) negated.
+        
+		tail := seq first.
+		(1 to: self size - wsize) do: [ : x |
+			window := (seq copyFrom: x + 1 to: x + wsize).
+            
+		 tail = (window at: wsize)
+			ifTrue: [ lccsal add: lccsal last ] 
+			ifFalse: [
+				tail = 'A' 
+					ifTrue: [
+                    cant_a := cant_a - 1.
+                    (window endsWith: 'C') ifTrue: [
+                        cant_c := cant_c + 1.
+                        term_a := compone at: cant_a + 1.
+                        term_c := compone at: cant_c + 1.
+                        lccsal add: (term_a + term_c + term_t + term_g) negated.
+                    ] ifFalse: [
+                        (window endsWith: 'T') ifTrue: [
+                            cant_t := cant_t + 1.
+                            term_a := compone at: cant_a + 1.
+                            term_t := compone at: cant_t + 1.
+                            lccsal add: (term_a + term_c + term_t + term_g) negated.
+                        ] ifFalse: [
+                            (window endsWith: 'G') 
+										ifTrue: [
+         	                      cant_g := cant_g + 1.
+                                term_a := compone at: cant_a + 1.
+                                term_g := compone at: cant_g + 1.
+                                lccsal add: (term_a + term_c + term_t + term_g) negated.
+                            ] ifFalse: [
+                                "No matching base found."
+                            ].
+                        ].
+                    ].
+                ] ifFalse: [
+                    (tail = 'C') ifTrue: [
+                        cant_c := cant_c - 1.
+                        (window endsWith: 'A')
+								 ifTrue: [
+                            cant_a := cant_a + 1.
+                            term_a := compone at: cant_a + 1.
+                            term_c := compone at: cant_c + 1.
+                            lccsal add: (term_a + term_c + term_t + term_g) negated.
+                        ] ifFalse: [
+                            (window endsWith: 'T') ifTrue: [
+                                cant_t := cant_t + 1.
+                                term_c := compone at: cant_c + 1.
+                                term_t := compone at: cant_t + 1.
+                                lccsal add: (term_a + term_c + term_t + term_g) negated.
+                            ] ifFalse: [
+                                (window endsWith: 'G') ifTrue: [
+                                    cant_g := cant_g + 1.
+                                    term_c := compone at: cant_c + 1.
+                                    term_g := compone at: cant_g + 1.
+                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                ] ifFalse: [
+                                    "No matching base found."
+                                ].
+                            ].
+                        ].
+                    ] ifFalse: [
+                        (tail = 'T') ifTrue: [
+                            cant_t := cant_t - 1.
+                            (window endsWith: 'A') ifTrue: [
+                                cant_a := cant_a + 1.
+                                term_a := compone at: cant_a + 1.
+                                term_t := compone at: cant_t + 1.
+                                lccsal add: (term_a + term_c + term_t + term_g) negated.
+                            ] ifFalse: [
+                                (window endsWith: 'C') ifTrue: [
+                                    cant_c := cant_c + 1.
+                                    term_c := compone at: cant_c + 1.
+                                    term_t := compone at: cant_t + 1.
+                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                ] ifFalse: [
+                                    (window endsWith: 'G') ifTrue: [
+                                        cant_g := cant_g + 1.
+                                        term_t := compone at: cant_t + 1.
+                                        term_g := compone at: cant_g + 1.
+                                        lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                    ] ifFalse: [
+                                        "No matching base found."
+                                    ].
+                                ].
+                            ].
+                        ] ifFalse: [
+                            (tail = 'G') ifTrue: [
+                                cant_g := cant_g - 1.
+                                (window endsWith: 'A') ifTrue: [
+                                    cant_a := cant_a + 1.
+                                    term_a := compone at: cant_a + 1.
+                                    term_g := compone at: cant_g + 1.
+                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                ] ifFalse: [
+                                    (window endsWith: 'C') ifTrue: [
+                                        cant_c := cant_c + 1.
+                                        term_c := compone at: cant_c + 1.
+                                        term_g := compone at: cant_g + 1.
+                                        lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                    ] ifFalse: [
+                                        (window endsWith: 'T') ifTrue: [
+                                            cant_t := cant_t + 1.
+                                            term_t := compone at: cant_t + 1.
+                                            term_g := compone at: cant_g + 1.
+                                            lccsal add: (term_a + term_c + term_t + term_g) negated.
+                                        ] ifFalse: [
+                                            "No matching base found."
+                                        ].
+                                    ].
+                                ].
+                            ] 
+		ifFalse: [
+			"No matching base found."
+       ] ] ] ] ].
+		tail := window at: 1 ].
+		^ lccsal.
+]
+
+{ #category : #accessing }
 BioSequence >> length [
 	" Answer how many bases contains the receiver "
 	
 	^ self size
+]
+
+{ #category : #accessing }
+BioSequence >> longestConsecutive: aCharacter [
+	" Answer the length of the longest substring containing only letter for each element of aCharacter.
+	
+	From Biostrings: 
+		v = c('AAACTGTGFG', 'GGGAATT', 'CCAAAAAAAAAATT')
+		longestConsecutive(v, 'A') "
+
+	| longestLength currentLength |
+
+	longestLength := 0.
+	currentLength := 0.
+
+	self do: [ :char |
+		(char asUppercase = aCharacter asUppercase) 
+			ifTrue: [
+				currentLength := currentLength + 1.
+				longestLength := currentLength max: longestLength ] 
+			ifFalse: [ currentLength := 0 ] ].
+	^ longestLength.
+
 ]
 
 { #category : #accessing }
@@ -1205,6 +1411,26 @@ BioSequence >> reversed [
 	^ self newPrototypeWith: seq reversed
 ]
 
+{ #category : #'accessing - checksum' }
+BioSequence >> seguid [
+	"Answer a <Number> with the SEquence Globally Unique IDentifier checksum (edundancy check) for the receiver's sequence"
+
+	| hashedSeq id seqIntegers |
+        
+	seqIntegers := ByteArray new: 20 streamContents: [ : stream |.
+		self do: [ :char | stream nextPut: char asUppercase asInteger ] ].
+
+	hashedSeq := ByteArray new: 20.
+	seqIntegers doWithIndex: [ :byte :index |
+		| charValue |
+		
+		charValue := (byte bitAnd: 16rFF) asCharacter asciiValue.
+		hashedSeq at: index put: charValue ].
+
+	id := (Base64MimeConverter mimeEncode: hashedSeq readStream) contents.
+	 ^ id copyFrom: 1 to: id size - 1.
+]
+
 { #category : #accessing }
 BioSequence >> sequence [
 	" Answer a <String> representing the receiver's sequence "
@@ -1432,7 +1658,7 @@ BioSequence >> trimAmbiguityCodes [
 	" This method modifies the receiver. Trim off all ambiguity codes "
 	
 	self ambiguityCodes do: [ : ambCharacter |
-		self copyWithout: ambCharacter ]
+		self sequence copyWithout: ambCharacter ]
 
 ]
 

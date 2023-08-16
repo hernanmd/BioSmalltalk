@@ -8,16 +8,55 @@ BioSequence >> addFromRSBuilder: aBioRSBaseBuilder [
 ]
 
 { #category : #'*BioPlots' }
+BioSequence >> chartGcSkewInt [
+	" Answer a chart of the receiver's GC skew "
+
+	^ self 
+		chartGcSkewInt: self defaultExtent
+		x: 'Position' 
+		y: 'Skew'
+]
+
+{ #category : #'*BioPlots' }
+BioSequence >> chartGcSkewInt: extentPoint x: xLabel y: yLabel [
+	" Answer a plot of the receiver's GC skew "
+
+	| chart  positionsInSequence |
+
+	positionsInSequence := (1 to: self sequence size) asArray.
+	chart := RSCompositeChart new.
+	chart horizontalTick integer.
+	^ chart
+		extent: extentPoint;
+		title: 'GC Skew (' , self size asString , ' bp)';
+		xlabel: xLabel;
+		ylabel: yLabel;
+		add: (RSLinePlot new 
+			x: positionsInSequence y: self gcSkewInt allButFirst;
+			color: Color blue);
+		yourself
+]
+
+{ #category : #'*BioPlots' }
+BioSequence >> defaultExtent [
+	" Answer a <Point> specifying the receiver's extent for plots "
+
+	^ 800 @ 500
+]
+
+{ #category : #'*BioPlots' }
 BioSequence >> plot [
 	"Answer a <RSCanvas> which can be inspected to visualize the receiver's composition of nucleotides"
 
 	| c nucs lb |
-	c := RSChart new.
-	c extent: 300@200.
+
 	nucs := self occurrencesOfLetters values.
-	c add: (RSAbstractChart barHeights: nucs).
-	c addDecoration: (RSHorizontalTick new fromNames: self occurrencesOfLetters keys).
-	c addDecoration: RSVerticalTick new integer.
+	c := RSAbstractChart barHeights: nucs.
+	c extent: self defaultExtent.
+
+	c horizontalTick fromNames: self occurrencesOfLetters keys.
+	c verticalTick integer.
+
 	c ylabel: 'Nucleotide frequency'.
 	c xlabel: 'Nucleotides'.
 	c title: self name.
@@ -35,27 +74,14 @@ BioSequence >> plotGcSkewInt [
 	" Plot receiver's GC skew "
 
 	^ self 
-		plotGcSkewInt: 800 @ 500 
+		plotGcSkewInt: self defaultExtent
 		x: 'Position' 
 		y: 'Skew'
 ]
 
 { #category : #'*BioPlots' }
 BioSequence >> plotGcSkewInt: extentPoint x: xLabel y: yLabel [
-	" Plot receiver's GC skew "
+	" Open a window with the receiver's GC skew plot "
 
-	| chart  positionsInSequence |
-
-	positionsInSequence := (1 to: self sequence size) asArray.
-	chart := RSCompositeChart new.
-	chart horizontalTick integer.
-	chart
-		extent: extentPoint;
-		title: 'GC Skew (' , self size asString , ' bp)';
-		xlabel: xLabel;
-		ylabel: yLabel;
-		add: (RSLinePlot new 
-			x: positionsInSequence y: self gcSkewInt allButFirst;
-			color: Color blue);
-		open
+	(self chartGcSkewInt: extentPoint x: xLabel y: yLabel) open
 ]

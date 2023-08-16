@@ -224,6 +224,21 @@ BioFastaMultiRecord >> occurrencesOfLetters [
 	^ (self collect: [ : fr | fr sequenceName ->  fr occurrencesOfLetters ]) asDictionary
 ]
 
+{ #category : #plot }
+BioFastaMultiRecord >> plotGcSkewInt [
+	"Plot the receiver's sequences GC skew"
+
+	| sequenceCharts canvas shapes |
+	
+	canvas := RSCanvas new.
+	sequenceCharts := self sequences collect: [ : sequence |  sequence chartGcSkewInt ].
+	shapes := RSGroup new.
+	shapes addAll: sequenceCharts.
+	RSGridLayout on: shapes.
+	canvas @ RSCanvasController.
+	^ canvas
+]
+
 { #category : #printing }
 BioFastaMultiRecord >> printOn: aStream [
 	" Private - See superimplementor's comment "

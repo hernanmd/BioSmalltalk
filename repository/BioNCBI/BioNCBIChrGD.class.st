@@ -170,6 +170,7 @@ BioNCBIChrGD >> downloadChromosomes: chrInterval [
 BioNCBIChrGD >> initialize [
 	" Private - See superimplementor's comment "
 
+	super initialize.
 	self beChrFileZeroPrefixed.
 	self beChrDirZeroPrefixed.
 ]

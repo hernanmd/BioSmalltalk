@@ -127,7 +127,7 @@ BioDownloader >> prvDownloadFileNamed: fileName binary: boolean [
 
 	self bioLog: 'Started download of ' , fileName.			
 	stream := [ self newFileNamed: fileName ]
-	on: FileExistsException
+	on: FileAlreadyExistsException  
 	do: [ : ex | ^ self ].
 	boolean ifTrue: [ stream binary ].
 	self flag: #needsWork. " on: TelnetProtocolError  ....: Could not enter passive mode: 421 Idle timeout (420 seconds): closing control connection "

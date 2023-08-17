@@ -253,13 +253,12 @@ BioFastaMultiRecord >> occurrencesOfLetters [
 BioFastaMultiRecord >> plotGcSkewInt [
 	"Plot the receiver's sequences GC skew"
 
-	| sequenceCharts canvas shapes |
+	| sequenceCharts canvas |
 	
 	canvas := RSCanvas new.
-	sequenceCharts := self sequences collect: [ : sequence |  sequence chartGcSkewInt ].
-	shapes := RSGroup new.
-	shapes addAll: sequenceCharts.
-	RSGridLayout on: shapes.
+	sequenceCharts := self sequences collect: [ : sequence |  sequence chartGcSkewInt asShape ].
+	canvas addAll: sequenceCharts.
+	RSGridLayout on: canvas shapes.
 	canvas @ RSCanvasController.
 	^ canvas
 ]

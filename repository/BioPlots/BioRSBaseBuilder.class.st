@@ -2,8 +2,7 @@ Class {
 	#name : #BioRSBaseBuilder,
 	#superclass : #RSAbstractContainerBuilder,
 	#instVars : [
-		'bases',
-		'sequenceSize'
+		'bases'
 	],
 	#category : #BioPlots
 }
@@ -20,28 +19,32 @@ ACTGCTTGATTG';
 	open.
 ]
 
-{ #category : #rendering }
-BioRSBaseBuilder >> addBase: aBaseLetter [
+{ #category : #adding }
+BioRSBaseBuilder >> addBase: aBaseLetter rowIndex: rowIndex colIndex: colIndex [ 
 
-	| label box labelWithBox |
+	| label labelWithBox extent |
 
 	label := RSLabel text: aBaseLetter.
-	box := RSBox new fromRectangle: label encompassingRectangle.
-	box color: (self colorMap at: aBaseLetter ifAbsent: [ ^ self ]).
-	labelWithBox := { box. label } asShape.
+	extent := 10 @ 15.
+	label fontFamily: 'Serif'.
+	labelWithBox := { label } asShape
+			color: (self colorMap at: aBaseLetter ifAbsent: [ ^ self ]);
+			extent: extent;
+			position: extent * (colIndex @ rowIndex);
+			yourself.
 	self bases add: labelWithBox
 ]
 
-{ #category : #rendering }
-BioRSBaseBuilder >> addSequence: aBioSequence [
+{ #category : #adding }
+BioRSBaseBuilder >> addSequence: aBioSequence rowIndex: anInteger [ 
 
-	aBioSequence addFromRSBuilder: self.
+	aBioSequence addFromRSBuilder: self rowIndex: anInteger.
 ]
 
 { #category : #adding }
-BioRSBaseBuilder >> addSequenceString: aString [ 
+BioRSBaseBuilder >> addSequenceString: aString rowIndex: anInteger [ 
 
-	aString do: [ : letter | self addBase: letter ]
+	aString doWithIndex: [ : letter : col | self addBase: letter rowIndex: anInteger colIndex: col ]
 ]
 
 { #category : #rendering }
@@ -69,21 +72,33 @@ BioRSBaseBuilder >> colorMap [
 		} asDictionary
 ]
 
+{ #category : #'accessing - defaults' }
+BioRSBaseBuilder >> defaultContainer [ 
+
+	| canvasController |
+	
+	canvasController := RSCanvasController simple.
+	^ RSCanvas new
+		addInteraction: canvasController;
+		yourself
+]
+
 { #category : #rendering }
 BioRSBaseBuilder >> fromAlignment: aBioAlignment [
 
-	self sequenceSize: aBioAlignment maxSequenceLength.
-	aBioAlignment do: [ : aBioSequence | self addSequence: aBioSequence].
+	aBioAlignment doWithIndex: [ : aBioSequence : row | 
+		self addSequence: aBioSequence rowIndex: row ].
 ]
 
 { #category : #rendering }
 BioRSBaseBuilder >> fromString: aString [
 	"For testing purposes"
 
-	aString do: [ : aLetter | self addBase: aLetter].
+	aString lines doWithIndex: [ : aBioSequence : row | 
+		self addSequence: aBioSequence rowIndex: row ].
 ]
 
-{ #category : #rendering }
+{ #category : #initialization }
 BioRSBaseBuilder >> initialize [
 
 	super initialize.
@@ -94,22 +109,4 @@ BioRSBaseBuilder >> initialize [
 BioRSBaseBuilder >> renderIn: canvas [
 
 	canvas addAll: self bases.
-	RSGridLayout new
-		gapSize: 0;
-		lineItemsCount: self sequenceSize;
-		on: canvas shapes.
-	canvas @ RSCanvasController.
-]
-
-{ #category : #accessing }
-BioRSBaseBuilder >> sequenceSize [
-
-	^ sequenceSize
-		ifNil: [ sequenceSize := 0 ]
-]
-
-{ #category : #accessing }
-BioRSBaseBuilder >> sequenceSize: anObject [
-
-	sequenceSize := anObject
 ]

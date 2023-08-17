@@ -249,6 +249,12 @@ BioAlignment >> do: aBlockClosure displayingProgress: aString [
 	^ set do: aBlockClosure displayingProgress: aString
 ]
 
+{ #category : #enumerating }
+BioAlignment >> doWithIndex: aFullBlockClosure [ 
+
+	self sequences doWithIndex: aFullBlockClosure 
+]
+
 { #category : #accessing }
 BioAlignment >> first [
 	" Return a <BioSequence> representing the first element in the receiver "

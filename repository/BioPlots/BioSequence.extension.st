@@ -1,10 +1,9 @@
 Extension { #name : #BioSequence }
 
 { #category : #'*BioPlots' }
-BioSequence >> addFromRSBuilder: aBioRSBaseBuilder [ 
-	" Double dispatch to the Roassal builder "
+BioSequence >> addFromRSBuilder: aBioRSBaseBuilder rowIndex: anInteger [ 
 
-	aBioRSBaseBuilder addSequenceString: self sequence
+	aBioRSBaseBuilder addSequenceString: self sequence rowIndex: anInteger
 ]
 
 { #category : #'*BioPlots' }
@@ -29,6 +28,7 @@ BioSequence >> chartGcSkewInt: extentPoint x: xLabel y: yLabel [
 	^ chart
 		extent: extentPoint;
 		title: 'GC Skew (' , self size asString , ' bp)';
+		title: self name;
 		xlabel: xLabel;
 		ylabel: yLabel;
 		add: (RSLinePlot new 

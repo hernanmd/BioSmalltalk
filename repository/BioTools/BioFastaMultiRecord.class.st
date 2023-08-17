@@ -54,6 +54,17 @@ BioFastaMultiRecord >> addFastaRecord: aBioFastaRecord [
 	self records add: aBioFastaRecord
 ]
 
+{ #category : #alignment }
+BioFastaMultiRecord >> alignWithMAFFTTo: outputFilename [
+
+	^ BioMAFFTWrapper new 
+		auto;
+		maxiterate: 1000;
+		input: self;
+		addOutputParameter: outputFilename;
+		execute.
+]
+
 { #category : #accessing }
 BioFastaMultiRecord >> alphabet: aBioAlphabetClass [
 	" Set the receiver's fasta records alphabet to aBioAlphabetClass "
@@ -74,7 +85,7 @@ BioFastaMultiRecord >> asAlignment [
 		 
 ]
 
-{ #category : #accessing }
+{ #category : #alignment }
 BioFastaMultiRecord >> asMAFFTWrapperInput: aBioMAFFTWrapper [
 
 	self dumpToStream: 'in.tmp' asFileReference writeStream.
@@ -87,6 +98,13 @@ BioFastaMultiRecord >> asString [
 	
 	^ String streamContents: [ : stream |
 		self records do: [ : record | stream nextPutAll: record asString ] ]
+]
+
+{ #category : #alignment }
+BioFastaMultiRecord >> average [
+	"Answer a <Number> with the average length of sequences in the receiver"
+	
+	^ self length / self size
 ]
 
 { #category : #accessing }
@@ -195,6 +213,13 @@ BioFastaMultiRecord >> isSorted [
 	" Answer <true> if the receiver is sorted by sequence name "
 	
 	^ self records isSorted
+]
+
+{ #category : #accessing }
+BioFastaMultiRecord >> length [
+	"Answer a <Number> representing the length of the total sequences combined in the receiver"
+	
+	^ self sequences sum: #length
 ]
 
 { #category : #comparing }

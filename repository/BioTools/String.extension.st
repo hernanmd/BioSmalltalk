@@ -200,3 +200,13 @@ String >> isAllele [
 	'---'
 	) includes: self
 ]
+
+{ #category : #'*BioTools' }
+String >> rejectFromBioAlignment: aBioAlignment [
+	" Receiver represents a name of a taxon used to filter aBioAlignment "
+
+	^ aBioAlignment sequences reject: [ : seq |
+		| annotation |
+		annotation := seq annotationsAt: 'taxonomy' ifAbsent: [  ].
+		annotation asLowercase = self asLowercase ]
+]

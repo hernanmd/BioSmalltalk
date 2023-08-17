@@ -257,6 +257,7 @@ BioSequence class >> newWith: aString alphabet: aBioAlphabet [
 BioSequence >> , aBioSequence [
 	" Concatenate the receiver with aBioSequence if their alphabets are compatible "
 	
+	self flag: #todo. " Also concatenate the seqhences into a single SequenceRecord " 
 	^ self alphabet class = aBioSequence alphabet class
 		ifFalse: [ self signalInvalidObject: 
 						self alphabet class asString , 
@@ -1519,9 +1520,14 @@ BioSequence >> tmStaluc [
 BioSequence >> transcribe [
 	" Answer a new instance of the receiver's with the receiver's sequence transcribed to its corresponding mRNA, adjusting the alphabet "
 	
-	^ self class 
+	| transcribed |
+	transcribed := self class 
 		newWith: self transcription 
-		alphabet: BioIUPACUnambiguousRNA
+		alphabet: BioIUPACUnambiguousRNA.
+	transcribed sequenceRecord 
+		annotationsAt: 'molecule_type'
+		put: BioIUPACUnambiguousRNA.
+	^ transcribed
 
 ]
 

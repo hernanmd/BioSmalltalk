@@ -256,6 +256,13 @@ BioAlignment >> first [
 	^ self at: 1
 ]
 
+{ #category : #accessing }
+BioAlignment >> head: aNumber [
+	" Answer the first aNumber of <BioSequence> in the receiver "
+	
+	^ self sequences first: aNumber
+]
+
 { #category : #initialization }
 BioAlignment >> initialize [
 	" Private - Initialize the receiver's contents "
@@ -332,6 +339,13 @@ BioAlignment >> printOn: aStream [
 		aStream 
 			cr;
 			nextPutAll: seq asString ]
+]
+
+{ #category : #filtering }
+BioAlignment >> rejectTaxa: taxaNameOrCollectionOfTaxons [
+	"Answer a <Collection> of <BioSequence> removing the sequences annotated with taxaName "
+	
+	^ taxaNameOrCollectionOfTaxons rejectFromBioAlignment: self
 ]
 
 { #category : #accessing }

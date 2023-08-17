@@ -68,6 +68,20 @@ BioSeqRecord >> annotations: anObject [
 ]
 
 { #category : #'accessing - sequence annotations' }
+BioSeqRecord >> annotationsAt: aKey [
+	" Get annotations at aKey in the receiver's annotations "
+
+	^ self annotations at: aKey
+]
+
+{ #category : #'accessing - sequence annotations' }
+BioSeqRecord >> annotationsAt: aKey ifAbsent: absentBlock [
+	" Get annotations at aKey in the receiver's annotations "
+
+	^ self annotations at: aKey ifAbsent: absentBlock
+]
+
+{ #category : #'accessing - sequence annotations' }
 BioSeqRecord >> annotationsAt: aKey put: aValue [
 	" Set aValue annotation at aKey in the receiver's annotations "
 

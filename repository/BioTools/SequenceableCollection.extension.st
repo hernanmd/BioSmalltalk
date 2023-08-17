@@ -19,6 +19,13 @@ SequenceableCollection >> asFileDirectoryCollection [
 ]
 
 { #category : #'*BioTools' }
+SequenceableCollection >> rejectFromBioAlignment: aBioAlignment [
+	" Receiver represents a <Collection> of taxa (<String>) used to filter aBioAlignment "
+
+	^ self flatCollect: [ : taxa | taxa rejectFromBioAlignment: aBioAlignment ]
+]
+
+{ #category : #'*BioTools' }
 SequenceableCollection >> setMicrosatelliteGenotypeFor: aBioMicrosatellite [
 	" Set the receiver's first two elements as the allele size range of aBioMicrosatellite "
 

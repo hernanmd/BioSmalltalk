@@ -8,20 +8,15 @@ The [GFF3 format](https://github.com/The-Sequence-Ontology/Specifications/blob/m
 "
 Class {
 	#name : #BioGFF3Formatter,
-	#superclass : #BioFileFormatter,
-	#instVars : [
-		'sequenceFeature'
-	],
+	#superclass : #BioSequenceFeatureFormatter,
 	#category : #'BioFormatters-Formatters'
 }
 
-{ #category : #'instance creation' }
-BioGFF3Formatter class >> fromSequenceFeature: aBioSequenceFeature [
-	" Answer a new instance of the receiver using information from aBioSequenceFeature "
+{ #category : #accessing }
+BioGFF3Formatter class >> identifiers [
+	"Answer a <Collection> of identifiers of the receiver"
 	
-	^ self new 
-		sequenceFeature: aBioSequenceFeature;
-		yourself
+	^ #('GFF' 'GFF3')
 ]
 
 { #category : #converting }
@@ -52,14 +47,4 @@ BioGFF3Formatter >> delimiter [
 	" Answer a <Character> used to delimit fields between the receiver's elements "
 	
 	^ Character tab
-]
-
-{ #category : #accessing }
-BioGFF3Formatter >> sequenceFeature [
-	^ sequenceFeature
-]
-
-{ #category : #accessing }
-BioGFF3Formatter >> sequenceFeature: anObject [
-	sequenceFeature := anObject
 ]

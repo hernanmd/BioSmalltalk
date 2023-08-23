@@ -11,7 +11,7 @@ BioBEDFormatter new
 "
 Class {
 	#name : #BioBEDFormatter,
-	#superclass : #BioFileFormatter,
+	#superclass : #BioSequenceFeatureFormatter,
 	#instVars : [
 		'properties',
 		'browser',
@@ -111,7 +111,7 @@ BioBEDFormatter class >> formatExtension [
 BioBEDFormatter class >> testFilesFullDirectoryName [
 	" Private - See superimplementor's comment "
 
-	^ super testFilesFullDirectoryName / 'bed'
+	^ super testFilesFullDirectoryName / self formatExtension
 ]
 
 { #category : #'accessing - adding features' }
@@ -321,6 +321,18 @@ BioBEDFormatter >> addCTrackVisibility: aNumber [
 ]
 
 { #category : #accessing }
+BioBEDFormatter >> asStringFromFeature: aBioSequenceFeature [
+
+	^ String streamContents: [ : writeStream | 
+		writeStream 
+			nextPutAll: aBioSequenceFeature chromosome asString;
+			tab;
+			nextPutAll: aBioSequenceFeature start asString;
+			tab;
+			nextPutAll: aBioSequenceFeature end asString ]
+]
+
+{ #category : #accessing }
 BioBEDFormatter >> browser [
 	^ browser
 		ifNil: [ browser := BioPropertyObject new ]
@@ -345,7 +357,7 @@ BioBEDFormatter >> dumpBrowserHeader [
 
 	self browser properties 
 		ifNil: [ ^ self ]
-		ifNotNilDo: [ : bp | 
+		ifNotNil: [ : bp | 
 			bp keysAndValuesDo: [ : key : value |
 				self outputFileStream
 					nextPutAll: key;

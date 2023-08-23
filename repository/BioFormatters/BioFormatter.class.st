@@ -14,7 +14,7 @@ Class {
 		'isValid',
 		'fileNamePrefix'
 	],
-	#category : 'BioFormatters-Core'
+	#category : #'BioFormatters-Core'
 }
 
 { #category : #utilities }
@@ -24,6 +24,34 @@ BioFormatter class >> alphaCharacters [
 	^ ( CharacterSet allCharactersBut: self invalidCharacters ) asOrderedCollection
 		select: [: chr | chr asciiValue < 128 ]
 		thenCollect: [: each | each asString ].
+]
+
+{ #category : #'instance creation' }
+BioFormatter class >> formatterFor: aString [
+	" Answer a new instance of the receiver's matching aString identifier. Examples: 
+	
+	self formatterFor: 'fasta'
+	self formatterFor: 'GBSeq' "
+	
+	| aClass |
+	aClass := self allSubclasses 
+			detect: [ : cls | cls identifiers includesLike: aString ]
+			ifNone: [ self error: 'No formatter for ' , aString ].
+	^ aClass new
+]
+
+{ #category : #'instance creation' }
+BioFormatter class >> formatterForExact: aString [
+	" Answer the receiver's <Class> matching aString identifier. Examples: 
+	
+	self formatterForExact: 'fasta'
+	self formatterForExact: 'bed' "
+	
+	| aClass |
+	aClass := self allSubclasses 
+			detect: [ : cls | cls identifiers includes: aString asUppercase ]
+			ifNone: [ self error: 'No formatter for ' , aString ].
+	^ aClass
 ]
 
 { #category : #utilities }

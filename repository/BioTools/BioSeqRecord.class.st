@@ -165,7 +165,7 @@ BioSeqRecord >> features: anObject [
 BioSeqRecord >> hash [
 	" Private - hash is implemented because #= is implemented "
 	
-	^ self seq hash bitXor: self id hash
+	^ self sequence hash bitXor: self id hash
 ]
 
 { #category : #'accessing-sequence' }

@@ -10,8 +10,14 @@ Class {
 	#instVars : [
 		'sequence'
 	],
-	#category : 'BioFormatters-Core'
+	#category : #'BioFormatters-Formatters'
 }
+
+{ #category : #accessing }
+BioSequenceFormatter class >> identifiers [
+
+	^ String empty
+]
 
 { #category : #accessing }
 BioSequenceFormatter class >> joinSequence: aCollection [

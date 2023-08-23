@@ -25,20 +25,6 @@ Class {
 	#category : #'BioFormatters-Formatters'
 }
 
-{ #category : #'instance creation' }
-BioFileFormatter class >> formatterFor: aString [
-	" Answer a new instance of the receiver's matching aString identifier. Examples: 
-	
-	self formatterFor: 'fasta'
-	self formatterFor: 'GBSeq' "
-	
-	| aClass |
-	aClass := self allSubclasses 
-			detect: [ : cls | cls identifiers includesLike: aString ]
-			ifNone: [ self error: 'No formatter for ' , aString ].
-	^ aClass new
-]
-
 { #category : #accessing }
 BioFileFormatter class >> identifier [
 	" Answer a <String> of an unique identifier for the receiver "

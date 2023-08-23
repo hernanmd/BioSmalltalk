@@ -19,18 +19,17 @@ Internal Representation and Key Implementation Points.
 "
 Class {
 	#name : #BioSequenceFeature,
-	#superclass : #BioNamedObject,
+	#superclass : #BioChromosomeFragment,
 	#instVars : [
 		'sequence',
-		'start',
-		'end',
 		'strand',
 		'location',
 		'score',
 		'frame',
 		'primaryTag',
 		'sourceTag',
-		'tags'
+		'tags',
+		'chromosome'
 	],
 	#category : #'BioTools-Sequences'
 }
@@ -51,6 +50,27 @@ BioSequenceFeature class >> example01 [
 		yourself
 ]
 
+{ #category : #examples }
+BioSequenceFeature class >> fromCoordinateStart: startCoordinate end: endCoordinate [
+
+	^ self new
+		start: startCoordinate;
+		end: endCoordinate;
+		yourself
+]
+
+{ #category : #comparing }
+BioSequenceFeature >> = aBioSequenceFeature [
+	"Answer <true> if the receiver is equal to aBioSequenceFeature"
+	
+	self chromosome = aBioSequenceFeature chromosome
+		ifFalse: [ ^ false ].
+	self strand = aBioSequenceFeature strand
+		ifFalse: [ ^ false ].
+	^ super = aBioSequenceFeature
+
+]
+
 { #category : #'accessing - tags' }
 BioSequenceFeature >> addTag: anAssociation [
 	" Add a tag value pair in anAssociation to the receiver's tags "
@@ -59,13 +79,15 @@ BioSequenceFeature >> addTag: anAssociation [
 ]
 
 { #category : #accessing }
-BioSequenceFeature >> end [
-	^ end
+BioSequenceFeature >> chromosome [
+
+	^ chromosome
 ]
 
 { #category : #accessing }
-BioSequenceFeature >> end: anObject [
-	end := anObject
+BioSequenceFeature >> chromosome: anObject [
+
+	chromosome := anObject
 ]
 
 { #category : #accessing }
@@ -85,6 +107,14 @@ BioSequenceFeature >> hasTagNamed: aString [
 
 ]
 
+{ #category : #comparing }
+BioSequenceFeature >> hash [
+	" Private - hash is implemented because #= is implemented "
+	
+	^ self chromosome bitXor: (self strand bitXor: super hash)
+
+]
+
 { #category : #'accessing - tags' }
 BioSequenceFeature >> includesTag: tagName [
 	" Answer <true> if tag with tagName String is present in the receiver's tags "
@@ -100,6 +130,41 @@ BioSequenceFeature >> location [
 { #category : #accessing }
 BioSequenceFeature >> location: anObject [
 	location := anObject
+]
+
+{ #category : #testing }
+BioSequenceFeature >> overlaps: aBioSequenceFeature [
+	"Answer <true> if the receiver start and end regions overlaps aBioSequenceFeature regions"
+	
+	self = aBioSequenceFeature 
+		ifTrue: [ ^ true ].
+	self chromosome ~= aBioSequenceFeature chromosome
+		ifTrue: [ ^ false ].
+	"
+		self =                  |-| 
+		aBioSequenceFeature =  |---|
+	"
+	(self start >= aBioSequenceFeature start and: [ self end <= aBioSequenceFeature end ])
+		ifTrue: [ ^ true ].
+	"
+		self =                 |---| 
+		aBioSequenceFeature =   |-|
+	"
+	(aBioSequenceFeature start >= self start and: [ aBioSequenceFeature end <= self end ])
+		ifTrue: [ ^ true ].
+	"
+		self =                   |---|
+		aBioSequenceFeature =  |---|
+	"
+	(self start >= aBioSequenceFeature start and: [ self start < aBioSequenceFeature end ])
+		ifTrue: [ ^ true ].
+	"
+		self =                |---|
+		aBioSequenceFeature =   |---|
+	"
+	(self start < aBioSequenceFeature start and: [ self end > aBioSequenceFeature start ])
+		ifTrue: [ ^ true ].
+	^ false
 ]
 
 { #category : #'accessing - tags' }
@@ -151,16 +216,6 @@ BioSequenceFeature >> sourceTag [
 { #category : #'accessing - tags' }
 BioSequenceFeature >> sourceTag: anObject [
 	sourceTag := anObject
-]
-
-{ #category : #accessing }
-BioSequenceFeature >> start [
-	^ start
-]
-
-{ #category : #accessing }
-BioSequenceFeature >> start: anObject [
-	start := anObject
 ]
 
 { #category : #accessing }

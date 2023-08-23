@@ -27,6 +27,19 @@ Class {
 	#category : #'BioTools-Biological'
 }
 
+{ #category : #comparing }
+BioChromosomeFragment >> = aBioChromosomeFragment [
+	"Answer <true> if the receiver is equal to aBioChromosomeFragment"
+	
+	self == aBioChromosomeFragment 
+		ifTrue: [ ^ true ].
+	self class = aBioChromosomeFragment class
+		ifFalse: [ ^ false ].
+	(self start = aBioChromosomeFragment start and: [ self end = aBioChromosomeFragment end ])
+		ifFalse: [ ^ false ].
+	^ true
+]
+
 { #category : #accessing }
 BioChromosomeFragment >> end [
 	^ end
@@ -35,6 +48,14 @@ BioChromosomeFragment >> end [
 { #category : #accessing }
 BioChromosomeFragment >> end: anObject [
 	end := anObject
+]
+
+{ #category : #comparing }
+BioChromosomeFragment >> hash [
+	" Private - hash is implemented because #= is implemented "
+	
+	^ self start hash bitXor: self end hash
+
 ]
 
 { #category : #accessing }

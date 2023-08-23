@@ -6,7 +6,7 @@ BioSmalltalk Variant Call Format parser/writer according to The Variant Call For
 Class {
 	#name : #BioVCFFormatter,
 	#superclass : #BioFileFormatter,
-	#category : 'BioFormatters-Formatters-VCF'
+	#category : #'BioFormatters-Formatters-VCF'
 }
 
 { #category : #examples }
@@ -17,6 +17,13 @@ BioVCFFormatter class >> example01 [
 	vcfReader := BioVCFFormatter open: self testFilesFullDirectoryName / 'example-4.0.vcf'.
 	vcfReader do: [ : vcfRecord |
 		Transcript show: vcfRecord; cr ]
+]
+
+{ #category : #accessing }
+BioVCFFormatter class >> identifiers [
+	"Answer a <Collection> of identifiers of the receiver"
+	
+	^ #('VCF')
 ]
 
 { #category : #'accessing - meta' }

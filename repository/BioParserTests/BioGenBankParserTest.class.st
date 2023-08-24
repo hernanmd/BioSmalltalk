@@ -1,7 +1,7 @@
 Class {
 	#name : #BioGenBankParserTest,
 	#superclass : #BioAbstractParserTest,
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Core'
 }
 
 { #category : #testing }
@@ -32,9 +32,19 @@ BioGenBankParserTest >> setUp [
 ]
 
 { #category : #testing }
-BioGenBankParserTest >> testGenBank01 [
+BioGenBankParserTest >> testGenBankTokenize01 [
 
-	self assert: ( BioParser tokenizeAccession:  'gb|AAM45611.1|AF384285_1' ) = #('AAM45611' '1').	
-	self assert: ( BioParser tokenizeLocus: 'gb|AAM45611.1|AF384285_1' ) = 'AF384285_1'.
+	self
+		assert: (BioParser tokenizeAccession: 'gb|AAM45611.1|AF384285_1')
+		equals: #( 'AAM45611' '1' ).
+
+]
+
+{ #category : #testing }
+BioGenBankParserTest >> testGenBankTokenize02 [
+
+	self
+		assert: (BioParser tokenizeLocus: 'gb|AAM45611.1|AF384285_1')
+		equals: 'AF384285_1'
 
 ]

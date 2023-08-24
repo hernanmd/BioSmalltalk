@@ -136,6 +136,13 @@ BioFastaMultiRecord >> dumpToStream: aStream [
 ]
 
 { #category : #accessing }
+BioFastaMultiRecord >> first [
+	"Answer the first receiver's fasta record"
+	
+	^ self records first
+]
+
+{ #category : #accessing }
 BioFastaMultiRecord >> gcContent [
 	" Answer a <Dictionary> with the FASTA identifier as key and the resulting GC content as value "
 	
@@ -216,6 +223,13 @@ BioFastaMultiRecord >> isSorted [
 ]
 
 { #category : #accessing }
+BioFastaMultiRecord >> last [
+	"Answer the last receiver's fasta record"
+	
+	^ self records last
+]
+
+{ #category : #accessing }
 BioFastaMultiRecord >> length [
 	"Answer a <Number> representing the length of the total sequences combined in the receiver"
 	
@@ -247,20 +261,6 @@ BioFastaMultiRecord >> occurrencesOfLetters [
 	" Answer a <Dictionary> of occurrence mappings for the receiver "
 	
 	^ (self collect: [ : fr | fr sequenceName ->  fr occurrencesOfLetters ]) asDictionary
-]
-
-{ #category : #plot }
-BioFastaMultiRecord >> plotGcSkewInt [
-	"Plot the receiver's sequences GC skew"
-
-	| sequenceCharts canvas |
-	
-	canvas := RSCanvas new.
-	sequenceCharts := self sequences collect: [ : sequence |  sequence chartGcSkewInt asShape ].
-	canvas addAll: sequenceCharts.
-	RSGridLayout on: canvas shapes.
-	canvas @ RSCanvasController.
-	^ canvas
 ]
 
 { #category : #printing }

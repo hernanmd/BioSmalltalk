@@ -28,3 +28,15 @@ BioIUPACUnambiguousDNA class >> complementaryCases [
 
 	^ #($A $T $T $A $C $G $G $C $N $N $a $t $t $a $c $g $g $c $n $n $- $- $  $  )
 ]
+
+{ #category : #accessing }
+BioIUPACUnambiguousDNA class >> lowercaseCodes [
+
+	^ self codes asLowercase
+]
+
+{ #category : #accessing }
+BioIUPACUnambiguousDNA class >> uppercaseCodes [
+
+	^ self codes
+]

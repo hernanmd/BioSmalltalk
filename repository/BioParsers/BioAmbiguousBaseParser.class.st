@@ -86,11 +86,11 @@ BioAmbiguousBaseParser >> parserForAmbiguity [
 
 	| open close letters |
 	
-	open := $[ asParser.
-	close := $] asParser.
-	letters := #dnaLetter asParser min: 2.
+	open := $[ asPParser.
+	close := $] asPParser.
+	letters := #dnaLetter asPParser star min: 2.
 
-	^ ( open , letters , close ) ==> [: ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
+	^ (open , letters , close) ==> [: ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
 ]
 
 { #category : #'accessing-parsers' }
@@ -99,10 +99,10 @@ BioAmbiguousBaseParser >> parserForAmbiguityDelimited [
 
 	| open close separator letter |
 	
-	open := $[ asParser.
-	close := $] asParser.
-	separator := self delimiter asParser.
-	letter := #dnaLetter asParser.
+	open := $[ asPParser.
+	close := $] asPParser.
+	separator := self delimiter asPParser.
+	letter := #dnaLetter asPParser.
 
 	^ (open , letter , separator , letter , close) ==> [ : ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
 ]
@@ -113,7 +113,7 @@ BioAmbiguousBaseParser >> parserForAmbiguousBase [
 
 	| dnaSeq |
 	
-	dnaSeq := #dnaLetter asParser plus flatten.
+	dnaSeq := #dnaLetter asPParser plus flatten.
 	^ (dnaSeq / self ambParser) plus ==> [ : nodes | (nodes joinUsing: Array empty) joinUsing: String empty ]
 ]
 

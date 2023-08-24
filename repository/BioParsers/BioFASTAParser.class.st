@@ -12,7 +12,7 @@ BioFASTAParser >> parserForAnyDescriptionLine [
 
 	| separator token |
 
-	separator := $| asParser ==> [ : n | nil ].
+	separator := $| asPParser ==> [ : n | nil ].
 	token := separator negate plus flatten.
 	^ (token separatedBy: separator) ==> [ :nodes | ( nodes copyWithout: nil ) collect: #trimBoth ].
 		
@@ -28,7 +28,7 @@ BioFASTAParser >> parserForAnyDescriptionText [
 { #category : #'accessing-parsers' }
 BioFASTAParser >> parserForDescriptionLine [
 
-	^ ($> asParser , self parserForAnyDescriptionLine , #newline asParser) end
+	^ ($> asPParser , self parserForAnyDescriptionLine , #newline asPParser) end
 		
 
 ]
@@ -38,14 +38,14 @@ BioFASTAParser >> parserForIdentifier [
 	" Answer a parser for parsing an identifier in a FASTA entry "
 
 	" Get rid of the last | character "
-	^ self identifier asParser ==> [: r | (r last = $|) ifTrue: [ r allButLast ] ifFalse: [ r ] ]
+	^ self identifier asPParser ==> [: r | (r last = $|) ifTrue: [ r allButLast ] ifFalse: [ r ] ]
 ]
 
 { #category : #'accessing-parsers' }
 BioFASTAParser >> parserForNonFastaString [
 	" Answer a parser for parsing any kind of description text in a FASTA sequence "
 
-	^ self parserForPredicateWith: self specialFastaChars
+	^ self noneOf: self specialFastaChars
 ]
 
 { #category : #'accessing private' }
@@ -63,7 +63,7 @@ BioFASTAParser >> tokenizeDescriptionLine [
 
 	| separator token |
 
-	separator := $| asParser ==> [ : n | nil ].
+	separator := $| asPParser ==> [ : n | nil ].
 	token := separator negate plus flatten.
 	parser := (token separatedBy: separator) ==> [ :nodes | (nodes copyWithout: nil) collect: #trimBoth ].
 	^ self parse: self expression

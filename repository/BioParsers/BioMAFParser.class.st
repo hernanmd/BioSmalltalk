@@ -30,10 +30,10 @@ BioMAFParser >> mafBodyParser [
 	mafSrcSize := nil.
 	mafScore := nil.
 	mafPass := nil.
-	mafSeqAlign := mafSrc , mafStart , mafSize , mafStrand , mafSrcSize , #word asParser.
-	mafSequence := $s asParser , #blank asParser , mafSeqAlign , #newline asParser.
-	mafAlignParams := $a asParser , #blank asParser , (mafScore optional , mafPass optional , mafScore optional) , #newline asParser.
-	mafAlignBlock := mafAlignParams , mafSequence plus , #newline asParser.
+	mafSeqAlign := mafSrc , mafStart , mafSize , mafStrand , mafSrcSize , #word asPParser.
+	mafSequence := $s asPParser , #blank asPParser , mafSeqAlign , #newline asPParser.
+	mafAlignParams := $a asPParser , #blank asPParser , (mafScore optional , mafPass optional , mafScore optional) , #newline asPParser.
+	mafAlignBlock := mafAlignParams , mafSequence plus , #newline asPParser.
 	mafBody := mafAlignBlock plus.
 	^ mafBody
 	
@@ -45,13 +45,13 @@ BioMAFParser >> mafHeaderParser [
 
 	| mafProgram mafScoringScheme mafScoring mafVersion mafVar mafOptions mafHeader |
 	
-	mafProgram := 'program' asParser , $= asParser , self parserForNonBreakingString.
-	mafScoringScheme := #word asParser.
-	mafScoring := 'scoring' asParser , $= asParser , mafScoringScheme.
-	mafVersion := 'version' asParser , $= asParser , #number asParser.
+	mafProgram := 'program' asPParser , $= asPParser , self parserForNonBreakingString.
+	mafScoringScheme := #word asPParser.
+	mafScoring := 'scoring' asPParser , $= asPParser , mafScoringScheme.
+	mafVersion := 'version' asPParser , $= asPParser , #number asPParser.
 	mafVar := mafVersion / mafScoring optional / mafProgram optional / self parserForNonBreakingString.
 	mafOptions := mafVar plus max: 3.
-	mafHeader := '##maf ' asParser , mafOptions , #newline asParser.
+	mafHeader := '##maf ' asPParser , mafOptions , #newline asPParser.
 	^ mafHeader
 
 ]

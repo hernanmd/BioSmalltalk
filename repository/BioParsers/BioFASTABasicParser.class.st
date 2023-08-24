@@ -44,7 +44,7 @@ BioFASTABasicParser >> initialize [
 	super initialize.
 	parser := ( 
 		self parserForNonBreakingString , 
-		#newline asParser ,
+		#newline asPParser ,
 		self parserForSequence) plus end 
 		
 
@@ -54,8 +54,8 @@ BioFASTABasicParser >> initialize [
 BioFASTABasicParser >> parserForSequence [
 	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
 
-	^ (#word asParser plus flatten , 
-		#newline asParser plus optional ==> [ :nodes | (nodes copyWithout: Character cr) ]) 
+	^ (#word asPParser plus flatten , 
+		#newline asPParser plus optional ==> [ :nodes | (nodes copyWithout: Character cr) ]) 
 			min: 1
 ]
 

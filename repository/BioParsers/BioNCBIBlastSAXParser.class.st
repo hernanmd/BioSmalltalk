@@ -22,7 +22,7 @@ BioNCBIBlastSAXParser >> estimatedResultSize [
 	^ 500
 ]
 
-{ #category : #'handling - content' }
+{ #category : #private }
 BioNCBIBlastSAXParser >> resultClass [
 	" Private - See superimplementor's comment "
 	

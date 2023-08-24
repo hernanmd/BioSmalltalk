@@ -13,6 +13,20 @@ BioFastaMultiRecord >> plot [
 ]
 
 { #category : #'*BioPlots' }
+BioFastaMultiRecord >> plotGcSkewInt [
+	"Plot the receiver's sequences GC skew"
+
+	| sequenceCharts canvas |
+	
+	canvas := RSCanvas new.
+	sequenceCharts := self sequences collect: [ : sequence |  sequence chartGcSkewInt asShape ].
+	canvas addAll: sequenceCharts.
+	RSGridLayout on: canvas shapes.
+	canvas @ RSCanvasController.
+	^ canvas
+]
+
+{ #category : #'*BioPlots' }
 BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel [
 
 	| chart plot |
@@ -50,12 +64,12 @@ BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxis
 	plot := RSHistogramPlot new 
 		x: (self records collect: #size);
 		yourself.
-	c := RSChart new
+	c := RSCompositeChart new
 	   title: ('Histogram of {1} FASTA sequences' format: { self size asString });
 		"colors: (RSColorPalette sequential perform: colorPaletteSelector);"
 		ylabel: axixYLabel;
 		xlabel: axisXLabel;
-		addPlot: plot;
+		add: plot;
 		addDecoration: RSVerticalTick new;
 		addDecoration: RSHorizontalTick new doNotUseNiceLabel;
 		open.

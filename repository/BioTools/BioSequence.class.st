@@ -764,6 +764,24 @@ BioSequence >> gcContentStep: step window: w [
 ]
 
 { #category : #accessing }
+BioSequence >> gcContentUppercased [
+	" Answer a <Number> representing the GC-content of the receiver: the percentage of symbols in the string that are 'C' or 'G'. Assume the receiver's sequence is already all uppercased "
+
+	| cCount gCount |	
+	cCount := 0.
+	gCount := 0.
+	self do: [ : each | 
+		each = $C 
+			ifTrue: [ cCount := cCount + 1]
+			ifFalse: [ 
+				each = $G 
+					ifTrue: [ gCount := gCount + 1 ] ] ].
+	^ (((gCount + cCount / self size) * 100) round: 6) asScaledDecimal
+	
+
+]
+
+{ #category : #accessing }
 BioSequence >> gcSkew [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "

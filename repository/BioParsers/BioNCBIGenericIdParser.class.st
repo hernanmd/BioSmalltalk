@@ -21,15 +21,15 @@ BioNCBIGenericIdParser >> databaseParser [
 	^ self parserForNonFastaString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioNCBIGenericIdParser >> initialize [
 	" Private - See superimplementor's comment "
 
 	super initialize.
 	parser := 
 		self parserForIdentifier , 
-			$| asParser , 
+			$| asPParser , 
 			self databaseParser ,
-			$| asParser ,
+			$| asPParser ,
 			self localIdParser
 ]

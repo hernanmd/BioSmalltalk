@@ -6,3 +6,10 @@ BioFastaRecord >> plot [
 
 	^ self sequence plot
 ]
+
+{ #category : #'*BioPlots' }
+BioFastaRecord >> plotGcSkewInt [
+	"Open a plot of the receiver's GC Skew with the default parameters"
+
+	self sequence plotGcSkewInt 
+]

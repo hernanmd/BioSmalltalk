@@ -66,7 +66,7 @@ BioQBlastReader >> parserForErrorMsg [
 	 Message ID#24 Error: Failed to read the Blast query: Nucleotide FASTA provided for protein sequence 
 	 Message ID#24 Error: Failed to read the Blast query: Gi/accession mismatch: requested nucleotide, found protein	 "
 		
-	^ ( 'Message ID#' asParser negate plus , 'Message ID#' asParser ) ,
+	^ ( 'Message ID#' asPParser negate plus , 'Message ID#' asPParser ) ,
 		( PPPredicateObjectParser anyExceptAnyOf: '</p>' ) plus flatten foldRight: [: a : b | b ]
 
 ]

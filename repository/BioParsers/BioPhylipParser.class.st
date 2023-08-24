@@ -5,7 +5,7 @@ Documentation taken from http://bioweb2.pasteur.fr/docs/phylip/doc/main.html#inp
 Class {
 	#name : #BioPhylipParser,
 	#superclass : #BioAbstractTextParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'accessing-dna' }
@@ -14,7 +14,6 @@ BioPhylipParser >> buildDNAResults: aCollection [
 
 	| tokenized sequences |
 	
-	self halt.
 	tokenized := self buildTokens: aCollection.
 	sequences := tokenized third 
 			with: tokenized fourth 
@@ -31,7 +30,6 @@ BioPhylipParser >> buildProteinResults: aCollection [
 
 	| tokenized sequences |
 	
-	self halt.
 	tokenized := self buildTokens: aCollection.
 	sequences := tokenized third 
 			with: tokenized fourth 
@@ -98,23 +96,28 @@ BioPhylipParser >> buildTokensFromFirstBlock: aCollection [
 { #category : #'accessing-dna' }
 BioPhylipParser >> dnaInterleaveLineTokenizer [
 
-	^ ( self dnaInterleaveSequenceTokenizer , #newline asParser ) star
+	^ (self dnaInterleaveSequenceTokenizer , #newline asPParser) star
 ]
 
 { #category : #'accessing-dna' }
 BioPhylipParser >> dnaInterleaveSequenceTokenizer [
 
-	^ #dnaLetter asParser trimBlanks star flatten
+	^ #dnaLetter asPParser trimBlanks star flatten
 ]
 
 { #category : #'accessing-private' }
 BioPhylipParser >> firstLineTokenizer [
 	" Answer a Parser for parsing the first line of the format "
 	
-	^ (#number asParser / self parserForAnyButNumber) ,
+	^ (#number asPParser / self parserForAnyButNumber) ,
 		(self parserForAnyButNumber) ,
-		( #blank asParser star optional answer: nil ) ,
-		( #newline asParser answer: nil ) ==> [ : node | node copyWithout: nil ]
+		#blank asPParser plus optional flatten ,
+		#newline asPParser ==> [ : node | 
+			node asOrderedCollection 
+				removeAllSuchThat: [ : elem  | elem allSatisfy: [ : e | e = Character space ] ];
+				copyWithoutAll: {
+				Character lf asString .
+				Character cr asString } ]
 ]
 
 { #category : #'accessing-dna' }
@@ -144,22 +147,22 @@ BioPhylipParser >> parseInterleavedProtein: aString [
 { #category : #'accessing-private' }
 BioPhylipParser >> parserForAnyButNumber [
 
-	^ #digit asParser negate plus , #number asParser ==> [: n | n second ] 
+	^ #digit asPParser negate plus , #number asPParser ==> [: n | n second ] 
 ]
 
 { #category : #'accessing-dna' }
 BioPhylipParser >> speciesDNALineTokenizer [
 	" Answer a Parser for parsing the species names line "
 	
-	^ ((PPPredicateObjectParser anyExceptAnyOf: self speciesFobiddenNames) times: 10) flatten ,
-		self dnaInterleaveSequenceTokenizer.
+	^ ((PP2PredicateObjectNode noneOf: self speciesFobiddenNames) times: 10) flatten ,
+		self dnaInterleaveSequenceTokenizer
 ]
 
 { #category : #'accessing-dna' }
 BioPhylipParser >> speciesDNANamedBlockTokenizer [
 	" Answer a Parser for parsing the sequence blocks "
 	
-	^ (self speciesDNALineTokenizer , (#newline asParser answer: nil)) star
+	^ (self speciesDNALineTokenizer , #newline asPParser flatten) star
 ]
 
 { #category : #'accessing-private' }
@@ -204,10 +207,10 @@ BioPhylipParser >> tokenizeInterleavedProtein [
 
 	parser := 
 		self firstLineTokenizer ,
-		(((PPPredicateObjectParser anyExceptAnyOf: self speciesFobiddenNames) times: 10) flatten ,
-		#proteinLetter asParser trimBlanks star flatten , 
-		(#newline asParser answer: nil)) star ,
-		( #proteinLetter asParser trimBlanks star flatten , #newline asParser ) star ==> self buildTokensBlock.
+		(((PP2PredicateObjectNode noneOf: self speciesFobiddenNames) times: 10) flatten ,
+		#proteinLetter asPParser trimBlanks star flatten , 
+		#newline asPParser) star ,
+			(#proteinLetter asPParser trimBlanks star flatten , #newline asPParser) star ==> self buildTokensBlock.
 	^ self tokenize.
 	
 ]

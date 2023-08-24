@@ -68,7 +68,7 @@ BioSAXParser class >> parseDocumentFrom: anObject useNamespaces: aBoolean [
 BioSAXParser class >> parseFile: aFileName [
 	" Parse aFileName representing a XML String as input "
 
-	^ self parse: (FileStream readOnlyFileNamed: aFileName)
+	^ self parse: aFileName asFileReference
 ]
 
 { #category : #'instance creation' }

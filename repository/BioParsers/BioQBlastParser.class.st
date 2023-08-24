@@ -1,13 +1,13 @@
 Class {
 	#name : #BioQBlastParser,
 	#superclass : #BioAbstractTextParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'initialize-release' }
 BioQBlastParser >> parserForQBlastInfoBegin [
 
-	^ 'QBlastInfoBegin' asParser negate plus , 'QBlastInfoBegin' asParser
+	^ 'QBlastInfoBegin' asPParser negate plus , 'QBlastInfoBegin' asPParser
 ]
 
 { #category : #'initialize-release' }
@@ -20,11 +20,11 @@ QBlastInfoEnd
 --> "	
 	parser := ( 
 		self parserForQBlastInfoBegin ,
-		 #newline asParser ,
-		'RID' asParser negate plus , 'RID' asParser ,		
-		#blank asParser optional , ( $= asParser / $: asParser ) , #blank asParser optional ,
+		 #newline asPParser ,
+		'RID' asPParser negate plus , 'RID' asPParser ,		
+		#blank asPParser optional , ($= asPParser / $: asPParser) , #blank asPParser optional ,
 		self parserForNonBreakingString ==> [: nodes | nodes last ] ,
-		'QBlastInfoEnd' asParser negate plus , 'QBlastInfoEnd' asParser ) foldRight: [: a :b | a ].
+		'QBlastInfoEnd' asPParser negate plus , 'QBlastInfoEnd' asPParser ) foldRight: [: a :b | a ].
 ]
 
 { #category : #'initialize-release' }
@@ -36,12 +36,12 @@ BioQBlastParser >> parserForRTOE [
 QBlastInfoEnd
 --> "	
 	parser := ( 
-		'QBlastInfoBegin' asParser negate plus , 'QBlastInfoBegin' asParser ,
-		 #newline asParser ,
-		'RTOE' asParser negate plus , 'RTOE' asParser ,		
-		#blank asParser optional , ( $= asParser / $: asParser ) , #blank asParser optional ,
+		'QBlastInfoBegin' asPParser negate plus , 'QBlastInfoBegin' asPParser ,
+		 #newline asPParser ,
+		'RTOE' asPParser negate plus , 'RTOE' asPParser ,		
+		#blank asPParser optional , ( $= asPParser / $: asPParser ) , #blank asPParser optional ,
 		self parserForNonBreakingString ==> [: nodes | nodes last ] ,
-		'QBlastInfoEnd' asParser negate plus , 'QBlastInfoEnd' asParser ) foldRight: [: a :b | a ].
+		'QBlastInfoEnd' asPParser negate plus , 'QBlastInfoEnd' asPParser ) foldRight: [: a :b | a ].
 ]
 
 { #category : #'initialize-release' }
@@ -49,9 +49,9 @@ BioQBlastParser >> parserForStatus [
 	" See http://www.ncbi.nlm.nih.gov/BLAST/Doc/node60.html "
 	
 	parser := ( 
-		'QBlastInfoBegin' asParser negate plus , 'QBlastInfoBegin' asParser ,
-		 #newline asParser , 
-		'Status=' asParser negate plus , 'Status=' asParser ,
-		( 'READY' asParser / 'WAITING' asParser / 'UNKNOWN' asParser ) ==> [: nodes | nodes last ] ,
-		'QBlastInfoEnd' asParser negate plus , 'QBlastInfoEnd' asParser ) foldRight: [: a :b | a ].
+		'QBlastInfoBegin' asPParser negate plus , 'QBlastInfoBegin' asPParser ,
+		 #newline asPParser , 
+		'Status=' asPParser negate plus , 'Status=' asPParser ,
+		( 'READY' asPParser / 'WAITING' asPParser / 'UNKNOWN' asPParser ) ==> [: nodes | nodes last ] ,
+		'QBlastInfoEnd' asPParser negate plus , 'QBlastInfoEnd' asPParser ) foldRight: [: a :b | a ].
 ]

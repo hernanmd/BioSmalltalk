@@ -32,7 +32,6 @@ BaselineOfBioSmalltalk >> baseline: spec [
 			projectSpecForCommonUtils: spec;
 			projectSpecForDataDrameInspector: spec;
 			projectSpecForProjectFramework: spec;
-			projectSpecForCodeGenerator: spec;
 			projectSpecForStringExtensions: spec;
 			projectSpecForFileDialog: spec;
 			projectSpecForPolyMath: spec;
@@ -284,16 +283,6 @@ BaselineOfBioSmalltalk >> preLoad [
 ]
 
 { #category : #specs }
-BaselineOfBioSmalltalk >> projectSpecForCodeGenerator: spec [
-
-	spec 
-		baseline: 'CodeGenerator'
-		with: [ spec 
-						repository: 'github://hernanmd/CodeGenerator/repository';
-						loads: #('Smalltalk-Generators') ]
-]
-
-{ #category : #specs }
 BaselineOfBioSmalltalk >> projectSpecForCommonUtils: spec [
 
 	spec 
@@ -340,12 +329,9 @@ BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 
 	spec
-		project: 'PetitParser' with: [
-			spec
-				className: #ConfigurationOfPetitParser;
-				versionString: '2.0';
-				loads: #('Core' );
-				repository: 'http://smalltalkhub.com/mc/Moose/PetitParser/main/' ].
+		baseline: 'PetitParser2Core'	
+		with: [ spec repository: 'github://kursjan/petitparser2' ].
+
 ]
 
 { #category : #specs }

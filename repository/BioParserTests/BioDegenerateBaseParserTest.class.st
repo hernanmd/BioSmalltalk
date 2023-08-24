@@ -1,41 +1,63 @@
 Class {
 	#name : #BioDegenerateBaseParserTest,
 	#superclass : #BioAbstractParserTest,
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Basic'
 }
 
 { #category : #testing }
-BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithSeparators [
-	| seq1 seq2 seq3 |
-	seq1 := self parserClass parseAmbiguousWithSeparators: 'AT[A/C]TA'.
-	seq2 := self parserClass parseAmbiguousWithSeparators: '[G/A]ACTGCA'.
-	seq3 := self parserClass parseAmbiguousWithSeparators: 'ACTGCA[T/C]'.
-	self assert: (seq1 isKindOf: BioSequence).
-	self assert: (seq2 isKindOf: BioSequence).
-	self assert: (seq3 isKindOf: BioSequence).
-	self assert: seq1 size equals: 5.
-	self assert: seq2 size equals: 7.
-	self assert: seq3 size equals: 7.
-	self assert: seq1 asString equals: 'ATMTA'.
-	self assert: seq2 asString equals: 'RACTGCA'.
-	self assert: seq3 asString equals: 'ACTGCAY'
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithSeparators01 [
+
+	parseResult := self parserClass parseAmbiguousWithSeparators: 'AT[A/C]TA'.
+
+	self assert: parseResult size equals: 5.
+	self assert: parseResult asString equals: 'ATMTA'.
 ]
 
 { #category : #testing }
-BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithoutSeparators [
-	| seq1 seq2 seq3 |
-	seq1 := self parserClass parseAmbiguousWithoutSeparators: 'AT[AC]TA'.
-	seq2 := self parserClass parseAmbiguousWithoutSeparators: '[GA]ACTGCA'.
-	seq3 := self parserClass parseAmbiguousWithoutSeparators: 'ACTGCA[TC]'.
-	self assert: (seq1 isKindOf: BioSequence).
-	self assert: (seq2 isKindOf: BioSequence).
-	self assert: (seq3 isKindOf: BioSequence).
-	self assert: seq1 size equals: 5.
-	self assert: seq2 size equals: 7.
-	self assert: seq3 size equals: 7.
-	self assert: seq1 asString equals: 'ATMTA'.
-	self assert: seq2 asString equals: 'RACTGCA'.
-	self assert: seq3 asString equals: 'ACTGCAY'
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithSeparators02 [
+
+	parseResult := self parserClass parseAmbiguousWithSeparators: '[G/A]ACTGCA'.
+
+	self assert: parseResult size equals: 7.
+	self assert: parseResult asString equals: 'RACTGCA'.
+
+]
+
+{ #category : #testing }
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithSeparators03 [
+
+	parseResult := self parserClass parseAmbiguousWithSeparators: 'ACTGCA[T/C]'.
+
+	self assert: parseResult size equals: 7.
+	self assert: parseResult asString equals: 'ACTGCAY'
+]
+
+{ #category : #testing }
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithoutSeparators01 [
+
+	parseResult := self parserClass parseAmbiguousWithoutSeparators: 'AT[AC]TA'.
+
+	self assert: parseResult size equals: 5.
+	self assert: parseResult asString equals: 'ATMTA'.
+]
+
+{ #category : #testing }
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithoutSeparators02 [
+
+	parseResult := self parserClass parseAmbiguousWithoutSeparators: '[GA]ACTGCA'.
+
+	self assert: parseResult size equals: 7.
+	self assert: parseResult asString equals: 'RACTGCA'.
+
+]
+
+{ #category : #testing }
+BioDegenerateBaseParserTest >> testParseAmbiguousSequenceWithoutSeparators03 [
+
+	parseResult := self parserClass parseAmbiguousWithoutSeparators: 'ACTGCA[TC]'.
+
+	self assert: parseResult size equals: 7.
+	self assert: parseResult asString equals: 'ACTGCAY'
 ]
 
 { #category : #testing }

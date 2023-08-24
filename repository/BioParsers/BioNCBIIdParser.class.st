@@ -29,9 +29,9 @@ BioNCBIIdParser class >> classFor: aString [
 BioNCBIIdParser class >> identifier [
 	" Answer a class appropiate for parsing a specified NCBI identifier String "
 	
-	^ ( ( 'gb' asParser / 'emb' asParser / 'dbj' asParser / 'pir' asParser / 'prf' asParser / 
-		  'sp' asParser / 'pdb' asParser / 'pat' asParser / 'bbs' asParser / 'gnl' asParser / 
-		  'ref' asParser / 'lcl' asParser ) ==> [: token | self classFor: token value ] ) end 
+	^ ( ( 'gb' asPParser / 'emb' asPParser / 'dbj' asPParser / 'pir' asPParser / 'prf' asPParser / 
+		  'sp' asPParser / 'pdb' asPParser / 'pat' asPParser / 'bbs' asPParser / 'gnl' asPParser / 
+		  'ref' asPParser / 'lcl' asPParser ) ==> [: token | self classFor: token value ] ) end 
 		
 ]
 
@@ -42,11 +42,11 @@ BioNCBIIdParser >> identifier [
 	^ self class identifier
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioNCBIIdParser >> initialize [
 	" Private - See superimplementor's comment "
 	
-	parser := self parserForIdentifier , #number asParser
+	parser := self parserForIdentifier , #number asPParser
 ]
 
 { #category : #'initialize-release' }

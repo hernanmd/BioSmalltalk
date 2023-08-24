@@ -1,7 +1,7 @@
 Class {
 	#name : #BioAccessionParser,
 	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #'instance creation' }
@@ -18,20 +18,20 @@ BioAccessionParser >> accessionParser [
 	| discardCharacters |
 	
 	discardCharacters := ( 
-		( 'gb|' asParser / 'emb|' asParser / 'dbj|' asParser / 'ref|' asParser / 'sp|' asParser ) /
-		( 'gb|' asParser negate plus , 'gb|' asParser) / 
-		( 'emb|' asParser negate plus , 'emb|' asParser ) /
-		( 'dbj|' asParser negate plus , 'dbj|' asParser ) /
-		( 'ref|' asParser negate plus , 'ref|' asParser ) /
-		( 'sp|' asParser negate plus , 'sp|' asParser )
-		) optional answer: nil.
+		( 'gb|' asPParser / 'emb|' asPParser / 'dbj|' asPParser / 'ref|' asPParser / 'sp|' asPParser ) /
+		( 'gb|' asPParser negate plus , 'gb|' asPParser) / 
+		( 'emb|' asPParser negate plus , 'emb|' asPParser ) /
+		( 'dbj|' asPParser negate plus , 'dbj|' asPParser ) /
+		( 'ref|' asPParser negate plus , 'ref|' asPParser ) /
+		( 'sp|' asPParser negate plus , 'sp|' asPParser )
+		) optional ==> [ :nodes | nil ].
 
 	^ discardCharacters , self parserForAccession
 
 
 ]
 
-{ #category : #accessing }
+{ #category : #'accessing private' }
 BioAccessionParser >> buildResults: aCollection [
 	" Answer a new accession object from results taken from aCollection "
 	
@@ -53,7 +53,7 @@ BioAccessionParser >> buildTokens: aCollection [
 	^ self results		
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioAccessionParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -64,8 +64,8 @@ BioAccessionParser >> initialize [
 { #category : #testing }
 BioAccessionParser >> isAccession [
 	" (BioAccessionParser on: 'AF288373.2') isAccession "
-	
-	^ (self parse: self expression) isEmpty not
+
+	^ (self parse: self expression) isNotEmpty
 ]
 
 { #category : #accessing }

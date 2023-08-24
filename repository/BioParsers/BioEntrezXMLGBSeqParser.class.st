@@ -25,7 +25,7 @@ Class {
 		'matches',
 		'records'
 	],
-	#category : 'BioParsers-XML'
+	#category : #'BioParsers-XML'
 }
 
 { #category : #accessing }
@@ -43,7 +43,7 @@ BioEntrezXMLGBSeqParser >> collectGBSet [
 	^ self results.
 ]
 
-{ #category : #private }
+{ #category : #accessing }
 BioEntrezXMLGBSeqParser >> defaultFormatterClass [
 
 	^ BioXMLOrderedCollection
@@ -82,11 +82,8 @@ BioEntrezXMLGBSeqParser >> records [
 
 { #category : #private }
 BioEntrezXMLGBSeqParser >> saveGBSeq [
-	" Private - Save matched nodes into receiver's results. Usually this operation implies a new record subtree has been found "
 
-	self matches notEmpty
-		ifTrue: [ 
-			self results add: (BioGenBankRecord new properties: matches).
-			self matches: nil. ]
-
+	self matches notEmpty ifFalse: [ ^ self ].
+	self results add: (BioGenBankRecord new properties: matches).
+	self matches: nil
 ]

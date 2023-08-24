@@ -1,7 +1,7 @@
 Class {
 	#name : #BioNCBILocusParser,
 	#superclass : #BioAccessionParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #initialize }
@@ -15,7 +15,7 @@ BioNCBILocusParser >> initialize [
 BioNCBILocusParser >> parserForLocus [
 	" Answer a parser for parsing locus identifiers "
 
-	^ $| asParser optional , self parserForNonFastaString plus flatten
+	^ $| asPParser optional , self parserForNonFastaString plus flatten
 ]
 
 { #category : #accessing }

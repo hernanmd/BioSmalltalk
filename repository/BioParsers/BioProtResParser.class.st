@@ -5,7 +5,7 @@ prf||name
 Class {
 	#name : #BioProtResParser,
 	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -15,13 +15,13 @@ BioProtResParser class >> identifier [
 	^ 'prf'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioProtResParser >> initialize [
 
 	super initialize.
 	parser := 
 		self parserForIdentifier , 
-			( $| asParser times: 2 ) , 
+			($| asPParser times: 2) , 
 			self nameParser.
 ]
 

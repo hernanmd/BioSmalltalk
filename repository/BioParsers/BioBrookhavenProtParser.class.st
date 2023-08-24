@@ -5,7 +5,7 @@ pdb|entry|chain
 Class {
 	#name : #BioBrookhavenProtParser,
 	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -27,14 +27,14 @@ BioBrookhavenProtParser >> entry [
 	^ self parserForNonFastaString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioBrookhavenProtParser >> initialize [
 
 	super initialize.
 	parser := 
 		self parserForIdentifier , 
-			$| asParser , 
+			$| asPParser , 
 			self entry , 
-			$| asParser ,
+			$| asPParser ,
 			self chain
 ]

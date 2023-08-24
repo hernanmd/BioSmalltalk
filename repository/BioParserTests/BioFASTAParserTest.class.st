@@ -165,7 +165,7 @@ BioFASTAParserTest >> testParseSingleFasta06 [
 					sequence: seqString.
 
 	parseResult := self parserClass parseFasta: self fastaSeq08.
-	self assert: ( parseResult isKindOf: BioFastaRecord ).
+	self assert: (parseResult isKindOf: BioFastaRecord).
 	self assert: parseResult = fastaRecord.
 	self assert: parseResult name = seqName.
 	self assert: parseResult sequence asString = seqString asCondensedString.
@@ -308,24 +308,28 @@ BioFASTAParserTest >> testTokenizeMultiFasta07 [
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testTokenizeSingleFastaDescription01 [
-	
+
 	| seqHeader |
-	
 	seqHeader := '>gi|198282148|ref|NC_011206.1| Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome'.
 
 	parseResult := self parserClass tokenizeFastaDescription: seqHeader.
-	self assert: ( parseResult isKindOf: Collection ).
-	self assert: parseResult = 'Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome' 
+	self assert: (parseResult isKindOf: Collection).
+	self
+		assert: parseResult
+		equals:
+		'Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome'
 ]
 
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testTokenizeSingleFastaHeader01 [
-	
+
 	| seqHeader |
-	
 	seqHeader := '>gi|198282148|ref|NC_011206.1| Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome'.
 
 	parseResult := self parserClass tokenizeFastaHeader: seqHeader.
-	self assert: ( parseResult isKindOf: Collection ).
-	self assert: parseResult = #('>gi' '198282148' 'ref' 'NC_011206.1' 'Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome')
+	self assert: (parseResult isKindOf: Collection).
+	self
+		assert: parseResult
+		equals:
+		#( '>gi' '198282148' 'ref' 'NC_011206.1' 'Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome' )
 ]

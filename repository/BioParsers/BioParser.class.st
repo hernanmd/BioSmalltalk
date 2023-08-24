@@ -57,14 +57,14 @@ BioParser class >> parseAccession: aString [
 BioParser class >> parseAmbiguousWithSeparators: aSequenceString [
 	" Parse aSequenceString containing an ambiguous sequence "
 	
-	^ ( BioAmbiguousBaseParser on: aSequenceString ) parseWithSeparators
+	^ (BioAmbiguousBaseParser on: aSequenceString) parseWithSeparators
 ]
 
 { #category : #'instance creation' }
 BioParser class >> parseAmbiguousWithoutSeparators: aSequenceString [
 	" Parse aSequenceString containing an ambiguous sequence "
 	
-	^ ( BioAmbiguousBaseParser on: aSequenceString ) parseWithoutSeparators
+	^ (BioAmbiguousBaseParser on: aSequenceString) parseWithoutSeparators
 ]
 
 { #category : #'parse-ncbi-xml' }

@@ -5,7 +5,7 @@ sp|accesion|entry
 Class {
 	#name : #BioSwissProtParser,
 	#superclass : #BioAccessionParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -21,7 +21,7 @@ BioSwissProtParser >> initialize [
 
 	super initialize.
 	parser := 
-		self identifier asParser , 
+		self identifier asPParser , 
 		self parserForAccession ,
 		(self parserForEntry ==> [: r | r allButFirst ]).
 ]
@@ -30,9 +30,9 @@ BioSwissProtParser >> initialize [
 BioSwissProtParser >> parserForEntry [
 	" Answer a parser for parsing entry identifiers "
 
-	^ (#letter asParser / 
-		#digit asParser / 
-		#punctuation asParser) plus flatten.	
+	^ (#letter asPParser / 
+		#digit asPParser / 
+		#punctuation asPParser) plus flatten.	
 
 
 ]

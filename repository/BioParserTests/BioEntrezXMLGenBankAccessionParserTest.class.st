@@ -1,7 +1,7 @@
 Class {
 	#name : #BioEntrezXMLGenBankAccessionParserTest,
 	#superclass : #BioAbstractParserTest,
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Core'
 }
 
 { #category : #accessing }
@@ -1395,26 +1395,50 @@ BioEntrezXMLGenBankAccessionParserTest >> parserClass [
 ]
 
 { #category : #accessing }
-BioEntrezXMLGenBankAccessionParserTest >> test01ParseBasic [
+BioEntrezXMLGenBankAccessionParserTest >> setUp [
 
-	| results current |
-	
-	results := BioParser parseNcbiXmlGBSeq: self gbSet01.
-	self assert: results size = 1.
-	current := results first.
-	self assert: (current at: BioGBSeqCollection qualifierForAccessionWithVersion) = 'HQ184032.1'.
-	self assert: (current at: BioGBSeqCollection qualifierForDefinition) = 'Bos taurus isolate Chi597 mitochondrion, complete genome'.
-	self assert: (current at: BioGBSeqCollection qualifierForReferenceJournal) =  'Submitted (25-AUG-2010) Dipartimento di Genetica e Microbiologia, University of Pavia, Via Ferrata, 1, Pavia 27100, Italy'
+	super setUp.
+	parseResult := BioParser parseNcbiXmlGBSeq: self gbSet01.
 ]
 
-{ #category : #testing }
-BioEntrezXMLGenBankAccessionParserTest >> testGenBank01 [
-	
-	parseResult := self parserClass parse: self gbSet01.
-	self assert: (parseResult isKindOf: Collection).
-	self assert: parseResult size = 1.
-	self assert: (parseResult anyOne isKindOf: Dictionary).
-	self assert: (parseResult first at: BioGBSeqCollection qualifierForAccessionWithVersion) =  'HQ184032.1'.
-	self assert: (parseResult first at: 'GBSeq_definition') = 'Bos taurus isolate Chi597 mitochondrion, complete genome'.
+{ #category : #accessing }
+BioEntrezXMLGenBankAccessionParserTest >> testParseAccession [
+
+	| record |
+	record := parseResult first.
+	self
+		assert: (record at: BioGBSeqCollection qualifierForAccessionWithVersion)
+		equals: 'HQ184032.1'.
+
+]
+
+{ #category : #accessing }
+BioEntrezXMLGenBankAccessionParserTest >> testParseDefinition [
+
+	| record |
+	record := parseResult first.
+	self
+		assert: (record at: BioGBSeqCollection qualifierForDefinition)
+		equals: 'Bos taurus isolate Chi597 mitochondrion, complete genome'.
+
+]
+
+{ #category : #accessing }
+BioEntrezXMLGenBankAccessionParserTest >> testParseOnlyOneRecord [
+
+	self assert: parseResult size equals: 1.
+
+]
+
+{ #category : #accessing }
+BioEntrezXMLGenBankAccessionParserTest >> testParseReferenceJournal [
+
+	| record |
+	record := parseResult first.
+	self
+		assert: (record at: BioGBSeqCollection qualifierForReferenceJournal)
+		equals: 'Submitted (25-AUG-2010) Dipartimento di Genetica e Microbiologia, University of Pavia, Via Ferrata, 1, Pavia 27100, Italy'
+
+
 
 ]

@@ -34,21 +34,49 @@ BioNCBIIdParserTest >> testAllIdentifiers [
 ]
 
 { #category : #testing }
-BioNCBIIdParserTest >> testClassFor [
+BioNCBIIdParserTest >> testClassForBBS [
 
-	self assert: (self parserClass classFor: 'pdb') = BioBrookhavenProtParser.
-	self assert: (self parserClass classFor: 'bbs') = BioGIBackBoneIdParser.
-	self assert: (self parserClass classFor: 'dbj') = BioDDBJParser.
-	self assert: (self parserClass classFor: 'emb') = BioEMBLParser.
-	self assert: (self parserClass classFor: 'ref') = BioRefSeqParser.
-	self assert: (self parserClass classFor: 'sp') = BioSwissProtParser.	
-"	self assert: (self parserClass classFor: 'gi') = .
-	self assert: (self parserClass classFor: 'gnl') = .
-	self assert: (self parserClass classFor: 'lcl') = .
-	self assert: (self parserClass classFor: 'pat') = .
-	self assert: (self parserClass classFor: 'pir') = .
-	self assert: (self parserClass classFor: 'prf') = .
-	self assert: (self parserClass classFor: 'gb') = .	
-"
+	self
+		assert: (self parserClass classFor: 'bbs')
+		equals: BioGIBackBoneIdParser.
+
+]
+
+{ #category : #testing }
+BioNCBIIdParserTest >> testClassForDBJ [
+
+	self assert: (self parserClass classFor: 'dbj') equals: BioDDBJParser.
+
+]
+
+{ #category : #testing }
+BioNCBIIdParserTest >> testClassForEMB [
+
+	self assert: (self parserClass classFor: 'emb') equals: BioEMBLParser.
+
+]
+
+{ #category : #testing }
+BioNCBIIdParserTest >> testClassForPDB [
+
+	self
+		assert: (self parserClass classFor: 'pdb')
+		equals: BioBrookhavenProtParser.
+]
+
+{ #category : #testing }
+BioNCBIIdParserTest >> testClassForRefSeq [
+
+	self
+		assert: (self parserClass classFor: 'ref')
+		equals: BioRefSeqParser.
+]
+
+{ #category : #testing }
+BioNCBIIdParserTest >> testClassForSwissProt [
+
+	self
+		assert: (self parserClass classFor: 'sp')
+		equals: BioSwissProtParser
 
 ]

@@ -31,13 +31,20 @@ BioAbstractTextParser >> alphabetClass [
 ]
 
 { #category : #'accessing-parsers' }
+BioAbstractTextParser >> noneOf: aCollection [
+	" Answer a parser for parsing any kind of description text in a FASTA sequence "
+
+	^ PP2PredicateObjectNode noneOf: aCollection
+]
+
+{ #category : #'accessing-parsers' }
 BioAbstractTextParser >> parserForAccession [
 	" Answer a parser for parsing exactly aCollection "
 
 	| accessionCharacters accession versionNumber |
-	accessionCharacters := self parserForPredicateWith: self specialFastaChars , {$.}.
+	accessionCharacters := self noneOf: self specialFastaChars , {$.}.
 	accession := accessionCharacters plus flatten.
-	versionNumber := ($. asParser , #digit asParser plus flatten) optional.
+	versionNumber := ($. asPParser , #digit asPParser plus flatten) optional.
 	^ (accession , versionNumber) flatten ==> [ :a | (a substrings: '.') asArray ]
 ]
 
@@ -45,26 +52,19 @@ BioAbstractTextParser >> parserForAccession [
 BioAbstractTextParser >> parserForDNAAlignment [
 	" Answer a parser for alignments, meaning sequences containing gaps "
 
-	^ #dnaAmbiguousLetterGapped asParser
+	^ #dnaAmbiguousLetterGapped asPParser
 ]
 
 { #category : #'accessing-parsers' }
 BioAbstractTextParser >> parserForExactly: aCollection [
 	" Answer a parser for parsing exactly aCollection "
 
-	^ aCollection asParser negate plus , aCollection asParser.
+	^ aCollection asPParser negate plus , aCollection asPParser.
 ]
 
 { #category : #'accessing-parsers' }
 BioAbstractTextParser >> parserForNonBreakingString [
 	
-	^ (self parserForPredicateWith: (Array with: Character cr with: Character lf)) plus flatten		
+	^ (self noneOf: (Array with: Character cr with: Character lf)) plus flatten		
 
-]
-
-{ #category : #'accessing-parsers' }
-BioAbstractTextParser >> parserForPredicateWith: aCollection [
-	" Answer a parser for parsing any kind of description text in a FASTA sequence "
-
-	^ PPPredicateObjectParser anyExceptAnyOf: aCollection
 ]

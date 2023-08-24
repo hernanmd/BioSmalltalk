@@ -80,10 +80,10 @@ BioPhylipParserTest >> speciesDNANamedBlockTokenizer [
 ]
 
 { #category : #testing }
-BioPhylipParserTest >> testTokenizeDNASpeciesBlock [
+BioPhylipParserTest >> testTokenizeDNASpeciesBlock01 [
 	" Private - Answer a <String> with a sample phylip DNA "
 	
-	| speciesBlock expectedResult |
+	| speciesBlock expectedResult firstRecord |
 	
 	speciesBlock := 'Archaeopt CGATGCTTAC CGC
 HesperorniCGTTACTCGT TGT
@@ -94,7 +94,18 @@ B.subtilisGGCAGCCAAT CAC'.
 	expectedResult :=  #(#('Archaeopt ' 'CGATGCTTAC CGC' nil) #('Hesperorni' 'CGTTACTCGT TGT' nil) #('Baluchithe' 'TAATGTTAAT TGT' nil) #('B. virgini' 'TAATGTTCGT TGT' nil) #('Brontosaur' 'CAAAACCCAT CAT' nil)).
 	
 	parseResult := self speciesDNANamedBlockTokenizer parse: speciesBlock.
-	self assert: (parseResult bioHasEqualElements: expectedResult ).
+	firstRecord := parseResult first.
+	
+	self assert: firstRecord first equals: 'Archaeopt '.
+	self assert: firstRecord second equals: 'CGATGCTTAC CGC'.
+
+]
+
+{ #category : #testing }
+BioPhylipParserTest >> testTokenizeDNASpeciesBlock02 [
+	" Private - Answer a <String> with a sample phylip DNA "
+	
+	| speciesBlock expectedResult firstRecord |
 	
 	speciesBlock := 'Archaeopt CGATGCTTAC CGC
 Hes       CGTTACTCGT TGT
@@ -102,36 +113,64 @@ BaluchitheTAATGTTAAT TGT
 B. virginiTAATGTTCGT TGT
 BrontosaurCAAAACCCAT CAT
 B.subtilisGGCAGCCAAT CAC'.
+	expectedResult :=  #(
+		#('Archaeopt ' 'CGATGCTTAC CGC') 
+		#('Hesperorni' 'CGTTACTCGT TGT') 
+		#('Baluchithe' 'TAATGTTAAT TGT') 
+		#('B. virgini' 'TAATGTTCGT TGT') 
+		#('Brontosaur' 'CAAAACCCAT CAT')).
 
 	parseResult := self speciesDNANamedBlockTokenizer parse: speciesBlock.
-	self assert: (parseResult bioHasEqualElements: expectedResult ).
+	firstRecord := parseResult first.
+	
+	self assert: firstRecord first equals: 'Archaeopt '.
+	self assert: firstRecord second equals: 'CGATGCTTAC CGC'.
 
 ]
 
 { #category : #testing }
-BioPhylipParserTest >> testTokenizeDNASpeciesLine [
+BioPhylipParserTest >> testTokenizeDNASpeciesLine01 [
 	" Private - Answer a <String> with a sample phylip DNA "
 	
 	| speciesLineBlock expectedResult |
 	
 	speciesLineBlock := 'Archaeopt CGATGCTTAC CGC'.
 	expectedResult := #('Archaeopt ' 'CGATGCTTACCGC').
-	
 	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
-	self assert: (parseResult bioHasEqualElements: expectedResult ).
 
-	speciesLineBlock := 'Archaeopt CGATGCTTACCGC'.	
-	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
-	self assert: (parseResult bioHasEqualElements: expectedResult ).
-	
-	speciesLineBlock := 'B. virginiTAATGTTCGT TGT'.
-	expectedResult := #('B. virgini' 'TAATGTTCGTTGT').
-	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
 	self assert: (parseResult bioHasEqualElements: expectedResult ).
 ]
 
 { #category : #testing }
-BioPhylipParserTest >> testTokenizeFirstLine [
+BioPhylipParserTest >> testTokenizeDNASpeciesLine02 [
+	" Private - Answer a <String> with a sample phylip DNA "
+	
+	| speciesLineBlock expectedResult |
+	
+	speciesLineBlock := 'Archaeopt CGATGCTTACCGC'.	
+	expectedResult := #('Archaeopt ' 'CGATGCTTACCGC').
+	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
+		
+	self assert: (parseResult bioHasEqualElements: expectedResult).
+
+]
+
+{ #category : #testing }
+BioPhylipParserTest >> testTokenizeDNASpeciesLine03 [
+	" Private - Answer a <String> with a sample phylip DNA "
+	
+	| speciesLineBlock expectedResult |
+	
+	speciesLineBlock := 'B. virginiTAATGTTCGT TGT'.
+	expectedResult := #('B. virgini' 'TAATGTTCGTTGT').
+	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
+
+	self assert: (parseResult bioHasEqualElements: expectedResult).
+
+]
+
+{ #category : #testing }
+BioPhylipParserTest >> testTokenizeFirstLine01 [
 	" Private - Answer a <String> with a sample phylip DNA "
 	
 	| firstLine |
@@ -140,16 +179,33 @@ BioPhylipParserTest >> testTokenizeFirstLine [
 '.
 	parseResult := self firstLineTokenizer parse: firstLine.
 	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
+
+]
+
+{ #category : #testing }
+BioPhylipParserTest >> testTokenizeFirstLine02 [
+	" Private - Answer a <String> with a sample phylip DNA "
+	
+	| firstLine |
 	
 	firstLine := '      6   13
 '.
 	parseResult := self firstLineTokenizer parse: firstLine.
 	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
+
+]
+
+{ #category : #testing }
+BioPhylipParserTest >> testTokenizeFirstLine03 [
+	" Private - Answer a <String> with a sample phylip DNA "
+	
+	| firstLine |
 	
 	firstLine := '6   13    
 '.
 	parseResult := self firstLineTokenizer parse: firstLine.
 	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
+
 ]
 
 { #category : #testing }

@@ -8,8 +8,8 @@ Class {
 BioMultiFASTAAlignmentParser >> parserForSequence [
 	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
 
-	^ (#dnaAmbiguousLetterGapped asParser plus flatten , 
-		#newline asParser plus optional ==> [ :nodes | 
+	^ (#dnaAmbiguousLetterGapped asPParser plus flatten , 
+		#newline asPParser plus optional ==> [ :nodes | 
 			nodes copyWithoutAll: { Character cr . Character lf } ]) 
 				min: 1
 

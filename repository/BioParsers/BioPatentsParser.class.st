@@ -5,7 +5,7 @@ pat|country|number
 Class {
 	#name : #BioPatentsParser,
 	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#category : #'BioParsers-Core'
 }
 
 { #category : #accessing }
@@ -21,14 +21,14 @@ BioPatentsParser >> countryParser [
 	^ self parserForNonFastaString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : #initialization }
 BioPatentsParser >> initialize [
 
 	super initialize.
 	parser := 
 		self parserForIdentifier , 
-			$| asParser , 
+			$| asPParser , 
 			self countryParser , 
-			$| asParser , 
-			#number asParser.
+			$| asPParser , 
+			#number asPParser.
 ]

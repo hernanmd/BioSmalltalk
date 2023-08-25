@@ -115,6 +115,39 @@ BioAlphabet class >> hasAmbiguousBases: aString [
 	^ aString asUppercase anySatisfy: [ : letter | self ambiguityCodes includes: letter ]
 ]
 
+{ #category : #accessing }
+BioAlphabet class >> lowercaseAndUppercaseCodes [
+	"Answer a <String> with the receiver's codes in both uppercase and lowercase versions"
+
+	^ String streamContents: [ : stream |
+		stream
+			<< self lowercaseCodes;
+			<< self uppercaseCodes ]
+]
+
+{ #category : #accessing }
+BioAlphabet class >> lowercaseAndUppercaseCodesWithGap [
+	"Answer a <String> with the receiver's codes in both uppercase and lowercase versions"
+
+	^ String streamContents: [ : stream |
+		stream 
+			<< self lowercaseAndUppercaseCodes;
+			<< '-?' ]
+]
+
+{ #category : #accessing }
+BioAlphabet class >> lowercaseCodes [ 
+	" See superimplementor's comment "
+	
+	^ self codes asLowercase
+]
+
+{ #category : #accessing }
+BioAlphabet class >> uppercaseCodes [
+
+	^ self codes
+]
+
 { #category : #comparing }
 BioAlphabet >> = anObject [
 	"Answer whether the receiver and anObject represent the same object."

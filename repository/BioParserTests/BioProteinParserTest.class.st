@@ -8,13 +8,13 @@ Class {
 BioProteinParserTest >> setUp [
 
 	super setUp.
-	parser := #proteinSequence asPParser.
+	parser := #proteinLetterGapped asPParser.
 ]
 
 { #category : #testing }
 BioProteinParserTest >> testProteinLetterMatches [
 
-	parser := #proteinLetter asPParser.
+	parser := #proteinLetterGapped asPParser.
 	
 	'ACDEFGHIKLMNPQRSTVWYBXZJUO' do: [: letter |
 		self assert: (parser matches: (String with: letter))].

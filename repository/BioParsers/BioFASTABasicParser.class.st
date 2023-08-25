@@ -4,6 +4,9 @@ This class is not intended to be used directly
 Class {
 	#name : #BioFASTABasicParser,
 	#superclass : #BioIDParser,
+	#instVars : [
+		'fastaSequenceParser'
+	],
 	#category : #'BioParsers-Core'
 }
 
@@ -38,25 +41,62 @@ BioFASTABasicParser >> buildTokens: aCollection [
 ]
 
 { #category : #initialization }
-BioFASTABasicParser >> initialize [
-	" Private - See superimplementor's comment "
+BioFASTABasicParser >> fastaParser [
 
-	super initialize.
-	parser := ( 
+	^ ( 
 		self parserForNonBreakingString , 
 		#newline asPParser ,
-		self parserForSequence) plus end 
+		(self perform: self fastaSequenceParser)
+		) plus end 
 		
 
+]
+
+{ #category : #initialization }
+BioFASTABasicParser >> fastaSequenceParser [
+
+	^ fastaSequenceParser 		
+
+]
+
+{ #category : #accessing }
+BioFASTABasicParser >> fastaSequenceParser: anObject [
+
+	fastaSequenceParser := anObject
+]
+
+{ #category : #'initialize-release' }
+BioFASTABasicParser >> initializeWith: aString [
+	" Private - See superimplementor's comment "
+
+	super initializeWith: aString.
+	self fastaSequenceParser: #parserForSequence.
+	parser := self fastaParser.
+
+]
+
+{ #category : #'accessing-parsers' }
+BioFASTABasicParser >> newLineParser [
+
+	^ #newline asPParser plus optional
 ]
 
 { #category : #'accessing-parsers' }
 BioFASTABasicParser >> parserForSequence [
 	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
 
-	^ (#word asPParser plus flatten , 
-		#newline asPParser plus optional ==> [ :nodes | (nodes copyWithout: Character cr) ]) 
-			min: 1
+	^ (
+			(
+			#word asPParser plus flatten , 
+			self newLineParser ==> self removeNewlinesBlock
+			) min: 1
+		) optimize
+]
+
+{ #category : #removing }
+BioFASTABasicParser >> removeNewlinesBlock [
+
+	^ [ :nodes | nodes copyWithoutAll: { Character cr . Character lf } ]
 ]
 
 { #category : #'accessing private' }

@@ -55,6 +55,36 @@ BioAbstractParser >> buildTokens: aCollection [
 ]
 
 { #category : #accessing }
+BioAbstractParser >> debug [
+	" Private - Debug the receiver's expression "
+	
+	(results isNil or: [ results isEmpty ])
+		ifTrue: [ self debug: expression ].
+	^ results
+]
+
+{ #category : #accessing }
+BioAbstractParser >> debug: aString [
+	" Debug aString with the receiver's parser "
+	
+	self debugString: aString.
+
+]
+
+{ #category : #accessing }
+BioAbstractParser >> debugString: aString [
+	" Answer an object with the result of parsing aString with the receiver's parser "
+	
+	self beSuccess.
+	^ [ parser debug:  aString ]
+		on: Exception
+		do: [: ex | 
+			self beFailed.
+			ex asString ].
+
+]
+
+{ #category : #accessing }
 BioAbstractParser >> expression [
 	" Answer a String with the receiver's target expression "
 	
@@ -70,6 +100,7 @@ BioAbstractParser >> expression: anObject [
 BioAbstractParser >> initializeWith: aString [
 	" Private - Set the receiver's target expression to be parsed to aString "
 	
+	self initialize.
 	expression := aString
 ]
 

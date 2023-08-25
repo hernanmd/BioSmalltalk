@@ -52,7 +52,7 @@ BioAbstractTextParser >> parserForAccession [
 BioAbstractTextParser >> parserForDNAAlignment [
 	" Answer a parser for alignments, meaning sequences containing gaps "
 
-	^ #dnaAmbiguousLetterGapped asPParser
+	^ #dnaAmbiguousLetterGapped asPParser 
 ]
 
 { #category : #'accessing-parsers' }

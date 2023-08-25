@@ -4,9 +4,7 @@ Extension { #name : #PPPredicateObjectParser }
 PPPredicateObjectParser class >> dnaAmbiguousLetter [
 	" Answer a parser for a DNA letter, using ambiguous IUPAC nomenclature "
 	
-	^ self anyOf: 
-		BioIUPACAmbiguousDNA codes asUppercase , 
-		BioIUPACAmbiguousDNA codes asLowercase
+	^ PP2PredicateObjectNode anyOf: BioIUPACAmbiguousDNA lowercaseAndUppercaseCodes
 		
 ]
 

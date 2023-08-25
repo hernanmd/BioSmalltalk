@@ -8,8 +8,7 @@ Class {
 BioNCBIXMLBlastParser >> initializeWith: aString [
 	" Private - Set the receiver's parser "
 	
-	super initialize.
-	self expression: aString.
+	super initializeWith: aString.
 	parser := XMLPullParser parse: self expression.
 ]
 

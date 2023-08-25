@@ -208,9 +208,9 @@ BioPhylipParser >> tokenizeInterleavedProtein [
 	parser := 
 		self firstLineTokenizer ,
 		(((PP2PredicateObjectNode noneOf: self speciesFobiddenNames) times: 10) flatten ,
-		#proteinLetter asPParser trimBlanks star flatten , 
+		#proteinLetterGapped asPParser trimBlanks star flatten , 
 		#newline asPParser) star ,
-			(#proteinLetter asPParser trimBlanks star flatten , #newline asPParser) star ==> self buildTokensBlock.
+			(#proteinLetterGapped asPParser trimBlanks star flatten , #newline asPParser) star ==> self buildTokensBlock.
 	^ self tokenize.
 	
 ]

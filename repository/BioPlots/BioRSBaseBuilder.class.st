@@ -63,12 +63,12 @@ BioRSBaseBuilder >> bases: anObject [
 BioRSBaseBuilder >> colorMap [
 
 	^ { 
-		$A -> Color red .
-		$C -> Color green .
-		$T -> Color blue .
-		$G -> Color yellow .
+		$A -> (Color fromString: #f4a261) .
+		$C -> (Color fromString: #e9c46a) .
+		$T -> (Color fromString: #'2a9d8f') .
+		$G -> (Color fromString: #e76f51) .
 		$- -> Color white .
-		$N -> Color black
+		$N -> (Color fromString: #'264653')
 		} asDictionary
 ]
 

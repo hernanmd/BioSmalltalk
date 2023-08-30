@@ -140,7 +140,7 @@ BioAbstractParser >> parseString: aString [
 	^ [ parser
 			parse:  aString
 			onError: [: failure | self error: failure message ] ]
-		on: Exception
+		on: Error
 		do: [: ex | 
 			self beFailed.
 			ex asString ].

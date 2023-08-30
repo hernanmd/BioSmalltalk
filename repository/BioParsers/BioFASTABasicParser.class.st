@@ -44,12 +44,14 @@ BioFASTABasicParser >> buildTokens: aCollection [
 BioFASTABasicParser >> fastaParser [
 
 	^ ( 
-		self parserForNonBreakingString , 
+		$> asPParser ,
+		(self noneOf: (Array with: Character cr with: Character lf)) plus flatten , 
 		#newline asPParser ,
-		(self perform: self fastaSequenceParser)
-		) plus end 
-		
-
+			(
+				(self noneOf: (Array with: Character cr with: Character lf)) plus flatten , 
+				#newline asPParser star ==> [ :nodes | nodes copyWithoutAll: { Character cr asString . Character lf asString } ]
+			) plus
+		) plus end
 ]
 
 { #category : #initialization }
@@ -70,7 +72,7 @@ BioFASTABasicParser >> initializeWith: aString [
 	" Private - See superimplementor's comment "
 
 	super initializeWith: aString.
-	self fastaSequenceParser: #parserForSequence.
+	self fastaSequenceParser: #parserForSingleSequence.
 	parser := self fastaParser.
 
 ]
@@ -78,25 +80,25 @@ BioFASTABasicParser >> initializeWith: aString [
 { #category : #'accessing-parsers' }
 BioFASTABasicParser >> newLineParser [
 
-	^ #newline asPParser plus optional
+	^ #newline asPParser
 ]
 
 { #category : #'accessing-parsers' }
-BioFASTABasicParser >> parserForSequence [
+BioFASTABasicParser >> parserForSingleSequence [
 	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
 
 	^ (
 			(
-			#word asPParser plus flatten , 
-			self newLineParser ==> self removeNewlinesBlock
-			) min: 1
-		) optimize
+				self parserForNonBreakingString , 
+				self newLineParser optional ==> self removeNewlinesBlock
+			) plus
+		)
 ]
 
 { #category : #removing }
 BioFASTABasicParser >> removeNewlinesBlock [
 
-	^ [ :nodes | nodes copyWithoutAll: { Character cr . Character lf } ]
+	^ [ :nodes | nodes copyWithoutAll: { Character cr asString . Character lf asString } ]
 ]
 
 { #category : #'accessing private' }

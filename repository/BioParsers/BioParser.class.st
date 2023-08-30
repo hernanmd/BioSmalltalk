@@ -50,7 +50,7 @@ Class {
 BioParser class >> parseAccession: aString [
 	" Parse aString containing an accession number and answer an accession instance "
 	
-	^ ( BioAccessionParser on: aString ) parse
+	^ (BioAccessionParser on: aString) parse
 ]
 
 { #category : #'instance creation' }
@@ -109,7 +109,7 @@ BioParser class >> parseMultiFasta: aFastaString [
 	" Parser aFastaString representing a MultiFASTA sequence.
 	Answer a FastaMultiRecord object "
 	
-	^ (BioFASTAMultiParser onAmbigousGapped: aFastaString) parse
+	^ (BioFASTAMultiParser onAmbiguousGapped: aFastaString) parse
 ]
 
 { #category : #'parse-fasta' }
@@ -117,29 +117,20 @@ BioParser class >> parseMultiFastaAlignment: aFastaString [
 	" Parser aFastaString representing a <String> containing multiple sequences in FASTA format.
 	Answer a <BioFastaMultiRecord> object "
 	
-	^ (BioFASTAMultiParser onAmbigousGapped: aFastaString) parse
+	^ (BioFASTAMultiParser onAmbiguousGapped: aFastaString) parse
 ]
 
 { #category : #'parse-fasta' }
 BioParser class >> parseMultiFastaAlignmentFile: aFastaFullFileLocation [
 	" Parse aFastaFullFileLocation representing a <String> containing a file with multiple sequences in FASTA format. Answer a <BioAlignment> object "
-	
-	^ (BioFASTAMultiParser onAmbigousGapped: 
+
+	^ (BioFASTAMultiParser onAmbiguousGapped: 
 			(self openFullFileNamed: aFastaFullFileLocation) contents) parse asAlignment
 ]
 
 { #category : #'parse-fasta' }
-BioParser class >> parseMultiFastaAlignmentFileFast: aFastaFullFileLocation [
-	" Parse aFastaFullFileLocation representing a <String> containing a file with multiple sequences in FASTA format. Answer a <BioAlignment> object "
-	
-	^ (BioFASTAMultiParser
-		onAmbigousGapped: (self openFullFileNamed: aFastaFullFileLocation)) parse asAlignment
-]
-
-{ #category : #'parse-fasta' }
 BioParser class >> parseMultiFastaFile: aFastaFullFileLocation [
-	" Parser aFastaString representing a MultiFASTA sequence.
-	Answer a FastaMultiRecord object "
+	" Parse aFastaFullFileLocation (extensions .fa, .fasta, .fas, etc) representing a MultiFASTA sequence, i.e. a file which contains multiple fasta sequences. Answer a <BioFastaMultiRecord> object "
 	
 	^ (BioFASTAMultiParser on: (self openFullFileNamed: aFastaFullFileLocation) contents) parse
 ]

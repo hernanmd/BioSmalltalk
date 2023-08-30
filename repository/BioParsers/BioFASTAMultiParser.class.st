@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #'instance creation' }
-BioFASTAMultiParser class >> onAmbigousGapped: anExpressionString [
+BioFASTAMultiParser class >> onAmbiguousGapped: anExpressionString [
 
 	^ self basicNew
 		fastaSequenceParser: #parserForAmbibuousGappedSequence;
@@ -49,6 +49,7 @@ BioFASTAMultiParser >> parseResultClass [
 BioFASTAMultiParser >> parserForAmbibuousGappedSequence [
 	" Configure the receiver's parser to parse DNA alignment (gaps are allowed) "
 
+	self halt.
 	^ (
 			(
 			#dnaAmbiguousLetterGapped asPParser plus flatten , 

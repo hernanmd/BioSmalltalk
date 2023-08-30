@@ -1,7 +1,12 @@
+"
+Abstract class grouping codes for RNA alphabets.
+See subclasses for specific details.
+
+"
 Class {
 	#name : #BioIUPACRNA,
 	#superclass : #BioIUPACAlphabet,
-	#category : 'BioTools-Alphabets'
+	#category : #'BioTools-Alphabets'
 }
 
 { #category : #accessing }

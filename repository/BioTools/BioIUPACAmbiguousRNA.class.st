@@ -1,7 +1,12 @@
+"
+It represents the IUPAC RNA alphabet for ambiguous bases.
+See class side for implementation details.
+
+"
 Class {
 	#name : #BioIUPACAmbiguousRNA,
 	#superclass : #BioIUPACRNA,
-	#category : 'BioTools-Alphabets'
+	#category : #'BioTools-Alphabets'
 }
 
 { #category : #accessing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #BioAbstractFASTAParserTest,
 	#superclass : #BioAbstractParserTest,
-	#category : 'BioParserTests-Core'
+	#category : #'BioParserTests-Core'
 }
 
 { #category : #'samples-single' }
@@ -39,7 +39,8 @@ BioAbstractFASTAParserTest >> fastaSeq04 [
 	^ '>YAL068C-7235.2170 Putative promoter sequence
 TACGAGAATAATTTCTCATCATCCAGCTTTAACACAAAATTCGCA
 CAGTTTTCGTTAAGAGAACTTAACATTTTCTTATGACGTAAATGA
-AGTTTATATATAAATTTCCTTTTTATTGGA'
+AGTTTATATATAAATTTCCTTTTTATTGGA
+'
 ]
 
 { #category : #'samples-single' }

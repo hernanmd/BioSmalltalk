@@ -28,9 +28,17 @@ BioFASTAParser >> parserForAnyDescriptionText [
 { #category : #'accessing-parsers' }
 BioFASTAParser >> parserForDescriptionLine [
 
-	^ ($> asPParser , self parserForAnyDescriptionLine , #newline asPParser) end
+	^ $> asPParser ,  
+		#newline asPParser negate star flatten , 
+		#newline asPParser
 		
 
+]
+
+{ #category : #'accessing-parsers' }
+BioFASTAParser >> parserForDescriptionString [
+
+	^ self parserForDescriptionLine ==> #second
 ]
 
 { #category : #'accessing-parsers' }

@@ -35,7 +35,7 @@ BioFASTABasicParser >> buildTokens: aCollection [
 		ifTrue: [ 
 			self resultsForTokenize
 					add: aCollection first;
-					add: (BioSequence joinString: (self sequenceCollectionFrom: aCollection last)) ]
+					add: aCollection last ]
 		ifFalse: [ aCollection do: [ : seq | self buildTokens: seq ] ].
 	^ self results		
 ]
@@ -83,14 +83,20 @@ BioFASTABasicParser >> newLineParser [
 	^ #newline asPParser
 ]
 
+{ #category : #initialization }
+BioFASTABasicParser >> parserForAnyCharacter [
+
+	^ #any asPParser negate star flatten , #any asPParser plus
+]
+
 { #category : #'accessing-parsers' }
 BioFASTABasicParser >> parserForSingleSequence [
 	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
 
 	^ (
 			(
-				self parserForNonBreakingString , 
-				self newLineParser optional ==> self removeNewlinesBlock
+			#dnaAmbiguousLetterGapped asPParser plus flatten , 
+			self newLineParser optional
 			) plus
 		)
 ]
@@ -106,7 +112,7 @@ BioFASTABasicParser >> seqFrom: aCollection [
 	" Answer a new sequence object from aCollection using the receiver's alphabet class "
 	
 	^ self sequenceClass
-		newWith: (BioSequence joinString: (self sequenceCollectionFrom: aCollection))
+		newWith: aCollection
 		alphabet: self alphabetClass
 ]
 

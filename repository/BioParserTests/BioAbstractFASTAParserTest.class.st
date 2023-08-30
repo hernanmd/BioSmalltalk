@@ -126,14 +126,14 @@ TACATTACGTGCAACCAAAAGTGTAAAATGATTGGTTGCAATGTTTCACCTAAATTACTT'
 BioAbstractFASTAParserTest >> multiFastaSeq01Header01 [
 	" From http://www.dalkescientific.com/writings/NBN/parsing.html "
 
-	^ '>YAL069W-1.334 Putative promoter sequence'
+	^ 'YAL069W-1.334 Putative promoter sequence'
 ]
 
 { #category : #'samples-multi' }
 BioAbstractFASTAParserTest >> multiFastaSeq01Header02 [
 	" From http://www.dalkescientific.com/writings/NBN/parsing.html "
 
-	^ '>YAL068C-7235.2170 Putative promoter sequence'
+	^ 'YAL068C-7235.2170 Putative promoter sequence'
 ]
 
 { #category : #'samples-multi' }
@@ -181,21 +181,38 @@ TAATATGCCTATGCCGCATAATTTTTATATCTTTCTCCTAACAAAACATTCGCTTGTAAA'
 BioAbstractFASTAParserTest >> multiFastaSeq02Header01 [
 	" From http://www.dalkescientific.com/writings/NBN/parsing.html "
 
-	^ '>first sequence record'
+	^ 'first sequence record'
 ]
 
 { #category : #'samples-multi' }
 BioAbstractFASTAParserTest >> multiFastaSeq02Header02 [
 	" From http://www.dalkescientific.com/writings/NBN/parsing.html "
 
-	^ '>second sequence record'
+	^ 'second sequence record'
 ]
 
 { #category : #'samples-multi' }
 BioAbstractFASTAParserTest >> multiFastaSeq02Header03 [
 	" From http://www.dalkescientific.com/writings/NBN/parsing.html "
 
-	^ '>third sequence record'
+	^ 'third sequence record'
+]
+
+{ #category : #'samples-multi' }
+BioAbstractFASTAParserTest >> multiFastaSeq02PlainText [
+	" From http://www.dalkescientific.com/writings/NBN/parsing.html 
+	
+	thisContext receiver new multiFastaSeq02PlainText
+	"
+
+	^ '>first sequence record
+TACGAGAATAATTTCTCATCATCCAGCTTTAACACAAAATTCGCA
+>second sequence record
+CAGTTTTCGTTAAGAGAACTTAACATTTTCTTATGACGTAAATGA
+AGTTTATATATAAATTTCCTTTTTATTGGA
+>third sequence record
+GAACTTAACATTTTCTTATGACGTAAATGAAGTTTATATATAAATTTCCTTTTTATTGGA
+TAATATGCCTATGCCGCATAATTTTTATATCTTTCTCCTAACAAAACATTCGCTTGTAAA'
 ]
 
 { #category : #'samples-multi' }
@@ -210,8 +227,7 @@ BioAbstractFASTAParserTest >> multiFastaSeq03 [
 			nextPutAll: self multiFastaSeq03Header01; cr;
 			nextPutAll: self multiFastaSeq03Body01; cr;
 			nextPutAll: self multiFastaSeq03Header02; cr;
-			nextPutAll: self multiFastaSeq03Body02
-		].
+			nextPutAll: self multiFastaSeq03Body02 ].
 ]
 
 { #category : #'samples-multi' }
@@ -229,8 +245,7 @@ BioAbstractFASTAParserTest >> multiFastaSeq03Body02 [
 	" From http://www.citizendia.org/FASTA_format "
 
 	^ 'SATVSEINSETDFVAKNDQFIALTKDTTAHIQSNSLQSVEELHSSTINGVKFEEYLKSQI
-ATIGENLVVRRFATLKAGANGVVNGYIHTNGRVGVVIAAACDSAEVASKSRDLLRQICMH
-'
+ATIGENLVVRRFATLKAGANGVVNGYIHTNGRVGVVIAAACDSAEVASKSRDLLRQICMH'
 ]
 
 { #category : #'samples-multi' }

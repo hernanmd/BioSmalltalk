@@ -30,7 +30,7 @@ GCTAATGCCGTAGTAATTTTCCCGTCCTCCCGT
 
 ]
 
-{ #category : #testing }
+{ #category : #running }
 BioFastaMultiRecordTest >> setUp [ 
 
 	super setUp.

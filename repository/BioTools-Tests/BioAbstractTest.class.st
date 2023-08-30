@@ -25,16 +25,18 @@ BioAbstractTest >> initMatrixRows: rowsNumber columns: columnsNumber [
 	self matrix: (self matrixClass rows: rowsNumber columns: columnsNumber)
 ]
 
-{ #category : #accessing }
+{ #category : #running }
 BioAbstractTest >> setUp [
 
+	super setUp.
 	BioException raiseWarning: false.
 ]
 
-{ #category : #accessing }
+{ #category : #running }
 BioAbstractTest >> tearDown [
 
 	BioException raiseWarning: nil.
+	super tearDown.
 ]
 
 { #category : #accessing }

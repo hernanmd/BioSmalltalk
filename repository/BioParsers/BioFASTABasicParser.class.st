@@ -43,15 +43,11 @@ BioFASTABasicParser >> buildTokens: aCollection [
 { #category : #initialization }
 BioFASTABasicParser >> fastaParser [
 
-	^ ( 
-		$> asPParser ,
-		(self noneOf: (Array with: Character cr with: Character lf)) plus flatten , 
-		#newline asPParser ,
-			(
-				(self noneOf: (Array with: Character cr with: Character lf)) plus flatten , 
-				#newline asPParser star ==> [ :nodes | nodes copyWithoutAll: { Character cr asString . Character lf asString } ]
-			) plus
-		) plus end
+	^ (
+	($> asPParser , #newline asPParser negate star flatten , #newline asPParser ==> #second) ,
+	($> asPParser not , (#newline asPParser negate star flatten , #newline asPParser)  / 
+	($> asPParser not , self parserForAnyCharacter , #endOfLine asPParser)) plus flatten
+	) plus 
 ]
 
 { #category : #initialization }

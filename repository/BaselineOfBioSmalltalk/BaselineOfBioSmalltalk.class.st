@@ -36,8 +36,8 @@ BaselineOfBioSmalltalk >> baseline: spec [
 			projectSpecForFileDialog: spec;
 			projectSpecForPolyMath: spec;
 			projectSpecForINIParser: spec;
-			projectSpecForPetitParser: spec;
-			projectSpecForRoassal2: spec.
+			projectSpecForPetitParser: spec.
+			"projectSpecForRoassal2: spec."
 
 		self baselineOSDeps: spec.
 		self baselinePackages: spec.
@@ -149,7 +149,7 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioPharoCommon' 			with: [ spec requires: #('BioTools' ). ];									
 			package: 'BioPharo4' 					with: [ spec requires: #('BioPharoCommon' ). ];
 			package: 'BioPharo7' 					with: [ spec requires: #('BioPharoCommon' ). ];
-			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ];												
+			package: 'BioPlots'					with: [ spec requires: #('BioTools' " 'Roassal2' ") ];												
 			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport'). ];
 			"package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
 			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];"

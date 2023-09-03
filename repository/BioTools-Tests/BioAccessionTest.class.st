@@ -59,7 +59,7 @@ BioAccessionTest >> testIsEmpty [
 					yourself) isEmpty.
 	self assert: BioAccession new isEmpty.
 	
-	self should: [ String empty asAccession ] raise: BioException.
+	self should: [ String empty asAccession ] raise: Error.
 ]
 
 { #category : #testing }

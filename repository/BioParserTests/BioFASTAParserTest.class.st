@@ -142,10 +142,8 @@ TACATTACGTGCAACCAAAAGTGTAAAATGATTGGTTGCAATGTTTCACCTAAATTACTT'.
 BioFASTAParserTest >> testParseSingleFasta01 [
 
 	| seqSelectors parseResults |
-	seqSelectors := self class superclass selectorsInProtocol:
-		                'samples-single'.
-	parseResults := seqSelectors collect: [ :sel |
-		                self parserClass parseFasta: (self perform: sel) ].
+	seqSelectors := self class superclass selectorsInProtocol: 'samples-single'.
+	parseResults := seqSelectors collect: [ :sel | self parserClass parseFasta: (self perform: sel) ].
 
 	parseResults do: [ :pResult | self assert: pResult isFastaRecord ]
 ]
@@ -182,9 +180,10 @@ BioFASTAParserTest >> testParseSingleFasta04 [
 { #category : #'testing-builder' }
 BioFASTAParserTest >> testParseSingleFasta07 [
 
-	parseResult := self parserClass parseFasta: '>gi|6273291|emb|AF191665.1|AF191665
-'.
-	self deny: (parseResult isKindOf: BioFastaRecord).
+	self 
+		should: [ self parserClass parseFasta: '>gi|6273291|emb|AF191665.1|AF191665
+' ]
+		raise: Error.
 
 ]
 

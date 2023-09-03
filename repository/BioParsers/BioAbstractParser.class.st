@@ -22,16 +22,14 @@ BioAbstractParser class >> on: aString [
 
 { #category : #accessing }
 BioAbstractParser >> beFailed [
-	" Private - Set the receiver's status to <false>, meaning
-	a failed operation was performed "
+	" Private - Set the receiver's status to <false>, meaning a failed operation was performed "
 	
 	status := false
 ]
 
 { #category : #accessing }
 BioAbstractParser >> beSuccess [
-	" Private - Set the receiver's status to <true>, meaning
-	a successfull operation was performed "
+	" Private - Set the receiver's status to <true>, meaning a successfull operation was performed "
 
 	status := true
 ]
@@ -133,17 +131,21 @@ BioAbstractParser >> parse: aString [
 ]
 
 { #category : #accessing }
+BioAbstractParser >> parseResultClass [
+
+	^ self subclassResponsibility
+]
+
+{ #category : #accessing }
 BioAbstractParser >> parseString: aString [
 	" Answer an object with the result of parsing aString with the receiver's parser "
 	
 	self beSuccess.
-	^ [ parser
-			parse:  aString
-			onError: [: failure | self error: failure message ] ]
-		on: Error
-		do: [: ex | 
+	^ parser
+		parse:  aString
+		onError: [: failure | 
 			self beFailed.
-			ex asString ].
+			self error: failure message ]
 
 ]
 

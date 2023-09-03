@@ -24,9 +24,9 @@ BioGenIdParserTest >> testTokenizeGenBankIdentifier01 [
 BioGenIdParserTest >> testTokenizeGenBankIdentifier02 [
 
 	self
-		assert: (self parser tokenize: 'gi')
-		equals: 'Error: literal not found'.
+		should: [ self parser tokenize: 'gi' ]
+		raise: Error.
 	self
-		assert: (self parser tokenize: 'gi|')
-		equals: 'Error: digit expected'
+		should: [ self parser tokenize: 'gi|' ]
+		raise: Error
 ]

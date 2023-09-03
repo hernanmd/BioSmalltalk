@@ -4,9 +4,6 @@ This class is not intended to be used directly
 Class {
 	#name : #BioFASTABasicParser,
 	#superclass : #BioIDParser,
-	#instVars : [
-		'fastaSequenceParser'
-	],
 	#category : #'BioParsers-Core'
 }
 
@@ -49,24 +46,11 @@ BioFASTABasicParser >> fastaParser [
 				(
 					(
 						$> asPParser not , 
-						(#newline asPParser / #endOfLine asPParser negate plus) flatten ==> [ : nodes | nodes second ]
+						(#newline asPParser / #endOfLine asPParser negate plus) flatten ==> #second
 					)
-				) plus ==> [ : nodes | (nodes reject: [ : line | line = Character cr asString]) joinUsing: '' ]
+				) plus ==> self removeNewLinesAndJoinBlock
 			)
 		) plus
-]
-
-{ #category : #initialization }
-BioFASTABasicParser >> fastaSequenceParser [
-
-	^ fastaSequenceParser 		
-
-]
-
-{ #category : #accessing }
-BioFASTABasicParser >> fastaSequenceParser: anObject [
-
-	fastaSequenceParser := anObject
 ]
 
 { #category : #'initialize-release' }
@@ -74,7 +58,6 @@ BioFASTABasicParser >> initializeWith: aString [
 	" Private - See superimplementor's comment "
 
 	super initializeWith: aString.
-	self fastaSequenceParser: #parserForSingleSequence.
 	parser := self fastaParser.
 
 ]
@@ -86,21 +69,9 @@ BioFASTABasicParser >> newLineParser [
 ]
 
 { #category : #initialization }
-BioFASTABasicParser >> parserForAnyCharacter [
+BioFASTABasicParser >> removeNewLinesAndJoinBlock [
 
-	^ #any asPParser negate star flatten , #any asPParser plus
-]
-
-{ #category : #'accessing-parsers' }
-BioFASTABasicParser >> parserForSingleSequence [
-	" Answer a parser for parsing sequences as usually found in FASTA formatted files "
-
-	^ (
-			(
-			#dnaAmbiguousLetterGapped asPParser plus flatten , 
-			self newLineParser optional
-			) plus
-		)
+	^ [ : nodes | (nodes reject: [ : line | line = Character cr asString or: [ line = Character lf asString ]]) joinUsing: '' ]
 ]
 
 { #category : #removing }

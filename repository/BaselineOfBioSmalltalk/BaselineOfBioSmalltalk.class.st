@@ -31,7 +31,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		self 
 			projectSpecForCommonUtils: spec;
 			projectSpecForDataDrameInspector: spec;
-			projectSpecForProjectFramework: spec;
+			"projectSpecForProjectFramework: spec;"
 			projectSpecForStringExtensions: spec;
 			projectSpecForFileDialog: spec;
 			projectSpecForPolyMath: spec;
@@ -56,7 +56,7 @@ BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 			'Core' 
 			'Tests'
 			'PopulationGenomics'
-			'Projects')
+			" 'Projects' ")
 ]
 
 { #category : #groups }
@@ -99,7 +99,7 @@ BaselineOfBioSmalltalk >> baselineGroups: spec [
 	self baselineCoreGroup: spec.
 	self baselineBasicGroup: spec.
 	self baselinePopGenGroup: spec.
-	self baselineProjectsGroup: spec.
+	"self baselineProjectsGroup: spec."
 	self baselineTestsGroup: spec.
 	self baselineAllGroup: spec.
 	spec group: 'default' with: #('All').
@@ -151,8 +151,8 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 			package: 'BioPharo7' 					with: [ spec requires: #('BioPharoCommon' ). ];
 			package: 'BioPlots'					with: [ spec requires: #('BioTools' 'Roassal2') ];												
 			package: 'BioPopulation' 			with: [ spec requires: #('BioTools' 'BioSupport'). ];
-			package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
-			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];
+			"package: 'BioProject' 				with: [ spec requires: #('BioTools' 'ProjectFramework' ). ];
+			package: 'BioProjectTests' 			with: [ spec requires: #('BioProject' ). ];"
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools'). ];
 			package: 'BioTools' 					with: [ spec 
@@ -222,7 +222,7 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 		group: 'Tests' 
 		with: #(
 			'Core'	
-			'Projects'
+			"'Projects'"
 
 			'BioTools-Tests' 
 			'BioBlastTests' 
@@ -232,7 +232,7 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioNCBITests' 
 			'BioFormatterTests' 
 			'BioClassifierTests' 
-			'BioProjectTests'
+			"'BioProjectTests'"
 			'BioArlequin-Tests' )
 ]
 

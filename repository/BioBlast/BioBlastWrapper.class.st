@@ -35,8 +35,8 @@ BioBlastWrapper class >> newNCBILocalWrapper [
 { #category : #accessing }
 BioBlastWrapper class >> wrappers [
 	" Answer a <Collection> of selectors to access wrapped receiver's programs "
-	
-	^ self class organization listAtCategoryNamed: #wrappers
+
+	^ self class selectorsInProtocol: #wrappers
 ]
 
 { #category : #wrappers }

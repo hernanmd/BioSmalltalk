@@ -44,10 +44,16 @@ BioFASTABasicParser >> buildTokens: aCollection [
 BioFASTABasicParser >> fastaParser [
 
 	^ (
-	($> asPParser , #newline asPParser negate star flatten , #newline asPParser ==> #second) ,
-	($> asPParser not , (#newline asPParser negate star flatten , #newline asPParser)  / 
-	($> asPParser not , self parserForAnyCharacter , #endOfLine asPParser)) plus flatten
-	) plus 
+			self parserForDescriptionString , 
+			(
+				(
+					(
+						$> asPParser not , 
+						(#newline asPParser / #endOfLine asPParser negate plus) flatten ==> [ : nodes | nodes second ]
+					)
+				) plus ==> [ : nodes | (nodes reject: [ : line | line = Character cr asString]) joinUsing: '' ]
+			)
+		) plus
 ]
 
 { #category : #initialization }

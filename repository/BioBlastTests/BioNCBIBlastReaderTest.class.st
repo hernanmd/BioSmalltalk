@@ -60,8 +60,8 @@ BioNCBIBlastReaderTest >> testAccessBlastReader03 [
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 	reader setSAXParser.
 		
-	self deny: reader giList isEmpty.
-	self assert: (reader giList bioHasEqualElements: self giList1).
+	self deny: reader giListIdentifiers isEmpty.
+	self assert: (reader giListIdentifiers bioHasEqualElements: self giList1).
 
 	self deny: reader hitAccessions isEmpty.	
 	self assert: (reader hitAccessions allSatisfy: [ : a | a isKindOf: BioAccession ]).

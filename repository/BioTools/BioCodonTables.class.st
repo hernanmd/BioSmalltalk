@@ -177,7 +177,7 @@ BioCodonTables class >> tableNames [
 { #category : #private }
 BioCodonTables class >> tableSelectors [
 
-	^ self class organization listAtCategoryNamed: #tables
+	^ self class selectorsInProtocol: #tables
 ]
 
 { #category : #accessing }

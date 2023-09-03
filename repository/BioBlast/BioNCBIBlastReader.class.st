@@ -326,11 +326,20 @@ BioNCBIBlastReader >> genBankRecordsFrom: dbSymbol format: formatSymbol [
 
 { #category : #'accessing-blast-filters' }
 BioNCBIBlastReader >> giList [
-	" Answer a Collection with the gene identifiers numbers from the receiver's results.
+	" Answer a <Collection> with the gene identifiers numbers from the receiver's results.
 	Example output: #('256041716' '256041695' '256041622' ... )"
 
-	^ (self hitIdentifiers collect: #asGeneId) reject: #isEmpty
+	^ self hitIdentifiers 
+		select: [ : hitIdentifier | hitIdentifier beginsWith: 'gi' ]
+		thenCollect: #asGeneId
 
+]
+
+{ #category : #accessing }
+BioNCBIBlastReader >> giListIdentifiers [
+	"Parse the receiver's GI identifiers and answer them in a <Collection>"
+
+	^ self hitIdentifiers selectGeneIdentifiers
 ]
 
 { #category : #testing }

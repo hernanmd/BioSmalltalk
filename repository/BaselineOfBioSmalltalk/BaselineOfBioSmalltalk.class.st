@@ -12,12 +12,13 @@ BioSmalltalk contains:
 - Tools, for creating custom views of objects using inspectors, explorers or browsers. 
 "
 Class {
-	#name : #BaselineOfBioSmalltalk,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfBioSmalltalk
+	#name : 'BaselineOfBioSmalltalk',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfBioSmalltalk',
+	#package : 'BaselineOfBioSmalltalk'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baseline: spec [
 	<baseline>
 
@@ -48,7 +49,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 
 ]
 
-{ #category : #groups }
+{ #category : 'groups' }
 BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 
 	spec
@@ -60,7 +61,7 @@ BaselineOfBioSmalltalk >> baselineAllGroup: spec [
 			" 'Projects' ")
 ]
 
-{ #category : #groups }
+{ #category : 'groups' }
 BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 
 	spec
@@ -74,7 +75,7 @@ BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 			'BioFormatters')
 ]
 
-{ #category : #groups }
+{ #category : 'groups' }
 BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 
 	spec 
@@ -94,7 +95,7 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioPlots' )
 ]
 
-{ #category : #groups }
+{ #category : 'groups' }
 BaselineOfBioSmalltalk >> baselineGroups: spec [
 
 	self baselineCoreGroup: spec.
@@ -106,7 +107,7 @@ BaselineOfBioSmalltalk >> baselineGroups: spec [
 	spec group: 'default' with: #('All').
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineOSDeps: spec [
 
 	spec
@@ -122,7 +123,7 @@ BaselineOfBioSmalltalk >> baselineOSDeps: spec [
 			spec package: 'BioWrappers' with: [ spec requires: #('ProcessWrapper') ] ].
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselinePackages: spec [
 
 		spec
@@ -166,33 +167,32 @@ BaselineOfBioSmalltalk >> baselinePackages: spec [
 
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselinePharo: spec [
 
-	spec for: #(#'pharo4.x' #'pharo5.x' #'pharo6.x') do: [ 
+	spec for: #( #'pharo4.x' #'pharo5.x' #'pharo6.x' ) do: [
 		self projectSpecForXMLPharo7: spec.
-		spec 
-			package: 'BioTools'	with: [ spec includes: #('BioPharo4') ];
-			package: 'BioPharo4'	with: [ spec requires: #('BioTools') ];
-			group: 'Basic' with: #('BioPharo4')  ].
+		spec
+			package: 'BioTools' with: [ spec includes: #( 'BioPharo4' ) ];
+			package: 'BioPharo4' with: [ spec requires: #( 'BioTools' ) ];
+			group: 'Basic' with: #( 'BioPharo4' ) ].
 
-	spec for: #'pharo7.x' do: [ 
+	spec for: #'pharo7.x' do: [
 		self projectSpecForXMLPharo7: spec.
-		spec 
-			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
-			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
-			group: 'Basic' with: #('BioPharo7') ].
+		self commonPackagesForPharo7onWards: spec ].
 
-	spec for: #(#'pharo8.x' #'pharo9.x' #'pharo10.x' #'pharo11.x' #'pharo12.x') do: [ 
-		self projectSpecForXMLPharo8: spec.
-		spec 
-			package: 'BioTools'	with: [ spec includes: #('BioPharo7') ];
-			package: 'BioPharo7'	with: [ spec requires: #('BioTools' 'FileDialog') ];
-			group: 'Basic' with: #('BioPharo7') ].
+	spec
+		for: #( #'pharo8.x' #'pharo9.x' #'pharo10.x' #'pharo11.x' )
+		do: [
+			self projectSpecForXMLPharo8: spec.
+			self commonPackagesForPharo7onWards: spec ].
 
+	spec for: #( #'pharo12.x' ) do: [
+		self projectSpecForXMLPharo12: spec.
+		self commonPackagesForPharo7onWards: spec ]
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselinePopGenGroup: spec [
 
 	spec
@@ -205,7 +205,7 @@ BaselineOfBioSmalltalk >> baselinePopGenGroup: spec [
 			'BioLAMPLD')
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineProjectsGroup: spec [
 
 	spec
@@ -216,7 +216,7 @@ BaselineOfBioSmalltalk >> baselineProjectsGroup: spec [
 			'BioSoftwareCatalog')
 ]
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 
 	spec			
@@ -237,14 +237,24 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioArlequin-Tests' )
 ]
 
-{ #category : #accessing }
+{ #category : 'baselines' }
+BaselineOfBioSmalltalk >> commonPackagesForPharo7onWards: spec [
+
+	^ spec
+		  package: 'BioTools' with: [ spec includes: #( 'BioPharo7' ) ];
+		  package: 'BioPharo7'
+		  with: [ spec requires: #( 'BioTools' 'FileDialog' ) ];
+		  group: 'Basic' with: #( 'BioPharo7' )
+]
+
+{ #category : 'accessing' }
 BaselineOfBioSmalltalk >> customProjectAttributes [
 	Smalltalk os isMacOS ifTrue: [ ^ #(#MacOS) ].
 	Smalltalk os isUnix ifTrue: [ ^ #(#Unix) ].
 	Smalltalk os isWindows ifTrue: [ ^ #(#Windows) ]
 ]
 
-{ #category : #doits }
+{ #category : 'doits' }
 BaselineOfBioSmalltalk >> ensureMetacelloFileDownload [
 
 	Metacello new           
@@ -253,7 +263,7 @@ BaselineOfBioSmalltalk >> ensureMetacelloFileDownload [
 		load.
 ]
 
-{ #category : #doits }
+{ #category : 'doits' }
 BaselineOfBioSmalltalk >> platformFilesUrl [
 	" Private - See superimplementor's comment "
 
@@ -267,7 +277,7 @@ BaselineOfBioSmalltalk >> platformFilesUrl [
 
 ]
 
-{ #category : #doits }
+{ #category : 'doits' }
 BaselineOfBioSmalltalk >> postLoad [
 	" Private - If Pharo >=7 set the FileDialog package as default "
 
@@ -275,7 +285,7 @@ BaselineOfBioSmalltalk >> postLoad [
 		(Smalltalk at: #FDMorphicUIManager) new beDefault ].
 ]
 
-{ #category : #doits }
+{ #category : 'doits' }
 BaselineOfBioSmalltalk >> preLoad [
 	" Private - See superimplementor's comment "
 
@@ -283,7 +293,7 @@ BaselineOfBioSmalltalk >> preLoad [
     super preLoad.
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForCommonUtils: spec [
 
 	spec 
@@ -291,7 +301,7 @@ BaselineOfBioSmalltalk >> projectSpecForCommonUtils: spec [
 		with: [ spec repository: 'github://hernanmd/CommonUtils/repository' ]
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForDataDrameInspector: spec [
 
 	spec 
@@ -300,7 +310,7 @@ BaselineOfBioSmalltalk >> projectSpecForDataDrameInspector: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForDataFrame: spec [
 
 	spec
@@ -308,7 +318,7 @@ BaselineOfBioSmalltalk >> projectSpecForDataFrame: spec [
 		with: [ spec repository: 'github://PolyMathOrg/DataFrame/src' ].
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForFileDialog: spec [
 
 	spec
@@ -316,7 +326,7 @@ BaselineOfBioSmalltalk >> projectSpecForFileDialog: spec [
 		with: [ spec repository: 'github://hernanmd/file-dialog/repository' ]
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 
 	spec
@@ -325,7 +335,7 @@ BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 
 	spec 
@@ -334,7 +344,7 @@ BaselineOfBioSmalltalk >> projectSpecForOsSubprocess: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 
 	spec
@@ -343,7 +353,7 @@ BaselineOfBioSmalltalk >> projectSpecForPetitParser: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForPolyMath: spec [
 
 	spec
@@ -353,7 +363,7 @@ BaselineOfBioSmalltalk >> projectSpecForPolyMath: spec [
 						loads: #('Core' 'Extensions' 'Accuracy') ].
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForProcessWrapper: spec [
 
 	spec 
@@ -362,7 +372,7 @@ BaselineOfBioSmalltalk >> projectSpecForProcessWrapper: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForProjectFramework: spec [
 
 	spec 
@@ -370,7 +380,7 @@ BaselineOfBioSmalltalk >> projectSpecForProjectFramework: spec [
 		with: [ spec repository: 'github://hernanmd/ProjectFramework/repository' ]
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForRoassal2: spec [
 
 	spec
@@ -379,7 +389,7 @@ BaselineOfBioSmalltalk >> projectSpecForRoassal2: spec [
 
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
 
 	spec
@@ -387,7 +397,21 @@ BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
 		with: [ spec repository: 'github://hernanmd/StringExtensions/repository' ]
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
+BaselineOfBioSmalltalk >> projectSpecForXMLPharo12: spec [
+
+	spec
+		baseline: 'XMLParser' 
+		with: [ 
+			spec 
+				repository: 'github://pharo-contributions/XML-XMLParser/src';
+				loads: 'Core' ].
+	spec
+		baseline: 'XML-XMLPullParser' 
+		with: [ spec repository: 'github://pharo-contributions/XML-XMLPullParser/repository' ].
+]
+
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForXMLPharo7: spec [
 
 	spec
@@ -404,7 +428,7 @@ BaselineOfBioSmalltalk >> projectSpecForXMLPharo7: spec [
 					repository: 'http://smalltalkhub.com/mc/Pharo/MetaRepoForPharo50/main/' ]
 ]
 
-{ #category : #specs }
+{ #category : 'specs' }
 BaselineOfBioSmalltalk >> projectSpecForXMLPharo8: spec [
 
 	spec

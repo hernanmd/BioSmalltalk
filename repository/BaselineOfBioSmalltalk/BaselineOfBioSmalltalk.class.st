@@ -400,7 +400,7 @@ BaselineOfBioSmalltalk >> projectSpecForStringExtensions: spec [
 BaselineOfBioSmalltalk >> projectSpecForXMLPharo12: spec [
 
 	spec package: 'BioTools' with: [ spec 
-												requires: #( 'XML-XMLPullParser');
+												requires: #( 'XMLPullParser');
 												includes: #('BioPharoCommon') ].
 	spec
 		baseline: 'XMLParser' 

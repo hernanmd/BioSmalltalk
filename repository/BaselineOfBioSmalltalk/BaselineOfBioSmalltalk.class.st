@@ -410,7 +410,7 @@ BaselineOfBioSmalltalk >> projectSpecForXMLPharo12: spec [
 				loads: 'Core' ].
 	spec
 		baseline: 'XML-XMLPullParser' 
-		with: [ spec repository: 'github://pharo-contributions/XML-XMLPullParser/repository' ].
+		with: [ spec repository: 'github://pharo-contributions/XML-XMLPullParser:main/repository' ].
 ]
 
 { #category : 'specs' }

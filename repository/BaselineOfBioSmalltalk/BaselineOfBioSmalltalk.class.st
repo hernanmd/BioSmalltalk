@@ -187,7 +187,7 @@ BaselineOfBioSmalltalk >> baselinePharo: spec [
 			self projectSpecForXMLPharo8: spec.
 			self commonPackagesForPharo7onWards: spec ].
 
-	spec for: #( #'pharo12.x' ) do: [
+	spec for: #( #'pharo12.x' #'pharo13.x' #'pharo14.x') do: [
 		self projectSpecForXMLPharo12: spec.
 		self commonPackagesForPharo7onWards: spec ]
 ]

@@ -27,7 +27,6 @@ BaselineOfBioSmalltalk >> baseline: spec [
 		
 		spec preLoadDoIt: #preLoad.
 		spec postLoadDoIt: #'postLoad'.
-		spec repository: 'github://hernanmd/BioSmalltalk/repository/'.
 		
 		self 
 			projectSpecForCommonUtils: spec;

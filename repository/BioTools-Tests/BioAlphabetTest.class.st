@@ -1,12 +1,9 @@
 Class {
 	#name : 'BioAlphabetTest',
 	#superclass : 'BioAbstractTest',
-	#instVars : [
-		'alphabet'
-	],
-	#category : 'BioTools-Tests-Biological',
+	#category : 'BioTools-Tests-Alphabets',
 	#package : 'BioTools-Tests',
-	#tag : 'Biological'
+	#tag : 'Alphabets'
 }
 
 { #category : 'testing' }

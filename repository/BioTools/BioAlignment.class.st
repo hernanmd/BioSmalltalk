@@ -13,9 +13,9 @@ Class {
 		'consensusStrategy',
 		'isReference'
 	],
-	#category : 'BioTools-Core',
+	#category : 'BioTools-Align',
 	#package : 'BioTools',
-	#tag : 'Core'
+	#tag : 'Align'
 }
 
 { #category : 'accessing' }

@@ -22,11 +22,13 @@ BioUnknownSeqTest >> setUp [
 { #category : 'testing' }
 BioUnknownSeqTest >> testAlphabet [
 
-	self assert: ( self sequence alphabet isKindOf: BioAlphabet ).
-	self assert: ( self sequence unknownLetter = BioAlphabet new defaultUnknownElement ).
+	self assert: (self sequence alphabet isKindOf: BioAlphabet).
+	self
+		assert: self sequence unknownLetter
+		equals: BioAlphabet new defaultUnknownElement.
 	self sequence unknownLetter: $?.
-	self assert: ( self sequence alphabet isKindOf: BioAlphabet ).	
-	self assert: self sequence unknownLetter = $?
+	self assert: (self sequence alphabet isKindOf: BioAlphabet).
+	self assert: self sequence unknownLetter equals: $?
 ]
 
 { #category : 'testing' }

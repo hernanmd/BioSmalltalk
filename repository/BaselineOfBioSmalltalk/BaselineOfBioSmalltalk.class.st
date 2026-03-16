@@ -37,7 +37,8 @@ BaselineOfBioSmalltalk >> baseline: spec [
 			projectSpecForPolyMath: spec;
 			projectSpecForDataFrame: spec;
 			projectSpecForINIParser: spec;
-			projectSpecForPetitParser: spec.
+			projectSpecForPetitParser: spec;
+			projectSpecForNeedlemanWunsch: spec.
 			"projectSpecForRoassal2: spec."
 
 		self baselineOSDeps: spec.
@@ -109,7 +110,7 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 			package: 'BioSoftwareCatalog' 		with: [ spec requires: #('BioTools' ). ];
 			package: 'BioSupport' 				with: [ spec requires: #('BioTools' 'DataFrame'). ];
 			package: 'BioTools' 					with: [ spec 
-																	requires: #('CommonUtils' 'StringExtensions' 'PetitParser2Core' 'PolyMath' 'XMLParser');
+																	requires: #('CommonUtils' 'StringExtensions' 'PetitParser2Core' 'PolyMath' 'XMLParser' 'NeedlemanWunsch');
 																	includes: #('BioPharoCommon') ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioTools-Tests' 			with: [ spec requires: #('BioTools' ). ];
@@ -331,6 +332,14 @@ BaselineOfBioSmalltalk >> projectSpecForINIParser: spec [
 		baseline: 'INIFile' 
 		with: [ spec repository: 'github://hernanmd/Pharo-INIFile/repository' ]
 
+]
+
+{ #category : 'specs' }
+BaselineOfBioSmalltalk >> projectSpecForNeedlemanWunsch: spec [
+
+	spec
+		baseline: 'NeedlemanWunsch'
+		with: [ spec repository: 'github://hernanmd/needleman-wunsch/src' ]
 ]
 
 { #category : 'specs' }

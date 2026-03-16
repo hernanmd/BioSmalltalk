@@ -4,9 +4,9 @@ Class {
 	#instVars : [
 		'table'
 	],
-	#category : 'BioTools-Tests-Biological',
+	#category : 'BioTools-Tests-Alphabets',
 	#package : 'BioTools-Tests',
-	#tag : 'Biological'
+	#tag : 'Alphabets'
 }
 
 { #category : 'running' }

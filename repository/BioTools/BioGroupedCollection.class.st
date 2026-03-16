@@ -1,10 +1,12 @@
 Class {
-	#name : #BioGroupedCollection,
-	#superclass : #BioOrderedCollection,
-	#category : 'BioTools-Collections'
+	#name : 'BioGroupedCollection',
+	#superclass : 'BioOrderedCollection',
+	#category : 'BioTools-Collections',
+	#package : 'BioTools',
+	#tag : 'Collections'
 }
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioGroupedCollection >> asString [
 
 	^ self anyOne asString

@@ -10,7 +10,9 @@ and in the following way:
 self signalInvalidObject: 'message' , ex messageText.
 "
 Class {
-	#name : #BioErrorSpecificationObject,
-	#superclass : #BioException,
-	#category : #'BioTools-Exceptions'
+	#name : 'BioErrorSpecificationObject',
+	#superclass : 'BioException',
+	#category : 'BioTools-Exceptions',
+	#package : 'BioTools',
+	#tag : 'Exceptions'
 }

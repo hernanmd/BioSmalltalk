@@ -12,19 +12,21 @@ Depending on your execution environment, you could have different implementation
 
 "
 Class {
-	#name : #BioOSInterfaceEngine,
-	#superclass : #BioAbstractAdapter,
-	#category : #'BioTools-Adapters'
+	#name : 'BioOSInterfaceEngine',
+	#superclass : 'BioAbstractAdapter',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSInterfaceEngine class >> execNameFor: programName [
 	" Answer a String with the fully qualified name for programName, i.e. if programName is 'blast' then in Windows family the answer will be 'blast.exe' " 
 	
 	^ self adapterClass execNameFor: programName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSInterfaceEngine class >> formatPlatformPath: aPath [
 	" Make necessary transformations on aPath for the current system, e.g. 
 	'C:\Archivos de Programa' -> ""C:\Archivos de Programa"" "
@@ -33,14 +35,14 @@ BioOSInterfaceEngine class >> formatPlatformPath: aPath [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSInterfaceEngine class >> lineEndConvention [
 	" Answer #cr, #lf or #crlf with the current's system line end convention " 
 	
 	^ self adapterClass new lineEndConvention
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioOSInterfaceEngine class >> new [
 	" Answer a new instance of the receiver "
 
@@ -48,7 +50,7 @@ BioOSInterfaceEngine class >> new [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSInterfaceEngine >> formatPlatformPath: aPath [
 	" Private - Given aPath answer a <String> with the path properly formatted for the current platform "
 	
@@ -58,7 +60,7 @@ BioOSInterfaceEngine >> formatPlatformPath: aPath [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSInterfaceEngine >> isRunningInMac [
 	" Answer <true> if the host system is running in Mac OS "
 	
@@ -66,7 +68,7 @@ BioOSInterfaceEngine >> isRunningInMac [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSInterfaceEngine >> isRunningInUnix [
 	" Answer <true> if the host system is running in any Unix-like OS "
 	
@@ -74,7 +76,7 @@ BioOSInterfaceEngine >> isRunningInUnix [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSInterfaceEngine >> isRunningInWindows [
 	" Answer <true> if the host system is running in Microsoft Windows "
 	
@@ -82,7 +84,7 @@ BioOSInterfaceEngine >> isRunningInWindows [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSInterfaceEngine >> lineEndConvention [
 	" Answer a <Symbol> #cr, #lf or #crlf with the current's system line end convention "
 

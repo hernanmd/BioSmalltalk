@@ -20,34 +20,36 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioChromosome,
-	#superclass : #BioNamedObject,
+	#name : 'BioChromosome',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'fragments',
 		'genome',
 		'genes'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> addGene: aBioGene [
 	"Add aBioGene as gene in the receiver's genes"
 	
 	self genes add: aBioGene
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> fragments [
 	^ fragments
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> fragments: anObject [
 	fragments := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> genes [
 	" Answer a <Collection> of <BioGene> "
 
@@ -55,24 +57,24 @@ BioChromosome >> genes [
 		ifNil: [ genes := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> genes: anObject [
 	genes := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> genome [
 	" Answer the receiver's genome "
 	
 	^ genome
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> genome: anObject [
 	genome := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosome >> removeGene: aBioGene [
 	" Remove aBioGene as gene in the receiver's genes "
 	

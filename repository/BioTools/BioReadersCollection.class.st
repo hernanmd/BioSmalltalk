@@ -1,14 +1,16 @@
 Class {
-	#name : #BioReadersCollection,
-	#superclass : #BioOrderedCollection,
+	#name : 'BioReadersCollection',
+	#superclass : 'BioOrderedCollection',
 	#instVars : [
 		'readerClass',
 		'parser'
 	],
-	#category : 'BioTools-Collections'
+	#category : 'BioTools-Collections',
+	#package : 'BioTools',
+	#tag : 'Collections'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReadersCollection class >> filesFromXMLDirectory: aDirectoryString [
 	" Answer a new instance of the receiver with XML file contents from aDirectoryString "
 	
@@ -17,20 +19,20 @@ BioReadersCollection class >> filesFromXMLDirectory: aDirectoryString [
 			thenCollect: [ : file | (BioReader for: file contents) newFromXML: file ]).
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReadersCollection class >> newFromXMLCollection: xmlCollection [
 	" Answer a new instance of the receiver with XML contents from xmlCollection "
 	
 	^ self withAll: (self readerClass newFromXMLCollection: xmlCollection).
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection class >> readerClass [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> fileOutXMLReaders [
 	" Private - Helper method to be used inside an Inspector/Explorer to dump receiver's contents in XML files "
 
@@ -42,7 +44,7 @@ BioReadersCollection >> fileOutXMLReaders [
 			contents: r contents ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> parseDocuments [
 	" Answer a <Collection> of <Dictionary> with qualifier -> value associations "
 	
@@ -55,23 +57,23 @@ BioReadersCollection >> parseDocuments [
 	^ collection joinUsing: self species new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> parser [
 	^ parser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> parser: aParser [
 	" Set aParser to each of the receiver's elements "
 	self do: [ : eachReader | eachReader parser: aParser ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> readerClass [
 	^ readerClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReadersCollection >> readerClass: anObject [
 	readerClass := anObject
 ]

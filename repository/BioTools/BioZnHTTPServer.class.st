@@ -10,26 +10,28 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioZnHTTPServer,
-	#superclass : #BioWebServerEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioZnHTTPServer',
+	#superclass : 'BioWebServerEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioZnHTTPServer class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHTTPServer class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #ZnManagingMultiThreadedServer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHTTPServer class >> startWebServer [
 	" See superimplementor's comment "
 
@@ -41,7 +43,7 @@ BioZnHTTPServer class >> startWebServer [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHTTPServer class >> stopWebServer [
 	" See superimplementor's comment "
 

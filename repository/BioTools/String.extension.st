@@ -1,13 +1,13 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> addToAlignment: aBioAlignment [
 	" Private - Add the receiver to aBioAlignment "
 
 	aBioAlignment addSequence: (BioSequence newWith: self)
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asAccessionStringWithoutVersion [
 	" Answer a copy of the receiver without the version number "
 	
@@ -17,7 +17,7 @@ String >> asAccessionStringWithoutVersion [
 		ifFalse: [ self ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asAminoacidLetter [
 	" Answer a <Character> representing an aminoacid letter. "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -26,7 +26,7 @@ String >> asAminoacidLetter [
 	^ self first
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asAminoacidName [
 	" Answer the complete name of each receiver's aminoacid. Input may be one or three letter code. "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -42,35 +42,35 @@ String >> asAminoacidName [
 				ifFalse: [ self signalInvalidObject: 'This method only accepts one or three letter codes' ] ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asBioDataFileReference [
 	" Answer a <FileReference> using the receiver as a file name in the DATA BioSmalltalk subdirectory "
 
 	^ ((BioObject dataFilesFullDirectoryName allChildrenMatching: self) select: #isFile) anyOne
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asBioFileReference [
 	" Answer a <FileReference> using the receiver as a file name in one of the BioSmalltalk subdirectories "
 
 	^ ((self asBioDataFileReference union: self asBioTestFileReference) union: self asBioScriptFileReference) anyOne
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asBioScriptFileReference [
 	" Answer a <FileReference> using the receiver as a file name in the SCRIPTS BioSmalltalk subdirectory "
 
 	^ ((BioObject scriptsFullDirectoryName allChildrenMatching: self) select: #isFile) anyOne
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asBioTestFileReference [
 	" Answer a <FileReference> using the receiver as a file name in the TESTS BioSmalltalk subdirectory "
 
 	^ ((BioObject testFilesFullDirectoryName allChildrenMatching: self) select: #isFile) anyOne
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asDNANucleotide [
 	" Answer the receiver as a <BioDNANucleotide> "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -78,21 +78,21 @@ String >> asDNANucleotide [
 	^ BioDNANucleotide with: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asDNASequence [
 	" Answer a new Sequence object. Defaults to BioIUPACAmbiguousDNA "
 	
 	^ self asSequenceForAlphabet: BioIUPACAmbiguousDNA new
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asDNASimpleSequence [
 	" Answer a new Sequence object guessing the Alphabet. See #guessAlphabetFrom: for details "
 	
 	^ self asSequenceForAlphabet: BioDNAAlphabet
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asFastaRecord [
 	" Answer a new <BioFastaRecord> filled with the receiver's name and sequence.
 	Assume first line is a FASTA identifier line, and subsequent lines contains the sequences possibly separated by CRs  "
@@ -105,28 +105,28 @@ String >> asFastaRecord [
 		sequence: parsedSeq asSequence
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asProteinSequence [
 	" Answer a new protein sequence object. Alphabet defaults to BioIUPACProteinExtended "
 	
 	^ self asSequenceForAlphabet: BioIUPACProteinExtended new
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asRNASequence [
 	" Answer a new protein sequence object. Alphabet defaults to BioIUPACAmbiguousRNA "
 	
 	^ self asSequenceForAlphabet: BioIUPACAmbiguousRNA new
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asSequence [
 	" Answer a new Sequence object guessing the Alphabet. See #guessAlphabetFrom: for details "
 	
 	^ BioSequence newWith: self asCondensedString
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> asSequenceForAlphabet: anAlphabet [
 	" Answer a new Sequence object using anAlphabet. If anAlphabet is null then guess an alphanet using the receiver, see #guessAlphabetFrom: "
 	
@@ -135,7 +135,7 @@ String >> asSequenceForAlphabet: anAlphabet [
 		alphabet: anAlphabet
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> bioReader [
 	" Answer a BioReader on the receiver "
 	
@@ -147,7 +147,7 @@ String >> bioReader [
 		ifFalse: [ readerClass newFromFlat: self ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 
@@ -156,7 +156,7 @@ String >> dumpToStream: aStream [
 		bioCr.
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> hasAmbiguousDNABases [
 	" Answer <true> if receiver contains ambiguity codes "
 	
@@ -164,7 +164,7 @@ String >> hasAmbiguousDNABases [
 
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> hasAmbiguousRNABases [
 	" Answer <true> if receiver contains ambiguity codes "
 	
@@ -173,14 +173,14 @@ String >> hasAmbiguousRNABases [
 
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> includesDtd: aDtdFilename [
 	" Private - Answer <true> if receiver's first bytes in header includes aDtdFilename "
 
 	^ ((self first: 150) findTokens: $") includes: aDtdFilename
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> instancesOf: aCharacter [
 
 	| count |
@@ -189,7 +189,7 @@ String >> instancesOf: aCharacter [
 	^ count.
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> isAllele [
 
 	^ #(
@@ -201,7 +201,7 @@ String >> isAllele [
 	) includes: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 String >> rejectFromBioAlignment: aBioAlignment [
 	" Receiver represents a name of a taxon used to filter aBioAlignment "
 

@@ -18,8 +18,8 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioSequenceFeature,
-	#superclass : #BioChromosomeFragment,
+	#name : 'BioSequenceFeature',
+	#superclass : 'BioChromosomeFragment',
 	#instVars : [
 		'sequence',
 		'strand',
@@ -31,10 +31,12 @@ Class {
 		'tags',
 		'chromosome'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioSequenceFeature class >> example01 [
 	" Based in BioPerl example : http://lab.stajich.org/presentations/stajich_2006_Bioperl_I.pdf "
 
@@ -50,7 +52,7 @@ BioSequenceFeature class >> example01 [
 		yourself
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioSequenceFeature class >> fromCoordinateStart: startCoordinate end: endCoordinate [
 
 	^ self new
@@ -59,7 +61,7 @@ BioSequenceFeature class >> fromCoordinateStart: startCoordinate end: endCoordin
 		yourself
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSequenceFeature >> = aBioSequenceFeature [
 	"Answer <true> if the receiver is equal to aBioSequenceFeature"
 	
@@ -71,43 +73,43 @@ BioSequenceFeature >> = aBioSequenceFeature [
 
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> addTag: anAssociation [
 	" Add a tag value pair in anAssociation to the receiver's tags "
 
 	self tags at: anAssociation key put: anAssociation value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> chromosome [
 
 	^ chromosome
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> chromosome: anObject [
 
 	chromosome := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> frame [
 	^ frame
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> frame: anObject [
 	frame := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequenceFeature >> hasTagNamed: aString [
 	" Answer <true> if aString exists as a tag in the receiver "
 	
 
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSequenceFeature >> hash [
 	" Private - hash is implemented because #= is implemented "
 	
@@ -115,24 +117,24 @@ BioSequenceFeature >> hash [
 
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> includesTag: tagName [
 	" Answer <true> if tag with tagName String is present in the receiver's tags "
 	
 	^ self tags includesKey: tagName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> location [
 	^ location
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> location: anObject [
 	location := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequenceFeature >> overlaps: aBioSequenceFeature [
 	"Answer <true> if the receiver start and end regions overlaps aBioSequenceFeature regions"
 	
@@ -167,75 +169,75 @@ BioSequenceFeature >> overlaps: aBioSequenceFeature [
 	^ false
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> primaryTag [
 	^ primaryTag
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> primaryTag: anObject [
 	primaryTag := anObject
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> removeTag: tagName [
 	" Remove tagName from the receiver's tags "
 
 	self tags removeKey: tagName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> score [
 	" Answer a <Number> representing the receiver's score "
 
 	^ score
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> score: aNumber [
 	" Set the receiver's score to aNumber "
 
 	score := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> sequence [
 	^ sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> sequence: anObject [
 	sequence := anObject
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> sourceTag [
 	^ sourceTag
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> sourceTag: anObject [
 	sourceTag := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> strand [
 	^ strand
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeature >> strand: anObject [
 	strand := anObject
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> tagCollectionClass [
 	" Answer a <Class> for storing the receiver's tags "
 
 	^ Dictionary 
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> tags [
 	" Answer a <Collection> with the receiver's tags "
 
@@ -243,7 +245,7 @@ BioSequenceFeature >> tags [
 		ifNil: [ tags := self tagCollectionClass new ]
 ]
 
-{ #category : #'accessing - tags' }
+{ #category : 'accessing - tags' }
 BioSequenceFeature >> tags: anObject [
 	tags := anObject
 ]

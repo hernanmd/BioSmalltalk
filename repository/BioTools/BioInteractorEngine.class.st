@@ -11,12 +11,14 @@ Depending on your execution environment, you could have different implementation
 -Squeak uses ""OSProcess""
 "
 Class {
-	#name : #BioInteractorEngine,
-	#superclass : #BioAbstractAdapter,
-	#category : #'BioTools-Adapters'
+	#name : 'BioInteractorEngine',
+	#superclass : 'BioAbstractAdapter',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInteractorEngine class >> request: aString [
 	" Request and answer the string the user accepts. Answer an empty string if the user cancels."
 

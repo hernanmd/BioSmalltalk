@@ -4,8 +4,8 @@ BioException is the superclass of all exceptions related to BioSmalltalk.
 
 "
 Class {
-	#name : #BioException,
-	#superclass : #Exception,
+	#name : 'BioException',
+	#superclass : 'Exception',
 	#instVars : [
 		'exceptionDate'
 	],
@@ -15,34 +15,36 @@ Class {
 		'ShowWarning',
 		'UseLogger'
 	],
-	#category : #'BioTools-Exceptions'
+	#category : 'BioTools-Exceptions',
+	#package : 'BioTools',
+	#tag : 'Exceptions'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> logger [
 
 	^ Logger
 		ifNil: [ Logger := Set new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> logger: anObject [
 	Logger := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> raiseWarning [
 
 	^ RaiseWarning
 		ifNil: [ RaiseWarning := true ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> raiseWarning: anObject [
 	RaiseWarning := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioException class >> release [
 	" Private - Do some cleanup.
 	
@@ -53,19 +55,19 @@ BioException class >> release [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> showWarning [
 
 	^ ShowWarning
 		ifNil: [ ShowWarning := true ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> showWarning: anObject [
 	ShowWarning := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> useLogger [
 	" Logger should be used only for debugging purposes "
 
@@ -73,12 +75,12 @@ BioException class >> useLogger [
 		ifNil: [ UseLogger := false ]	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException class >> useLogger: anObject [
 	UseLogger := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> defaultAction [
 	"The default action taken if the exception is signaled."
 
@@ -91,33 +93,33 @@ BioException >> defaultAction [
 	^ nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> exceptionDate [
 	^ exceptionDate
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> exceptionDate: anObject [
 	exceptionDate := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> logger [
 
 	^ self class logger
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> raiseWarning [
 	^ self class raiseWarning
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> showWarning [
 	^ self class showWarning
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioException >> useLogger [
 	" Answer <true> if logger usage is enabled "
 	

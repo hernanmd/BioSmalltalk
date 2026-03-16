@@ -1,6 +1,6 @@
-Extension { #name : #StringTest }
+Extension { #name : 'StringTest' }
 
-{ #category : #'*BioTools-Tests' }
+{ #category : '*BioTools-Tests' }
 StringTest >> testAsAminoacidName [
 
 	self assert: 'A' asAminoacidName equals: 'Alanine'.

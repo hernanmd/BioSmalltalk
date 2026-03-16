@@ -1,10 +1,12 @@
 Class {
-	#name : #BioNCBIUrl2,
-	#superclass : #BioUrl,
-	#category : 'BioTools-Core'
+	#name : 'BioNCBIUrl2',
+	#superclass : 'BioUrl',
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> addParameters: aQueryString [
 	" Append aQueryString in the receiver's parameters "
 
@@ -12,7 +14,7 @@ BioNCBIUrl2 >> addParameters: aQueryString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> addParameters: aQueryString delimiter: aDelimiterStirng [
 	" Append aString as the receiver's database name "
 
@@ -22,14 +24,14 @@ BioNCBIUrl2 >> addParameters: aQueryString delimiter: aDelimiterStirng [
 	self path addLast: queryFragment
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> dbName [
 	" Answer a String with the receiver's database name, if it was configured "
 
 	^self valueForParameter: 'DATABASE'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> parameters [
 	" Answer a Collection with the receiver's parameter names "
 
@@ -37,14 +39,14 @@ BioNCBIUrl2 >> parameters [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> rid [
 	" Answer a String with the receiver's RID value, if it was configured "
 
 	^ self valueForParameter: 'RID'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> setParameters: aQueryString [
 	" Add or modify aQueryString in the receiver's parameters "
 
@@ -63,7 +65,7 @@ BioNCBIUrl2 >> setParameters: aQueryString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIUrl2 >> startParameters: aQueryString [
 	" Add aQueryString as the start parameter in the receiver's parameters "
 

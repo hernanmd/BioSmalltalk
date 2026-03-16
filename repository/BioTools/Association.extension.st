@@ -1,6 +1,6 @@
-Extension { #name : #Association }
+Extension { #name : 'Association' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Association >> asSequence [
 	" Transform the receiver between 1 and 4**k (key) and k-mer of length k (value) into a  <BioSequence> using an array with k-mers as indices "
 
@@ -9,7 +9,7 @@ Association >> asSequence [
 		yourself
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Association >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 	
@@ -19,7 +19,7 @@ Association >> dumpToStream: aStream [
 
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Association >> setMicrosatelliteGenotypeFor: aBioMicrosatellite [
 
 	aBioMicrosatellite

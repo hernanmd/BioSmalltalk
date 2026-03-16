@@ -4,12 +4,14 @@ BioDuplicateObject should not be used directly. The exception should be raised f
 self signalDuplicateObject: 'message' , ex messageText.
 "
 Class {
-	#name : #BioDuplicatedObject,
-	#superclass : #BioException,
-	#category : #'BioTools-Exceptions'
+	#name : 'BioDuplicatedObject',
+	#superclass : 'BioException',
+	#category : 'BioTools-Exceptions',
+	#package : 'BioTools',
+	#tag : 'Exceptions'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDuplicatedObject >> messageText [
 
 	^ String streamContents: [ :stream |

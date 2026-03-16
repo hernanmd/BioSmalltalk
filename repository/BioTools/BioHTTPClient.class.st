@@ -1,17 +1,19 @@
 Class {
-	#name : #BioHTTPClient,
-	#superclass : #BioWebClientEngine,
-	#category : 'BioTools-Adapters'
+	#name : 'BioHTTPClient',
+	#superclass : 'BioWebClientEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHTTPClient class >> providerClass [
 	" See superimplementor's comment "
 	
 	^ #HTTPClient
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHTTPClient >> decode: aString [
 	" See superimplementor's comment "
 
@@ -19,7 +21,7 @@ BioHTTPClient >> decode: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHTTPClient >> downloadUrl [
 	" See superimplementor's comment "
 

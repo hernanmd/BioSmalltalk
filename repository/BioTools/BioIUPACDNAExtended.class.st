@@ -10,19 +10,21 @@ Inspired from IUPACData.py
  
 "
 Class {
-	#name : #BioIUPACDNAExtended,
-	#superclass : #BioIUPACDNA,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioIUPACDNAExtended',
+	#superclass : 'BioIUPACDNA',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACDNAExtended class >> codes [
 	" See superimplementor's comment "
 	
 	^ 'GATCBDSW'
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACDNAExtended >> printOn: aStream [
 	" See superimplementor's comment "
 	

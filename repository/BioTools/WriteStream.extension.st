@@ -1,6 +1,6 @@
-Extension { #name : #WriteStream }
+Extension { #name : 'WriteStream' }
 
-{ #category : #'*biotools' }
+{ #category : '*biotools' }
 WriteStream >> bioCr [
 	"Append a return character to the receiver accordingly to the platform the receiver is executing in."
 

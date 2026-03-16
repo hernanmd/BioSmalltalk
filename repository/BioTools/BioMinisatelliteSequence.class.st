@@ -13,12 +13,14 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioMinisatelliteSequence,
-	#superclass : #BioRepeatSequence,
-	#category : #'BioTools-Repeats'
+	#name : 'BioMinisatelliteSequence',
+	#superclass : 'BioRepeatSequence',
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioMinisatelliteSequence class >> example01 [
 
 	^ self new 
@@ -27,21 +29,21 @@ BioMinisatelliteSequence class >> example01 [
 		yourself.
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioMinisatelliteSequence >> defaultMaxMotifSize [
 	" Microsatellite definition at the US National Library of Medicine Medical Subject Headings (MeSH) "
 	
 	^ 60
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioMinisatelliteSequence >> defaultMinMotifSize [
 	" Microsatellite definition at the US National Library of Medicine Medical Subject Headings (MeSH) "
 	
 	^ 10
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMinisatelliteSequence >> isMinisatelliteSequence [
 	" Answer <true> if the receiver represents a Minisatellite sequence "
 	

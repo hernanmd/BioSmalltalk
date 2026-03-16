@@ -6,15 +6,17 @@ letter:	<Character>
 
 "
 Class {
-	#name : #BioDNANucleotide,
-	#superclass : #BioObject,
+	#name : 'BioDNANucleotide',
+	#superclass : 'BioObject',
 	#instVars : [
 		'letter'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioDNANucleotide class >> with: aCharacter [
 
 	^ self basicNew 
@@ -22,12 +24,12 @@ BioDNANucleotide class >> with: aCharacter [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDNANucleotide >> letter [
 	^ letter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDNANucleotide >> letter: anObject [
 	letter := anObject
 ]

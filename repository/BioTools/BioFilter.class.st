@@ -9,30 +9,32 @@ Instance Variables:
 	contents		<BioFilteredResult>
 "
 Class {
-	#name : #BioFilter,
-	#superclass : #BioNamedObject,
+	#name : 'BioFilter',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'reader',
 		'cumulative',
 		'contents'
 	],
-	#category : #'BioTools-Query'
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFilter class >> newFromCollection: aCollection [
 
 	^ self new contents: aCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFilter class >> newFromReader: aReader [
 	" Answer a new instance of the receiver setting its reader "
 
 	^ self new reader: aReader
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFilter class >> newFromXML: aFileLocation [
 
 	^ self newFromReader: (self reader
@@ -40,7 +42,7 @@ BioFilter class >> newFromXML: aFileLocation [
 			yourself)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> addFilterFrom: collection [
 	" Private -  Create a new result from aCollection and link the receiver to its reader "
 	
@@ -60,7 +62,7 @@ BioFilter >> addFilterFrom: collection [
 	^ filterResult
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> addFilteredResult: aFilteredResult [
 	" Add aFilter to the receiver filtered results "
 
@@ -72,67 +74,67 @@ BioFilter >> addFilteredResult: aFilteredResult [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> beCumulative [
 	" Set the receiver to not update its reader's contents "
 	
 	cumulative := true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> beSubtractive [
 	" Set the receiver to not update its reader's contents "
 	
 	cumulative := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> contents [
 	" Answer a GTSearchResult from the receiver "
 	
 	^ contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> contents: anObject [
 	contents := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> defaultReaderClass [
 
 	self subclassResponsibility
 ]
 
-{ #category : #'iterating elements' }
+{ #category : 'iterating elements' }
 BioFilter >> do: aBlock [
 	"Refer to the comment in Collection|do:."
 	
 	^ contents do: aBlock
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioFilter >> filteredResult [
 	" Answer a <BioFilteredResult> "
 
 	^ self contents
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioFilter >> filteredResultContents [
 	" Answer the filtered results <Collection> "
 
 	^ self filteredResult contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> filtersCount [
 	" Refer to comment in BioFilteredReader "
 
 	^ self reader filtersCount
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFilter >> initialize [
 	" Private - See superimplementor's comment "
 	
@@ -140,33 +142,33 @@ BioFilter >> initialize [
 	cumulative := true.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFilter >> isCumulativeFilter [
 
 	^ cumulative
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFilter >> isEmpty [
 	"Answer whether the receiver contains any elements."
 
 	^ self contents isEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> lastResult [
 
 	^ self contents contents
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioFilter >> newFilteredResult: collection [
 	" Answer a new filtered result object with contents from collection. If collection is splitted in several sub-collections, then join them "
 	
 	^ BioFilteredResult new result: collection
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFilter >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -180,21 +182,21 @@ BioFilter >> printOn: aStream [
 					nextPut: $) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> reader [
 
 	^ reader
 		ifNil: [ reader := self defaultReaderClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> reader: anObject [
 
 	reader := anObject.
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilter >> size [
 
 	^ self contents size

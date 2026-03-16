@@ -1,13 +1,15 @@
 Class {
-	#name : #BioAlphabetTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioAlphabetTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'alphabet'
 	],
-	#category : #'BioTools-Tests-Biological'
+	#category : 'BioTools-Tests-Biological',
+	#package : 'BioTools-Tests',
+	#tag : 'Biological'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabetTest >> testTranslation [
 
 	self assert: ( BioIUPACDNA		withAllSubclasses allSatisfy: [: alpha | alpha new canTranslate ] ).

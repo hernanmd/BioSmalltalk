@@ -5,15 +5,17 @@ It can be instantiated from a given String with alleles separated by spaces, tab
 
 "
 Class {
-	#name : #BioGenotypeCollection,
-	#superclass : #BioObject,
+	#name : 'BioGenotypeCollection',
+	#superclass : 'BioObject',
 	#instVars : [
 		'genotypes'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGenotypeCollection class >> fromAlleles: aCollection [
 	" Answer a new instance of the receiver without tokens between each allele, aCollection contains each genotype as a two-sized String : #('CC' 'CC' 'TC' 'TT') "
 	
@@ -23,7 +25,7 @@ BioGenotypeCollection class >> fromAlleles: aCollection [
 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGenotypeCollection class >> fromSpacedAlleles: aString [
 	" Answer a new instance of the receiver using a space tokenized <String> as input as contents "
 	
@@ -32,7 +34,7 @@ BioGenotypeCollection class >> fromSpacedAlleles: aString [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGenotypeCollection class >> fromTabbedAlleles: aString [
 	" Answer a new instance of the receiver using a space tokenized <String> as input as contents "
 	
@@ -41,13 +43,13 @@ BioGenotypeCollection class >> fromTabbedAlleles: aString [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotypeCollection >> collectionClass [
 
 	^ OrderedCollection 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioGenotypeCollection >> findAllelesFrom: aCollection [
 
 	^ aCollection 
@@ -55,19 +57,19 @@ BioGenotypeCollection >> findAllelesFrom: aCollection [
 		thenCollect: [ : genotypeString | BioGenotype withSpacedAlleles: genotypeString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotypeCollection >> genotypes [
 
 	^ genotypes
 		ifNil: [ genotypes := self collectionClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotypeCollection >> genotypes: anObject [
 	genotypes := anObject
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioGenotypeCollection >> initializeFromAlleles: aCollection [
 	" Private - See class instance creation comment "
 
@@ -75,7 +77,7 @@ BioGenotypeCollection >> initializeFromAlleles: aCollection [
 	self genotypes addAll: (self findAllelesFrom: aCollection)
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioGenotypeCollection >> initializeFromAlleles: aString spacing: aCharacter [
 	" Private - See class instance creation comment "
 
@@ -88,7 +90,7 @@ BioGenotypeCollection >> initializeFromAlleles: aString spacing: aCharacter [
 				yourself) ]
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioGenotypeCollection >> initializeFromSpacedAlleles: aString [
 	" Private - See class instance creation comment "
 
@@ -96,7 +98,7 @@ BioGenotypeCollection >> initializeFromSpacedAlleles: aString [
 
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioGenotypeCollection >> initializeFromTabbedAlleles: aString [
 	" Private - See class instance creation comment "
 
@@ -104,7 +106,7 @@ BioGenotypeCollection >> initializeFromTabbedAlleles: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotypeCollection >> spaceAlleles [
 
 	^ self genotypes collect: [ : geno | 

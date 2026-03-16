@@ -1,6 +1,6 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 SequenceableCollection >> asFileCollection [
 	" Answer a <Collection> of file streams for the receiver elements, each one representing a path "
 

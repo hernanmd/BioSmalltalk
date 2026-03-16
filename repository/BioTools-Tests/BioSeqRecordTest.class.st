@@ -1,13 +1,15 @@
 Class {
-	#name : #BioSeqRecordTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioSeqRecordTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'seqRecord'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testAnnotations [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -42,7 +44,7 @@ BioSeqRecordTest >> testAnnotations [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testAnnotationsClass [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -52,7 +54,7 @@ BioSeqRecordTest >> testAnnotationsClass [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testCopySeqFrom [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF').
@@ -65,7 +67,7 @@ BioSeqRecordTest >> testCopySeqFrom [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testCopySeqTo [
 
 	| editedSeqRecord |
@@ -81,7 +83,7 @@ BioSeqRecordTest >> testCopySeqTo [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testCreate [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -99,7 +101,7 @@ BioSeqRecordTest >> testCreate [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testEquality [
 
 	| tmpSeqRecord |
@@ -118,7 +120,7 @@ BioSeqRecordTest >> testEquality [
 	self deny: tmpSeqRecord = seqRecord description: 'Test different id'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testLetterAnnotations [
 
 	| tmpSeqRecord |
@@ -149,7 +151,7 @@ BioSeqRecordTest >> testLetterAnnotations [
 	self assert: seqRecord letterAnnotations size = 0.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testSequence [
 
 	seqRecord := BioSeqRecord new: ( BioSequence newDNA: 'ACGT' ).
@@ -158,7 +160,7 @@ BioSeqRecordTest >> testSequence [
 	self assert: seqRecord sequence asString = 'tcga'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSeqRecordTest >> testSetIdAndDescription [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').

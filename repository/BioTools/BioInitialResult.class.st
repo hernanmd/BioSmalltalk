@@ -1,30 +1,32 @@
 Class {
-	#name : #BioInitialResult,
-	#superclass : #BioResultObject,
+	#name : 'BioInitialResult',
+	#superclass : 'BioResultObject',
 	#instVars : [
 		'client',
 		'reader'
 	],
-	#category : 'BioTools-Query'
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioInitialResult class >> newFrom: anObject [
 
 	^ self basicNew initializeWith: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInitialResult >> client [
 	^ client
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInitialResult >> client: anObject [
 	client := anObject
 ]
 
-{ #category : #'convenience-filesystem' }
+{ #category : 'convenience-filesystem' }
 BioInitialResult >> dumpToFileNamed: fileName [
 	" Outputs the receiver's contents to a file named fileName "
 
@@ -33,7 +35,7 @@ BioInitialResult >> dumpToFileNamed: fileName [
 		contents: self reader contents
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioInitialResult >> initializeWith: aClient [
 	" Private - Set the receiver's client "
 	
@@ -42,14 +44,14 @@ BioInitialResult >> initializeWith: aClient [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioInitialResult >> reader [
 
 	^ reader
 		ifNil: [ reader := self readerClass new results: self result ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInitialResult >> reader: anObject [
 	
 	reader := anObject

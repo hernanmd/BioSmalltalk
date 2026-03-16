@@ -3,36 +3,38 @@ Represents a generic alphabet, used by default instantiations. An alphabet can c
 
 "
 Class {
-	#name : #BioAlphabet,
-	#superclass : #BioObject,
+	#name : 'BioAlphabet',
+	#superclass : 'BioObject',
 	#instVars : [
 		'unknownElement'
 	],
-	#category : #'BioTools-Alphabets'
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> allCodes [
 	" Answer a Collection with all biologically relevant letters "
 	
 	^ (self allFinalClasses collect: #codes) joinUsing: String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> ambiguityCodes [
 	" Answer a String containing common used letters in sequences with 	no meaning for the receiver "
 	
 	^ '-.?XxNn'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> codes [
 	" Answer a Collection with all biologically relevant letters "
 	
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> colorMap [
 	" Answer a <Dictionary> with mappings of each receiver's letter to an instance of <Color>  "
 	
@@ -43,7 +45,7 @@ BioAlphabet class >> colorMap [
 				collect: [ : colorSym : letter | letter -> (Color perform: colorSym) ]) asDictionary.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> colorSet [
 	" See comment in #colorSet: "
 	
@@ -53,7 +55,7 @@ BioAlphabet class >> colorSet [
 				Color perform: colorSym ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> colorSet: colorSetSym [
 	" Answer a <Collection> with <Color> elements to be applied to each of the receiver's letters. The code relies on the #defaultColiors set of methods implemented in Color class. These methods answer a <Collection> with color names as symbols representing a Color implemented in class side. The Collection currently returns the color name every 5 elements, remaining elements are RGB values. "
 	
@@ -63,14 +65,14 @@ BioAlphabet class >> colorSet: colorSetSym [
 				Color perform: colorSym ].
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioAlphabet class >> for: aString [
 	" Answer a new instance of the receiver using the sequence aString "
 	
 	^ self basicNew
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> guessAlphabetFrom: aString [
 	" Answer a class with the guessed alphabet from analyzing aString "
 	
@@ -99,7 +101,7 @@ BioAlphabet class >> guessAlphabetFrom: aString [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioAlphabet class >> guessAlphabetThreshold [
 	" Answer a consensus Float for determining the alphabet type.
 	This value currently follows BioPerl convention, guess DNA if % of ATGC is > this value.
@@ -108,14 +110,14 @@ BioAlphabet class >> guessAlphabetThreshold [
 	^ 0.85
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet class >> hasAmbiguousBases: aString [
 	" Answer <true> if receiver contains ambiguity codes "
 
 	^ aString asUppercase anySatisfy: [ : letter | self ambiguityCodes includes: letter ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> lowercaseAndUppercaseCodes [
 	"Answer a <String> with the receiver's codes in both uppercase and lowercase versions"
 
@@ -125,7 +127,7 @@ BioAlphabet class >> lowercaseAndUppercaseCodes [
 			<< self uppercaseCodes ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> lowercaseAndUppercaseCodesWithGap [
 	"Answer a <String> with the receiver's codes in both uppercase and lowercase versions"
 
@@ -135,104 +137,104 @@ BioAlphabet class >> lowercaseAndUppercaseCodesWithGap [
 			<< '-?' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> lowercaseCodes [ 
 	" See superimplementor's comment "
 	
 	^ self codes asLowercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet class >> uppercaseCodes [
 
 	^ self codes
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioAlphabet >> = anObject [
 	"Answer whether the receiver and anObject represent the same object."
 
 	^ self class = anObject class
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> allCodes [
 	" Answer a <String> with the receiver's allowed letters "
 
 	^ self class allCodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> ambiguityCodes [
 	" Answer a <String> with the ambiguity codes for the receiver's alphabet "
 	
 	^ self class ambiguityCodes
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet >> canTranslate [
 	" Answer <true> if the receiver can be translated into proteins (amino acid sequences) "
 	
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> codes [
 	" Answer a <String> with the receiver's allowed letters "
 
 	^ self class codes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> defaultUnknownElement [
 	" Private - Answer a <Character> used as representative of unknown elements in the receiver "
 	
 	^ $N
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet >> hasAmbiguousBases: aString [
 	" Answer <true> if receiver contains ambiguity codes "
 	
 	^ self class hasAmbiguousBases: aString
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet >> isDNA [
 	" Answer <true> if the receiver describes a DNA alphabet "
 	
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet >> isProtein [
 	" Answer <true> if the receiver describes a Protein alphabet "
 	
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlphabet >> isRNA [
 	" Answer <true> if the receiver describes a RNA alphabet "
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> size [
 	" Answer the number of letters in the receiver "
 	
 	^ self codes size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> sortedCodes [
 	" Answer a <String> with the receiver's allowed letters sorted lexicographically "
 
 	^ self codes asSortedCollection joinUsing: ''
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> unknownLetter [
 	" Answer a representative <Character> when a letter in the receiver is unknown "
 
@@ -240,7 +242,7 @@ BioAlphabet >> unknownLetter [
 		ifNil: [ unknownElement := self defaultUnknownElement ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlphabet >> unknownLetter: aCharacter [
 	" Set aCharacter as representative when a letter in the receiver is unknown "
 

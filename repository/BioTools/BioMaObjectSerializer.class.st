@@ -14,26 +14,28 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioMaObjectSerializer,
-	#superclass : #BioSerializationEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioMaObjectSerializer',
+	#superclass : 'BioSerializationEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMaObjectSerializer class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #MaObjectSerializer
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioMaObjectSerializer >> initializeWith: aProviderClass [
 	" Private - See superimplementor's comment "
 	
 	super initializeWith: aProviderClass new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMaObjectSerializer >> materialize [
 	" See superimplementor comment "
 
@@ -42,7 +44,7 @@ BioMaObjectSerializer >> materialize [
 		ifFalse: [ self signalInvalidObject: self location , ' is not a valid file for materialization' translated ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMaObjectSerializer >> serialize: anObject [
 	" See superimplementor's comment "
 

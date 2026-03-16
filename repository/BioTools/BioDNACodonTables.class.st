@@ -5,18 +5,20 @@ Class Instance Variables:
 	codonTables	<ProtoObject>
 "
 Class {
-	#name : #BioDNACodonTables,
-	#superclass : #BioCodonTables,
-	#category : #'BioTools-Biological'
+	#name : 'BioDNACodonTables',
+	#superclass : 'BioCodonTables',
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeFlatwormMitochondrialId [
 	
 	^ 9
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeFlatwormMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -36,7 +38,7 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeFlatwormMitochondrialTableNames [
 	
 	^ OrderedCollection 
@@ -45,19 +47,19 @@ BioDNACodonTables class >> alternativeFlatwormMitochondrialTableNames [
 		with: 'SGC8'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeFlatwormMitochondrialTableStartCodons [
 	
 	^ OrderedCollection with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeFlatwormMitochondrialTableStopCodons [
 	
 	^ OrderedCollection with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeYeastNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -77,20 +79,20 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeYeastNuclearTableId [
 	
 	^ 12
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeYeastNuclearTableNames [
 	
 	^ OrderedCollection 
 		with: 'Alternative Yeast Nuclear'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeYeastNuclearTableStartCodons [
 	
 	^ OrderedCollection
@@ -98,7 +100,7 @@ BioDNACodonTables class >> alternativeYeastNuclearTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> alternativeYeastNuclearTableStopCodons [
 	
 	^ OrderedCollection
@@ -107,7 +109,7 @@ BioDNACodonTables class >> alternativeYeastNuclearTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ascidianMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	
@@ -127,20 +129,20 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ascidianMitochondrialTableId [
 	
 	^ 13
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ascidianMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Ascidian Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ascidianMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -150,7 +152,7 @@ BioDNACodonTables class >> ascidianMitochondrialTableStartCodons [
 		with: 'GTG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ascidianMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -158,7 +160,7 @@ BioDNACodonTables class >> ascidianMitochondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> bacterialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -178,20 +180,20 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> bacterialTableId [
 	
 	^ 11
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> bacterialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Bacterial and Plant Plastid'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> bacterialTableStartCodons [
 	
 	^ OrderedCollection new 
@@ -199,7 +201,7 @@ BioDNACodonTables class >> bacterialTableStartCodons [
 		yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> bacterialTableStopCodons [
 	
 	^ OrderedCollection
@@ -208,7 +210,7 @@ BioDNACodonTables class >> bacterialTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> blepharismaMacronuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -229,14 +231,14 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> blepharismaMacronuclearTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 15
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> blepharismaMacronuclearTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -244,7 +246,7 @@ BioDNACodonTables class >> blepharismaMacronuclearTableNames [
 		with: 'Blepharisma Macronuclear'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> blepharismaMacronuclearTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -252,7 +254,7 @@ BioDNACodonTables class >> blepharismaMacronuclearTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> blepharismaMacronuclearTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -261,7 +263,7 @@ BioDNACodonTables class >> blepharismaMacronuclearTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> chlorophyceanMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -282,14 +284,14 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> chlorophyceanMitochondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 16
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> chlorophyceanMitochondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -297,7 +299,7 @@ BioDNACodonTables class >> chlorophyceanMitochondrialTableNames [
 		with: 'Chlorophycean Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> chlorophyceanMitochondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -305,7 +307,7 @@ BioDNACodonTables class >> chlorophyceanMitochondrialTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> chlorophyceanMitochondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -314,7 +316,7 @@ BioDNACodonTables class >> chlorophyceanMitochondrialTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ciliateNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -334,13 +336,13 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ciliateNuclearTableId [
 	
 	^ 6
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ciliateNuclearTableNames [
 	
 	^ OrderedCollection 
@@ -351,21 +353,21 @@ BioDNACodonTables class >> ciliateNuclearTableNames [
 		
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ciliateNuclearTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> ciliateNuclearTableStopCodons [
 	
 	^ OrderedCollection
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> echinodermMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -385,13 +387,13 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> echinodermMitochondrialTableId [
 	
 	^ 9
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> echinodermMitochondrialTableNames [
 	
 	^ OrderedCollection 
@@ -400,7 +402,7 @@ BioDNACodonTables class >> echinodermMitochondrialTableNames [
 		with: 'SGC8'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> echinodermMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -408,7 +410,7 @@ BioDNACodonTables class >> echinodermMitochondrialTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> echinodermMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -416,7 +418,7 @@ BioDNACodonTables class >> echinodermMitochondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> euplotidNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -436,13 +438,13 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> euplotidNuclearTableId [
 	
 	^ 10
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> euplotidNuclearTableNames [
 	
 	^ OrderedCollection 
@@ -450,14 +452,14 @@ BioDNACodonTables class >> euplotidNuclearTableNames [
 		with: 'SGC9'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> euplotidNuclearTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> euplotidNuclearTableStopCodons [
 	
 	^ OrderedCollection
@@ -465,7 +467,7 @@ BioDNACodonTables class >> euplotidNuclearTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioDNACodonTables class >> initialize [
 	" Private - Initialize receiver's codon tables "
 	| tablesCount tableSelectors startIndex |
@@ -480,7 +482,7 @@ BioDNACodonTables class >> initialize [
 		startIndex := startIndex + 5 ]
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> invertebrateMitocondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -501,14 +503,14 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> invertebrateMitocondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 5
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> invertebrateMitocondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -517,7 +519,7 @@ BioDNACodonTables class >> invertebrateMitocondrialTableNames [
 		with: 'SGC4'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> invertebrateMitocondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -530,7 +532,7 @@ BioDNACodonTables class >> invertebrateMitocondrialTableStartCodons [
 		with: 'GTG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> invertebrateMitocondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -539,7 +541,7 @@ BioDNACodonTables class >> invertebrateMitocondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> protozoanMitocondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -548,14 +550,14 @@ BioDNACodonTables class >> protozoanMitocondrialTable [
 add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TCT'-> 'S'; add: 'TCC'-> 'S'; add: 'TCA'-> 'S'; add: 'TCG'-> 'S'; add: 'TAT'-> 'Y'; add: 'TAC'-> 'Y'; add: 'TGT'-> 'C'; add: 'TGC'-> 'C'; add: 'TGA'-> 'W'; add: 'TGG'-> 'W'; add: 'CTT'-> 'L'; add: 'CTC'-> 'L'; add: 'CTA'-> 'L'; add: 'CTG'-> 'L'; add: 'CCT'-> 'P'; add: 'CCC'-> 'P'; add: 'CCA'-> 'P'; add: 'CCG'-> 'P'; add: 'CAT'-> 'H'; add: 'CAC'-> 'H'; add: 'CAA'-> 'Q'; add: 'CAG'-> 'Q'; add: 'CGT'-> 'R'; add: 'CGC'-> 'R'; add: 'CGA'-> 'R'; add: 'CGG'-> 'R'; add: 'ATT'-> 'I'; add: 'ATC'-> 'I'; add: 'ATA'-> 'I'; add: 'ATG'-> 'M'; add: 'ACT'-> 'T'; add: 'ACC'-> 'T'; add: 'ACA'-> 'T'; add: 'ACG'-> 'T'; add: 'AAT'-> 'N'; add: 'AAC'-> 'N'; add: 'AAA'-> 'K'; add: 'AAG'-> 'K'; add: 'AGT'-> 'S'; add: 'AGC'-> 'S'; add: 'AGA'-> 'R'; add: 'AGG'-> 'R'; add: 'GTT'-> 'V'; add: 'GTC'-> 'V'; add: 'GTA'-> 'V'; add: 'GTG'-> 'V'; add: 'GCT'-> 'A'; add: 'GCC'-> 'A'; add: 'GCA'-> 'A'; add: 'GCG'-> 'A'; add: 'GAT'-> 'D'; add: 'GAC'-> 'D'; add: 'GAA'-> 'E'; add: 'GAG'-> 'E'; add: 'GGT'-> 'G'; add: 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> protozoanMitocondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 4
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> protozoanMitocondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -568,7 +570,7 @@ BioDNACodonTables class >> protozoanMitocondrialTableNames [
 		with: 'SGC3'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> protozoanMitocondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -577,7 +579,7 @@ BioDNACodonTables class >> protozoanMitocondrialTableStartCodons [
 			yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> protozoanMitocondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -586,7 +588,7 @@ BioDNACodonTables class >> protozoanMitocondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> scenedesmusObliquusMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -606,27 +608,27 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> scenedesmusObliquusMitochondrialTableId [
 	
 	^ 22
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> scenedesmusObliquusMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Scenedesmus obliquus Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> scenedesmusObliquusMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> scenedesmusObliquusMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -635,7 +637,7 @@ BioDNACodonTables class >> scenedesmusObliquusMitochondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> standardTable [
 	" Answer the NCBI standard codon table for DNA"
 	
@@ -704,14 +706,14 @@ BioDNACodonTables class >> standardTable [
 	yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> standardTableId [
 	" Answer the NCBI standard codon table ID for DNA"
 	
 	^ 1
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> standardTableNames [
 	" Answer the NCBI standard codon table for DNA"
 	
@@ -720,7 +722,7 @@ BioDNACodonTables class >> standardTableNames [
 		with: 'SGC0'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> standardTableStartCodons [
 	" Answer the NCBI standard codon table start codons for DNA"
 	
@@ -730,7 +732,7 @@ BioDNACodonTables class >> standardTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> standardTableStopCodons [
 	" Answer the NCBI standard codon table stop codons for DNA"
 	
@@ -740,7 +742,7 @@ BioDNACodonTables class >> standardTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> thraustochytriumMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -760,14 +762,14 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTG'-> 'L'; add: 'TCT'-> 'S'; add: 'TC
 'GAG'-> 'E'; add: 'GGT'-> 'G'; add: 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> thraustochytriumMitochondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 23
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> thraustochytriumMitochondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -775,7 +777,7 @@ BioDNACodonTables class >> thraustochytriumMitochondrialTableNames [
 		with: 'Thraustochytrium Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> thraustochytriumMitochondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -785,7 +787,7 @@ BioDNACodonTables class >> thraustochytriumMitochondrialTableStartCodons [
 		with: 'GTG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> thraustochytriumMitochondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -796,7 +798,7 @@ BioDNACodonTables class >> thraustochytriumMitochondrialTableStopCodons [
 		with: 'TGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> trematodeMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -816,20 +818,20 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> trematodeMitochondrialTableId [
 	
 	^ 21
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> trematodeMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Trematode Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> trematodeMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -837,7 +839,7 @@ BioDNACodonTables class >> trematodeMitochondrialTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> trematodeMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -845,7 +847,7 @@ BioDNACodonTables class >> trematodeMitochondrialTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> vertebrateMitocondrialTable [
 	" Answer the NCBI vertebrate mitochondrial codon table for DNA"
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
@@ -915,7 +917,7 @@ BioDNACodonTables class >> vertebrateMitocondrialTable [
 	yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> vertebrateMitocondrialTableId [
 	" Answer the NCBI VM table ID "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -923,7 +925,7 @@ BioDNACodonTables class >> vertebrateMitocondrialTableId [
 	^ 2
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> vertebrateMitocondrialTableNames [
 	" Answer the NCBI VM codon table names for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -933,7 +935,7 @@ BioDNACodonTables class >> vertebrateMitocondrialTableNames [
 		with: 'SGC1'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> vertebrateMitocondrialTableStartCodons [
 	" Answer the NCBI VM codon table start codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -946,7 +948,7 @@ BioDNACodonTables class >> vertebrateMitocondrialTableStartCodons [
 		with: 'GTG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> vertebrateMitocondrialTableStopCodons [
 	" Answer the NCBI VM codon table stop codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -958,7 +960,7 @@ BioDNACodonTables class >> vertebrateMitocondrialTableStopCodons [
 		with: 'AGG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> yeastMitocondrialTable [
 	" Answer the NCBI yeast mitochondrial codon table for DNA"
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
@@ -969,7 +971,7 @@ add: 'TTT'-> 'F'; add: 'TTC'-> 'F'; add: 'TTA'-> 'L'; add: 'TTG'-> 'L'; add: 'TC
 	yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> yeastMitocondrialTableId [
 	" Answer the NCBI yeast table ID "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -977,7 +979,7 @@ BioDNACodonTables class >> yeastMitocondrialTableId [
 	^ 3
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> yeastMitocondrialTableNames [
 	" Answer the NCBI standard codon table for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -987,7 +989,7 @@ BioDNACodonTables class >> yeastMitocondrialTableNames [
 		with: 'SGC2'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> yeastMitocondrialTableStartCodons [
 	" Answer the NCBI yeast codon table start codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -997,7 +999,7 @@ BioDNACodonTables class >> yeastMitocondrialTableStartCodons [
 		with: 'ATG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioDNACodonTables class >> yeastMitocondrialTableStopCodons [
 	" Answer the NCBI VM codon table stop codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>

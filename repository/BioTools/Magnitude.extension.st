@@ -1,6 +1,6 @@
-Extension { #name : #Magnitude }
+Extension { #name : 'Magnitude' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Magnitude >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 

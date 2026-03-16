@@ -1,10 +1,12 @@
 Class {
-	#name : #BioCollectionTest,
-	#superclass : #BioAbstractTest,
-	#category : #'BioTools-Tests-Core'
+	#name : 'BioCollectionTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCollectionTest >> testAsBio [
 
 	| collection bioCollection |
@@ -21,14 +23,14 @@ BioCollectionTest >> testAsBio [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCollectionTest >> testAsFileDirectoryCollection [
 
 
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCollectionTest >> testAsLowercase [
 
 	self assert: 'This is A SAMPLE COLLECTION' asLowercase equals: 'this is a sample collection'.
@@ -37,14 +39,14 @@ BioCollectionTest >> testAsLowercase [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCollectionTest >> testIsBioCollection [
 
 	self assert: (BioOrderedCollection withAllSubclasses allSatisfy: [ : cls | cls new isBioCollection ]) .
 	self deny: OrderedCollection new isBioCollection.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCollectionTest >> testIsBiologicalSequence [
 
 	self assert: 'ACGT' isBiologicalSequence.

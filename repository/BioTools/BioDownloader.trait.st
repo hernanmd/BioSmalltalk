@@ -14,11 +14,13 @@ Client must implement
 
 "
 Trait {
-	#name : #BioDownloader,
-	#category : #'BioTools-Helpers'
+	#name : 'BioDownloader',
+	#category : 'BioTools-Helpers',
+	#package : 'BioTools',
+	#tag : 'Helpers'
 }
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> connect [
 	" Private - Connect the receiver's to download databases "
 	
@@ -30,7 +32,7 @@ BioDownloader >> connect [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioDownloader >> defaultPassword [
 	" Answer a <String> with the password to connect "
 	
@@ -38,7 +40,7 @@ BioDownloader >> defaultPassword [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioDownloader >> defaultUser [
 	" Answer a String with the user name to connect "
 	
@@ -46,7 +48,7 @@ BioDownloader >> defaultUser [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> download [
 	" Download the requested files only if they are missing or if they are newer in the remote site. "
 	
@@ -55,7 +57,7 @@ BioDownloader >> download [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> download: fileName [
 	" Download fileName from the remote site. "
 	
@@ -69,28 +71,28 @@ BioDownloader >> download: fileName [
 	 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> downloadUrl [
 	" Answer a <String> with the URL to fetch to the server "
 
 	^ self url downloadUrl
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> fetch [
 	" Answer the result of the command applied on the receiver "
 
 	^ self client fetch
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> info [
 	" Answer the result of the command applied on the receiver "
 
 	^ self client info
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> isUpdated: fileName [
 	" Answer <true> if modification time of remote fileName is newer than modification time of receiver's copy of fileName "
 
@@ -105,7 +107,7 @@ BioDownloader >> isUpdated: fileName [
 		and: [ (self openFileNamed: fileName) directoryEntry modificationTime < (self client getMdtm: fileName) ]
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> prvDownload: fileName [
 	" Private - Download fileName in the receiver's repository "
 
@@ -119,7 +121,7 @@ BioDownloader >> prvDownload: fileName [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> prvDownloadFileNamed: fileName binary: boolean [
 	" Private - Download fileName in the receiver's repository "
 
@@ -137,21 +139,21 @@ BioDownloader >> prvDownloadFileNamed: fileName binary: boolean [
 	^ stream
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> search [
 	" Answer the result of the command applied on the receiver "
 
 	^ self client search
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> url [
 	" Answer a Http Url with the receiver's configured URL "
 
 	^ self client url
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDownloader >> verifyMD5checksum: fileName [
 	" Answer <true> if receiver's checksum file exists and remote digest is the same as the receiver's downloaded 
 	fileName digest (is not corrupted) "

@@ -2,19 +2,21 @@
 UIManager is a dispatcher used in Pharo for UI interactivity with users.
 "
 Class {
-	#name : #BioUIManagerEngine,
-	#superclass : #BioInteractorEngine,
-	#category : 'BioTools-Adapters'
+	#name : 'BioUIManagerEngine',
+	#superclass : 'BioInteractorEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUIManagerEngine class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #UIManager
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUIManagerEngine class >> request: aString [
 	" Request and answer the string the user accepts. Answer an empty string if the user cancels."
 
@@ -24,7 +26,7 @@ BioUIManagerEngine class >> request: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUIManagerEngine >> request: aString [
 	" Refer to comment in #request: "
 

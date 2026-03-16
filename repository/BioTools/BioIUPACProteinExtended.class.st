@@ -12,18 +12,20 @@ From IUPACData.py (2011)
 
 "
 Class {
-	#name : #BioIUPACProteinExtended,
-	#superclass : #BioIUPACProtein,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioIUPACProteinExtended',
+	#superclass : 'BioIUPACProtein',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProteinExtended class >> codes [
 
 	^ 'ACDEFGHIKLMNPQRSTVWYBXZJUO'
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACProteinExtended >> printOn: aStream [
 	" See superimplementor's comment "
 	

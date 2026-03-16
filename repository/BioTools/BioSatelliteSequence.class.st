@@ -1,22 +1,24 @@
 Class {
-	#name : #BioSatelliteSequence,
-	#superclass : #BioRepeatSequence,
-	#category : 'BioTools-Repeats'
+	#name : 'BioSatelliteSequence',
+	#superclass : 'BioRepeatSequence',
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioSatelliteSequence >> defaultMaxMotifSize [
 
 	^ 6500
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioSatelliteSequence >> defaultMinMotifSize [
 	
 	^ 100
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSatelliteSequence >> isSatelliteSequence [
 	" Answer <true> if the receiver represents a classic satellite sequence "
 	

@@ -1,24 +1,26 @@
 Class {
-	#name : #BioFastaMultiRecordTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioFastaMultiRecordTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'fastaCollection'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaMultiRecordTest >> fastaCollection [
 	^ fastaCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaMultiRecordTest >> fastaCollection: aCollection [
 
 	fastaCollection := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaMultiRecordTest >> multiFastaSeq [
 	" sequence2 is reverse complement of sequence1 "
 
@@ -30,14 +32,14 @@ GCTAATGCCGTAGTAATTTTCCCGTCCTCCCGT
 
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 BioFastaMultiRecordTest >> setUp [ 
 
 	super setUp.
 	self fastaCollection: (BioParser parseMultiFasta: self multiFastaSeq).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaMultiRecordTest >> testAddFastaRecord [
 	| oldFastaCollectionSize |
 	oldFastaCollectionSize := self fastaCollection size.
@@ -52,33 +54,33 @@ BioFastaMultiRecordTest >> testAddFastaRecord [
 		equals: oldFastaCollectionSize + 1
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testAsString [
 
 	self assert: (self fastaCollection asString isKindOf: String).
 	self deny: self fastaCollection asString isEmpty.
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testContents [
 
 	self assert: self fastaCollection contents equals: self fastaCollection.
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testGcContent [
 
 	self assert: self fastaCollection gcContent notEmpty.
 	self assert: (self fastaCollection gcContent isKindOf: Dictionary).
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testHasSameLength [
 
 	self assert: self fastaCollection hasSameLength.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaMultiRecordTest >> testIncludesFastaRecord [
 
 	| fastaRecord |
@@ -93,7 +95,7 @@ BioFastaMultiRecordTest >> testIncludesFastaRecord [
 	self assert: (self fastaCollection includes: fastaRecord).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaMultiRecordTest >> testIncludesName [
 
 	| fastaRecord |
@@ -108,14 +110,14 @@ BioFastaMultiRecordTest >> testIncludesName [
 	self assert: (self fastaCollection includesName: 'Added Fasta Record 1').
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testIsEmpty [
 
 	self deny: self fastaCollection isEmpty.
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaMultiRecordTest >> testReverseComplement [
 
 	| newFastaCollection firstSeq sndSeq |
@@ -134,7 +136,7 @@ BioFastaMultiRecordTest >> testReverseComplement [
 		equals: newFastaCollection sequences second asString
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testSequenceNames [
 
 	self assert: self fastaCollection sequenceNames notEmpty.
@@ -143,7 +145,7 @@ BioFastaMultiRecordTest >> testSequenceNames [
 	self assert: self fastaCollection sequenceNames first equals: 'sequence1'.
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testSequenceStrings [
 
 	self assert: self fastaCollection sequenceStrings notEmpty.
@@ -151,20 +153,20 @@ BioFastaMultiRecordTest >> testSequenceStrings [
 	self assert: (self fastaCollection sequenceStrings allSatisfy: #notEmpty).
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testSequences [
 
 	self assert: self fastaCollection sequences notEmpty.
 	self assert: (self fastaCollection sequences allSatisfy: #isBioSequence).
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioFastaMultiRecordTest >> testSize [
 
 	self assert: self fastaCollection size equals: 2.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaMultiRecordTest >> testSort [
 
 	| newFastaCollection |
@@ -178,7 +180,7 @@ BioFastaMultiRecordTest >> testSort [
 	self assert: newFastaCollection isSorted.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaMultiRecordTest >> unsortedMultiFastaSeq [
 	" From http://quma.cdb.riken.jp/help/multiFastaHelp.html "
 

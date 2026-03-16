@@ -2,12 +2,14 @@
 A BioIUPACAmbiguousDNATest is a test class for testing the behavior of BioIUPACAmbiguousDNA
 "
 Class {
-	#name : #BioIUPACAmbiguousDNATest,
-	#superclass : #TestCase,
-	#category : #'BioTools-Tests-Alphabets'
+	#name : 'BioIUPACAmbiguousDNATest',
+	#superclass : 'TestCase',
+	#category : 'BioTools-Tests-Alphabets',
+	#package : 'BioTools-Tests',
+	#tag : 'Alphabets'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioIUPACAmbiguousDNATest >> testCodes [
 
 	self assert: (BioIUPACAmbiguousDNA new codes bioHasEqualElements: 'GATCRYWSMKHBVDN' ).

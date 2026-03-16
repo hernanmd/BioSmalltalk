@@ -9,48 +9,50 @@ Instance Variables
 
 "
 Class {
-	#name : #BioVersionedObject,
-	#superclass : #BioObject,
+	#name : 'BioVersionedObject',
+	#superclass : 'BioObject',
 	#instVars : [
 		'versions',
 		'date',
 		'author'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> author [
 	" Answer an object responsible of the receiver's creation or maintenance "
 
 	^ author
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> author: anObject [
 	" Set the receiver's responsible for creation/maintenance "
 	
 	author := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> date [
 	^ date
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> date: anObject [
 	date := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioVersionedObject >> hasVersions [
 	" Answer <true> if the receiver was versioned "
 
 	^ self versions isNotEmpty
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioVersionedObject >> initialize [
 	" Private - Initialize receiver's versioning information "
 	
@@ -59,12 +61,12 @@ BioVersionedObject >> initialize [
 	date := self dateClass now.	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> versions [
 	^ versions
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVersionedObject >> versions: anObject [
 	versions := anObject
 ]

@@ -1,6 +1,6 @@
-Extension { #name : #CharacterTest }
+Extension { #name : 'CharacterTest' }
 
-{ #category : #'*BioTools-Tests' }
+{ #category : '*BioTools-Tests' }
 CharacterTest >> testAsAminoacidName [
 
 	self assert: $A asAminoacidName equals: 'Alanine'.
@@ -47,7 +47,7 @@ CharacterTest >> testAsAminoacidName [
 
 ]
 
-{ #category : #'*BioTools-Tests' }
+{ #category : '*BioTools-Tests' }
 CharacterTest >> testAsDisambiguatedDNAFormatted [
 
 	self assert: $a asDisambiguatedDNAFormatted equals: 'a'.

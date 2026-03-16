@@ -1,13 +1,15 @@
 Class {
-	#name : #BioAdapterTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioAdapterTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'adapter'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> adapterEngines [
 	" Answer a <Collection> of Engine classes "
 
@@ -19,7 +21,7 @@ BioAdapterTest >> adapterEngines [
 		}
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> checkTestWebServer [
 	^ (BioWebServerEngine hasAnyProvider
 		and: [ self confirm: 'Do you want to start a local web server for testing the web adapters?' ])
@@ -34,33 +36,33 @@ BioAdapterTest >> checkTestWebServer [
 					self nullUrlAddress ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> defaultUrlTestAddress [
 
 	^ 'http://www.loremipsum.com/'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> isRunningTestWebServer [
 	" Answer <true> if system is running a web server "
 
 	^ BioWebServerEngine isRunningTestWebServer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> nullUrlAddress [
 
 	^ String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> startTestWebServer [
 	" Private - Start the testing web server "
 	
 	BioWebServerEngine startWebServer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> stopTestWebServer [
 	" Private - Stop the testing web server "
 
@@ -68,14 +70,14 @@ BioAdapterTest >> stopTestWebServer [
 		ifTrue: [ BioWebServerEngine stopWebServer ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> tearDown [
 
 	super tearDown.
 	self stopTestWebServer
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testAdapter [
 
 	self adapterEngines do: [: sCls | 
@@ -85,7 +87,7 @@ BioAdapterTest >> testAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testAdapterClass [
 
 	self adapterEngines do: [: sCls | 
@@ -95,7 +97,7 @@ BioAdapterTest >> testAdapterClass [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testFormatOSInterfaceAdapter [
 
 	| answer |
@@ -108,7 +110,7 @@ BioAdapterTest >> testFormatOSInterfaceAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testProviderClass [
 
 	| concreteAdapters |
@@ -131,7 +133,7 @@ BioAdapterTest >> testProviderClass [
 		].
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testSettingSerializationAdapter [
 
 	self assert: ( BioSerializationEngine hasAnyProvider isKindOf: Boolean ).
@@ -149,7 +151,7 @@ BioAdapterTest >> testSettingSerializationAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testSettingWebClientAdapter [
 
 "	| testAddress |
@@ -169,7 +171,7 @@ BioAdapterTest >> testSettingWebClientAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testUsingOSInterfaceAdapter [
 
 	self assert: ( BioOSInterfaceEngine hasAnyProvider isKindOf: Boolean ).
@@ -188,7 +190,7 @@ BioAdapterTest >> testUsingOSInterfaceAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testUsingWebClientAdapter [
 
 "	| testAddress |
@@ -205,7 +207,7 @@ BioAdapterTest >> testUsingWebClientAdapter [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAdapterTest >> testWebDecodeUrl [
 
 	| decoded encodedAddress decodedAddress |
@@ -234,7 +236,7 @@ BioAdapterTest >> testWebDecodeUrl [
 	self assert: decoded = decodedAddress.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAdapterTest >> urlTestAddress [
 	" Answer a String representing an URL for testing purposes "
 

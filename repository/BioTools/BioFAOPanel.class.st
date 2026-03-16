@@ -3,12 +3,14 @@ Represents a panel of loci recommended by the Food and Agriculture Organization 
 
 "
 Class {
-	#name : #BioFAOPanel,
-	#superclass : #BioPanel,
-	#category : #'BioTools-Repeats'
+	#name : 'BioFAOPanel',
+	#superclass : 'BioPanel',
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #'accessing - cattle' }
+{ #category : 'accessing - cattle' }
 BioFAOPanel class >> markerAlleleRangesForCattle [
 
 	^ #(
@@ -21,7 +23,7 @@ BioFAOPanel class >> markerAlleleRangesForCattle [
 		)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFAOPanel class >> markersForSpecies [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -30,14 +32,14 @@ BioFAOPanel class >> markersForSpecies [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFAOPanel class >> panelName [
 	" Private - See superimplementor's comment "
 	
 	^ 'FAO'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFAOPanel class >> supportedMarkerTypes [
 	" Answer a <Collection> of supported types of markers "
 	

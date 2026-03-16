@@ -1,6 +1,6 @@
-Extension { #name : #FileSystemDirectoryEntry }
+Extension { #name : 'FileSystemDirectoryEntry' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 FileSystemDirectoryEntry >> isXML [
 	" See superimplementor's comment "
 	

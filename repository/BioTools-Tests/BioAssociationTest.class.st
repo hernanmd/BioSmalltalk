@@ -1,10 +1,12 @@
 Class {
-	#name : #BioAssociationTest,
-	#superclass : #BioAbstractTest,
-	#category : #'BioTools-Tests-Core'
+	#name : 'BioAssociationTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAssociationTest >> testAsSequence [
 
 	self assert: (5438 -> 8) asSequence equals: ('ACCCATTC' asSequence alphabet: BioDNAAlphabet new).

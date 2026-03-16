@@ -3,12 +3,14 @@ A mutable sequence which can be modified after creation, it lets you edit the se
 
 "
 Class {
-	#name : #BioMutableSeq,
-	#superclass : #BioSequence,
-	#category : #'BioTools-Sequences'
+	#name : 'BioMutableSeq',
+	#superclass : 'BioSequence',
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMutableSeq >> append: aString [
 	" This method modifies the receiver. Append aString to the receiver's sequence "
 	
@@ -18,7 +20,7 @@ BioMutableSeq >> append: aString [
 			nextPutAll: aString asString ]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioMutableSeq >> asSequence [
 	" Answer a copy of the receiver converted to a read-only object "
 	
@@ -27,7 +29,7 @@ BioMutableSeq >> asSequence [
 		alphabet: self alphabet class
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMutableSeq >> at: anInteger put: aLetter [
 	" Store aLetter in the position of the receiver indicated by the anInteger.
 	Answer the receiver "
@@ -35,7 +37,7 @@ BioMutableSeq >> at: anInteger put: aLetter [
 	seq at: anInteger put: aLetter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMutableSeq >> copyReplaceAll: oldSubstring with: newSubstring [ 
 	" Refer to comment in Collection>>copyReplaceAll: oldSubstring with: newSubstring "
 

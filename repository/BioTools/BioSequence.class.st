@@ -11,8 +11,8 @@ Instance Variables:
 
 "
 Class {
-	#name : #BioSequence,
-	#superclass : #BioObject,
+	#name : 'BioSequence',
+	#superclass : 'BioObject',
 	#instVars : [
 		'seq',
 		'alphabet',
@@ -21,10 +21,12 @@ Class {
 		'gcContent',
 		'gcSkew'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #'accessing - disambiguation' }
+{ #category : 'accessing - disambiguation' }
 BioSequence class >> disambiguateLetter: letter [
 	" Private - Answer a <String> of disambiguations for letter "
 	
@@ -33,7 +35,7 @@ BioSequence class >> disambiguateLetter: letter [
 		ifAbsent: [ letter asString ]
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 BioSequence class >> expected: m probabilitySeqOfSize: n patternLength: k alphabetSize: a occurrences: t [
 	" Answer a <Float> representing the expected k-mer occurrences in m (random) strings of length n formed from an alphabet of a letters.
 	n = Length of each String.
@@ -45,7 +47,7 @@ BioSequence class >> expected: m probabilitySeqOfSize: n patternLength: k alphab
 	^ ((n - (t * (k - 1)) choose:  t) / (a raisedTo: (t * k))) asFloat * m
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> forAlphabet: aBioAlphabetClass [
 	" Answer a new instance of the receiver with aBioAlphabetClass as its alphabet "
 	
@@ -54,21 +56,21 @@ BioSequence class >> forAlphabet: aBioAlphabetClass [
 		yourself
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> fromUmambiguousDNASequences: aCollection [
 	" Answer a <Collection> of receivers taking each <BioSequence> from aCollection "
 	
 	^ aCollection collect: [ : seqString | self newUnambiguousDNA: seqString ]
 ]
 
-{ #category : #'instance creation - rna' }
+{ #category : 'instance creation - rna' }
 BioSequence class >> fromUmambiguousRNASequences: aCollection [
 	" Answer a <Collection> of receivers taking each <BioSequence> from aCollection "
 	
 	^ aCollection collect: [ : seqString | self newUnambiguousRNA: seqString ]
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 BioSequence class >> joinSequence: aCollection [
 	" Private - Answer a String with the sequence ensambled from aCollection.
 	aCollection is a collection of collections with each element composed by
@@ -77,7 +79,7 @@ BioSequence class >> joinSequence: aCollection [
 	^ (aCollection flatCollect: [ : each | each select: #isBiologicalSequence ]) joinUsing: String empty
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 BioSequence class >> joinString: aCollection [
 	" Private - Answer a String with the sequence ensambled from aCollection.
 	aCollection is a collection of collections with each element composed by
@@ -86,7 +88,7 @@ BioSequence class >> joinString: aCollection [
 	^ (aCollection flatCollect: [ : each | each select: #isString ]) joinUsing: String empty
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> newAmbiguousDNA: aString [
 	" Answer a new instance of the receiver with aString as its sequence "
 	
@@ -95,7 +97,7 @@ BioSequence class >> newAmbiguousDNA: aString [
 		alphabet: BioIUPACAmbiguousDNA new
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> newAmbiguousDNA: aString named: aName [
 	" Answer a new instance of the receiver with aString as the sequence "
 	
@@ -106,7 +108,7 @@ BioSequence class >> newAmbiguousDNA: aString named: aName [
 		yourself
 ]
 
-{ #category : #'instance creation - rna' }
+{ #category : 'instance creation - rna' }
 BioSequence class >> newAmbiguousRNA: aString [
 	" Answer a new instance of the receiver with aString as the sequence string "
 	
@@ -115,14 +117,14 @@ BioSequence class >> newAmbiguousRNA: aString [
 		alphabet: BioIUPACAmbiguousRNA new
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> newDNA: aString [
 	" Answer a new instance of the receiver with aString as the sequence "
 	
 	^ self newUnambiguousDNA: aString
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> newDNANamed: aString [
 	" Answer a new instance of the receiver with aString as its name "
 	
@@ -132,14 +134,14 @@ BioSequence class >> newDNANamed: aString [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequence class >> newFrom: aPath [
 	" Answer a new instance of the receiver reading from aPath "
 	
 	^ self new initializeFrom: aPath
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequence class >> newNamed: aNameString [
 	" Answer a new instance of the receiver named aNameString. No alphabet is guessed "
 	
@@ -148,7 +150,7 @@ BioSequence class >> newNamed: aNameString [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequence class >> newNamed: aNameString sequence: aSeqString [
 	" Answer a new instance of the receiver using aString as sequence. Alphabet is guessed from aSeqString "
 	
@@ -158,7 +160,7 @@ BioSequence class >> newNamed: aNameString sequence: aSeqString [
 		yourself
 ]
 
-{ #category : #'instance creation - protein' }
+{ #category : 'instance creation - protein' }
 BioSequence class >> newProtein: aString [
 	" Answer a new instance of the receiver with aString as its protein sequence string "
 	
@@ -167,7 +169,7 @@ BioSequence class >> newProtein: aString [
 		alphabet: BioIUPACProtein new
 ]
 
-{ #category : #'instance creation - protein' }
+{ #category : 'instance creation - protein' }
 BioSequence class >> newProtein: aString named: aName [
 	" Answer a new instance of the receiver with aString as the sequence "
 	
@@ -177,7 +179,7 @@ BioSequence class >> newProtein: aString named: aName [
 		yourself
 ]
 
-{ #category : #'instance creation - protein' }
+{ #category : 'instance creation - protein' }
 BioSequence class >> newProteinExtended: aString [
 	" Answer a new instance of the receiver with aString as its protein sequence string "
 	
@@ -186,7 +188,7 @@ BioSequence class >> newProteinExtended: aString [
 		alphabet: BioIUPACProteinExtended new
 ]
 
-{ #category : #'instance creation - protein' }
+{ #category : 'instance creation - protein' }
 BioSequence class >> newProteinNamed: aString [
 	" Answer a new instance of the receiver with aString as its name "
 	
@@ -196,14 +198,14 @@ BioSequence class >> newProteinNamed: aString [
 		yourself
 ]
 
-{ #category : #'instance creation - rna' }
+{ #category : 'instance creation - rna' }
 BioSequence class >> newRNA: aString [
 	" Answer a new instance of the receiver with aString as its sequence "
 	
 	^ self newUnambiguousRNA: aString
 ]
 
-{ #category : #'instance creation - rna' }
+{ #category : 'instance creation - rna' }
 BioSequence class >> newRNANamed: aString [
 	" Answer a new instance of the receiver with aString as its name "
 	
@@ -213,7 +215,7 @@ BioSequence class >> newRNANamed: aString [
 		yourself
 ]
 
-{ #category : #'instance creation - dna' }
+{ #category : 'instance creation - dna' }
 BioSequence class >> newUnambiguousDNA: aString [
 	" Answer a new instance of the receiver with aString as its sequence "
 	
@@ -222,7 +224,7 @@ BioSequence class >> newUnambiguousDNA: aString [
 		alphabet: BioIUPACUnambiguousDNA new
 ]
 
-{ #category : #'instance creation - rna' }
+{ #category : 'instance creation - rna' }
 BioSequence class >> newUnambiguousRNA: aString [
 	" Answer a new instance of the receiver with aString as its sequence string "
 	
@@ -231,14 +233,14 @@ BioSequence class >> newUnambiguousRNA: aString [
 		alphabet: BioIUPACUnambiguousRNA new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequence class >> newWith: aString [
 	" Answer a new instance of the receiver using aString as sequence. Alphabet is guessed "
 	
 	^ self new initializeWith: aString
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequence class >> newWith: aString alphabet: aBioAlphabet [
 	" Answer a new instance of the receiver with aString as the sequence and anAlphabet as the alphabet for the sequence "
 	
@@ -253,7 +255,7 @@ BioSequence class >> newWith: aString alphabet: aBioAlphabet [
 				alphabet: aBioAlphabet ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> , aBioSequence [
 	" Concatenate the receiver with aBioSequence if their alphabets are compatible "
 	
@@ -266,14 +268,14 @@ BioSequence >> , aBioSequence [
 		ifTrue: [ self newPrototypeWith: self asString , aBioSequence asString ]
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSequence >> <= aBioSequence [
 	" Answer whether the receiver size is less than the argument "
 
 	^ self size <= aBioSequence size
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSequence >> = anObject [
 	"Answer whether the receiver and anObject represent the same object."
 
@@ -284,28 +286,28 @@ BioSequence >> = anObject [
 	^ self asString = anObject asString and: [ alphabet = anObject alphabet ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> accessionName [
 	" Answer a <String> representing the receiver's accession number, if available. Otherwise answer an empty string "
 	
 	^ self sequenceRecord name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> accessionName: aString [
 	" Set aString to represent the receiver's accession number "
 	
 	^ self sequenceRecord name: aString
 ]
 
-{ #category : #'accessing - sequence record' }
+{ #category : 'accessing - sequence record' }
 BioSequence >> addSeqFeature: aBioSequenceFeature [
 	" Attach aBioSequenceFeature to the receiver "
 	
 	self sequenceRecord addSeqFeature: aBioSequenceFeature.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> addToAlignment: aBioAlignment [
 	" Add the receiver to the alignment aBioAlignment "
 
@@ -316,7 +318,7 @@ BioSequence >> addToAlignment: aBioAlignment [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> addToAlignment: aBioAlignment named: seqName [
 	" Add the receiver to the alignment aBioAlignment "
 
@@ -326,21 +328,21 @@ BioSequence >> addToAlignment: aBioAlignment named: seqName [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> allButFirst [
 	" Answer a copy of the receiver containing all but the first element. Raise an error if there are not enough elements."
 	
 	^ self newPrototypeWith: self sequence allButFirst
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> allButLast [
 	" Answer a copy of the receiver containing all but the last element. Raise an error if there are not enough elements."
 	
 	^ self newPrototypeWith: self sequence allButLast 
 ]
 
-{ #category : #'accessing - alphabet' }
+{ #category : 'accessing - alphabet' }
 BioSequence >> alphabet [
 	" Answer a <BioAlphabet> representing the receiver's sequence alphabet "
 
@@ -348,28 +350,28 @@ BioSequence >> alphabet [
 		ifNil: [ alphabet := self defaultAlphabetClass new ]
 ]
 
-{ #category : #'accessing - alphabet' }
+{ #category : 'accessing - alphabet' }
 BioSequence >> alphabet: aBioAlphabet [
 	" Set aBioAlphabet as receiver's alphabet "
 
 	alphabet := aBioAlphabet
 ]
 
-{ #category : #'accessing - alphabet' }
+{ #category : 'accessing - alphabet' }
 BioSequence >> alphabetCodes [
 	" Answer a sorted <String> with receiver's codes "
 
 	^ self alphabet codes sorted
 ]
 
-{ #category : #'accessing public - utils' }
+{ #category : 'accessing public - utils' }
 BioSequence >> ambiguityCodes [
 	" Answer a <String> with the ambiguity codes for the receiver's alphabet "
 
 	^ self alphabet ambiguityCodes
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> aminoacidNames [
 	" Answer a <String> with receiver's letters as aminoacid names "
 
@@ -381,7 +383,7 @@ BioSequence >> aminoacidNames [
 	^ aminoacidNames
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asFastaRecord [
 	" Answer a <BioFastaRecord> filled with the receiver's name and sequence "
 
@@ -390,14 +392,14 @@ BioSequence >> asFastaRecord [
 		sequence: seq
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asLowercase [
 	" Modify the receiver with its sequence with characters all lowercased "
 	
 	seq := seq asLowercase
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asMutableSequence [
 	" Answer a copy of the receiver converted to a mutable object "
 	
@@ -407,7 +409,7 @@ BioSequence >> asMutableSequence [
 
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asNumber [
 	" Interpret the receiver as a k-mer pattern and answer the <Number> at the index array defined by the receiver's size (PatternToNumber)  "
 	
@@ -425,7 +427,7 @@ BioSequence >> asNumber [
 
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asSequence [
 	" Answer the receiver "
 	
@@ -433,7 +435,7 @@ BioSequence >> asSequence [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> asSequenceForAlphabet: anAlphabet [
 	" Answer the receiver "
 	
@@ -441,21 +443,21 @@ BioSequence >> asSequenceForAlphabet: anAlphabet [
 
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asString [
 	" Answer a <String> with the receiver's sequence "
 	
 	^ seq trimBoth withoutCRs
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> asUppercase [
 	" Modify the receiver with its sequence with characters all uppercased "
 	
 	seq := seq asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> at: anInteger [
 	" Access the receiver's element at anInteger position "
 	
@@ -464,14 +466,14 @@ BioSequence >> at: anInteger [
 		ifAbsent: [ self signalInvalidObject: 'Out of range exception' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> at: anInteger put: aLetter [
 	" Store aLetter in the position of the receiver indicated by the anInteger. Answer the receiver "
 	
 	self signalInvalidObject: 'Sequence is read-only. Use #asMutable to enable modifications it then #asSequence' 
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> backTranscribe [
 	" Answer a new instance of the receiver's with the receiver's sequence transcribed to its corresponding DNA, adjusting the alphabet "
 	
@@ -481,7 +483,7 @@ BioSequence >> backTranscribe [
 
 ]
 
-{ #category : #'accessing private - protein synthesis' }
+{ #category : 'accessing private - protein synthesis' }
 BioSequence >> backTranscription [ 
 	" Answer a String with the back transcription of the receiver's sequence "
 	
@@ -492,14 +494,14 @@ BioSequence >> backTranscription [
 	^ backTranscript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> bioConsensusFor: aBioAlignment [ 
 	" Answer a <Character> representing a consensus base for the receiver "
 
 	^ aBioAlignment consensusStrategy consensusAt: self asString asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> buildFrequencies: k [
 	" Generates a frequency array by first initializing every element in the frequency array to zero (4k operations) and then making a single pass down receiver's sequence (approximately |sequence size| · k operations). 
 	For each k-mer Pattern that we encounter, we add 1 to the value of the frequency array corresponding to Pattern "
@@ -512,7 +514,7 @@ BioSequence >> buildFrequencies: k [
 	^ freqArray 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> canTranslate [
 	" Answer <true> if a sequence can be translated using the receiver "
 	
@@ -533,7 +535,7 @@ BioSequence >> canTranslate [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> clumpFindK: k length: l times: t [ 
 	" Given integers L and t, a string Pattern forms an (L, t)-clump inside a (larger) string Genome if there is an interval of Genome of length L in which Pattern appears at least t times. This method search for the k-mer pattern in the receiver, appearing at least t times in a l window size. Answer a <Collection> "
 	
@@ -551,21 +553,21 @@ BioSequence >> clumpFindK: k length: l times: t [
 	^ sequences
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> codonTables [
 	" Answer the appropriate <BioCodonTables> for the receiver "
 	
 	^ self alphabet codonTable 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> complement [
 	" Answer a new instance of the receiver's with the complement of the receiver's sequence "
 	
 	^ self newPrototypeWith: self complementary 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> complementary [
 	" Answer a String with the complement of the receiver's sequence "
 	
@@ -573,21 +575,21 @@ BioSequence >> complementary [
 		seq do: [ : nc | stream nextPut: (self complementaryAt: nc) ] ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioSequence >> complementaryAt: aCharacter [
 	" Private - Answer a <Character> with the receiver's complement for aCharacter "
 	
 	^ self alphabet complementaryTable at: aCharacter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> contents [
 	" Compatibility with #dumpToFileNamed: . Answer the receiver's sequence <String> "
 
 	^ self sequence.
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 BioSequence >> copyFrom: startInteger [
 	" Answer a copy of the receiver sliced from startInteger position up to the last position.
 	The startInteger and endInteger are inclusive, i.e. #copyFrom: 1 to: 2 answer the first two bases of the sequence. " 
@@ -597,7 +599,7 @@ BioSequence >> copyFrom: startInteger [
 	
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 BioSequence >> copyFrom: startInteger to: endInteger [
 	" Answer a copy of the receiver sliced from startInteger position up to endInteger position.
 	The startInteger and endInteger are inclusive, i.e. #copyFrom: 1 to: 2 answer the first two bases of the sequence. " 
@@ -608,7 +610,7 @@ BioSequence >> copyFrom: startInteger to: endInteger [
 	
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 BioSequence >> copyTo: stopInteger [
 	" Answer a copy of the receiver sliced from the first position up to the stopInteger position.
 	The startInteger and endInteger are inclusive, i.e. #copyFrom: 1 to: 2 answer the first two bases of the sequence. " 
@@ -618,20 +620,20 @@ BioSequence >> copyTo: stopInteger [
 	
 ]
 
-{ #category : #'accessing - checksum' }
+{ #category : 'accessing - checksum' }
 BioSequence >> crc32 [
 	"Answer a <Number> with the CRC checksum (edundancy check) for the receiver's sequence"
 
 	^ CRC crc32FromCollection: self asString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioSequence >> defaultAlphabetClass [
 
 	^ BioAlphabet
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioSequence >> degenerateBasesAsMultibases [
 	" Answer a <String> converting the receiver's degenerate bases in IUPAC notation to non-degenerate codes in the form [G/C] for S for example "
 	
@@ -649,7 +651,7 @@ BioSequence >> degenerateBasesAsMultibases [
 
 ]
 
-{ #category : #'accessing - disambiguation' }
+{ #category : 'accessing - disambiguation' }
 BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 
     currentDFSNode beVisited.
@@ -672,7 +674,7 @@ BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 
 ]
 
-{ #category : #'accessing - disambiguation' }
+{ #category : 'accessing - disambiguation' }
 BioSequence >> disambiguate [
 	" Answer a <Collection> with receiver's sequence disambiguated using IUPAC ambiguity codes "
 	| expandedList startNode |
@@ -683,7 +685,7 @@ BioSequence >> disambiguate [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> do: aClosure [
 	" Evaluate aBlock with each of the receiver's elements as the argument. "
 	
@@ -691,7 +693,7 @@ BioSequence >> do: aClosure [
 
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 BioSequence >> findHotspots [
 	" Answer a <Collection> of the receiver's substrings tokenized by hostspots : [ ] "
 	
@@ -700,7 +702,7 @@ BioSequence >> findHotspots [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> from: start to: stop do: aClosure [
 	" Evaluate aBlock for all elements between start and stop (inclusive). "
 	
@@ -708,7 +710,7 @@ BioSequence >> from: start to: stop do: aClosure [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcContent [
 	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
 
@@ -718,12 +720,12 @@ BioSequence >> gcContent [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcContent: anObject [
 	gcContent := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcContentCalc [
 	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
 	| cCount gCount |	
@@ -739,7 +741,7 @@ BioSequence >> gcContentCalc [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcContentStep: step window: w [
 	" Answer a <Collection> of GC-content regions of window size w by step increments, in percentages. "
 
@@ -763,7 +765,7 @@ BioSequence >> gcContentStep: step window: w [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcContentUppercased [
 	" Answer a <Number> representing the GC-content of the receiver: the percentage of symbols in the string that are 'C' or 'G'. Assume the receiver's sequence is already all uppercased "
 
@@ -781,7 +783,7 @@ BioSequence >> gcContentUppercased [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcSkew [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
@@ -791,12 +793,12 @@ BioSequence >> gcSkew [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcSkew: anObject [
 	gcSkew := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcSkewCalc [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
@@ -805,7 +807,7 @@ BioSequence >> gcSkewCalc [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcSkewCalc: wLength [
 	" Answer a <Collection> with <Float> representing ratios. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength. Answer 0.0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
 	
@@ -831,7 +833,7 @@ BioSequence >> gcSkewCalc: wLength [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> gcSkewInt [
 	" Answer a <Collection> with <Integer>. Calculate receiver's GC skew for each position. Does NOT look at any ambiguous nucleotides. "
 
@@ -847,7 +849,7 @@ BioSequence >> gcSkewInt [
 	^ skews
 ]
 
-{ #category : #'accessing - checksum' }
+{ #category : 'accessing - checksum' }
 BioSequence >> gcg [
 	"Answer a <Number> with the GCG checksum (edundancy check) for the receiver's sequence"
 
@@ -865,7 +867,7 @@ BioSequence >> gcg [
 	^ checksum \\ 10000.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> hasAmbiguousBases [
 	" Answer <true> if receiver contains ambiguity codes "
 	
@@ -873,7 +875,7 @@ BioSequence >> hasAmbiguousBases [
 
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSequence >> hash [
 	" Private - hash is implemented because #= is implemented "
 
@@ -881,21 +883,21 @@ BioSequence >> hash [
 
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 BioSequence >> hotspotRegionsLeft: leftSize right: rightSize [
 	" Answer a <Collection> with the receiver's subcollections such as the left and right flanking regions of a hostpot are at least leftSize and rightSize respectively "
 
 	^ self findHotspots tripleSelect: [ : a : b : c | a size >= leftSize and: [ c size >= rightSize ] ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> indicesOfSubsequence: aBioSequence [
 	" See comment in #indicesOfSubstring: "
 
 	^ self asString indicesOfSubstring: aBioSequence asString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSequence >> initializeAlphabetFrom: aString [
 	" Private - Set the receiver's alphabet guessing from aString
 	or assigning a default if not possible "
@@ -907,7 +909,7 @@ BioSequence >> initializeAlphabetFrom: aString [
 				self defaultAlphabetClass new ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSequence >> initializeWith: aString [
 	" Private - Initialize the receiver's sequence to be aString "
 	
@@ -916,7 +918,7 @@ BioSequence >> initializeWith: aString [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSequence >> initializeWith: aString alphabet: anAlphabet [
 	" Private - Initialize the receiver's sequence to be aString and anAlphabet. Notice the receiver knows how to instantiate the alphabet "
 	
@@ -924,14 +926,14 @@ BioSequence >> initializeWith: aString alphabet: anAlphabet [
 	alphabet := anAlphabet
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isBioSequence [
 	"Answer whether the receiver represents a Biological sequence."
 	
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isDNASequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	
@@ -939,7 +941,7 @@ BioSequence >> isDNASequence [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isEmpty [
 	" Answer <true> if the receiver's sequence string contains no elements "
 	
@@ -947,49 +949,49 @@ BioSequence >> isEmpty [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isMinisatelliteSequence [
 	" Answer <true> if the receiver represents a STR sequence "
 	
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isNil [
 	" Answer <true> if receiver's sequence is nil "
 
 	^ seq isNil
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isProteinSequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	
 	^ self alphabet isProtein and: [ seq isProteinSequence ].
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isRNASequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	
 	^ seq isRNASequence and: [ self alphabet isRNA ].
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isSTRSequence [
 	" Answer <true> if the receiver represents a STR sequence "
 	
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> isSatelliteSequence [
 	" Answer <true> if the receiver represents a classic satellite sequence "
 	
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> kmersCount: patString [
 	" Answer the number of times that k-mers patString appears as substring of the receiver "
 	
@@ -997,14 +999,14 @@ BioSequence >> kmersCount: patString [
 		(self copyFrom: i to: i + patString size - 1) sequence = patString ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> kmersCount: patString mismatches: d [
 	" Answer the number of times that k-mers patString appears as substring of the receiver allowing d mismatches "
 	
 	^ (self sequence indicesOfSubstring: patString mismatches: d) size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> lcc [
 	"Answer a <Collection> of <Float> with the Local Composition Complexity (LCC) value for the receiver. Assume the receiver is unambiguous sequence "
 
@@ -1022,7 +1024,7 @@ BioSequence >> lcc [
 	^ lccValues
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> lccWSize: wsize [
 
 	| l4 compone lccsal window cant_a cant_c cant_t cant_g term_a term_c term_t term_g tail |
@@ -1162,14 +1164,14 @@ BioSequence >> lccWSize: wsize [
 		^ lccsal.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> length [
 	" Answer how many bases contains the receiver "
 	
 	^ self size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> longestConsecutive: aCharacter [
 	" Answer the length of the longest substring containing only letter for each element of aCharacter.
 	
@@ -1192,7 +1194,7 @@ BioSequence >> longestConsecutive: aCharacter [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> minGCSkewInt [
 	" Answer a <Collection> with all the positions where the GC skew reaches its minimum position "
 	
@@ -1204,7 +1206,7 @@ BioSequence >> minGCSkewInt [
 	^ minGCs
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> molecularWeightDegen [
 
 	| lowerBoundsSequence upperBoundsSequence |
@@ -1241,7 +1243,7 @@ BioSequence >> molecularWeightDegen [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> molecularWeightNonDegen [
 
 	| dict |
@@ -1253,7 +1255,7 @@ BioSequence >> molecularWeightNonDegen [
 		((dict at: $C) * 289.18) + 17.01.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> mostFrequentKmer: k [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k "
 
@@ -1273,7 +1275,7 @@ BioSequence >> mostFrequentKmer: k [
 	^ maxKmers.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> mostFrequentKmer: k mismatches: d [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k allowing mismatches of size d "
 	" Frequent Words with Mismatches Problem
@@ -1291,7 +1293,7 @@ BioSequence >> mostFrequentKmer: k mismatches: d [
 	^ counter maxElements
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> mostFrequentKmerRevComp: k mismatches: d [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k allowing mismatches of size d "
 	" Frequent Words with Mismatches Problem
@@ -1310,19 +1312,19 @@ BioSequence >> mostFrequentKmerRevComp: k mismatches: d [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> name [
 
 	^ name
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> name: anObject [
 	name := anObject
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioSequence >> newPrototypeWith: aString [
 	" Private - Note that you cannot copy because Sequence objects are not mutable "
 	
@@ -1331,21 +1333,21 @@ BioSequence >> newPrototypeWith: aString [
 			alphabet: self alphabet
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSequence >> notEmpty [
 	" Answer <true> if the receiver's sequence string contains elements "
 	
 	^ seq notEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> occurrencesOf: aCharacter [
 	" Answer how many of the receiver's elements are equal to aLetter "
 	
 	^ seq asUppercase occurrencesOf: aCharacter asAminoacidLetter asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> occurrencesOfLetters [
 	" Answer a <Dictionary> of occurrence mappings for the receiver "
 	
@@ -1359,7 +1361,7 @@ BioSequence >> occurrencesOfLetters [
 	^ occurrences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> positionsOf: aCharacterOrString [
 	" Answer a Collection with the positions of aminoacidLetter in the receiver's sequence "
 	
@@ -1373,7 +1375,7 @@ BioSequence >> positionsOf: aCharacterOrString [
 	^ positions
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioSequence >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -1387,14 +1389,14 @@ BioSequence >> printOn: aStream [
 			nextPutAll: seq asString between: $[  and: $] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> randomLength: size [
 	" See comment in randomLength:for: "
 	
 	^ self randomLength: size for: self alphabet class
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> randomLength: size for: anAlphabetClass [
 	" This method modifies the receiver. Set the receiver configured with random residues accordingly anAlphabetClass "
 	
@@ -1409,28 +1411,28 @@ BioSequence >> randomLength: size for: anAlphabetClass [
 								nextPutAll: b asString ] ].
 ]
 
-{ #category : #'accessing - sequence record' }
+{ #category : 'accessing - sequence record' }
 BioSequence >> removeSeqFeature: aBioSequenceFeature [
 	" Remove aBioSequenceFeature from the receiver "
 	
 	self sequenceFeatures remove: aBioSequenceFeature
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> reverseComplement [
 	" Answer a copy of the receiver's sequence complemented and with element order reversed "
 	
 	^ self complement reversed
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> reversed [
 	" Answer a copy of the receiver with element order reversed "
 	
 	^ self newPrototypeWith: seq reversed
 ]
 
-{ #category : #'accessing - checksum' }
+{ #category : 'accessing - checksum' }
 BioSequence >> seguid [
 	"Answer a <Number> with the SEquence Globally Unique IDentifier checksum (edundancy check) for the receiver's sequence"
 
@@ -1450,27 +1452,27 @@ BioSequence >> seguid [
 	 ^ id copyFrom: 1 to: id size - 1.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> sequence [
 	" Answer a <String> representing the receiver's sequence "
 
 	^ seq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> sequence: aString [
 	" Set the receiver's sequence to be aString "
 	seq := aString
 ]
 
-{ #category : #'accessing - sequence record' }
+{ #category : 'accessing - sequence record' }
 BioSequence >> sequenceFeatures [
 	" Answer a <Collection> of <BioSequenceFeature>, the receiver's sequence features "
 
 	^ self sequenceRecord sequenceFeatures
 ]
 
-{ #category : #'accessing - sequence record' }
+{ #category : 'accessing - sequence record' }
 BioSequence >> sequenceRecord [
 	" Answer the receiver's <BioSeqRecord> "
 
@@ -1478,19 +1480,19 @@ BioSequence >> sequenceRecord [
 		ifNil: [ sequenceRecord := BioSeqRecord new: self ]
 ]
 
-{ #category : #'accessing - sequence record' }
+{ #category : 'accessing - sequence record' }
 BioSequence >> sequenceRecord: anObject [
 	sequenceRecord := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> size [
 	" Answer how many symbols the receiver contains "
 	
 	^ seq size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> sizeExcludeTerminals [
 	"Answer how many symbols (bases or amino acids) contains the receiver, excluding stop/terminal letters (like $*) "
 	
@@ -1503,14 +1505,14 @@ BioSequence >> sizeExcludeTerminals [
 	^ count
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> splitByCodons [
 	"Answer a <Collection> with the receiver splitted at stop codons"
 	
 	^ self sequence findTokens: $*
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioSequence >> stopSymbol [
 	" Answer a terminator <Character> "
 	
@@ -1518,7 +1520,7 @@ BioSequence >> stopSymbol [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> subSeqFrom: startInteger to: endInteger [
 	" Answer the <String> in the receiver's sequence from startInteger to endInteger.
 	startInteger cannot be larger than endInteger, otherwise raise an Exception "
@@ -1528,13 +1530,13 @@ BioSequence >> subSeqFrom: startInteger to: endInteger [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> tmStaluc [
 
 	self shouldBeImplemented
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> transcribe [
 	" Answer a new instance of the receiver's with the receiver's sequence transcribed to its corresponding mRNA, adjusting the alphabet "
 	
@@ -1549,14 +1551,14 @@ BioSequence >> transcribe [
 
 ]
 
-{ #category : #'accessing private - protein synthesis' }
+{ #category : 'accessing private - protein synthesis' }
 BioSequence >> transcription [ 
 	" Answer a <String> with the transcription of the receiver's sequence "
 	
 	^ seq asUppercase copyReplaceAll: 'T' with: 'U'
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> translate [
 	"Answer a new instance of the receiver's with the receiver's sequence translated to its corresponding Protein, adjusting the alphabet. Use the defaults.
 	See comment in #translateTable:stopSymbol:toStop:cds:"
@@ -1570,7 +1572,7 @@ BioSequence >> translate [
 
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> translateToStop [
 	" Answer a new instance of the receiver's with the receiver's sequence translated to its corresponding Protein, adjusting the alphabet. Use the defaults.
 	See comment in #translateTable:stopSymbol:toStop:cds: "
@@ -1584,7 +1586,7 @@ BioSequence >> translateToStop [
 
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> translateWithTableId: tableIdentifier [
 	" Answer a new instance of the receiver's with the receiver's sequence translated to its corresponding Protein, adjusting the alphabet. Use the defaults.
 	See comment in #translateTable:stopSymbol:toStop:cds: "
@@ -1598,7 +1600,7 @@ BioSequence >> translateWithTableId: tableIdentifier [
 
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> translateWithTableId: tableIdentifier stopSymbol: stopCharacter [
 	" Answer a new instance of the receiver's with the receiver's sequence translated to its corresponding Protein, adjusting the alphabet. Use the defaults.
 	See comment in #translateTable:stopSymbol:toStop:cds: "
@@ -1612,7 +1614,7 @@ BioSequence >> translateWithTableId: tableIdentifier stopSymbol: stopCharacter [
 
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioSequence >> translateWithTableId: aTableIdentifier stopSymbol: stopCharacter toStop: stopBoolean cds: cdsBoolean [
 	" Answer a new instance of the receiver's with the receiver's sequence translated to its corresponding Protein, adjusting the alphabet. 
 
@@ -1646,7 +1648,7 @@ BioSequence >> translateWithTableId: aTableIdentifier stopSymbol: stopCharacter 
 
 ]
 
-{ #category : #'accessing private - protein synthesis' }
+{ #category : 'accessing private - protein synthesis' }
 BioSequence >> translationTable: aTableIdentifier stopSymbol: stopCharacter toStop: stopBoolean cds: cdsBoolean [
 	<lint: 'Long methods' rationale: 'Algorithm method' author: 'HernanMoralesDurand'>
 	
@@ -1670,14 +1672,14 @@ BioSequence >> translationTable: aTableIdentifier stopSymbol: stopCharacter toSt
 	
 ]
 
-{ #category : #'accessing public - utils' }
+{ #category : 'accessing public - utils' }
 BioSequence >> trim: aCharacter [
 	" Modify the receiver by removing aCharacter in its sequence "
 	
 	seq := seq copyWithout: aCharacter.
 ]
 
-{ #category : #'accessing public - utils' }
+{ #category : 'accessing public - utils' }
 BioSequence >> trimAmbiguityCodes [
 	" This method modifies the receiver. Trim off all ambiguity codes "
 	
@@ -1686,7 +1688,7 @@ BioSequence >> trimAmbiguityCodes [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> truncateFrom: startInteger [
 	" Modify the receiver slicing the sequence from startInteger position up to the last position.
 	The startInteger is inclusive " 
@@ -1698,7 +1700,7 @@ BioSequence >> truncateFrom: startInteger [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> truncateFrom: startInteger to: endInteger [
 	" Modify the receiver slicing the sequence from startInteger position up to endInteger position.
 	The startInteger and endInteger are inclusive, i.e. #copyFrom: 1 to: 2 answer the first two bases of the sequence. " 
@@ -1710,7 +1712,7 @@ BioSequence >> truncateFrom: startInteger to: endInteger [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequence >> truncateTo: endInteger [
 	" Modify the receiver slicing the sequence from the beggining up to endInteger position.
 	The endInteger is inclusive, " 

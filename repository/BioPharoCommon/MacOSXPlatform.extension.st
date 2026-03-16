@@ -1,6 +1,6 @@
-Extension { #name : #MacOSXPlatform }
+Extension { #name : 'MacOSXPlatform' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 MacOSXPlatform >> execNameFor: aString [
 	" Private - See superimplementor's comment "
 	

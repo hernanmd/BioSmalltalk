@@ -1,52 +1,54 @@
 Class {
-	#name : #BioExon,
-	#superclass : #BioSequenceFeature,
+	#name : 'BioExon',
+	#superclass : 'BioSequenceFeature',
 	#instVars : [
 		'gene',
 		'type',
 		'transcripts'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #adding }
+{ #category : 'adding' }
 BioExon >> addTranscript: aBioTranscript [
 
 	self transcripts add: aBioTranscript
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> gene [
 
 	^ gene
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> gene: anObject [
 
 	gene := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> transcripts [
 
 	^ transcripts
 		ifNil: [ transcripts := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> transcripts: anObject [
 
 	transcripts := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> type [
 
 	^ type
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioExon >> type: anObject [
 
 	type := anObject

@@ -3,26 +3,28 @@ Nucleotide alphabet only including A,C,G,T without additional codes such as (N)o
 
 "
 Class {
-	#name : #BioDNAAlphabet,
-	#superclass : #BioComplementaryAlphabet,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioDNAAlphabet',
+	#superclass : 'BioComplementaryAlphabet',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDNAAlphabet class >> ambiguityCodes [
 	" See superimplementor's comment "
 	
 	^ String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDNAAlphabet class >> codes [
 	" See superimplementor's comment "
 	
 	^ 'ACGT'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDNAAlphabet class >> complementaryCases [
 	" Private - Uppercase and lowercase versions are included to preserve the case, which avoids case conversion and could be useful to distinguish sequence regions "
 	<lint: 'Literal array contains only characters' rationale: 'Nucleotide method' author: 'HernanMoralesDurand'>
@@ -30,14 +32,14 @@ BioDNAAlphabet class >> complementaryCases [
 	^ #($A $T $T $A $C $G $G $C $a $t $t $a $c $g $g $c)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioDNAAlphabet >> isDNA [
 	" Private - See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioDNAAlphabet >> printOn: aStream [
 	" See superimplementor's comment "
 	

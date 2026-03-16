@@ -1,16 +1,18 @@
 Class {
-	#name : #BioRNACodonTables,
-	#superclass : #BioCodonTables,
-	#category : 'BioTools-Biological'
+	#name : 'BioRNACodonTables',
+	#superclass : 'BioCodonTables',
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeFlatwormMitochondrialId [
 	
 	^ 9
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeFlatwormMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -30,7 +32,7 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeFlatwormMitochondrialTableNames [
 	
 	^ OrderedCollection 
@@ -39,19 +41,19 @@ BioRNACodonTables class >> alternativeFlatwormMitochondrialTableNames [
 		with: 'SGC8'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeFlatwormMitochondrialTableStartCodons [
 	
 	^ OrderedCollection with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeFlatwormMitochondrialTableStopCodons [
 	
 	^ OrderedCollection with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeYeastNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	
@@ -71,20 +73,20 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeYeastNuclearTableId [
 	
 	^ 12
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeYeastNuclearTableNames [
 	
 	^ OrderedCollection 
 		with: 'Alternative Yeast Nuclear'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeYeastNuclearTableStartCodons [
 	
 	^ OrderedCollection
@@ -92,7 +94,7 @@ BioRNACodonTables class >> alternativeYeastNuclearTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> alternativeYeastNuclearTableStopCodons [
 	
 	^ OrderedCollection
@@ -101,7 +103,7 @@ BioRNACodonTables class >> alternativeYeastNuclearTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ascidianMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -121,20 +123,20 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ascidianMitochondrialTableId [
 	
 	^ 13
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ascidianMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Ascidian Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ascidianMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -144,7 +146,7 @@ BioRNACodonTables class >> ascidianMitochondrialTableStartCodons [
 		with: 'GUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ascidianMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -152,7 +154,7 @@ BioRNACodonTables class >> ascidianMitochondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> bacterialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -172,20 +174,20 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> bacterialTableId [
 	
 	^ 11
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> bacterialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Bacterial and Plant Plastid'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> bacterialTableStartCodons [
 	
 	^ OrderedCollection new 
@@ -193,7 +195,7 @@ BioRNACodonTables class >> bacterialTableStartCodons [
 		yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> bacterialTableStopCodons [
 	
 	^ OrderedCollection
@@ -202,7 +204,7 @@ BioRNACodonTables class >> bacterialTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> blepharismaMacronuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
@@ -223,14 +225,14 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> blepharismaMacronuclearTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 15
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> blepharismaMacronuclearTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -238,7 +240,7 @@ BioRNACodonTables class >> blepharismaMacronuclearTableNames [
 		with: 'Blepharisma Macronuclear'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> blepharismaMacronuclearTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -246,7 +248,7 @@ BioRNACodonTables class >> blepharismaMacronuclearTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> blepharismaMacronuclearTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -255,7 +257,7 @@ BioRNACodonTables class >> blepharismaMacronuclearTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> chlorophyceanMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -276,14 +278,14 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> chlorophyceanMitochondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 16
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> chlorophyceanMitochondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -291,7 +293,7 @@ BioRNACodonTables class >> chlorophyceanMitochondrialTableNames [
 		with: 'Chlorophycean Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> chlorophyceanMitochondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -299,7 +301,7 @@ BioRNACodonTables class >> chlorophyceanMitochondrialTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> chlorophyceanMitochondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -308,7 +310,7 @@ BioRNACodonTables class >> chlorophyceanMitochondrialTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ciliateNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -328,13 +330,13 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ciliateNuclearTableId [
 	
 	^ 6
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ciliateNuclearTableNames [
 	
 	^ OrderedCollection 
@@ -345,21 +347,21 @@ BioRNACodonTables class >> ciliateNuclearTableNames [
 		
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ciliateNuclearTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> ciliateNuclearTableStopCodons [
 	
 	^ OrderedCollection
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> echinodermMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	
@@ -379,13 +381,13 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> echinodermMitochondrialTableId [
 	
 	^ 9
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> echinodermMitochondrialTableNames [
 	
 	^ OrderedCollection 
@@ -394,7 +396,7 @@ BioRNACodonTables class >> echinodermMitochondrialTableNames [
 		with: 'SGC8'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> echinodermMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -402,7 +404,7 @@ BioRNACodonTables class >> echinodermMitochondrialTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> echinodermMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -410,7 +412,7 @@ BioRNACodonTables class >> echinodermMitochondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> euplotidNuclearTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -430,13 +432,13 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> euplotidNuclearTableId [
 	
 	^ 10
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> euplotidNuclearTableNames [
 	
 	^ OrderedCollection 
@@ -444,14 +446,14 @@ BioRNACodonTables class >> euplotidNuclearTableNames [
 		with: 'SGC9'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> euplotidNuclearTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> euplotidNuclearTableStopCodons [
 	
 	^ OrderedCollection
@@ -459,7 +461,7 @@ BioRNACodonTables class >> euplotidNuclearTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioRNACodonTables class >> initialize [
 	" Private - Initialize receiver's codon tables "
 	| tablesCount tableSelectors startIndex |
@@ -474,7 +476,7 @@ BioRNACodonTables class >> initialize [
 		startIndex := startIndex + 5 ]
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> invertebrateMitocondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -495,14 +497,14 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> invertebrateMitocondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 5
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> invertebrateMitocondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -511,7 +513,7 @@ BioRNACodonTables class >> invertebrateMitocondrialTableNames [
 		with: 'SGC4'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> invertebrateMitocondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -524,7 +526,7 @@ BioRNACodonTables class >> invertebrateMitocondrialTableStartCodons [
 		with: 'GUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> invertebrateMitocondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -533,7 +535,7 @@ BioRNACodonTables class >> invertebrateMitocondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> protozoanMitocondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -542,14 +544,14 @@ BioRNACodonTables class >> protozoanMitocondrialTable [
 add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UCU'-> 'S'; add: 'UCC'-> 'S'; add: 'UCA'-> 'S'; add: 'UCG'-> 'S'; add: 'UAU'-> 'Y'; add: 'UAC'-> 'Y'; add: 'UGU'-> 'C'; add: 'UGC'-> 'C'; add: 'UGA'-> 'W'; add: 'UGG'-> 'W'; add: 'CUU'-> 'L'; add: 'CUC'-> 'L'; add: 'CUA'-> 'L'; add: 'CUG'-> 'L'; add: 'CCU'-> 'P'; add: 'CCC'-> 'P'; add: 'CCA'-> 'P'; add: 'CCG'-> 'P'; add: 'CAU'-> 'H'; add: 'CAC'-> 'H'; add: 'CAA'-> 'Q'; add: 'CAG'-> 'Q'; add: 'CGU'-> 'R'; add: 'CGC'-> 'R'; add: 'CGA'-> 'R'; add: 'CGG'-> 'R'; add: 'AUU'-> 'I'; add: 'AUC'-> 'I'; add: 'AUA'-> 'I'; add: 'AUG'-> 'M'; add: 'ACU'-> 'T'; add: 'ACC'-> 'T'; add: 'ACA'-> 'T'; add: 'ACG'-> 'T'; add: 'AAU'-> 'N'; add: 'AAC'-> 'N'; add: 'AAA'-> 'K'; add: 'AAG'-> 'K'; add: 'AGU'-> 'S'; add: 'AGC'-> 'S'; add: 'AGA'-> 'R'; add: 'AGG'-> 'R'; add: 'GUU'-> 'V'; add: 'GUC'-> 'V'; add: 'GUA'-> 'V'; add: 'GUG'-> 'V'; add: 'GCU'-> 'A'; add: 'GCC'-> 'A'; add: 'GCA'-> 'A'; add: 'GCG'-> 'A'; add: 'GAU'-> 'D'; add: 'GAC'-> 'D'; add: 'GAA'-> 'E'; add: 'GAG'-> 'E'; add: 'GGU'-> 'G'; add: 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> protozoanMitocondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 4
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> protozoanMitocondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -562,7 +564,7 @@ BioRNACodonTables class >> protozoanMitocondrialTableNames [
 		with: 'SGC3'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> protozoanMitocondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -571,7 +573,7 @@ BioRNACodonTables class >> protozoanMitocondrialTableStartCodons [
 			yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> protozoanMitocondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 	
@@ -580,7 +582,7 @@ BioRNACodonTables class >> protozoanMitocondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> scenedesmusObliquusMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	
@@ -600,27 +602,27 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> scenedesmusObliquusMitochondrialTableId [
 	
 	^ 22
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> scenedesmusObliquusMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Scenedesmus obliquus Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> scenedesmusObliquusMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> scenedesmusObliquusMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -629,7 +631,7 @@ BioRNACodonTables class >> scenedesmusObliquusMitochondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> standardTable [
 	" Answer the NCBI standard codon table for DNA"
 	
@@ -698,14 +700,14 @@ BioRNACodonTables class >> standardTable [
 	yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> standardTableId [
 	" Answer the NCBI standard codon table ID for DNA"
 	
 	^ 1
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> standardTableNames [
 	" Answer the NCBI standard codon table for DNA"
 	
@@ -714,7 +716,7 @@ BioRNACodonTables class >> standardTableNames [
 		with: 'SGC0'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> standardTableStartCodons [
 	" Answer the NCBI standard codon table start codons for DNA"
 	
@@ -724,7 +726,7 @@ BioRNACodonTables class >> standardTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> standardTableStopCodons [
 	" Answer the NCBI standard codon table stop codons for DNA"
 	
@@ -734,7 +736,7 @@ BioRNACodonTables class >> standardTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> thraustochytriumMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -754,14 +756,14 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUG'-> 'L'; add: 'UCU'-> 'S'; add: 'UC
 'GAG'-> 'E'; add: 'GGU'-> 'G'; add: 'GGC'-> 'G'; add: 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> thraustochytriumMitochondrialTableId [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
 	^ 23
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> thraustochytriumMitochondrialTableNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -769,7 +771,7 @@ BioRNACodonTables class >> thraustochytriumMitochondrialTableNames [
 		with: 'Thraustochytrium Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> thraustochytriumMitochondrialTableStartCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -779,7 +781,7 @@ BioRNACodonTables class >> thraustochytriumMitochondrialTableStartCodons [
 		with: 'GUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> thraustochytriumMitochondrialTableStopCodons [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
 
@@ -790,7 +792,7 @@ BioRNACodonTables class >> thraustochytriumMitochondrialTableStopCodons [
 		with: 'UGA'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> trematodeMitochondrialTable [
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
 
@@ -810,20 +812,20 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 'GGA'-> 'G'; add: 'GGG'-> 'G'; yourself
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> trematodeMitochondrialTableId [
 	
 	^ 21
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> trematodeMitochondrialTableNames [
 	
 	^ OrderedCollection 
 		with: 'Trematode Mitochondrial'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> trematodeMitochondrialTableStartCodons [
 	
 	^ OrderedCollection
@@ -831,7 +833,7 @@ BioRNACodonTables class >> trematodeMitochondrialTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> trematodeMitochondrialTableStopCodons [
 	
 	^ OrderedCollection
@@ -839,7 +841,7 @@ BioRNACodonTables class >> trematodeMitochondrialTableStopCodons [
 		with: 'UAG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> vertebrateMitocondrialTable [
 	" Answer the NCBI vertebrate mitochondrial codon table for DNA"
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
@@ -909,7 +911,7 @@ BioRNACodonTables class >> vertebrateMitocondrialTable [
 	yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> vertebrateMitocondrialTableId [
 	" Answer the NCBI VM table ID "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -917,7 +919,7 @@ BioRNACodonTables class >> vertebrateMitocondrialTableId [
 	^ 2
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> vertebrateMitocondrialTableNames [
 	" Answer the NCBI VM codon table names for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -927,7 +929,7 @@ BioRNACodonTables class >> vertebrateMitocondrialTableNames [
 		with: 'SGC1'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> vertebrateMitocondrialTableStartCodons [
 	" Answer the NCBI VM codon table start codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -940,7 +942,7 @@ BioRNACodonTables class >> vertebrateMitocondrialTableStartCodons [
 		with: 'GUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> vertebrateMitocondrialTableStopCodons [
 	" Answer the NCBI VM codon table stop codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -952,7 +954,7 @@ BioRNACodonTables class >> vertebrateMitocondrialTableStopCodons [
 		with: 'AGG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> yeastMitocondrialTable [
 	" Answer the NCBI yeast mitochondrial codon table for DNA"
 	<lint: 'Sends add:/remove: to external collection' rationale: 'No external collection' author: 'HernanMoralesDurand'>
@@ -963,7 +965,7 @@ add: 'UUU'-> 'F'; add: 'UUC'-> 'F'; add: 'UUA'-> 'L'; add: 'UUG'-> 'L'; add: 'UC
 	yourself.
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> yeastMitocondrialTableId [
 	" Answer the NCBI yeast table ID "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -971,7 +973,7 @@ BioRNACodonTables class >> yeastMitocondrialTableId [
 	^ 3
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> yeastMitocondrialTableNames [
 	" Answer the NCBI standard codon table for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -981,7 +983,7 @@ BioRNACodonTables class >> yeastMitocondrialTableNames [
 		with: 'SGC2'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> yeastMitocondrialTableStartCodons [
 	" Answer the NCBI yeast codon table start codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -991,7 +993,7 @@ BioRNACodonTables class >> yeastMitocondrialTableStartCodons [
 		with: 'AUG'
 ]
 
-{ #category : #tables }
+{ #category : 'tables' }
 BioRNACodonTables class >> yeastMitocondrialTableStopCodons [
 	" Answer the NCBI VM codon table stop codons for DNA"
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>

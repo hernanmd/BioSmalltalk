@@ -1,10 +1,12 @@
 Class {
-	#name : #BioMutableSeqTest,
-	#superclass : #BioAbstractSequenceTest,
-	#category : #'BioTools-Tests-Biological'
+	#name : 'BioMutableSeqTest',
+	#superclass : 'BioAbstractSequenceTest',
+	#category : 'BioTools-Tests-Biological',
+	#package : 'BioTools-Tests',
+	#tag : 'Biological'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMutableSeqTest >> testAppend [
 	| testMutSeq1 |
 	testMutSeq1 := BioMutableSeq new.
@@ -14,7 +16,7 @@ BioMutableSeqTest >> testAppend [
 	self assert: testMutSeq1 asString equals: 'ACTGACGTACACGT'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMutableSeqTest >> testAsSequence [
 
 	| testMutSeq1 testSeq1 |
@@ -27,7 +29,7 @@ BioMutableSeqTest >> testAsSequence [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMutableSeqTest >> testSetSequence [
 
 	| testMutSeq1 |

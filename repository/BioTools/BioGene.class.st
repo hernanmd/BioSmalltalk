@@ -3,8 +3,8 @@ Represents a gene. A gene could be represented as a string of DNA encoding for a
 
 "
 Class {
-	#name : #BioGene,
-	#superclass : #BioNamedObject,
+	#name : 'BioGene',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'chromosome',
 		'proteins',
@@ -14,59 +14,61 @@ Class {
 		'unigeneClusterID',
 		'sequences'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioGene >> = aBioGene [
 	" Answer <true> if receiver's is equal to aBioGene "
 	
 	^ self class = aBioGene class
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> chromosome [
 	" Answer the receiver's <BioChromosome> "
 
 	^ chromosome
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> chromosome: anObject [
 	chromosome := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> ensemblGeneID [
 	^ ensemblGeneID
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> ensemblGeneID: anObject [
 	ensemblGeneID := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> entrezGeneID [
 	^ entrezGeneID
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> entrezGeneID: anObject [
 	entrezGeneID := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> geneBankAccession [
 	^ geneBankAccession
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> geneBankAccession: anObject [
 	geneBankAccession := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> proteins [
 	" Answer a <Collection> of reciever's protein "
 
@@ -74,27 +76,27 @@ BioGene >> proteins [
 		ifNil: [ proteins := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> proteins: anObject [
 	proteins := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> sequences [
 	^ sequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> sequences: anObject [
 	sequences := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> unigeneClusterID [
 	^ unigeneClusterID
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGene >> unigeneClusterID: anObject [
 	unigeneClusterID := anObject
 ]

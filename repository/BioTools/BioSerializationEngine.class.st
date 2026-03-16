@@ -2,16 +2,18 @@
 BioSerializationEngine is the superclass for all known serializers. Behavior of serializers includes materialization and compression (compression is not implemented currently).
 "
 Class {
-	#name : #BioSerializationEngine,
-	#superclass : #BioAbstractAdapter,
+	#name : 'BioSerializationEngine',
+	#superclass : 'BioAbstractAdapter',
 	#instVars : [
 		'doCompression',
 		'location'
 	],
-	#category : #'BioTools-Adapters'
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSerializationEngine class >> for: locationString [
 
 	^ self adapterClass new 
@@ -21,7 +23,7 @@ BioSerializationEngine class >> for: locationString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine class >> materialize: aLocationString [
 
 	| materialization |
@@ -33,7 +35,7 @@ BioSerializationEngine class >> materialize: aLocationString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine class >> serialize: anObject [
 	" Check and correct, if necessary, anObject's name before serializing into a file "
 
@@ -49,37 +51,37 @@ BioSerializationEngine class >> serialize: anObject [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine >> doCompression [
 
 	^ doCompression
 		ifNil: [ doCompression := false ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine >> doCompression: anObject [
 	doCompression := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine >> doCompressionIn: aFilename [
 
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSerializationEngine >> isValidMaterialization [
 	" Answer <true> if the receiver's location is valid for materialization "
 
 	^ self location asFileReference isFuel
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine >> location [
 	^ location
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSerializationEngine >> location: anObject [
 	location := anObject
 ]

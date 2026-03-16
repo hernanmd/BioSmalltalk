@@ -8,8 +8,8 @@ Abstract class to represent repetitive sequences.
 
 "
 Class {
-	#name : #BioRepeatSequence,
-	#superclass : #BioSequence,
+	#name : 'BioRepeatSequence',
+	#superclass : 'BioSequence',
 	#instVars : [
 		'genotype',
 		'repeats',
@@ -18,10 +18,12 @@ Class {
 		'maxMotifSize',
 		'minMotifSize'
 	],
-	#category : #'BioTools-Repeats'
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRepeatSequence class >> name: nameString sequence: seqString motif: motifString repeats: repNumber [
 	" Answer a new object representing a tandem repeat sequence "
 	
@@ -31,7 +33,7 @@ BioRepeatSequence class >> name: nameString sequence: seqString motif: motifStri
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRepeatSequence class >> name: nameString sequence: seqString motif: motifString repeats: repNumber repeatStartPosition: repStartNumber [
 	" Answer a new object representing a tandem repeat sequence "
 	
@@ -42,7 +44,7 @@ BioRepeatSequence class >> name: nameString sequence: seqString motif: motifStri
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRepeatSequence class >> newLocus: aBioLocus markers: anObject [
 	" Answer a new object representing a Microsatellite marker "
 	
@@ -52,7 +54,7 @@ BioRepeatSequence class >> newLocus: aBioLocus markers: anObject [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRepeatSequence class >> newMotif: motifString repeats: repNumber [
 	" Answer a new object representing a tandem repeat sequence "
 	
@@ -62,7 +64,7 @@ BioRepeatSequence class >> newMotif: motifString repeats: repNumber [
 		yourself
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioRepeatSequence >> asString [
 	" Answer a <String> with the receiver's sequence "
 	
@@ -70,33 +72,33 @@ BioRepeatSequence >> asString [
 
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioRepeatSequence >> beCompoundRepeat [
 
 	self repeatStructure: #compound
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioRepeatSequence >> beSimpleRepeat [
 
 	self repeatStructure: #simple
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> end [
 	" Answer an <Integer> with the receiver's genotype end position "
 	
 	^ self genotype end
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> end: anObject [
 	" Set anObject as the receiver's genotype end position "
 	
 	^ self genotype end:  (self validatePosition: anObject)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> genotype [
 	" Answer a <BioGenotype> representing the receiver's genotype "
 
@@ -104,48 +106,48 @@ BioRepeatSequence >> genotype [
 		ifNil: [ genotype := BioGenotype new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> genotype: aBioGenotype [
 
 	genotype := aBioGenotype
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioRepeatSequence >> isCompoundRepeat [
 	" Answer <true> if receiver repeat structure is compound "
 
 	^ self repeatStructure = #compound
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioRepeatSequence >> isSimpleRepeat [
 	" Answer <true> if receiver repeat structure is simple "
 
 	^ self repeatStructure = #simple
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> locus [
 	" Answer the receiver's <BioLocus> "
 
 	^ locus
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> locus: aBioLocus [
 	" Set the receiver's locus to aBioLocus "
 	
 	locus := aBioLocus
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> locusName [
 	" Answer a <String> with receiver's locus name "
 	
 	^ self locus name
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioRepeatSequence >> maxMotifSize [
 	" See comment in #defaultMotifRange "
 	
@@ -153,7 +155,7 @@ BioRepeatSequence >> maxMotifSize [
 		ifNil: [ maxMotifSize := self defaultMaxMotifSize ]
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioRepeatSequence >> minMotifSize [
 	" See comment in #defaultMotifRange "
 	
@@ -161,14 +163,14 @@ BioRepeatSequence >> minMotifSize [
 		ifNil: [ minMotifSize := self defaultMinMotifSize ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> motif [
 	" See comment in #sequence "
 
 	^ self sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> motif: aString [
 	" See comment in #sequence: "
 	
@@ -176,7 +178,7 @@ BioRepeatSequence >> motif: aString [
 	self sequence: aString
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioRepeatSequence >> motifRange [
 	" Answer an <Interval> representing the size range allowed for the receiver, using as reference: Microsatellite definition at the US National Library of Medicine Medical Subject Headings (MeSH) "
 
@@ -184,7 +186,7 @@ BioRepeatSequence >> motifRange [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> motifSize [
 	" Answer a <Number> with the size of the repeat motif "
 	
@@ -192,26 +194,26 @@ BioRepeatSequence >> motifSize [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRepeatSequence >> nullValue [
 
 	^ 9 negated
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> positions [
 	" Answer an <Association> with receiver's allelic positions "
 
 	^ self start -> self end 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> positions: anObject [
 	
 	anObject setMicrosatelliteGenotypeFor: self
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioRepeatSequence >> printOn: aStream [
     " Private - See superimplementor's comment "
    
@@ -235,42 +237,42 @@ BioRepeatSequence >> printOn: aStream [
 
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioRepeatSequence >> repeatStructure [
 	^ repeatStructure
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioRepeatSequence >> repeatStructure: aSymbol [
 
 	repeatStructure := aSymbol
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> repeats [
 	^ repeats
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> repeats: anObject [
 	repeats := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> start [
 	" Answer an <Integer> with the receiver's genotype start position "
 	
 	^ self genotype start
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRepeatSequence >> start: anObject [
 	" Set anObject as the receiver's genotype start position "
 	
 	^ self genotype start: (self validatePosition: anObject)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRepeatSequence >> validatePosition: anObject [
 	" Answer a <Number> matching aString "
 

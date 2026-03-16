@@ -4,9 +4,9 @@ Class {
 	#instVars : [
 		'align'
 	],
-	#category : 'BioTools-Tests-Core',
+	#category : 'BioTools-Tests-Align',
 	#package : 'BioTools-Tests',
-	#tag : 'Core'
+	#tag : 'Align'
 }
 
 { #category : 'accessing' }

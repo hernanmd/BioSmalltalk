@@ -4,6 +4,9 @@ Class {
 	#category : 'BioTools-Tests-Alphabets',
 	#package : 'BioTools-Tests',
 	#tag : 'Alphabets'
+	#instVars : [
+		'alphabet'
+	],
 }
 
 { #category : 'testing' }

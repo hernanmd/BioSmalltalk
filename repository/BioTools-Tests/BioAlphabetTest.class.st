@@ -3,10 +3,10 @@ Class {
 	#superclass : 'BioAbstractTest',
 	#category : 'BioTools-Tests-Alphabets',
 	#package : 'BioTools-Tests',
-	#tag : 'Alphabets'
+	#tag : 'Alphabets',
 	#instVars : [
 		'alphabet'
-	],
+	]
 }
 
 { #category : 'testing' }

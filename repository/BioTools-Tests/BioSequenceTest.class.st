@@ -12,14 +12,14 @@ BioSequenceTest >> alphabetClass [
 	^ BioAlphabet
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testAccessionName [
 
 	self sequence accessionName: 'ABC234.1'.
 	self assert: self sequence accessionName equals: 'ABC234.1'.
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testAddSeqFeature [
 
 	| seqFeature |
@@ -103,13 +103,13 @@ BioSequenceTest >> testAmbiguityCodes [
 	self assert: (sequence ambiguityCodes includes: $N).
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testAminoacidNames [
 
 	self assert: (self sequence aminoacidNames bioHasEqualElements: #('Cysteine' 'Alanine' 'Glycine' 'Threonine' 'Cysteine' 'Alanine' 'Threonine' 'Glycine' 'Cysteine' 'Threonine' 'Alanine' 'Glycine')).
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testAsFastaRecord [
 
 	| fastaRecord |
@@ -301,7 +301,7 @@ BioSequenceTest >> testCopyFromTo [
 
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testDefaultAlphabetClass [
 
 	self assert: (self sequence defaultAlphabetClass isKindOf: BioAlphabet class)
@@ -317,6 +317,63 @@ BioSequenceTest >> testDegenerateBasesAsMultibases [
 	self 
 		assert: '' asDNASequence degenerateBasesAsMultibases 
 		equals: ''
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testDinucleotideFrequencyCountsSlidingWindows [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ATATA'.
+
+	frequencies := seq dinucleotideFrequency.
+
+	self assert: (frequencies at: 'AT') equals: 2.
+	self assert: (frequencies at: 'TA') equals: 2
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testDinucleotideFrequencyDoesNotIncludeAbsentDinucleotides [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'AAAA'.
+
+	frequencies := seq dinucleotideFrequency.
+
+	self assert: frequencies size equals: 1.
+	self assert: (frequencies at: 'AA') equals: 3.
+	self deny: (frequencies includesKey: 'AC')
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testDinucleotideFrequencyEmptyWhenSequenceTooShort [
+
+	| seq |
+	seq := BioSequence newDNA: 'A'.
+
+	self assertEmpty: seq dinucleotideFrequency
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testDinucleotideFrequencySingleWindow [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'AC'.
+
+	frequencies := seq dinucleotideFrequency.
+
+	self assert: frequencies size equals: 1.
+	self assert: (frequencies at: 'AC') equals: 1
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testDinucleotideFrequencySumsToNumberOfWindows [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ACGT'.
+
+	frequencies := seq dinucleotideFrequency.
+
+	self assert: frequencies values sum equals: seq size - 1
 ]
 
 { #category : 'testing' }
@@ -419,7 +476,7 @@ BioSequenceTest >> testHasAmbiguousBases [
 	self assert: seq2 hasAmbiguousBases.
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testHotspotRegionsLeftRight [
 
 	| seq1 hotspotRegions |
@@ -451,7 +508,7 @@ BioSequenceTest >> testIsDNASequence [
 
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testIsEmpty [ 
 
 	self deny: (BioSequence newAmbiguousDNA: self sampleDnaString03) isEmpty.
@@ -676,6 +733,63 @@ BioSequenceTest >> testOccurrencesOfLetters [
 ]
 
 { #category : 'testing' }
+BioSequenceTest >> testOligonucleotideFrequencyCountsNucleotides [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'AAGT'.
+
+	frequencies := seq oligonucleotideFrequency.
+
+	self assert: (frequencies at: 'A') equals: 2.
+	self assert: (frequencies at: 'G') equals: 1.
+	self assert: (frequencies at: 'T') equals: 1
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testOligonucleotideFrequencyDoesNotIncludeAbsentSymbols [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ACAC'.
+
+	frequencies := seq oligonucleotideFrequency.
+
+	self deny: (frequencies includesKey: 'G').
+	self deny: (frequencies includesKey: 'T')
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testOligonucleotideFrequencyOnEmptySequence [
+
+	| seq |
+	seq := BioSequence newDNA: ''.
+
+	self assertEmpty: seq oligonucleotideFrequency
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testOligonucleotideFrequencySumsToSequenceSize [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ACGTAC'.
+
+	frequencies := seq oligonucleotideFrequency.
+
+	self assert: frequencies values sum equals: seq size
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testOligonucleotideFrequencyWithRepeatedSymbol [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'AAAA'.
+
+	frequencies := seq oligonucleotideFrequency.
+
+	self assert: frequencies size equals: 1.
+	self assert: (frequencies at: 'A') equals: 4
+]
+
+{ #category : 'testing' }
 BioSequenceTest >> testPositionsOf [
 
 	| expected |
@@ -759,7 +873,7 @@ BioSequenceTest >> testReversed [
 	self assert: seqTest reversed asString equals: String empty.
 ]
 
-{ #category : 'test' }
+{ #category : 'testing' }
 BioSequenceTest >> testSequenceFeatures [
 
 	self assert: (self sequence sequenceFeatures isKindOf: Collection).
@@ -923,4 +1037,59 @@ BioSequenceTest >> testTranslated [
 
 	self assert: seq3 translate = seq4.
 
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testTrinucleotideFrequencyCountsSlidingWindows [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ATATAT'.
+
+	frequencies := seq trinucleotideFrequency.
+
+	self assert: (frequencies at: 'ATA') equals: 2.
+	self assert: (frequencies at: 'TAT') equals: 2
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testTrinucleotideFrequencyEmptyWhenSequenceTooShort [
+
+	| seq |
+	seq := BioSequence newDNA: 'AT'.
+	self assertEmpty: seq trinucleotideFrequency
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testTrinucleotideFrequencySingleWindow [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ATG'.
+
+	frequencies := seq trinucleotideFrequency.
+
+	self assert: frequencies size equals: 1.
+	self assert: (frequencies at: 'ATG') equals: 1
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testTrinucleotideFrequencySumsToNumberOfWindows [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'ATGCA'.
+
+	frequencies := seq trinucleotideFrequency.
+
+	self assert: frequencies values sum equals: seq size - 2
+]
+
+{ #category : 'testing' }
+BioSequenceTest >> testTrinucleotideFrequencyWithRepeatedTrinucleotide [
+
+	| seq frequencies |
+	seq := BioSequence newDNA: 'AAAAA'.
+
+	frequencies := seq trinucleotideFrequency.
+
+	self assert: frequencies size equals: 1.
+	self assert: (frequencies at: 'AAA') equals: 3
 ]

@@ -223,13 +223,15 @@ BioGenomicRangesTest >> testFromGFF [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testIRangesRejectNegativeWidth [
-	self should: [ BioIRanges starts: #(5) ends: #(4) ] raise: Error
+
+	self should: [ BioIRanges starts: #( 5 ) ends: #( 4 ) ] raise: Error
 ]
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testIRangesWidth [
+
 	| ir |
-	ir := BioIRanges starts: #(2 10) ends: #(4 12).
+	ir := BioIRanges starts: #( 2 10 ) ends: #( 4 12 ).
 	self assert: (ir width at: 1) equals: 3.
 	self assert: (ir width at: 2) equals: 3
 ]
@@ -251,9 +253,20 @@ BioGenomicRangesTest >> testMetadataCanContainObjects [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testOverlapWith [
+
 	| a b c |
-	a := BioGenomicRanges seqnames: #('chr1' 'chr1') starts: #(1 50) ends: #(10 60) strands: #('+' '+') metadata: Dictionary new.
-	b := BioGenomicRanges seqnames: #('chr1') starts: #(5) ends: #(15) strands: #('+') metadata: Dictionary new.
+	a := BioGenomicRanges
+		     seqnames: #( 'chr1' 'chr1' )
+		     starts: #( 1 50 )
+		     ends: #( 10 60 )
+		     strands: #( '+' '+' )
+		     metadata: Dictionary new.
+	b := BioGenomicRanges
+		     seqnames: #( 'chr1' )
+		     starts: #( 5 )
+		     ends: #( 15 )
+		     strands: #( '+' )
+		     metadata: Dictionary new.
 	c := a overlapWith: b.
 	self assert: c size equals: 1.
 	self assert: (c start at: 1) equals: 1
@@ -261,17 +274,28 @@ BioGenomicRangesTest >> testOverlapWith [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testReduceKeepsStrandSeparate [
+
 	| gr red |
-	gr := BioGenomicRanges seqnames: #('chr1' 'chr1') starts: #(1 2) ends: #(5 6) strands: #('+' '-') metadata: Dictionary new.
+	gr := BioGenomicRanges
+		      seqnames: #( 'chr1' 'chr1' )
+		      starts: #( 1 2 )
+		      ends: #( 5 6 )
+		      strands: #( '+' '-' )
+		      metadata: Dictionary new.
 	red := gr reduce.
 	self assert: red size equals: 2
-
 ]
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testReduceMergesAdjacent [
+
 	| gr red |
-	gr := BioGenomicRanges seqnames: #('chr1' 'chr1') starts: #(1 6) ends: #(5 10) strands: #('+' '+') metadata: Dictionary new.
+	gr := BioGenomicRanges
+		      seqnames: #( 'chr1' 'chr1' )
+		      starts: #( 1 6 )
+		      ends: #( 5 10 )
+		      strands: #( '+' '+' )
+		      metadata: Dictionary new.
 	red := gr reduce.
 	self assert: red size equals: 1.
 	self assert: (red start at: 1) equals: 1.

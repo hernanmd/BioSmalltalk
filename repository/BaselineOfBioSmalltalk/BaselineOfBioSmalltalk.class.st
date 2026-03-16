@@ -20,33 +20,31 @@ Class {
 
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baseline: spec [
-	<baseline>
 
-	spec for: #'common' do: [
-		spec blessing: #'baseline'. 
-		
-		spec preLoadDoIt: #preLoad.
-		spec postLoadDoIt: #'postLoad'.
-		
-		self 
-			projectSpecForCommonUtils: spec;
-			projectSpecForDataDrameInspector: spec;
-			"projectSpecForProjectFramework: spec;"
-			projectSpecForStringExtensions: spec;
-			projectSpecForFileDialog: spec;
-			projectSpecForPolyMath: spec;
-			projectSpecForDataFrame: spec;
-			projectSpecForINIParser: spec;
-			projectSpecForPetitParser: spec;
-			projectSpecForNeedlemanWunsch: spec.
+	<baseline>
+	spec for: #common do: [
+			spec blessing: #baseline.
+
+			spec preLoadDoIt: #preLoad.
+			spec postLoadDoIt: #postLoad.
+
+			self
+				projectSpecForCommonUtils: spec;
+				projectSpecForDataDrameInspector: spec;
+				"projectSpecForProjectFramework: spec;"
+				projectSpecForStringExtensions: spec;
+				projectSpecForFileDialog: spec;
+				projectSpecForPolyMath: spec;
+				projectSpecForDataFrame: spec;
+				projectSpecForINIParser: spec;
+				projectSpecForPetitParser: spec;
+				projectSpecForNeedlemanWunsch: spec.
 			"projectSpecForRoassal2: spec."
 
-		self baselineOSDeps: spec.
-		self baselineCommonPackages: spec.
-		self baselineGroups: spec ].
+			self baselineCommonPackages: spec.
+			self baselineGroups: spec ].
 
-	self baselinePharo: spec.
-
+	self baselinePharo: spec
 ]
 
 { #category : 'groups' }
@@ -170,26 +168,34 @@ BaselineOfBioSmalltalk >> baselineOSDeps: spec [
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselinePharo: spec [
 
+	spec for: #( #gtoolkit ) do: [
+			self projectSpecForXMLPharo12: spec.
+			self commonPackagesForPharo7onWards: spec ].
+
 	spec for: #( #'pharo4.x' #'pharo5.x' #'pharo6.x' ) do: [
-		self projectSpecForXMLPharo7: spec.
-		spec
-			package: 'BioTools' with: [ spec includes: #( 'BioPharo4' ) ];
-			package: 'BioPharo4' with: [ spec requires: #( 'BioTools' ) ];
-			group: 'Basic' with: #( 'BioPharo4' ) ].
+			self baselineOSDeps: spec.
+			self projectSpecForXMLPharo7: spec.
+			spec
+				package: 'BioTools' with: [ spec includes: #( 'BioPharo4' ) ];
+				package: 'BioPharo4' with: [ spec requires: #( 'BioTools' ) ];
+				group: 'Basic' with: #( 'BioPharo4' ) ].
 
 	spec for: #'pharo7.x' do: [
-		self projectSpecForXMLPharo7: spec.
-		self commonPackagesForPharo7onWards: spec ].
+			self baselineOSDeps: spec.
+			self projectSpecForXMLPharo7: spec.
+			self commonPackagesForPharo7onWards: spec ].
 
 	spec
 		for: #( #'pharo8.x' #'pharo9.x' #'pharo10.x' #'pharo11.x' )
 		do: [
-			self projectSpecForXMLPharo8: spec.
-			self commonPackagesForPharo7onWards: spec ].
+				self baselineOSDeps: spec.
+				self projectSpecForXMLPharo8: spec.
+				self commonPackagesForPharo7onWards: spec ].
 
-	spec for: #( #'pharo12.x' #'pharo13.x' #'pharo14.x') do: [
-		self projectSpecForXMLPharo12: spec.
-		self commonPackagesForPharo7onWards: spec ]
+	spec for: #( #'pharo12.x' #'pharo13.x' #'pharo14.x' ) do: [
+			self baselineOSDeps: spec.
+			self projectSpecForXMLPharo12: spec.
+			self commonPackagesForPharo7onWards: spec ]
 ]
 
 { #category : 'baselines' }

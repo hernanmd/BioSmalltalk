@@ -674,6 +674,14 @@ BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 
 ]
 
+{ #category : 'accessing - frequencies' }
+BioSequence >> dinucleotideFrequency [
+	"Answer a Dictionary mapping each dinucleotide (2-mer) to its frequency in the receiver.
+	The counting uses a sliding window of step 1."
+
+	^ self kmerFrequencies: 2
+]
+
 { #category : 'accessing - disambiguation' }
 BioSequence >> disambiguate [
 	" Answer a <Collection> with receiver's sequence disambiguated using IUPAC ambiguity codes "
@@ -991,7 +999,39 @@ BioSequence >> isSatelliteSequence [
 	^ false
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
+BioSequence >> kmerFrequencies: k [
+	"Answer a Dictionary with all observed k-mer frequencies (sliding window, step 1).
+	it provides the full k-mer frequency table
+
+	It is functionally equivalent to: 	oligonucleotideFrequency(seq, width = k, step = 1, as.prob = FALSE) 
+	(and the dinucleotide/trinucleotide convenience aliases)."
+
+	| upperBound |
+	(k isInteger and: [ k > 0 ]) ifFalse: [
+		self error: 'k must be a positive integer' ].
+
+	upperBound := self size - k + 1.
+	upperBound < 1 ifTrue: [ ^ Dictionary new ].
+
+	^ (Bag withAll: ((1 to: upperBound) collect: [ :i |
+			(self copyFrom: i to: i + k - 1) asString ])) asDictionary
+]
+
+{ #category : 'accessing - frequencies' }
+BioSequence >> kmerFrequencies: k fullTable: aBoolean [
+	"If aBoolean is true, return complete table with zeros for missing kmers"
+
+	| freqs allKmers |
+	freqs := self kmerFrequencies: k.
+	aBoolean ifFalse: [ ^ freqs ].
+
+	allKmers := 'ACGT' enumerationsOfSize: k.
+	allKmers do: [ :kmer | freqs at: kmer ifAbsentPut: [ 0 ] ].
+	^ freqs
+]
+
+{ #category : 'accessing - frequencies' }
 BioSequence >> kmersCount: patString [
 	" Answer the number of times that k-mers patString appears as substring of the receiver "
 	
@@ -999,7 +1039,7 @@ BioSequence >> kmersCount: patString [
 		(self copyFrom: i to: i + patString size - 1) sequence = patString ].
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> kmersCount: patString mismatches: d [
 	" Answer the number of times that k-mers patString appears as substring of the receiver allowing d mismatches "
 	
@@ -1255,7 +1295,7 @@ BioSequence >> molecularWeightNonDegen [
 		((dict at: $C) * 289.18) + 17.01.
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> mostFrequentKmer: k [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k "
 
@@ -1275,7 +1315,7 @@ BioSequence >> mostFrequentKmer: k [
 	^ maxKmers.
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> mostFrequentKmer: k mismatches: d [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k allowing mismatches of size d "
 	" Frequent Words with Mismatches Problem
@@ -1293,7 +1333,7 @@ BioSequence >> mostFrequentKmer: k mismatches: d [
 	^ counter maxElements
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> mostFrequentKmerRevComp: k mismatches: d [
 	" Answer a <Collection> of receiver with the most frequent k-mers of size k allowing mismatches of size d "
 	" Frequent Words with Mismatches Problem
@@ -1340,14 +1380,14 @@ BioSequence >> notEmpty [
 	^ seq notEmpty
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> occurrencesOf: aCharacter [
 	" Answer how many of the receiver's elements are equal to aLetter "
 	
 	^ seq asUppercase occurrencesOf: aCharacter asAminoacidLetter asUppercase
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - frequencies' }
 BioSequence >> occurrencesOfLetters [
 	" Answer a <Dictionary> of occurrence mappings for the receiver "
 	
@@ -1359,6 +1399,14 @@ BioSequence >> occurrencesOfLetters [
 			at: each asUppercase 
 			put: (occurrences at: each asUppercase ifAbsentPut: [ 0 ]) + 1 ].
 	^ occurrences
+]
+
+{ #category : 'accessing - frequencies' }
+BioSequence >> oligonucleotideFrequency [
+	"Answer a Dictionary mapping each nucleotide (1-mer) to its frequency in the receiver.
+	The counting uses a sliding window of step 1."
+
+	^ self kmerFrequencies: 1
 ]
 
 { #category : 'accessing' }
@@ -1686,6 +1734,14 @@ BioSequence >> trimAmbiguityCodes [
 	self ambiguityCodes do: [ : ambCharacter |
 		self sequence copyWithout: ambCharacter ]
 
+]
+
+{ #category : 'accessing - frequencies' }
+BioSequence >> trinucleotideFrequency [
+	"Answer a Dictionary mapping each trinucleotide (3-mer) to its frequency in the receiver.
+	The counting uses a sliding window of step 1."
+
+	^ self kmerFrequencies: 3
 ]
 
 { #category : 'accessing' }

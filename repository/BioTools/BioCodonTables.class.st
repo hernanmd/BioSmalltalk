@@ -7,18 +7,20 @@ http://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi
 
 "
 Class {
-	#name : #BioCodonTables,
-	#superclass : #BioObject,
+	#name : 'BioCodonTables',
+	#superclass : 'BioObject',
 	#classVars : [
 		'CurrentCodonTable'
 	],
 	#classInstVars : [
 		'codonTables'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> atCodonTable: anInteger [
 	" Select and answer a Codon Table by number anInteger "
 	
@@ -33,7 +35,7 @@ BioCodonTables class >> atCodonTable: anInteger [
 	^ cTable
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> codonTables [
 	" Answer a <Collection> of codon tables "
 
@@ -43,45 +45,45 @@ BioCodonTables class >> codonTables [
 			codonTables ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> codonTables: anObject [
 	codonTables := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> currentCodonTable [
 
 	^ CurrentCodonTable
 		ifNil: [ CurrentCodonTable := self defaultCodonTable ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> currentCodonTable: anObject [
 	CurrentCodonTable := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> defaultCodonTable [
 	" Answer the default codon table for translations "
 	
 	^ BioDNACodonTables atCodonTable: 1
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioCodonTables class >> do: aBlock [
 	" Iterate and evaluate aBlock with each codon of the receiver's elements as the argument."
 	
 	self codonTables do: [ : each | aBlock value: each ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> isStopCodon: aCodon [
 	" Answer <true> if aCodon is a stop codon in the receiver "
 	
 	^ self currentCodonTable isStopCodon: aCodon
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> missingCodonTable: anInteger [
 	" Private - Throw an exception for missing codon table numbered anInteger "
 	
@@ -95,7 +97,7 @@ BioCodonTables class >> missingCodonTable: anInteger [
 	self signalNotFound: exceptionString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCodonTables class >> newCodonTable: tableClass selectors: tableSelectors [
 	" Private - Create a new codon table with the information in tableSelectors "
 	| codonTable tableIdSelector tableNames table tableStartCodons tableStopCodons |
@@ -115,7 +117,7 @@ BioCodonTables class >> newCodonTable: tableClass selectors: tableSelectors [
 	^ codonTable 
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioCodonTables class >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -124,14 +126,14 @@ BioCodonTables class >> printOn: aStream [
 		ifTrue: [ aStream nextPutAll: self codonTables size asString ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCodonTables class >> release [
 
 	self codonTables: nil.
 	CurrentCodonTable := nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> reverseTranslate: aString [
 	" Answer a codon String by aString amino acid "
 
@@ -146,41 +148,41 @@ BioCodonTables class >> reverseTranslate: aString [
 	^ translations
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioCodonTables class >> tableAllNames [
 	" Answer a Collection of codon table identifiers "
 	
 	^ self codonTables collect: #names
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioCodonTables class >> tableClass [
 	" Answer the Collection class used to store the codon tables "
 	
 	^ Dictionary
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioCodonTables class >> tableIdentifiers [
 	" Answer a Collection of codon table identifiers "
 	
 	^ self codonTables collect: #name
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioCodonTables class >> tableNames [
 	" Answer a Collection of codon table identifiers "
 	
 	^ self codonTables collect: #alphaName
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioCodonTables class >> tableSelectors [
 
 	^ self class selectorsInProtocol: #tables
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTables class >> translate: aCodonString [
 	" Answer a translated amino acid by aCodonString "
 	

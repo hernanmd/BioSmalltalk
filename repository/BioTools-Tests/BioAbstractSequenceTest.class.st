@@ -1,47 +1,49 @@
 Class {
-	#name : #BioAbstractSequenceTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioAbstractSequenceTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'sequence'
 	],
-	#category : #'BioTools-Tests-Biological'
+	#category : 'BioTools-Tests-Biological',
+	#package : 'BioTools-Tests',
+	#tag : 'Biological'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> alphabetClass [
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleDnaString01 [
 	" Unambigous DNA String "
 	
 	^ 'cagtcatgctag' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleDnaString02 [
 	" Unambigous DNA String "
 	
 	^ 'attcggaggat' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleDnaString03 [
 	" Ambigous DNA String "
 	
 	^ 'atgStgQccR' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleDnaString04 [
 	" Ambigous DNA String "
 	
 	^ 'TCGATCGANTGGGTC' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleProtString01 [
 
 	^ 'FAALNFMNCSKCWKMYEDDCFLKCLEKHPYPPRWTRQWQINQQWQGNEIMSPDERVHDNW
@@ -49,7 +51,7 @@ PICYYKPEMHSRPLMGIYYNAMWPGKEIEWEHVIMYSPAP
 '
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleProtString02 [
 	" Ambiguous Protein String (includes X ambiguity code)"
 	
@@ -58,49 +60,49 @@ PICYYKPEMHSRPLMGIYYNAMWXPGKEIEWEHVIMYSPAP
 '
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleRnaString01 [
 	" Ambigous RNA String "
 	
 	^ 'cagucayugcuuag' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleRnaString02 [
 	" Unambigous RNA String "
 	
 	^ 'augcggaggau' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleSeq01Complementary [
 
 	^ 'gtcagtacgatc' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleSeq01ReverseComplementary [
 
 	^ 'ctagcatgactg' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sampleSeq01Transcription [
 
 	^ 'cagucaugcuag' asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sequence [
 	^ sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sequence: anObject [
 	sequence := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> sequence: aString alphabet: anAlphabetClass [
 
 	sequence := 
@@ -109,7 +111,7 @@ BioAbstractSequenceTest >> sequence: aString alphabet: anAlphabetClass [
 			alphabet: anAlphabetClass.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAbstractSequenceTest >> setUp [
 
 	super setUp.

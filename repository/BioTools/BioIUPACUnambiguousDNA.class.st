@@ -3,25 +3,27 @@ BioIUPACUnambiguousDNA is an Alphabet allowing only the A,T,G,C letters. It incl
 
 "
 Class {
-	#name : #BioIUPACUnambiguousDNA,
-	#superclass : #BioIUPACDNA,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioIUPACUnambiguousDNA',
+	#superclass : 'BioIUPACDNA',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACUnambiguousDNA class >> ambiguityCodes [
 	" Do not answer lowercase versions "
 
 	^ 'N'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACUnambiguousDNA class >> codes [
 
 	^ 'GATCN'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACUnambiguousDNA class >> complementaryCases [
 	" Private - Uppercase and lowercase versions are included to preserve the case, which avoids case conversion and could be useful to distinguish sequence regions "
 	<lint: 'Literal array contains only characters' rationale: 'Nucleotide method' author: 'HernanMoralesDurand'>

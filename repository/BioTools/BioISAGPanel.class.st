@@ -8,12 +8,14 @@ BioISAGPanel markersForCattle.
 BioISAGPanel  markersForCattle.
 "
 Class {
-	#name : #BioISAGPanel,
-	#superclass : #BioPanel,
-	#category : #'BioTools-Repeats'
+	#name : 'BioISAGPanel',
+	#superclass : 'BioPanel',
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #'accessing - cattle' }
+{ #category : 'accessing - cattle' }
 BioISAGPanel class >> markerAlleleRangesForCattle [
 
 	^ #(
@@ -34,7 +36,7 @@ BioISAGPanel class >> markerAlleleRangesForCattle [
 		)
 ]
 
-{ #category : #'accessing - dog' }
+{ #category : 'accessing - dog' }
 BioISAGPanel class >> markerAlleleRangesForDog [
 
 	^ #(
@@ -69,7 +71,7 @@ BioISAGPanel class >> markerAlleleRangesForDog [
 
 ]
 
-{ #category : #'accessing - goat' }
+{ #category : 'accessing - goat' }
 BioISAGPanel class >> markerAlleleRangesForGoat [
 
 	^ #(
@@ -95,7 +97,7 @@ BioISAGPanel class >> markerAlleleRangesForGoat [
 		)
 ]
 
-{ #category : #'accessing - pig' }
+{ #category : 'accessing - pig' }
 BioISAGPanel class >> markerAlleleRangesForPig [
 
 	^ #(
@@ -119,7 +121,7 @@ BioISAGPanel class >> markerAlleleRangesForPig [
 		)
 ]
 
-{ #category : #'accessing - sheep' }
+{ #category : 'accessing - sheep' }
 BioISAGPanel class >> markerAlleleRangesForSheep [
 		
 	^ #(
@@ -147,7 +149,7 @@ BioISAGPanel class >> markerAlleleRangesForSheep [
 		)
 ]
 
-{ #category : #'accessing - cattle' }
+{ #category : 'accessing - cattle' }
 BioISAGPanel class >> markersForCattle [
 	" Answer a <Collection> of <BioLocus> for the receiver's panel "
 
@@ -159,7 +161,7 @@ BioISAGPanel class >> markersForCattle [
 				yourself ]
 ]
 
-{ #category : #'accessing - dog' }
+{ #category : 'accessing - dog' }
 BioISAGPanel class >> markersForDog [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -171,7 +173,7 @@ BioISAGPanel class >> markersForDog [
 				yourself ]
 ]
 
-{ #category : #'accessing - goat' }
+{ #category : 'accessing - goat' }
 BioISAGPanel class >> markersForGoat [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -183,7 +185,7 @@ BioISAGPanel class >> markersForGoat [
 				yourself ]
 ]
 
-{ #category : #'accessing - pig' }
+{ #category : 'accessing - pig' }
 BioISAGPanel class >> markersForPig [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -195,7 +197,7 @@ BioISAGPanel class >> markersForPig [
 				yourself ]
 ]
 
-{ #category : #'accessing - sheep' }
+{ #category : 'accessing - sheep' }
 BioISAGPanel class >> markersForSheep [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -207,7 +209,7 @@ BioISAGPanel class >> markersForSheep [
 				yourself ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> markersForSpecies [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
@@ -220,21 +222,21 @@ BioISAGPanel class >> markersForSpecies [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> markersForSpecies: aString [
 	" Answer a <Collection> of <BioLocus> for the receiver's panel "
 
 	^ self markersForSpecies at: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> panelName [
 	" Private - See superimplementor's comment "
 	
 	^ 'ISAG'
 ]
 
-{ #category : #'accessing - cattle' }
+{ #category : 'accessing - cattle' }
 BioISAGPanel class >> populatePanelForCattle [
 
 	self table 
@@ -242,7 +244,7 @@ BioISAGPanel class >> populatePanelForCattle [
 		put: self markersForCattle
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> populatePanelForDog [
 
 	self table 
@@ -250,7 +252,7 @@ BioISAGPanel class >> populatePanelForDog [
 		put: self markersForDog
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> populatePanelForGoats [
 
 	self table 
@@ -258,7 +260,7 @@ BioISAGPanel class >> populatePanelForGoats [
 		put: self markersForGoats
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> populatePanelForPigs [
 
 	self table 
@@ -266,7 +268,7 @@ BioISAGPanel class >> populatePanelForPigs [
 		put: self markersForPigs
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> populatePanelForSheep [
 
 	self table 
@@ -274,7 +276,7 @@ BioISAGPanel class >> populatePanelForSheep [
 		put: self markersForSheep
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> populatePanels [
 
 	self 
@@ -283,7 +285,7 @@ BioISAGPanel class >> populatePanels [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioISAGPanel class >> supportedMarkerTypes [
 	" Answer a <Collection> of supported types of markers "
 	

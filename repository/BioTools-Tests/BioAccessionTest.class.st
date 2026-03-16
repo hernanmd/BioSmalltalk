@@ -1,10 +1,12 @@
 Class {
-	#name : #BioAccessionTest,
-	#superclass : #BioAbstractTest,
-	#category : #'BioTools-Tests-Core'
+	#name : 'BioAccessionTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testAsString [
 	self
 		assert:
@@ -21,7 +23,7 @@ BioAccessionTest >> testAsString [
 		equals: String empty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testHasVersion [
 	
 	| accession |
@@ -45,7 +47,7 @@ BioAccessionTest >> testHasVersion [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testIsEmpty [
 
 	self deny: 'AF288373.2' asAccession isEmpty.
@@ -62,7 +64,7 @@ BioAccessionTest >> testIsEmpty [
 	self should: [ String empty asAccession ] raise: Error.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testIsVersioned [
 	
 	| accession |
@@ -80,7 +82,7 @@ BioAccessionTest >> testIsVersioned [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testName [
 	| accession |
 	accession := BioAccession new
@@ -92,7 +94,7 @@ BioAccessionTest >> testName [
 	self assert: accession asString equals: accession nullName
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionTest >> testVersion [
 	| accession |
 	accession := BioAccession new

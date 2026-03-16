@@ -1,6 +1,6 @@
-Extension { #name : #OrderedCollection }
+Extension { #name : 'OrderedCollection' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 OrderedCollection >> asBio: aBioCollectionClass [
 
 	| collection |
@@ -10,7 +10,7 @@ OrderedCollection >> asBio: aBioCollectionClass [
 	^ collection
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 OrderedCollection >> bioRemove: anObject [
 
 	self do: [ : obj | obj remove: anObject ]

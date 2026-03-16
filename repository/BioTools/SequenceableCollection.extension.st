@@ -1,6 +1,6 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 SequenceableCollection >> asFastaRecord [
 	" Answer a <BioFastaRecord> "
 	
@@ -12,20 +12,20 @@ SequenceableCollection >> asFastaRecord [
 	
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 SequenceableCollection >> asFileDirectoryCollection [
 
 	^ BioFileCollection withAll: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 SequenceableCollection >> rejectFromBioAlignment: aBioAlignment [
 	" Receiver represents a <Collection> of taxa (<String>) used to filter aBioAlignment "
 
 	^ self flatCollect: [ : taxa | taxa rejectFromBioAlignment: aBioAlignment ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 SequenceableCollection >> setMicrosatelliteGenotypeFor: aBioMicrosatellite [
 	" Set the receiver's first two elements as the allele size range of aBioMicrosatellite "
 

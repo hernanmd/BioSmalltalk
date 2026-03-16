@@ -5,15 +5,17 @@ Instance Variables:
 	version		<String>		Represents the biological version number of the accession
 "
 Class {
-	#name : #BioAccession,
-	#superclass : #BioNamedObject,
+	#name : 'BioAccession',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'version'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAccession >> asFastaRecord [
 	"Retrieve the sequence identified by the receiver and answer a <BioFastaRecord> with it"
 
@@ -31,7 +33,7 @@ BioAccession >> asFastaRecord [
 	^ eResponse result asFastaRecord 
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAccession >> asString [
 	" Answer a <String> that represents the receiver."
 
@@ -43,27 +45,27 @@ BioAccession >> asString [
 					nextPutAll: self version asString ] ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccession >> hasVersion [
 	" Answer <true> if receiver is correctly versioned "
 	
 	^ self isVersioned and: [ self version asString notEmpty ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccession >> isEmpty [
 	" Answer whether the receiver contains a name. "
 	
 	^ self hasName not
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccession >> isNotEmpty [
 
 	^ self isEmpty not.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccession >> isVersioned [
 	" Answer <true> if the receiver has a version number "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
@@ -71,7 +73,7 @@ BioAccession >> isVersioned [
 	^ version notNil
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioAccession >> printOn: aStream [
 	" Private - See superimplementor´s comment "
 
@@ -80,12 +82,12 @@ BioAccession >> printOn: aStream [
 	self version ifNotNil: [ :arg | aStream nextPutAll: self version ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAccession >> version [
 	^ version
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAccession >> version: anObject [
 	version := anObject
 ]

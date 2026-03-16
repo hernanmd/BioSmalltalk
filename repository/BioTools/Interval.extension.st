@@ -1,12 +1,12 @@
-Extension { #name : #Interval }
+Extension { #name : 'Interval' }
 
-{ #category : #'*biotools' }
+{ #category : '*biotools' }
 Interval >> alignmentAt: aBioAlignment [
 
 	^ aBioAlignment atAlignments: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Interval >> atColumnFromBioAlignment: aBioAlignment [ 
 	" See comment in BioAlignment>>atColumn: "
 

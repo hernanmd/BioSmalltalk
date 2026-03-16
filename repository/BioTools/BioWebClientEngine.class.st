@@ -2,32 +2,34 @@
 BioWebClientEngine is the superclass for HTTP clients, which lets to make request and get both the response content and the response headers
 "
 Class {
-	#name : #BioWebClientEngine,
-	#superclass : #BioAbstractAdapter,
+	#name : 'BioWebClientEngine',
+	#superclass : 'BioAbstractAdapter',
 	#instVars : [
 		'url'
 	],
 	#classVars : [
 		'AdapterClass'
 	],
-	#category : 'BioTools-Adapters'
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine class >> adapterClass: aClass [
 	" Set the receiver's subclass acting as adapter to be aClass "
 	
 	^ AdapterClass := aClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine class >> decode: aString [
 	" Answer a String. Decodes the fields embedded in aString url ?var1=val1&var2=val2 "
 	
 	^ self adapterClass new decode: aString
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioWebClientEngine class >> for: anUrl [
 
 	^ self adapterClass new 
@@ -37,35 +39,35 @@ BioWebClientEngine class >> for: anUrl [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine class >> urlFromString: aString [
 	" Answer an URL object with aString as resource locator "
 	
 	^ self adapterClass new urlFromString: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> decode: aString [
 	" Answer a String. Decodes the fields embedded in aString url ?var1=val1&var2=val2 "
 	
 	^ self provider decode: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> downloadUrl [
 	" Answer a String decodeding the fields embedded in the url ?var1=val1&var2=val2 "
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> httpGet [
 	" Answer the response from the receiver's current url "
 	
 	^ (self classFor: self providerClass) httpGet: self downloadUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> httpGet: urlString [
 	"Get the response from the given url"
 	" ( self httpGet: 'http://www.squeak.org') content "
@@ -73,7 +75,7 @@ BioWebClientEngine >> httpGet: urlString [
 	^ (self classFor: self providerClass) httpGet: urlString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> httpGetContents [
 	" Answer the String contents in the response from the receiver's current url "
 	
@@ -82,24 +84,24 @@ BioWebClientEngine >> httpGetContents [
 	do: [ : ex | self httpGet content ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> url [
 	^ url
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> url: anObject [
 	url := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> urlClass [
 	" Answer a <Class> implementing an interpreted URL/URI "
 
 	^ self class urlClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClientEngine >> urlFromString: aString [
 
 	^ self urlClass fromString: aString.

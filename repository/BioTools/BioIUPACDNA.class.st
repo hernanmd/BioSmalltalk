@@ -1,24 +1,26 @@
 Class {
-	#name : #BioIUPACDNA,
-	#superclass : #BioIUPACAlphabet,
-	#category : 'BioTools-Alphabets'
+	#name : 'BioIUPACDNA',
+	#superclass : 'BioIUPACAlphabet',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACDNA >> codonTable [
 	" Answer the appropriate BioCodonTable for the receiver "
 	
 	^ BioDNACodonTables
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACDNA >> isDNA [
 	" Private - See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACDNA >> printOn: aStream [
 	" See superimplementor's comment "
 	

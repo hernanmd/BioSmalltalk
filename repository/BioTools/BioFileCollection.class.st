@@ -4,19 +4,21 @@ Abstract class grouping behavior for file collection objects. Behavior includes 
 
 "
 Class {
-	#name : #BioFileCollection,
-	#superclass : #BioOrderedCollection,
-	#category : #'BioTools-Collections'
+	#name : 'BioFileCollection',
+	#superclass : 'BioOrderedCollection',
+	#category : 'BioTools-Collections',
+	#package : 'BioTools',
+	#tag : 'Collections'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileCollection class >> fileClass [
 	" Answer the class of the containee elements "	
 
 	self subclassResponsibility 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFileCollection class >> filesFromDirectory: aDirectoryString [
 	" Answer a Collection of files iterating recursively over the files located at aDirectoryString "
 
@@ -27,7 +29,7 @@ BioFileCollection class >> filesFromDirectory: aDirectoryString [
 					ifTrue: [ self filesFromDirectory: entry fullName ] ]) joinUsing: Array new.
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFileCollection >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	

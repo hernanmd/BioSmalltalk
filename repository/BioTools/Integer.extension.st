@@ -1,12 +1,12 @@
-Extension { #name : #Integer }
+Extension { #name : 'Integer' }
 
-{ #category : #'*biotools' }
+{ #category : '*biotools' }
 Integer >> alignmentAt: aBioAlignment [
 
 	^ aBioAlignment atAlignment: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Integer >> atColumnFromBioAlignment: aBioAlignment [ 
 	" See comment in BioAlignment>>atColumn: "
 
@@ -15,7 +15,7 @@ Integer >> atColumnFromBioAlignment: aBioAlignment [
 		ifFalse: [ self signalInvalidObject: self asString , ' is out of range in the receiver''s sequences' ]
 ]
 
-{ #category : #'*biotools' }
+{ #category : '*biotools' }
 Integer >> choose: r [
 	" Calculate n!/(r! * (n-r)!) where n is the receiver "
 

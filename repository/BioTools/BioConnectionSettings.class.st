@@ -13,8 +13,8 @@ Instance Variables:
 	useHTTPProxy	<ProtoObject | PseudoContext>
 "
 Class {
-	#name : #BioConnectionSettings,
-	#superclass : #BioObject,
+	#name : 'BioConnectionSettings',
+	#superclass : 'BioObject',
 	#instVars : [
 		'serverAddress',
 		'serverDirectory',
@@ -29,129 +29,131 @@ Class {
 		'proxyUser',
 		'useProxy'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> email [
 
 	^ email
 		ifNil: [ email := 'invalid@invalid.com' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> email: anObject [
 	email := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> lastProxyPort [
 	^ lastProxyPort
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> lastProxyPort: anObject [
 	lastProxyPort := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> lastProxyServer [
 	^ lastProxyServer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> lastProxyServer: anObject [
 	lastProxyServer := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> password [
 	^ password
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> password: anObject [
 	password := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> proxyPassword [
 	^ proxyPassword
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> proxyPassword: anObject [
 	proxyPassword := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> proxyUser [
 	^ proxyUser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> proxyUser: anObject [
 	proxyUser := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverAddress [
 	^ serverAddress
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverAddress: anObject [
 	serverAddress := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverDirectory [
 	^ serverDirectory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverDirectory: aString [
 	" Set aString with the receiver's server directory to CWD "
 	
 	serverDirectory := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverPort [
 	^ serverPort
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> serverPort: anObject [
 	serverPort := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> useNetworkAuthentication [
 	^ useNetworkAuthentification
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> useNetworkAuthentication: anObject [
 	useNetworkAuthentification := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> useProxy [
 	^ useProxy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> useProxy: anObject [
 	useProxy := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> user [
 	^ user
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioConnectionSettings >> user: anObject [
 	user := anObject
 ]

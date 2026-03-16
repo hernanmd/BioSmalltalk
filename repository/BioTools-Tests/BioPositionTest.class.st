@@ -1,13 +1,15 @@
 Class {
-	#name : #BioPositionTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioPositionTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'position'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioPositionTest >> testNewPosition [
 
 	position := BioLocus new 
@@ -19,7 +21,7 @@ BioPositionTest >> testNewPosition [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioPositionTest >> testNewPositionWithRange [
 
 	position := BioLocus new 
@@ -32,7 +34,7 @@ BioPositionTest >> testNewPositionWithRange [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioPositionTest >> testSetStartEnd [
 
 	position := BioLocus new 

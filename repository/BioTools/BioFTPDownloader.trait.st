@@ -1,11 +1,13 @@
 Trait {
-	#name : #BioFTPDownloader,
+	#name : 'BioFTPDownloader',
 	#traits : 'BioDownloader',
 	#classTraits : 'BioDownloader classTrait',
-	#category : #'BioTools-Helpers'
+	#category : 'BioTools-Helpers',
+	#package : 'BioTools',
+	#tag : 'Helpers'
 }
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioFTPDownloader >> connect [
 	" Private - Connect the receiver's to download databases "
 	
@@ -19,7 +21,7 @@ BioFTPDownloader >> connect [
 	self client binary.
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioFTPDownloader >> ftpClientClass [
 	" Answer a class for handling FTP connections "
 

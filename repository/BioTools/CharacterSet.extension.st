@@ -1,6 +1,6 @@
-Extension { #name : #CharacterSet }
+Extension { #name : 'CharacterSet' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 CharacterSet class >> allCharactersBut: aCollection [
 	" Answer a set containing all characters except
 	all those contained in aCollection "

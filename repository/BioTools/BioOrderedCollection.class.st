@@ -2,19 +2,21 @@
 Represents a collection which is intended to hold objects used by BioSmalltalk. Objects contained can be iterated, parsed or converted. See specific subclasses for use cases.
 "
 Class {
-	#name : #BioOrderedCollection,
-	#superclass : #OrderedCollection,
-	#category : 'BioTools-Collections'
+	#name : 'BioOrderedCollection',
+	#superclass : 'OrderedCollection',
+	#category : 'BioTools-Collections',
+	#package : 'BioTools',
+	#tag : 'Collections'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOrderedCollection >> isBioCollection [
 	" Answer <true> if receiver is a <Collection> provided by the BioSmalltalk library "
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrderedCollection >> result [
 
 	^ self

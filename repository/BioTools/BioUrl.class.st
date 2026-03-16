@@ -7,22 +7,24 @@ A URL that can be accessed via the Hypertext Transfer Protocol (HTTP), ie, a sta
 
 "
 Class {
-	#name : #BioUrl,
-	#superclass : #ZnUrl,
+	#name : 'BioUrl',
+	#superclass : 'ZnUrl',
 	#instVars : [
 		'webClient'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUrl >> activate [
 	" See superimplementor's comment "
 	
 	^ (self webClient httpGet: self downloadUrl) contents asString
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> addParameters: aQueryString [
 	" Append aQueryString as the receiver's database name "
 
@@ -35,7 +37,7 @@ BioUrl >> addParameters: aQueryString [
 		ifFalse: [ self error ]
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> buildUrl: pathPrefix with: aPath [
 	" Append aString as the receiver's command name "
 
@@ -46,7 +48,7 @@ BioUrl >> buildUrl: pathPrefix with: aPath [
 	self path addLast: urlString
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> cmdName: aCmdString [
 	" Append aString as the receiver's command name "
 
@@ -55,28 +57,28 @@ BioUrl >> cmdName: aCmdString [
 
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> dbName: aString [
 	" Append aString as the receiver's database name "
 
 	self addPathSegment: aString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioUrl >> defaultWebClient [
 	" Answer the current web client configured for the receiver "
 	
 	^ BioWebClientEngine for: self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioUrl >> downloadUrl [
 	" Answer a String decoding the fields embedded in the url ?var1=val1&var2=val2 "
 
 	^ self webClient downloadUrl
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> includesParameter: aString [
 	" Answer <true> if the receiver already includes a parameter named aString "
 	
@@ -85,14 +87,14 @@ BioUrl >> includesParameter: aString [
 		do: [ : ex | ex return: false ]
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> urlTokens [
 	" Answer a Collection of commonly used tokens in URLs "
 
 	^ #($? $= $&)
 ]
 
-{ #category : #deprecate }
+{ #category : 'deprecate' }
 BioUrl >> valueForParameter: aString [
 	" Answer a Collection with the receiver's parameter names "
 
@@ -107,14 +109,14 @@ BioUrl >> valueForParameter: aString [
 	^ self queryAt: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUrl >> webClient [
 
 	^ webClient
 		ifNil: [ webClient := self defaultWebClient ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUrl >> webClient: anObject [
 	webClient := anObject
 ]

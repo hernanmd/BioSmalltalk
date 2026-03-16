@@ -7,38 +7,40 @@ Instance Variables
 
 "
 Class {
-	#name : #BioFilteredResult,
-	#superclass : #BioResultObject,
+	#name : 'BioFilteredResult',
+	#superclass : 'BioResultObject',
 	#instVars : [
 		'filter'
 	],
-	#category : #'BioTools-Query'
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilteredResult >> collect: aBlock [
 	" self needsWork."
 
 	^ self result collect: aBlock
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFilteredResult >> definitionString [
 
 	^ 'Filter'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilteredResult >> filter [
 	^ filter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFilteredResult >> filter: anObject [
 	filter := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFilteredResult >> printOn: aStream [
 	" Private - Print the receiver's name and result size "
 	

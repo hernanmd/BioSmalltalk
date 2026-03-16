@@ -2,21 +2,23 @@
 A BioTranscript is a set of `BioExon`.
 "
 Class {
-	#name : #BioTranscript,
-	#superclass : #BioSequenceFeature,
+	#name : 'BioTranscript',
+	#superclass : 'BioSequenceFeature',
 	#instVars : [
 		'exons'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioTranscript >> exons [
 
 	^ exons
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioTranscript >> exons: anObject [
 
 	exons := anObject

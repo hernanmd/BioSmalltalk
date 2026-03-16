@@ -10,19 +10,21 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioSmartRefStreamSerializer,
-	#superclass : #BioSerializationEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioSmartRefStreamSerializer',
+	#superclass : 'BioSerializationEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSmartRefStreamSerializer class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #FileStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSmartRefStreamSerializer >> materialize [
 	" See superimplementor comment "
 
@@ -35,7 +37,7 @@ BioSmartRefStreamSerializer >> materialize [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSmartRefStreamSerializer >> serialize: anObject [
 	" See superimplementor's comment "
 

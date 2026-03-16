@@ -1,6 +1,6 @@
-Extension { #name : #Dictionary }
+Extension { #name : 'Dictionary' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Dictionary >> asBio: aBioCollectionClass [
 
 	| collection |
@@ -10,7 +10,7 @@ Dictionary >> asBio: aBioCollectionClass [
 	^ collection
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Dictionary >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 	

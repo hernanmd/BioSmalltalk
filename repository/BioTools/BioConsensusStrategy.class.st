@@ -8,7 +8,9 @@ Several considerations for calculation of consensus sequence are:
 - Consider any character when making consensus
 "
 Class {
-	#name : #BioConsensusStrategy,
-	#superclass : #BioObject,
-	#category : #'BioTools-Helpers'
+	#name : 'BioConsensusStrategy',
+	#superclass : 'BioObject',
+	#category : 'BioTools-Helpers',
+	#package : 'BioTools',
+	#tag : 'Helpers'
 }

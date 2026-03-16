@@ -1,6 +1,6 @@
-Extension { #name : #Bag }
+Extension { #name : 'Bag' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Bag >> maxElements [
 	" Answer a <Collection> with the receiver's element(s) which contain the maximum occurrences "
 

@@ -14,17 +14,19 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioGenotype,
-	#superclass : #BioObject,
+	#name : 'BioGenotype',
+	#superclass : 'BioObject',
 	#instVars : [
 		'alleleA',
 		'alleleB',
 		'locus'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGenotype class >> withSpacedAlleles: aString [
 	" Answer a new receiver's instance from aString interpreted as two unspaced alleles, e.g.: 'AC' or 'CT' "
 
@@ -37,43 +39,43 @@ BioGenotype class >> withSpacedAlleles: aString [
 	
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioGenotype >> = aNucleotide [
 
 	self == aNucleotide ifTrue: [ ^ true ].
 	^ self alleleA = aNucleotide and: [ self alleleB = aNucleotide ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> alleleA [
 	^ alleleA
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> alleleA: anObject [
 	" Set the receiver's first allele "
 
 	alleleA := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> alleleB [
 	^ alleleB
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> alleleB: anObject [
 	alleleB := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> end [
 	" Answer the receiver's <BioLocus> end position "
 
 	^ self locus end
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> end: anObject [
 	" See comment in <BioLocus> "
 
@@ -82,14 +84,14 @@ BioGenotype >> end: anObject [
 	
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioGenotype >> hash [
 	"hash is implemented because #= is implemented"
 
 	^ self alleleA hash bitXor: self alleleB hash
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> locus [
 	" Answer the receiver's <BioLocus> "
 
@@ -97,14 +99,14 @@ BioGenotype >> locus [
 		ifNil: [ locus := BioLocus new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> locus: aBioLocus [
 	" Set the receiver's locus to be aBioLocus "
 
 	locus := aBioLocus
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioGenotype >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -117,14 +119,14 @@ BioGenotype >> printOn: aStream [
 		space
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> start [
 	" Answer the receiver's <BioLocus> "
 
 	^ self locus start
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenotype >> start: anObject [
 	" See comment in <BioLocus> "
 
@@ -133,7 +135,7 @@ BioGenotype >> start: anObject [
 	
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioGenotype >> ~= aNucleotide [
 
 	self == aNucleotide ifTrue: [ ^ false ].

@@ -10,8 +10,8 @@ Instance Variables
 
 "
 Class {
-	#name : #BioDBObject,
-	#superclass : #BioPropertyObject,
+	#name : 'BioDBObject',
+	#superclass : 'BioPropertyObject',
 	#traits : 'BioFTPDownloader',
 	#classTraits : 'BioFTPDownloader classTrait',
 	#instVars : [
@@ -20,10 +20,12 @@ Class {
 		'checkMD5',
 		'connectionSettings'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject class >> databaseList [			
 	" self databaseList "
 	
@@ -32,7 +34,7 @@ BioDBObject class >> databaseList [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject class >> descriptionAt: aString [
 	" Answer a <String> with the receiver's description for aString identifier "
 
@@ -46,59 +48,59 @@ BioDBObject class >> descriptionAt: aString [
 		ifNil: [ self nullName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject class >> nullName [
 	" Answer a String representing a default name "
 	
 	^ 'Database not found'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> checkMD5 [
 	^ checkMD5
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> checkMD5: anObject [
 	checkMD5 := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> client [
 	^ client
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> client: anObject [
 
 	client := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> connectionSettings [
 
 	^ connectionSettings
 		ifNil: [ connectionSettings := BioConnectionSettings new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> connectionSettings: anObject [
 	connectionSettings := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> dbName [
 	" Answer a String with the receiver's database name "
 	
 	^ self class dbName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDBObject >> forceDownload [
 	^ forceDownload
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioDBObject >> serverDirectory [
 	" Answer a String with the receiver's server directory to CWD "
 	
@@ -106,7 +108,7 @@ BioDBObject >> serverDirectory [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioDBObject >> serverName [
 	" Answer a String with the receiver's server name "
 	
@@ -114,7 +116,7 @@ BioDBObject >> serverName [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioDBObject >> serverPassword [
 	" Answer a String with the password to connect "
 
@@ -122,7 +124,7 @@ BioDBObject >> serverPassword [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioDBObject >> serverUser [
 	" Answer a String with the user name to connect "
 	
@@ -130,28 +132,28 @@ BioDBObject >> serverUser [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioDBObject >> setForceDownload [
 	" Force download even if there is a archive already on local directory. "
 	
 	forceDownload := true
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 BioDBObject >> summary [
 	" Answer the result of the command applied on the receiver "
 
 	^ self client summary
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 BioDBObject >> summaryAlternative [
 	" Answer the result of the command applied on the receiver "
 
 	^ self client summaryAlternative
 ]
 
-{ #category : #'convenience-filesystem' }
+{ #category : 'convenience-filesystem' }
 BioDBObject >> workingDirectory [
 	" Answer a String representing a directory name where the BLAST databases will be stored "	
 	

@@ -5,20 +5,22 @@ The difference between an Annotation and a Sequence Feature is that a (sequence)
 
 "
 Class {
-	#name : #BioSeqAnnotation,
-	#superclass : #BioNamedObject,
+	#name : 'BioSeqAnnotation',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'contents'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqAnnotation >> contents [
 	^ contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqAnnotation >> contents: anObject [
 	contents := anObject
 ]

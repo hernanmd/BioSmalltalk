@@ -6,31 +6,33 @@ Represents a multiple alignment of sequences
 
 "
 Class {
-	#name : #BioAlignment,
-	#superclass : #BioNamedObject,
+	#name : 'BioAlignment',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'set',
 		'consensusStrategy',
 		'isReference'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addFastaRecord: fastaRecord [
 	" Add anObject to the alignment "
 	
 	^ self addSequence: fastaRecord sequence named: fastaRecord sequenceName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addFromSequence: aBioSequence [
 	" Add aBioSequence to the receiver's alignments "
 	
 	set addLast: aBioSequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addFromSequences: aSequenceCollection [
 	" Add aSequenceCollection to the receiver's alignments "
 	
@@ -38,70 +40,70 @@ BioAlignment >> addFromSequences: aSequenceCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addSequence: anObject [
 	" Add anObject to the alignment "
 	
 	^ anObject addToAlignment: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addSequence: anObject named: seqName [
 	" Add anObject to the alignment "
 	
 	^ anObject addToAlignment: self named: seqName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> addToFastaMultiRecord: aBSTFastaMultiRecord [
 	" Add the receiver's sequences to aBSTFastaMultiRecord "
 	
 	aBSTFastaMultiRecord sequences: self sequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> alignMaxSize [
 	"Answer the maximum length of sequences in the alignment "
 	
 	^ (self sequences detectMax: #size) size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> alignMinSize [
 	" Answer the minimum length of sequences in the alignment "
 	
 	^ (self sequences detectMin: #size) size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> anyOne [ 
 	" Answer a <BioSequence> representative sample of the receiver "
 
 	^ set anyOne
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAlignment >> asFasta [
 	" Answer the receiver as a MultiFasta record object "
 	
 	^ self asMultiFasta
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAlignment >> asMultiFasta [
 	" Answer the receiver as a MultiFasta record object "
 	
 	^ BioFastaMultiRecord from: self sequences
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAlignment >> asMultiFastaString [
 	" Answer the receiver as a MultiFasta record object "
 	
 	^ self asMultiFasta asString
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioAlignment >> asString [
 	" Answer a String representation of the receiver "
 	
@@ -116,14 +118,14 @@ BioAlignment >> asString [
 			stream cr ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> at: anObject [
 	" Answer a Sequence or a Collection of Sequences at anObject "
 	
 	^ anObject alignmentAt: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atAccession: aBioAccession [
 	" Answer a <BioSequence> identified by aBioAccession "
 	
@@ -132,7 +134,7 @@ BioAlignment >> atAccession: aBioAccession [
 		ifNone: [ self signalAlignmentNotFound: aBioAccession name ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atAccession: accessionString ifPresent: aBlock [
 
 	| found |
@@ -145,7 +147,7 @@ BioAlignment >> atAccession: accessionString ifPresent: aBlock [
 		ifNil: [ self signalAlignmentNotFound: accessionString ] 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atAlignment: alignNumber [
 	" Answer a Collection with the receiver's sequences at alignNumber position "
 	
@@ -154,7 +156,7 @@ BioAlignment >> atAlignment: alignNumber [
 		ifFalse: [ self signalInvalidObject: alignNumber asString , ' is out of range in the receiver''s sequences' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atAlignments: anInterval [
 	" Answer a Collection with the receiver's sequences at alignNumber position "
 	
@@ -163,28 +165,28 @@ BioAlignment >> atAlignments: anInterval [
 		ifFalse: [ self signalInvalidObject: anInterval asString , ' is out of range in the receiver''s sequences' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atColumn: aColumnSpec [
 	" Answer a <BioSequence> with the receiver's sequences at aColumnSpec position(s) "
 	
 	^ BioSequence newWith: (aColumnSpec atColumnFromBioAlignment: self)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> atColumns: aColumnRangeSpec [
 	" Answer a <String> with the receiver's sequences at aColumnSpec position(s) "
 	
 	^ aColumnRangeSpec atColumnFromBioAlignment: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> beReference [
 	" Set the receiver's to be a reference alignment "
 	
 	self isReference: true.
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioAlignment >> collect: aBlock [ 
 	" Evaluate aBlock with each of the receiver's elements as the argument.  
 	Collect the resulting values into a collection like the receiver. Answer  
@@ -193,7 +195,7 @@ BioAlignment >> collect: aBlock [
 	^ set collect: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> consensus [
 	" Consensus sequence is the calculated order of most frequent residues, either nucleotide or amino acid, found at each position in a sequence alignment. Only DNA and RNA sequences are valid. 
 	Answer a <BioSequence> representing the consensus sequence "
@@ -205,7 +207,7 @@ BioAlignment >> consensus [
     ^ consensusSeq
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioAlignment >> consensusAt: anObject [ 
 	" See comment in bioConsensusFor: "
 
@@ -213,14 +215,14 @@ BioAlignment >> consensusAt: anObject [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioAlignment >> consensusStrategy [
 
 	^ consensusStrategy
 		ifNil: [ consensusStrategy := self defaultConsensusStrategy ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> copyFrom: startIndex to: stopIndex [
 	" Answer a String representation of the receiver "
 	
@@ -229,47 +231,47 @@ BioAlignment >> copyFrom: startIndex to: stopIndex [
 		ifFalse: [ self signalInvalidObject: 'First index should be minor or equal than stop index' ]
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioAlignment >> defaultConsensusStrategy [
 
 	^ BioDummyConsensusStrategy new
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioAlignment >> do: aBlock [
 	" Evaluate aBlock with each of the receiver's set as the argument. "
 	
 	^ set do: aBlock
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioAlignment >> do: aBlockClosure displayingProgress: aString [ 
 	"Evaluate aBlock with each of the receiver's set as the argument."
 
 	^ set do: aBlockClosure displayingProgress: aString
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioAlignment >> doWithIndex: aFullBlockClosure [ 
 
 	self sequences doWithIndex: aFullBlockClosure 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> first [
 	" Return a <BioSequence> representing the first element in the receiver "
 
 	^ self at: 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> head: aNumber [
 	" Answer the first aNumber of <BioSequence> in the receiver "
 	
 	^ self sequences first: aNumber
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioAlignment >> initialize [
 	" Private - Initialize the receiver's contents "
 
@@ -277,14 +279,14 @@ BioAlignment >> initialize [
 	set := OrderedCollection new
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignment >> isEmpty [
 	" Answer whether the receiver contains any elements. "
 	
 	^ set isEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignment >> isReference [
 	" Answer a <Boolean> if the receiver represents a reference alignment, an usually well-annotated set of sequences "
 
@@ -292,21 +294,21 @@ BioAlignment >> isReference [
 		ifNil: [ isReference := false ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignment >> isReference: aBoolean [
 	" Set aBoolean to <true> if the receiver represents a reference alignment, an usually well-annotated set of sequences "
 	
 	isReference := aBoolean
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> last [
 	"Return the last element in the receiver"
 
 	^ self at: self size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> longestConsecutive: aCharacter [
 	" Answer the sequence in the receiver with the longest substring containing only letter for each element of aCharacter.
 	
@@ -317,14 +319,14 @@ BioAlignment >> longestConsecutive: aCharacter [
 	self sequences max: [ : seq | seq longestConsecutive: aCharacter ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> maxSequenceLength [
 	"Answer a <Number> representing the sequence of maximum length in the receiver."
 	
 	^ self sequences max: #size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> numberOfBases [
 	" Answer a <Number> with the receiver's sequence size (considering all having the same size) "
 	
@@ -332,7 +334,7 @@ BioAlignment >> numberOfBases [
 
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioAlignment >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -347,21 +349,21 @@ BioAlignment >> printOn: aStream [
 			nextPutAll: seq asString ]
 ]
 
-{ #category : #filtering }
+{ #category : 'filtering' }
 BioAlignment >> rejectTaxa: taxaNameOrCollectionOfTaxons [
 	"Answer a <Collection> of <BioSequence> removing the sequences annotated with taxaName "
 	
 	^ taxaNameOrCollectionOfTaxons rejectFromBioAlignment: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> select: aBlock [
 	"Refer to the comment in Collection|select:."
 
 	set := self sequences select: aBlock.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> sequenceNames [
 	" Answer a Collection of receiver's alignments names. If any or all of the receiver's sequences are unnamed, then assign a numeric identifier corresponding to the position in the receiver's alignment set "
 	
@@ -376,21 +378,21 @@ BioAlignment >> sequenceNames [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> sequenceStrings [
 	" Answer a <Collection> of receiver's alignments String's "
 	
 	^ set collect: #asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> sequences [
 	" Answer a Collection of the receiver's sequences "
 	
 	^ set
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioAlignment >> signalAlignmentNotFound: accessionString [
 	" Private - Signal an exception "
 	
@@ -400,7 +402,7 @@ BioAlignment >> signalAlignmentNotFound: accessionString [
 			nextPutAll: accessionString ])
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignment >> size [
 	"Answer how many sequences the receiver contains."
 	

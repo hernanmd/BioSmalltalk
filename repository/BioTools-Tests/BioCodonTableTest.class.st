@@ -1,13 +1,15 @@
 Class {
-	#name : #BioCodonTableTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioCodonTableTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'table'
 	],
-	#category : #'BioTools-Tests-Biological'
+	#category : 'BioTools-Tests-Biological',
+	#package : 'BioTools-Tests',
+	#tag : 'Biological'
 }
 
-{ #category : #running }
+{ #category : 'running' }
 BioCodonTableTest >> setUp [
 	" Assure defaults "
 
@@ -15,7 +17,7 @@ BioCodonTableTest >> setUp [
 	table := BioDNACodonTables atCodonTable: 1.
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 BioCodonTableTest >> tearDown [
 	" Reset to defaults "
 
@@ -23,7 +25,7 @@ BioCodonTableTest >> tearDown [
 	BioDNACodonTables atCodonTable: 1.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testAt [
 
 	self assert: ( table isKindOf: BioCodonTable ).
@@ -48,7 +50,7 @@ BioCodonTableTest >> testAt [
 	self should: [ BioRNACodonTables atCodonTable: 5000 ] raise: BioException.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testCodonTables [
 
 	| tables |
@@ -65,7 +67,7 @@ BioCodonTableTest >> testCodonTables [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testDo [
 
 	| tempCodonTables |
@@ -76,7 +78,7 @@ BioCodonTableTest >> testDo [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testIsStartCodon [
 
 	| codonTable |
@@ -93,7 +95,7 @@ BioCodonTableTest >> testIsStartCodon [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testIsStopCodon [
 
 	| codonTable |
@@ -110,7 +112,7 @@ BioCodonTableTest >> testIsStopCodon [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testReverseTranslate [
 
 	| tempCodonTables translation translated |
@@ -140,7 +142,7 @@ BioCodonTableTest >> testReverseTranslate [
 	BioDNACodonTables atCodonTable: 1.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testTableAllNames [
 
 	self assert: ( BioDNACodonTables tableAllNames isKindOf: Collection ).
@@ -150,7 +152,7 @@ BioCodonTableTest >> testTableAllNames [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testTableIdentifiers [
 
 	self assert: ( BioDNACodonTables tableIdentifiers isKindOf: Collection ).
@@ -160,7 +162,7 @@ BioCodonTableTest >> testTableIdentifiers [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testTableNames [
 
 	self assert: ( BioDNACodonTables tableNames isKindOf: Collection ).
@@ -170,7 +172,7 @@ BioCodonTableTest >> testTableNames [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testTranslateAmbiguous [
 
 	| tempCodonTables |
@@ -192,7 +194,7 @@ BioCodonTableTest >> testTranslateAmbiguous [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTableTest >> testTranslateUnambiguous [
 
 	| tempCodonTables |

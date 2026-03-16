@@ -1,6 +1,6 @@
-Extension { #name : #DateAndTime }
+Extension { #name : 'DateAndTime' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 DateAndTime >> printYMDHMS [
 	" Answer the receiver's date <String> in user-friendly format "
 
@@ -10,7 +10,7 @@ DateAndTime >> printYMDHMS [
 		self printHMSOn: s ]
 ]
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 DateAndTime >> printYMDHMSeparatedBy: aCharacter [
 	" Answer the receiver's date <String> in user-friendly format "
 

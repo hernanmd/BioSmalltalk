@@ -4,15 +4,17 @@ a named object holds a Collection of names. The first name is the preferredName 
 Adding a duplicate name raises an exception.
 "
 Class {
-	#name : #BioNamedObject,
-	#superclass : #BioVersionedObject,
+	#name : 'BioNamedObject',
+	#superclass : 'BioVersionedObject',
 	#instVars : [
 		'names'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNamedObject class >> newNamed: aString [
 	" Answer a new instance of the receiver named aNameString. "
 	
@@ -21,7 +23,7 @@ BioNamedObject class >> newNamed: aString [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject class >> uniqueName [
 	" Answer a <String> intended to represent a unique identifier "
 	
@@ -32,14 +34,14 @@ BioNamedObject class >> uniqueName [
 	
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioNamedObject >> = anObject [
 	" Answer whether the receiver and anObject represent the same object. "
 	
 	^ self == anObject and: [ self class = anObject class and: [ self names = anObject names ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> addName: aString [
 	" Add aString as a name of the receiver. "
 	
@@ -50,7 +52,7 @@ BioNamedObject >> addName: aString [
 		ifTrue: [ self signalDuplicateObject: aString , ' already exists in the receiver' translated ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> addUniqueName: aString [
 	" Add aString as an unique name of the receiver. "
 	
@@ -59,7 +61,7 @@ BioNamedObject >> addUniqueName: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> alphaName [
 	" Answer the first receiver's name which is alphabetic. If not found answer the receiver's null name  "
 	
@@ -68,35 +70,35 @@ BioNamedObject >> alphaName [
 			ifNone: [ self nullName ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObject >> hasName [
 	" Answer <true> if the receiver has any name "
 	
 	^ (names isNil or: [ self names isEmpty or: [ self names anySatisfy: #isEmpty ] ]) not
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioNamedObject >> hash [
 	" hash is implemented because #= is implemented "
 
 	^ self names hash
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObject >> includesName: aString [
 	" Answer <true> if receiver contains aString in any of its names "
 
 	^ (self names collect: #asLowercase) includes: aString asLowercase
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObject >> includesNullName [
 	" Answer <true> if receiver includes a null name "
 	
 	^ self names includes: self nullName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> name [
 	" Answer a <String> representing the receiver's preferred name "
 	
@@ -105,7 +107,7 @@ BioNamedObject >> name [
 	^ self preferredName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> name: aString [
 	" Set aString to be the preferred name of the receiver. Remove any existing null name.
 	Answer the receiver "
@@ -115,14 +117,14 @@ BioNamedObject >> name: aString [
 	self names addFirst: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> nameClass [
 	" Answer the class used for storing receiver's names "
 
 	^ OrderedCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> names [
 	" Answer a <Collection> of receiver's names "
 
@@ -132,14 +134,14 @@ BioNamedObject >> names [
 					ifTrue: [ self nameClass with: self nullName ]) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> nullName [
 	" Answer a <String> representing a default name "
 	
 	^ 'Unnamed ' , self class name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> numericName [
 	" Answer the first receiver's name which is numeric. If not found answer the receiver's null name  "
 	
@@ -148,7 +150,7 @@ BioNamedObject >> numericName [
 			ifNone: [ self nullName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> preferredName [
 	" Answer a String with the receiver's preferred name "
 
@@ -160,14 +162,14 @@ BioNamedObject >> preferredName [
 				ifFalse: [ names first ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> removeNullName [
 	" Answer a <String> representing a default name "
 	
 	self names remove: self nullName ifAbsent: [ ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObject >> uniqueName [
 	" Answer a <String> intended to represent a unique identifier "
 	

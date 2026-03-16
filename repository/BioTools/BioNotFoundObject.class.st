@@ -7,12 +7,14 @@ and in the following way:
 self signalNotFound: 'message' , ex messageText.
 "
 Class {
-	#name : #BioNotFoundObject,
-	#superclass : #BioException,
-	#category : #'BioTools-Exceptions'
+	#name : 'BioNotFoundObject',
+	#superclass : 'BioException',
+	#category : 'BioTools-Exceptions',
+	#package : 'BioTools',
+	#tag : 'Exceptions'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNotFoundObject >> messageText [
 
 	^ String streamContents: [ :stream |

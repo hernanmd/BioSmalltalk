@@ -12,12 +12,14 @@ https://tools.thermofisher.com/content/sfs/manuals/cms_042039.pdf
 
 "
 Class {
-	#name : #BioSTRSequence,
-	#superclass : #BioRepeatSequence,
-	#category : #'BioTools-Repeats'
+	#name : 'BioSTRSequence',
+	#superclass : 'BioRepeatSequence',
+	#category : 'BioTools-Repeats',
+	#package : 'BioTools',
+	#tag : 'Repeats'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioSTRSequence class >> example01 [
 
 	^ self new	
@@ -26,7 +28,7 @@ BioSTRSequence class >> example01 [
 		yourself.
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioSTRSequence class >> example02 [
 
 	^ self new 
@@ -38,7 +40,7 @@ BioSTRSequence class >> example02 [
 		inspect
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioSTRSequence class >> example03 [
 
 	^ self new 
@@ -49,63 +51,63 @@ BioSTRSequence class >> example03 [
 		inspect
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioSTRSequence >> defaultMaxMotifSize [
 	" Microsatellite definition at the US National Library of Medicine Medical Subject Headings (MeSH) "
 	
 	^ 5
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioSTRSequence >> defaultMinMotifSize [
 	" Microsatellite definition at the US National Library of Medicine Medical Subject Headings (MeSH) "
 	
 	^ 2
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isDiNucleotide [
 	" Answer <true> if receiver is   a di-nucleotide sequence "
 
 	^ self notEmpty and: [ self repeats = 2 ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isMonoNucleotide [
 	" Answer <true> if receiver is all the same letter "
 
 	^ self notEmpty and: [ self repeats = 1 ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isPentaNucleotide [
 	" Answer <true> if receiver is a penta-nucleotide sequence "
 
 	^ self notEmpty and: [ self repeats = 5 ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isSTRSequence [
 	" Answer <true> if the receiver represents a STR sequence "
 	
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isTetraNucleotide [
 	" Answer <true> if receiver is  a tetra-nucleotide sequence "
 
 	^ self notEmpty and: [ self repeats = 4 ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioSTRSequence >> isTriNucleotide [
 	" Answer <true> if receiver is  a tri-nucleotide sequence "
 
 	^ self notEmpty and: [ self repeats = 3 ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioSTRSequence >> printMotifOn: aStream [
 
 	self motif notNil
@@ -115,7 +117,7 @@ BioSTRSequence >> printMotifOn: aStream [
 				nextPutAll: self repeats asString ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioSTRSequence >> printOn: aStream [
 	" Private - See superimplementor's comment "
 

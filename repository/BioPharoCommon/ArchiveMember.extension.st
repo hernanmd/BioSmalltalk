@@ -1,31 +1,31 @@
-Extension { #name : #ArchiveMember }
+Extension { #name : 'ArchiveMember' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 ArchiveMember class >> fileExistsBehavior [
 
 	^ BioSettings fileExistsBehavior
 
 ]
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 ArchiveMember class >> fileExistsBehavior: anObject [
 
 	BioSettings fileExistsBehavior: anObject
 ]
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 ArchiveMember class >> setAbortOnFileExists [
 
 	^ self fileExistsBehavior: #abort
 ]
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 ArchiveMember class >> setDontOverwriteOnFileExists [
 
 	^ self fileExistsBehavior: #okay
 ]
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 ArchiveMember class >> setOverwriteOnFileExists [
 
 	^ self fileExistsBehavior: #retryWithOverwrite

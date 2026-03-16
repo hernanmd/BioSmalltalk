@@ -1,10 +1,12 @@
 Class {
-	#name : #BioRestriction,
-	#superclass : #BioObject,
-	#category : #'BioTools-Restriction'
+	#name : 'BioRestriction',
+	#superclass : 'BioObject',
+	#category : 'BioTools-Restriction',
+	#package : 'BioTools',
+	#tag : 'Restriction'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRestriction class >> downloadLocations [
 
 	^ #(
@@ -12,14 +14,14 @@ BioRestriction class >> downloadLocations [
 		)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRestriction class >> genBankAnnocationsFilepath [
 	"Answer a <FileReference> of the GenBank annotated file"
 
 	^ self openFileNamed: 'prod.txt'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRestriction class >> readGenBankAnnotations [
 	"Answer a <Collection> of GenBank annotations from REBASE"
 
@@ -28,7 +30,7 @@ BioRestriction class >> readGenBankAnnotations [
 		delimiter: Character tab
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRestriction class >> readGenBankAnnotationsAsDataFrame [
 	"Answer a <DataFrame> of GenBank annotations from REBASE"
 
@@ -38,7 +40,7 @@ BioRestriction class >> readGenBankAnnotationsAsDataFrame [
 		separator: Character tab
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 BioRestriction >> site [ 
 
 	self subclassResponsibility

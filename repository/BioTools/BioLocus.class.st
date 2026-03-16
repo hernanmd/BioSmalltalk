@@ -13,8 +13,8 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioLocus,
-	#superclass : #BioNamedObject,
+	#name : 'BioLocus',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'start',
 		'end',
@@ -23,10 +23,12 @@ Class {
 		'chrLocation',
 		'position'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioLocus class >> example01 [
 
 	^ self class new
@@ -37,7 +39,7 @@ BioLocus class >> example01 [
 		
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioLocus >> asString [
 	" Answer a <String> representation of the receiver "
 	
@@ -46,59 +48,59 @@ BioLocus >> asString [
 		self printRangeOn: stream ]
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioLocus >> chrLocation [
 	" Answer a <String> with the receiver's chromosome location "
 
 	^ chrLocation
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioLocus >> chrLocation: aString [
 	" Set the chromosome location of the receiver to be aString "
 
 	chrLocation := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> end [
 	" Answer a <Number> of the receiver's end "
 	^ end
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> end: aNumber [
 	" Set aNumber to the receiver's end "
 	end := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> length [
 	" Answer a <Number> of the length of this range "
 	
 	^ length
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> length: aNumber [
 	" Set the receiver's length to be aNumber "
 
 	length := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> position [
 	^ position
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> position: aNumber [
 	" Set the receiver's location to aNumber "
 	
 	position := aNumber
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printChrOn: aStream [
 	chrLocation
 		ifNil: [ aStream
@@ -110,7 +112,7 @@ BioLocus >> printChrOn: aStream [
 				nextPutAll: chrLocation asString between: $( and: $) ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printLengthOn: aStream [
 	length notNil
 		ifTrue: [ aStream
@@ -118,7 +120,7 @@ BioLocus >> printLengthOn: aStream [
 				nextPutAll: self length asString ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printNameOn: aStream [
 
 	self hasName
@@ -132,7 +134,7 @@ BioLocus >> printNameOn: aStream [
 				nextPutAll: 'Unnamed' between: $[ and: $] ].
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -144,7 +146,7 @@ BioLocus >> printOn: aStream [
 	self printValueOn: aStream
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printRangeOn: stream [
 
 	(self start notNil and: [ self end notNil ])
@@ -156,7 +158,7 @@ BioLocus >> printRangeOn: stream [
 				nextPutAll: self end asString ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioLocus >> printValueOn: aStream [
 	value notNil
 		ifTrue: [ aStream
@@ -164,46 +166,46 @@ BioLocus >> printValueOn: aStream [
 				nextPutAll: value asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> range [
 	" Answer an <Interval> with the start and end positions of the receiver "
 	
 	^ self start to: self end
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioLocus >> rangeIncludes: aNumber [
 	"Return true if the number lies in the interval between start and stop."
 	
 	^ self start notNil and: [ self end notNil and: [ self range rangeIncludes: aNumber ] ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioLocus >> rangeIncludes: posNumber chrLocation: chrNumber [
 	"Return true if chrNumber and posNumber lies in the interval between start and stop and chromosomic location ."
 	
 	^ (self start notNil and: [ self end notNil ]) and: [ self chrLocation = chrNumber and: [ self rangeIncludes: posNumber ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> start [
 	" Answer a <Number> of the receiver's start "
 	^ start
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> start: aNumber [
 	" Set aNumber to the receiver's start "
 
 	start := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> value [
 	^ value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocus >> value: anObject [
 	value := anObject
 ]

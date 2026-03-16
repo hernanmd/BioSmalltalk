@@ -4,32 +4,34 @@ See subclasses for specific details.
 
 "
 Class {
-	#name : #BioIUPACRNA,
-	#superclass : #BioIUPACAlphabet,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioIUPACRNA',
+	#superclass : 'BioIUPACAlphabet',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACRNA class >> codes [
 
 	^ String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACRNA >> codonTable [
 	" Answer the appropriate BioCodonTable for the receiver "
 	
 	^ BioRNACodonTables
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACRNA >> isRNA [
 	" See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACRNA >> printOn: aStream [
 	" See superimplementor's comment "
 	

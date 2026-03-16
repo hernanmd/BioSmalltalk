@@ -9,8 +9,8 @@ It also contains an exit status which you may query by sending the #status messa
 
 "
 Class {
-	#name : #BioResultObject,
-	#superclass : #BioNamedObject,
+	#name : 'BioResultObject',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'updater',
 		'history',
@@ -20,17 +20,19 @@ Class {
 		'exitStatus',
 		'command'
 	],
-	#category : #'BioTools-Query'
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject class >> accept: anObject [
 	" Answer <true> if anObject can be instantiated with the receiver "
 
 	^ anObject respondsTo: #addResult:.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioResultObject class >> for: aBioGBSeqCollection [
 
 	^ aBioGBSeqCollection isEmpty 	
@@ -38,21 +40,21 @@ BioResultObject class >> for: aBioGBSeqCollection [
 		ifFalse: [ self halt. BioNCBIGenBankResult new ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioResultObject class >> newFrom: aCollection [
 	" Answer a new instance of the receiver using aCollection as result. "
 	
 	^ self new filter: aCollection
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioResultObject class >> on: aCollection [
 	" Answer a new instance of the receiver using aCollection as result "
 	
 	^ self new result: aCollection
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioResultObject >> = anObject [
 	"Answer whether the receiver and anObject represent the same object."
 	" Two search results are equal if
@@ -70,63 +72,63 @@ BioResultObject >> = anObject [
 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioResultObject >> beFailed [
 	" Set the receiver's last operation status to failed "
 	
 	self status: false
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioResultObject >> beSuccess [
 	" Set the receiver's last operation status to failed "
 	
 	self status: true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> command [
 	" Answer a <String> with the receiver's launched command "
 
 	^ command
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> command: aString [
 	" Set the receiver's command to be aString "
 
 	command := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> contents [
 	" Answer a <String> with the receiver's result object "
 	
 	^ self result contents "results"
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioResultObject >> definitionString [
 	" Answer a descriptive <String> for the receiver "
 
 	^ 'Result'
 ]
 
-{ #category : #iterating }
+{ #category : 'iterating' }
 BioResultObject >> do: aBlock [
 	"Refer to the comment in Collection|do:."
 	
 	^ result do: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 
 	aStream nextPutAll: self result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> formatters [
 	" Answer a <Collection> of <BioFormatter> "
 	
@@ -134,32 +136,32 @@ BioResultObject >> formatters [
 		ifNil: [ formatters := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> formatters: aCollection [
 
 	^ formatters := aCollection
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioResultObject >> hash [
 	" Answer an <Integer> that is related to the identity of the receiver. "
 
 	^ self result hash bitXor: self names hash
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> history [
 
 	^ history
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> history: anObject [
 
 	history := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioResultObject >> initialize [
 	" Private - Initialize receiver's metadata "
 	
@@ -169,99 +171,99 @@ BioResultObject >> initialize [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioResultObject >> isEmpty [
 	" Answer whether the receiver contains any elements "
 		
 	^ self result isEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioResultObject >> isEntrezSearchResult [
 	" Answer <true> if receiver represents a result obtained through Entrez system "
 	
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> newFilter [
 	" Answer a Filter object over the receiver's reader "
 	
 	^ self resultReader newFilter
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioResultObject >> notEmpty [
 	"Answer whether the receiver contains any elements."
 
 	^ self result notNil and: [ self contents notEmpty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> project [
 	" Answer the receiver's project - See class comments for details "
 	
 	^ project
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> project: aBioProject [
 	" Set the receiver's project - See class comments for details "
 
 	project := aBioProject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> readerClass [
 
 	^ BioBasicReader
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> result [
 	" Answer the receiver's result object "
 
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> result: anObject [
 	result := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> resultReader [
 
 	^ result
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> size [
 	"Answer how many elements the receiver contains."
 	
 	^ self result size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> status [
 	" Answer a <Boolean> with the exit status of the receiver "
 
 	^ exitStatus
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> status: aBoolean [
 	" Set aBoolean as the exit status of the receiver "
 
 	exitStatus := aBoolean
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> updater [
 	^ updater
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioResultObject >> updater: anObject [
 	updater := anObject
 ]

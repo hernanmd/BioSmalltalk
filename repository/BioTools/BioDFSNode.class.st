@@ -7,18 +7,20 @@ https://github.com/laserson/pytools/blob/master/degex.py
 
 "
 Class {
-	#name : #BioDFSNode,
-	#superclass : #BioObject,
+	#name : 'BioDFSNode',
+	#superclass : 'BioObject',
 	#instVars : [
 		'visited',
 		'neighbors',
 		'cumulSeq',
 		'remainSeq'
 	],
-	#category : #'BioTools-Helpers'
+	#category : 'BioTools-Helpers',
+	#package : 'BioTools',
+	#tag : 'Helpers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioDFSNode class >> newWith: aString remaining: aCollection [
 
 	^ self new 
@@ -26,23 +28,23 @@ BioDFSNode class >> newWith: aString remaining: aCollection [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> beVisited [
 
 	visited := true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> cumulSeq [
 	^ cumulSeq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> cumulSeq: anObject [
 	cumulSeq := anObject
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioDFSNode >> initializeCumulative: cum remaining: rem [
 
 	visited := false.
@@ -51,39 +53,39 @@ BioDFSNode >> initializeCumulative: cum remaining: rem [
 	remainSeq := rem
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> isVisited [
 
 	^ visited
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> neighbors [
 	^ neighbors
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> neighbors: anObject [
 	neighbors := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> remainSeq [
 	^ remainSeq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> remainSeq: anObject [
 	remainSeq := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> remainingSeqAt: index [
 
 	^ self remainSeq at: index
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDFSNode >> remainingSeqSize [
 
 	^ self remainSeq size

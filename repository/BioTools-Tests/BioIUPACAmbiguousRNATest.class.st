@@ -2,12 +2,14 @@
 A BioIUPACAmbiguousRNATest is a test class for testing the behavior of BioIUPACAmbiguousRNA
 "
 Class {
-	#name : #BioIUPACAmbiguousRNATest,
-	#superclass : #TestCase,
-	#category : #'BioTools-Tests-Alphabets'
+	#name : 'BioIUPACAmbiguousRNATest',
+	#superclass : 'TestCase',
+	#category : 'BioTools-Tests-Alphabets',
+	#package : 'BioTools-Tests',
+	#tag : 'Alphabets'
 }
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioIUPACAmbiguousRNATest >> testCodes [
 
 	self assert: BioIUPACAmbiguousRNA new codes asSet equals: 'GAUCRYWSMKHBVDN' asSet.

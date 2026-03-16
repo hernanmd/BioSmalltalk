@@ -7,49 +7,51 @@ Instance Variables
 
 "
 Class {
-	#name : #BioIUPACProtein,
-	#superclass : #BioIUPACAlphabet,
+	#name : 'BioIUPACProtein',
+	#superclass : 'BioIUPACAlphabet',
 	#instVars : [
 		'stopSymbol'
 	],
-	#category : #'BioTools-Alphabets'
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein class >> ambiguityCodes [
 	" Do not answer lowercase versions "
 
 	^ '-X'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein class >> codes [
 
 	^ 'ACDEFGHIKLMNPQRSTVWY'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACProtein >> canTranslate [
 	" Answer <true> if a sequence can be translated using the receiver "
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein >> complementaryTable [
 	" Answer the receiver's complementary table "
 
 	^ self signalInvalidObject: 'Proteins do not have complements' translated
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACProtein >> isProtein [
 	" See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACProtein >> printOn: aStream [
 	" See superimplementor's comment "
 	
@@ -57,18 +59,18 @@ BioIUPACProtein >> printOn: aStream [
 	aStream nextPutAll: ' -> Protein'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein >> stopSymbol [
 	^ stopSymbol
 		ifNil: [ stopSymbol := $* ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein >> stopSymbol: anObject [
 	stopSymbol := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACProtein >> unknownLetter [
 	" Answer a <Character> with the default letter used when a letter
 	in a position in the sequence is unknown "

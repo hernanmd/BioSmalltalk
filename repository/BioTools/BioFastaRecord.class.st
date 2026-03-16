@@ -1,14 +1,16 @@
 Class {
-	#name : #BioFastaRecord,
-	#superclass : #BioNamedObject,
+	#name : 'BioFastaRecord',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'sequence',
 		'identifiers'
 	],
-	#category : #'BioTools-Core'
+	#category : 'BioTools-Core',
+	#package : 'BioTools',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFastaRecord class >> named: aBioObject sequence: aSequence [
 	" Answer a new instance of the receiver with header line aNameString and aSeqString as sequence "
 	
@@ -18,7 +20,7 @@ BioFastaRecord class >> named: aBioObject sequence: aSequence [
 			yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFastaRecord class >> named: aBioObject sequence: aSequence alphabet: anAlphabetString [
 	" Answer a new instance of the receiver with header line
 	aNameString and aSeqString as sequence "
@@ -30,7 +32,7 @@ BioFastaRecord class >> named: aBioObject sequence: aSequence alphabet: anAlphab
 			yourself
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioFastaRecord >> <= aBioFastaRecord [
 	" Answer whether the receivers's sequence name sorts before aString.
 	The collation order is simple ascii (with case differences). "
@@ -38,7 +40,7 @@ BioFastaRecord >> <= aBioFastaRecord [
 	^ self name <= aBioFastaRecord name
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioFastaRecord >> = aFastaRecord [
 	" Two fasta records are equal if
 	 (a) they are the same 'kind' of thing.
@@ -51,7 +53,7 @@ BioFastaRecord >> = aFastaRecord [
 	^ self sequence = aFastaRecord sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> addIdentifiers: aCollection [
 
 	aCollection allButLast ifNotEmpty: [ 
@@ -59,21 +61,21 @@ BioFastaRecord >> addIdentifiers: aCollection [
 			self identifiers at: k put: v ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> alphabet: aBioAlphabetClass [
 	" Set the receiver's sequence alphabet to aBioAlphabetClass "
 	
 	self sequence alphabet: aBioAlphabetClass new
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioFastaRecord >> asFastaRecord [
 	" Answer a <BioFastaRecord> "
 
 	^ self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioFastaRecord >> asString [
 	" Answer the String representation of the receiver." 	
 	
@@ -86,7 +88,7 @@ BioFastaRecord >> asString [
 			cr ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> dnaMwDoubleCircular [
 	| mw_direct_strand |
 
@@ -108,7 +110,7 @@ BioFastaRecord >> dnaMwDoubleCircular [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> dnaMwDoubleLinear [
 	| mw_direct_strand |
 
@@ -130,7 +132,7 @@ BioFastaRecord >> dnaMwDoubleLinear [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> dnaMwSingleCircular [
 	| oh mw_direct_strand |
 
@@ -153,7 +155,7 @@ BioFastaRecord >> dnaMwSingleCircular [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> dnaMwSingleLinear [
 	| mw_direct_strand |
 
@@ -175,7 +177,7 @@ BioFastaRecord >> dnaMwSingleLinear [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 	
@@ -187,27 +189,27 @@ BioFastaRecord >> dumpToStream: aStream [
 		bioCr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> gcContent [
 	" Refer to comment in #gcContent "
 	
 	^ self sequence gcContent
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaRecord >> hasGaps [
 
 	^ self sequenceString includes: '-'
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioFastaRecord >> hash [
 	" Private - hash is implemented because #= is implemented "
 
 	^ self identifiers hash bitXor: self sequence hash
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 
@@ -215,14 +217,14 @@ BioFastaRecord >> identifiers [
 		ifNil: [ identifiers := Dictionary new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> identifiers: aCollection [
 	" Set the receiver's identifiers to aCollection "
 
 	identifiers := aCollection
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFastaRecord >> initializeName: aNameString sequence: aString [
 	" Private - Initialize the receiver's name and sequence "
 	
@@ -230,7 +232,7 @@ BioFastaRecord >> initializeName: aNameString sequence: aString [
 	self sequence: (aString asSequenceForAlphabet: BioNullAlphabet).
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFastaRecord >> initializeName: aNameString sequence: aString alphabet: anAlphabet [
 	" Private - Initialize the receiver's name, sequence and alphabet "
 	
@@ -238,21 +240,21 @@ BioFastaRecord >> initializeName: aNameString sequence: aString alphabet: anAlph
 	self sequence: (aString asSequenceForAlphabet: anAlphabet).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaRecord >> isEmpty [
 	" Answer <true> if the receiver does not contain either a name / header description or a sequence "
 	
 	^ self hasName not and: [ self sequenceString isEmpty not ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFastaRecord >> isFastaRecord [
 	" See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> molecularWeight [
 
 	^ self sequence hasAmbiguousBases
@@ -260,14 +262,14 @@ BioFastaRecord >> molecularWeight [
 		ifFalse: [ self sequence molecularWeightNonDegen ]		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> occurrencesOfLetters [
 	"Answer a <Dictionary> of occurrence mappings for the receiver "
 
 	^ self sequence occurrencesOfLetters
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFastaRecord >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -277,7 +279,7 @@ BioFastaRecord >> printOn: aStream [
 		nextPutAll: self name.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> reverseComplement [
 	" Answer a copy of the receiver's sequence complemented and with element order reversed. "
 	
@@ -291,21 +293,21 @@ BioFastaRecord >> reverseComplement [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> sequence [
 	" Answer a BioSequence "
 	
 	^ sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> sequence: aBioSequence [
 	"Set the receiver's sequence to aBioSequence"
 
 	sequence := aBioSequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> sequenceName [
 	" Answer a <String> with the receiver's sequence header "
 	
@@ -316,28 +318,28 @@ BioFastaRecord >> sequenceName [
 		ifFalse: [ seqName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> sequenceNameWithoutDelimiter [
 	" Answer a <String> with the receiver's sequence header without the $> character "
 	
 	^ self name allButFirst
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> sequenceString [
 	" Answer a <String> with the receiver's sequence "
 	
 	^ sequence asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> size [
 	" Answer a <Number> with the size of the receiver's sequence "
 
 	^ self sequence size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFastaRecord >> translate [
 	"Answer the receiver's <BioSequence> translated to its corresponding Protein, adjusting the alphabet."
 	

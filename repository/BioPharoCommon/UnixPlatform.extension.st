@@ -1,6 +1,6 @@
-Extension { #name : #UnixPlatform }
+Extension { #name : 'UnixPlatform' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 UnixPlatform >> execNameFor: aString [
 	" Private - See superimplementor's comment "
 	

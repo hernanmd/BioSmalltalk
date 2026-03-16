@@ -1,23 +1,25 @@
 Class {
-	#name : #BioGenomeTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioGenomeTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'genome'
 	],
-	#category : #'BioTools-Tests-Biological'
+	#category : 'BioTools-Tests-Biological',
+	#package : 'BioTools-Tests',
+	#tag : 'Biological'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenomeTest >> genome [
 	^ genome
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenomeTest >> genome: anObject [
 	genome := anObject
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 BioGenomeTest >> setUp [
 	" Assure defaults "
 
@@ -25,7 +27,7 @@ BioGenomeTest >> setUp [
 	genome := BioGenome new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGenomeTest >> testChromosomes [
 
 	self assert: (self genome chromosomes isKindOf: self genome defaultCollectionClass) 

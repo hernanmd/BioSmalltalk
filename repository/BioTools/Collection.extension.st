@@ -1,6 +1,6 @@
-Extension { #name : #Collection }
+Extension { #name : 'Collection' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> bioHasEqualElements: otherCollection [
 	"Answer whether the receiver's size is the same as otherCollection's
 	size, and each of the receiver's elements equal the corresponding 
@@ -15,7 +15,7 @@ Collection >> bioHasEqualElements: otherCollection [
 	^ true
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> dumpToStream: aStream [
 	" Private - Write the receiver's contents into aStream "
 	
@@ -23,7 +23,7 @@ Collection >> dumpToStream: aStream [
 
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> groupByEquality [
 
 	| group |
@@ -39,7 +39,7 @@ Collection >> groupByEquality [
 	^ group
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> includesBeginWith: aString [
 	"Answer whether anObject is like one of the receiver's elements."
 
@@ -49,7 +49,7 @@ Collection >> includesBeginWith: aString [
 				ifFalse: [ each anySatisfy: [ : ss | (ss asUppercase alike: aString asUppercase) > (aString size / 2) asFloat rounded ] ] ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> includesBeginWithAnyOf: aCollection [
 	" Answer whether any element of aCollection is one of the receiver's elements. "
 	
@@ -57,28 +57,28 @@ Collection >> includesBeginWithAnyOf: aCollection [
 
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> includesLike: aString [
 	"Answer whether anObject is like one of the receiver's elements."
 
 	^ self anySatisfy: [ :each | (each asUppercase alike: aString asUppercase) > (aString size / 2) asFloat rounded ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isBioCollection [
 	" Answer <true> if receiver is a <Collection> provided by the BioSmalltalk library "
 
 	^ false
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isBioSpecialIdentifier [
 	" Answer <true> if receiver is any of the common biological identifiers "
 
 	^ #('pdb' 'bbs' 'gi' 'gnl' 'lcl' 'pat' 'pir' 'prf' 'sp' 'dbj' 'emb' 'gb' 'ref') includes: self
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isBiologicalSequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	
@@ -87,21 +87,21 @@ Collection >> isBiologicalSequence [
 		and: [ self isBioSpecialIdentifier not ]
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isDNASequence [
 	" Answer <true> if the receiver represents a identifiable DNA sequence "
 	
 	^ self allSatisfy: #isDNASequence
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isProteinSequence [
 	" Answer <true> if the receiver represents a identifiable Protein sequence "
 	
 	^ self allSatisfy: #isProteinSequence
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 Collection >> isRNASequence [
 	" Answer <true> if the receiver represents a identifiable RNA sequence "
 	

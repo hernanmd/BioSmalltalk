@@ -255,10 +255,10 @@ BaselineOfBioSmalltalk >> customProjectAttributes [
 { #category : 'doits' }
 BaselineOfBioSmalltalk >> ensureMetacelloFileDownload [
 
-	Metacello new           
+	EpMonitor disableDuring: [ Metacello new           
 		baseline: 'MetacelloFileDownload';              
 		repository: 'github://hernanmd/MetacelloFileDownload';          
-		load.
+		load ]
 ]
 
 { #category : 'doits' }

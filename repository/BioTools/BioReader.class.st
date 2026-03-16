@@ -14,17 +14,19 @@ Instance Variables:
 	contents		<String>		Contains the raw contents as retrieved from the initial user's instantiation.
 "
 Class {
-	#name : #BioReader,
-	#superclass : #BioNamedObject,
+	#name : 'BioReader',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'contents',
 		'nextReader',
 		'parser'
 	],
-	#category : #'BioTools-IO'
+	#category : 'BioTools-IO',
+	#package : 'BioTools',
+	#tag : 'IO'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> filesFromXMLDirectory: aDirectoryString [
 	" Answer a Collection of readers iterating over the files located at aDirectoryString "
 
@@ -33,7 +35,7 @@ BioReader class >> filesFromXMLDirectory: aDirectoryString [
 			thenCollect: [ : file | self newFromXML: file contents ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> for: aString [
 	" Private - Answer a Class which is the preferred one for reading aString "
 
@@ -42,14 +44,14 @@ BioReader class >> for: aString [
 		ifNone: [ self error: 'No preferred readers found' translated ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioReader class >> isPreferredFor: aString [
 	" Answer <true> if aString is the most appropriate content for the receiver "
 	
 	^ false
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromFlat: aFileLocationOrString [
 	" Answer a new reader using file located at aFileLocationOrString "
 
@@ -61,14 +63,14 @@ BioReader class >> newFromFlat: aFileLocationOrString [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromFlatCollection: aCollectionOfFlat [
 	" Answer a Collection of readers iterating over the Flat Strings at aCollectionOfFlat "
 
 	^ aCollectionOfFlat collect: [ : string | self newFromFlat: string ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromFlatPath: aFileLocationOrString [
 	" Answer a new reader using file located at aFileLocationOrString "
 
@@ -78,7 +80,7 @@ BioReader class >> newFromFlatPath: aFileLocationOrString [
 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromXML: aString [
 	" Answer a new reader using file located at aFileLocationOrString "
 
@@ -87,14 +89,14 @@ BioReader class >> newFromXML: aString [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromXMLCollection: xmlCollection [
 	" Answer a Collection of readers iterating over the XML Strings at aCollectionOfXMLs "
 
 	^ xmlCollection collect: [ : rsObject | self newFromXML: rsObject  result]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioReader class >> newFromXMLFile: aFileLocation [
 	" Answer a new receiver's instance using contents located at aFileLocationOrString "
 
@@ -104,7 +106,7 @@ BioReader class >> newFromXMLFile: aFileLocation [
 
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> accessNode: aNodeName [
 	" Private - Answer an object from the search result corresponding to aNodeName
 	or raise an exception if there are no results in the receiver "
@@ -118,7 +120,7 @@ BioReader >> accessNode: aNodeName [
 		ifAbsent: [ self signalNotFound: 'Empty result set' translated ]
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> accessNodes: aNodeName [
 	" Private - Answer a Collection with search results corresponding to aNodeName
 	or raise an exception if there are no results in the receiver "
@@ -131,44 +133,44 @@ BioReader >> accessNodes: aNodeName [
 				ifTrue: [ self signalInvalidObject: 'Empty result set' translated ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> contents [
 
 	^ contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> contents: anObject [
 	^ contents := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> dumpToStream: aStream [
 
 	contents
 		ifNotNil: [ contents dumpToStream: aStream ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioReader >> hasContents [
 	" Answer <true> if the receiver's contents is not empty "
 
 	^ self contents notNil and: [ self contents notEmpty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> nextReader [
 
 	^ nextReader
 		ifNil: [ nextReader := self defaultNextReader ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> nextReader: anObject [
 	nextReader := anObject
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> parse: anObject [
 
 	^ self parser parse: anObject
@@ -177,7 +179,7 @@ BioReader >> parse: anObject [
 	
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> parseDocument [
 	" Parse the receiver's contents and answer an Object as provided by the receiver's parser "
 	
@@ -187,42 +189,42 @@ BioReader >> parseDocument [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> parser [
 
 	^ parser
 		ifNil: [ parser := self parserClass ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> parser: aParserClass [
 	" Set the receiver's parser to aParserClass "
 	
 	parser := aParserClass
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> parserClass [
 	" Answer a Class responsible for parsing the receiver's contents or input "
 	
 	self subclassResponsibility
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> results [
 	"Answer the value of results"
 
 	^ contents
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> results: anObject [
 	"Set the value of results"
 
 	contents := anObject
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioReader >> selectNodes: nodesCollection in: anObject [
 
 	^ self parserClass 
@@ -233,7 +235,7 @@ BioReader >> selectNodes: nodesCollection in: anObject [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioReader >> size [
 	"Answer how many elements the receiver contains."
 

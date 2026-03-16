@@ -2,18 +2,20 @@
 A BioIUPACProteinTest is a test class for testing the behavior of BioIUPACProtein
 "
 Class {
-	#name : #BioIUPACProteinTest,
-	#superclass : #TestCase,
-	#category : #'BioTools-Tests-Alphabets'
+	#name : 'BioIUPACProteinTest',
+	#superclass : 'TestCase',
+	#category : 'BioTools-Tests-Alphabets',
+	#package : 'BioTools-Tests',
+	#tag : 'Alphabets'
 }
 
-{ #category : #test }
+{ #category : 'test' }
 BioIUPACProteinTest >> testCanTranslate [
 
 	self deny: BioIUPACProtein new canTranslate 
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioIUPACProteinTest >> testCodes [
 
 	self assert: BioIUPACProtein new codes asSet equals: 'ACDEFGHIKLMNPQRSTVWY' asSet.

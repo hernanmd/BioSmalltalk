@@ -2,43 +2,45 @@
 Serves as a Null Object for empty or missing results.
 "
 Class {
-	#name : #BioEmptyResultObject,
-	#superclass : #BioResultObject,
-	#category : 'BioTools-Query'
+	#name : 'BioEmptyResultObject',
+	#superclass : 'BioResultObject',
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEmptyResultObject >> collect: aBlock [ 
 
 	^ Array empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEmptyResultObject >> detectMax: aBlock [ 
 
 	^ nil
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEmptyResultObject >> isEmpty [
 	"Answer whether the receiver contains any elements."
 		
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEmptyResultObject >> notEmpty [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEmptyResultObject >> result [
 
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEmptyResultObject >> size [
 	"Answer how many elements the receiver contains."
 	

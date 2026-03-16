@@ -11,19 +11,21 @@ to get the contents at an URL:
 
 "
 Class {
-	#name : #BioWebClient,
-	#superclass : #BioWebClientEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioWebClient',
+	#superclass : 'BioWebClientEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClient class >> decode: aString [
 	" See superimplementor's comment "
 
 	^ (self urlClass decodeUrlEncodedForm: aString) keys anyOne
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioWebClient class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
@@ -31,7 +33,7 @@ BioWebClient class >> isPreferredAdapter [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClient class >> providerClass [
 	" See superimplementor's comment "
 	
@@ -39,21 +41,21 @@ BioWebClient class >> providerClass [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClient class >> urlClass [
 	" Answer a <Class> implementing an interpreted URL/URI "
 
 	^ self classFor: #WebUtils
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebClient >> downloadUrl [
 	" See superimplementor's comment "
 
 	^ (self urlClass decodeUrlEncodedForm: self url asString) keys anyOne
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWebClient >> responseType [
 
 	^ self classFor: #WebResponse

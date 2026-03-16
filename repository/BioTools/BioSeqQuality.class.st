@@ -6,38 +6,40 @@ Instance Variables:
 	trace	<Collection>
 "
 Class {
-	#name : #BioSeqQuality,
-	#superclass : #BioSequence,
+	#name : 'BioSeqQuality',
+	#superclass : 'BioSequence',
 	#instVars : [
 		'qual',
 		'trace'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqQuality >> qual [
 	^ qual
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqQuality >> qual: anObject [
 	qual := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqQuality >> qualText [
 	" Answer a <String> representation  of meta data "
 	
 	^ qual
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqQuality >> trace [
 	^ trace
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSeqQuality >> trace: anObject [
 	trace := anObject
 ]

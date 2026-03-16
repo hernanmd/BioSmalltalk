@@ -5,12 +5,14 @@ See http://wiki.squeak.org/squeak/708 for details
 
 "
 Class {
-	#name : #BioOSProcessExecutor,
-	#superclass : #BioExecutionEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioOSProcessExecutor',
+	#superclass : 'BioExecutionEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSProcessExecutor class >> executeCommand: aCommandName [
 	" See superimplementor's comment "
 	
@@ -19,7 +21,7 @@ BioOSProcessExecutor class >> executeCommand: aCommandName [
 		do: [ : ex | ex resume ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSProcessExecutor class >> executeCommand: aCommandName parameter: parameterName [
 	" See superimplementor's comment "
 
@@ -27,7 +29,7 @@ BioOSProcessExecutor class >> executeCommand: aCommandName parameter: parameterN
 			command: aCommandName , String space , parameterName) output.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSProcessExecutor class >> executeMonitoring: aCommandName [
 	" See superimplementor's comment "
 	
@@ -41,7 +43,7 @@ BioOSProcessExecutor class >> executeMonitoring: aCommandName [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSProcessExecutor class >> executeOSProcessCommand: aCommandName [
 	" Private - Execute aCommandName and answer a <String> with any output returned "
 
@@ -52,14 +54,14 @@ BioOSProcessExecutor class >> executeOSProcessCommand: aCommandName [
 	^ osProcess outputAndError
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSProcessExecutor class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ self isRunningInUnix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSProcessExecutor class >> providerClass [
 	" Private - See superimplementor's comment "
 

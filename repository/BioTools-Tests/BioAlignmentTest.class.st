@@ -1,13 +1,15 @@
 Class {
-	#name : #BioAlignmentTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioAlignmentTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'align'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> alphaSequence [
 
 	^ BioSequence 
@@ -16,7 +18,7 @@ BioAlignmentTest >> alphaSequence [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> betaSequence [
 
 	^ BioSequence 
@@ -25,7 +27,7 @@ BioAlignmentTest >> betaSequence [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> gammaSequence [
 
 	^ BioSequence 
@@ -35,7 +37,7 @@ BioAlignmentTest >> gammaSequence [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> sampleAlignment01 [
 
 	align := BioAlignment new.
@@ -47,7 +49,7 @@ BioAlignmentTest >> sampleAlignment01 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> sampleAlignment02 [
 
 	align := BioAlignment new.
@@ -61,7 +63,7 @@ BioAlignmentTest >> sampleAlignment02 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> sampleAlignment03 [
 
 	align := BioAlignment new.
@@ -75,7 +77,7 @@ BioAlignmentTest >> sampleAlignment03 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAlignmentTest >> sampleAlignment04 [
 
 	align := BioAlignment new.
@@ -89,7 +91,7 @@ BioAlignmentTest >> sampleAlignment04 [
 
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testAnyOne [
 
 	align := self sampleAlignment01.
@@ -97,7 +99,7 @@ BioAlignmentTest >> testAnyOne [
 
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testAt [
 
 	| alignRegion |
@@ -114,7 +116,7 @@ BioAlignmentTest >> testAt [
 	self should: [ align at: 4 ] raise: BioException
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testAtAccession [
 
 	| acc seqWithAccession |
@@ -127,7 +129,7 @@ BioAlignmentTest >> testAtAccession [
 	self assert: (align atAccession: acc) equals: align first.
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testAtAlignment [
 
 	align := self sampleAlignment01.
@@ -137,7 +139,7 @@ BioAlignmentTest >> testAtAlignment [
 	self should: [ align atAlignment: 4 ] raise: BioException
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testAtColumn [
 	align := self sampleAlignment01.
 	self assert: ((align atColumn: 2) isKindOf: BioSequence).
@@ -148,7 +150,7 @@ BioAlignmentTest >> testAtColumn [
 	self should: [ align atColumn: 0 ] raise: BioErrorSpecificationObject
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testBeReference [
 
 	align := self sampleAlignment01.
@@ -157,7 +159,7 @@ BioAlignmentTest >> testBeReference [
 	self assert: align isReference.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testConsensus [
 
 	align := self sampleAlignment01.
@@ -167,7 +169,7 @@ BioAlignmentTest >> testConsensus [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testCopyFrom [
 	| set |
 	align := self sampleAlignment01.
@@ -186,7 +188,7 @@ BioAlignmentTest >> testCopyFrom [
 	self should: [ align copyFrom: -1 to: 1 ] raise: Error
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testFirst [
 
 	align := self sampleAlignment01.
@@ -194,7 +196,7 @@ BioAlignmentTest >> testFirst [
 	self assert: align first equals: self alphaSequence
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testIsReference [
 
 	align := self sampleAlignment01.
@@ -203,7 +205,7 @@ BioAlignmentTest >> testIsReference [
 	self assert: align isReference.
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testLast [
 
 	align := self sampleAlignment01.
@@ -211,7 +213,7 @@ BioAlignmentTest >> testLast [
 	self assert: align last equals: self gammaSequence
 ]
 
-{ #category : #test }
+{ #category : 'test' }
 BioAlignmentTest >> testNumberOfBases [
 
 	align := self sampleAlignment01.
@@ -219,7 +221,7 @@ BioAlignmentTest >> testNumberOfBases [
 	self assert: align numberOfBases equals: self alphaSequence size
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSequenceAsFastaString [
 	align := self sampleAlignment01.
 	self
@@ -234,7 +236,7 @@ ACTGCTAGATAG
 '
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSequenceAsPhylipString [
 	align := self sampleAlignment01.
 	self
@@ -247,7 +249,7 @@ Gamma     ACTGCTAGATAG
 '
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSequenceNames [
 
 	align := self sampleAlignment01.
@@ -257,7 +259,7 @@ BioAlignmentTest >> testSequenceNames [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSequenceStrings [
 
 	align := self sampleAlignment01.
@@ -266,7 +268,7 @@ BioAlignmentTest >> testSequenceStrings [
 		equals: #('ACTGCTAGCTAG' 'ACT-CTAGCTAG' 'ACTGCTAGATAG')
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSequences [
 
 	align := self sampleAlignment01.	
@@ -275,7 +277,7 @@ BioAlignmentTest >> testSequences [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAlignmentTest >> testSize [
 
 	align := self sampleAlignment01.

@@ -1,6 +1,6 @@
-Extension { #name : #SettingTreeBuilder }
+Extension { #name : 'SettingTreeBuilder' }
 
-{ #category : #'*BioPharoCommon' }
+{ #category : '*BioPharoCommon' }
 SettingTreeBuilder >> bioPharoSettings [
 
 	^ self systemsettings

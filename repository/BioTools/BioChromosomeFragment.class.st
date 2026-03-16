@@ -18,16 +18,18 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioChromosomeFragment,
-	#superclass : #BioNamedObject,
+	#name : 'BioChromosomeFragment',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'start',
 		'end'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioChromosomeFragment >> = aBioChromosomeFragment [
 	"Answer <true> if the receiver is equal to aBioChromosomeFragment"
 	
@@ -40,17 +42,17 @@ BioChromosomeFragment >> = aBioChromosomeFragment [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosomeFragment >> end [
 	^ end
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosomeFragment >> end: anObject [
 	end := anObject
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioChromosomeFragment >> hash [
 	" Private - hash is implemented because #= is implemented "
 	
@@ -58,12 +60,12 @@ BioChromosomeFragment >> hash [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosomeFragment >> start [
 	^ start
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioChromosomeFragment >> start: anObject [
 	start := anObject
 ]

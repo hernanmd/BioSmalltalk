@@ -3,12 +3,14 @@ A BioWebResult represents the output from a web query.
 
 "
 Class {
-	#name : #BioWebResult,
-	#superclass : #BioInitialResult,
-	#category : #'BioTools-Query'
+	#name : 'BioWebResult',
+	#superclass : 'BioInitialResult',
+	#category : 'BioTools-Query',
+	#package : 'BioTools',
+	#tag : 'Query'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebResult >> executeFor: aClient [
 	" Private - Perform the actual search. Answer the receiver "
 	

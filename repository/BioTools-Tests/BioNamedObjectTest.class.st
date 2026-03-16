@@ -1,13 +1,15 @@
 Class {
-	#name : #BioNamedObjectTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioNamedObjectTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'namedObject'
 	],
-	#category : #'BioTools-Tests-Core'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNamedObjectTest >> setUp [
 	" Set up any named object for testing "
 
@@ -16,7 +18,7 @@ BioNamedObjectTest >> setUp [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testAddDuplicateName [
 	namedObject name: 'accessionName1'.
 	self assert: namedObject name equals: 'accessionName1'.
@@ -28,7 +30,7 @@ BioNamedObjectTest >> testAddDuplicateName [
 		raise: BioDuplicatedObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testAddNameRemovesNullName [
 
 	namedObject := BioAccession new.
@@ -39,7 +41,7 @@ BioNamedObjectTest >> testAddNameRemovesNullName [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testAddNames [
 	namedObject name: 'accessionName1'.
 	self assert: namedObject name equals: 'accessionName1'.
@@ -52,7 +54,7 @@ BioNamedObjectTest >> testAddNames [
 		equals: (OrderedCollection with: 'accessionName1' with: 'accessionName2')
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testAlphaName [
 	namedObject := BioAccession new.
 	namedObject
@@ -65,7 +67,7 @@ BioNamedObjectTest >> testAlphaName [
 	self assert: namedObject alphaName equals: String empty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testEmptyName [
 	| nullName |
 	nullName := 'Unnamed ' , namedObject class name.
@@ -73,7 +75,7 @@ BioNamedObjectTest >> testEmptyName [
 	self deny: namedObject hasName
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testName [
 	namedObject name: 'accessionName1'.
 	self assert: namedObject name equals: 'accessionName1'.
@@ -83,7 +85,7 @@ BioNamedObjectTest >> testName [
 		equals: (OrderedCollection with: 'accessionName1')
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testNumericName [
 	namedObject := BioAccession new.
 	namedObject
@@ -97,7 +99,7 @@ BioNamedObjectTest >> testNumericName [
 	self assert: namedObject numericName equals: 425
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamedObjectTest >> testRemoveNullName [
 
 	namedObject := BioAccession new.

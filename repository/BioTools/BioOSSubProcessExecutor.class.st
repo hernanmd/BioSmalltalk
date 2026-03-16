@@ -1,10 +1,12 @@
 Class {
-	#name : #BioOSSubProcessExecutor,
-	#superclass : #BioExecutionEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioOSSubProcessExecutor',
+	#superclass : 'BioExecutionEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> executeCommand: aCommandName [
 	" See superimplementor's comment "
 	
@@ -13,7 +15,7 @@ BioOSSubProcessExecutor class >> executeCommand: aCommandName [
 		do: [ : ex | ex resume ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> executeCommand: aCommandName parameter: parameterName [
 	"See superimplementor's comment"
 
@@ -24,7 +26,7 @@ BioOSSubProcessExecutor class >> executeCommand: aCommandName parameter: paramet
 			<< parameterName trimBoth ])
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> executeMonitoring: aCommandName [
 	" See superimplementor's comment "
 	
@@ -58,7 +60,7 @@ BioOSSubProcessExecutor class >> executeMonitoring: aCommandName [
 		] fork
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> executeOSSubProcessCommand: aCommandName [
 	" Private - Execute aCommandName and answer a <String> with any output returned "
 
@@ -75,14 +77,14 @@ BioOSSubProcessExecutor class >> executeOSSubProcessCommand: aCommandName [
 	^ output trimBoth
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSSubProcessExecutor class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ self isRunningInUnix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> locateProgram: programName [
 	" Answer a <String> with the full qualified path to programName if can be located by the which command "
 	
@@ -92,7 +94,7 @@ BioOSSubProcessExecutor class >> locateProgram: programName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> locateProgramNamed: programName [
 	"Answer a <String> with the path to programName, if located, or an empty String otherwise"
 
@@ -109,7 +111,7 @@ BioOSSubProcessExecutor class >> locateProgramNamed: programName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSSubProcessExecutor class >> providerClass [
 	" Private - See superimplementor's comment "
 

@@ -6,22 +6,24 @@ Instance Variables:
 
 "
 Class {
-	#name : #BioUnknownSeq,
-	#superclass : #BioMutableSeq,
+	#name : 'BioUnknownSeq',
+	#superclass : 'BioMutableSeq',
 	#instVars : [
 		'size'
 	],
-	#category : #'BioTools-Sequences'
+	#category : 'BioTools-Sequences',
+	#package : 'BioTools',
+	#tag : 'Sequences'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioUnknownSeq class >> new: sizeRequested [
 	" Answer a new instance of the receiver of sizeRequested length "
 	
 	^ self new size: sizeRequested
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioUnknownSeq >> asString [
 	" Answer a <String> with the receiver's sequence "
 	
@@ -30,7 +32,7 @@ BioUnknownSeq >> asString [
 		repeat: self size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUnknownSeq >> complementary [
 	" Answer a <String> with the complement of the receiver's sequence "
 	
@@ -38,7 +40,7 @@ BioUnknownSeq >> complementary [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioUnknownSeq >> initializeWith: aString [
 	" Private - Initialize the receiver's sequence to be aString "
 	
@@ -46,7 +48,7 @@ BioUnknownSeq >> initializeWith: aString [
 	alphabet := self defaultAlphabetClass new.
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioUnknownSeq >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -61,14 +63,14 @@ BioUnknownSeq >> printOn: aStream [
 		nextPutAll: self asString between: $[ and: $]
 ]
 
-{ #category : #'accesing public - protein synthesis' }
+{ #category : 'accesing public - protein synthesis' }
 BioUnknownSeq >> reversed [
 	" Answer a copy of the receiver with element order reversed "
 	
 	^ self sameSequence
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioUnknownSeq >> sameSequence [
 	" Answer a <String> with the same letter used in all receiver's positions "
 	
@@ -76,28 +78,28 @@ BioUnknownSeq >> sameSequence [
 		size timesRepeat: [ stream nextPut: self unknownLetter ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUnknownSeq >> size [
 	" Answer how many elements the receiver contains "
 
 	^ size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioUnknownSeq >> size: anInteger [
 	" Set how many elements the receiver contains "
 
 	size := anInteger
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioUnknownSeq >> unknownLetter [
 	" Answer a <Character> with the default letter used when a letter in a position in the sequence is unknown "
 	
 	^ self alphabet unknownLetter
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioUnknownSeq >> unknownLetter: aCharacter [
 	" Set aCharacter as the default letter used when a letter in a position in the sequence is unknown "
 

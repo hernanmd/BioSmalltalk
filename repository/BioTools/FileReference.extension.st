@@ -1,13 +1,13 @@
-Extension { #name : #FileReference }
+Extension { #name : 'FileReference' }
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 FileReference >> includesDtd: aString [
 	" Answer <true> if aString is a DTD  identifierfor the receiver's contents "
 	
 	^ self contents includesDtd: aString
 ]
 
-{ #category : #'*BioTools' }
+{ #category : '*BioTools' }
 FileReference >> isXML [
 	" See superimplementor's comment "
 	

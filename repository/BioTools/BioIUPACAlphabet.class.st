@@ -7,25 +7,27 @@ See subclasses for details.
 
 "
 Class {
-	#name : #BioIUPACAlphabet,
-	#superclass : #BioComplementaryAlphabet,
+	#name : 'BioIUPACAlphabet',
+	#superclass : 'BioComplementaryAlphabet',
 	#classVars : [
 		'OneLetterAminoacidNames',
 		'OneLetterNucleotideNames',
 		'ThreeLetterAminoacidNames',
 		'ThreeLetterNucleotideNames'
 	],
-	#category : #'BioTools-Alphabets'
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> ambiguousAlphabets [
 	" Answer a <Collection> with the ambiguous alphabet subclasses "
 	
 	^ self allSubclasses select: #isAmbiguousAlphabet
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioIUPACAlphabet class >> initialize [
 	" Private - See superimplementor's comment "
 	
@@ -36,7 +38,7 @@ BioIUPACAlphabet class >> initialize [
 	ThreeLetterNucleotideNames := self initializeThreeLetterNucleotideNames.
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioIUPACAlphabet class >> initializeOneLetterAminoacidNames [
 	" Private - Answer the one letter mapping from Characters to aminoacid names. "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
@@ -65,7 +67,7 @@ BioIUPACAlphabet class >> initializeOneLetterAminoacidNames [
 		yourself
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioIUPACAlphabet class >> initializeOneLetterNucleotideNames [
 	" Private - Answer the one letter mapping from Characters to aminoacid names.
 
@@ -99,7 +101,7 @@ BioIUPACAlphabet class >> initializeOneLetterNucleotideNames [
 		yourself
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioIUPACAlphabet class >> initializeThreeLetterAminoacidNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
@@ -127,7 +129,7 @@ BioIUPACAlphabet class >> initializeThreeLetterAminoacidNames [
 			yourself	
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioIUPACAlphabet class >> initializeThreeLetterNucleotideNames [
 
 	^ Dictionary new 
@@ -138,13 +140,13 @@ BioIUPACAlphabet class >> initializeThreeLetterNucleotideNames [
 		yourself
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACAlphabet class >> isAmbiguousAlphabet [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> oneLetterAminoacidNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
@@ -153,25 +155,25 @@ BioIUPACAlphabet class >> oneLetterAminoacidNames [
 				OneLetterAminoacidNames ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> oneLetterAminoacidNames: anObject [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
 	OneLetterAminoacidNames := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioIUPACAlphabet class >> oneLetterNucleotideNames [
 
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> oneLetterNucleotideNames: anObject [
 	OneLetterNucleotideNames := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> threeLetterAminoacidNames [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
@@ -180,31 +182,31 @@ BioIUPACAlphabet class >> threeLetterAminoacidNames [
 				ThreeLetterAminoacidNames ]	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> threeLetterAminoacidNames: anObject [
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>
 
 	ThreeLetterAminoacidNames := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> threeLetterNucleotideNames [
 	^ ThreeLetterNucleotideNames
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> threeLetterNucleotideNames: anObject [
 	ThreeLetterNucleotideNames := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAlphabet class >> unambiguousAlphabets [
 	" Answer a <Collection> with the unambiguous alphabet subclasses "
 	
 	^ self allSubclasses reject: #isAmbiguousAlphabet
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACAlphabet >> printOn: aStream [
 	" See superimplementor's comment "
 	

@@ -13,12 +13,14 @@ to get the contents at an URL:
 
 "
 Class {
-	#name : #BioZnHttpClient,
-	#superclass : #BioWebClientEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioZnHttpClient',
+	#superclass : 'BioWebClientEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient class >> decode: aString [
 	" See superimplementor's comment "
 
@@ -34,28 +36,28 @@ BioZnHttpClient class >> decode: aString [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioZnHttpClient class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ self isRunningInPharo
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient class >> providerClass [
 	" See superimplementor's comment "
 	
 	^ #ZnClient
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient class >> urlClass [
 	" Answer a <Class> implementing an interpreted URL/URI "
 	
 	^ self classFor: #BioUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient >> decode: aString [
 	" See superimplementor's comment "
 
@@ -63,7 +65,7 @@ BioZnHttpClient >> decode: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient >> downloadUrl [
 	" See superimplementor's comment "
 
@@ -75,7 +77,7 @@ BioZnHttpClient >> downloadUrl [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioZnHttpClient >> handleNonResumableConnection: anException [
 	| msg |
 	msg := 'We got a non-resumable exception while connecting to '
@@ -88,7 +90,7 @@ BioZnHttpClient >> handleNonResumableConnection: anException [
 	anException retry
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient >> handleProgressBar: bar notification: ex [ 
 
 	| progress |
@@ -101,7 +103,7 @@ BioZnHttpClient >> handleProgressBar: bar notification: ex [
 	progress resume
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient >> handleWebClientException: ex progressBar: bar [
 
 	(ex isKindOf: (Smalltalk at: #HTTPProgress))
@@ -118,7 +120,7 @@ BioZnHttpClient >> handleWebClientException: ex progressBar: bar [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioZnHttpClient >> httpGet: urlString [
 	"Get the response from the given url"
 	" (self httpGet: 'http://www.squeak.org') content "

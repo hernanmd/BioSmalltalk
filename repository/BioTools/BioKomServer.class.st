@@ -10,26 +10,28 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioKomServer,
-	#superclass : #BioWebServerEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioKomServer',
+	#superclass : 'BioWebServerEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioKomServer class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioKomServer class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #HttpService
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioKomServer class >> startWebServer [
 	" See superimplementor's comment "
 
@@ -44,7 +46,7 @@ BioKomServer class >> startWebServer [
 	do: [ : ex | self notify: ex messageText ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioKomServer class >> stopWebServer [
 	" See superimplementor's comment "
 

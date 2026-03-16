@@ -17,24 +17,26 @@ table
 
 "
 Class {
-	#name : #BioCodonTable,
-	#superclass : #BioNamedObject,
+	#name : 'BioCodonTable',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'table',
 		'startCodons',
 		'stopCodons'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioCodonTable >> <= aCodonTable [
 	"Answer whether the receiver is less than the argument."
 	
 	^ self alphaName <= aCodonTable alphaName
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioCodonTable >> = codonTable [
 	" Answer <true> if receiver contains the same codon table as codonTable and start/stop codons "
 
@@ -42,7 +44,7 @@ BioCodonTable >> = codonTable [
 		and: [ self stopCodons = codonTable stopCodons ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> at: aCodonString [
 	" Answer the amino acid associated with aCodonString or, if isn't found, answer the result of evaluating aBlock. "
 
@@ -51,7 +53,7 @@ BioCodonTable >> at: aCodonString [
 			ifAbsent: [ self signalNotFound: 'Amino acid not found for ' , aCodonString asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> at: aCodonString ifAbsent: aBlock [
 	" Answer the amino acid associated with aCodonString or, if isn't found,
 	answer the result of evaluating aBlock. "
@@ -59,28 +61,28 @@ BioCodonTable >> at: aCodonString ifAbsent: aBlock [
 	^ self table at: aCodonString ifAbsent: aBlock
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioCodonTable >> hash [
 	" Private - hash is implemented because #= is implemented "
 	
 	^ self table hash bitXor: (self startCodons hash bitXor: self stopCodons hash)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTable >> isStartCodon: aCodon [
 	" Answer <true> if aCodon is a start codon in the receiver "
 	
 	^ self startCodons includes: aCodon asUppercase
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCodonTable >> isStopCodon: aCodon [
 	" Answer <true> if aCodon is a stop codon in the receiver "
 	
 	^ self stopCodons includes: aCodon asUppercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> keyAtValue: aCodonString ifAbsent: aBlock [
 	" Answer the amino acid associated with aCodonString or, if isn't found,
 	answer the result of evaluating aBlock. "
@@ -90,14 +92,14 @@ BioCodonTable >> keyAtValue: aCodonString ifAbsent: aBlock [
 			ifAbsent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> keysAndValuesDo: aBlock [
 	"Enumerate the receiver with all the keys and values passed to the block"
 	
 	^ self table keysAndValuesDo: aBlock
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioCodonTable >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -110,37 +112,37 @@ BioCodonTable >> printOn: aStream [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> startCodons [
 	^ startCodons
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> startCodons: anObject [
 	startCodons := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> stopCodons [
 	^ stopCodons
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> stopCodons: anObject [
 	stopCodons := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> table [
 	^ table
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> table: anObject [
 	table := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCodonTable >> tableId [
 	" Answer a Number with the receiver's table number "
 	

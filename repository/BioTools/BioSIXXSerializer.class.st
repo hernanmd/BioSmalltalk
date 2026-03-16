@@ -12,26 +12,28 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioSIXXSerializer,
-	#superclass : #BioSerializationEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioSIXXSerializer',
+	#superclass : 'BioSerializationEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSIXXSerializer class >> providerClass [
 	" See superimplementor's comment "
 
 	^ #SixxReadStream
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSIXXSerializer >> initializeWith: aProviderClass [
 	" Private - See superimplementor's comment "
 	
 	super initializeWith: aProviderClass newDefault
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSIXXSerializer >> materialize [
 	" See superimplementor comment "
 
@@ -44,7 +46,7 @@ BioSIXXSerializer >> materialize [
 	^ object.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSIXXSerializer >> serialize: anObject [
 	" See superimplementor's comment "
 	"anObject sixxString"

@@ -10,12 +10,14 @@ to get the contents at an URL:
 (BioWebClientEngine for: 'http://www.google.com.ar') httpGet
 "
 Class {
-	#name : #BioOSPlatformEngine,
-	#superclass : #BioOSInterfaceEngine,
-	#category : #'BioTools-Adapters'
+	#name : 'BioOSPlatformEngine',
+	#superclass : 'BioOSInterfaceEngine',
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSPlatformEngine class >> execNameFor: programName [
 	" Answer a String with the fully qualified name for programName, i.e. if programName is 'blast' then in Windows family the answer will be 'blast.exe' " 
 	
@@ -24,35 +26,35 @@ BioOSPlatformEngine class >> execNameFor: programName [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSPlatformEngine class >> isPreferredAdapter [
 	" Private - See superimplementor's comment "
 
 	^ BioObject isRunningInPharo
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOSPlatformEngine class >> providerClass [
 	" See superimplementor's comment "
 	
 	^ #OSPlatform
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSPlatformEngine >> isRunningInMac [
 	" Answer <true> if the host system is running in Mac OS "
 	
 	^ Smalltalk os isMacOS or: [ Smalltalk os isMacOSX ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSPlatformEngine >> isRunningInUnix [
 	" Answer <true> if the host system is running in any Unix-like OS "
 	
 	^ Smalltalk os isUnix
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioOSPlatformEngine >> isRunningInWindows [
 	" Answer <true> if the host system is running in Microsoft Windows "
 	

@@ -10,17 +10,19 @@ organism 			<String>
 
 "
 Class {
-	#name : #BioGenome,
-	#superclass : #BioNamedObject,
+	#name : 'BioGenome',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'chromosomes',
 		'collectionClass',
 		'organism'
 	],
-	#category : #'BioTools-Biological'
+	#category : 'BioTools-Biological',
+	#package : 'BioTools',
+	#tag : 'Biological'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> addChromosome: aBioChromosome [
 	" Add aBioChromosome to the receiver's chromosomes "
 
@@ -29,14 +31,14 @@ BioGenome >> addChromosome: aBioChromosome [
 		yourself)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> addGene: aBioObject [
 	" Store aBioObject as gene in the receiver's genes "
 	
 	^ aBioObject addToBioGenome: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> chromosomes [
 	" Answer a <Collection> of <BioChromosome> for the receiver "
 
@@ -44,12 +46,12 @@ BioGenome >> chromosomes [
 		ifNil: [ chromosomes := self collectionClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> chromosomes: anObject [
 	chromosomes := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> collectionClass [
 	" Answer a <Class> used to store the receiver's chromosomes "
 
@@ -57,31 +59,31 @@ BioGenome >> collectionClass [
 		ifNil: [ collectionClass := self defaultCollectionClass ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> collectionClass: anObject [
 	collectionClass := anObject
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioGenome >> defaultCollectionClass [
 	" Answer the default class to store chromosomes in the receiver "
 
 	^ OrderedCollection 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> genes [
 	" Answer a <Collection> of <BioGene> in the receiver "
 	
 	^ self chromosomes collect: #genes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> organism [
 	^ organism
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenome >> organism: anObject [
 	organism := anObject
 ]

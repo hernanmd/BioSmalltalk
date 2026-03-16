@@ -1,17 +1,19 @@
 Class {
-	#name : #BioIUPACAmbiguousDNA,
-	#superclass : #BioIUPACUnambiguousDNA,
-	#category : #'BioTools-Alphabets'
+	#name : 'BioIUPACAmbiguousDNA',
+	#superclass : 'BioIUPACUnambiguousDNA',
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> ambiguityCodes [
 	" Answer a <String> with both two and three ambiguity letters. Do not answer lowercase versions "
 
 	^ 'WSMKRYBDHVN'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> ambiguousLettersMap [
 	" Answer a <Dictionary> with mappings between ambiguity codes. Note ambiguity codes could appear as:	
 	[AT]
@@ -60,14 +62,14 @@ BioIUPACAmbiguousDNA class >> ambiguousLettersMap [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> codes [
 	"Answer a <String> with all the receiver's letters, including both two and three ambiguity letters."
 	
 	^ 'ACGTWSMKRYBDHVN'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> complementaryCases [
 	" Private - Uppercase and lowercase versions are included to preserve the case, which avoids case conversion and could be useful to distinguish sequence regions "
 	<lint: 'Literal array contains only characters' rationale: 'Nucleotide method' author: 'HernanMoralesDurand'>
@@ -75,26 +77,26 @@ BioIUPACAmbiguousDNA class >> complementaryCases [
 	^ #($A $T $T $A $C $G $G $C $M $K $R $Y $W $W $S $S $Y $R $K $M $V $B $H $D $D $H $B $V $X $X $N $N $a $t $t $a $c $g $g $c $m $k $r $y $w $w $s $s $y $r $k $m $v $b $h $d $d $h $b $v $x $x $n $n $- $- $  $  )
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioIUPACAmbiguousDNA class >> isAmbiguousAlphabet [
 	" See superimplementor's comment "
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> threeLetterAmbiguityCodes [
 
 	^ 'HBVD'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioIUPACAmbiguousDNA class >> twoLetterAmbiguityCodes [
 
 	^ 'YRSWKM'
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioIUPACAmbiguousDNA >> printOn: aStream [
 	" See superimplementor's comment "
 	

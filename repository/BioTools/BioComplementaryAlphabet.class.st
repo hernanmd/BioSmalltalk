@@ -3,22 +3,24 @@ Alphabet where each element has a complementary case.
 Abstract class.
 "
 Class {
-	#name : #BioComplementaryAlphabet,
-	#superclass : #BioAlphabet,
+	#name : 'BioComplementaryAlphabet',
+	#superclass : 'BioAlphabet',
 	#classInstVars : [
 		'complementaryTable'
 	],
-	#category : #'BioTools-Alphabets'
+	#category : 'BioTools-Alphabets',
+	#package : 'BioTools',
+	#tag : 'Alphabets'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioComplementaryAlphabet class >> complementaryCases [
 
 	^ Array empty
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioComplementaryAlphabet class >> complementaryTable [
 
 	^ complementaryTable
@@ -27,13 +29,13 @@ BioComplementaryAlphabet class >> complementaryTable [
 			self complementaryTable ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioComplementaryAlphabet class >> complementaryTable: aCollection [
 
 	complementaryTable := aCollection
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioComplementaryAlphabet class >> complementaryTableClass [
 	" Answer a <Class> to store the complementary cases for the receiver "
 
@@ -41,7 +43,7 @@ BioComplementaryAlphabet class >> complementaryTableClass [
 	
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioComplementaryAlphabet class >> initialize [
 	" self initailize "
 
@@ -50,14 +52,14 @@ BioComplementaryAlphabet class >> initialize [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioComplementaryAlphabet >> canTranslate [
 	" Answer <true> if the receiver can be translated into proteins (amino acid sequences) "
 	
 	^ true
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioComplementaryAlphabet >> complementaryTable [
 	" Answer a <Collection> with the receiver's complementary table "
 

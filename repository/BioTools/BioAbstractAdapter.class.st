@@ -42,13 +42,21 @@ BioAbstractAdapter class >> adapter [
 	^ self adapterClass new
 ]
 
-{ #category : 'accessing-adapters' }
+{ #category : 'instance creation' }
 BioAbstractAdapter class >> adapterClass [
-	"Answer the preferred subclass for providing the receiver's services"
-	
-	^ self validAdapters 
-			detect: [ : cls | cls isPreferredAdapter ]
-			ifNone: [ self validAdapters first ]
+	"Answer the preferred subclass for providing the receiver's services."
+
+	| preferred |
+	preferred := self preferredAdapterClassForCurrentPlatform.
+	preferred ifNotNil: [
+		(self validAdapters includes: preferred) ifTrue: [ ^ preferred ] ].
+
+	^ self validAdapters
+		detect: [ :cls | cls isPreferredAdapter ]
+		ifNone: [
+			self validAdapters
+			ifEmpty: [ self signalInvalidObject: 'No provider was found' ]
+			ifNotEmpty: [ :adapters | adapters first ] ]
 ]
 
 { #category : 'accessing' }
@@ -78,6 +86,20 @@ BioAbstractAdapter class >> hasAnyProvider [
 	^ self allFinalClasses anySatisfy: [ : cls | cls providerIsAvailable ]
 ]
 
+{ #category : 'testing' }
+BioAbstractAdapter class >> isGTImage [
+	"Answer whether the current image is a Glamorous Toolkit image."
+
+	^ Smalltalk globals includesKey: #GtImage
+]
+
+{ #category : 'testing' }
+BioAbstractAdapter class >> isPharoImage [
+	"Answer whether the current image is a standard Pharo image (including GT, unless explicitly handled)."
+
+	^ self isGTImage not
+]
+
 { #category : 'accessing' }
 BioAbstractAdapter class >> isPreferred [
 
@@ -90,6 +112,23 @@ BioAbstractAdapter class >> isPreferredAdapter [
 	" Private - Answer <true> if the receiver is the best option for the current image and platform "
 
 	^ false
+]
+
+{ #category : 'private' }
+BioAbstractAdapter class >> preferredAdapterClassForCurrentPlatform [
+	"Answer the adapter class that best matches the current image/platform.
+	Prefer modern subprocess engines on Pharo/GToolkit, keep legacy engines as fallback."
+
+	| os |
+	os := BioOSInterfaceEngine adapter.
+
+	(self isGTImage and: [ os isRunningInUnix ]) ifTrue: [
+		^ BioGtUnixSubprocess ].
+
+	(self isPharoImage and: [ os isRunningInUnix ]) ifTrue: [
+		^ OSSUnixSubprocess ].
+
+	^ nil
 ]
 
 { #category : 'accessing' }

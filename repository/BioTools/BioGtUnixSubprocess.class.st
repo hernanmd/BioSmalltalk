@@ -4,8 +4,9 @@ Execution engine backed by GToolkit subprocess API for running shell commands an
 Class {
 	#name : 'BioGtUnixSubprocess',
 	#superclass : 'BioExecutionEngine',
-	#category : 'BioTools',
-	#package : 'BioTools'
+	#category : 'BioTools-Adapters',
+	#package : 'BioTools',
+	#tag : 'Adapters'
 }
 
 { #category : 'executing' }

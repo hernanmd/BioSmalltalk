@@ -19,7 +19,8 @@ Class {
 		'name',
 		'sequenceRecord',
 		'gcContent',
-		'gcSkew'
+		'gcSkew',
+		'coordinates'
 	],
 	#category : 'BioTools-Sequences',
 	#package : 'BioTools',
@@ -587,6 +588,16 @@ BioSequence >> contents [
 	" Compatibility with #dumpToFileNamed: . Answer the receiver's sequence <String> "
 
 	^ self sequence.
+]
+
+{ #category : 'as yet unclassified' }
+BioSequence >> coordinates [
+	^ coordinates ifNil: [ #() ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSequence >> coordinates: aCollection [
+	coordinates := aCollection
 ]
 
 { #category : 'copying' }

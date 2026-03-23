@@ -66,6 +66,7 @@ BaselineOfBioSmalltalk >> baselineBasicGroup: spec [
 		group: 'Basic'
 		with: #(
 			'BioTools' 
+			'BioPhysics'
 			'BioPharoCommon'
 			'BioNCBI'
 			'BioBlast'
@@ -112,7 +113,8 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 																	includes: #('BioPharoCommon') ];
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioTools-Tests' 			with: [ spec requires: #('BioTools' ). ];
-			package: 'BioWrapperTests' 			with: [ spec requires: #('BioTools-Tests' ). ];
+			package: 'BioWrapperTests' 			with: [ spec requires: #('BioTools-Tests' ) ];
+			package: 'BioPhysics'        	with: [ spec requires: #('BioTools') ];
 			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ]
 
 ]

@@ -17,8 +17,9 @@ BioCatalysis >> enzyme [
 ]
 
 { #category : 'accessing' }
-BioCatalysis >> enzyme: anObject [
-	enzyme := anObject
+BioCatalysis >> enzyme: anEnzyme [
+	enzyme := anEnzyme.
+	anEnzyme addCatalysis: self
 ]
 
 { #category : 'accessing' }
@@ -37,6 +38,7 @@ BioCatalysis >> reaction [
 ]
 
 { #category : 'accessing' }
-BioCatalysis >> reaction: anObject [
-	reaction := anObject
+BioCatalysis >> reaction: aReaction [
+	reaction := aReaction.
+	aReaction addCatalysis: self
 ]

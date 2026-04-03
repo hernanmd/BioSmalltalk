@@ -14,8 +14,10 @@ Class {
 
 { #category : 'accessing' }
 BioReaction >> addCatalysis: aBioCatalysis [
-	self catalyses add: aBioCatalysis
-]
+	(self catalyses includes: aBioCatalysis) ifFalse: [
+		self catalyses add: aBioCatalysis.
+		aBioCatalysis reaction == self ifFalse: [ aBioCatalysis reaction: self ] ]
+}
 
 { #category : 'accessing' }
 BioReaction >> addProduct: aBioSequence [
@@ -30,7 +32,7 @@ BioReaction >> addSubstrate: aBioSequence [
 { #category : 'accessing' }
 BioReaction >> catalyses [
 	^ catalyses ifNil: [ catalyses := OrderedCollection new ]
-]
+}
 
 { #category : 'accessing' }
 BioReaction >> enzymes [
@@ -55,4 +57,4 @@ BioReaction >> products [
 { #category : 'accessing' }
 BioReaction >> substrates [
 	^ substrates ifNil: [ substrates := OrderedCollection new ]
-]
+}

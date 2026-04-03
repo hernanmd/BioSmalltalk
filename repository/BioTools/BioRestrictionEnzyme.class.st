@@ -76,17 +76,16 @@ BioRestrictionEnzyme >> regexPattern [
 { #category : 'searching' }
 BioRestrictionEnzyme >> searchIn: aSequence [
 	"Search for sites in aSequence (can be BioSequence or BioCircularSequence)"
-	| pattern matches |
-	pattern := self regexPattern.
+	| matches upperBound |
 	matches := OrderedCollection new.
 
-	"Note: Pharo doesn't have a native Regex that returns all matches with indices easily in some versions,
-	but BioSmalltalk often uses extensions or specific parsers.
-	For the sake of this implementation, we will use a simplified manual search if regex is tricky,
-	but here we assume a standard regex search or manual IUPAC expansion."
+	"For linear sequences, we must not go beyond site size at the end.
+	Circular sequences handle bounds via modulo in #at: so we search the full size."
+	upperBound := aSequence isCircular
+		ifTrue: [ aSequence size ]
+		ifFalse: [ aSequence size - self site size + 1 ].
 
-	"Simplified manual search for IUPAC"
-	1 to: aSequence size do: [ :i |
+	1 to: upperBound do: [ :i |
 		(self matchesAt: i in: aSequence) ifTrue: [ matches add: i ] ].
 	^ matches
 ]

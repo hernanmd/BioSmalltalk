@@ -35,22 +35,19 @@ BioRestrictionTest >> testCircularDigest [
 		cut3: 5;
 		yourself.
 
-	"Site spanning the origin: TTC...GAA"
-	seq := (BioSequence newDNA: 'AATTCAAAAAAGAA') asCircular.
-	fragments := seq digestWithEnzyme: enzyme.
+	"GAATTC at index 1 (GAATTC...) and spanning origin (TTC...GAA)"
+	"Sequence: GAATTC AAAAAA TTC"
+	"123456 789012 131415"
+	seq := (BioSequence newDNA: 'GAATTCAAAAAATTC') asCircular.
+	fragments := seq digestWithEnzymes: (OrderedCollection with: enzyme).
 
 	self assert: fragments size equals: 2.
-	"Cut at G^AATTC. Site 1 is at index 1: GAATTC. Cut at 1+1=2.
-	Site 2 is at index 13: GAATTC (spans 13, 14, 1, 2, 3, 4). Cut at 13+1=14.
-	Fragments: from 2 to 13, and from 14 to 1 (size 14 - 13 + 1 = 2? No, 14 to 1 is 14, 1)."
-	"Wait, let's re-calculate:
-	Sites at 1 and 13.
-	Cuts at 2 and 14.
-	Fragment 1: from 2 to 14-1 = 2 to 13 (AAAAAAGAA).
-	Fragment 2: from 14 to 2-1 = 14 to 1 (AATTCG)."
+	"Sites: 1 (GAATTC), 13 (TTCGAA spanning origin)"
+	"Cuts at 1+1=2 and 13+1=14"
+	"Fragment 1: 2 to 13 -> AATTCAAAAAAT"
+	"Fragment 2: 14 to 1 -> TC G"
 
-	self assert: fragments first asString equals: 'AAAAAAGAA'.
-	self assert: (fragments anySatisfy: [ :f | f asString = 'AATTC' ]). "Depending on exact wrap-around"
+	self assert: (fragments collect: #asString) asSet equals: #('AATTCAAAAAAT' 'TCG') asSet
 ]
 
 { #category : 'testing' }
@@ -85,4 +82,33 @@ BioRestrictionTest >> testIUPACSearch [
 	self assert: sites size equals: 2.
 	self assert: (sites includes: 1).
 	self assert: (sites includes: 9).
+]
+
+{ #category : 'testing' }
+BioRestrictionTest >> testMultiEnzymeDigest [
+	| seq enzymes fragments |
+	enzymes := OrderedCollection new.
+	enzymes add: (BioRestrictionEnzyme new name: 'E1'; site: 'AAA'; cut5: 1).
+	enzymes add: (BioRestrictionEnzyme new name: 'E2'; site: 'CCC'; cut5: 1).
+
+	seq := BioSequence newDNA: 'GAAAGCCCG'.
+	fragments := seq digestWith: enzymes.
+
+	self assert: fragments size equals: 3.
+	self assert: fragments first asString equals: 'GA'.
+	self assert: fragments second asString equals: 'AAGCC'.
+	self assert: fragments third asString equals: 'CG'.
+]
+
+{ #category : 'testing' }
+BioRestrictionTest >> testLinearBounds [
+	| enzyme seq sites |
+	enzyme := BioRestrictionEnzyme new site: 'GAATTC'.
+	seq := BioSequence newDNA: 'GAATT'. "Too short"
+	sites := enzyme searchIn: seq.
+	self assert: sites isEmpty.
+
+	seq := BioSequence newDNA: 'GAATTC'. "Exactly site size"
+	sites := enzyme searchIn: seq.
+	self assert: sites size equals: 1.
 ]

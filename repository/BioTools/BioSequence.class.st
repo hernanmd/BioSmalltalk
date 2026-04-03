@@ -953,6 +953,11 @@ BioSequence >> isBioSequence [
 ]
 
 { #category : 'testing' }
+BioSequence >> isCircular [
+	^ false
+]
+
+{ #category : 'testing' }
 BioSequence >> isDNASequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	

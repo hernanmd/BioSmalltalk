@@ -1,14 +1,41 @@
 Extension { #name : 'BioSequence' }
 
 { #category : '*BioTools-Restriction' }
-BioSequence >> digestWith: anEnzymeOrName [
-	"Digest the receiver with an enzyme.
-	anEnzymeOrName can be a BioRestrictionEnzyme or a Symbol/String representing its name."
-	| enzyme |
-	enzyme := anEnzymeOrName isString
+BioSequence >> digestWith: anEnzymeCollectionOrName [
+	"Digest the receiver with one or more enzymes.
+	anEnzymeCollectionOrName can be a BioRestrictionEnzyme, a String name, or a Collection of these."
+	| enzymes |
+	enzymes := (anEnzymeCollectionOrName isCollection and: [ anEnzymeCollectionOrName isString not ])
+		ifTrue: [ anEnzymeCollectionOrName collect: [ :each | self resolveEnzyme: each ] ]
+		ifFalse: [ OrderedCollection with: (self resolveEnzyme: anEnzymeCollectionOrName) ].
+	^ self digestWithEnzymes: enzymes
+]
+
+{ #category : '*BioTools-Restriction' }
+BioSequence >> resolveEnzyme: anEnzymeOrName [
+	^ anEnzymeOrName isString
 		ifTrue: [ BioRestrictionEnzyme at: anEnzymeOrName ]
-		ifFalse: [ anEnzymeOrName ].
-	^ self digestWithEnzyme: enzyme
+		ifFalse: [ anEnzymeOrName ]
+]
+
+{ #category : '*BioTools-Restriction' }
+BioSequence >> digestWithEnzymes: aCollectionOfEnzymes [
+	"Digest the receiver with multiple enzymes and answer a Collection of fragments."
+	| allSites fragments lastIndex |
+	allSites := Set new.
+	aCollectionOfEnzymes do: [ :enzyme |
+		(enzyme searchIn: self) do: [ :siteIndex |
+			allSites add: siteIndex + enzyme cut5 ] ].
+
+	allSites isEmpty ifTrue: [ ^ OrderedCollection with: self ].
+
+	fragments := OrderedCollection new.
+	lastIndex := 1.
+	allSites asSortedCollection do: [ :cutIndex |
+		fragments add: (self copyFrom: lastIndex to: cutIndex - 1).
+		lastIndex := cutIndex ].
+	fragments add: (self copyFrom: lastIndex to: self size).
+	^ fragments
 ]
 
 { #category : '*BioTools-Restriction' }
@@ -34,4 +61,11 @@ BioSequence >> digestWithEnzyme: anEnzyme [
 { #category : '*BioTools-Restriction' }
 BioSequence >> asCircular [
 	^ BioCircularSequence on: self
+]
+
+{ #category : '*BioTools-Restriction' }
+BioSequence >> restrictionMapReportWith: aCollectionOfEnzymes [
+	| enzymes |
+	enzymes := aCollectionOfEnzymes collect: [ :each | self resolveEnzyme: each ].
+	^ BioRestrictionMapFormatter new format: self enzymes: enzymes
 ]

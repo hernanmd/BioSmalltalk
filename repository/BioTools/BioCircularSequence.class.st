@@ -43,6 +43,11 @@ BioCircularSequence >> sequence: anObject [
 	sequence := anObject
 ]
 
+{ #category : 'testing' }
+BioCircularSequence >> isCircular [
+	^ true
+]
+
 { #category : 'accessing' }
 BioCircularSequence >> size [
 	^ sequence size
@@ -60,27 +65,46 @@ BioCircularSequence >> indicesOfSubstring: aString [
 ]
 
 { #category : 'searching' }
-BioCircularSequence >> digestWith: anEnzymeOrName [
-	| enzyme |
-	enzyme := anEnzymeOrName isString
-		ifTrue: [ BioRestrictionEnzyme at: anEnzymeOrName ]
-		ifFalse: [ anEnzymeOrName ].
-	^ self digestWithEnzyme: enzyme
+BioCircularSequence >> digestWith: anEnzymeCollectionOrName [
+	| enzymes |
+	enzymes := (anEnzymeCollectionOrName isCollection and: [ anEnzymeCollectionOrName isString not ])
+		ifTrue: [ anEnzymeCollectionOrName collect: [ :each | self resolveEnzyme: each ] ]
+		ifFalse: [ OrderedCollection with: (self resolveEnzyme: anEnzymeCollectionOrName) ].
+	^ self digestWithEnzymes: enzymes
 ]
 
 { #category : 'searching' }
-BioCircularSequence >> digestWithEnzyme: anEnzyme [
-	| sites fragments |
-	sites := anEnzyme searchIn: self.
-	sites isEmpty ifTrue: [ ^ OrderedCollection with: self sequence ].
+BioCircularSequence >> resolveEnzyme: anEnzymeOrName [
+	^ anEnzymeOrName isString
+		ifTrue: [ BioRestrictionEnzyme at: anEnzymeOrName ]
+		ifFalse: [ anEnzymeOrName ]
+]
+
+{ #category : 'searching' }
+BioCircularSequence >> restrictionMapReportWith: aCollectionOfEnzymes [
+	| enzymes |
+	enzymes := aCollectionOfEnzymes collect: [ :each | self resolveEnzyme: each ].
+	^ BioRestrictionMapFormatter new format: self enzymes: enzymes
+]
+
+{ #category : 'searching' }
+BioCircularSequence >> digestWithEnzymes: aCollectionOfEnzymes [
+	| allCutSites fragments |
+	allCutSites := Set new.
+	aCollectionOfEnzymes do: [ :enzyme |
+		(enzyme searchIn: self) do: [ :siteIndex |
+			allCutSites add: siteIndex + enzyme cut5 ] ].
+
+	allCutSites isEmpty ifTrue: [ ^ OrderedCollection with: self sequence ].
 
 	fragments := OrderedCollection new.
-	1 to: sites size do: [ :i |
+	allCutSites := allCutSites asSortedCollection asOrderedCollection.
+	1 to: allCutSites size do: [ :i |
 		| startCut endCut |
-		startCut := (sites at: i) + anEnzyme cut5.
-		endCut := i < sites size
-			ifTrue: [ (sites at: i + 1) + anEnzyme cut5 ]
-			ifFalse: [ (sites at: 1) + anEnzyme cut5 + self size ].
+		startCut := allCutSites at: i.
+		endCut := i < allCutSites size
+			ifTrue: [ allCutSites at: i + 1 ]
+			ifFalse: [ (allCutSites at: 1) + self size ].
 		fragments add: (self copyFrom: startCut to: endCut - 1) ].
 	^ fragments
 ]

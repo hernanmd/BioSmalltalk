@@ -7,21 +7,23 @@ Instance Variables:
 	nodeName	<String>
 "
 Class {
-	#name : #BioBlastNode,
-	#superclass : #BioObject,
+	#name : 'BioBlastNode',
+	#superclass : 'BioObject',
 	#instVars : [
 		'nodeName'
 	],
-	#category : #'BioParsers-Support'
+	#category : 'BioParsers-Support',
+	#package : 'BioParsers',
+	#tag : 'Support'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> allContentSubclasses [
 
 	^ self allSubclasses difference: ( Array with: BioBlastStructureNode )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> allNodeNames [
 	" Answer a Collection with all the BLAST XML node names "
 
@@ -29,7 +31,7 @@ BioBlastNode class >> allNodeNames [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> allNodeWithDescriptions [
 	" Answer a Collection with all the BLAST XML node names with descriptions "
 
@@ -43,7 +45,7 @@ BioBlastNode class >> allNodeWithDescriptions [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> findElementNodeFor: aString [
 	" Answer an element node instance matching aString "
 
@@ -53,7 +55,7 @@ BioBlastNode class >> findElementNodeFor: aString [
 		ifNone: [ nil ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> nodeFor: aString [
 	" Answer a new instance of a subclass corresponding to element named aString "
 	
@@ -62,13 +64,13 @@ BioBlastNode class >> nodeFor: aString [
 		ifFalse: [ self findElementNodeFor: aString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> nodeNames [
 
 	^ Array empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode class >> nodesWithDescriptions [
 	" Answer a <Collection> of receiver nodes with corresponding description "
 	
@@ -81,14 +83,14 @@ BioBlastNode class >> nodesWithDescriptions [
 	^ answer
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastNode >> = aBioBlastNode [
 
 	^ self nodeName = aBioBlastNode nodeName 
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode >> addToRoot: aRootNode [
 	" Private - Add the receiver to aRootNode "
 
@@ -97,7 +99,7 @@ BioBlastNode >> addToRoot: aRootNode [
 		ifFalse: [ aRootNode addNode: self ]
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastNode >> do: aBlock [
 	" Answer a Collection of receiver's nodes named aNodeName "
 	
@@ -105,24 +107,24 @@ BioBlastNode >> do: aBlock [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNode >> hasNodeNamed: aNodeName [
 	^ self nodes anySatisfy: [ :node | node nodeName = aNodeName ]
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastNode >> hash [
 
 	^ self nodeName hash
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNode >> isParentNode [
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode >> isRootIn: aRootNode [
 	" Answer <true> if receiver's is used as 'top' element in
 	the aRootNode nodes. I.e. if the receiver is a 'hit' node and the
@@ -132,30 +134,30 @@ BioBlastNode >> isRootIn: aRootNode [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNode >> isStructureNode [ 
 
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode >> nodeName [
 	^ nodeName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastNode >> nodeName: anObject [
 	nodeName := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNode >> notEmpty [
 	"Answer whether the receiver contains any elements."
 
 	^ self nodes notEmpty.
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioBlastNode >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -164,7 +166,7 @@ BioBlastNode >> printOn: aStream [
 		nextPutAll: self nodeName asString between: $[ and: $]
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastNode >> selectNodeNamed: aNodeName [
 	" Answer the node named aNodeName "
 	
@@ -174,7 +176,7 @@ BioBlastNode >> selectNodeNamed: aNodeName [
 
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastNode >> selectNodesNamed: aNodeName [
 	" Answer a Collection of receiver's nodes named aNodeName "
 

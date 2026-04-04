@@ -41,33 +41,35 @@ Format of database identifiers
  Local Sequence identifier         lcl|identifier
 "
 Class {
-	#name : #BioParser,
-	#superclass : #BioObject,
-	#category : #'BioParsers-Core'
+	#name : 'BioParser',
+	#superclass : 'BioObject',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'parse-ncbi-identifiers' }
+{ #category : 'parse-ncbi-identifiers' }
 BioParser class >> parseAccession: aString [
 	" Parse aString containing an accession number and answer an accession instance "
 	
 	^ (BioAccessionParser on: aString) parse
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioParser class >> parseAmbiguousWithSeparators: aSequenceString [
 	" Parse aSequenceString containing an ambiguous sequence "
 	
 	^ (BioAmbiguousBaseParser on: aSequenceString) parseWithSeparators
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioParser class >> parseAmbiguousWithoutSeparators: aSequenceString [
 	" Parse aSequenceString containing an ambiguous sequence "
 	
 	^ (BioAmbiguousBaseParser on: aSequenceString) parseWithoutSeparators
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> parseDocumentFrom: anObject [
 	" Answer a Collection of header nodes found in anObject "
 	
@@ -76,35 +78,35 @@ BioParser class >> parseDocumentFrom: anObject [
 		parse: anObject
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseFasta: aFastaString [
 	" Parse aFastaString and answer a single fasta instance "
 	
 	^ (BioFASTABasicParser on: aFastaString) parse
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseFastaFile: aFilepath [
 	" Parse aFastaString and answer a single fasta instance "
 
 	^ (BioFASTABasicParser on: aFilepath contents) parse
 ]
 
-{ #category : #'parse-ncbi-genbank' }
+{ #category : 'parse-ncbi-genbank' }
 BioParser class >> parseFlatGenBank: aGenBankString [
 	" Parse aGenBankString and answer a single fasta instance "
 	
 	^ (BioFlatGenBankParser on: aGenBankString) parse
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> parseFullNcbiXmlGBSeq: aString [
 	" Answer a <Collection> of header nodes found in aString "
 
 	^ BioEntrezXMLGBSeqFullParser parse: aString
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseMultiFasta: aFastaString [
 	" Parser aFastaString representing a MultiFASTA sequence.
 	Answer a FastaMultiRecord object "
@@ -112,7 +114,7 @@ BioParser class >> parseMultiFasta: aFastaString [
 	^ (BioFASTAMultiParser on: aFastaString) parse
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseMultiFastaAlignment: aFastaString [
 	" Parser aFastaString representing a <String> containing multiple sequences in FASTA format.
 	Answer a <BioFastaMultiRecord> object "
@@ -120,21 +122,21 @@ BioParser class >> parseMultiFastaAlignment: aFastaString [
 	^ (BioFASTAMultiParser on: aFastaString) parse
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseMultiFastaAlignmentFile: aFastaFullFileLocation [
 	" Parse aFastaFullFileLocation representing a <String> containing a file with multiple sequences in FASTA format. Answer a <BioAlignment> object "
 
 	^ (BioFASTAMultiParser on: (self openFullFileNamed: aFastaFullFileLocation) contents) parse asAlignment
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> parseMultiFastaFile: aFastaFullFileLocation [
 	" Parse aFastaFullFileLocation (extensions .fa, .fasta, .fas, etc) representing a MultiFASTA sequence, i.e. a file which contains multiple fasta sequences. Answer a <BioFastaMultiRecord> object "
 	
 	^ (BioFASTAMultiParser on: (self openFullFileNamed: aFastaFullFileLocation) contents) parse
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> parseNcbiXmlBlast: aString nodes: nodesCollection [
 	" Parse with nodesCollection and answer a <Collection> of nodes found in aString "
 	
@@ -143,28 +145,28 @@ BioParser class >> parseNcbiXmlBlast: aString nodes: nodesCollection [
 		parse
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> parseNcbiXmlGBSeq: aString [
 	" Answer a <Collection> of header nodes found in aString "
 	
 	^ BioEntrezXMLGBBasicParser parse: aString
 ]
 
-{ #category : #'parse-phylip' }
+{ #category : 'parse-phylip' }
 BioParser class >> parsePhylipInterleavedDNA: aPhylipString [
 	" Parse aPhylipString and answer a BioPhylip object with contents filled "
 	
 	^ ( BioPhylipParser on: aPhylipString ) parseDna
 ]
 
-{ #category : #'parse-phylip' }
+{ #category : 'parse-phylip' }
 BioParser class >> parsePhylipInterleavedProtein: aPhylipString [
 	" Parse aPhylipString and answer a BioPhylip object with contents filled "
 	
 	^ ( BioPhylipParser on: aPhylipString ) parseProtein
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> saxParseNcbiXmlBlast: anObject nodes: aCollection [
 	" Answer a Collection of nodes found in anObject "
 	
@@ -173,7 +175,7 @@ BioParser class >> saxParseNcbiXmlBlast: anObject nodes: aCollection [
 		parse: anObject
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> saxParseNcbiXmlBlastNodes: anObject [
 	" Answer a Collection of header nodes found in anObject "
 	
@@ -182,7 +184,7 @@ BioParser class >> saxParseNcbiXmlBlastNodes: anObject [
 		parse: anObject
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: aBlock [
 	" Answer a Collection of nodes found in anObject "
 	
@@ -191,7 +193,7 @@ BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: aBlock [
 		parse: anObject
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: nodes conditionBlock: aBlock [
 	" Answer a Collection of nodes found in anObject "
 	
@@ -201,7 +203,7 @@ BioParser class >> saxTokenizeNcbiXmlBlast: anObject nodes: nodes conditionBlock
 		parse: anObject
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> saxTokenizeNcbiXmlBlastNodes: anObject [
 	" Answer a Collection of nodes found in anObject "
 	
@@ -210,35 +212,35 @@ BioParser class >> saxTokenizeNcbiXmlBlastNodes: anObject [
 		parse: anObject
 ]
 
-{ #category : #'parse-ncbi-identifiers' }
+{ #category : 'parse-ncbi-identifiers' }
 BioParser class >> tokenizeAccession: aString [
 	" Tokenize aString containing an accession number "
 	
 	^ (BioAccessionParser on: aString) tokenize
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioParser class >> tokenizeAmbiguousLettersToSeparators: aSequenceString [
 	" Tokenize aString containing an ambiguous sequence without separators, i.e. [ACT] "
 	
 	^ (BioAmbiguousBaseParser on: aSequenceString) tokenizeWithoutSeparators
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioParser class >> tokenizeAmbiguousWithSeparators: aSequenceString [
 	" Tokenize aString containing an ambiguous sequence delimited with separators, i.e. [A/C/T] "
 	
 	^ (BioAmbiguousBaseParser on: aSequenceString) tokenizeWithSeparators
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioParser class >> tokenizeAmbiguousWithoutSeparators: aSequenceString [
 	" Tokenize aString containing an ambiguous sequence without separators, i.e. [ACT] "
 	
 	^ (BioAmbiguousBaseParser on: aSequenceString) tokenizeWithoutSeparators
 ]
 
-{ #category : #'parse-csv' }
+{ #category : 'parse-csv' }
 BioParser class >> tokenizeCSV: aCSVStringOrStream delimiter: aCharacter [
 	" Tokenize aCSVStringOrStream with CSV format "
 	
@@ -247,28 +249,28 @@ BioParser class >> tokenizeCSV: aCSVStringOrStream delimiter: aCharacter [
 		upToEnd
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> tokenizeFasta: aString [
 	" Tokenize aString representing a FASTA sequence "
 	
 	^ (BioFASTABasicParser on: aString) tokenize first
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> tokenizeFastaDescription: aString [
 	" Tokenize aString representing a FASTA header String "
 	
 	^ (BioFASTAParser on: aString) tokenizeDescriptionText
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> tokenizeFastaHeader: aString [
 	" Tokenize aString representing a FASTA header String "
 	
 	^ (BioFASTAParser on: aString) tokenizeDescriptionLine
 ]
 
-{ #category : #'parse-ncbi-identifiers' }
+{ #category : 'parse-ncbi-identifiers' }
 BioParser class >> tokenizeGi: aString [
 	" Tokenize aString containing a gene identifier. If aString does not begin with 'gi|' then answer an empty Collection "
 	
@@ -280,42 +282,42 @@ BioParser class >> tokenizeGi: aString [
 		
 ]
 
-{ #category : #'parse-ncbi-identifiers' }
+{ #category : 'parse-ncbi-identifiers' }
 BioParser class >> tokenizeLocus: aString [
 	" Tokenize aString containing an accession number "
 	
 	^ ( BioGBParser on: aString ) tokenizeLocus
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> tokenizeMultiFasta: aString [
 	" Tokenize aString representing a MultiFASTA sequence "
 	
 	^ (BioFASTABasicParser on: aString) tokenize
 ]
 
-{ #category : #'parse-fasta' }
+{ #category : 'parse-fasta' }
 BioParser class >> tokenizeMultiFastaFile: aFastaFullFileLocation [
 	" Tokenize aString representing a MultiFASTA sequence "
 	
 	^ (BioFASTABasicParser on: (self openFullFileNamed: aFastaFullFileLocation) contents) tokenize
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlBlast: aString nodes: aCollection [
 	" Answer a Collection of hit tokens found in aString "
 	
 	^ (BioNCBIXMLBlastParser on: aString) tokenizeNodes: aCollection.
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlBlastHeader: aString [
 	" Answer a <Collection> of header nodes found in aXMLString "
 	
 	^ (BioNCBIXMLBlastParser on: aString) tokenizeHeader
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlBlastHits: xmlString [
 	" Answer a Collection of hit nodes found in xmlString "
 	
@@ -323,28 +325,28 @@ BioParser class >> tokenizeNcbiXmlBlastHits: xmlString [
 	^ (BioNCBIXMLBlastParser on: xmlString) tokenizeHits
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlBlastHsps: aString [
 	" Answer a Collection of hsps (high scoring pairs) nodes found in aXMLString "
 	
 	^ ( BioNCBIXMLBlastParser on: aString ) parseHsps
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlEntrezResultKeys: aString [
 	" Answer a Collection of hit nodes found in aXMLString "
 	
 	^ BioEResultKeysParser parse: aString
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlEntrezSearchResult: aString [
 	" Answer a Collection of hit nodes found in aXMLString "
 	
 	^ BioEntrezXMLGBFullParser parse: aString
 ]
 
-{ #category : #'parse-ncbi-xml' }
+{ #category : 'parse-ncbi-xml' }
 BioParser class >> tokenizeNcbiXmlEntrezSearchResult: aString nodes: aCollection [
 	" Answer a Collection of hit nodes found in aXMLString "
 	
@@ -352,21 +354,21 @@ BioParser class >> tokenizeNcbiXmlEntrezSearchResult: aString nodes: aCollection
 				selectNodes: aCollection) tokenizeNodes
 ]
 
-{ #category : #'parse-phylip' }
+{ #category : 'parse-phylip' }
 BioParser class >> tokenizePhylipInterleavedDNA: aPhylipString [
 	" Parse aPhylipString and answer a BioPhylip object with contents filled "
 	
 	^ ( BioPhylipParser on: aPhylipString ) tokenizeInterleavedDNA
 ]
 
-{ #category : #'parse-phylip' }
+{ #category : 'parse-phylip' }
 BioParser class >> tokenizePhylipInterleavedProtein: aPhylipString [
 	" Parse aPhylipString and answer a BioPhylip object with contents filled "
 	
 	^ ( BioPhylipParser on: aPhylipString ) tokenizeInterleavedProtein
 ]
 
-{ #category : #'parse-ncbi-identifiers' }
+{ #category : 'parse-ncbi-identifiers' }
 BioParser class >> tokenizeSwissProtEntryName: aString [
 	" Tokenize aString representing a Swiss-Prot identifier "
 	

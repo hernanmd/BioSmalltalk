@@ -3,12 +3,14 @@ dbj|accession|locus
 
 "
 Class {
-	#name : #BioDDBJParser,
-	#superclass : #BioAbstractALParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioDDBJParser',
+	#superclass : 'BioAbstractALParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioDDBJParser class >> identifier [
 	" See superimplementor's comment "
 

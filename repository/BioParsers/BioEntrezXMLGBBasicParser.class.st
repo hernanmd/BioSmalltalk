@@ -2,12 +2,14 @@
 This is a basic parser which can parse accession, definition and sequence nodes from each GBSeq.
 "
 Class {
-	#name : #BioEntrezXMLGBBasicParser,
-	#superclass : #BioEntrezXMLGenBankSeqParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioEntrezXMLGBBasicParser',
+	#superclass : 'BioEntrezXMLGenBankSeqParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBBasicParser class >> parserNodes [
 	" See superimplementor's comment "
 
@@ -18,7 +20,7 @@ BioEntrezXMLGBBasicParser class >> parserNodes [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBBasicParser >> defaultNodes [
 	" Add node names in your specific subclasses. Answer a Collection of Strings
 	corresponding with the XML's DTD with the node names in which we are interested "
@@ -26,7 +28,7 @@ BioEntrezXMLGBBasicParser >> defaultNodes [
 	^ super defaultNodes , self parserNodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBBasicParser >> endElement: elementName [
 
 	(super endElement: elementName)

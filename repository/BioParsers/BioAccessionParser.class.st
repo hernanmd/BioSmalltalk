@@ -1,17 +1,19 @@
 Class {
-	#name : #BioAccessionParser,
-	#superclass : #BioNCBIIdParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioAccessionParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioAccessionParser class >> tokenize: aString [
 	" Tokenize aString using the receiver "
 	
 	^ self tokenizeAccession: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAccessionParser >> accessionParser [
 	" Answer a parser for parsing accession identifiers "
 
@@ -31,7 +33,7 @@ BioAccessionParser >> accessionParser [
 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioAccessionParser >> buildResults: aCollection [
 	" Answer a new accession object from results taken from aCollection "
 	
@@ -43,7 +45,7 @@ BioAccessionParser >> buildResults: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAccessionParser >> buildTokens: aCollection [
 	" Answer a Collection object for the receiver's parsing output "
 
@@ -53,7 +55,7 @@ BioAccessionParser >> buildTokens: aCollection [
 	^ self results		
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioAccessionParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -61,14 +63,14 @@ BioAccessionParser >> initialize [
 	parser := self accessionParser.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAccessionParser >> isAccession [
 	" (BioAccessionParser on: 'AF288373.2') isAccession "
 
 	^ (self parse: self expression) isNotEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAccessionParser >> tokenizeAccession: aString [
 	" Refer to comment in class side "
 	

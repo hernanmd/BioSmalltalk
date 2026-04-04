@@ -1,6 +1,6 @@
-Extension { #name : #Collection }
+Extension { #name : 'Collection' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 Collection >> blastNodeNames [
 
 	^ self

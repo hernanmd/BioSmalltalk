@@ -1,6 +1,6 @@
-Extension { #name : #Dictionary }
+Extension { #name : 'Dictionary' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 Dictionary >> blastNodeNames [
 
 	^ ( self collect: [: each | each value ] ) keys

@@ -14,8 +14,8 @@ MEGA Input Format may contain
  
 "
 Class {
-	#name : #BioMEGAFormatter,
-	#superclass : #BioFileFormatter,
+	#name : 'BioMEGAFormatter',
+	#superclass : 'BioFileFormatter',
 	#instVars : [
 		'alignments',
 		'codeTable',
@@ -32,17 +32,19 @@ Class {
 		'propertySetting',
 		'title'
 	],
-	#category : #'BioFormatters-Formatters-MEGA'
+	#category : 'BioFormatters-Formatters-MEGA',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-MEGA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter class >> description [
 	" Answer a <String> identifying the receiver's class "
 	
 	^ 'MEGA Formatter (version 6)'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioMEGAFormatter class >> forDataTypeDNA [
 	" Answer a new instance configured for containing nucleotide sequence data "
 	
@@ -51,7 +53,7 @@ BioMEGAFormatter class >> forDataTypeDNA [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioMEGAFormatter class >> forDataTypeDistance [
 	" Answer a new instance configured for containing nucleotide sequence data "
 	
@@ -60,7 +62,7 @@ BioMEGAFormatter class >> forDataTypeDistance [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioMEGAFormatter class >> forDataTypeNucleotide [
 	" Answer a new instance configured for containing nucleotide sequence data "
 	
@@ -69,7 +71,7 @@ BioMEGAFormatter class >> forDataTypeNucleotide [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioMEGAFormatter class >> forDataTypeProtein [
 	" Answer a new instance configured for containing Protein sequence data "
 	
@@ -78,7 +80,7 @@ BioMEGAFormatter class >> forDataTypeProtein [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioMEGAFormatter class >> forDataTypeRNA [
 	" Answer a new instance configured for containing RNA sequence data "
 	
@@ -87,34 +89,34 @@ BioMEGAFormatter class >> forDataTypeRNA [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'meg'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('MEGA6')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> alignments [
 	" Answer a <Collection> of receiver's alignment "
 
 	^ alignments
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> alignments: aCollection [
 
 	alignments := aCollection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMEGAFormatter >> bestNameFor: seqAssoc [
 	" Answer a <String> with a identifiable name for group of sequences in seqAssoc. See class comments for details on seqAssoc expected format "
 	
@@ -124,7 +126,7 @@ BioMEGAFormatter >> bestNameFor: seqAssoc [
 		ifNone: [ 'Unnamed_Seq' , BioNamedObject uniqueName ] 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMEGAFormatter >> buildMEGARecordId: seqName sequence: seqString [
 	" Answer a new MEGA record formatted for valid export to text file "
 	
@@ -134,7 +136,7 @@ BioMEGAFormatter >> buildMEGARecordId: seqName sequence: seqString [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> codeTable [
 	" Answer a <String> "
 
@@ -144,20 +146,20 @@ BioMEGAFormatter >> codeTable [
 			codeTable ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> codeTable: aString [
 	" Set the receiver's missing to indicate missing data to be aCharacter "
 	
 	codeTable := aString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMEGAFormatter >> defaultFormatType [
 
 	^ 'DNA'
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> export [
 	" Write the contents to receiver's file name "
 
@@ -172,7 +174,7 @@ BioMEGAFormatter >> export [
 		contents: self stream contents. 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportCodeTable [
 	" Write the receiver's code table setting "
 	
@@ -181,7 +183,7 @@ BioMEGAFormatter >> exportCodeTable [
 		nextPutAll: self codeTable.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportDataType [
 		
 	self stream
@@ -190,7 +192,7 @@ BioMEGAFormatter >> exportDataType [
 		space 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportFromAlignment: aBioAlignment [
 
 	| records |
@@ -201,7 +203,7 @@ BioMEGAFormatter >> exportFromAlignment: aBioAlignment [
 		whileFalse: [ self exportMegaRecords: records ]
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportGroup: anAssociation [ 
 	" Private - Iterate over anAssociation, build and export the MegaRecords in proper format "
 	
@@ -217,7 +219,7 @@ BioMEGAFormatter >> exportGroup: anAssociation [
 	^ megaRecords
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportHeader [
 	" Private - The first line must contain the keyword #MEGA to indicate that the data file is in MEGA format."
 	
@@ -226,7 +228,7 @@ BioMEGAFormatter >> exportHeader [
 		crlf
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportIdentical [
 	" Write the receiver's identical setting "
 	
@@ -235,7 +237,7 @@ BioMEGAFormatter >> exportIdentical [
 		nextPut: self identical
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportIndel [
 	" Write the receiver's indel setting "
 	
@@ -245,7 +247,7 @@ BioMEGAFormatter >> exportIndel [
 		space.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportMegaRecords: aCollection [
 	" Iterate over aCollection and write results into the receiver's stream "
 
@@ -259,7 +261,7 @@ BioMEGAFormatter >> exportMegaRecords: aCollection [
 	self stream cr
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportMissing [
 	" Write the receiver's missing setting "
 	
@@ -269,7 +271,7 @@ BioMEGAFormatter >> exportMissing [
 		space
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportNumberOfNucleotidesOrAminoacids [
 	" Write the receiver's number of nucleotides or amino acids "
 	
@@ -278,7 +280,7 @@ BioMEGAFormatter >> exportNumberOfNucleotidesOrAminoacids [
 		nextPutAll: self numberOfNucleotidesOrAminoacids asString
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportNumberOfSequences [
 	" Write the receiver's number of sequences "
 	
@@ -287,7 +289,7 @@ BioMEGAFormatter >> exportNumberOfSequences [
 		nextPutAll: self numberOfSequences asString
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportNumberOfSynonymsWithSequences [
 	" Write the receiver's number of synonyms "
 	
@@ -296,7 +298,7 @@ BioMEGAFormatter >> exportNumberOfSynonymsWithSequences [
 		nextPutAll: self numberOfSynonymsWithSequences asString
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportPropertySetting [
 	" Write the receiver's property setting "
 	
@@ -305,7 +307,7 @@ BioMEGAFormatter >> exportPropertySetting [
 		nextPutAll: self propertySetting
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportStatementDescription [
 
 	(self megaDescription includes: ';')
@@ -317,7 +319,7 @@ BioMEGAFormatter >> exportStatementDescription [
 		crlf
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMEGAFormatter >> exportStatementTitle [
 
 	self stream
@@ -327,21 +329,21 @@ BioMEGAFormatter >> exportStatementTitle [
 		crlf
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> fileNamePrefix [
 	" Answer a <String> with the prefix of the output file name "
 	
 	^ 'mega_'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMEGAFormatter >> formatNameFrom: nameString [
 	" Remove invalid MEGA characters from nameString "
 	
 	^ nameString copyReplaceAll: ' ' with: '_' 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMEGAFormatter >> formatSequenceFrom: seqString [
 
 	^ (((seqString groupsOf: 10 atATimeCollect: [ : each | each joinUsing: String empty ])
@@ -349,20 +351,20 @@ BioMEGAFormatter >> formatSequenceFrom: seqString [
 			collect: [ : each | each joinUsing: String space ]) asOrderedCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> formatType [
 
 	^ formatType
 		ifNil: [ formatType := self defaultFormatType ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> formatType: anObject [
 
 	formatType := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> groupNameQualifier [
 	" Answer a <String>. The group name qualifier is a property used to group the receiver's aligned records "
 
@@ -370,184 +372,184 @@ BioMEGAFormatter >> groupNameQualifier [
 		ifNil: [ groupNameQualifier := 'breed' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> groupNameQualifier: anObject [
 
 	^ groupNameQualifier := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> identical [
 	
 	^ identical
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> identical: aCharacter [
 	" Set the receiver's identical to show identify with the first sequence to be aCharacter "
 	
 	identical := aCharacter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> indel [
 	
 	^ indel
 		ifNil: [ indel := $- ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> indel: aCharacter [
 	" Set the receiver's indel to identify insertion/deletions in sequence alignments to be aCharacter "
 	
 	indel := aCharacter
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatter >> isAlignmentEmpty: aCollection [ 
 
 	^ aCollection allSatisfy: [ : megaRecordGroup |
 		megaRecordGroup allSatisfy: [ : mr | mr hasEmptyAlignment ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> megaDescription [
 	^ megaDescription
 		ifNil: [ megaDescription := 'Missing Description' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> megaDescription: anObject [
 	megaDescription := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> missing [
 	
 	^ missing
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> missing: aCharacter [
 	" Set the receiver's missing to indicate missing data to be aCharacter "
 	
 	missing := aCharacter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfNucleotidesOrAminoacids [
 	
 	^ numberOfNucleotidesOrAminoacids
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfNucleotidesOrAminoacids: aNumber [
 	" Set the receiver's number of nucleotides or amino acids to be aNumber "
 	
 	numberOfNucleotidesOrAminoacids  := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfSequences [
 	
 	^ numberOfSequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfSequences: aNumber [
 	" Set the receiver's number of sequences to be aNumber "
 	
 	numberOfSequences := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfSynonymsWithSequences [
 	
 	^ numberOfSynonymsWithSequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> numberOfSynonymsWithSequences: aNumber [
 	" Set the receiver's number of synonyms to be aNumber "
 	
 	numberOfSynonymsWithSequences  := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> propertySetting [
 	
 	^ propertySetting
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> propertySetting: aString [
 	" Set the receiver's property setting to be aString "
 	
 	propertySetting := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setCodeTableAsStandard [
 
 	self codeTable: 'Standard'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setDataFormatAsLowerleft [
 	" Set the DataFormat property "
 	
 	self dataFormat: 'Lowerleft'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setDataFormatAsUpperright [
 	" Set the DataFormat property "
 	
 	self dataFormat: 'Uperright'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setPropertyAsCoding [
 	" Set the receiver's property "
 	
 	self propertySetting: 'Coding'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setPropertyAsEnd [
 	" Set the receiver's property "
 	
 	self propertySetting: 'End'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setPropertyAsExon [
 	" Set the receiver's property "
 	
 	self propertySetting: 'Exon'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setPropertyAsIntron [
 	" Set the receiver's property "
 	
 	self propertySetting: 'Intron'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> setPropertyAsNonCoding [
 	" Set the receiver's property "
 	
 	self propertySetting: 'NonCoding'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> title [
 	^ title
 		ifNil: [ title := 'Missing Title' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatter >> title: anObject [
 	title := anObject
 ]

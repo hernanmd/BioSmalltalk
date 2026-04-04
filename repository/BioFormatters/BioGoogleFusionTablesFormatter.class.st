@@ -2,26 +2,28 @@
 The Google Fusion Tables format is described here: http://www.google.com/drive/start/apps.html#fusiontables
 "
 Class {
-	#name : #BioGoogleFusionTablesFormatter,
-	#superclass : #BioCSVFormatter,
-	#category : #'BioFormatters-Formatters-CSV'
+	#name : 'BioGoogleFusionTablesFormatter',
+	#superclass : 'BioCSVFormatter',
+	#category : 'BioFormatters-Formatters-CSV',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-CSV'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGoogleFusionTablesFormatter class >> description [
 	" See superimplementor's comment "
 	
 	^ 'Google Fusion Tables Writer'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGoogleFusionTablesFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('Google Fusion Tables')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGoogleFusionTablesFormatter >> exportFrom: aBioClassifier [
 
 	^ super exportFrom: aBioClassifier organizationContents
@@ -29,7 +31,7 @@ BioGoogleFusionTablesFormatter >> exportFrom: aBioClassifier [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGoogleFusionTablesFormatter >> exportFrom: aCollection features: featuresCollection [ 
 
 	self initializeStream: aCollection.

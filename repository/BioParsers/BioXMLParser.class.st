@@ -4,69 +4,71 @@ Abstract class for specific BioSmalltalk XML parsers. It provides a formatter to
 
 "
 Class {
-	#name : #BioXMLParser,
-	#superclass : #BioAbstractParser,
+	#name : 'BioXMLParser',
+	#superclass : 'BioAbstractParser',
 	#instVars : [
 		'formatter',
 		'nodes'
 	],
-	#category : 'BioParsers-XML'
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser class >> defaultNodes [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser class >> parse: anObject [
 
 	^ (self on: anObject readStream) parse
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser class >> parserNodes [
 
 	^ self defaultNodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> defaultFormatterClass [
 
 	^ BioXMLDictionaryMap
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> defaultNodes [
 
 	^ self class defaultNodes
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> formatter [
 
 	^ formatter
 		ifNil: [ formatter := self defaultFormatterClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> formatter: anObject [
 	formatter := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> nodes [
 	^ nodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> nodes: anObject [
 	nodes := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> parse [
 	" Parse the receiver expression and answer the header nodes found "
 
@@ -78,21 +80,21 @@ BioXMLParser >> parse [
 	^ self results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> parser [
 
 	^ parser
 		ifNil: [ parser := XMLPullParser parse: self expression ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> resultClass [
 	" Answer a default class for storing the receiver's parsing results "
 	
 	^ self formatter resultClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> saveTag: tagName value: tagValueString [
 	" Private - Save the matched tagNameString with its tagValueString in the receiver's result "
 
@@ -102,28 +104,28 @@ BioXMLParser >> saveTag: tagName value: tagValueString [
 			in: self results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> selectNodes: aCollection [
 	" Set aCollection being a <Collection> of <String> representing node names as the receiver's selected nodes "
 
 	nodes := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> selectedNodes [
 
 	^ nodes
 		ifNil: [ nodes := self defaultNodes ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> tokenizeNodes [
 	" Parse the receiver expression and answer the result nodes found "
 
 	^ self tokenizeNodes: self selectedNodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLParser >> tokenizeNodes: tagCollection [
 	" Parse the receiver expression and answer the header nodes found "
 

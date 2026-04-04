@@ -39,7 +39,7 @@ BioFastaMultiRecordTest >> setUp [
 	self fastaCollection: (BioParser parseMultiFasta: self multiFastaSeq).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testAddFastaRecord [
 	| oldFastaCollectionSize |
 	oldFastaCollectionSize := self fastaCollection size.
@@ -54,33 +54,33 @@ BioFastaMultiRecordTest >> testAddFastaRecord [
 		equals: oldFastaCollectionSize + 1
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testAsString [
 
 	self assert: (self fastaCollection asString isKindOf: String).
 	self deny: self fastaCollection asString isEmpty.
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testContents [
 
 	self assert: self fastaCollection contents equals: self fastaCollection.
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testGcContent [
 
 	self assert: self fastaCollection gcContent notEmpty.
 	self assert: (self fastaCollection gcContent isKindOf: Dictionary).
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testHasSameLength [
 
 	self assert: self fastaCollection hasSameLength.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testIncludesFastaRecord [
 
 	| fastaRecord |
@@ -95,7 +95,7 @@ BioFastaMultiRecordTest >> testIncludesFastaRecord [
 	self assert: (self fastaCollection includes: fastaRecord).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testIncludesName [
 
 	| fastaRecord |
@@ -110,14 +110,14 @@ BioFastaMultiRecordTest >> testIncludesName [
 	self assert: (self fastaCollection includesName: 'Added Fasta Record 1').
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testIsEmpty [
 
 	self deny: self fastaCollection isEmpty.
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testReverseComplement [
 
 	| newFastaCollection firstSeq sndSeq |
@@ -136,7 +136,7 @@ BioFastaMultiRecordTest >> testReverseComplement [
 		equals: newFastaCollection sequences second asString
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testSequenceNames [
 
 	self assert: self fastaCollection sequenceNames notEmpty.
@@ -145,7 +145,7 @@ BioFastaMultiRecordTest >> testSequenceNames [
 	self assert: self fastaCollection sequenceNames first equals: 'sequence1'.
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testSequenceStrings [
 
 	self assert: self fastaCollection sequenceStrings notEmpty.
@@ -153,20 +153,20 @@ BioFastaMultiRecordTest >> testSequenceStrings [
 	self assert: (self fastaCollection sequenceStrings allSatisfy: #notEmpty).
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testSequences [
 
 	self assert: self fastaCollection sequences notEmpty.
 	self assert: (self fastaCollection sequences allSatisfy: #isBioSequence).
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testSize [
 
 	self assert: self fastaCollection size equals: 2.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioFastaMultiRecordTest >> testSort [
 
 	| newFastaCollection |

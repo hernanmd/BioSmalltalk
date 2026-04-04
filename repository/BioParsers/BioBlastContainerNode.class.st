@@ -1,13 +1,15 @@
 Class {
-	#name : #BioBlastContainerNode,
-	#superclass : #BioBlastNode,
+	#name : 'BioBlastContainerNode',
+	#superclass : 'BioBlastNode',
 	#instVars : [
 		'nodes'
 	],
-	#category : 'BioParsers-Support'
+	#category : 'BioParsers-Support',
+	#package : 'BioParsers',
+	#tag : 'Support'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastContainerNode >> = aBioBlastNode [
 	" Answer whether the receiver and anObject represent the same object. "
 
@@ -15,7 +17,7 @@ BioBlastContainerNode >> = aBioBlastNode [
 
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 BioBlastContainerNode >> collect: aBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.  
 	Collect the resulting values into a collection like the receiver. Answer  
@@ -24,53 +26,53 @@ BioBlastContainerNode >> collect: aBlock [
 	^ self nodes collect: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> contents [
 
 	^ self nodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> first [
 	"Answer the first element of the receiver"
 	
 	^ self nodes first
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastContainerNode >> hash [
 	"hash is implemented because #= is implemented"
 
 	^ super hash bitXor: self nodes hash
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastContainerNode >> isEmpty [
 	"Answer whether the receiver contains any elements."
 	
 	^ self nodes isEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> last [
 	"Answer the last element of the receiver"
 	
 	^ self nodes last
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> nodes [
 
 	^ nodes
 		ifNil: [ nodes := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> nodes: anObject [
 	nodes := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioBlastContainerNode >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -79,14 +81,14 @@ BioBlastContainerNode >> printOn: aStream [
 		ifNotNil: [ aStream nextPutAll: self nodes size asString between: $( and: $) ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> size [
 	"Answer how many elements the receiver contains."
 	
 	^ self nodes size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastContainerNode >> values: aNodeName [
 	" Answer a Collection of receiver's align lengths nodes in each HSP node "
 	

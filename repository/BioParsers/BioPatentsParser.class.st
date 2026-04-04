@@ -3,25 +3,27 @@ pat|country|number
 
 "
 Class {
-	#name : #BioPatentsParser,
-	#superclass : #BioNCBIIdParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioPatentsParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPatentsParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'pat|'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPatentsParser >> countryParser [
 
 	^ self parserForNonFastaString
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioPatentsParser >> initialize [
 
 	super initialize.

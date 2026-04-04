@@ -3,12 +3,14 @@ Extension of the BED format which enhances track details supporting links and lo
 
 "
 Class {
-	#name : #BioBEDDetailFormatter,
-	#superclass : #BioBEDFormatter,
-	#category : 'BioFormatters-Formatters-BED'
+	#name : 'BioBEDDetailFormatter',
+	#superclass : 'BioBEDFormatter',
+	#category : 'BioFormatters-Formatters-BED',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-BED'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDDetailFormatter >> fileNamePrefix [
 	" Answer a default prefix <String> for the output file name "
 	

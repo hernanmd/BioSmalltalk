@@ -5,55 +5,57 @@ A BioFormatter is what to use when a developer has an INPUT file and possible an
 
 "
 Class {
-	#name : #BioFile,
-	#superclass : #BioNamedObject,
+	#name : 'BioFile',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'stream'
 	],
-	#category : 'BioFormatters-Core'
+	#category : 'BioFormatters-Core',
+	#package : 'BioFormatters',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile class >> fileFormatterClass [
 
 	^ BioFileFormat
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFile class >> isValidFile: aFilename [
 	" Answer <true> if aFilename is valid for the receiver "
 
 	^ aFilename notNil and: [ aFilename notEmpty ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFile class >> on: anObject [
 	" Answer a new instance of the receiver for the given anObject "
 
 	^ self new initializeWith: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> close [
 	"Close the receiver's file."
 
 	self stream close
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> contents [
 	"Answer all of the contents of the receiver."
 	
 	^ self stream contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> fileFormatterClass [
 
 	^ self class fileFormatterClass
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFile >> initializeWith: aFilePathOrFileStream [
 	" Private - Check and open aFilePathOrFileStream "
 
@@ -65,14 +67,14 @@ BioFile >> initializeWith: aFilePathOrFileStream [
 	self name: fStream name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> possibleExtensions [
 	" See class comment "
 
 	^ self class possibleExtensions
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFile >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -81,13 +83,13 @@ BioFile >> printOn: aStream [
 		between: $[ and: $]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> stream [
 
 	^ stream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFile >> stream: anObject [
 	stream := anObject
 ]

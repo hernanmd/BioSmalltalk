@@ -3,12 +3,14 @@ Documentation taken from http://bioweb2.pasteur.fr/docs/phylip/doc/main.html#inp
 
 "
 Class {
-	#name : #BioPhylipParser,
-	#superclass : #BioAbstractTextParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioPhylipParser',
+	#superclass : 'BioAbstractTextParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> buildDNAResults: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -24,7 +26,7 @@ BioPhylipParser >> buildDNAResults: aCollection [
 		sequences: sequences.
 ]
 
-{ #category : #'accessing-protein' }
+{ #category : 'accessing-protein' }
 BioPhylipParser >> buildProteinResults: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -40,7 +42,7 @@ BioPhylipParser >> buildProteinResults: aCollection [
 		sequences: sequences.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylipParser >> buildTokens: aCollection [
 	" Answer a tokenized <Collection> parsing aCollection "
 
@@ -53,7 +55,7 @@ BioPhylipParser >> buildTokens: aCollection [
 
 ]
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioPhylipParser >> buildTokensBlock [ 
 
 	^ [: node | 
@@ -63,7 +65,7 @@ BioPhylipParser >> buildTokensBlock [
 			with: (((node third reject: [: line | line first isEmpty ]) collect: #first) collect: #withoutBlanks ) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylipParser >> buildTokensFrom: aCollection [
 
 	| taxaNumber collection seqIndex seqBlock |
@@ -87,25 +89,25 @@ BioPhylipParser >> buildTokensFrom: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylipParser >> buildTokensFromFirstBlock: aCollection [
 
 	^ aCollection second collect: [: seq | seq second withoutBlanks ]
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> dnaInterleaveLineTokenizer [
 
 	^ (self dnaInterleaveSequenceTokenizer , #newline asPParser) star
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> dnaInterleaveSequenceTokenizer [
 
 	^ #dnaLetter asPParser trimBlanks star flatten
 ]
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioPhylipParser >> firstLineTokenizer [
 	" Answer a Parser for parsing the first line of the format "
 	
@@ -120,7 +122,7 @@ BioPhylipParser >> firstLineTokenizer [
 				Character cr asString } ]
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> parseInterleavedDNA: aString [
 	" Answer an object with the result of parsing aString with the receiver's parser "
 	
@@ -132,7 +134,7 @@ BioPhylipParser >> parseInterleavedDNA: aString [
 		ifFalse: [ self signalInvalidObject: parseResults ].
 ]
 
-{ #category : #'accessing-protein' }
+{ #category : 'accessing-protein' }
 BioPhylipParser >> parseInterleavedProtein: aString [
 	" Answer an object with the result of parsing aString with the receiver's parser "
 	
@@ -144,13 +146,13 @@ BioPhylipParser >> parseInterleavedProtein: aString [
 		ifFalse: [ self signalInvalidObject: parseResults ].
 ]
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioPhylipParser >> parserForAnyButNumber [
 
 	^ #digit asPParser negate plus , #number asPParser ==> [: n | n second ] 
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> speciesDNALineTokenizer [
 	" Answer a Parser for parsing the species names line "
 	
@@ -158,14 +160,14 @@ BioPhylipParser >> speciesDNALineTokenizer [
 		self dnaInterleaveSequenceTokenizer
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> speciesDNANamedBlockTokenizer [
 	" Answer a Parser for parsing the sequence blocks "
 	
 	^ (self speciesDNALineTokenizer , #newline asPParser flatten) star
 ]
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioPhylipParser >> speciesFobiddenNames [
 	" Private - Answer a <Collection> with receiver's not allowed Characters in a species name "
 	
@@ -182,13 +184,13 @@ BioPhylipParser >> speciesFobiddenNames [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylipParser >> taxaNumberFrom: aCollection [
 
 	^ aCollection first first asNumber
 ]
 
-{ #category : #'accessing-dna' }
+{ #category : 'accessing-dna' }
 BioPhylipParser >> tokenizeInterleavedDNA [
 	" Private - Tokenize the receiver's epression as DNA data "
 
@@ -201,7 +203,7 @@ BioPhylipParser >> tokenizeInterleavedDNA [
 	
 ]
 
-{ #category : #'accessing-protein' }
+{ #category : 'accessing-protein' }
 BioPhylipParser >> tokenizeInterleavedProtein [
 	" Private - Tokenize the receiver's epression as Protein data "
 

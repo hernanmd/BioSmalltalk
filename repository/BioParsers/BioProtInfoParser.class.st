@@ -3,26 +3,28 @@ pir||entry
 
 "
 Class {
-	#name : #BioProtInfoParser,
-	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioProtInfoParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioProtInfoParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'pir|'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioProtInfoParser >> entryParser [
 	" Answer a parser for parsing entry identifiers "
 
 	^ self parserForNonFastaString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioProtInfoParser >> initialize [
 
 	super initialize.	

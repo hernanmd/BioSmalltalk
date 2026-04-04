@@ -36,12 +36,14 @@ fileRef := BioObject testFilesFullDirectoryName / 'GenBankTestFiles' / 'TestGBSe
 
 "
 Class {
-	#name : #BioEntrezXMLGBSeqFeatureQualParser,
-	#superclass : #BioEntrezXMLGBSeqParser,
-	#category : 'BioParsers-XML'
+	#name : 'BioEntrezXMLGBSeqFeatureQualParser',
+	#superclass : 'BioEntrezXMLGBSeqParser',
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqFeatureQualParser class >> defaultNodes [
 
 	^ #(
@@ -56,7 +58,7 @@ BioEntrezXMLGBSeqFeatureQualParser class >> defaultNodes [
 	'GBQualifier_value' )
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezXMLGBSeqFeatureQualParser >> saveGBNode: result [
 	" Set qualifier name as key and qualifier value as value for a GenBank node.
 	If result is not a feature qualifier, then belongs to a 'single tag' value, i.e. GBSeq_locus, GBSeq_length, etc., use the tag name as property key.

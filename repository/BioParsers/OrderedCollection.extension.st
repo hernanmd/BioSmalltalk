@@ -1,6 +1,6 @@
-Extension { #name : #OrderedCollection }
+Extension { #name : 'OrderedCollection' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 OrderedCollection >> blastValue [
 
 	^ self first blastValue

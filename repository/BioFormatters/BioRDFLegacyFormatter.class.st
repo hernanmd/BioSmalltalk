@@ -23,31 +23,33 @@ Nuu6b  TTCACTCTGTTCCCGCCCTATTCTCA  1
 
 "
 Class {
-	#name : #BioRDFLegacyFormatter,
-	#superclass : #BioMatrixFormatter,
+	#name : 'BioRDFLegacyFormatter',
+	#superclass : 'BioMatrixFormatter',
 	#instVars : [
 		'frequencies',
 		'positionCiphers',
 		'nameIndex'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter class >> description [
 	" Answer a Collection of identifiers of the receiver "
 	
 	^ 'Fluxus Network Legacy RDF Format'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('Obsolete Fluxus' 'Obsolete Network')
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> exportCellAtRow: rIndex atColumn: cIndex [
 
 	| contents |
@@ -56,7 +58,7 @@ BioRDFLegacyFormatter >> exportCellAtRow: rIndex atColumn: cIndex [
 	self outputFileStream nextPutAll: contents asString.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> exportFirstCellColumnAt: rowIndex [
 	" Write contents for the first column(s) at rowIndex position "
 
@@ -75,7 +77,7 @@ BioRDFLegacyFormatter >> exportFirstCellColumnAt: rowIndex [
 				space ].
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> exportFromBLAST: hitCollection [
 	" Write two files: 
 	1) A time-stamped file in the receiver's format from hitCollecction
@@ -97,7 +99,7 @@ BioRDFLegacyFormatter >> exportFromBLAST: hitCollection [
 	self exportIdentifiers: hitCollection.	
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> exportIdentifiers: hitCollection [
 
 	| tmpFile |
@@ -113,7 +115,7 @@ BioRDFLegacyFormatter >> exportIdentifiers: hitCollection [
 	tmpFile close.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> exportWeights [
 	" Private - Write the weight row "
 	
@@ -125,14 +127,14 @@ BioRDFLegacyFormatter >> exportWeights [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> fileNamePrefix [
 	" Answer a String for prefixing the output file name "
 	
 	^ 'BioST-Exported-fluxus-old-rdf_'
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioRDFLegacyFormatter >> fillDataColumnsFrom: hitCollection [
 
 	| columns alignLength |
@@ -157,7 +159,7 @@ BioRDFLegacyFormatter >> fillDataColumnsFrom: hitCollection [
 	
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioRDFLegacyFormatter >> fillFrequenciesColumn [
 	" Fill the receiver's matrix with the frequencies at last column. If frequencies
 	were not provided, then fill the frequencies column with 1's "
@@ -169,7 +171,7 @@ BioRDFLegacyFormatter >> fillFrequenciesColumn [
 	
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioRDFLegacyFormatter >> fillHeaderColumns: columns [
 	" Private - columns is a Collection where differences were found "
 	
@@ -184,7 +186,7 @@ BioRDFLegacyFormatter >> fillHeaderColumns: columns [
 		]
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioRDFLegacyFormatter >> fillMatrixFrom: hitCollection columns: columns [
 
 	columns doWithIndex: [: colIndex : cIndex |
@@ -200,7 +202,7 @@ BioRDFLegacyFormatter >> fillMatrixFrom: hitCollection columns: columns [
 	
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioRDFLegacyFormatter >> fillPosition: colIndex for: maxDigits [
 	" Private - Build a column position, answer a String 001 005 032 145 ... "
 	
@@ -215,7 +217,7 @@ BioRDFLegacyFormatter >> fillPosition: colIndex for: maxDigits [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -223,7 +225,7 @@ BioRDFLegacyFormatter >> formatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> frequencies [
 	" Answer a Collection with the receiver's frequencies "
 	
@@ -237,7 +239,7 @@ BioRDFLegacyFormatter >> frequencies [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> nameCharacterLimit [
 	" Answer a Number representing the max number of characters
 	allowed to represent names "
@@ -245,7 +247,7 @@ BioRDFLegacyFormatter >> nameCharacterLimit [
 	^ 6
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> nameIndex [
 	" Answer a Number representing the current processed name "
 	
@@ -254,21 +256,21 @@ BioRDFLegacyFormatter >> nameIndex [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> nameIndex: aNumber [
 	" Set the number representing the current processed name to aNumber "
 	
 	^ nameIndex := aNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRDFLegacyFormatter >> positionCiphers [
 	" Answer a Number of the digits for making space in the vertical positions header "
 
 	^ positionCiphers
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioRDFLegacyFormatter >> rowIdentifier [
 	" Answer a String "
 	| eName |

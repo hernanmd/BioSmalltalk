@@ -5,21 +5,23 @@ A BioSequenceFormatter can format a given String (presumably a sequence) to seve
 
 "
 Class {
-	#name : #BioSequenceFormatter,
-	#superclass : #BioFormatter,
+	#name : 'BioSequenceFormatter',
+	#superclass : 'BioFormatter',
 	#instVars : [
 		'sequence'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFormatter class >> identifiers [
 
 	^ String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFormatter class >> joinSequence: aCollection [
 	" Private - Answer a String with the sequence ensambled from aCollection.
 	aCollection is a collection of collections with each element composed by Strings or Characters "
@@ -27,7 +29,7 @@ BioSequenceFormatter class >> joinSequence: aCollection [
 	^ (aCollection flatCollect: [: each | each select: [: elem | elem isBiologicalSequence ] ]) joinUsing: String empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFormatter >> asTriplet [
 	" Answer a String with the receiver's DNA or RNA sequence decoded by triplets "
 	
@@ -43,12 +45,12 @@ BioSequenceFormatter >> asTriplet [
 	^ answer trimBoth
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFormatter >> sequence [
 	^ sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFormatter >> sequence: anObject [
 	sequence := anObject
 ]

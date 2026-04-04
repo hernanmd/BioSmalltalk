@@ -1,23 +1,25 @@
 Class {
-	#name : #BioBlastRootNode,
-	#superclass : #BioBlastParentNode,
-	#category : 'BioParsers-Support'
+	#name : 'BioBlastRootNode',
+	#superclass : 'BioBlastParentNode',
+	#category : 'BioParsers-Support',
+	#package : 'BioParsers',
+	#tag : 'Support'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastRootNode >> addNode: aNode [
 
 	aNode addToParent: self last
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastRootNode >> addRootNode: aNode [
 	" Add aNode to the receiver's nodes "
 
 	self nodes add: aNode
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastRootNode >> hits [
 	" Answer the <Collection> of hits in the receiver's nodes "
 	

@@ -19,16 +19,18 @@ See http://www.ncbi.nlm.nih.gov/dtd/NCBI_GBSeq.mod.dtd for details
 
 "
 Class {
-	#name : #BioEntrezXMLGBSeqParser,
-	#superclass : #BioXMLParser,
+	#name : 'BioEntrezXMLGBSeqParser',
+	#superclass : 'BioXMLParser',
 	#instVars : [
 		'matches',
 		'records'
 	],
-	#category : #'BioParsers-XML'
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> collectGBSet [
 	" Parse the receiver expression and answer a <Collection> of resulting nodes "
 
@@ -43,44 +45,44 @@ BioEntrezXMLGBSeqParser >> collectGBSet [
 	^ self results.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> defaultFormatterClass [
 
 	^ BioXMLOrderedCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> defaultMatchesClass [
 
 	^ Dictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> matches [
 	^ matches
 		ifNil: [ matches := self defaultMatchesClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> matches: anObject [
 	matches := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> parse [
 	" Parse the receiver expression and answer a <Collection> of resulting nodes "
 
 	^ self collectGBSet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqParser >> records [
 
 	^ records
 		ifNil: [ records := OrderedCollection new ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezXMLGBSeqParser >> saveGBSeq [
 
 	self matches notEmpty ifFalse: [ ^ self ].

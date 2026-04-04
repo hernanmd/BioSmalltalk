@@ -3,19 +3,21 @@ gb|accession|locus
 
 "
 Class {
-	#name : #BioGBParser,
-	#superclass : #BioAbstractALParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioGBParser',
+	#superclass : 'BioAbstractALParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'gb|'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioGBParser >> initialize [
 	" Private - See superimplementor's comment "
 	

@@ -1,17 +1,19 @@
 Class {
-	#name : #BioPHASECSVFormatter,
-	#superclass : #BioCSVFormatter,
-	#category : #'BioFormatters-Formatters-PHASE'
+	#name : 'BioPHASECSVFormatter',
+	#superclass : 'BioCSVFormatter',
+	#category : 'BioFormatters-Formatters-PHASE',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-PHASE'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPHASECSVFormatter class >> description [
 	" See superimplementor's comment "
 
 	^ 'INP (CSV) from PHASE Software'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPHASECSVFormatter class >> example1 [
 
 	| inpFile |
@@ -22,14 +24,14 @@ BioPHASECSVFormatter class >> example1 [
 	self new readFrom: inpFile.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPHASECSVFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('INP')
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioPHASECSVFormatter >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -37,7 +39,7 @@ BioPHASECSVFormatter >> initialize [
 	self delimiterSourceCharacter: BioPhaseINPFile delimiter.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPHASECSVFormatter >> isIDCCRow: row [
 	" Answer <true> if row is used for identifying individuals and/or case/control status "
 	
@@ -45,13 +47,13 @@ BioPHASECSVFormatter >> isIDCCRow: row [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPHASECSVFormatter >> processGenotype: row [
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPHASECSVFormatter >> readFrom: aFile [
 	" Answer a <Collection> of genotype objects "
 

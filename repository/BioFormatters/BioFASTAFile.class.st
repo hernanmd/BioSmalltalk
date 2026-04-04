@@ -11,19 +11,21 @@ myFasta contents.
 
 "
 Class {
-	#name : #BioFASTAFile,
-	#superclass : #BioFile,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#name : 'BioFASTAFile',
+	#superclass : 'BioFile',
+	#category : 'BioFormatters-Formatters-FASTA',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-FASTA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFile class >> possibleExtensions [
 	" See superimplementor's comment"
 
 	^ self fileFormatterClass fileExtensionsFor: 'FASTA'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFile >> contents [
 	" Answer receiver's contents "
 	

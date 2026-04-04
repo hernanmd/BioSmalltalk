@@ -2,12 +2,14 @@
 This class is not intended to be used directly
 "
 Class {
-	#name : #BioFASTABasicParser,
-	#superclass : #BioIDParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioFASTABasicParser',
+	#superclass : 'BioIDParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTABasicParser >> buildFastaRecord: aCollection [
 
 	^ BioFastaRecord 
@@ -15,7 +17,7 @@ BioFASTABasicParser >> buildFastaRecord: aCollection [
 		sequence: (self seqFrom: aCollection last) 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTABasicParser >> buildResults: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -24,7 +26,7 @@ BioFASTABasicParser >> buildResults: aCollection [
 		ifFalse: [ aCollection collect: [ : seq | self buildResults: seq ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTABasicParser >> buildTokens: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -37,7 +39,7 @@ BioFASTABasicParser >> buildTokens: aCollection [
 	^ self results		
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioFASTABasicParser >> fastaParser [
 
 	^ (
@@ -53,7 +55,7 @@ BioFASTABasicParser >> fastaParser [
 		) plus
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFASTABasicParser >> initializeWith: aString [
 	" Private - See superimplementor's comment "
 
@@ -62,25 +64,25 @@ BioFASTABasicParser >> initializeWith: aString [
 
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTABasicParser >> newLineParser [
 
 	^ #newline asPParser
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioFASTABasicParser >> removeNewLinesAndJoinBlock [
 
 	^ [ : nodes | (nodes reject: [ : line | line = Character cr asString or: [ line = Character lf asString ]]) joinUsing: '' ]
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 BioFASTABasicParser >> removeNewlinesBlock [
 
 	^ [ :nodes | nodes copyWithoutAll: { Character cr asString . Character lf asString } ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTABasicParser >> seqFrom: aCollection [
 	" Answer a new sequence object from aCollection using the receiver's alphabet class "
 	
@@ -89,20 +91,20 @@ BioFASTABasicParser >> seqFrom: aCollection [
 		alphabet: self alphabetClass
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTABasicParser >> sequenceClass [
 	" Answer a <Class> used to represent biological sequences "
 	
 	^ BioSequence
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTABasicParser >> sequenceCollectionFrom: aCollection [
 
 	^ aCollection copy
 ]
 
-{ #category : #'accessing-public' }
+{ #category : 'accessing-public' }
 BioFASTABasicParser >> sequenceInfo [
 	" Answer a <String> with the receiver's parsed information or description found in the header "
 
@@ -110,7 +112,7 @@ BioFASTABasicParser >> sequenceInfo [
 	^ self results sequenceName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTABasicParser >> tokenize [
 	" Private - Answer a String with the receiver's expression tokenized "
 	

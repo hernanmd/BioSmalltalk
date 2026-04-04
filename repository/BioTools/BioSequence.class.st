@@ -385,6 +385,12 @@ BioSequence >> aminoacidNames [
 ]
 
 { #category : 'converting' }
+BioSequence >> asCircular [
+
+	^ BioCircularSequence on: self
+]
+
+{ #category : 'converting' }
 BioSequence >> asFastaRecord [
 	" Answer a <BioFastaRecord> filled with the receiver's name and sequence "
 
@@ -590,12 +596,12 @@ BioSequence >> contents [
 	^ self sequence.
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequence >> coordinates [
 	^ coordinates ifNil: [ #() ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequence >> coordinates: aCollection [
 	coordinates := aCollection
 ]
@@ -683,6 +689,64 @@ BioSequence >> dfsExpandSeq: currentDFSNode cumSequences: cumList [
 				ifTrue: [ cumList add: currentDFSNode cumulSeq ] ]
 
 
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> digestWith: anEnzymeCollectionOrName [
+	"Digest the receiver with one or more enzymes.
+	anEnzymeCollectionOrName can be a BioRestrictionEnzyme, a String name, or a Collection of these."
+
+	| enzymes |
+	enzymes := (anEnzymeCollectionOrName isCollection and: [
+		            anEnzymeCollectionOrName isString not ])
+		           ifTrue: [
+			           anEnzymeCollectionOrName collect: [ :each |
+				           self resolveEnzyme: each ] ]
+		           ifFalse: [
+			           OrderedCollection with:
+				           (self resolveEnzyme: anEnzymeCollectionOrName) ].
+	^ self digestWithEnzymes: enzymes
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> digestWithEnzyme: anEnzyme [
+	"Digest the receiver with an enzyme and answer a Collection of fragments."
+
+	| sites fragments lastIndex |
+	sites := anEnzyme searchIn: self.
+	sites isEmpty ifTrue: [ ^ OrderedCollection with: self ].
+
+	fragments := OrderedCollection new.
+	lastIndex := 1.
+	sites do: [ :siteIndex |
+			| cutIndex |
+			cutIndex := siteIndex + anEnzyme cut5.
+			fragments add: (self copyFrom: lastIndex to: cutIndex - 1).
+			lastIndex := cutIndex ].
+	fragments add: (self copyFrom: lastIndex to: self size).
+	^ fragments
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> digestWithEnzymes: aCollectionOfEnzymes [
+	"Digest the receiver with multiple enzymes and answer a Collection of fragments."
+
+	| allSites fragments lastIndex |
+	allSites := Set new.
+	aCollectionOfEnzymes do: [ :enzyme |
+			allSites addAll: ((enzyme searchIn: self) collect: [ :siteIndex |
+					 siteIndex + enzyme cut5 ]) ].
+
+	allSites isEmpty ifTrue: [ ^ OrderedCollection with: self ].
+
+	fragments := OrderedCollection new.
+	lastIndex := 1.
+	allSites asSortedCollection do: [ :cutIndex |
+			(cutIndex > 1 and: [ cutIndex <= self size ]) ifTrue: [
+					fragments add: (self copyFrom: lastIndex to: cutIndex - 1).
+					lastIndex := cutIndex ] ].
+	fragments add: (self copyFrom: lastIndex to: self size).
+	^ fragments
 ]
 
 { #category : 'accessing - frequencies' }
@@ -953,6 +1017,11 @@ BioSequence >> isBioSequence [
 ]
 
 { #category : 'testing' }
+BioSequence >> isCircular [
+	^ false
+]
+
+{ #category : 'testing' }
 BioSequence >> isDNASequence [
 	" Answer <true> if the receiver represents an identifiable biological letter "
 	
@@ -966,6 +1035,15 @@ BioSequence >> isEmpty [
 	
 	^ seq isEmpty
 
+]
+
+{ #category : 'accessing' }
+BioSequence >> isMethylatedAt: index [
+	"Simple implementation using a property in sequenceRecord"
+
+	^ (self sequenceRecord
+		   annotationsAt: 'methylation_sites'
+		   ifAbsent: [ Set new ]) includes: index
 ]
 
 { #category : 'testing' }
@@ -1062,15 +1140,16 @@ BioSequence >> lcc [
 	"Answer a <Collection> of <Float> with the Local Composition Complexity (LCC) value for the receiver. Assume the receiver is unambiguous sequence "
 
 	| l4 lccValues |
-	l4 := 4 log.  
+	l4 := 4 log.
 	lccValues := OrderedCollection new: 4.
 
-	'ACTG' do: [ : nuc |
-		| occCount |
-	
-		lccValues add: ((occCount := self occurrencesOf: nuc) = 0
-			ifTrue: [ 0 ]
-			ifFalse: [ occCount / self size * (occCount / self size log) / l4 ]) negated ].
+	lccValues addAll: ('ACTG' collect: [ :nuc |
+				 | occCount |
+				 ((occCount := self occurrencesOf: nuc) = 0
+					  ifTrue: [ 0 ]
+					  ifFalse: [
+					  occCount / self size * (occCount / self size log) / l4 ])
+					 negated ]).
 
 	^ lccValues
 ]
@@ -1079,140 +1158,144 @@ BioSequence >> lcc [
 BioSequence >> lccWSize: wsize [
 
 	| l4 compone lccsal window cant_a cant_c cant_t cant_g term_a term_c term_t term_g tail |
-        
-	l4 := (4 log).
-	compone := #(0).
+	l4 := 4 log.
+	compone := #( 0 ).
 	lccsal := OrderedCollection new.
-        
-	1 to: wsize do: [ : i |
-		compone := compone , (((i + 1) / wsize) * ((i + 1) / wsize log) / l4) asArray ].
-        
-		window := seq first: wsize.
-		cant_a := (window occurrencesOf: 'A').
-		cant_c := (window occurrencesOf: 'C').
-		cant_t := (window occurrencesOf: 'T').
-		cant_g := (window occurrencesOf: 'G').
-		term_a := compone at: cant_a + 1.
-		term_c := compone at: cant_c + 1.
-		term_t := compone at: cant_t + 1.
-		term_g := compone at: cant_g + 1.
-		lccsal add: (term_a + term_c + term_t + term_g) negated.
-        
-		tail := seq first.
-		(1 to: self size - wsize) do: [ : x |
-			window := (seq copyFrom: x + 1 to: x + wsize).
-            
-		 tail = (window at: wsize)
-			ifTrue: [ lccsal add: lccsal last ] 
-			ifFalse: [
-				tail = 'A' 
-					ifTrue: [
-                    cant_a := cant_a - 1.
-                    (window endsWith: 'C') ifTrue: [
-                        cant_c := cant_c + 1.
-                        term_a := compone at: cant_a + 1.
-                        term_c := compone at: cant_c + 1.
-                        lccsal add: (term_a + term_c + term_t + term_g) negated.
-                    ] ifFalse: [
-                        (window endsWith: 'T') ifTrue: [
-                            cant_t := cant_t + 1.
-                            term_a := compone at: cant_a + 1.
-                            term_t := compone at: cant_t + 1.
-                            lccsal add: (term_a + term_c + term_t + term_g) negated.
-                        ] ifFalse: [
-                            (window endsWith: 'G') 
+
+	1 to: wsize do: [ :i |
+			compone := compone
+			           , (i + 1 / wsize * (i + 1 / wsize log) / l4) asArray ].
+
+	window := seq first: wsize.
+	cant_a := window occurrencesOf: 'A'.
+	cant_c := window occurrencesOf: 'C'.
+	cant_t := window occurrencesOf: 'T'.
+	cant_g := window occurrencesOf: 'G'.
+	term_a := compone at: cant_a + 1.
+	term_c := compone at: cant_c + 1.
+	term_t := compone at: cant_t + 1.
+	term_g := compone at: cant_g + 1.
+	lccsal add: (term_a + term_c + term_t + term_g) negated.
+
+	tail := seq first.
+	(1 to: self size - wsize) do: [ :x |
+			window := seq copyFrom: x + 1 to: x + wsize.
+
+			tail = (window at: wsize)
+				ifTrue: [ lccsal add: lccsal last ]
+				ifFalse: [
+						tail = 'A'
+							ifTrue: [
+									cant_a := cant_a - 1.
+									(window endsWith: 'C')
 										ifTrue: [
-         	                      cant_g := cant_g + 1.
-                                term_a := compone at: cant_a + 1.
-                                term_g := compone at: cant_g + 1.
-                                lccsal add: (term_a + term_c + term_t + term_g) negated.
-                            ] ifFalse: [
-                                "No matching base found."
-                            ].
-                        ].
-                    ].
-                ] ifFalse: [
-                    (tail = 'C') ifTrue: [
-                        cant_c := cant_c - 1.
-                        (window endsWith: 'A')
-								 ifTrue: [
-                            cant_a := cant_a + 1.
-                            term_a := compone at: cant_a + 1.
-                            term_c := compone at: cant_c + 1.
-                            lccsal add: (term_a + term_c + term_t + term_g) negated.
-                        ] ifFalse: [
-                            (window endsWith: 'T') ifTrue: [
-                                cant_t := cant_t + 1.
-                                term_c := compone at: cant_c + 1.
-                                term_t := compone at: cant_t + 1.
-                                lccsal add: (term_a + term_c + term_t + term_g) negated.
-                            ] ifFalse: [
-                                (window endsWith: 'G') ifTrue: [
-                                    cant_g := cant_g + 1.
-                                    term_c := compone at: cant_c + 1.
-                                    term_g := compone at: cant_g + 1.
-                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                ] ifFalse: [
-                                    "No matching base found."
-                                ].
-                            ].
-                        ].
-                    ] ifFalse: [
-                        (tail = 'T') ifTrue: [
-                            cant_t := cant_t - 1.
-                            (window endsWith: 'A') ifTrue: [
-                                cant_a := cant_a + 1.
-                                term_a := compone at: cant_a + 1.
-                                term_t := compone at: cant_t + 1.
-                                lccsal add: (term_a + term_c + term_t + term_g) negated.
-                            ] ifFalse: [
-                                (window endsWith: 'C') ifTrue: [
-                                    cant_c := cant_c + 1.
-                                    term_c := compone at: cant_c + 1.
-                                    term_t := compone at: cant_t + 1.
-                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                ] ifFalse: [
-                                    (window endsWith: 'G') ifTrue: [
-                                        cant_g := cant_g + 1.
-                                        term_t := compone at: cant_t + 1.
-                                        term_g := compone at: cant_g + 1.
-                                        lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                    ] ifFalse: [
-                                        "No matching base found."
-                                    ].
-                                ].
-                            ].
-                        ] ifFalse: [
-                            (tail = 'G') ifTrue: [
-                                cant_g := cant_g - 1.
-                                (window endsWith: 'A') ifTrue: [
-                                    cant_a := cant_a + 1.
-                                    term_a := compone at: cant_a + 1.
-                                    term_g := compone at: cant_g + 1.
-                                    lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                ] ifFalse: [
-                                    (window endsWith: 'C') ifTrue: [
-                                        cant_c := cant_c + 1.
-                                        term_c := compone at: cant_c + 1.
-                                        term_g := compone at: cant_g + 1.
-                                        lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                    ] ifFalse: [
-                                        (window endsWith: 'T') ifTrue: [
-                                            cant_t := cant_t + 1.
-                                            term_t := compone at: cant_t + 1.
-                                            term_g := compone at: cant_g + 1.
-                                            lccsal add: (term_a + term_c + term_t + term_g) negated.
-                                        ] ifFalse: [
-                                            "No matching base found."
-                                        ].
-                                    ].
-                                ].
-                            ] 
-		ifFalse: [
-			"No matching base found."
-       ] ] ] ] ].
-		tail := window at: 1 ].
-		^ lccsal.
+												cant_c := cant_c + 1.
+												term_a := compone at: cant_a + 1.
+												term_c := compone at: cant_c + 1.
+												lccsal add: (term_a + term_c + term_t + term_g) negated ]
+										ifFalse: [
+												(window endsWith: 'T')
+													ifTrue: [
+															cant_t := cant_t + 1.
+															term_a := compone at: cant_a + 1.
+															term_t := compone at: cant_t + 1.
+															lccsal add: (term_a + term_c + term_t + term_g) negated ]
+													ifFalse: [
+															(window endsWith: 'G')
+																ifTrue: [
+																		cant_g := cant_g + 1.
+																		term_a := compone at: cant_a + 1.
+																		term_g := compone at: cant_g + 1.
+																		lccsal add:
+																			(term_a + term_c + term_t + term_g) negated ]
+																ifFalse: [ "No matching base found." ] ] ] ]
+							ifFalse: [
+									tail = 'C'
+										ifTrue: [
+												cant_c := cant_c - 1.
+												(window endsWith: 'A')
+													ifTrue: [
+															cant_a := cant_a + 1.
+															term_a := compone at: cant_a + 1.
+															term_c := compone at: cant_c + 1.
+															lccsal add: (term_a + term_c + term_t + term_g) negated ]
+													ifFalse: [
+															(window endsWith: 'T')
+																ifTrue: [
+																		cant_t := cant_t + 1.
+																		term_c := compone at: cant_c + 1.
+																		term_t := compone at: cant_t + 1.
+																		lccsal add:
+																			(term_a + term_c + term_t + term_g) negated ]
+																ifFalse: [
+																		(window endsWith: 'G')
+																			ifTrue: [
+																					cant_g := cant_g + 1.
+																					term_c := compone at: cant_c + 1.
+																					term_g := compone at: cant_g + 1.
+																					lccsal add:
+																						(term_a + term_c + term_t + term_g) negated ]
+																			ifFalse: [ "No matching base found." ] ] ] ]
+										ifFalse: [
+												tail = 'T'
+													ifTrue: [
+															cant_t := cant_t - 1.
+															(window endsWith: 'A')
+																ifTrue: [
+																		cant_a := cant_a + 1.
+																		term_a := compone at: cant_a + 1.
+																		term_t := compone at: cant_t + 1.
+																		lccsal add:
+																			(term_a + term_c + term_t + term_g) negated ]
+																ifFalse: [
+																		(window endsWith: 'C')
+																			ifTrue: [
+																					cant_c := cant_c + 1.
+																					term_c := compone at: cant_c + 1.
+																					term_t := compone at: cant_t + 1.
+																					lccsal add:
+																						(term_a + term_c + term_t + term_g) negated ]
+																			ifFalse: [
+																					(window endsWith: 'G')
+																						ifTrue: [
+																								cant_g := cant_g + 1.
+																								term_t := compone at: cant_t + 1.
+																								term_g := compone at: cant_g + 1.
+																								lccsal add:
+																									(term_a + term_c + term_t + term_g) negated ]
+																						ifFalse: [ "No matching base found." ] ] ] ]
+													ifFalse: [
+															tail = 'G'
+																ifTrue: [
+																		cant_g := cant_g - 1.
+																		(window endsWith: 'A')
+																			ifTrue: [
+																					cant_a := cant_a + 1.
+																					term_a := compone at: cant_a + 1.
+																					term_g := compone at: cant_g + 1.
+																					lccsal add:
+																						(term_a + term_c + term_t + term_g) negated ]
+																			ifFalse: [
+																					(window endsWith: 'C')
+																						ifTrue: [
+																								cant_c := cant_c + 1.
+																								term_c := compone at: cant_c + 1.
+																								term_g := compone at: cant_g + 1.
+																								lccsal add:
+																									(term_a + term_c + term_t + term_g) negated ]
+																						ifFalse: [
+																								(window endsWith: 'T')
+																									ifTrue: [
+																											cant_t := cant_t + 1.
+																											term_t := compone at: cant_t + 1.
+																											term_g := compone at: cant_g + 1.
+																											lccsal add:
+																												(term_a + term_c + term_t + term_g)
+																													negated ]
+																									ifFalse: [ "No matching base found." ] ] ] ]
+																ifFalse: [ "No matching base found." ] ] ] ] ].
+			tail := window first ].
+	^ lccsal
 ]
 
 { #category : 'accessing' }
@@ -1243,6 +1326,16 @@ BioSequence >> longestConsecutive: aCharacter [
 			ifFalse: [ currentLength := 0 ] ].
 	^ longestLength.
 
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> methylateAt: index [
+
+	| sites |
+	sites := self sequenceRecord
+		         annotationsAt: 'methylation_sites'
+		         ifAbsentPut: [ Set new ].
+	sites add: index
 ]
 
 { #category : 'accessing' }
@@ -1475,6 +1568,29 @@ BioSequence >> removeSeqFeature: aBioSequenceFeature [
 	" Remove aBioSequenceFeature from the receiver "
 	
 	self sequenceFeatures remove: aBioSequenceFeature
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> resolveEnzyme: anEnzymeOrName [
+
+	^ anEnzymeOrName isString
+		  ifTrue: [ BioRestrictionEnzyme at: anEnzymeOrName ]
+		  ifFalse: [ anEnzymeOrName ]
+]
+
+{ #category : 'accessing - restriction' }
+BioSequence >> restrictionMapReportWith: aCollectionOfEnzymes [
+
+	| enzymes |
+	enzymes := (aCollectionOfEnzymes isCollection and: [
+		            aCollectionOfEnzymes isString not ])
+		           ifTrue: [
+		           aCollectionOfEnzymes collect: [ :each |
+			           self resolveEnzyme: each ] ]
+		           ifFalse: [
+		           OrderedCollection with:
+			           (self resolveEnzyme: aCollectionOfEnzymes) ].
+	^ BioRestrictionMapFormatter new format: self enzymes: enzymes
 ]
 
 { #category : 'accesing public - protein synthesis' }

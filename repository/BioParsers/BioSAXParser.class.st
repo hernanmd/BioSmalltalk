@@ -10,18 +10,20 @@ Instance Variables:
 	current 			<Object>		Holds an object representing a node element in the XML tree. 
 "
 Class {
-	#name : #BioSAXParser,
-	#superclass : #SAXHandler,
+	#name : 'BioSAXParser',
+	#superclass : 'SAXHandler',
 	#instVars : [
 		'results',
 		'catchNodes',
 		'selectedNodes',
 		'current'
 	],
-	#category : #'BioParsers-Core'
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSAXParser class >> newParser [
 	" Use this special method because SAXHandler>>new was invalidated with Error exception "
 
@@ -30,7 +32,7 @@ BioSAXParser class >> newParser [
 			yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSAXParser class >> parse: anObject [
 	" Parse anObject. This is for cases where you want to set parser parameters before parsing the document #parseDocument "
 	
@@ -48,7 +50,7 @@ BioSAXParser class >> parse: anObject [
 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSAXParser class >> parseDocumentFrom: anObject useNamespaces: aBoolean [
 	| parser |
 
@@ -64,65 +66,65 @@ BioSAXParser class >> parseDocumentFrom: anObject useNamespaces: aBoolean [
 	^ parser
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSAXParser class >> parseFile: aFileName [
 	" Parse aFileName representing a XML String as input "
 
 	^ self parse: aFileName asFileReference
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSAXParser class >> parseString: aString [
 	" Parse a String XML formatted input "
 
 	^ self parse: aString readStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> catchOff [
 	" Private - Guard for deactivating parsing of nodes in the receiver "
 
 	catchNodes := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> catchOn [
 	" Private - Guard for activating parsing of nodes in the receiver "
 
 	catchNodes := true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> configuration [
 
 	^ configuration
 		ifNil: [ configuration := self configurationClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> current [
 	^ current
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> current: anObject [
 	current := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> driver [
 
 	^ self parser driver
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioSAXParser >> estimatedResultSize [
 	" Answer a <Number> of approximate found nodes in the receiver parsed file "
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioSAXParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -136,14 +138,14 @@ BioSAXParser >> initialize [
 	self catchOff.
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioSAXParser >> initializeResults [
 	" Private - Initialize receiver's results "
 
 	results := self resultClass new: self estimatedResultSize
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioSAXParser >> initializeSAXHandler [
 	" Private - Code '''COPIED''' from SAXHandler>>on: beacuse sometimes we need to setup a parser BEFORE passing aStream as required now by SAXHandler "
 
@@ -156,13 +158,13 @@ BioSAXParser >> initializeSAXHandler [
 	isInCDataSection := false.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> input: aString [
 
 	input := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> parse: anObject [
 	" Parse anObject. This is for cases where you want to set parser parameters before parsing the document #parseDocument "
 	
@@ -180,7 +182,7 @@ BioSAXParser >> parse: anObject [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> parseDocument [
 	" Private - Parse receiver's input "
 
@@ -191,39 +193,39 @@ BioSAXParser >> parseDocument [
 	^ results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> parserNodes [
 
 	^ self class parserNodes
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioSAXParser >> resultClass [
 	" Private - Answer the <Class> used to access to the parsing results "
 
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> results [
 	^ results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> results: aCollection [
 	" Set the receiver's results to be aCollection "
 
 	^ results := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> selectNodes: aCollection [
 	" Select aCollection of nodes to be parsed by the receiver "
 
 	selectedNodes := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSAXParser >> selectedNodes [
 	"Answer the value of choosenNodes"
 

@@ -1,10 +1,12 @@
 Class {
-	#name : #BioACEFile,
-	#superclass : #BioFile,
-	#category : 'BioFormatters-Files'
+	#name : 'BioACEFile',
+	#superclass : 'BioFile',
+	#category : 'BioFormatters-Files',
+	#package : 'BioFormatters',
+	#tag : 'Files'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioACEFile class >> example01 [
 
 	| fh aceRecord |

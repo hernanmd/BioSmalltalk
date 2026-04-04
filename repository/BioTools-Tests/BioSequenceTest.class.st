@@ -281,24 +281,22 @@ BioSequenceTest >> testContents [
 BioSequenceTest >> testCopyFrom [
 
 	| testSeq1 |
-
 	testSeq1 := self sequence copyFrom: 2.
-
-	self deny: self sequence = testSeq1.
-	self assert: self sequence asString allButFirst equals: testSeq1 asString.
-
+	self deny: self sequence equals: testSeq1.
+	self
+		assert: self sequence asString allButFirst
+		equals: testSeq1 asString
 ]
 
 { #category : 'testing' }
 BioSequenceTest >> testCopyFromTo [
 
 	| testSeq1 |
-
 	testSeq1 := self sequence copyFrom: 2 to: self sequence size.
-
-	self deny: self sequence = testSeq1.
-	self assert: self sequence asString allButFirst equals: testSeq1 asString.
-
+	self deny: self sequence equals: testSeq1.
+	self
+		assert: self sequence asString allButFirst
+		equals: testSeq1 asString
 ]
 
 { #category : 'testing' }
@@ -406,15 +404,15 @@ BioSequenceTest >> testEqual [
 	| testSeq1 |
 	testSeq1 := BioSequence newDNA: self sampleDnaString01.
 	self assert: self sequence equals: testSeq1.
-	
+
 	testSeq1 := BioSequence newAmbiguousDNA: self sampleDnaString01.
-	self deny: self sequence = testSeq1.
+	self deny: self sequence equals: testSeq1.
 
 	testSeq1 := BioSequence newDNA: self sampleDnaString01 , 'a'.
-	self deny: self sequence = testSeq1.
-	
+	self deny: self sequence equals: testSeq1.
+
 	testSeq1 := BioSequence newDNA: self sampleDnaString01 reversed.
-	self deny: self sequence = testSeq1.
+	self deny: self sequence equals: testSeq1
 ]
 
 { #category : 'testing' }
@@ -994,49 +992,41 @@ BioSequenceTest >> testTranslateFromDNA [
 BioSequenceTest >> testTranslateFromRNA [
 
 	| seq3 seq4 |
-	
-	seq3 := BioSequence newAmbiguousRNA: 'AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG'.
+	seq3 := BioSequence newAmbiguousRNA:
+		        'AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG'.
 	seq4 := BioSequence newProtein: 'MAIVMGR*KGAR*'.
-
-	self assert: seq3 translate = seq4.
-
-
-
-
-
-
+	self assert: seq3 translate equals: seq4
 ]
 
 { #category : 'testing' }
 BioSequenceTest >> testTranslated [
 
 	| seq1 seq2 seq3 seq4 translated1 translated2 |
-	
-	seq1 := BioSequence newAmbiguousDNA: 'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCTG'.
-	seq2 := BioSequence newAmbiguousDNA: 'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCT'.
+	seq1 := BioSequence newAmbiguousDNA:
+		        'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCTG'.
+	seq2 := BioSequence newAmbiguousDNA:
+		        'AAGTCAGTGTACTATTAGCATGCATGTGCAACACATTAGCT'.
 
 	translated1 := seq1 translate.
 	translated2 := seq2 translateToStop.
-	
+
 	self assert: (translated1 isKindOf: BioSequence).
 	self assert: (translated2 isKindOf: BioSequence).
 
 	self assert: (translated1 alphabet isKindOf: BioIUPACProtein).
 	self assert: (translated2 alphabet isKindOf: BioIUPACProtein).
-	
-	self assert: translated1 asString = 'KSVYY*HACATH*L'.
-	self assert: translated2 asString = 'KSVYY'.
+	self assert: translated1 asString equals: 'KSVYY*HACATH*L'.
+	self assert: translated2 asString equals: 'KSVYY'.
 
-	seq3 := BioSequence newAmbiguousDNA: 'CGACGTCTTCGTACGGGACTAGCTCGTGTCGGTCGC'.
+	seq3 := BioSequence newAmbiguousDNA:
+		        'CGACGTCTTCGTACGGGACTAGCTCGTGTCGGTCGC'.
 	seq4 := BioSequence newProtein: 'RRLRTGLARVGR'.
+	self assert: seq3 translate equals: seq4.
 
-	self assert: seq3 translate = seq4.
-
-	seq3 := BioSequence newAmbiguousRNA: 'AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG'.
+	seq3 := BioSequence newAmbiguousRNA:
+		        'AUGGCCAUUGUAAUGGGCCGCUGAAAGGGUGCCCGAUAG'.
 	seq4 := BioSequence newProtein: 'MAIVMGR*KGAR*'.
-
-	self assert: seq3 translate = seq4.
-
+	self assert: seq3 translate equals: seq4
 ]
 
 { #category : 'testing' }

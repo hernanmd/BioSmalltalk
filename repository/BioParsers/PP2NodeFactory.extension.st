@@ -1,47 +1,47 @@
-Extension { #name : #PP2NodeFactory }
+Extension { #name : 'PP2NodeFactory' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> dnaAmbiguousLetterGapped [
 	" Answer a parser for a DNA letter, using ambiguous IUPAC nomenclature "
 	
 	^ PP2PredicateObjectNode anyOf: BioIUPACAmbiguousDNA lowercaseAndUppercaseCodesWithGap
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> dnaLetter [
 	"Answer a parse to parse any uppercased or lowercased DNA nucleotide letter"
 
 	^ PP2PredicateObjectNode anyOf: BioIUPACUnambiguousDNA lowercaseAndUppercaseCodes
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> dnaSequence [
 	" Answer a parser for a DNA sequence, using unambiguous IUPAC nomenclature "
 	
 	^ self dnaLetter plus flatten end
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> dnaUnambiguousLetterGapped [
 	" Answer a parser for a DNA letter, using ambiguous IUPAC nomenclature "
 	
 	^ PP2PredicateObjectNode anyOf: BioIUPACUnambiguousDNA lowercaseAndUppercaseCodesWithGap
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> number [
 
 	^ PP2ExpressionGrammar new number
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> proteinLetterGapped [
 	" Answer a parser for a protein letter, using extended IUPAC nomenclature "
 	
 	^ PP2PredicateObjectNode anyOf: BioIUPACProteinExtended lowercaseAndUppercaseCodesWithGap
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> punctuation [
 
 	^ PP2PredicateObjectNode new
@@ -54,7 +54,7 @@ PP2NodeFactory >> punctuation [
 		  yourself
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 PP2NodeFactory >> punctuationCharacters [
 
 	^ '.,"''?!;:#$%&()*+-/<>=@[]\^_{}|~'

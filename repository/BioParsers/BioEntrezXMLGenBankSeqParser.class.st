@@ -2,22 +2,24 @@
 This parser checks nodes containing keyword ""GBSeq"". When found a new entrez record (eRecord) is added to the results Collection. If not found it means GBSeq is an element container, so record values are set in the current eRecord (#saveERecordValue:)
 "
 Class {
-	#name : #BioEntrezXMLGenBankSeqParser,
-	#superclass : #BioEntrezResultParser,
+	#name : 'BioEntrezXMLGenBankSeqParser',
+	#superclass : 'BioEntrezResultParser',
 	#instVars : [
 		'eRecord'
 	],
-	#category : #'BioParsers-Core'
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> characters: arg1 [
 	catchNodes
 		ifTrue: [ self newERecordValue: arg1 ].
 	self catchOff
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> defaultNodes [
 	" Add node names in your specific subclasses. Answer a Collection of Strings
 	corresponding with the XML's DTD with the node names in which we are interested "
@@ -33,30 +35,30 @@ BioEntrezXMLGenBankSeqParser >> defaultNodes [
 	'GBSeq_sequence' " )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> eRecord [
 	^ eRecord
 		ifNil: [ eRecord := self entrezRecordClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> eRecord: anObject [
 	eRecord := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> endElement: elementName [
 
 	^ elementName = 'GBSet'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> entrezRecordClass [
 
 	^ Dictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> newERecordValue: aString [
 	" Private - Save current node with value aString in the receiver's current entrez record entry "
 	
@@ -69,7 +71,7 @@ BioEntrezXMLGenBankSeqParser >> newERecordValue: aString [
 					self eRecord: self entrezRecordClass new  ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenBankSeqParser >> saveERecordValue: aString [
 	" Private - Save current node with value aString in the receiver's current entrez record entry "
 	

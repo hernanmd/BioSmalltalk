@@ -7,15 +7,17 @@ bigBed format supports for very large (over 50 Mbytes) BED files.
 
 "
 Class {
-	#name : #BioBigBEDFormatter,
-	#superclass : #BioBEDFormatter,
+	#name : 'BioBigBEDFormatter',
+	#superclass : 'BioBEDFormatter',
 	#instVars : [
 		'dataLinesCount'
 	],
-	#category : 'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-BED'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBigBEDFormatter >> addCFChr: chrString start: chrStart end: chrEnd [
 	" See superimplementor's comment.
 	Count the lines added to the receiver "
@@ -24,7 +26,7 @@ BioBigBEDFormatter >> addCFChr: chrString start: chrStart end: chrEnd [
 	self dataLinesCount: self dataLinesCount + 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBigBEDFormatter >> addCFLineChr: chrString start: chrStart end: chrEnd [
 	" See superimplementor's comment.
 	Count the lines added to the receiver "
@@ -33,7 +35,7 @@ BioBigBEDFormatter >> addCFLineChr: chrString start: chrStart end: chrEnd [
 	self dataLinesCount: self dataLinesCount + 1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBigBEDFormatter >> dataLinesCount [
 	" Answer a <Number> with the count of the data lines in the receiver "
 
@@ -41,12 +43,12 @@ BioBigBEDFormatter >> dataLinesCount [
 		ifNil: [ dataLinesCount := 0 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBigBEDFormatter >> dataLinesCount: anObject [
 	dataLinesCount := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBigBEDFormatter >> fileNamePrefix [
 	" Answer a default prefix <String> for the output file name "
 	

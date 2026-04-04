@@ -3,19 +3,21 @@ prf||name
 
 "
 Class {
-	#name : #BioProtResParser,
-	#superclass : #BioNCBIIdParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioProtResParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioProtResParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'prf'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioProtResParser >> initialize [
 
 	super initialize.
@@ -25,7 +27,7 @@ BioProtResParser >> initialize [
 			self nameParser.
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioProtResParser >> nameParser [
 
 	^ self parserForNonFastaString

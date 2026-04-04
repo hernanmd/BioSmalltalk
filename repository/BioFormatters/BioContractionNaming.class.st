@@ -7,36 +7,38 @@ this is useful for programs which have limits in the samples names.
 
 "
 Class {
-	#name : #BioContractionNaming,
-	#superclass : #BioNaming,
+	#name : 'BioContractionNaming',
+	#superclass : 'BioNaming',
 	#instVars : [
 		'contractionLimit',
 		'capitalize',
 		'skipStopWords'
 	],
-	#category : 'BioFormatters-Naming'
+	#category : 'BioFormatters-Naming',
+	#package : 'BioFormatters',
+	#tag : 'Naming'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> capitalize [
 
 	^ capitalize
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> contractionLimit [
 
 	^ contractionLimit
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> contractionLimit: anObject [
 	contractionLimit := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> format: aString [
 	" Answer a String from contracting first letters from aString "
 
@@ -52,7 +54,7 @@ BioContractionNaming >> format: aString [
 	^ result.
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioContractionNaming >> initialize [
 	" Private - Set receiver's default settings "
 	
@@ -63,24 +65,24 @@ BioContractionNaming >> initialize [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> setCapitalization [
 	" Set the receiver to capitalize the formatting result "
 	
 	capitalize := true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> skipStopWords [
 	^ skipStopWords
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> skipStopWords: anObject [
 	skipStopWords := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioContractionNaming >> unsetCapitalization [
 	" Set the receiver to not capitalize the formatting result "
 	

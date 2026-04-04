@@ -7,19 +7,21 @@ The [GFF3 format](https://github.com/The-Sequence-Ontology/Specifications/blob/m
 
 "
 Class {
-	#name : #BioGFF3Formatter,
-	#superclass : #BioSequenceFeatureFormatter,
-	#category : #'BioFormatters-Formatters'
+	#name : 'BioGFF3Formatter',
+	#superclass : 'BioSequenceFeatureFormatter',
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGFF3Formatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('GFF' 'GFF3')
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioGFF3Formatter >> asString [
 	" Answer a <String> representation of the receiver "
 
@@ -42,7 +44,7 @@ BioGFF3Formatter >> asString [
 			nextPutAll: self sequenceFeature tag asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGFF3Formatter >> delimiter [
 	" Answer a <Character> used to delimit fields between the receiver's elements "
 	

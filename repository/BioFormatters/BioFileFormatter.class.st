@@ -11,8 +11,8 @@ Instance Variables:
 	writeToFile		<Boolean>			If <true> then write the output to a file
 "
 Class {
-	#name : #BioFileFormatter,
-	#superclass : #BioFormatter,
+	#name : 'BioFileFormatter',
+	#superclass : 'BioFormatter',
 	#instVars : [
 		'inputFile',
 		'outputFilename',
@@ -22,24 +22,26 @@ Class {
 		'cwd',
 		'outputFileStream'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter class >> identifier [
 	" Answer a <String> of an unique identifier for the receiver "
 
 	^ self identifiers first
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter class >> identifiers [
 	" Answer a <Collection> of identifiers of the receiver. The first identifier should match with an identifier in the #formatCollection to be available for file exporting "
 	
 	^ Array empty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter class >> linesCount: aFilename [
 	" Answer a <Number> how many lines contains aFilename"
 
@@ -51,14 +53,14 @@ BioFileFormatter class >> linesCount: aFilename [
 			count ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFileFormatter class >> newFromInputFile: aFilenameOrFileReference [
 	" Set the receiver's input file to be aFilename "
 
 	^ self new inputFile: aFilenameOrFileReference
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFileFormatter class >> newFromInputFile: inputFile outputFile: outFilename [
 	" Answer a new instance of the receiver with a BioFile and outFilename <String> "
 	^ self new 
@@ -67,7 +69,7 @@ BioFileFormatter class >> newFromInputFile: inputFile outputFile: outFilename [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> cwd [
 	" Answer a <String> representing the Current working directory "
 
@@ -75,28 +77,28 @@ BioFileFormatter >> cwd [
 		ifNil: [ cwd := self defaultCwd ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> cwd: aString [
 	" Set aString to be the current working directory "
 
 	cwd := aString
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioFileFormatter >> defaultCwd [
 	" Answer a <String> representing the default current working directory "
 
 	^ '.'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> delimiter [
 	" Answer the <Character> used to delimit fields "
 	
 	self subclassResponsibility
 ]
 
-{ #category : #'convenience-filesystem' }
+{ #category : 'convenience-filesystem' }
 BioFileFormatter >> dumpToFileNamed: aFilename contents: contentsString [
 	" See superimplementor's comment "
 
@@ -104,7 +106,7 @@ BioFileFormatter >> dumpToFileNamed: aFilename contents: contentsString [
 		ifTrue: [ super dumpToFileNamed: aFilename contents: contentsString ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> export [
 	" Write contents to receiver's output file "
 	
@@ -113,14 +115,14 @@ BioFileFormatter >> export [
 		ifTrue: [ self exportFrom: self samples ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> flush [
 	" Write to disk "
 
 	self outputFileStream flush; close.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> formatExtension [
 	" Private - Answer a String corresponding for the receiver's file output format "
 
@@ -128,14 +130,14 @@ BioFileFormatter >> formatExtension [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFileFormatter >> initializeStream: collection [
 	" Private - Preallocate collection initial size "
 
 	stream := ReadWriteStream on: String new.	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> inputFile [
 	" Answer a <String> with the file name of the input file. If cwd is set, then prepend its value to inputFile, otherwise just answer input file value  "
 
@@ -148,38 +150,38 @@ BioFileFormatter >> inputFile [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> inputFile: aString [
 	" Set the receiver's input file path to be aString "
 
 	inputFile := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> inputStream [
 	^ inputStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> inputStream: anObject [
 	inputStream := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatter >> isValidForExport: aCollection [ 
 	" Answer <true> if aCollection is valid for exporting for the receiver "
 
 	^ aCollection notNil and: [ aCollection notEmpty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> linesCount: aFilename [
 	" Answer a <Number> how many lines contains aFilename"
 	
 	^ self class linesCount: aFilename
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFileFormatter >> outputFileStream [
 	" Answer a <FileStream> for a new file in the receiver's configured folder "
 
@@ -187,14 +189,14 @@ BioFileFormatter >> outputFileStream [
 		ifNil: [ outputFileStream := self newFullFileNamed: (self outputFilename reversed copyUpTo: $\) reversed ].
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFileFormatter >> outputFileStream: aFileStream [
 	" Set the receiver's output to aFileStream "
 
 	^ outputFileStream := aFileStream
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFileFormatter >> outputFilename [
 	" Private - Answer a <String> file name for the output "
 
@@ -205,7 +207,7 @@ BioFileFormatter >> outputFilename [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFileFormatter >> outputFilename: aString [
 	" Set the receiver's output file name to be aString "
 	
@@ -213,20 +215,20 @@ BioFileFormatter >> outputFilename: aString [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFileFormatter >> resetOutput [
 
 	self outputFileStream: nil.
 	self outputFilename: nil.
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFileFormatter >> sizeFrom: collection [
 
 	^ collection size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> stream [
 	" Answer an output <Stream> for the receiver. Use output file name if set, create a new write stream otherwise "
 
@@ -235,12 +237,12 @@ BioFileFormatter >> stream [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> stream: anObject [
 	stream := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> validate: aCollection [ 
 	"  Iterate over aCollection. Set valid flag if all its items are valid for the receiver "
 	
@@ -251,14 +253,14 @@ BioFileFormatter >> validate: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> writeToFile [
 
 	^ writeToFile
 		ifNil: [ writeToFile := true ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormatter >> writeToFile: anObject [
 	writeToFile := anObject
 ]

@@ -4,19 +4,21 @@ Format writer for FASTA objects. See class side for examples
 
 "
 Class {
-	#name : #BioFASTAFormatter,
-	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#name : 'BioFASTAFormatter',
+	#superclass : 'BioFileFormatter',
+	#category : 'BioFormatters-Formatters-FASTA',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-FASTA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter class >> description [
 	" See superimplementor's comment "
 	
 	^ 'FASTA Writer'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioFASTAFormatter class >> example01 [
 	" The following example shows how to create a collection of fasta records and write them to a FASTA timestamped file "
 
@@ -30,21 +32,21 @@ TAATATGCCTATGCCGCATAATTTTTATATCTTTCTCCTAACAAAACATTCGCTTGTAAA');
 	BioFASTAFormatter new exportFrom: fastaCollection sequences.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'fasta'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('FASTA')
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFASTAFormatter >> dumpFeatureData: featureDictionary groupingFeature: aString [ 
 
 	self stream 
@@ -55,7 +57,7 @@ BioFASTAFormatter >> dumpFeatureData: featureDictionary groupingFeature: aString
 		bioCr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> exportFrom: aCollectionOrStream [
 	" Write aCollection to the receiver's output file name "
 
@@ -73,7 +75,7 @@ BioFASTAFormatter >> exportFrom: aCollectionOrStream [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFASTAFormatter >> exportFromBLAST: hitCollection [
 	" Write a time-stamped file in the receiver's format from hitCollecction "
 	
@@ -93,7 +95,7 @@ BioFASTAFormatter >> exportFromBLAST: hitCollection [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFASTAFormatter >> exportFromIlluminaAlleleReport: aFilename [
 	"Write a time-stamped file in the receiver's format from aFilename"
 	
@@ -119,7 +121,7 @@ BioFASTAFormatter >> exportFromIlluminaAlleleReport: aFilename [
 	fs close.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> exportFromReader: aBioReader [
 	" Export recceiver to a file using aBioReader "
 
@@ -127,14 +129,14 @@ BioFASTAFormatter >> exportFromReader: aBioReader [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> fileNamePrefix [
 	" Answer a String for prefixing the output file name "
 	
 	^ 'BioST-Exported-FASTA_'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -142,19 +144,19 @@ BioFASTAFormatter >> formatExtension [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioFASTAFormatter >> parserClass [
 
 	^ NeoCSVReader 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFASTAFormatter >> sizeFrom: collection [
 
 	^  collection sum: [: d | d sum: #size ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> validate: aCollection [ 
 	" See superimplementor's comment "
 	
@@ -164,7 +166,7 @@ BioFASTAFormatter >> validate: aCollection [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFormatter >> writeClassifiedRowsFrom: data [
 	" Private - Assume data is a <Dictionary> with each Association a pair <String> -> <OrderedCollection>
 	features contain all possible features in data. if data at specific feature is absent, then use a dash to specify null value "

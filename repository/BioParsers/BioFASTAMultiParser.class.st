@@ -2,12 +2,14 @@
 Parser for a FASTA file with several sequences. This class is not intended to be used directly. See BioParser for details parsing FASTA files.
 "
 Class {
-	#name : #BioFASTAMultiParser,
-	#superclass : #BioFASTABasicParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioFASTAMultiParser',
+	#superclass : 'BioFASTABasicParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTAMultiParser >> buildResults: aCollection [
 	" Answer an identified object for the receiver's parsing output "
 
@@ -20,7 +22,7 @@ BioFASTAMultiParser >> buildResults: aCollection [
 	^ self results
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTAMultiParser >> parseResultClass [
 	" Answer the class used for maintaining succesfully parse results "
 	

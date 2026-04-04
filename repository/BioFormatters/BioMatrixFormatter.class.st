@@ -16,23 +16,25 @@ Instance Variables:
 	
 "
 Class {
-	#name : #BioMatrixFormatter,
-	#superclass : #BioFileFormatter,
+	#name : 'BioMatrixFormatter',
+	#superclass : 'BioFileFormatter',
 	#instVars : [
 		'matrix',
 		'delimiter'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter class >> description [
 	" See superimplementor's comment "
 	
 	^ 'Generic Matrix Formatter/Writer'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -40,13 +42,13 @@ BioMatrixFormatter class >> formatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> atColumn: aNumber [
 
 	^ self matrix atColumn: aNumber
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioMatrixFormatter >> atColumn: aNumber fillWith: aValue [
 
 	aValue 
@@ -55,7 +57,7 @@ BioMatrixFormatter >> atColumn: aNumber fillWith: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioMatrixFormatter >> atColumn: colNumber fillWith: aValue repeat: repNumber [
 	" Repeat repNumber times, aValue in column colNumber 
 	Example: self atColumn: 1 fillWith: 'BM1818' repeat: 3
@@ -73,7 +75,7 @@ BioMatrixFormatter >> atColumn: colNumber fillWith: aValue repeat: repNumber [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioMatrixFormatter >> atColumn: aColumnNumber fillWith: aValue startingAt: rowNumber [
 	" Fill the receiver's matrix with aValue at aColumnNumber beggining at rowNumber. rowNumber must be >= 1 "
 
@@ -84,7 +86,7 @@ BioMatrixFormatter >> atColumn: aColumnNumber fillWith: aValue startingAt: rowNu
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioMatrixFormatter >> atRow: aNumber fillWith: aValue [
 
 	aValue 
@@ -93,7 +95,7 @@ BioMatrixFormatter >> atRow: aNumber fillWith: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioMatrixFormatter >> atRow: rowNumber fillWith: aValue startingAt: columnNumber [
 	" Fill the receiver's matrix with aValue at rowNumber beggining at columnNumber. columnNumber must be >= 1 "
 
@@ -105,7 +107,7 @@ BioMatrixFormatter >> atRow: rowNumber fillWith: aValue startingAt: columnNumber
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> delimiter [
 	" Answer a <Character> used to delimit fields. Do not use lazy initialization "
 
@@ -113,21 +115,21 @@ BioMatrixFormatter >> delimiter [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> delimiter: aCharacter [
 	" Set aCharacter as delimiter for the receiver's fields "
 
 	delimiter := aCharacter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> do: aBlock [
 	" Iterate through the receiver's elements "
 
 	^ self matrix rowsDo: aBlock
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportCellAtRow: rowIndex atColumn: colIndex [
 	" Private - Assume matrix contents at rowIndex and colIndex are not nil. "
 
@@ -135,7 +137,7 @@ BioMatrixFormatter >> exportCellAtRow: rowIndex atColumn: colIndex [
 	self exportCellDelimiter.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportCellAtRow: rowIndex atColumn: colIndex matrix: theMatrix [
 	" Private - Assume matrix contents at rowIndex and colIndex are not nil. "
 
@@ -143,19 +145,19 @@ BioMatrixFormatter >> exportCellAtRow: rowIndex atColumn: colIndex matrix: theMa
 	self exportCellDelimiter.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportCellDelimiter [
 	" Private - Write cell separator "
 	
 	self outputFileStream nextPut: Character space.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportFirstCellColumnAt: rowIndex [
 	" Write contents for the first column(s) at rowIndex position "
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportMatrix [
 	" Write the receiver's matrix to a file "
 	
@@ -164,7 +166,7 @@ BioMatrixFormatter >> exportMatrix [
 	self bioLog: 'Finished writing matrix to file'.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> exportMatrix: theMatrix [
 
 	1 to: theMatrix numberOfRows do: [: rowIndex |
@@ -175,35 +177,35 @@ BioMatrixFormatter >> exportMatrix: theMatrix [
 	self outputFileStream close.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioMatrixFormatter >> fileNamePrefix [
 	" Answer a String for prefixing the output file name "
 	
 	^ 'BioST-Exported-Matrix_'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> initMatrixRows: rowsNumber columns: columnsNumber [
 	" Private - Initialize the receiver's matrix with rowsNumber and columnsNumber "
 	
 	matrix := self matrixClass rows: rowsNumber columns: columnsNumber.	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> matrix [
 	" Answer the receiver's matrix "
 
 	^ matrix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> matrix: anObject [
 	" Set the receiver's internal matrix "
 
 	matrix := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> matrixClass [
 	" Answer a <Class> used for matrices in the receiver "
 
@@ -211,7 +213,7 @@ BioMatrixFormatter >> matrixClass [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatter >> size [
 	" Answer how many elements has the receiver's matrix "
 

@@ -7,12 +7,14 @@ dbj|accession|locus
 
 "
 Class {
-	#name : #BioAbstractALParser,
-	#superclass : #BioNCBILocusParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioAbstractALParser',
+	#superclass : 'BioNCBILocusParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioAbstractALParser >> initialize [
 
 	super initialize.

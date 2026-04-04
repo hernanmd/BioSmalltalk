@@ -1,17 +1,19 @@
 Class {
-	#name : #BioXMLDictionaryMap,
-	#superclass : #BioXMLResultFormatter,
-	#category : 'BioParsers-XML'
+	#name : 'BioXMLDictionaryMap',
+	#superclass : 'BioXMLResultFormatter',
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLDictionaryMap >> resultClass [
 	" Answer a default class for storing the receiver's parsing results "
 	
 	^ OrderPreservingDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLDictionaryMap >> saveTag: tagNameString value: tagValueString in: aCollection [
 	" Private - Save tag information in aCollection "
 	

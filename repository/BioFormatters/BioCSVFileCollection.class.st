@@ -9,12 +9,14 @@ this way contained CSV files can be manipulated through specific methods in BioC
 
 "
 Class {
-	#name : #BioCSVFileCollection,
-	#superclass : #BioFileCollection,
-	#category : 'BioFormatters-Core'
+	#name : 'BioCSVFileCollection',
+	#superclass : 'BioFileCollection',
+	#category : 'BioFormatters-Core',
+	#package : 'BioFormatters',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFileCollection class >> fileClass [
 	" See superimplementor's comment "
 

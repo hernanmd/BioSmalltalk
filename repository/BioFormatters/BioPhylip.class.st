@@ -30,17 +30,19 @@ Internal Representation and Key Implementation Points.
     Implementation Points
 "
 Class {
-	#name : #BioPhylip,
-	#superclass : #BioNamedObject,
+	#name : 'BioPhylip',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'numberOfTaxa',
 		'numberOfCharacters',
 		'sequences'
 	],
-	#category : #'BioFormatters-Formatters-PHYLIP'
+	#category : 'BioFormatters-Formatters-PHYLIP',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-PHYLIP'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> asAlignment [
 	" Answer a <BioAlignment> object with receiver's contents "
 	
@@ -51,7 +53,7 @@ BioPhylip >> asAlignment [
 	^ align
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioPhylip >> asString [
 	" Answer the String representation of the receiver." 	
 	
@@ -69,41 +71,41 @@ BioPhylip >> asString [
 			stream 	nextPutAll: seq ]  ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> numberOfBases [
 	" Answer an <Integer> with the receiver number of characters in the matrix "
 	
 	^ numberOfCharacters
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> numberOfCharacters: anObject [
 	numberOfCharacters := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> numberOfTaxa [
 	" Answer an <Integer> with the receiver number of taxa "
 	
 	^ numberOfTaxa
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> numberOfTaxa: anObject [
 	numberOfTaxa := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> sequences [
 	^ sequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> sequences: anObject [
 	sequences := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhylip >> taxonIdentifiers [
 	" Answer a <Collection> with the taxon identifiers in the receiver (up to 10 characters each) "
 

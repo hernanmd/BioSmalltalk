@@ -3,19 +3,21 @@ ref|accession|locus
 
 "
 Class {
-	#name : #BioRefSeqParser,
-	#superclass : #BioAbstractALParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioRefSeqParser',
+	#superclass : 'BioAbstractALParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRefSeqParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'ref'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioRefSeqParser >> initialize [
 
 	super initialize.

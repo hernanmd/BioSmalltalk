@@ -2,22 +2,24 @@
 This is the INP file format as described by PHASE software : 
 "
 Class {
-	#name : #BioPhaseINPFile,
-	#superclass : #BioFile,
+	#name : 'BioPhaseINPFile',
+	#superclass : 'BioFile',
 	#instVars : [
 		'headerLinesCount'
 	],
-	#category : 'BioFormatters-Formatters-PHASE'
+	#category : 'BioFormatters-Formatters-PHASE',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-PHASE'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhaseINPFile class >> delimiter [
 	" Answer the <Character> used to delimit fields "
 	
 	^ Character space
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPhaseINPFile class >> example01 [
 
 	| inpFile |
@@ -27,28 +29,28 @@ BioPhaseINPFile class >> example01 [
 		yourself.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhaseINPFile class >> possibleExtensions [
 	" See superimplementor's comment"
 
 	^ self fileFormatterClass fileExtensionsFor: 'INP'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPhaseINPFile class >> testFilesFullDirectoryName [
 	" See superimplementor's comment "
 
 	^ super testFilesFullDirectoryName / 'phase'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhaseINPFile >> headerLinesCount [
 	" Answer a <Number> representing the count of header lines in the receiver "
 
 	^ headerLinesCount
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPhaseINPFile >> headerLinesCount: anObject [
 	headerLinesCount := anObject
 ]

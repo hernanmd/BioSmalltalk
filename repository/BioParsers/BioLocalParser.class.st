@@ -3,12 +3,14 @@ lcl|identifier
 
 "
 Class {
-	#name : #BioLocalParser,
-	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioLocalParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioLocalParser class >> identifier [
 	" See superimplementor's comment "
 

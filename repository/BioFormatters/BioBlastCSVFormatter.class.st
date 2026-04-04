@@ -7,47 +7,49 @@ Instance Variables:
 
 "
 Class {
-	#name : #BioBlastCSVFormatter,
-	#superclass : #BioCSVFormatter,
+	#name : 'BioBlastCSVFormatter',
+	#superclass : 'BioCSVFormatter',
 	#instVars : [
 		'consensus'
 	],
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-CSV'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter class >> description [
 	" See superimplementor's comment "
 
 	^ 'CSV from Blast HIT Collection'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('BlastReportCSV')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> consensus [
 
 	^ consensus
 		ifNil: [ consensus := String empty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> consensus: anObject [
 	consensus := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> export [
 
 	isValid and: [ self exportFrom: self samples ]
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportConsensus [
 	" Private - Write a row representing the consensus sequence "
 	
@@ -59,7 +61,7 @@ BioBlastCSVFormatter >> exportConsensus [
 	stream cr.
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportFromXML: aBlastXMLString [
 	" Answer the resulting formatted <String>. Write a CSV file from aBlastXMLString"
 	
@@ -77,7 +79,7 @@ BioBlastCSVFormatter >> exportFromXML: aBlastXMLString [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportHitCount: anInteger in: aStream [
 
 	anInteger timesRepeat: [ 
@@ -86,13 +88,13 @@ BioBlastCSVFormatter >> exportHitCount: anInteger in: aStream [
 			nextPut: $. ].
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportIdentities: aStream count: anInteger [
 
 	anInteger timesRepeat: [ aStream nextPut: $. ].
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportMatrixFromBLAST: hitCollection [
 	
 	hitCollection do: [: hitNode |
@@ -114,7 +116,7 @@ BioBlastCSVFormatter >> exportMatrixFromBLAST: hitCollection [
 
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioBlastCSVFormatter >> exportPositions: hitCollection [
 	" Private - Export a row for the sequence positions "
 
@@ -132,20 +134,20 @@ BioBlastCSVFormatter >> exportPositions: hitCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> mutationIndexesIn: hitNode [
 	" Private - Answer a Collection of positions in alignmentCollection were there is a mutation "
 	
 	^ hitNode selectHspMidLine indicesOfCharacter: Character space
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> parserClass [
 
 	^ BioNCBIBlastSAXParser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastCSVFormatter >> sizeFrom: hitCollection [
 
 	^ ( hitCollection size + 1 ) * ( hitCollection first selectHspAlign asNumber + 1 )

@@ -1,6 +1,6 @@
-Extension { #name : #BioAlignment }
+Extension { #name : 'BioAlignment' }
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 BioAlignment >> asPhylip [
 	" Answer a <BioPhylip> instance with receiver's contents properly filled "
 	
@@ -11,7 +11,7 @@ BioAlignment >> asPhylip [
 		yourself
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 BioAlignment >> asPhylipString [
 	" Answer the receiver as a Phylip record object "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'hfm'>

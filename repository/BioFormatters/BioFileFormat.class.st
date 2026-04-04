@@ -17,8 +17,8 @@ http://assets.geneious.com/manual/8.0/GeneiousManualse15.html
 
 "
 Class {
-	#name : #BioFileFormat,
-	#superclass : #BioNamedObject,
+	#name : 'BioFileFormat',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'description',
 		'extensions',
@@ -29,10 +29,12 @@ Class {
 	#classVars : [
 		'Registry'
 	],
-	#category : 'BioFormatters-Files'
+	#category : 'BioFormatters-Files',
+	#package : 'BioFormatters',
+	#tag : 'Files'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> fileExtensionFor: aFormatString [
 	" Answer a String corresponding aFormatString in the receiver's registry "
 	
@@ -41,7 +43,7 @@ BioFileFormat class >> fileExtensionFor: aFormatString [
 	^ (self fileExtensionsFor: aFormatString) anyOne
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> fileExtensionsFor: aFormatString [
 
 	| fmt |
@@ -52,7 +54,7 @@ BioFileFormat class >> fileExtensionsFor: aFormatString [
 	^ fmt extensions
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> formatFor: aString [
 	" Answer a <BioFileFormat> in the receiver's registry matching aString. Signal an exception if not found "
 
@@ -66,7 +68,7 @@ BioFileFormat class >> formatFor: aString [
 			
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFileFormat class >> formatsCollection [
 	" Answer a Collection with information about well-known file formats.  See http://www.bioperl.org/wiki/HOWTO:SeqIO for details
 	BioFileFormat formatCollection "
@@ -391,7 +393,7 @@ BioFileFormat class >> formatsCollection [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioFileFormat class >> initialize [
 	" Private - Initialize receiver's file formats. 
 	self initialize "
@@ -406,7 +408,7 @@ BioFileFormat class >> initialize [
 					rootClass: formatSpec fourth ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormat class >> isRegistered: aString [
 	" Search aString in the receiver's registered names and descriptions. Answer <true> if found "
 	
@@ -415,7 +417,7 @@ BioFileFormat class >> isRegistered: aString [
 		ifNone: [ nil ]) notNil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> registerFormat: nameString extensions: aCollection description: descriptionString rootClass: aClass [
 	" Create a new format and register in the receiver if not present "
 	
@@ -431,7 +433,7 @@ BioFileFormat class >> registerFormat: nameString extensions: aCollection descri
 			
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> registry [
 	" Answer a <Collection> of <BioFileFormat> "
 	
@@ -439,14 +441,14 @@ BioFileFormat class >> registry [
 		ifNil: [ Registry := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> registry: aCollectionOfBioFileFormat [
 	" Set the receiver's registry of file formats to aCollection of <BioFileFormat> "
 	
 	Registry := aCollectionOfBioFileFormat
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat class >> removeFormat: nameString [
 	" Remove the format nameString if found from the receiver's registry "
 
@@ -457,44 +459,44 @@ BioFileFormat class >> removeFormat: nameString [
 				ifAbsent: [ self signalNotFound: nameString ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> compatibleFormats [
 	^ compatibleFormats
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> compatibleFormats: anObject [
 	compatibleFormats := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> description [
 	^ description
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> description: anObject [
 	description := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> extensions [
 	^ extensions
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> extensions: anObject [
 	extensions := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormat >> includesExtension: aString [
 	" Answer <true> if receiver is represented as file with extension aString "
 
 	^ (self extensions collect: #asLowercase) includes: aString asLowercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> includesName: aString [
 	" Answer <true> if receiver contains aString in any of its names "
 
@@ -507,7 +509,7 @@ BioFileFormat >> includesName: aString [
 	^ false
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFileFormat >> printOn: aStream [
 	" See superimplementor's comment "
 	
@@ -526,22 +528,22 @@ BioFileFormat >> printOn: aStream [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> rootClass [
 	^ rootClass
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> rootClass: anObject [
 	rootClass := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> sampleEntry [
 	^ sampleEntry
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFileFormat >> sampleEntry: anObject [
 	sampleEntry := anObject
 ]

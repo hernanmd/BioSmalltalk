@@ -25,8 +25,8 @@ It uses two parsers: One for the PED fie, used to fill the genotype matrix and a
 
 "
 Class {
-	#name : #BioEIGENSTRATWriter,
-	#superclass : #BioMatrixFormatter,
+	#name : 'BioEIGENSTRATWriter',
+	#superclass : 'BioMatrixFormatter',
 	#instVars : [
 		'alleleFqs',
 		'strName',
@@ -35,17 +35,19 @@ Class {
 		'markers',
 		'genoMatrix'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter class >> description [
 	" See superimplementor's comment "
 	
 	^ 'EIGENSOFT Eigenstrat Formatter/Writer'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioEIGENSTRATWriter class >> example1 [
 
 	| snpWriter pedFile alleleFqs   |
@@ -62,13 +64,13 @@ BioEIGENSTRATWriter class >> example1 [
 	snpWriter writeAsEigenStrat.
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioEIGENSTRATWriter class >> testFilesFullDirectoryName [
 
 	^ super testFilesFullDirectoryName / 'eigenstrat'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> alPositionsForMarker: a1 [
 	" Answer a <Collection> of allele positions for marker position a1 "
 	
@@ -76,18 +78,18 @@ BioEIGENSTRATWriter >> alPositionsForMarker: a1 [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> alleleFqs [
 	^ alleleFqs
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> alleleFqs: aFileReference [
 
 	alleleFqs := aFileReference
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioEIGENSTRATWriter >> exportCellDelimiter [
 	" Private - See superimplementor's comment "
 	
@@ -95,7 +97,7 @@ BioEIGENSTRATWriter >> exportCellDelimiter [
 		ifFalse: [ self outputFileStream nextPut: Character tab ].
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillGenotypeCellAlleles: alArray allelePosition: alPos row: currentGenoRow col: currentGenoCol [
 
 	alArray do: [ : allele | 
@@ -110,7 +112,7 @@ BioEIGENSTRATWriter >> fillGenotypeCellAlleles: alArray allelePosition: alPos ro
 			put: genoValue ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> fillGenotypeMatrix [
 	| parserForPed |
 
@@ -120,7 +122,7 @@ BioEIGENSTRATWriter >> fillGenotypeMatrix [
 	^ self genoMatrix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> fillGenotypeMatrixFrom: parserForPed [
 	| currentGenoCol |
 
@@ -149,7 +151,7 @@ BioEIGENSTRATWriter >> fillGenotypeMatrixFrom: parserForPed [
 		currentGenoCol := currentGenoCol + 1 ].
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrix [
 	" Private - Write the receiver's SNP output matrix (this is the .snp or .map file)"
 
@@ -159,7 +161,7 @@ BioEIGENSTRATWriter >> fillSNPMatrix [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrixPosition: gPos [
 	" Private - Write SNP matrix current row with gPos values "
 
@@ -171,7 +173,7 @@ BioEIGENSTRATWriter >> fillSNPMatrixPosition: gPos [
 		at: rowIndex at: 6 put: $2.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrixSTRName: row [
 	" Private - Append separator between SNP or Microsatellite name and allele number at current row "
 	
@@ -185,7 +187,7 @@ BioEIGENSTRATWriter >> fillSNPMatrixSTRName: row [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrixSTRNameColumn [
 	" Private - Configure the parser for allele frequencies as produced from MSTools.
 	Set the SNP matrix values accordingly "
@@ -199,7 +201,7 @@ BioEIGENSTRATWriter >> fillSNPMatrixSTRNameColumn [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrixSTRPositions [
 
 	rowIndex := 0.
@@ -210,7 +212,7 @@ BioEIGENSTRATWriter >> fillSNPMatrixSTRPositions [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> fillSNPMatrixSTRPositions: currentStrname [
 
 	| gPos |
@@ -224,17 +226,17 @@ BioEIGENSTRATWriter >> fillSNPMatrixSTRPositions: currentStrname [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> genoMatrix [
 	^ genoMatrix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> genoMatrix: anObject [
 	genoMatrix := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> genotypeArrayAt: row a1: a1 a2: a2 [
 	" Answer array values at position a1 and a2 in row "
 
@@ -247,7 +249,7 @@ BioEIGENSTRATWriter >> genotypeArrayAt: row a1: a1 a2: a2 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> genotypeValueAt: alArray [
 	"
   0 means zero copies of reference allele.
@@ -269,7 +271,7 @@ BioEIGENSTRATWriter >> genotypeValueAt: alArray [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> includesAlleleFrq: aRow [ 
 	" Private - Answer <true> if aRow is valid and contains allele frequency data "
 	
@@ -279,13 +281,13 @@ BioEIGENSTRATWriter >> includesAlleleFrq: aRow [
 	^ locus notNil and: [ locus first isLetter not ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioEIGENSTRATWriter >> initialize [
 
 	rowIndex := 0.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> initializeMarkers [
 
 	markers := OrderPreservingDictionary new.
@@ -299,13 +301,13 @@ BioEIGENSTRATWriter >> initializeMarkers [
 				ifAbsent: [ (markers at: markerName ifAbsentPut: [OrderedCollection new]) add: markerAl ] ] ].
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> isLocusName: aRow [
 
 	^ aRow first notNil and: [ aRow first first isLetter ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> markers [
 
 	^ markers
@@ -313,7 +315,7 @@ BioEIGENSTRATWriter >> markers [
 			markers ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> newGenotypeMatrix: parserForPed [
 	" Answer a new matrix initialized from parserForPed settings.
 	Matrix is initialized with all 0's. "
@@ -327,14 +329,14 @@ BioEIGENSTRATWriter >> newGenotypeMatrix: parserForPed [
 			element: 0.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> parserClass [ 
 	" Answer a default parser class "
 
 	^ NeoCSVReader
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> pedFile [
 	" Answer a <FileStream> of the input PED file : 
 	PED format details:
@@ -354,14 +356,14 @@ BioEIGENSTRATWriter >> pedFile [
 	^ self inputFile
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> pedFile: fileReference [
 	" Set fileReference to the input PED file "
 	
 	self inputFile: fileReference
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> preallocateMatrix [
 	| rows |
 	
@@ -372,7 +374,7 @@ BioEIGENSTRATWriter >> preallocateMatrix [
 	self initMatrixRows: rows columns: 6.	
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> setParserForAlleleFqs [
 
 	self parser: (self parserClass on: (BioObject openFullFileNamed: self alleleFqs)).
@@ -383,7 +385,7 @@ BioEIGENSTRATWriter >> setParserForAlleleFqs [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEIGENSTRATWriter >> setParserForPed [
 
 	self parser: (self parserClass on: (BioObject openFullFileNamed: self pedFile)).
@@ -392,17 +394,17 @@ BioEIGENSTRATWriter >> setParserForPed [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> strName [
 	^ strName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> strName: anObject [
 	strName := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEIGENSTRATWriter >> writeAsEigenStrat [
 	" Write the receiver's input files in EigenStrat format "
 

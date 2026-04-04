@@ -5,19 +5,21 @@ gi|integer
 
 "
 Class {
-	#name : #BioGIParser,
-	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioGIParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGIParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'gi|'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGIParser >> buildTokens: aCollection [
 	" Answer a Collection object for the receiver's parsing output "
 
@@ -25,7 +27,7 @@ BioGIParser >> buildTokens: aCollection [
 	^ self results		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGIParser >> tokenizeGi: aString [
 	" Refer to comment in class side "
 	

@@ -1,6 +1,6 @@
-Extension { #name : #Dictionary }
+Extension { #name : 'Dictionary' }
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 Dictionary >> dumpCSVTo: aStream [
 	" Write the receiver contents in the following CSV format:
 	

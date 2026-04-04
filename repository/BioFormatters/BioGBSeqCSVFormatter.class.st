@@ -10,29 +10,31 @@ formatter
 	interval: (16023 to: 16262).
 "
 Class {
-	#name : #BioGBSeqCSVFormatter,
-	#superclass : #BioCSVFormatter,
+	#name : 'BioGBSeqCSVFormatter',
+	#superclass : 'BioCSVFormatter',
 	#instVars : [
 		'features'
 	],
-	#category : #'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-CSV'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter class >> description [
 	" See superimplementor's comment "
 
 	^ 'CSV from Entrez GenBank Collection'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('GBSeqCSV')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> cellDataFrom: aDictionary  atFeature: featureName [
 
 	^ aDictionary 
@@ -40,7 +42,7 @@ BioGBSeqCSVFormatter >> cellDataFrom: aDictionary  atFeature: featureName [
 		ifAbsent: [ '-' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> dumpCellFrom: featureName cellData: cellData [
 
 	(self isExcludedFeature: featureName)
@@ -50,7 +52,7 @@ BioGBSeqCSVFormatter >> dumpCellFrom: featureName cellData: cellData [
 				nextPut: self delimiterSourceCharacter ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> dumpFeatureData: aDictionary groupingFeature: ttyName [ 
 
 	self features 
@@ -63,7 +65,7 @@ BioGBSeqCSVFormatter >> dumpFeatureData: aDictionary groupingFeature: ttyName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> exportFrom: aCollection [
 	" Export default features "
 
@@ -76,7 +78,7 @@ BioGBSeqCSVFormatter >> exportFrom: aCollection [
 	self bioLog: 'Exported CSV contents in file ' , self outputFilename.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> exportFrom: data features: fCollection [
 	" Export data into receiver's format using features contained in fCollection "
 	
@@ -91,7 +93,7 @@ BioGBSeqCSVFormatter >> exportFrom: data features: fCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> exportFrom: aCollection interval: interval [
 
 	self flag: #checkIfUseful.
@@ -119,17 +121,17 @@ BioGBSeqCSVFormatter >> exportFrom: aCollection interval: interval [
 		contents: stream contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> features [
 	^ features
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> features: anObject [
 	features := anObject
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioGBSeqCSVFormatter >> initialize [
 
 	super initialize.
@@ -137,19 +139,19 @@ BioGBSeqCSVFormatter >> initialize [
 	self delimiterSourceCharacter: $|
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCSVFormatter >> isExcludedFeature: featureName [
 
 	^ featureName = 'Recognized Region' or: [ featureName = 'BlastNode' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCSVFormatter >> sizeFrom: collection [
 
 	^  collection sum: [: d | d sum: #size ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioGBSeqCSVFormatter >> writeClassifiedRowsFrom: data [
 	" Private - Assume data is a <Dictionary> with each Association a pair <String> -> <OrderedCollection>
 	features contain all possible features in data. if data at specific feature is absent, then use a dash to specify null value "
@@ -161,7 +163,7 @@ BioGBSeqCSVFormatter >> writeClassifiedRowsFrom: data [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioGBSeqCSVFormatter >> writeHeaderFrom: featureCollection [
 	" Private - Write header row from featureCollection in receiver's stream "
 	
@@ -175,7 +177,7 @@ BioGBSeqCSVFormatter >> writeHeaderFrom: featureCollection [
 		
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioGBSeqCSVFormatter >> writeUnclassifiedRowsFrom: data [
 	" Private - Assume data is a <Collection> of <Dictionary>. 
 	features contain all possible features in data. if data at specific feature is absent, then use a dash to specify null value "

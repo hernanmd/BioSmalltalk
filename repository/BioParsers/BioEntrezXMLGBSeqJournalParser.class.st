@@ -6,12 +6,14 @@ fileRef := BioObject testFilesFullDirectoryName / 'GenBankTestFiles' / 'TestGBSe
 (BioEntrezXMLGBSeqJournalParser on: fileRef readStream) collectGBSet
 "
 Class {
-	#name : #BioEntrezXMLGBSeqJournalParser,
-	#superclass : #BioEntrezXMLGBSeqParser,
-	#category : 'BioParsers-XML'
+	#name : 'BioEntrezXMLGBSeqJournalParser',
+	#superclass : 'BioEntrezXMLGBSeqParser',
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGBSeqJournalParser class >> defaultNodes [
 
 	^ { #qualifierForAccessionWithVersion .
@@ -21,7 +23,7 @@ BioEntrezXMLGBSeqJournalParser class >> defaultNodes [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezXMLGBSeqJournalParser >> newIdForKey: keyName [
 	" Answer a <String> with the last ID number given keyName. I.e. given keys like ID, ID_1, ID_2, answer ID_3 "
 
@@ -33,7 +35,7 @@ BioEntrezXMLGBSeqJournalParser >> newIdForKey: keyName [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezXMLGBSeqJournalParser >> saveGBNode: collectionOfNodeAssociation [
 
 	| assoc |

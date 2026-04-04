@@ -1,13 +1,13 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 String >> asAccession [
 	" Answer a new <BioAccession> object for the receiver "
 
 	^ BioParser parseAccession: self
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 String >> asBlastParameter [
 
 	^ self isNumeric
@@ -25,19 +25,19 @@ String >> asBlastParameter [
 						ifFalse: [ self asLowercase ] ] ]
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 String >> asBlastValue [
 
 	^ self asLowercase
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 String >> asGeneId [
 
 	^ BioParser tokenizeGi: self
 ]
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 String >> matches: cmpSymbol receiver: recv [
 
 	^ recv asLowercase

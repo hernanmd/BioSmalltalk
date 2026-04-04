@@ -1,53 +1,55 @@
 Class {
-	#name : #BioBlastParentNode,
-	#superclass : #BioBlastContainerNode,
-	#category : 'BioParsers-Support'
+	#name : 'BioBlastParentNode',
+	#superclass : 'BioBlastContainerNode',
+	#category : 'BioParsers-Support',
+	#package : 'BioParsers',
+	#tag : 'Support'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioBlastParentNode class >> new: nodes [
 
 	^ self new initialize: nodes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastParentNode class >> nodeDescriptions [ 
 
 	^ #('' '' '' '' '' '' '' '' '' '' '')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastParentNode class >> nodeNames [
 
 	^ #('Hsp' 'Hit_hsps' 'Hit')
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> accessionId [
 
 	^ BioParser parseAccession: self hitAccession blastValue
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addHitNode: aGTBLASTHitNode [
 
 	self nodes add: aGTBLASTHitNode
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addHspNode: aGTHspNode [
 
 	self lastHsp addNode: aGTHspNode
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addNode: aNode [
 	" Add aNode to the receiver's nodes "
 	
 	self nodes add: aNode
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addParentNode: aGTBLASTParentNode [
 
 	self nodes isEmpty
@@ -58,20 +60,20 @@ BioBlastParentNode >> addParentNode: aGTBLASTParentNode [
 				ifFalse: [ self nodes add: aGTBLASTParentNode ] ]
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addTo: aGTBLASTNodeCollection [
 
 	aGTBLASTNodeCollection addLast: self.
 	^ self hspsNode
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> addToParent: aNode [
 
 	aNode addParentNode: self
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> asAccessionString [
 	" Answer a <String> of receiver's accession number from the accession node, for example: 'AAF52530.1' 
 	Note: The value from the accession node usually doesn't contain the accession version number "
@@ -80,7 +82,7 @@ BioBlastParentNode >> asAccessionString [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> asAccessionToken [
 	" Answer a <String> of receiver's accession number from the accession node, for example: 'AAF52530.1' 
 	Note: The value from the accession node usually doesn't contain the accession version number "
@@ -89,14 +91,14 @@ BioBlastParentNode >> asAccessionToken [
 
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> asGeneId [
 	" Answer a <Collection> of gene identifiers "
 	
 	^ BioParser tokenizeGi: self hitIdentifier blastValue
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hitAccession [
 	" Answer a <String> of receiver's accession number from the accession node, for example: 'AAF52530.1' 
 	Note: The value from the accession node usually doesn't contain the accession version number "
@@ -105,7 +107,7 @@ BioBlastParentNode >> hitAccession [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitAccessions [
 	" Answer a <Collection> of receiver's accession of the database sequence (e.g., 'AAF57408.1')
 	Note: This method parses dhe accession number from the HIT identifier, not from the Hit_accession node "
@@ -114,7 +116,7 @@ BioBlastParentNode >> hitAccessions [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitDefinition [
 	" Answer a Collection of receiver's definition lines of the database sequence "
 	
@@ -122,7 +124,7 @@ BioBlastParentNode >> hitDefinition [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitDefinitions [
 	" Answer a Collection of receiver's accession of the database sequence (e.g., 'AAF57408.1')
 	Note: This method parses dhe accession number from the HIT identifier, not from the Hit_accession node "
@@ -131,7 +133,7 @@ BioBlastParentNode >> hitDefinitions [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitHsps [
 	"  "
 	
@@ -139,7 +141,7 @@ BioBlastParentNode >> hitHsps [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hitIdentifier [
 	" Answer a String of receiver's identifier of the database sequence (e.g., 'gi|7297267|gb|AAF52530.1|') "
 	
@@ -147,7 +149,7 @@ BioBlastParentNode >> hitIdentifier [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitIdentifiers [
 	" Answer a Collection of receiver's identifier of the database sequence (e.g., 'gi|7297267|gb|AAF52530.1|') "
 	
@@ -155,7 +157,7 @@ BioBlastParentNode >> hitIdentifiers [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hitLength [
 	" Answer the receiver's hit length "
 	
@@ -163,7 +165,7 @@ BioBlastParentNode >> hitLength [
 
 ]
 
-{ #category : #'accessing hits' }
+{ #category : 'accessing hits' }
 BioBlastParentNode >> hitNumbers [
 	" Answer a Collection of receiver's ordinal number of the hit, with one-offset (e.g., '1, 2...') "
 	
@@ -171,7 +173,7 @@ BioBlastParentNode >> hitNumbers [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspAlignLength [
 	" Answer a <Number> of receiver's align length "
 	
@@ -179,7 +181,7 @@ BioBlastParentNode >> hspAlignLength [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspAlignLengths [
 	" Answer a Collection of receiver's align lengths nodes in each HSP node "
 	
@@ -187,7 +189,7 @@ BioBlastParentNode >> hspAlignLengths [
 
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> hspAlignLengths: aBlock [
 	" Possibly deprecated "
 	" Answer a Collection of hits satisfying conditions specified in aBlock for align lengths in each HSP node for each HIT "
@@ -201,7 +203,7 @@ BioBlastParentNode >> hspAlignLengths: aBlock [
 	^ hits
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspBitScore [
 	" Answer a Collection of receiver's scores (in bits) of the HSPs "
 	
@@ -209,7 +211,7 @@ BioBlastParentNode >> hspBitScore [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspBitScores [
 	" Answer a Collection of receiver's scores (in bits) of the HSPs "
 	
@@ -217,7 +219,7 @@ BioBlastParentNode >> hspBitScores [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspEValue [
 	" Answer a Number of receiver's expect value of the HSPs "
 	
@@ -225,7 +227,7 @@ BioBlastParentNode >> hspEValue [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspEValues [
 	" Answer a Collection of receiver's expect values of the HSPs "
 	
@@ -233,14 +235,14 @@ BioBlastParentNode >> hspEValues [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspGaps [
 	" Answer a <Number> of receiver's number of gaps in the alignment "
 	
 	^ self selectNodesNamed: 'Hsp_gaps'.
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspHSeq [
 	" Answer a <String> of receiver's alignment strings (for the database) nodes in each HSP node "
 	
@@ -248,7 +250,7 @@ BioBlastParentNode >> hspHSeq [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHSeqs [
 	" Answer a Collection of receiver's alignment strings (for the database) nodes in each HSP node "
 	
@@ -256,7 +258,7 @@ BioBlastParentNode >> hspHSeqs [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspHitFrame [
 	" Answer a <Number> of receiver's number of frames of the database sequence if applicable "
 	
@@ -264,7 +266,7 @@ BioBlastParentNode >> hspHitFrame [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHitFrames [
 	" Answer a Collection of receiver's number of frames of the database sequence if applicable "
 	
@@ -272,7 +274,7 @@ BioBlastParentNode >> hspHitFrames [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHitFrom [
 	" Answer a <Number> of receiver's offset of sequence at the start of the alignment (one-offset) "
 	
@@ -280,7 +282,7 @@ BioBlastParentNode >> hspHitFrom [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHitScores [
 	" Answer a Collection of receiver's expect values of the HSPs "
 	
@@ -288,7 +290,7 @@ BioBlastParentNode >> hspHitScores [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHitTo [
 	" Answer a <Number> of receiver's offsets of sequence at the end of the alignment (one-offset) "
 	
@@ -296,7 +298,7 @@ BioBlastParentNode >> hspHitTo [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspHitTos [
 	" - "
 	
@@ -304,7 +306,7 @@ BioBlastParentNode >> hspHitTos [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspIdentities [
 	" Answer a Collection of receiver's number of identities in the alignment "
 	
@@ -312,7 +314,7 @@ BioBlastParentNode >> hspIdentities [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspIdentity [
 	" Answer a <Number> of receiver's number of identities in the alignment "
 	
@@ -320,7 +322,7 @@ BioBlastParentNode >> hspIdentity [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspMidLine [
 	" Answer a <String> of receiver's formatting middle line as normally seen in BLAST report "
 	
@@ -328,7 +330,7 @@ BioBlastParentNode >> hspMidLine [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspMidLines [
 	" Answer a Collection of receiver's formatting middle lines as normally seen in BLAST report "
 	
@@ -336,7 +338,7 @@ BioBlastParentNode >> hspMidLines [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspPositive [
 	" Answer a <Number> of receiver's number of positive (conservative) substitutions in the alignment "
 	
@@ -344,7 +346,7 @@ BioBlastParentNode >> hspPositive [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspPositives [
 	" Answer a Collection of receiver's number of positive (conservative) substitutions in the alignment "
 	
@@ -352,7 +354,7 @@ BioBlastParentNode >> hspPositives [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspQSeq [
 	" Answer a <String> of receiver's alignment strings (for the query, this is the originally sent by the Blast user) "
 	
@@ -360,7 +362,7 @@ BioBlastParentNode >> hspQSeq [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQSeqs [
 	" Answer a Collection of receiver's alignment strings (for the query, this is the originally sent by the Blast user) "
 	
@@ -368,7 +370,7 @@ BioBlastParentNode >> hspQSeqs [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspQueryFrame [
 	" Answer a <Number> of receiver's frame of the query if applicable "
 	
@@ -376,7 +378,7 @@ BioBlastParentNode >> hspQueryFrame [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQueryFrames [
 	" Answer a <Collection> of receiver's frames of the query if applicable "
 	
@@ -384,7 +386,7 @@ BioBlastParentNode >> hspQueryFrames [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQueryFrom [
 	" Answer a <Number> of receiver's offsets of query at the start of the alignment (one-offset) "
 	
@@ -392,7 +394,7 @@ BioBlastParentNode >> hspQueryFrom [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQueryFroms [
 	" Answer the start of HSP in query"
 	
@@ -400,7 +402,7 @@ BioBlastParentNode >> hspQueryFroms [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQueryTo [
 	" Answer a <Number> of receiver's offset of query at the end of the alignment (one-offset) "
 	
@@ -408,7 +410,7 @@ BioBlastParentNode >> hspQueryTo [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspQueryTos [
 	" - "
 	
@@ -416,7 +418,7 @@ BioBlastParentNode >> hspQueryTos [
 
 ]
 
-{ #category : #'accessing hit individually' }
+{ #category : 'accessing hit individually' }
 BioBlastParentNode >> hspScore [
 	" Answer a Collection of receiver's scores of the HSP "
 	
@@ -424,7 +426,7 @@ BioBlastParentNode >> hspScore [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspScoreDensity [
 	" Answer a Collection of receiver's scores of the HSP "
 	
@@ -432,7 +434,7 @@ BioBlastParentNode >> hspScoreDensity [
 
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspScores [
 	" Answer a <Collection> of receiver's scores of the HSP "
 	
@@ -440,20 +442,20 @@ BioBlastParentNode >> hspScores [
 
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> hspsDo: aBlock [
 
 	self hspsNodes do: [: node | aBlock value: node ]
 ]
 
-{ #category : #'filtering - hsps' }
+{ #category : 'filtering - hsps' }
 BioBlastParentNode >> hspsGaps [
 	" Answer a Collection of receiver's number of gaps in the alignment "
 	
 	^ self selectNodesNamed: 'Hsp_gaps'.
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> hspsNode [
 
 	^ self nodes 
@@ -461,40 +463,40 @@ BioBlastParentNode >> hspsNode [
 			ifNone: [ self nodes add: ( self nodeFor: 'Hit_hsps' ) ]
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> hspsNodes [
 
 	^ self nodes select: [: node | node nodeName = 'Hit_hsps' ]
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioBlastParentNode >> initialize: numberOfNodes [
 	" Private - Initialize the receiver's nodes <Collection> "
 	
 	nodes := OrderedCollection new: numberOfNodes
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastParentNode >> isHitNode [
 	" Answer <true> if receiver's type is a HIT node "
 	
 	^ self nodeName = 'Hit'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastParentNode >> isParentNode [
 
 	^ true
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> lastHsp [
 
 	^ self hspsNode lastHspNode
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> lastHspNode [
 
 	^ self nodes reversed
@@ -502,14 +504,14 @@ BioBlastParentNode >> lastHspNode [
 		ifNone: [ self nodes add: ( self nodeFor: 'Hsp' ) ]
 ]
 
-{ #category : #'accessing nodes' }
+{ #category : 'accessing nodes' }
 BioBlastParentNode >> nodeFor: aNodeName [
 	" Answer a new node setting the element name to aNodeName "
 	
 	^ BioBlastNode nodeFor: aNodeName
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> percentageOverAlignment [
 
 	^ self nodes collect: [: node | 
@@ -520,28 +522,28 @@ BioBlastParentNode >> percentageOverAlignment [
 
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> selectAccessionNumber [
 	" Answer a BioAccession object "
 	
 	^ self selectAccessionNumbers first
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> selectAccessionNumbers [
 	" Answer a <Collection> of accession numbers "
 	
 	^ (self hitIdentifiers collect: #blastValue) collect: [: defString | BioParser parseAccession: defString ]
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> selectGeneIdentifiers [
 	" Answer a <Collection> of gene identifiers "
 	
 	^ (self hitIdentifiers collect: #blastValue) collect: [: defString | BioParser tokenizeGi: defString ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHitScore [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -551,7 +553,7 @@ BioBlastParentNode >> selectHitScore [
 		ifTrue: [ (self hspHitScores detectMax: [: e | e blastValue asNumber ]) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspAlign [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -561,7 +563,7 @@ BioBlastParentNode >> selectHspAlign [
 		ifTrue: [ ( self hspAlignLengths detectMax: [: align | align blastValue asNumber ] ) blastValue asNumber ]
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> selectHspAlignLengths [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -569,7 +571,7 @@ BioBlastParentNode >> selectHspAlignLengths [
 	^ self hspAlignLengths collect: #blastValue
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspBitScores [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -579,7 +581,7 @@ BioBlastParentNode >> selectHspBitScores [
 		ifTrue: [ (self hspBitScores detectMax: [: e | e blastValue asNumber ]) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspEValue [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -589,7 +591,7 @@ BioBlastParentNode >> selectHspEValue [
 		ifTrue: [ (self hspEValues detectMax: [: e | e blastValue asNumber ]) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspHSeq [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -600,7 +602,7 @@ BioBlastParentNode >> selectHspHSeq [
 
 ]
 
-{ #category : #'accessing hsps' }
+{ #category : 'accessing hsps' }
 BioBlastParentNode >> selectHspHSeqs [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -609,7 +611,7 @@ BioBlastParentNode >> selectHspHSeqs [
 
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspHitFrom [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -619,7 +621,7 @@ BioBlastParentNode >> selectHspHitFrom [
 		ifTrue: [ (self hspHitFrom detectMax: [: hspHitFrom | hspHitFrom blastValue ]) blastValue ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspHitTo [
 	" - "
 
@@ -630,7 +632,7 @@ BioBlastParentNode >> selectHspHitTo [
 
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspIdentity [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -640,7 +642,7 @@ BioBlastParentNode >> selectHspIdentity [
 		ifTrue: [ ( self hspIdentities detectMax: [: id | id blastValue asNumber ] ) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspMidLine [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -650,7 +652,7 @@ BioBlastParentNode >> selectHspMidLine [
 		ifTrue: [ ( self hspMidLines detectMax: [: hspMidLine | hspMidLine blastValue size ] ) blastValue ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspNumberOfGaps [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -664,7 +666,7 @@ BioBlastParentNode >> selectHspNumberOfGaps [
 		ifTrue: [ (gaps detectMax: [: hspGaps | hspGaps blastValue ]) blastValue ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspPositive [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer the one with the highest percent alignment. "
@@ -674,7 +676,7 @@ BioBlastParentNode >> selectHspPositive [
 		ifTrue: [ ( self hspPositives detectMax: [: positive | positive blastValue asNumber ] ) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspQSeq [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -685,7 +687,7 @@ BioBlastParentNode >> selectHspQSeq [
 
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspQueryFrom [
 	" Answer the start of HSP in query"
 
@@ -695,7 +697,7 @@ BioBlastParentNode >> selectHspQueryFrom [
 
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspQueryTo [
 	" - "
 	
@@ -705,7 +707,7 @@ BioBlastParentNode >> selectHspQueryTo [
 
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspScore [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -715,7 +717,7 @@ BioBlastParentNode >> selectHspScore [
 		ifTrue: [ (self hspScores detectMax: [: hspScore | hspScore blastValue asNumber ]) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectHspScoreDensities [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer a Number with the one with the highest alignment. "
@@ -729,7 +731,7 @@ BioBlastParentNode >> selectHspScoreDensities [
 		ifTrue: [ (score detectMax: [: hspScoreDensity | hspScoreDensity blastValue size ]) blastValue ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectIdentity [
 	" Private - Handle the case for multiple HSPs.
 	If there are multiple HSPs, this will answer the one with the highest percent identity. "
@@ -739,7 +741,7 @@ BioBlastParentNode >> selectIdentity [
 		ifTrue: [ ( self hspIdentities detectMax: [: ident | ident blastValue asNumber ] ) blastValue asNumber ]
 ]
 
-{ #category : #'extracting - hsps' }
+{ #category : 'extracting - hsps' }
 BioBlastParentNode >> selectPercentageOverAlignment [
 
 	^ self percentageOverAlignment size > 1

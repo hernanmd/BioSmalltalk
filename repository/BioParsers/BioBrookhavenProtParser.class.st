@@ -3,31 +3,33 @@ pdb|entry|chain
 
 "
 Class {
-	#name : #BioBrookhavenProtParser,
-	#superclass : #BioNCBIIdParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioBrookhavenProtParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBrookhavenProtParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'pdb'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioBrookhavenProtParser >> chain [
 
 	^ self parserForNonFastaString
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioBrookhavenProtParser >> entry [
 
 	^ self parserForNonFastaString
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioBrookhavenProtParser >> initialize [
 
 	super initialize.

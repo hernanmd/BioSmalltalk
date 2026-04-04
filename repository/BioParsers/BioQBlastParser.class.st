@@ -1,16 +1,18 @@
 Class {
-	#name : #BioQBlastParser,
-	#superclass : #BioAbstractTextParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioQBlastParser',
+	#superclass : 'BioAbstractTextParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioQBlastParser >> parserForQBlastInfoBegin [
 
 	^ 'QBlastInfoBegin' asPParser negate plus , 'QBlastInfoBegin' asPParser
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioQBlastParser >> parserForRID [
 	" Private - Answer a parser for the request time identiferi inside a NCBI WWW QBlast job request page
 <!--QBlastInfoBegin
@@ -27,7 +29,7 @@ QBlastInfoEnd
 		'QBlastInfoEnd' asPParser negate plus , 'QBlastInfoEnd' asPParser ) foldRight: [: a :b | a ].
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioQBlastParser >> parserForRTOE [
 	" Private - Answer a parser for request time of execution inside a NCBI WWW QBlast job request page
 <!--QBlastInfoBegin
@@ -44,7 +46,7 @@ QBlastInfoEnd
 		'QBlastInfoEnd' asPParser negate plus , 'QBlastInfoEnd' asPParser ) foldRight: [: a :b | a ].
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioQBlastParser >> parserForStatus [
 	" See http://www.ncbi.nlm.nih.gov/BLAST/Doc/node60.html "
 	

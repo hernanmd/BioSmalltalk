@@ -1,10 +1,12 @@
 Class {
-	#name : #BioNCBIBlastSAXTokenizer,
-	#superclass : #BioNCBIBlastSAXParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioNCBIBlastSAXTokenizer',
+	#superclass : 'BioNCBIBlastSAXParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'handling - content' }
+{ #category : 'handling - content' }
 BioNCBIBlastSAXTokenizer >> characters: aString [
 	"This call corresponds to the Java SAX call characters(char[] ch, int start, int length)."
 
@@ -14,14 +16,14 @@ BioNCBIBlastSAXTokenizer >> characters: aString [
 		self catchOff ].
 ]
 
-{ #category : #'handling - content' }
+{ #category : 'handling - content' }
 BioNCBIBlastSAXTokenizer >> resultClass [
 	" Private - See superimplementor's comment "
 	
 	^ OrderedCollection
 ]
 
-{ #category : #'handling - content' }
+{ #category : 'handling - content' }
 BioNCBIBlastSAXTokenizer >> startElement: elementName attributes: attributeList [
 
 	(self selectedNodes includes: elementName) ifFalse: [ ^ self ].

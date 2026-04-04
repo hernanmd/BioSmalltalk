@@ -8,8 +8,8 @@ Can dump to UCSC bed file format, to input in the Genome Browser ""add custom tr
     Implementation Points
 "
 Class {
-	#name : #BioRehhLogPValueCollector,
-	#superclass : #BioFileFormatter,
+	#name : 'BioRehhLogPValueCollector',
+	#superclass : 'BioFileFormatter',
 	#instVars : [
 		'logpCol',
 		'gpeaks',
@@ -18,10 +18,12 @@ Class {
 		'bedFormatter',
 		'chrNumber'
 	],
-	#category : 'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioRehhLogPValueCollector class >> example01 [
 
 	26 to: 29 do: [ :chrNumber | 
@@ -41,7 +43,7 @@ BioRehhLogPValueCollector class >> example01 [
 			dumpAsUCSCBedFile ]
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioRehhLogPValueCollector class >> example02 [
 
 	26 to: 29 do: [ :chrNumber | 
@@ -61,7 +63,7 @@ BioRehhLogPValueCollector class >> example02 [
 			dumpAsEnsembleBedFile ]
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioRehhLogPValueCollector class >> example03 [
 
 	26 to: 29 do: [ :chrNumber | 
@@ -81,28 +83,28 @@ BioRehhLogPValueCollector class >> example03 [
 			dumpAsEnsembleBedFileBothStrands ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> bedFormatter [
 	^ bedFormatter
 		ifNil: [ bedFormatter := BioBEDFormatter new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> bedFormatter: anObject [
 	bedFormatter := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> chrNumber [
 	^ chrNumber
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> chrNumber: anObject [
 	chrNumber := anObject
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> collectLogPPeaks [
 
 	| index lpstart |
@@ -123,7 +125,7 @@ BioRehhLogPValueCollector >> collectLogPPeaks [
 		index := index + 1 ].
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> collectLogPValues [
 	" For each SNP in the input file, build a <Collection> with valid (not null) -log10(p-value) which are greater than configured ylim value "
 
@@ -134,7 +136,7 @@ BioRehhLogPValueCollector >> collectLogPValues [
 			select: [ : record | record fourth notNil and: [ record fourth ~= 'NA' and: [ record fourth asFloat >= self ylim ] ] ] ]).
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> collectPeaks [
 	" See class comments "
 
@@ -143,7 +145,7 @@ BioRehhLogPValueCollector >> collectPeaks [
 		collectLogPPeaks
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> dumpAsEnsembleBedFile [
 
 	| chrStr |
@@ -158,7 +160,7 @@ BioRehhLogPValueCollector >> dumpAsEnsembleBedFile [
 	self dumpUCSCBedPeaks: chrStr
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> dumpAsEnsembleBedFileBothStrands [
 
 	| chrStr index |
@@ -189,7 +191,7 @@ BioRehhLogPValueCollector >> dumpAsEnsembleBedFileBothStrands [
 	self bedFormatter flush.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> dumpAsUCSCBedFile [
 
 	| chrStr |
@@ -204,7 +206,7 @@ BioRehhLogPValueCollector >> dumpAsUCSCBedFile [
 	self dumpUCSCBedPeaks: chrStr
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRehhLogPValueCollector >> dumpUCSCBedPeaks: chrStr [
 
 	| index |
@@ -220,42 +222,42 @@ BioRehhLogPValueCollector >> dumpUCSCBedPeaks: chrStr [
 	self bedFormatter flush.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> gpeaks [
 	^ gpeaks
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> gpeaks: anObject [
 	gpeaks := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> logpCol [
 	^ logpCol
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> logpCol: anObject [
 	logpCol := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> nbases [
 	^ nbases
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> nbases: anObject [
 	nbases := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> ylim [
 	^ ylim
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRehhLogPValueCollector >> ylim: anObject [
 	ylim := anObject
 ]

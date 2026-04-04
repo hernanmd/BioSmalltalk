@@ -11,12 +11,14 @@ this way, contained FASTA files can be manipulated through specific methods in `
 
 "
 Class {
-	#name : #BioFASTAFileCollection,
-	#superclass : #BioFileCollection,
-	#category : #'BioFormatters-Formatters-FASTA'
+	#name : 'BioFASTAFileCollection',
+	#superclass : 'BioFileCollection',
+	#category : 'BioFormatters-Formatters-FASTA',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-FASTA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFASTAFileCollection class >> fileClass [
 	" See superimplementor's comment "
 

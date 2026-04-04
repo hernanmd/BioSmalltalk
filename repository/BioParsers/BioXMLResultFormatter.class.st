@@ -1,10 +1,12 @@
 Class {
-	#name : #BioXMLResultFormatter,
-	#superclass : #BioObject,
-	#category : 'BioParsers-XML'
+	#name : 'BioXMLResultFormatter',
+	#superclass : 'BioObject',
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioXMLResultFormatter >> resultClass [
 	" Answer a default class for storing the receiver's parsing results "
 	

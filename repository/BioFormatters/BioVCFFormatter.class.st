@@ -4,12 +4,14 @@ BioSmalltalk Variant Call Format parser/writer according to The Variant Call For
 
 "
 Class {
-	#name : #BioVCFFormatter,
-	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-VCF'
+	#name : 'BioVCFFormatter',
+	#superclass : 'BioFileFormatter',
+	#category : 'BioFormatters-Formatters-VCF',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-VCF'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioVCFFormatter class >> example01 [
 
 	| vcfReader |
@@ -19,14 +21,14 @@ BioVCFFormatter class >> example01 [
 		Transcript show: vcfRecord; cr ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('VCF')
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaAltID: stringID description: descriptionString [
 	" Add the Alternative allele field format "
 
@@ -40,7 +42,7 @@ BioVCFFormatter >> addMetaAltID: stringID description: descriptionString [
 		bioCr
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaAssemblyURL: urlString [
 	" Add breakpoint assemblies for structural variations may use an external file "
 
@@ -51,7 +53,7 @@ BioVCFFormatter >> addMetaAssemblyURL: urlString [
 
 ]
 
-{ #category : #'accessing - meta - contig' }
+{ #category : 'accessing - meta - contig' }
 BioVCFFormatter >> addMetaContigID: contigStringID [
 	" Add the contig line (not required) "
 
@@ -63,7 +65,7 @@ BioVCFFormatter >> addMetaContigID: contigStringID [
 		
 ]
 
-{ #category : #'accessing - meta - contig' }
+{ #category : 'accessing - meta - contig' }
 BioVCFFormatter >> addMetaContigID: contigStringID url: urlString [
 	" As with chromosomal sequences it is highly recommended (but not required) that the header include tags describing the contigs referred to in the VCF le. This furthermore allows these contigs to come from different files. The format is identical to that of a reference sequence, but with an additional URL tag to indicate where that sequence can be found. "
 
@@ -77,7 +79,7 @@ BioVCFFormatter >> addMetaContigID: contigStringID url: urlString [
 		
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaFileDate [
 	" Add the date line "
 
@@ -88,7 +90,7 @@ BioVCFFormatter >> addMetaFileDate [
 		
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaFileFormat [
 	" Add the required first line "
 
@@ -99,7 +101,7 @@ BioVCFFormatter >> addMetaFileFormat [
 		
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaFilter: filterIdString description: descriptionString [
 	" Add the filter line "
 
@@ -113,7 +115,7 @@ BioVCFFormatter >> addMetaFilter: filterIdString description: descriptionString 
 
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaFixedHeader [
 	" Add the header line "
 
@@ -136,7 +138,7 @@ BioVCFFormatter >> addMetaFixedHeader [
 		
 ]
 
-{ #category : #'accessing - meta -format' }
+{ #category : 'accessing - meta -format' }
 BioVCFFormatter >> addMetaFormat: formatIdString number: aNumber type: typeString description: descriptionString [
 	" Add the filter line "
 
@@ -154,7 +156,7 @@ BioVCFFormatter >> addMetaFormat: formatIdString number: aNumber type: typeStrin
 
 ]
 
-{ #category : #'accessing - meta -format' }
+{ #category : 'accessing - meta -format' }
 BioVCFFormatter >> addMetaFormatCharacter: formatIdString number: aNumber description: descriptionString [
 	" Add the filter line "
 
@@ -171,7 +173,7 @@ BioVCFFormatter >> addMetaFormatCharacter: formatIdString number: aNumber descri
 
 ]
 
-{ #category : #'accessing - meta -format' }
+{ #category : 'accessing - meta -format' }
 BioVCFFormatter >> addMetaFormatFloat: formatIdString number: aNumber description: descriptionString [
 	" Add the filter line "
 
@@ -188,7 +190,7 @@ BioVCFFormatter >> addMetaFormatFloat: formatIdString number: aNumber descriptio
 
 ]
 
-{ #category : #'accessing - meta -format' }
+{ #category : 'accessing - meta -format' }
 BioVCFFormatter >> addMetaFormatInteger: formatIdString number: aNumber description: descriptionString [
 	" Add the filter line "
 
@@ -205,7 +207,7 @@ BioVCFFormatter >> addMetaFormatInteger: formatIdString number: aNumber descript
 
 ]
 
-{ #category : #'accessing - meta -format' }
+{ #category : 'accessing - meta -format' }
 BioVCFFormatter >> addMetaFormatString: formatIdString number: aNumber description: descriptionString [
 	" Add the filter line "
 
@@ -222,7 +224,7 @@ BioVCFFormatter >> addMetaFormatString: formatIdString number: aNumber descripti
 
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaGenotypesHeader: sampleNames [
 	" Add the genotype names header line "
 
@@ -239,7 +241,7 @@ BioVCFFormatter >> addMetaGenotypesHeader: sampleNames [
 
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType description: descriptionString [
 	" Add the contig line (not required) "
 
@@ -256,7 +258,7 @@ BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType
 		bioCr
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType description: descriptionString source: sourceString [
 	" Add info line (not required) "
 
@@ -276,7 +278,7 @@ BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType
 
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType description: descriptionString source: sourceString version: versionString [
 	" Add info line (not required) "
 
@@ -298,7 +300,7 @@ BioVCFFormatter >> addMetaInfoID: stringID nValues: nValInteger type: stringType
 
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaIntegerFlagID: stringID nValues: nValInteger description: descriptionString source: sourceString version: versionString [
 	" Add info line (not required) "
 
@@ -319,7 +321,7 @@ BioVCFFormatter >> addMetaIntegerFlagID: stringID nValues: nValInteger descripti
 
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaIntegerFloatID: stringID nValues: nValInteger description: descriptionString source: sourceString version: versionString [
 	" Add info line (not required) "
 
@@ -340,7 +342,7 @@ BioVCFFormatter >> addMetaIntegerFloatID: stringID nValues: nValInteger descript
 
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaIntegerInfoID: stringID nValues: nValInteger description: descriptionString source: sourceString version: versionString [
 	" Add info line (not required) "
 
@@ -361,7 +363,7 @@ BioVCFFormatter >> addMetaIntegerInfoID: stringID nValues: nValInteger descripti
 
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaPedigreeDB: pedigreeDBUrl [
 	" Add record relationships between genomes as link to pedigreeDBUrl "
 
@@ -372,7 +374,7 @@ BioVCFFormatter >> addMetaPedigreeDB: pedigreeDBUrl [
 		bioCr
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaPedigreeNames: pedigreeNameCollection [
 	" Add record relationships between genomes. 
 	##PEDIGREE=<Name_0=G0-ID,Name_1=G1-ID,...,Name_N=GN-ID>
@@ -392,7 +394,7 @@ BioVCFFormatter >> addMetaPedigreeNames: pedigreeNameCollection [
 		bioCr
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaReference: refString [
 	" Add the reference line "
 
@@ -403,7 +405,7 @@ BioVCFFormatter >> addMetaReference: refString [
 		
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaSampleID: stringID genomes: genomesIDCollection mixture: mixtureIDCollection description: descriptionCollection [
 	" Add sample to genome mappings as shown below: 
 	##SAMPLE=<ID=S_ID,Genomes=G1_ID;G2_ID; ...;GK_ID,Mixture=N1;N2; ...;NK,Description=S1;S2; ...;SK>
@@ -423,7 +425,7 @@ BioVCFFormatter >> addMetaSampleID: stringID genomes: genomesIDCollection mixtur
 		bioCr
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> addMetaSource: sourceString [
 	" Add the source line "
 
@@ -434,7 +436,7 @@ BioVCFFormatter >> addMetaSource: sourceString [
 		
 ]
 
-{ #category : #'accessing - meta - info' }
+{ #category : 'accessing - meta - info' }
 BioVCFFormatter >> addMetaStringInfoID: stringID nValues: nValInteger description: descriptionString source: sourceString version: versionString [
 	" Add info line (not required) "
 
@@ -455,7 +457,7 @@ BioVCFFormatter >> addMetaStringInfoID: stringID nValues: nValInteger descriptio
 
 ]
 
-{ #category : #'accessing - meta' }
+{ #category : 'accessing - meta' }
 BioVCFFormatter >> formatVersion [
 	" Answer a <String> with the receiver's specification version "
 

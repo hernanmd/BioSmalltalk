@@ -3,19 +3,21 @@ Reader/writer for format MAP, as described by the PLINK software.
 
 "
 Class {
-	#name : #BioMAPFormatter,
-	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters'
+	#name : 'BioMAPFormatter',
+	#superclass : 'BioFileFormatter',
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter class >> description [
 	" Private - See superimplementor's comment "
 
 	^ 'MAP Writer'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioMAPFormatter class >> exampleReadMAP1 [
 
 	^ (self newFromInputFile: 
@@ -23,7 +25,7 @@ BioMAPFormatter class >> exampleReadMAP1 [
 			positions.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -31,14 +33,14 @@ BioMAPFormatter class >> formatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('MAP')
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMAPFormatter >> buildMapArray [
 
 	^ (NeoCSVReader on: (self inputFile asFileReference tailn: 5) readStream)
@@ -50,14 +52,14 @@ BioMAPFormatter >> buildMapArray [
 		upToEnd.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter >> positions [
 	" Answer a <Collection> of <Integer> with positions read by the receiver's file "
 	
 	^ self buildMapArray
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter >> removeLinesWithChrGreaterThan: n [
 	" Sort records by chromosome position. Answer a new instance of the receiver. This is similar to evaluating the shell command :
 
@@ -66,7 +68,7 @@ BioMAPFormatter >> removeLinesWithChrGreaterThan: n [
 	^ self shouldBeImplemented 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter >> sortByChromosome [
 	" Sort records by chromosome number. Answer a new instance of the receiver. This is similar to evaluating the shell command :
 	$ sort -t$'\t' -k 1,1n ""$inputFile"" > ""$inputFile.out"
@@ -74,7 +76,7 @@ BioMAPFormatter >> sortByChromosome [
 	^ self sortByField: 1.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioMAPFormatter >> sortByField: aNumber [
 	" Sort records by chromosome number. Answer a new instance of the receiver. This is similar to evaluating the shell command :
 	$ sort -t$'\t' -k 1,1n ""$inputFile"" > ""$inputFile.out"
@@ -85,7 +87,7 @@ BioMAPFormatter >> sortByField: aNumber [
 	^ sortedMap
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAPFormatter >> sortByPosition [
 	" Sort records by chromosome position. Answer a new instance of the receiver. This is similar to evaluating the shell command :
 	$ sort -t$'\t' -k 4,4n ""$inputFile"" > ""$inputFile.out"

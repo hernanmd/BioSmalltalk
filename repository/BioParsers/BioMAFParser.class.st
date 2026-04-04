@@ -4,12 +4,14 @@ This is work in progress
 
 "
 Class {
-	#name : #BioMAFParser,
-	#superclass : #BioAbstractTextParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioMAFParser',
+	#superclass : 'BioAbstractTextParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioMAFParser >> initialize [
 	" Private - See superimplementor's comment "
 	
@@ -19,7 +21,7 @@ BioMAFParser >> initialize [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioMAFParser >> mafBodyParser [
 
 	| mafSrc mafStart mafSize mafStrand mafSrcSize mafSeqAlign mafSequence mafAlignParams mafScore mafPass mafAlignBlock mafBody |
@@ -40,7 +42,7 @@ BioMAFParser >> mafBodyParser [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioMAFParser >> mafHeaderParser [
 
 	| mafProgram mafScoringScheme mafScoring mafVersion mafVar mafOptions mafHeader |

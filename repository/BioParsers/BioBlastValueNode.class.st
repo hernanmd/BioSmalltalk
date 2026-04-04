@@ -2,21 +2,23 @@
 Abstract class to group common behavior of single value nodes in a BLAST tree
 "
 Class {
-	#name : #BioBlastValueNode,
-	#superclass : #BioBlastNode,
+	#name : 'BioBlastValueNode',
+	#superclass : 'BioBlastNode',
 	#instVars : [
 		'value'
 	],
-	#category : 'BioParsers-Support'
+	#category : 'BioParsers-Support',
+	#package : 'BioParsers',
+	#tag : 'Support'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> addToRoot: aGTBLASTRootNode [
 	" Do nothing "
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> blastValue [
 	" Answer the receiver's value "
 	
@@ -27,24 +29,24 @@ BioBlastValueNode >> blastValue [
 			ifFalse: [ value ] ]		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> blastValue: anObject [
 	value := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> do: aBlock [
 
 	^ aBlock value: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> selectNodesNamed: aNodeName [
 
 	^ OrderedCollection new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastValueNode >> values: aNodeName [
 	" Answer the receiver's value if aNodeName is the receiver's name "
 	

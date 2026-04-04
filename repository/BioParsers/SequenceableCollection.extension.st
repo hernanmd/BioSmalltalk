@@ -1,6 +1,6 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 SequenceableCollection >> matches: cmpSymbol receiver: recv [
 
 	^ recv

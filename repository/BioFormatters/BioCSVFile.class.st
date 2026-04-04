@@ -16,31 +16,33 @@ myCsv ignoreLastLines.
 myCsv ignoreLinesCount: 3.
 "
 Class {
-	#name : #BioCSVFile,
-	#superclass : #BioFile,
+	#name : 'BioCSVFile',
+	#superclass : 'BioFile',
 	#instVars : [
 		'ignoreLinesStrategy',
 		'ignoreLinesCount',
 		'lines'
 	],
-	#category : 'BioFormatters-Formatters-CSV'
+	#category : 'BioFormatters-Formatters-CSV',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-CSV'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioCSVFile class >> isValidFile: aFilename [
 	" Answer <true> if aFilename is valid for the receiver "
 
 	^ (super isValidFile: aFilename) and: [ aFilename endsWith: '.csv' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile class >> possibleExtensions [
 	" See superimplementor's comment"
 
 	^ self fileFormatterClass fileExtensionsFor: 'CSV'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCSVFile >> defaultIgnoreLinesStrategy [
 	" Set the receiver's read strategy to skip headers "
 	
@@ -48,39 +50,39 @@ BioCSVFile >> defaultIgnoreLinesStrategy [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCSVFile >> ignoreFirstLines [
 
 	ignoreLinesStrategy := #ignoreHeadersCount:
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCSVFile >> ignoreLastLines [
 
 	ignoreLinesStrategy := #ignoreLastLinesCount:
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> ignoreLinesCount [
 	^ ignoreLinesCount
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> ignoreLinesCount: anObject [
 	ignoreLinesCount := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> ignoreLinesStrategy [
 	^ ignoreLinesStrategy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> ignoreLinesStrategy: anObject [
 	ignoreLinesStrategy := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCSVFile >> initialize [
 	" Private - Initialize the receiver's default parameters "
 
@@ -90,7 +92,7 @@ BioCSVFile >> initialize [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> lines [
 	" Answer the number of lines in the receiver "
 	
@@ -98,7 +100,7 @@ BioCSVFile >> lines [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFile >> lines: anInteger [
 	" For efficency reasons, instead of counting the lines in the receiver, set the number manually to anInteger "
 

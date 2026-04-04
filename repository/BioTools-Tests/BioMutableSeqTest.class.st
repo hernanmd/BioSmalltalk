@@ -6,6 +6,11 @@ Class {
 	#tag : 'Biological'
 }
 
+{ #category : 'accessing' }
+BioMutableSeqTest >> alphabetClass [
+	^ self shouldBeImplemented
+]
+
 { #category : 'testing' }
 BioMutableSeqTest >> testAppend [
 	| testMutSeq1 |

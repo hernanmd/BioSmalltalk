@@ -5,25 +5,27 @@ Instance Variables
 	alignment:		<BioAlignment> 
 "
 Class {
-	#name : #BioMEGASeqRecord,
-	#superclass : #BioSeqRecord,
+	#name : 'BioMEGASeqRecord',
+	#superclass : 'BioSeqRecord',
 	#instVars : [
 		'alignment'
 	],
-	#category : 'BioFormatters-Formatters-MEGA'
+	#category : 'BioFormatters-Formatters-MEGA',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-MEGA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGASeqRecord >> alignment [
 	^ alignment
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGASeqRecord >> alignment: anObject [
 	alignment := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGASeqRecord >> exportTo: aWriteStream nameSpacing: anInteger  alignmentNumber: alnNumber [
 	" Private - Write the receiver's name and first alignment line then pop it from the alignment "
 	
@@ -37,19 +39,19 @@ BioMEGASeqRecord >> exportTo: aWriteStream nameSpacing: anInteger  alignmentNumb
 	aWriteStream nextPutAll: self popAlignment. 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGASeqRecord >> hasEmptyAlignment [
 
 	^ self alignment isEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGASeqRecord >> popAlignment [
 
 	^ self alignment removeFirst.
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioMEGASeqRecord >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	

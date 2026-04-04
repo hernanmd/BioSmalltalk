@@ -1,13 +1,15 @@
 Class {
-	#name : #BioEntrezXMLGenSetParser,
-	#superclass : #BioEntrezResultParser,
+	#name : 'BioEntrezXMLGenSetParser',
+	#superclass : 'BioEntrezResultParser',
 	#instVars : [
 		'eRecord'
 	],
-	#category : 'BioParsers-Core'
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> characters: aString [
 	" See superimplementor´s comment "
 
@@ -21,7 +23,7 @@ BioEntrezXMLGenSetParser >> characters: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> defaultNodes [
 	" Add node names in your specific subclasses. Answer a Collection of Strings
 	corresponding with the XML's DTD with the node names in which we are interested "
@@ -34,24 +36,24 @@ BioEntrezXMLGenSetParser >> defaultNodes [
 	'Seq-interval_to' )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> eRecord [
 	^ eRecord
 		ifNil: [ eRecord := Dictionary new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> eRecord: anObject [
 	eRecord := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> endElement: elementName [
 
 	^ elementName = 'Entrezgene'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezXMLGenSetParser >> saveERecordValue: aString [
 
 	self eRecord at: current put: aString

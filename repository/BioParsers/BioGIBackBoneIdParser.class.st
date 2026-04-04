@@ -3,12 +3,14 @@ bbs|number
 
 "
 Class {
-	#name : #BioGIBackBoneIdParser,
-	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioGIBackBoneIdParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGIBackBoneIdParser class >> identifier [
 	" See superimplementor's comment "
 

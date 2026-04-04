@@ -1,10 +1,12 @@
 Class {
-	#name : #BioNCBIXMLBlastParser,
-	#superclass : #BioXMLParser,
-	#category : #'BioParsers-XML'
+	#name : 'BioNCBIXMLBlastParser',
+	#superclass : 'BioXMLParser',
+	#category : 'BioParsers-XML',
+	#package : 'BioParsers',
+	#tag : 'XML'
 }
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioNCBIXMLBlastParser >> initializeWith: aString [
 	" Private - Set the receiver's parser "
 	
@@ -12,7 +14,7 @@ BioNCBIXMLBlastParser >> initializeWith: aString [
 	parser := XMLPullParser parse: self expression.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIXMLBlastParser >> scanHits [
 	" Private - Scan and save the selected receiver's expression hit nodes "
 
@@ -23,7 +25,7 @@ BioNCBIXMLBlastParser >> scanHits [
 			parser next ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIXMLBlastParser >> tokenizeHeader [
 	" Parse the receiver expression and answer the header nodes found "
 
@@ -36,7 +38,7 @@ BioNCBIXMLBlastParser >> tokenizeHeader [
 	^ self results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIXMLBlastParser >> tokenizeHits [
 	" Parse the receiver expression and answer the selected nodes found "
 

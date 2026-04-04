@@ -3,19 +3,21 @@ sp|accesion|entry
 
 "
 Class {
-	#name : #BioSwissProtParser,
-	#superclass : #BioAccessionParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioSwissProtParser',
+	#superclass : 'BioAccessionParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSwissProtParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'sp'
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSwissProtParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -26,7 +28,7 @@ BioSwissProtParser >> initialize [
 		(self parserForEntry ==> [: r | r allButFirst ]).
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSwissProtParser >> parserForEntry [
 	" Answer a parser for parsing entry identifiers "
 
@@ -37,14 +39,14 @@ BioSwissProtParser >> parserForEntry [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSwissProtParser >> tokenizeSwissProtEntryName [
 	" Extract the Swiss-Prot entry name from aString "
 	
 	^ (self expression findTokens: '|') third
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSwissProtParser >> tokenizeSwissProtEntryName: aString [
 	" Extract the Swiss-Prot entry name from aString "
 	

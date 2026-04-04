@@ -2,19 +2,21 @@
 Fluxus Network New RDF Format Writer
 "
 Class {
-	#name : #BioFluxusRDFFormatter,
-	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters'
+	#name : 'BioFluxusRDFFormatter',
+	#superclass : 'BioFileFormatter',
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter class >> description [
 	" Answer a <String> identifying the receiver's class "
 	
 	^ 'Fluxus Network New RDF Format Writer'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -22,14 +24,14 @@ BioFluxusRDFFormatter class >> formatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 	
 	^ #('RDF' 'RDF Windows Format' 'RDF New Format' 'Fluxus Network RDF')
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFluxusRDFFormatter class >> named: aString forGroups: aClassifier [
 
 	| formatter |
@@ -40,7 +42,7 @@ BioFluxusRDFFormatter class >> named: aString forGroups: aClassifier [
 	^ formatter export
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> export [
 	" Write the contents to receiver's file name "
 
@@ -56,7 +58,7 @@ BioFluxusRDFFormatter >> export [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> exportFromAlignment: aBioAlignment [
 
 	^ aBioAlignment do: [: seq |
@@ -69,7 +71,7 @@ BioFluxusRDFFormatter >> exportFromAlignment: aBioAlignment [
 				cr ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> exportHeader [
 
 	self stream 
@@ -77,7 +79,7 @@ BioFluxusRDFFormatter >> exportHeader [
 			cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> exportPositions [
 
 	1 to: self samples anyOne size do: [: index |
@@ -88,7 +90,7 @@ BioFluxusRDFFormatter >> exportPositions [
 	self stream cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> exportWeights [
 
 	self samples anyOne size 
@@ -99,14 +101,14 @@ BioFluxusRDFFormatter >> exportWeights [
 	self stream cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> fileNamePrefix [
 	" Answer a <String> with the prefix of the output file name "
 	
 	^ 'BioST-Exported-fluxus-rdf_'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFluxusRDFFormatter >> frequencies [
 
 	^ self stream 

@@ -4,8 +4,8 @@ Abstract superclass to group common formatter (writers) behavior. Defines proper
 
 "
 Class {
-	#name : #BioFormatter,
-	#superclass : #BioObject,
+	#name : 'BioFormatter',
+	#superclass : 'BioObject',
 	#instVars : [
 		'parser',
 		'samplesCollection',
@@ -14,10 +14,12 @@ Class {
 		'isValid',
 		'fileNamePrefix'
 	],
-	#category : #'BioFormatters-Core'
+	#category : 'BioFormatters-Core',
+	#package : 'BioFormatters',
+	#tag : 'Core'
 }
 
-{ #category : #utilities }
+{ #category : 'utilities' }
 BioFormatter class >> alphaCharacters [
 	" Answer a Collection with alphabetic characters "
 
@@ -26,7 +28,7 @@ BioFormatter class >> alphaCharacters [
 		thenCollect: [: each | each asString ].
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFormatter class >> formatterFor: aString [
 	" Answer a new instance of the receiver's matching aString identifier. Examples: 
 	
@@ -40,7 +42,7 @@ BioFormatter class >> formatterFor: aString [
 	^ aClass new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioFormatter class >> formatterForExact: aString [
 	" Answer the receiver's <Class> matching aString identifier. Examples: 
 	
@@ -54,7 +56,7 @@ BioFormatter class >> formatterForExact: aString [
 	^ aClass
 ]
 
-{ #category : #utilities }
+{ #category : 'utilities' }
 BioFormatter class >> invalidCharacters [
 	" Answer a Collection with Characters without visible
 	or invalid (i.e. used for starting comments) representation "
@@ -62,7 +64,7 @@ BioFormatter class >> invalidCharacters [
 	^ { $# . Character space  . Character tab }
 ]
 
-{ #category : #utilities }
+{ #category : 'utilities' }
 BioFormatter class >> separators [
 	" Answer a <Collection> with descriptions of invisible characters "
 
@@ -73,13 +75,13 @@ BioFormatter class >> separators [
 		yourself.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioFormatter >> afterExport: anObject [
 	" By default do nothing. This is implemented to let the receiver to perform after-export actions "
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioFormatter >> beforeExport: anObject [
 	" Answer <true> if pre-export actions are valid "
 	
@@ -87,7 +89,7 @@ BioFormatter >> beforeExport: anObject [
 
 ]
 
-{ #category : #'convenience-delimiters' }
+{ #category : 'convenience-delimiters' }
 BioFormatter >> delimiterSourceCharacter [
 	" Answer a <Character> used to delimit fields in the receiver "
 	
@@ -95,14 +97,14 @@ BioFormatter >> delimiterSourceCharacter [
 		ifNil: [ delimiterSourceCharacter := $; ]
 ]
 
-{ #category : #'convenience-delimiters' }
+{ #category : 'convenience-delimiters' }
 BioFormatter >> delimiterSourceCharacter: aCharacter [
 	" Set the <Character> to delimit fields in the receiver source data to be aCharacter "
 
 	delimiterSourceCharacter := aCharacter
 ]
 
-{ #category : #'convenience-delimiters' }
+{ #category : 'convenience-delimiters' }
 BioFormatter >> delimiterTargetCharacter [
 	" Answer a <Character> used to replace the receiver's delimiter in the receiver "
 	
@@ -110,19 +112,19 @@ BioFormatter >> delimiterTargetCharacter [
 		ifNil: [ delimiterTargetCharacter := $, ]
 ]
 
-{ #category : #'convenience-delimiters' }
+{ #category : 'convenience-delimiters' }
 BioFormatter >> delimiterTargetCharacter: anObject [
 	delimiterTargetCharacter := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> description [
 	" Answer a <String> for identifying the receiver "
 	
 	^ self class description
 ]
 
-{ #category : #'convenience-delimiters' }
+{ #category : 'convenience-delimiters' }
 BioFormatter >> escapeDelimiters: aString [
 	" Answer a <String> replacing the receiver's #delimiter with #replacementDelimiter in aString "
 	
@@ -135,19 +137,19 @@ BioFormatter >> escapeDelimiters: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> fileNamePrefix [
 
 	^ fileNamePrefix
 		ifNil: [ fileNamePrefix := String empty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> fileNamePrefix: anObject [
 	fileNamePrefix := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFormatter >> isValid [
 	" Answer <false> by default because assume receiver's was not #validate: "
 
@@ -155,17 +157,17 @@ BioFormatter >> isValid [
 		ifNil: [ isValid := false ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> parser [
 	^ parser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> parser: anObject [
 	parser := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioFormatter >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -176,14 +178,14 @@ BioFormatter >> printOn: aStream [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> samples [
 
 	^ samplesCollection
 		ifNil: [ samplesCollection := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatter >> samples: aCollection [
 
 	samplesCollection := aCollection

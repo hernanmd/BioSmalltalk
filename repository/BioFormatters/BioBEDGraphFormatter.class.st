@@ -4,12 +4,14 @@ transcriptome data.
 
 "
 Class {
-	#name : #BioBEDGraphFormatter,
-	#superclass : #BioBEDFormatter,
-	#category : 'BioFormatters-Formatters-BED'
+	#name : 'BioBEDGraphFormatter',
+	#superclass : 'BioBEDFormatter',
+	#category : 'BioFormatters-Formatters-BED',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-BED'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDGraphFormatter >> fileNamePrefix [
 	" Answer a default prefix <String> for the output file name "
 	

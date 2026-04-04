@@ -2,21 +2,23 @@
 This class supports parsing DNA sequences with degenerate bases, i.e. of the form : 'A[A/C]CTG' or 'AT[A/C]TA[C/A]'.
 "
 Class {
-	#name : #BioAmbiguousBaseParser,
-	#superclass : #BioAbstractTextParser,
+	#name : 'BioAmbiguousBaseParser',
+	#superclass : 'BioAbstractTextParser',
 	#instVars : [
 		'ambParser'
 	],
-	#category : #'BioParsers-Core'
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> ambParser [
 		
 	^ ambParser 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioAmbiguousBaseParser >> buildResults: aCollection [
 	" Set the receiver's results using aCollection "
 	
@@ -26,7 +28,7 @@ BioAmbiguousBaseParser >> buildResults: aCollection [
 
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> convertAmbiguousToSingleBase: ambTokens [
 	" Take a String of the form '[A/C]' and convert it to a single base letter as specified by the IUPAC nomenclature. Answer a <String> "
 
@@ -39,7 +41,7 @@ BioAmbiguousBaseParser >> convertAmbiguousToSingleBase: ambTokens [
 		ifFalse: [ self convertDelimitedAmbiguousToSingleBase: amb ].
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> convertContinuousAmbiguousToSingleBase: ambTokens [
 
 	| motif |
@@ -48,7 +50,7 @@ BioAmbiguousBaseParser >> convertContinuousAmbiguousToSingleBase: ambTokens [
 	^ BioIUPACAmbiguousDNA ambiguousLettersMap at: motif
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> convertDelimitedAmbiguousToSingleBase: ambTokens [
 
 	| motif |
@@ -57,14 +59,14 @@ BioAmbiguousBaseParser >> convertDelimitedAmbiguousToSingleBase: ambTokens [
 	^ BioIUPACAmbiguousDNA ambiguousLettersMap at: motif
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> delimiter [
 	" Answer the Character used to delimit degenerate bases "
 	
 	^ $/
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> parseWithSeparators [
 	
 	ambParser := self parserForAmbiguityDelimited.
@@ -72,7 +74,7 @@ BioAmbiguousBaseParser >> parseWithSeparators [
 	^ self parse
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> parseWithoutSeparators [
 	
 	ambParser := self parserForAmbiguity.
@@ -80,7 +82,7 @@ BioAmbiguousBaseParser >> parseWithoutSeparators [
 	^ self parse
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> parserForAmbiguity [
 	" Answer a parser for parsing a sequence variation of the type [AC] or [CT], etc.  "
 
@@ -93,7 +95,7 @@ BioAmbiguousBaseParser >> parserForAmbiguity [
 	^ (open , letters , close) ==> [: ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> parserForAmbiguityDelimited [
 	" Answer a parser for parsing a sequence variation of the type [A/C] or [C/T], etc.  "
 
@@ -107,7 +109,7 @@ BioAmbiguousBaseParser >> parserForAmbiguityDelimited [
 	^ (open , letter , separator , letter , close) ==> [ : ambTokens | self convertAmbiguousToSingleBase: ambTokens ]
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> parserForAmbiguousBase [
 	" Answer a parser for parsing degenerate base symbols "
 
@@ -117,7 +119,7 @@ BioAmbiguousBaseParser >> parserForAmbiguousBase [
 	^ (dnaSeq / self ambParser) plus ==> [ : nodes | (nodes joinUsing: Array empty) joinUsing: String empty ]
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> tokenizeWithSeparators [
 	
 	ambParser := self parserForAmbiguityDelimited.
@@ -125,7 +127,7 @@ BioAmbiguousBaseParser >> tokenizeWithSeparators [
 	^ self tokenize
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioAmbiguousBaseParser >> tokenizeWithoutSeparators [
 	
 	ambParser := self parserForAmbiguity.

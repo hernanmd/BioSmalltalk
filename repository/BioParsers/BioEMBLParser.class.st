@@ -3,19 +3,21 @@ emb|accession|ID
 
 "
 Class {
-	#name : #BioEMBLParser,
-	#superclass : #BioAbstractALParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioEMBLParser',
+	#superclass : 'BioAbstractALParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEMBLParser class >> identifier [
 	" See superimplementor's comment "
 
 	^ 'emb'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEMBLParser >> parseId: aString [
 	" Answer a String with the ID identifier in aString "
 	

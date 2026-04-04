@@ -1,6 +1,6 @@
 Class {
-	#name : #BioVCFRecordSample,
-	#superclass : #BioNamedObject,
+	#name : 'BioVCFRecordSample',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'vcfRecord',
 		'genotype',
@@ -8,10 +8,12 @@ Class {
 		'haplotypeQuality',
 		'genotypeQuality'
 	],
-	#category : 'BioFormatters-Formatters-VCF'
+	#category : 'BioFormatters-Formatters-VCF',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-VCF'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioVCFRecordSample class >> example01 [
 
 	^ BioVCFRecordSample new
@@ -24,7 +26,7 @@ BioVCFRecordSample class >> example01 [
 
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioVCFRecordSample class >> example02 [
 	
 	^ BioVCFRecordSample new
@@ -36,66 +38,66 @@ BioVCFRecordSample class >> example02 [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> genotype [
 	^ genotype
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> genotype: anObject [
 	genotype := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> genotypeDelimiter [
 	" Answer a <Character> "
 	
 	^ $|
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> genotypeQuality [
 	^ genotypeQuality
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> genotypeQuality: anObject [
 	genotypeQuality := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> haplotypeQuality [
 	^ haplotypeQuality
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> haplotypeQuality: anObject [
 	haplotypeQuality := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioVCFRecordSample >> printOn: aStream [
 	" Private - See superclass implementor "
 	
 	aStream nextPutAll: self name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> readDepth [
 	^ readDepth
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> readDepth: anObject [
 	readDepth := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> vcfRecord [
 	^ vcfRecord
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioVCFRecordSample >> vcfRecord: anObject [
 	vcfRecord := anObject
 ]

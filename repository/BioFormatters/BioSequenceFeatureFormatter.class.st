@@ -1,13 +1,15 @@
 Class {
-	#name : #BioSequenceFeatureFormatter,
-	#superclass : #BioFileFormatter,
+	#name : 'BioSequenceFeatureFormatter',
+	#superclass : 'BioFileFormatter',
 	#instVars : [
 		'sequenceFeature'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSequenceFeatureFormatter class >> fromSequenceFeature: aBioSequenceFeature [
 	" Answer a new instance of the receiver using information from aBioSequenceFeature "
 	
@@ -16,12 +18,12 @@ BioSequenceFeatureFormatter class >> fromSequenceFeature: aBioSequenceFeature [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeatureFormatter >> sequenceFeature [
 	^ sequenceFeature
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceFeatureFormatter >> sequenceFeature: anObject [
 	sequenceFeature := anObject
 ]

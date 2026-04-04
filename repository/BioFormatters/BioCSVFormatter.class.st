@@ -3,33 +3,35 @@ Abstract class for CSV format writers
 
 "
 Class {
-	#name : #BioCSVFormatter,
-	#superclass : #BioFileFormatter,
-	#category : #'BioFormatters-Formatters-CSV'
+	#name : 'BioCSVFormatter',
+	#superclass : 'BioFileFormatter',
+	#category : 'BioFormatters-Formatters-CSV',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-CSV'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter class >> description [
 	" See superimplementor's comment "
 
 	^ 'Generic CSV'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'csv'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter class >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 
 	^ #('CSV' 'Comma Separated Values' 'Comma Delimited File' 'Tab Delimited File')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> exportFrom: aCollection [
 	" Iterate aCollection storing the corresponding CSV format for each item. Output the resulting stream in a new timestamped file in the receiver's directory "
 	
@@ -42,14 +44,14 @@ BioCSVFormatter >> exportFrom: aCollection [
 		contents: stream contents
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> fileNamePrefix [
 	" Answer a default prefix <String> for the output file name "
 	
 	^ 'BioST-Export-CSV_'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> newParserFor: filePath [
 	" Answer a new CSV parser "
 
@@ -58,14 +60,14 @@ BioCSVFormatter >> newParserFor: filePath [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> parserClass [ 
 	" Answer a default parser class "
 
 	^ NeoCSVReader
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> parserOn: aString [
 
 	^ (self parserClass on: (ReadStream on: aString))
@@ -74,7 +76,7 @@ BioCSVFormatter >> parserOn: aString [
 			yourself.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSVFormatter >> validate: aCollection [ 
 	" See superimplementor's comment "
 	

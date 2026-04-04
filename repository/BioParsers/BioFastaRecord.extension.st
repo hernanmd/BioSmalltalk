@@ -1,6 +1,6 @@
-Extension { #name : #BioFastaRecord }
+Extension { #name : 'BioFastaRecord' }
 
-{ #category : #'*BioParsers' }
+{ #category : '*BioParsers' }
 BioFastaRecord >> sequenceDescription [
 	" Answer a <String> with the receiver's sequence description "
 	

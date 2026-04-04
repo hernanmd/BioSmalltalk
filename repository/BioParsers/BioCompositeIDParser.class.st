@@ -1,10 +1,12 @@
 Class {
-	#name : #BioCompositeIDParser,
-	#superclass : #BioNCBIIdParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioCompositeIDParser',
+	#superclass : 'BioNCBIIdParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCompositeIDParser >> giParser [
 	" Answer a Parser for parsing the Gene Identifier part
 	of a description line "	
@@ -12,7 +14,7 @@ BioCompositeIDParser >> giParser [
 	^ BioGIParser new parser
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCompositeIDParser >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -22,7 +24,7 @@ BioCompositeIDParser >> initialize [
 		self parserForDbAccessionLocus
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioCompositeIDParser >> parserForDbAccessionLocus [
 
 	^ self parserForGenBank | 

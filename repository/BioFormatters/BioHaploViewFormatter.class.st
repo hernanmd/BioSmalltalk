@@ -36,22 +36,24 @@ BioHaploViewFormatter
 
 "
 Class {
-	#name : #BioHaploViewFormatter,
-	#superclass : #BioMatrixFormatter,
+	#name : 'BioHaploViewFormatter',
+	#superclass : 'BioMatrixFormatter',
 	#instVars : [
 		'samplesSize'
 	],
-	#category : #'BioFormatters-Formatters'
+	#category : 'BioFormatters-Formatters',
+	#package : 'BioFormatters',
+	#tag : 'Formatters'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter class >> description [
 	" Private - See superimplementor's comment "
 
 	^ 'HaploView Writer'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioHaploViewFormatter class >> folder: aDirectoryString newOnInputFiles: inputFilenamesWithAffectedRows samples: aSamplesCollection affectionStatuses: affectionStatuses [
 
 	inputFilenamesWithAffectedRows associationsDo: [ : assoc |
@@ -72,14 +74,14 @@ BioHaploViewFormatter class >> folder: aDirectoryString newOnInputFiles: inputFi
 			exportMatrix ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter class >> identifiers [
 	" Answer a <Collection> of identifiers of the receiver "
 	
 	^ #('HaploView' 'Linkage Desequilibrium' 'Genehunter''s TDT')
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioHaploViewFormatter class >> newOnInputFile: anInputFilename outputFile: anOutputFilename samples: aSamplesCollection affectedRows: affectedRowsCount [
 
 	^ self new 
@@ -89,7 +91,7 @@ BioHaploViewFormatter class >> newOnInputFile: anInputFilename outputFile: anOut
 		affectedRows: affectedRowsCount
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioHaploViewFormatter class >> readFromCsv: csvFilename [
 	" The case for the following example is an output file sent by Illumina and you want to export to HaploView format by chromosome. 
 	
@@ -107,21 +109,21 @@ BioHaploViewFormatter class >> readFromCsv: csvFilename [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter >> delimiter [
 	" See superimplementor's comment "
 
 	^ Character tab
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter >> delimiterSourceCharacter [
 	" See superimplementor's comment "
 
 	^ Character tab
 ]
 
-{ #category : #exporting }
+{ #category : 'exporting' }
 BioHaploViewFormatter >> exportCellAtRow: rIndex atColumn: cIndex [
 	" Write the receiver's matrix cell content at rIndex and cIndex position "
 	
@@ -130,7 +132,7 @@ BioHaploViewFormatter >> exportCellAtRow: rIndex atColumn: cIndex [
 			tab
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillAffectionStatus: aValue [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -142,7 +144,7 @@ BioHaploViewFormatter >> fillAffectionStatus: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillFatherIDs: aValue [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -153,7 +155,7 @@ BioHaploViewFormatter >> fillFatherIDs: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillIndividualIDs [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -164,7 +166,7 @@ BioHaploViewFormatter >> fillIndividualIDs [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillMatrix [
 	" Private - Matrix with nucleotide data in HaploView file format begins from the 7th column "
 	
@@ -181,7 +183,7 @@ BioHaploViewFormatter >> fillMatrix [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillMotherIDs: aValue [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -190,7 +192,7 @@ BioHaploViewFormatter >> fillMotherIDs: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillPedigreeNames: aValue [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -199,7 +201,7 @@ BioHaploViewFormatter >> fillPedigreeNames: aValue [
 
 ]
 
-{ #category : #populating }
+{ #category : 'populating' }
 BioHaploViewFormatter >> fillSex: aValue [
 	" Private - Refer to the HaploView documentation for details "
 
@@ -207,7 +209,7 @@ BioHaploViewFormatter >> fillSex: aValue [
 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioHaploViewFormatter >> initializeWithInputFile: anInputFilename samples: aSamplesCollection affectedRows: affectedRowsCount [
 
 	self parser: (self parserClass on: anInputFilename asFileReference readStream).
@@ -223,21 +225,21 @@ BioHaploViewFormatter >> initializeWithInputFile: anInputFilename samples: aSamp
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter >> samplesSize [
 
 	^ samplesSize
 		ifNil: [ samplesSize := 1 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaploViewFormatter >> samplesSize: aNumber [
 	" Set the receiver's number of samples to aNumber "
 
 	samplesSize := aNumber
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioHaploViewFormatter >> valueFor: rs [
 	" Private - Assign a valid null value for HaploView file format.
 	Write two alleles for a column, answer this 'column' (String delimited by space)

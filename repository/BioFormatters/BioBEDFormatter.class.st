@@ -10,24 +10,26 @@ BioBEDFormatter new
 	
 "
 Class {
-	#name : #BioBEDFormatter,
-	#superclass : #BioSequenceFeatureFormatter,
+	#name : 'BioBEDFormatter',
+	#superclass : 'BioSequenceFeatureFormatter',
 	#instVars : [
 		'properties',
 		'browser',
 		'orderIndex'
 	],
-	#category : #'BioFormatters-Formatters-BED'
+	#category : 'BioFormatters-Formatters-BED',
+	#package : 'BioFormatters',
+	#tag : 'Formatters-BED'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter class >> description [
 	" See superimplementor's comment "
 
 	^ 'Browser Extensible Data (BED) format'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioBEDFormatter class >> example01 [
 	" Example writing one track "
 	
@@ -52,7 +54,7 @@ BioBEDFormatter class >> example01 [
 
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioBEDFormatter class >> example02 [
 	" Example writing multiple tracks "
 	
@@ -100,21 +102,21 @@ BioBEDFormatter class >> example02 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
 	^ 'bed'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBEDFormatter class >> testFilesFullDirectoryName [
 	" Private - See superimplementor's comment "
 
 	^ super testFilesFullDirectoryName / self formatExtension
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFBlockCount: aNumber [
 	" Add the number of blocks (exons) in the BED line. "
 
@@ -126,7 +128,7 @@ BioBEDFormatter >> addCFBlockCount: aNumber [
 
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFBlockSizes: aCollection [
 	" Add block sizes in aCollection. The number of items in this list should correspond to blockCount. "
 
@@ -140,7 +142,7 @@ BioBEDFormatter >> addCFBlockSizes: aCollection [
 
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFBlockStarts: aCollection [
 	" Add block sizes in aCollection. All of the blockStart positions should be calculated relative to chromStart. The number of items in this list should correspond to blockCount. "
 
@@ -154,7 +156,7 @@ BioBEDFormatter >> addCFBlockStarts: aCollection [
 
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFChr: chrString start: chrStart end: chrEnd [
 	"
 	Write minimal Custom Feature data in BED format.
@@ -172,7 +174,7 @@ BioBEDFormatter >> addCFChr: chrString start: chrStart end: chrEnd [
 	self orderIndex: 4.
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFLineChr: chrString start: chrStart end: chrEnd [
 	"
 	Write minimal Custom Feature data line in BED format.
@@ -186,7 +188,7 @@ BioBEDFormatter >> addCFLineChr: chrString start: chrStart end: chrEnd [
 		nextPutTerminator
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFName: aString [
 	" Add current feature name for the current data line "
 
@@ -198,7 +200,7 @@ BioBEDFormatter >> addCFName: aString [
 
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFRGB: colorCollection [
 	" Add current feature individual color for the current data line.
 	colorCollection is a <Collection> of <Color> instances in RGB order "
@@ -215,7 +217,7 @@ BioBEDFormatter >> addCFRGB: colorCollection [
 
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFScore: aNumber [
 	" Add a description for custom tracks. aNumber must be between 0 and 1000 "
 
@@ -227,7 +229,7 @@ BioBEDFormatter >> addCFScore: aNumber [
 	self orderIndex: self orderIndex + 1.
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFStrand: aCharacter [
 
 	self assert: [ self orderIndex = 6 ].
@@ -238,7 +240,7 @@ BioBEDFormatter >> addCFStrand: aCharacter [
 	self orderIndex: self orderIndex + 1.
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFThickEnd: aNumber [
 
 	self assert: [ self orderIndex = 8 ].
@@ -248,7 +250,7 @@ BioBEDFormatter >> addCFThickEnd: aNumber [
 	self orderIndex: self orderIndex + 1.
 ]
 
-{ #category : #'accessing - adding features' }
+{ #category : 'accessing - adding features' }
 BioBEDFormatter >> addCFThickStart: aNumber [
 
 	self assert: [ self orderIndex = 7 ].
@@ -258,7 +260,7 @@ BioBEDFormatter >> addCFThickStart: aNumber [
 	self orderIndex: self orderIndex + 1.
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackColor: colorCollection [
 	" Sets the default visibility mode for this track. 
 	colorCollection must have 3 <Color> instances "
@@ -271,7 +273,7 @@ BioBEDFormatter >> addCTrackColor: colorCollection [
 		put: rgbColors
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackColorByStrand: colorCollection [
 	" Sets the default visibility mode for this track. 
 	colorCollection must have 6 <Number> RGB instances "
@@ -285,7 +287,7 @@ BioBEDFormatter >> addCTrackColorByStrand: colorCollection [
 		put: ((plusStrand , ' ' , minorStrand) surroundedBy: '"')
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackDescription: aString [
 	" Add a description for custom tracks "
 
@@ -294,7 +296,7 @@ BioBEDFormatter >> addCTrackDescription: aString [
 		put: (aString surroundedBy: '"')
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackName: aString [
 	" Add description name (for custom track displayed in the Genome Browser)"
 
@@ -303,7 +305,7 @@ BioBEDFormatter >> addCTrackName: aString [
 		put: (aString surroundedBy: '"')
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackUseScore: aNumber [
 
 	self properties
@@ -311,7 +313,7 @@ BioBEDFormatter >> addCTrackUseScore: aNumber [
 		put: aNumber asString
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> addCTrackVisibility: aNumber [
 	" Sets the default visibility mode for this track. "
 
@@ -320,7 +322,7 @@ BioBEDFormatter >> addCTrackVisibility: aNumber [
 		put: aNumber asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> asStringFromFeature: aBioSequenceFeature [
 
 	^ String streamContents: [ : writeStream | 
@@ -332,26 +334,26 @@ BioBEDFormatter >> asStringFromFeature: aBioSequenceFeature [
 			nextPutAll: aBioSequenceFeature end asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> browser [
 	^ browser
 		ifNil: [ browser := BioPropertyObject new ]
 ]
 
-{ #category : #'accessing - custom track browser' }
+{ #category : 'accessing - custom track browser' }
 BioBEDFormatter >> browser: aBioPropertyObject [
 
 	browser := aBioPropertyObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> delimiter [
 	" Answer the Character used to delimit fields in data lines "
 	
 	^ Character space
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioBEDFormatter >> dumpBrowserHeader [
 	" Private - Write custom track browser line "
 
@@ -367,7 +369,7 @@ BioBEDFormatter >> dumpBrowserHeader [
 			self outputFileStream nextPutTerminator ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> dumpCTrack [
 	" Private - Write custom track header line "
 
@@ -382,7 +384,7 @@ BioBEDFormatter >> dumpCTrack [
 			flush
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> dumpHeaders [
 
 	self 
@@ -390,31 +392,31 @@ BioBEDFormatter >> dumpHeaders [
 		dumpCTrack
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> fileNamePrefix [
 	" Answer a default prefix <String> for the output file name "
 	
 	^ 'BioST-Export-BED_'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> nextPutTerminator [
 	" Set the end of a data line "
 
 	self outputFileStream nextPutTerminator 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> orderIndex [
 	^ orderIndex
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBEDFormatter >> orderIndex: anObject [
 	orderIndex := anObject
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> properties [
 	" Use properties object to store track properties "
 
@@ -422,12 +424,12 @@ BioBEDFormatter >> properties [
 		ifNil: [ properties := BioPropertyObject new ]
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> properties: aBioPropertyObject [
 	properties := aBioPropertyObject
 ]
 
-{ #category : #'accessing - custom track browser' }
+{ #category : 'accessing - custom track browser' }
 BioBEDFormatter >> setCTrackBrowserPositionChr: chrString from: startPos to: endPos [
 	" Add a description for custom tracks "
 
@@ -445,7 +447,7 @@ BioBEDFormatter >> setCTrackBrowserPositionChr: chrString from: startPos to: end
 		put: chrRange
 ]
 
-{ #category : #'accessing - custom track browser' }
+{ #category : 'accessing - custom track browser' }
 BioBEDFormatter >> setCTrackBrowserShowAll [
 	" Add a description for custom tracks "
 
@@ -454,7 +456,7 @@ BioBEDFormatter >> setCTrackBrowserShowAll [
 		put: 'all'
 ]
 
-{ #category : #'accessing - custom track header' }
+{ #category : 'accessing - custom track header' }
 BioBEDFormatter >> setItemRgbOn [
 	" Set the itemRgb attribute to individually color each data line. "
 

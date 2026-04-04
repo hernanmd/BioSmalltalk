@@ -1,6 +1,6 @@
-Extension { #name : #PMVector }
+Extension { #name : 'PMVector' }
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> asFastaRecord [
 	" Answer a <BioFastaRecord>. Assume receiver with 18 elements "
 
@@ -12,21 +12,21 @@ PMVector >> asFastaRecord [
 
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> containsSequenceId [
 	" Answer <true> if the receiver has a <String> which serves as identifier "
 	
 	^ self anySatisfy: #isString
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> containsSequenceString [
 	" Answer <true> if the receiver has a sequence <String> "
 	
 	^ self anySatisfy: #isBiologicalSequence.
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> dumpCSVTo: aStream [
 
 	self flag: #workNeeded.
@@ -36,13 +36,13 @@ PMVector >> dumpCSVTo: aStream [
 			nextPut: $; ]
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> isValidForCSVFormat [
 
 	^ self notEmpty.
 ]
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 PMVector >> isValidForFastaFormat [
 	" Answer <true> if the receiver has enough data to be translated to Fasta format "
 

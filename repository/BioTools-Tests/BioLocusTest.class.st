@@ -4,8 +4,9 @@ Tests for BioLocus interval and coordinate behavior.
 Class {
 	#name : 'BioLocusTest',
 	#superclass : 'TestCase',
-	#category : 'BioTools-Tests',
-	#package : 'BioTools-Tests'
+	#category : 'BioTools-Tests-Genomic-Ranges',
+	#package : 'BioTools-Tests',
+	#tag : 'Genomic-Ranges'
 }
 
 { #category : 'tests' }

@@ -1,1 +1,1 @@
-Package { #name : #BioFormatters }
+Package { #name : 'BioFormatters' }

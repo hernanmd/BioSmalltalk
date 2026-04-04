@@ -5,12 +5,14 @@ Instance Variables:
 	current	<String>
 "
 Class {
-	#name : #BioEntrezResultParser,
-	#superclass : #BioSAXParser,
-	#category : 'BioParsers-Core'
+	#name : 'BioEntrezResultParser',
+	#superclass : 'BioSAXParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #content }
+{ #category : 'content' }
 BioEntrezResultParser >> characters: aString [
 	" See superimplementor´s comment "
 
@@ -20,21 +22,21 @@ BioEntrezResultParser >> characters: aString [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezResultParser >> estimatedResultSize [
 	" Private - See superimplementor's comment "
 	
 	^ 20
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezResultParser >> resultClass [
 	" Private - See superimplementor's comment "
 	
 	^ OrderedCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezResultParser >> startElement: elementName attributeList: attributeList [
 	" Private - See superimplementor's comment "
 	
@@ -44,7 +46,7 @@ BioEntrezResultParser >> startElement: elementName attributeList: attributeList 
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezResultParser >> startElement: elementName attributes: attributeList [
 	" Private - See superimplementor's comment "
 	

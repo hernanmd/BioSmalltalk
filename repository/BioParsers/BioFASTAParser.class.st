@@ -2,12 +2,14 @@
 Parser for several FASTA file format elements. This class is not intended to be used directly. See BioParser for details parsing FASTA files.
 "
 Class {
-	#name : #BioFASTAParser,
-	#superclass : #BioAbstractTextParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioFASTAParser',
+	#superclass : 'BioAbstractTextParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForAnyDescriptionLine [
 
 	| separator token |
@@ -18,14 +20,14 @@ BioFASTAParser >> parserForAnyDescriptionLine [
 		
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForAnyDescriptionText [
 
 	^ self parserForAnyDescriptionLine
 
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForDescriptionLine [
 
 	^ $> asPParser ,  
@@ -35,13 +37,13 @@ BioFASTAParser >> parserForDescriptionLine [
 
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForDescriptionString [
 
 	^ self parserForDescriptionLine ==> #second
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForIdentifier [
 	" Answer a parser for parsing an identifier in a FASTA entry "
 
@@ -49,14 +51,14 @@ BioFASTAParser >> parserForIdentifier [
 	^ self identifier asPParser ==> [: r | (r last = $|) ifTrue: [ r allButLast ] ifFalse: [ r ] ]
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> parserForNonFastaString [
 	" Answer a parser for parsing any kind of description text in a FASTA sequence "
 
 	^ self noneOf: self specialFastaChars
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioFASTAParser >> specialFastaChars [
 	" Answer a Collection with Characters with special meaning for the FASTA definition line format "
 	
@@ -66,7 +68,7 @@ BioFASTAParser >> specialFastaChars [
 		with: $|
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> tokenizeDescriptionLine [
 
 	| separator token |
@@ -77,7 +79,7 @@ BioFASTAParser >> tokenizeDescriptionLine [
 	^ self parse: self expression
 ]
 
-{ #category : #'accessing-parsers' }
+{ #category : 'accessing-parsers' }
 BioFASTAParser >> tokenizeDescriptionText [
 
 	^ self tokenizeDescriptionLine last

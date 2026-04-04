@@ -1,10 +1,12 @@
 Class {
-	#name : #BioNCBIIdParser,
-	#superclass : #BioIDParser,
-	#category : #'BioParsers-Core'
+	#name : 'BioNCBIIdParser',
+	#superclass : 'BioIDParser',
+	#category : 'BioParsers-Core',
+	#package : 'BioParsers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIIdParser class >> allIdentifiers [
 	" Answer a <Collection> "
 
@@ -15,7 +17,7 @@ BioNCBIIdParser class >> allIdentifiers [
 			ifFalse: [ id ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIIdParser class >> classFor: aString [
 	" Answer a class which identifies aString "
 	
@@ -25,7 +27,7 @@ BioNCBIIdParser class >> classFor: aString [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIIdParser class >> identifier [
 	" Answer a class appropiate for parsing a specified NCBI identifier String "
 	
@@ -35,21 +37,21 @@ BioNCBIIdParser class >> identifier [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIIdParser >> identifier [
 	" Answer the identifying String of the receiver "
 	
 	^ self class identifier
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioNCBIIdParser >> initialize [
 	" Private - See superimplementor's comment "
 	
 	parser := self parserForIdentifier , #number asPParser
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioNCBIIdParser >> localIdParser [
 
 	^ self parserForNonFastaString

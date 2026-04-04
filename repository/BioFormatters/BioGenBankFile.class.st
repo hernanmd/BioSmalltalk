@@ -1,10 +1,12 @@
 Class {
-	#name : #BioGenBankFile,
-	#superclass : #BioFile,
-	#category : 'BioFormatters-Files'
+	#name : 'BioGenBankFile',
+	#superclass : 'BioFile',
+	#category : 'BioFormatters-Files',
+	#package : 'BioFormatters',
+	#tag : 'Files'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenBankFile class >> possibleExtensions [
 	" See superimplementor's comment"
 

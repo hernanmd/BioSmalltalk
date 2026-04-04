@@ -1,6 +1,6 @@
-Extension { #name : #Object }
+Extension { #name : 'Object' }
 
-{ #category : #'*BioFormatters' }
+{ #category : '*BioFormatters' }
 Object >> getExtensionFor: fileFormatName [
 	" Answer the corresponding <String> file extension of fileFormatName "
 

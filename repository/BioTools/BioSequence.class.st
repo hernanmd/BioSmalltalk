@@ -385,6 +385,11 @@ BioSequence >> aminoacidNames [
 ]
 
 { #category : 'converting' }
+BioSequence >> asCircular [
+	^ BioCircularSequence on: self
+]
+
+{ #category : 'converting' }
 BioSequence >> asFastaRecord [
 	" Answer a <BioFastaRecord> filled with the receiver's name and sequence "
 
@@ -853,6 +858,19 @@ BioSequence >> gcSkewCalc: wLength [
 ]
 
 { #category : 'accessing' }
+BioSequence >> isMethylatedAt: index [
+	"Simple implementation using a property in sequenceRecord"
+	^ (self sequenceRecord annotationsAt: 'methylation_sites' ifAbsent: [ Set new ]) includes: index
+]
+
+{ #category : 'accessing' }
+BioSequence >> methylateAt: index [
+	| sites |
+	sites := self sequenceRecord annotationsAt: 'methylation_sites' ifAbsentPut: [ Set new ].
+	sites add: index
+]
+
+{ #category : 'accessing' }
 BioSequence >> gcSkewInt [
 	" Answer a <Collection> with <Integer>. Calculate receiver's GC skew for each position. Does NOT look at any ambiguous nucleotides. "
 
@@ -950,6 +968,11 @@ BioSequence >> isBioSequence [
 	"Answer whether the receiver represents a Biological sequence."
 	
 	^ true
+]
+
+{ #category : 'testing' }
+BioSequence >> isCircular [
+	^ false
 ]
 
 { #category : 'testing' }

@@ -1,9 +1,9 @@
 Class {
 	#name : 'BioNCBIXMLBlastParser',
 	#superclass : 'BioXMLParser',
-	#category : 'BioParsers-XML',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'XML'
+	#tag : 'BLAST'
 }
 
 { #category : 'initialize-release' }

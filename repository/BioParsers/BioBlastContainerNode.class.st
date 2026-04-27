@@ -4,9 +4,9 @@ Class {
 	#instVars : [
 		'nodes'
 	],
-	#category : 'BioParsers-Support',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'Support'
+	#tag : 'BLAST'
 }
 
 { #category : 'comparing' }

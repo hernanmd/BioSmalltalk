@@ -1,9 +1,9 @@
 Class {
 	#name : 'BioNCBIBlastSAXParser',
 	#superclass : 'BioSAXParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-XML',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'XML'
 }
 
 { #category : 'handling - content' }

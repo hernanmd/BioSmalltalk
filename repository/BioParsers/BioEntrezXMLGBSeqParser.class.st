@@ -25,9 +25,9 @@ Class {
 		'matches',
 		'records'
 	],
-	#category : 'BioParsers-XML',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'XML'
+	#tag : 'Entrez'
 }
 
 { #category : 'accessing' }

@@ -18,9 +18,9 @@ Class {
 		'selectedNodes',
 		'current'
 	],
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-XML',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'XML'
 }
 
 { #category : 'instance creation' }

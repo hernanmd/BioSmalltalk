@@ -1,9 +1,9 @@
 Class {
 	#name : 'BioBlastParentNode',
 	#superclass : 'BioBlastContainerNode',
-	#category : 'BioParsers-Support',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'Support'
+	#tag : 'BLAST'
 }
 
 { #category : 'instance creation' }

@@ -7,9 +7,9 @@ Instance Variables:
 Class {
 	#name : 'BioEntrezResultParser',
 	#superclass : 'BioSAXParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'Entrez'
 }
 
 { #category : 'content' }

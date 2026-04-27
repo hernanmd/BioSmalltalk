@@ -4,9 +4,9 @@ Parser for a FASTA file with several sequences. This class is not intended to be
 Class {
 	#name : 'BioFASTAMultiParser',
 	#superclass : 'BioFASTABasicParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-FASTA',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'FASTA'
 }
 
 { #category : 'accessing private' }

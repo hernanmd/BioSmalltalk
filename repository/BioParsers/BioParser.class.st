@@ -106,6 +106,20 @@ BioParser class >> parseFullNcbiXmlGBSeq: aString [
 	^ BioEntrezXMLGBSeqFullParser parse: aString
 ]
 
+{ #category : 'parse-gff3' }
+BioParser class >> parseGff3: aGffString [
+	" Parse aFastaString and answer <BioGFF3File> instance "
+	
+	^ BioGFF3File fromString: aGffString
+]
+
+{ #category : 'parse-gff3' }
+BioParser class >> parseGff3File: aGff3FilePath [
+	" Parse aGff3FilePath and answer a <BioGFF3File> instance "
+	
+	^ BioGFF3File new fromFile: aGff3FilePath
+]
+
 { #category : 'parse-fasta' }
 BioParser class >> parseMultiFasta: aFastaString [
 	" Parser aFastaString representing a MultiFASTA sequence.

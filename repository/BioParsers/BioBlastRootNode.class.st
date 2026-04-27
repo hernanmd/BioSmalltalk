@@ -1,9 +1,9 @@
 Class {
 	#name : 'BioBlastRootNode',
 	#superclass : 'BioBlastParentNode',
-	#category : 'BioParsers-Support',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'Support'
+	#tag : 'BLAST'
 }
 
 { #category : 'accessing' }

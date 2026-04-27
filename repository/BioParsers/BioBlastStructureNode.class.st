@@ -4,9 +4,9 @@ The structure exists only to specify those nodes which are present in the XML an
 Class {
 	#name : 'BioBlastStructureNode',
 	#superclass : 'BioBlastContainerNode',
-	#category : 'BioParsers-Support',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'Support'
+	#tag : 'BLAST'
 }
 
 { #category : 'accessing' }

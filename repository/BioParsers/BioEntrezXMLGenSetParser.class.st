@@ -4,9 +4,9 @@ Class {
 	#instVars : [
 		'eRecord'
 	],
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'Entrez'
 }
 
 { #category : 'accessing' }

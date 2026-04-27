@@ -4,9 +4,9 @@ Parser for several FASTA file format elements. This class is not intended to be 
 Class {
 	#name : 'BioFASTAParser',
 	#superclass : 'BioAbstractTextParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-FASTA',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'FASTA'
 }
 
 { #category : 'accessing-parsers' }

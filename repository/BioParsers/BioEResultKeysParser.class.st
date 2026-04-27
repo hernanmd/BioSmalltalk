@@ -5,9 +5,9 @@ See http://www.ncbi.nlm.nih.gov/books/NBK25500/ for details (15/11/2011)
 Class {
 	#name : 'BioEResultKeysParser',
 	#superclass : 'BioEntrezResultParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'Entrez'
 }
 
 { #category : 'content' }

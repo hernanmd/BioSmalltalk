@@ -1,9 +1,9 @@
 Class {
 	#name : 'BioEntrezXMLGBFullParser',
 	#superclass : 'BioEntrezXMLGenBankSeqParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'Entrez'
 }
 
 { #category : 'accessing' }

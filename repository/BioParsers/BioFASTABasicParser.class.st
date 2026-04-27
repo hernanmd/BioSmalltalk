@@ -4,9 +4,9 @@ This class is not intended to be used directly
 Class {
 	#name : 'BioFASTABasicParser',
 	#superclass : 'BioIDParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-FASTA',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'FASTA'
 }
 
 { #category : 'accessing private' }

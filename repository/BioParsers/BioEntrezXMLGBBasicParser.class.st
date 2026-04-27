@@ -4,9 +4,9 @@ This is a basic parser which can parse accession, definition and sequence nodes 
 Class {
 	#name : 'BioEntrezXMLGBBasicParser',
 	#superclass : 'BioEntrezXMLGenBankSeqParser',
-	#category : 'BioParsers-Core',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'Core'
+	#tag : 'Entrez'
 }
 
 { #category : 'accessing' }

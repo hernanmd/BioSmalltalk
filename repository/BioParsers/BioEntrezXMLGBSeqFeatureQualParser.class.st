@@ -38,9 +38,9 @@ fileRef := BioObject testFilesFullDirectoryName / 'GenBankTestFiles' / 'TestGBSe
 Class {
 	#name : 'BioEntrezXMLGBSeqFeatureQualParser',
 	#superclass : 'BioEntrezXMLGBSeqParser',
-	#category : 'BioParsers-XML',
+	#category : 'BioParsers-Entrez',
 	#package : 'BioParsers',
-	#tag : 'XML'
+	#tag : 'Entrez'
 }
 
 { #category : 'accessing' }

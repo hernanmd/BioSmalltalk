@@ -12,9 +12,9 @@ Class {
 	#instVars : [
 		'nodeName'
 	],
-	#category : 'BioParsers-Support',
+	#category : 'BioParsers-BLAST',
 	#package : 'BioParsers',
-	#tag : 'Support'
+	#tag : 'BLAST'
 }
 
 { #category : 'accessing' }

@@ -71,6 +71,18 @@ BioSequence class >> fromUmambiguousRNASequences: aCollection [
 	^ aCollection collect: [ : seqString | self newUnambiguousRNA: seqString ]
 ]
 
+{ #category : 'splitjoin' }
+BioSequence class >> join: aCollection [
+	"Join a collection of BioSequences (or strings) into one sequence."
+
+	| strings |
+	strings := aCollection collect: [ :each |
+			           each isBioSequence
+				           ifTrue: [ each sequence ]
+				           ifFalse: [ each asString ] ].
+	^ self new initializeWith: ('' join: strings)
+]
+
 { #category : 'convenience' }
 BioSequence class >> joinSequence: aCollection [
 	" Private - Answer a String with the sequence ensambled from aCollection.
@@ -480,6 +492,13 @@ BioSequence >> at: anInteger put: aLetter [
 	self signalInvalidObject: 'Sequence is read-only. Use #asMutable to enable modifications it then #asSequence' 
 ]
 
+{ #category : 'accessing' }
+BioSequence >> atRatio [
+	"Answer the AT ratio as a fraction (AT / ATGC)."
+
+	^ 1.0 - self gcRatio
+]
+
 { #category : 'accesing public - protein synthesis' }
 BioSequence >> backTranscribe [
 	" Answer a new instance of the receiver's with the receiver's sequence transcribed to its corresponding DNA, adjusting the alphabet "
@@ -499,6 +518,13 @@ BioSequence >> backTranscription [
 	backTranscript := seq asUppercase copyReplaceAll: 'U' with: 'T'.
 	backTranscript := backTranscript copyReplaceAll: 'u' with: 't'.
 	^ backTranscript
+]
+
+{ #category : 'testing' }
+BioSequence >> beginsWith: aPrefix [
+	"Answer true if the receiver's sequence begins with aPrefix."
+
+	^ self sequence beginsWith: aPrefix
 ]
 
 { #category : 'accessing' }
@@ -589,6 +615,29 @@ BioSequence >> complementaryAt: aCharacter [
 	^ self alphabet complementaryTable at: aCharacter
 ]
 
+{ #category : 'accessing - utilities' }
+BioSequence >> composition [
+	"Answer a Dictionary with nucleotide/amino acid composition.
+	 Keys are letters, values are counts."
+
+	^ self occurrencesOfLetters
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> compositionWithFrequencies [
+	"Answer a Dictionary with composition including frequencies."
+
+	| counts total result |
+	counts := self occurrencesOfLetters.
+	total := self size.
+	result := Dictionary new.
+	counts keysAndValuesDo: [ :key :value |
+			result at: key put: (Dictionary
+					 with: #count -> value
+					 with: #frequency -> (value / total asFloat)) ].
+	^ result
+]
+
 { #category : 'accessing' }
 BioSequence >> contents [
 	" Compatibility with #dumpToFileNamed: . Answer the receiver's sequence <String> "
@@ -635,6 +684,43 @@ BioSequence >> copyTo: stopInteger [
 	^ self newPrototypeWith: (self subSeqFrom: 1 to: stopInteger)
 	
 	
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> countSubstring: aSubstring [
+	"Answer the number of non-overlapping occurrences of aSubstring."
+
+	| count pos start |
+	count := 0.
+	start := 1.
+	[
+		pos := self sequence
+			       indexOfSubCollection: aSubstring
+			       startingAt: start.
+		pos > 0 ] whileTrue: [
+			count := count + 1.
+			start := pos + aSubstring size ].
+	^ count
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> countSubstring: aSubstring overlapping: aBoolean [
+	"Count occurrences. If overlapping is true, count overlapping matches."
+
+	| count pos start increment |
+	count := 0.
+	start := 1.
+	increment := aBoolean
+		             ifTrue: [ 1 ]
+		             ifFalse: [ aSubstring size ].
+	[
+		pos := self sequence
+			       indexOfSubCollection: aSubstring
+			       startingAt: start.
+		pos > 0 ] whileTrue: [
+			count := count + 1.
+			start := pos + increment ].
+	^ count
 ]
 
 { #category : 'accessing - checksum' }
@@ -776,6 +862,31 @@ BioSequence >> do: aClosure [
 
 ]
 
+{ #category : 'accessing - utilities' }
+BioSequence >> dropFirst: n [
+	"Answer a new BioSequence without the first n characters."
+
+	^ self class new
+		  initializeWith: (self sequence allButFirst: n)
+		  alphabet: self alphabet
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> dropLast: n [
+	"Answer a new BioSequence without the last n characters."
+
+	^ self class new
+		  initializeWith: (self sequence allButLast: n)
+		  alphabet: self alphabet
+]
+
+{ #category : 'testing' }
+BioSequence >> endsWith: aSuffix [
+	"Answer true if the receiver's sequence ends with aSuffix."
+
+	^ self sequence endsWith: aSuffix
+]
+
 { #category : 'copying' }
 BioSequence >> findHotspots [
 	" Answer a <Collection> of the receiver's substrings tokenized by hostspots : [ ] "
@@ -783,6 +894,24 @@ BioSequence >> findHotspots [
 	^ seq findTokens: '[]'
 
 	
+]
+
+{ #category : 'accessing' }
+BioSequence >> first: n [
+	"Answer a new BioSequence with the first n characters."
+
+	^ self class new
+		  initializeWith: (self sequence first: n)
+		  alphabet: self alphabet
+]
+
+{ #category : 'instance creation' }
+BioSequence >> from: startIndex to: endIndex [
+	"Answer a new BioSequence with characters from startIndex to endIndex."
+
+	^ self class new
+		  initializeWith: (self sequence copyFrom: startIndex to: endIndex)
+		  alphabet: self alphabet
 ]
 
 { #category : 'accessing' }
@@ -864,6 +993,18 @@ BioSequence >> gcContentUppercased [
 	^ (((gCount + cCount / self size) * 100) round: 6) asScaledDecimal
 	
 
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> gcRatio [
+	"Answer the GC ratio as a fraction (GC / ATGC)."
+
+	| comp gc at |
+	comp := self occurrencesOfLetters.
+	gc := (comp at: $G ifAbsent: [ 0 ]) + (comp at: $C ifAbsent: [ 0 ]).
+	at := (comp at: $A ifAbsent: [ 0 ]) + (comp at: $T ifAbsent: [ 0 ]).
+	at + gc = 0 ifTrue: [ ^ 0.0 ].
+	^ gc / (at + gc) asFloat
 ]
 
 { #category : 'accessing' }
@@ -973,6 +1114,61 @@ BioSequence >> hotspotRegionsLeft: leftSize right: rightSize [
 	^ self findHotspots tripleSelect: [ : a : b : c | a size >= leftSize and: [ c size >= rightSize ] ].
 ]
 
+{ #category : 'testing' }
+BioSequence >> includesAnyOf: aCollection [
+	"Answer true if the receiver contains any character from aCollection."
+
+	^ self sequence includesAnyOf: aCollection
+]
+
+{ #category : 'testing' }
+BioSequence >> includesSubstring: aSubstring [
+	"Answer true if the receiver contains aSubstring."
+
+	^ (self indexOf: aSubstring) > 0
+]
+
+{ #category : 'accessing' }
+BioSequence >> indexOf: aSubstring [
+	"Answer the index of the first occurrence of aSubstring in the receiver.
+	 Answer 0 if not found. Uses 1-based indexing."
+
+	^ self sequence indexOfSubCollection: aSubstring startingAt: 1
+]
+
+{ #category : 'accessing' }
+BioSequence >> indexOf: aSubstring startingAt: startIndex [
+	"Answer the index of the first occurrence of aSubstring at or after startIndex.
+	 Answer 0 if not found."
+
+	^ self sequence
+		  indexOfSubCollection: aSubstring
+		  startingAt: startIndex
+]
+
+{ #category : 'accessing' }
+BioSequence >> indexOf: aSubstring startingAt: startIndex endingAt: endIndex [
+	"Answer the index of the first occurrence of aSubstring within the range [startIndex, endIndex].
+	 Answer 0 if not found. Returns 1-based index in the original sequence."
+
+	| subSeq idx |
+	subSeq := self sequence copyFrom: startIndex to: endIndex.
+	idx := subSeq indexOfSubCollection: aSubstring startingAt: 1.
+	idx = 0 ifTrue: [ ^ 0 ].
+	^ idx + startIndex - 1
+]
+
+{ #category : 'accessing' }
+BioSequence >> indexOfOrFail: aSubstring [
+	"Answer the index of the first occurrence of aSubstring.
+	 Raise NotFound signal if not found."
+
+	| idx |
+	idx := self indexOf: aSubstring.
+	idx = 0 ifTrue: [ NotFound signalFor: aSubstring ].
+	^ idx
+]
+
 { #category : 'accessing' }
 BioSequence >> indicesOfSubsequence: aBioSequence [
 	" See comment in #indicesOfSubstring: "
@@ -1007,6 +1203,24 @@ BioSequence >> initializeWith: aString alphabet: anAlphabet [
 	
 	seq := aString.
 	alphabet := anAlphabet
+]
+
+{ #category : 'testing' }
+BioSequence >> isAllLowercase [
+	"Answer true if all alphabetic characters are lowercase."
+
+	self sequence do: [ :c |
+		c isLetter ifTrue: [ c isLowercase ifFalse: [ ^ false ] ] ].
+	^ true
+]
+
+{ #category : 'testing' }
+BioSequence >> isAllUppercase [
+	"Answer true if all alphabetic characters are uppercase."
+
+	self sequence do: [ :c |
+		c isLetter ifTrue: [ c isUppercase ifFalse: [ ^ false ] ] ].
+	^ true
 ]
 
 { #category : 'testing' }
@@ -1133,6 +1347,50 @@ BioSequence >> kmersCount: patString mismatches: d [
 	" Answer the number of times that k-mers patString appears as substring of the receiver allowing d mismatches "
 	
 	^ (self sequence indicesOfSubstring: patString mismatches: d) size
+]
+
+{ #category : 'accessing' }
+BioSequence >> last: n [
+	"Answer a new BioSequence with the last n characters."
+
+	^ self class new
+		  initializeWith: (self sequence last: n)
+		  alphabet: self alphabet
+]
+
+{ #category : 'accessing' }
+BioSequence >> lastIndexOf: aSubstring [
+	"Answer the index of the last occurrence of aSubstring in the receiver.
+	 Answer 0 if not found."
+
+	^ self sequence findLastOccurrenceOfString: aSubstring startingAt: 1
+]
+
+{ #category : 'accessing' }
+BioSequence >> lastIndexOf: aSubstring startingAt: startIndex [
+	"Answer the index of the last occurrence of aSubstring at or before startIndex."
+
+	| result lastPos |
+	result := 0.
+	lastPos := 0.
+	[
+		lastPos := self sequence
+			           findString: aSubstring
+			           startingAt: lastPos + 1.
+		lastPos > 0 and: [ lastPos <= startIndex ] ] whileTrue: [
+		result := lastPos ].
+	^ result
+]
+
+{ #category : 'accessing' }
+BioSequence >> lastIndexOfOrFail: aSubstring [
+	"Answer the index of the last occurrence of aSubstring.
+	 Raise NotFound signal if not found."
+
+	| idx |
+	idx := self lastIndexOf: aSubstring.
+	idx = 0 ifTrue: [ NotFound signalFor: aSubstring ].
+	^ idx
 ]
 
 { #category : 'accessing' }
@@ -1484,6 +1742,37 @@ BioSequence >> notEmpty [
 	^ seq notEmpty
 ]
 
+{ #category : 'accessing - utilities' }
+BioSequence >> nucleotideComposition [
+	"Answer nucleotide composition for DNA/RNA sequences.
+	 Returns Dictionary with A, T/U, G, C counts and 'other' for non-standard."
+
+	| comp a t u g c other |
+	self isProteinSequence ifTrue: [
+			self error:
+				'nucleotideComposition not applicable to protein sequences' ].
+	comp := self occurrencesOfLetters.
+	a := comp at: $A ifAbsent: [ 0 ].
+	g := comp at: $G ifAbsent: [ 0 ].
+	c := comp at: $C ifAbsent: [ 0 ].
+	self isRNASequence
+		ifTrue: [
+				t := 0.
+				u := comp at: $U ifAbsent: [ 0 ] ]
+		ifFalse: [
+				t := comp at: $T ifAbsent: [ 0 ].
+				u := comp at: $U ifAbsent: [ 0 ] ].
+	other := self size - a - t - u - g - c.
+	^ Dictionary new
+		  at: $A put: a;
+		  at: $T put: t;
+		  at: $U put: u;
+		  at: $G put: g;
+		  at: $C put: c;
+		  at: 'other' put: other;
+		  yourself
+]
+
 { #category : 'accessing - frequencies' }
 BioSequence >> occurrencesOf: aCharacter [
 	" Answer how many of the receiver's elements are equal to aLetter "
@@ -1511,6 +1800,30 @@ BioSequence >> oligonucleotideFrequency [
 	The counting uses a sliding window of step 1."
 
 	^ self kmerFrequencies: 1
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> padLeft: padChar to: targetLength [
+	"Pad the sequence on the left with padChar to reach targetLength."
+
+	| padding |
+	self size >= targetLength ifTrue: [ ^ self copy ].
+	padding := String new: targetLength - self size withAll: padChar.
+	^ self class new
+		  initializeWith: padding , self sequence
+		  alphabet: self alphabet
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> padRight: padChar to: targetLength [
+	"Pad the sequence on the right with padChar to reach targetLength."
+
+	| padding |
+	self size >= targetLength ifTrue: [ ^ self copy ].
+	padding := String new: targetLength - self size withAll: padChar.
+	^ self class new
+		  initializeWith: self sequence , padding
+		  alphabet: self alphabet
 ]
 
 { #category : 'accessing' }
@@ -1563,11 +1876,46 @@ BioSequence >> randomLength: size for: anAlphabetClass [
 								nextPutAll: b asString ] ].
 ]
 
+{ #category : 'removing' }
+BioSequence >> removePrefix: aPrefix [
+	"Remove aPrefix if present at the start of the sequence.
+	 Answer the receiver unchanged if prefix not present."
+
+	(self beginsWith: aPrefix) ifTrue: [
+			^ self class new
+				  initializeWith:
+				  (self sequence copyFrom: aPrefix size + 1 to: self size)
+				  alphabet: self alphabet ].
+	^ self copy
+]
+
 { #category : 'accessing - sequence record' }
 BioSequence >> removeSeqFeature: aBioSequenceFeature [
 	" Remove aBioSequenceFeature from the receiver "
 	
 	self sequenceFeatures remove: aBioSequenceFeature
+]
+
+{ #category : 'removing' }
+BioSequence >> removeSuffix: aSuffix [
+	"Remove aSuffix if present at the end of the sequence."
+
+	(self endsWith: aSuffix) ifTrue: [
+			^ self class new
+				  initializeWith:
+				  (self sequence copyFrom: 1 to: self size - aSuffix size)
+				  alphabet: self alphabet ].
+	^ self copy
+]
+
+{ #category : 'transforming' }
+BioSequence >> replace: oldSubstring with: newSubstring [
+	"Answer a new BioSequence with all occurrences of oldSubstring replaced by newSubstring."
+
+	^ self class new
+		  initializeWith:
+		  (self sequence copyReplaceAll: oldSubstring with: newSubstring)
+		  alphabet: self alphabet
 ]
 
 { #category : 'accessing - restriction' }
@@ -1602,9 +1950,12 @@ BioSequence >> reverseComplement [
 
 { #category : 'accesing public - protein synthesis' }
 BioSequence >> reversed [
-	" Answer a copy of the receiver with element order reversed "
-	
-	^ self newPrototypeWith: seq reversed
+	"Answer a new BioSequence with characters in reverse order.
+	 Note: This is NOT reverse-complement, just reverse."
+
+	^ self class new
+		  initializeWith: self sequence reversed
+		  alphabet: self alphabet
 ]
 
 { #category : 'accessing - checksum' }
@@ -1660,6 +2011,16 @@ BioSequence >> sequenceRecord: anObject [
 	sequenceRecord := anObject
 ]
 
+{ #category : 'accessing - utilities' }
+BioSequence >> sequenceType [
+	"Answer the sequence type as a Symbol: #DNA, #RNA, or #Protein."
+
+	self isDNASequence ifTrue: [ ^ #DNA ].
+	self isRNASequence ifTrue: [ ^ #RNA ].
+	self isProteinSequence ifTrue: [ ^ #Protein ].
+	^ #Unknown
+]
+
 { #category : 'accessing' }
 BioSequence >> size [
 	" Answer how many symbols the receiver contains "
@@ -1685,6 +2046,45 @@ BioSequence >> splitByCodons [
 	"Answer a <Collection> with the receiver splitted at stop codons"
 	
 	^ self sequence findTokens: $*
+]
+
+{ #category : 'splitjoin' }
+BioSequence >> splitOn: aSeparator [
+	"Answer anArray of subsequences split by aSeparator."
+
+	^ (self sequence splitOn: aSeparator) collect: [ :s |
+		  self class new initializeWith: s alphabet: self alphabet ]
+]
+
+{ #category : 'enumerating' }
+BioSequence >> splitOn: aSeparator indicesDo: aBlock [
+	"Evaluate aBlock with each separator index found."
+
+	self sequence splitOn: aSeparator indicesDo: aBlock
+]
+
+{ #category : 'accessing - utilities' }
+BioSequence >> splitOn: aSeparator maxChunks: maxChunks [
+	"Split into at most maxChunks parts using aSeparator."
+
+	| parts remaining start pos |
+	parts := OrderedCollection new.
+	remaining := self sequence.
+	start := 1.
+	[ parts size < (maxChunks - 1) ] whileTrue: [
+			pos := remaining indexOfSubCollection: aSeparator startingAt: start.
+			pos = 0 ifTrue: [
+					parts add: remaining.
+					^ parts collect: [ :s |
+						  self class new initializeWith: s alphabet: self alphabet ] ].
+			parts add: (remaining copyFrom: 1 to: pos - 1).
+			remaining := remaining
+				             copyFrom: pos + aSeparator size
+				             to: remaining size.
+			start := 1 ].
+	parts add: remaining.
+	^ parts collect: [ :s |
+		  self class new initializeWith: s alphabet: self alphabet ]
 ]
 
 { #category : 'accessing private' }
@@ -1847,11 +2247,27 @@ BioSequence >> translationTable: aTableIdentifier stopSymbol: stopCharacter toSt
 	
 ]
 
+{ #category : 'growing' }
+BioSequence >> trim [
+	"Remove leading and trailing whitespace from sequence.
+	 Answer a new BioSequence."
+
+	^ self class new
+		  initializeWith: self sequence trimBoth
+		  alphabet: self alphabet
+]
+
 { #category : 'accessing public - utils' }
-BioSequence >> trim: aCharacter [
-	" Modify the receiver by removing aCharacter in its sequence "
-	
-	seq := seq copyWithout: aCharacter.
+BioSequence >> trim: chars [
+	"Remove leading and trailing characters in chars."
+
+	| trimmed |
+	trimmed := self sequence.
+	[ trimmed notEmpty and: [ chars includes: trimmed first ] ]
+		whileTrue: [ trimmed := trimmed copyFrom: 2 to: trimmed size ].
+	[ trimmed notEmpty and: [ chars includes: trimmed last ] ]
+		whileTrue: [ trimmed := trimmed copyFrom: 1 to: trimmed size - 1 ].
+	^ self class new initializeWith: trimmed alphabet: self alphabet
 ]
 
 { #category : 'accessing public - utils' }
@@ -1861,6 +2277,24 @@ BioSequence >> trimAmbiguityCodes [
 	self ambiguityCodes do: [ : ambCharacter |
 		self sequence copyWithout: ambCharacter ]
 
+]
+
+{ #category : 'trimming' }
+BioSequence >> trimLeft [
+	"Remove leading whitespace from sequence."
+
+	^ self class new
+		  initializeWith: self sequence trimLeft
+		  alphabet: self alphabet
+]
+
+{ #category : 'trimming' }
+BioSequence >> trimRight [
+	"Remove trailing whitespace from sequence."
+
+	^ self class new
+		  initializeWith: self sequence trimRight
+		  alphabet: self alphabet
 ]
 
 { #category : 'accessing - frequencies' }

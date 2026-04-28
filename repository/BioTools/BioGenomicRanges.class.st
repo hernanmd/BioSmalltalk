@@ -287,7 +287,7 @@ BioGenomicRanges >> at: anIndex [
 		      seqname: (self seqnames at: anIndex)
 		      start: (ranges startAt: anIndex)
 		      end: (ranges endAt: anIndex)
-		      strand: (self strand at: anIndex) symbol asString.
+		      strand: (self strand at: anIndex) asString.
 	gr metadata: md.
 	^ gr
 ]

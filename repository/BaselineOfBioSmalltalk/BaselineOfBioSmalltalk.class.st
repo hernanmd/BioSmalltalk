@@ -115,7 +115,9 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 			package: 'BioTools-Tests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioTools-Tests' ) ];
 			package: 'BioPhysics'        	with: [ spec requires: #('BioTools') ];
-			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ]
+			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ];
+			package: 'BioSummarizedExperiment' with: [ spec requires: #('BioTools' 'DataFrame') ];
+			package: 'BioSummarizedExperiment-Tests' with: [ spec requires: #('BioSummarizedExperiment') ]
 
 ]
 

@@ -50,7 +50,7 @@ In case of problems, check [Troubleshoot Install](./TROUBLESHOOT.md)
 
 # Contribute
 
-**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/courses/how-to-contribute-to-an-open-source-project-on-github)
 
 If you have discovered a bug or have a feature suggestion, feel free to create an issue on GitHub.
 If you have any suggestions for improving this package, please get in touch or submit them on the GitHub issues page.

@@ -5,250 +5,366 @@ Class {
 	#package : 'BioParsers-Tests'
 }
 
-{ #category : 'testing' }
-BioPhylipParserTest >> firstLineTokenizer [
-
-	^ BioPhylipParser new firstLineTokenizer 
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> phylipInterleavedDNA [
-
-	^ '  6   13    
-Archaeopt CGATGCTTAC CGCCGATGCT
-HesperorniCGTTACTCGT TGTCGTTACT
-BaluchitheTAATGTTAAT TGTTAATGTT
-B. virginiTAATGTTCGT TGTTAATGTT
-BrontosaurCAAAACCCAT CATCAAAACC
-B.subtilisGGCAGCCAAT CACGGCAGCC
-
-TACCGCCGAT GCTTACCGC
-CGTTGTCGTT ACTCGTTGT
-AATTGTTAAT GTTAATTGT
-CGTTGTTAAT GTTCGTTGT
-CATCATCAAA ACCCATCAT
-AATCACGGCA GCCAATCAC
-
-CCCCGCCCCC GCTTACCGC
-CCCCGTCCCC ACTCGTTGT
-CCCCGTCCCC GTTAATTGT
-CCCCGTCCCC GTTCGTTGT
-CCCCATCCCC ACCCATCAT
-CCCCACCCCC GCCAATCAC
-'
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> phylipInterleavedProtein [
-
-	^ ' 5 176
-cox2_leitaMAFILSFWMI FLLDSVIVLL SFVCFVCVWI CALLFSTVLL VSKLNNIYCT
-cox2_crifaMAFILSFWMI FLIDAVIVLL SFVCFVCIWI CSLFFSSFLL VSKINNVYCT
-cox2_bsaltMSFIISFWML FLIDSLIVLL SGAIFVCIWI CSLFFLCILF ICKLDYIFCS
-cox2_trybbMSFILTFWMI FLMDSIIVLI SFSIFLSVWI CALIIATVLT VTKINNIYCT
-cox2_tborrMLFFINQLLL LLVDTFVILE IFSLFVCVFI IVMYILFINY NIFLKNINVY
-
-WDFTASKFID VYWFTIGGMF SLGLLLRLCL LLYFGHLNFV SFDLCKVVGF
-WDFTASKFID AYWFTIGGMF VLCLLLRLCL LLYFGCLNFV SFDLCKVVGF
-WDFISAKFID LYWFTLGCLF IVCLLIRLCL LLYFSCLNFV CFDLCKCIGF
-WDFISSKFID TYWFVLGMMF ILCLLLRLCL LLYFSCINFV SFDLCKVIGF
-LDFIGSKYLD LYWFLIGIFF VIVLLIRLCL LLYYSWISLL IFDLCKIMGF
-
-QWYWVYFIFG ETTIFSNLIL ESDYMIGDLR LLQCNHVLTL LSLVIYKLWL
-QWYWVYFIFG ETTIFSNLIL ESDYLIGDLR LLQCNHVLTL LSLVIYKLWL
-QWYWVYFIFG ETTIFSNLIL ESDYLIGDLR LLQCNHVLTL LSLVIYKVWL
-QWYWVYFLFG ETTIFSNLIL ESDYLIGDLR ILQCNHVLTL LSLVIYKLWV
-QWYWIFFVFK ENVIFSNLLI ESDYWIGDLR LLQCNNTFNL ICLVVYKIWV
-
-SAVDVIHSFA ISSLGVKVEN LVAVMK
-SAVDVIHSFA VSSLGIKVDC IPGRCN
-SAIDVIHSFT LANLGIKVD? ?PGRCN
-SAVDVIHSFT ISSLGIKVEN PGRCNE
-TSIDVIHSFT ISTLGIKIDC IPGRCN
-'
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> speciesDNALineTokenizer [
-
-	^ BioPhylipParser new speciesDNALineTokenizer 
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> speciesDNANamedBlockTokenizer [
-
-	^ BioPhylipParser new speciesDNANamedBlockTokenizer 
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeDNASpeciesBlock01 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| speciesBlock expectedResult firstRecord |
-	
-	speciesBlock := 'Archaeopt CGATGCTTAC CGC
-HesperorniCGTTACTCGT TGT
-BaluchitheTAATGTTAAT TGT
-B. virginiTAATGTTCGT TGT
-BrontosaurCAAAACCCAT CAT
-B.subtilisGGCAGCCAAT CAC'.
-	expectedResult :=  #(#('Archaeopt ' 'CGATGCTTAC CGC' nil) #('Hesperorni' 'CGTTACTCGT TGT' nil) #('Baluchithe' 'TAATGTTAAT TGT' nil) #('B. virgini' 'TAATGTTCGT TGT' nil) #('Brontosaur' 'CAAAACCCAT CAT' nil)).
-	
-	parseResult := self speciesDNANamedBlockTokenizer parse: speciesBlock.
-	firstRecord := parseResult first.
-	
-	self assert: firstRecord first equals: 'Archaeopt '.
-	self assert: firstRecord second equals: 'CGATGCTTAC CGC'.
-
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeDNASpeciesBlock02 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| speciesBlock expectedResult firstRecord |
-	
-	speciesBlock := 'Archaeopt CGATGCTTAC CGC
-Hes       CGTTACTCGT TGT
-BaluchitheTAATGTTAAT TGT
-B. virginiTAATGTTCGT TGT
-BrontosaurCAAAACCCAT CAT
-B.subtilisGGCAGCCAAT CAC'.
-	expectedResult :=  #(
-		#('Archaeopt ' 'CGATGCTTAC CGC') 
-		#('Hesperorni' 'CGTTACTCGT TGT') 
-		#('Baluchithe' 'TAATGTTAAT TGT') 
-		#('B. virgini' 'TAATGTTCGT TGT') 
-		#('Brontosaur' 'CAAAACCCAT CAT')).
-
-	parseResult := self speciesDNANamedBlockTokenizer parse: speciesBlock.
-	firstRecord := parseResult first.
-	
-	self assert: firstRecord first equals: 'Archaeopt '.
-	self assert: firstRecord second equals: 'CGATGCTTAC CGC'.
-
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeDNASpeciesLine01 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| speciesLineBlock expectedResult |
-	
-	speciesLineBlock := 'Archaeopt CGATGCTTAC CGC'.
-	expectedResult := #('Archaeopt ' 'CGATGCTTACCGC').
-	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
-
-	self assert: (parseResult bioHasEqualElements: expectedResult ).
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeDNASpeciesLine02 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| speciesLineBlock expectedResult |
-	
-	speciesLineBlock := 'Archaeopt CGATGCTTACCGC'.	
-	expectedResult := #('Archaeopt ' 'CGATGCTTACCGC').
-	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
-		
-	self assert: (parseResult bioHasEqualElements: expectedResult).
-
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeDNASpeciesLine03 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| speciesLineBlock expectedResult |
-	
-	speciesLineBlock := 'B. virginiTAATGTTCGT TGT'.
-	expectedResult := #('B. virgini' 'TAATGTTCGTTGT').
-	parseResult := self speciesDNALineTokenizer parse: speciesLineBlock.
-
-	self assert: (parseResult bioHasEqualElements: expectedResult).
-
-]
-
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeFirstLine01 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| firstLine |
-	
-	firstLine := '6   13
+{ #category : 'as yet unclassified' }
+BioPhylipParserTest >> testAmbiguousDNAAlphabetDetection [
+	"Note: Ambiguous DNA codes like N, R, Y overlap with amino acid codes.
+	 BioSmalltalk detects such sequences as protein alphabet by default.
+	 This test verifies that sequences are still created correctly."
+	| phylip aln seq |
+	phylip := '2 10
+Seq1 AACGTGGNNA
+Seq2 CCGTATGGNN
 '.
-	parseResult := self firstLineTokenizer parse: firstLine.
-	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
-
+	aln := BioPhylipParser parseString: phylip.
+	seq := aln sequences first.
+	"Sequence is created and can be used regardless of alphabet detection"
+	self assert: seq size equals: 10.
+	self assert: (seq asString includesSubstring: 'NN')
 ]
 
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeFirstLine02 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| firstLine |
-	
-	firstLine := '      6   13
+{ #category : 'tests' }
+BioPhylipParserTest >> testAsPhylipStringRelaxed [
+
+	| phylip aln output |
+	phylip := '3 10
+Homo_sapiens AACGTGGCCA
+Pan_troglodytes CCGTATGGCC
+Gorilla GGCTTTGACC
 '.
-	parseResult := self firstLineTokenizer parse: firstLine.
-	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
-
+	aln := BioPhylipParser parseString: phylip.
+	output := BioPhylipParser new asPhylipStringRelaxed: aln.
+	self assert: (output includesSubstring: '3 10').
+	self assert: (output includesSubstring: 'Homo_sapiens').
+	self assert: (output includesSubstring: 'AACGTGGCCA')
 ]
 
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeFirstLine03 [
-	" Private - Answer a <String> with a sample phylip DNA "
-	
-	| firstLine |
-	
-	firstLine := '6   13    
+{ #category : 'tests' }
+BioPhylipParserTest >> testAutoDetectsInterleaved [
+
+	| phylip aln |
+	phylip := '2 20
+S1 ATGCTAGCTA
+S2 CCGCTAGCTA
+GCTAGCTAGC
+GCTAGCTAGC
 '.
-	parseResult := self firstLineTokenizer parse: firstLine.
-	self assert: (parseResult bioHasEqualElements: #('6' '13') ).
-
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 2.
+	self assert: aln numberOfBases equals: 20
 ]
 
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeInterleavedDNA [
-	" Private - Answer a <String> with a sample phylip DNA "
+{ #category : 'tests' }
+BioPhylipParserTest >> testAutoDetectsSequential [
 
-	| phylipString |
-	phylipString := self phylipInterleavedDNA.
-
-	parseResult := BioParser tokenizePhylipInterleavedDNA: phylipString.
-	self assert: parseResult size equals: 4.
-	self assert: parseResult first equals: 6.
-	self assert: parseResult second equals: 13.
-	self assert: (parseResult third bioHasEqualElements:
-			 #( 'Archaeopt ' 'Hesperorni' 'Baluchithe' 'B. virgini'
-			    'Brontosaur' 'B.subtilis' )).
-	self assert: (parseResult fourth bioHasEqualElements:
-			 #( 'CGATGCTTACCGCCGATGCTTACCGCCGATGCTTACCGCCCCCGCCCCCGCTTACCGC'
-			    'CGTTACTCGTTGTCGTTACTCGTTGTCGTTACTCGTTGTCCCCGTCCCCACTCGTTGT'
-			    'TAATGTTAATTGTTAATGTTAATTGTTAATGTTAATTGTCCCCGTCCCCGTTAATTGT'
-			    'TAATGTTCGTTGTTAATGTTCGTTGTTAATGTTCGTTGTCCCCGTCCCCGTTCGTTGT'
-			    'CAAAACCCATCATCAAAACCCATCATCAAAACCCATCATCCCCATCCCCACCCATCAT'
-			    'GGCAGCCAATCACGGCAGCCAATCACGGCAGCCAATCACCCCCACCCCCGCCAATCAC' ))
+	| phylip aln |
+	"Sequential: taxon data on consecutive lines, continuation lines have no name"
+	phylip := '2 20
+S1 ATGC
+GCTAGCTAGCTAGCTA
+S2 CCGC
+TAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 2.
+	self assert: aln numberOfBases equals: 20
 ]
 
-{ #category : 'testing' }
-BioPhylipParserTest >> testTokenizeInterleavedProtein [
+{ #category : 'tests' }
+BioPhylipParserTest >> testClassicStrict5Taxa [
 
-	| phylipString |
-	phylipString := self phylipInterleavedProtein.
-	parseResult := BioParser tokenizePhylipInterleavedProtein: phylipString.
+	| phylip aln |
+	phylip := '5 13
+Alpha     AACGTGGCCACAT
+Beta      AAGGTCGCCACAC
+Gamma     CAGTTCGCCACAA
+Delta     GAGATTTCCGCCT
+Epsilon   GAGATCTCCGCCC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 5.
+	self assert: aln numberOfBases equals: 13.
+	self assert: (aln sequenceNames includes: 'Alpha').
+	self assert: (aln sequenceNames includes: 'Epsilon').
+	self assert: aln sequences first asString equals: 'AACGTGGCCACAT'.
+	self assert: aln sequences last asString equals: 'GAGATCTCCGCCC'
+]
 
-	self assert: parseResult size equals: 4.
-	self assert: parseResult first equals: 5.
-	self assert: parseResult second equals: 176.
-	self assert: (parseResult third bioHasEqualElements:
-			 #( 'cox2_leita' 'cox2_crifa' 'cox2_bsalt' 'cox2_trybb'
-			    'cox2_tborr' )).
-	self assert: (parseResult fourth bioHasEqualElements:
-			 #( 'MAFILSFWMIFLLDSVIVLLSFVCFVCVWICALLFSTVLLVSKLNNIYCTWDFTASKFIDVYWFTIGGMFSLGLLLRLCLLLYFGHLNFVSFDLCKVVGFQWYWVYFIFGETTIFSNLILESDYMIGDLRLLQCNHVLTLLSLVIYKLWLSAVDVIHSFAISSLGVKVENLVAVMK'
-			    'MAFILSFWMIFLIDAVIVLLSFVCFVCIWICSLFFSSFLLVSKINNVYCTWDFTASKFIDAYWFTIGGMFVLCLLLRLCLLLYFGCLNFVSFDLCKVVGFQWYWVYFIFGETTIFSNLILESDYLIGDLRLLQCNHVLTLLSLVIYKLWLSAVDVIHSFAVSSLGIKVDCIPGRCN'
-			    'MSFIISFWMLFLIDSLIVLLSGAIFVCIWICSLFFLCILFICKLDYIFCSWDFISAKFIDLYWFTLGCLFIVCLLIRLCLLLYFSCLNFVCFDLCKCIGFQWYWVYFIFGETTIFSNLILESDYLIGDLRLLQCNHVLTLLSLVIYKVWLSAIDVIHSFTLANLGIKVD??PGRCN'
-			    'MSFILTFWMIFLMDSIIVLISFSIFLSVWICALIIATVLTVTKINNIYCTWDFISSKFIDTYWFVLGMMFILCLLLRLCLLLYFSCINFVSFDLCKVIGFQWYWVYFLFGETTIFSNLILESDYLIGDLRILQCNHVLTLLSLVIYKLWVSAVDVIHSFTISSLGIKVENPGRCNE'
-			    'MLFFINQLLLLLVDTFVILEIFSLFVCVFIIVMYILFINYNIFLKNINVYLDFIGSKYLDLYWFLIGIFFVIVLLIRLCLLLYYSWISLLIFDLCKIMGFQWYWIFFVFKENVIFSNLLIESDYWIGDLRLLQCNNTFNLICLVVYKIWVTSIDVIHSFTISTLGIKIDCIPGRCN' ))
+{ #category : 'as yet unclassified' }
+BioPhylipParserTest >> testDNAAlphabetDetection [
+	| phylip aln seq |
+	phylip := '2 10
+Seq1 AACGTGGCCA
+Seq2 CCGTATGGCA
+'.
+	aln := BioPhylipParser parseString: phylip.
+	seq := aln sequences first.
+	self assert: (seq alphabet class name) equals: #BioIUPACUnambiguousDNA
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testGapsAndAmbiguityCodes [
+
+	| phylip aln |
+	phylip := '3 10
+Seq1 AAC-GG??TN
+Seq2 CCN-AT???K
+Seq3 GGRYY??-KM
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 10.
+	self assert: aln sequences first asString equals: 'AAC-GG??TN'
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testInterleavedWithBlankLines [
+
+	| phylip aln |
+	phylip := '3 40
+Taxon1    ATGCTAGCTAGCTAGCTAGC
+Taxon2    CCGCTAGCTAGCTAGCTAGC
+Taxon3    GGGCTAGCTAGCTAGCTAGC
+
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 40
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testMinimalFile [
+
+	| phylip aln |
+	phylip := '2 1
+A T
+B G
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 2.
+	self assert: aln numberOfBases equals: 1.
+	self assert: aln sequences first asString equals: 'T'.
+	self assert: aln sequences last asString equals: 'G'
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testParserProperties [
+
+	| phylip aln |
+	phylip := '3 10
+Taxon1 AACGTGGCCA
+Taxon2 CCGTATGGCC
+Taxon3 GGCTTTGACC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 10.
+	self assert: (aln sequenceNames includes: 'Taxon1').
+	self assert: (aln sequenceNames includes: 'Taxon3')
+]
+
+{ #category : 'as yet unclassified' }
+BioPhylipParserTest >> testProteinAlphabetDetection [
+	| phylip aln seq |
+	phylip := '2 15
+Human   MVKQLEARKRPEQQE
+Mouse   MVKQLEARHRPEQQK
+'.
+	aln := BioPhylipParser parseString: phylip.
+	seq := aln sequences first.
+	self assert: (seq alphabet class name) equals: #BioIUPACProtein
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testProteinSequences [
+
+	| phylip aln |
+	"Protein sequences with amino acid codes"
+	phylip := '3 10
+Human MVKQLEARKR
+Mouse MVKQLEARHR
+Chicken GGCTTTGACC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 10.
+	self assert: (aln sequenceNames includes: 'Human')
+]
+
+{ #category : 'as yet unclassified' }
+BioPhylipParserTest >> testRNAAlphabetDetection [
+	| phylip aln seq |
+	phylip := '2 10
+Seq1 AACGUGGUUU
+Seq2 CCGUAUGGAU
+'.
+	aln := BioPhylipParser parseString: phylip.
+	seq := aln sequences first.
+	self assert: (seq alphabet class name) equals: #BioIUPACUnambiguousRNA
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testRelaxedInterleaved [
+
+	| phylip aln |
+	phylip := '3 40
+Homo_sapiens ATGCTAGCTAGCTAGCTAGC
+Pan_troglodytes CCGCTAGCTAGCTAGCTAGC
+Gorilla_gorilla GGGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 40.
+	self assert: (aln sequenceNames includes: 'Homo_sapiens').
+	self assert: (aln sequenceNames includes: 'Gorilla_gorilla')
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testRelaxedSequential [
+
+	| phylip aln |
+	phylip := '4 20
+Homo_sapiens AACGTGGCCACATACGTGGC
+Pan_troglodytes AAGGTCGCCACACAAGGTCC
+Gorilla_gorilla CAGTTCGCCACAACAGTTCC
+Pongo_abelii GAGATTTCCGCCTGAGATTT
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 4.
+	self assert: aln numberOfBases equals: 20.
+	self assert: (aln sequenceNames includes: 'Homo_sapiens').
+	self assert: (aln sequenceNames includes: 'Pongo_abelii')
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testRoundTripStrict [
+
+	| phylip aln output |
+	phylip := '3 10
+Taxon1   AACGTGGCCA
+Taxon2   CCGTATGGCC
+Taxon3   GGCTTTGACC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	output := BioPhylipParser new asPhylipStringStrict: aln.
+	self assert: (output includesSubstring: '3 10').
+	self assert: (output includesSubstring: 'Taxon1').
+	self assert: (output includesSubstring: 'AACGTGGCCA')
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testSequentialWithWrapping [
+
+	| phylip aln |
+	phylip := '3 40
+Taxon1    ATGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+Taxon2    CCGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+Taxon3    GGGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 40.
+	self assert: aln sequences first asString size equals: 40
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testSpacesInSequences [
+
+	| phylip aln |
+	phylip := '2 10
+Seq1 AACGTGGCCA
+Seq2 CCGTATGGCC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 2.
+	self assert: aln numberOfBases equals: 10.
+	self assert: aln sequences first asString equals: 'AACGTGGCCA'
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testStrictInterleaved [
+
+	| phylip aln |
+	phylip := '3 40
+Taxon1    ATGCTAGCTAGCTAGCTAGC
+Taxon2    CCGCTAGCTAGCTAGCTAGC
+Taxon3    GGGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+TAGCTAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 3.
+	self assert: aln numberOfBases equals: 40.
+	self
+		assert: aln sequenceNames asArray
+		equals: #( 'Taxon1' 'Taxon2' 'Taxon3' ).
+	self
+		assert: aln sequences first asString
+		equals: 'ATGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGC'
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testStrictSequential [
+
+	| phylip aln |
+	phylip := '5 13
+Alpha     AACGTGGCCACAT
+Beta      AAGGTCGCCACAC
+Gamma     CAGTTCGCCACAA
+Delta     GAGATTTCCGCCT
+Epsilon   GAGATCTCCGCCC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 5.
+	self assert: aln numberOfBases equals: 13.
+	self assert: (aln sequenceNames includes: 'Alpha').
+	self assert: (aln sequenceNames includes: 'Epsilon').
+	self assert: aln sequences first asString equals: 'AACGTGGCCACAT'
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testThreeBlockInterleaved [
+
+	| phylip aln |
+	phylip := '2 60
+S1 ATGCTAGCTAGCTAGCTAGCTAGCTAGCTA
+S2 ATGCTAGCTAGCTAGCTAGCTAGCTAGCTA
+GCTAGCTAGCTAGCTAGCTAGCTAGCTAGC
+GCTAGCTAGCTAGCTAGCTAGCTAGCTAGC
+'.
+	aln := BioPhylipParser parseString: phylip.
+	self assert: aln size equals: 2.
+	self assert: aln numberOfBases equals: 60.
+	self assert: aln sequences first asString size equals: 60
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testValidatorRejectsWrongSeqLength [
+
+	| phylip |
+	phylip := '2 10
+Seq1 AACGTG
+Seq2 CCGTAT
+'.
+	self should: [ BioPhylipParser parseString: phylip ] raise: Error
+]
+
+{ #category : 'tests' }
+BioPhylipParserTest >> testValidatorRejectsWrongTaxaCount [
+
+	| phylip |
+	phylip := '3 10
+Seq1 AACGTGGCCA
+Seq2 CCGTATGGCC
+'.
+	self should: [ BioPhylipParser parseString: phylip ] raise: Error
 ]

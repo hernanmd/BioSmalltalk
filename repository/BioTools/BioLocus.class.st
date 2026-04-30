@@ -23,9 +23,9 @@ Class {
 		'chrLocation',
 		'position'
 	],
-	#category : 'BioTools-Biological',
+	#category : 'BioTools-Genomic-Coordinates',
 	#package : 'BioTools',
-	#tag : 'Biological'
+	#tag : 'Genomic-Coordinates'
 }
 
 { #category : 'examples' }
@@ -51,50 +51,56 @@ BioLocus class >> newFrom: aStart to: anEnd chr: aChr [
 { #category : 'comparing' }
 BioLocus >> < aBioLocus [
 	"Sort by chromosome then start then end then name."
+
 	self chrLocation = aBioLocus chrLocation ifFalse: [
-		^ (self chrLocation ifNil: [ '' ]) < (aBioLocus chrLocation ifNil: [ '' ]) ].
-	self start = aBioLocus start ifFalse: [ ^ (self start ifNil: [ 0 ]) < (aBioLocus start ifNil: [ 0 ]) ].
-	self end = aBioLocus end ifFalse: [ ^ (self end ifNil: [ 0 ]) < (aBioLocus end ifNil: [ 0 ]) ].
+			^ (self chrLocation ifNil: [ '' ])
+			  < (aBioLocus chrLocation ifNil: [ '' ]) ].
+	self start = aBioLocus start ifFalse: [
+		^ (self start ifNil: [ 0 ]) < (aBioLocus start ifNil: [ 0 ]) ].
+	self end = aBioLocus end ifFalse: [
+		^ (self end ifNil: [ 0 ]) < (aBioLocus end ifNil: [ 0 ]) ].
 	^ (self name ifNil: [ '' ]) < (aBioLocus name ifNil: [ '' ])
 ]
 
 { #category : 'comparing' }
 BioLocus >> = anObject [
+
 	self == anObject ifTrue: [ ^ true ].
-	(self class = anObject class) ifFalse: [ ^ false ].
-	^ self name = anObject name
-		and: [ self chrLocation = anObject chrLocation
-		and: [ self start = anObject start
-		and: [ self end = anObject end
-		and: [ self value = anObject value ] ] ] ]
+	self class = anObject class ifFalse: [ ^ false ].
+	^ self name = anObject name and: [
+			  self chrLocation = anObject chrLocation and: [
+					  self start = anObject start and: [
+						  self end = anObject end and: [ self value = anObject value ] ] ] ]
 ]
 
 { #category : 'converting' }
 BioLocus >> asBedInterval [
 	"Answer a 0-based half-open interval pair suitable for BED-like exports.
 	Returns an Array {start0 . end0} or nil when no range is present."
+
 	self hasRange ifFalse: [ ^ nil ].
-	^ { self start - 1. self end }
+	^ {
+		  (self start - 1).
+		  self end }
 ]
 
 { #category : 'converting' }
 BioLocus >> asGffInterval [
 	"Answer an Array with 1-based closed coordinates {start . end}."
+
 	self hasRange ifFalse: [ ^ nil ].
-	^ { self start. self end }
+	^ {
+		  self start.
+		  self end }
 ]
 
 { #category : 'converting' }
 BioLocus >> asString [
 	" Answer a <String> representation of the receiver "
 
-	^ String
-		streamContents: [ :stream | 
-			stream
-				nextPutAll: self name
-				between: $[
-				and: $].
-			self printRangeOn: stream ]
+	^ String streamContents: [ :stream |
+			  stream nextPutAll: self name between: $[ and: $].
+			  self printRangeOn: stream ]
 ]
 
 { #category : 'accessing - public' }
@@ -118,10 +124,9 @@ BioLocus >> containsLocus: aBioLocus [
 
 	(aBioLocus isNil or: [ self hasRange not ]) ifTrue: [ ^ false ].
 	aBioLocus hasRange ifFalse: [ ^ false ].
-	((self chrLocation notNil 
-			and: [ aBioLocus chrLocation notNil ])
-				and: [ self chrLocation ~= aBioLocus chrLocation ]) 
-					ifTrue: [ ^ false ].
+	((self chrLocation notNil and: [ aBioLocus chrLocation notNil ])
+		 and: [ self chrLocation ~= aBioLocus chrLocation ]) 
+			ifTrue: [ 	^ false ].
 	^ self start <= aBioLocus start and: [ self end >= aBioLocus end ]
 ]
 
@@ -291,8 +296,9 @@ BioLocus >> printChrOn: aStream [
 
 { #category : 'printing' }
 BioLocus >> printLengthOn: aStream [
-	length notNil
-		ifTrue: [ aStream
+
+	length ifNotNil: [
+			aStream
 				space;
 				nextPutAll: self length asString ]
 ]
@@ -337,8 +343,9 @@ BioLocus >> printRangeOn: stream [
 
 { #category : 'printing' }
 BioLocus >> printValueOn: aStream [
-	value notNil
-		ifTrue: [ aStream
+
+	value ifNotNil: [
+			aStream
 				space;
 				nextPutAll: value asString ]
 ]
@@ -360,26 +367,29 @@ BioLocus >> rangeIncludes: aNumber [
 { #category : 'testing' }
 BioLocus >> rangeIncludes: posNumber chrLocation: chrNumber [
 	"Return true if chrNumber and posNumber lies in the interval between start and stop and chromosomic location ."
-	
-	^ (self start notNil and: [ self end notNil ]) and: [ self chrLocation = chrNumber and: [ self rangeIncludes: posNumber ] ]
+
+	^ (self start notNil and: [ self end notNil ]) and: [
+		  self chrLocation = chrNumber and: [ self rangeIncludes: posNumber ] ]
 ]
 
 { #category : 'private' }
 BioLocus >> recomputeLength [
 	"Recompute length from start/end using inclusive genomic coordinates."
-	(start isNil or: [ end isNil ])
-		ifTrue: [ length := nil ]
-		ifFalse: [ length := (end - start) + 1 ].
+
+	length := (start isNil or: [ end isNil ])
+		          ifTrue: [ nil ]
+		          ifFalse: [ end - start + 1 ].
 	^ length
 ]
 
 { #category : 'operations' }
 BioLocus >> shiftBy: anInteger [
 	"Shift range coordinates by anInteger bases."
+
 	self hasRange ifTrue: [
-		self start: self start + anInteger.
-		self end: self end + anInteger ].
-	position notNil ifTrue: [ position := position + anInteger ].
+			self start: self start + anInteger.
+			self end: self end + anInteger ].
+	position ifNotNil: [ position := position + anInteger ].
 	^ self
 ]
 
@@ -400,21 +410,25 @@ BioLocus >> start: aNumber [
 BioLocus >> unionWith: aBioLocus [
 	"Answer a new BioLocus spanning receiver and aBioLocus.
 	Requires compatible chromosomes when both are defined."
+
 	| newStart newEnd |
-	(self hasRange not or: [ aBioLocus isNil or: [ aBioLocus hasRange not ] ]) ifTrue: [ ^ nil ].
+	(self hasRange not or: [
+		 aBioLocus isNil or: [ aBioLocus hasRange not ] ]) ifTrue: [ ^ nil ].
 	((self chrLocation notNil and: [ aBioLocus chrLocation notNil ])
-		and: [ self chrLocation ~= aBioLocus chrLocation ]) ifTrue: [ ^ nil ].
+		 and: [ self chrLocation ~= aBioLocus chrLocation ]) ifTrue: [
+		^ nil ].
 	newStart := self start min: aBioLocus start.
 	newEnd := self end max: aBioLocus end.
 	^ self class new
-		name: (self name ifNil: [ aBioLocus name ]);
-		chrLocation: (self chrLocation ifNil: [ aBioLocus chrLocation ]);
-		from: newStart to: newEnd;
-		yourself
+		  name: (self name ifNil: [ aBioLocus name ]);
+		  chrLocation: (self chrLocation ifNil: [ aBioLocus chrLocation ]);
+		  from: newStart to: newEnd;
+		  yourself
 ]
 
-{ #category : 'accessing' }
+{ #category : 'evaluating' }
 BioLocus >> value [
+
 	^ value
 ]
 

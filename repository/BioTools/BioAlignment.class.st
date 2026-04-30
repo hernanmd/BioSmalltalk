@@ -195,6 +195,19 @@ BioAlignment >> collect: aBlock [
 	^ set collect: aBlock
 ]
 
+{ #category : 'scoring' }
+BioAlignment >> columnScore [
+	"Answer the column score - fraction of columns with all matching residues.
+    A column scores 1 if all residues match, 0 otherwise."
+
+	| matchingColumns |
+	matchingColumns := 0.
+	1 to: self numberOfBases do: [ :col |
+			(self isConservedAt: col) ifTrue: [
+				matchingColumns := matchingColumns + 1 ] ].
+	^ matchingColumns asFloat / self numberOfBases asFloat
+]
+
 { #category : 'accessing' }
 BioAlignment >> consensus [
 	" Consensus sequence is the calculated order of most frequent residues, either nucleotide or amino acid, found at each position in a sequence alignment. Only DNA and RNA sequences are valid. 
@@ -237,6 +250,12 @@ BioAlignment >> defaultConsensusStrategy [
 	^ BioDummyConsensusStrategy new
 ]
 
+{ #category : 'scoring' }
+BioAlignment >> defaultSubstitutionMatrix [
+
+	^ BioSubstitutionMatrix blosum62
+]
+
 { #category : 'enumerating' }
 BioAlignment >> do: aBlock [
 	" Evaluate aBlock with each of the receiver's set as the argument. "
@@ -255,6 +274,28 @@ BioAlignment >> do: aBlockClosure displayingProgress: aString [
 BioAlignment >> doWithIndex: aFullBlockClosure [ 
 
 	self sequences doWithIndex: aFullBlockClosure 
+]
+
+{ #category : 'scoring' }
+BioAlignment >> entropyAtColumn: colIndex [
+
+	| column counts total entropy |
+	column := self atColumn: colIndex.
+	counts := Dictionary new.
+	total := 0.
+	column do: [ :c |
+			(c ~= $- and: [ c isLetter ]) ifTrue: [
+					counts
+						at: c asUppercase
+						put: (counts at: c asUppercase ifAbsent: [ 0 ]) + 1.
+					total := total + 1 ] ].
+	total = 0 ifTrue: [ ^ 0.0 ].
+	entropy := 0.0.
+	counts valuesDo: [ :count |
+			| p |
+			p := count asFloat / total asFloat.
+			entropy := entropy + (p * p ln) ].
+	^ entropy negated
 ]
 
 { #category : 'accessing' }
@@ -277,6 +318,16 @@ BioAlignment >> initialize [
 
 	super initialize.
 	set := OrderedCollection new
+]
+
+{ #category : 'scoring' }
+BioAlignment >> isConservedAt: colIndex [
+
+	| column seen |
+	column := self atColumn: colIndex.
+	seen := Set new.
+	column do: [ :c | c ~= $- ifTrue: [ seen add: c asUppercase ] ].
+	^ seen size = 1
 ]
 
 { #category : 'testing' }
@@ -407,4 +458,58 @@ BioAlignment >> size [
 	"Answer how many sequences the receiver contains."
 	
 	^ set size
+]
+
+{ #category : 'scoring' }
+BioAlignment >> sumOfPairsAtColumn: colIndex matrix: matrix [
+	"Answer the sum-of-pairs score for a single column."
+
+	| column score |
+	column := self atColumn: colIndex.
+	score := 0.
+	1 to: column size do: [ :i |
+			i + 1 to: column size do: [ :j |
+					| c1 c2 |
+					c1 := column at: i.
+					c2 := column at: j.
+					(c1 = $- or: [ c2 = $- ])
+						ifTrue: [ score := score + matrix gapOpenPenalty ]
+						ifFalse: [ score := score + (matrix score: c1 with: c2) ] ] ].
+	^ score
+]
+
+{ #category : 'scoring' }
+BioAlignment >> sumOfPairsScore [
+	"Answer the Sum-of-Pairs (SP) score for the receiver's alignment.
+    The SP score is the sum of all pairwise alignment scores for each column.
+    Uses BLOSUM62 for proteins, nucleotide default for DNA."
+
+	| matrix total |
+	matrix := self defaultSubstitutionMatrix.
+	total := 0.
+	1 to: self numberOfBases do: [ :col |
+		total := total + (self sumOfPairsAtColumn: col matrix: matrix) ].
+	^ total
+]
+
+{ #category : 'scoring' }
+BioAlignment >> sumOfPairsScoreWithMatrix: aMatrix [
+	"Answer the Sum-of-Pairs score using the specified substitution matrix."
+
+	| total |
+	total := 0.
+	1 to: self numberOfBases do: [ :col |
+		total := total + (self sumOfPairsAtColumn: col matrix: aMatrix) ].
+	^ total
+]
+
+{ #category : 'scoring' }
+BioAlignment >> totalColumnScore [
+	"Answer the TC (Total Column) score - fraction of correctly aligned columns 
+    compared to a reference alignment. Returns 1.0 if no reference set."
+
+	| reference |
+	reference := self referenceAlignment.
+	reference ifNil: [ ^ 1.0 ].
+	^ self totalColumnScoreAgainst: reference
 ]

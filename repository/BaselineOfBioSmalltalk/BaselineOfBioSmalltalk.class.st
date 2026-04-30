@@ -33,6 +33,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 				projectSpecForDataDrameInspector: spec;
 				"projectSpecForProjectFramework: spec;"
 				projectSpecForStringExtensions: spec;
+				projectSpecForSmaCC: spec;
 				projectSpecForFileDialog: spec;
 				projectSpecForPolyMath: spec;
 				projectSpecForDataFrame: spec;
@@ -404,6 +405,14 @@ BaselineOfBioSmalltalk >> projectSpecForRoassal2: spec [
 		baseline: 'Roassal2' 
 		with: [ spec repository: 'github://ObjectProfile/Roassal2/src' ].
 
+]
+
+{ #category : 'specs' }
+BaselineOfBioSmalltalk >> projectSpecForSmaCC: spec [
+
+	spec
+		baseline: 'SmaCC' 
+		with: [ spec repository: 'github://j-brant/SmaCC/src' ]
 ]
 
 { #category : 'specs' }

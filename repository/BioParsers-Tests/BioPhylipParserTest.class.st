@@ -7,8 +7,7 @@ Class {
 
 { #category : 'testing' }
 BioPhylipParserTest >> firstLineTokenizer [
-
-	^ BioPhylipParser new firstLineTokenizer 
+    ^ BioPhylipSmaCCParser new firstLineTokenizer
 ]
 
 { #category : 'testing' }
@@ -71,13 +70,13 @@ TSIDVIHSFT ISTLGIKIDC IPGRCN
 { #category : 'testing' }
 BioPhylipParserTest >> speciesDNALineTokenizer [
 
-	^ BioPhylipParser new speciesDNALineTokenizer 
+	^ BioPhylipSmaCCParser new speciesDNALineTokenizer
 ]
 
 { #category : 'testing' }
 BioPhylipParserTest >> speciesDNANamedBlockTokenizer [
 
-	^ BioPhylipParser new speciesDNANamedBlockTokenizer 
+	^ BioPhylipSmaCCParser new speciesDNANamedBlockTokenizer
 ]
 
 { #category : 'testing' }

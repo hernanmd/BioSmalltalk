@@ -370,16 +370,16 @@ BioParser class >> tokenizeNcbiXmlEntrezSearchResult: aString nodes: aCollection
 
 { #category : 'parse-phylip' }
 BioParser class >> tokenizePhylipInterleavedDNA: aPhylipString [
-	" Parse aPhylipString and answer a BioPhylip object with contents filled "
-	
-	^ ( BioPhylipParser on: aPhylipString ) tokenizeInterleavedDNA
+    | parser |
+    parser := BioPhylipSmaCCParser on: aPhylipString readStream.
+    ^ parser parseInterleaved
 ]
 
 { #category : 'parse-phylip' }
 BioParser class >> tokenizePhylipInterleavedProtein: aPhylipString [
-	" Parse aPhylipString and answer a BioPhylip object with contents filled "
-	
-	^ ( BioPhylipParser on: aPhylipString ) tokenizeInterleavedProtein
+    | parser |
+    parser := BioPhylipSmaCCParser on: aPhylipString readStream.
+    ^ parser parseInterleaved
 ]
 
 { #category : 'parse-ncbi-identifiers' }

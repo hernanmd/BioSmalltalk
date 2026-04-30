@@ -17,12 +17,12 @@ Class {
 	#tag : 'PHYLIP'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'parsing' }
 BioPhylipParser class >> parseFile: aFileReference [
 	^ self new parseFile: aFileReference
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'parsing' }
 BioPhylipParser class >> parseString: aString [
 	^ self new parseString: aString
 ]

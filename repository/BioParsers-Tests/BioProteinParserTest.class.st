@@ -5,7 +5,7 @@ Class {
 	#package : 'BioParsers-Tests'
 }
 
-{ #category : 'accessing' }
+{ #category : 'running' }
 BioProteinParserTest >> setUp [
 
 	super setUp.

@@ -4,7 +4,6 @@ Class {
 	#instVars : [
 		'directives',
 		'features',
-		'sourceDirective',
 		'gffVersion'
 	],
 	#category : 'BioParsers-GFF3',

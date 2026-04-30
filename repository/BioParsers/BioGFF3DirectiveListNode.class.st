@@ -24,6 +24,11 @@ BioGFF3DirectiveListNode >> directives [
 	^ directives
 ]
 
+{ #category : 'as yet unclassified' }
+BioGFF3DirectiveListNode >> directives: aCollection [
+    directives := aCollection
+]
+
 { #category : 'generated-initialize-release' }
 BioGFF3DirectiveListNode >> initialize [
 	super initialize.

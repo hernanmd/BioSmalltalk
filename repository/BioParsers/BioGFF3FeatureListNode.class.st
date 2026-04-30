@@ -50,9 +50,6 @@ BioGFF3FeatureListNode >> lines [
 ]
 
 { #category : 'generated' }
-BioGFF3FeatureListNode >> lines: anOrderedCollection [
-
-	self setParents: self lines to: nil.
-	lines := anOrderedCollection.
-	self setParents: self lines to: self
+BioGFF3FeatureListNode >> lines: aCollection [
+    lines := aCollection
 ]

@@ -6,9 +6,9 @@ Class {
 }
 
 { #category : 'accessing' }
-BioGFF3Test >> baseDirectory [ 
+BioGFF3Test >> baseDirectory [
 
-	^ self testFilesFullDirectoryName / 'gff'.
+	^ self testFilesFullDirectoryName / 'gff3'
 ]
 
 { #category : 'accessing' }

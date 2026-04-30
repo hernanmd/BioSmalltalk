@@ -1876,6 +1876,12 @@ BioSequence >> randomLength: size for: anAlphabetClass [
 								nextPutAll: b asString ] ].
 ]
 
+{ #category : 'accessing - alphabet' }
+BioSequence >> reducedWith: aName [
+
+	^ (BioReducedAlphabetRegistry get: aName) reduce: self sequence
+]
+
 { #category : 'removing' }
 BioSequence >> removePrefix: aPrefix [
 	"Remove aPrefix if present at the start of the sequence.

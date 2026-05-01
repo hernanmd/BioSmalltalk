@@ -12,8 +12,8 @@ Represents an unique biological (in contrast to chemical) sample within a popula
     Implementation Points
 "
 Class {
-	#name : #BioSample,
-	#superclass : #BioMaterial,
+	#name : 'BioSample',
+	#superclass : 'BioMaterial',
 	#instVars : [
 		'identifier',
 		'descriptions',
@@ -22,10 +22,12 @@ Class {
 		'formatters',
 		'markers'
 	],
-	#category : #'BioSupport-Core'
+	#category : 'BioSupport-Core',
+	#package : 'BioSupport',
+	#tag : 'Core'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSample >> = aSample [
 	"Answer whether the receiver and anObject represent the same object."
 
@@ -36,7 +38,7 @@ BioSample >> = aSample [
 	^ self sequence = aSample sequence and: [ self identifier = aSample identifier ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> addGenotypes: aCollection [
 	" Add aCollection of genotypes to the receiver "
 	
@@ -44,7 +46,7 @@ BioSample >> addGenotypes: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> addTo: aPopulation withId: instanceNumber [
 
 	| builtId |
@@ -59,42 +61,42 @@ BioSample >> addTo: aPopulation withId: instanceNumber [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> currentNamingStrategy [
 	"Answer the value of currentNamingStrategy"
 
 	^ self defaultNamingStrategy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> defaultNamingStrategy [
 
 	^ BioStandardNaming 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> descriptions [
 	^ descriptions
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> descriptions: anObject [
 	descriptions := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> formatters [
 
 	^ formatters
 		ifNil: [ formatters := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> formatters: anObject [
 	formatters := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> frequency [
 	"Answer the value of frequency"
 
@@ -102,42 +104,42 @@ BioSample >> frequency [
 		ifNil: [ frequency := 0 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> frequency: anObject [
 	"Set the value of frequency"
 
 	frequency := anObject
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioSample >> hash [
 	" Private - hash is implemented because #= is implemented "
 
 	^ self sequence hash bitXor: self identifier hash
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> identifier [
 	"Answer the value of identifier"
 
 	^ identifier
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> identifier: aString [
 	"Set the value of identifier"
 
 	identifier := self nameFormatter format: aString
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioSample >> initialize [
 
 	super initialize.
 	self formatters add: BioStandardNaming new.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> markers [
 	" Answer a <Collection> of receiver's markers (possibly of <BioGenotypeCollection>) "
 	
@@ -145,25 +147,25 @@ BioSample >> markers [
 		ifNil: [ markers := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> markers: anObject [
 	markers := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> markersLocus [
 	" Answer a <Collection> with the receivers markers locus "
 	
 	^ self markers collect: #locus
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> nameFormatter [
 
 	^ self formatters detect: [: f | f isNamingFormat ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioSample >> printOn: aStream [
 
 	super printOn: aStream.
@@ -178,21 +180,21 @@ BioSample >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> sequence [
 	"Answer the value of sequence"
 
 	^ sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> sequence: anObject [
 	"Set the value of sequence"
 
 	sequence := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSample >> setNameFormatStandard [
 	" Use a standard null formatter "
 	

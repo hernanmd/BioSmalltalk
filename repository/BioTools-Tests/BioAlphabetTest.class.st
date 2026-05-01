@@ -9,6 +9,66 @@ Class {
 	#tag : 'Alphabets'
 }
 
+{ #category : 'tests' }
+BioAlphabetTest >> testCanTranslateDNAAlphabe [
+
+	self assert: BioDNAAlphabet new canTranslate
+]
+
+{ #category : 'test' }
+BioAlphabetTest >> testCanTranslateIUPACProtein [
+
+	self deny: BioIUPACProtein new canTranslate 
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACAmbiguousDNACodes [
+
+	self assert: (BioIUPACAmbiguousDNA new codes bioHasEqualElements: 'GATCRYWSMKHBVDN' ).
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACAmbiguousRNACodes [
+
+	self assert: BioIUPACAmbiguousRNA new codes asSet equals: 'GAUCRYWSMKHBVDN' asSet.
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACDNAExtendedCodes [
+
+	self assert: (BioIUPACDNAExtended new codes bioHasEqualElements: 'GATCBDSW').
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACProteinCodes [
+
+	self assert: BioIUPACProtein new codes asSet equals: 'ACDEFGHIKLMNPQRSTVWY' asSet.
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACProteinExtendedCodes [
+
+	self assert: BioIUPACProteinExtended new codes asSet equals: 'ACDEFGHIKLMNPQRSTVWYBXZJUO' asSet.
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACUnambiguousCodes [
+
+	self assert: (BioIUPACUnambiguousDNA new codes bioHasEqualElements: 'GATCN').
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACUnambiguousDNACodes [
+
+	self assert: (BioIUPACUnambiguousDNA new codes bioHasEqualElements: 'GATCN').
+]
+
+{ #category : 'tests' }
+BioAlphabetTest >> testIUPACUnambiguousRNACodes [
+
+	self assert: BioIUPACUnambiguousRNA new codes asSet equals: 'GAUC' asSet.
+]
+
 { #category : 'testing' }
 BioAlphabetTest >> testTranslation [
 

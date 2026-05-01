@@ -16,12 +16,66 @@ Class {
 		'locus',
 		'repeatStructure',
 		'maxMotifSize',
-		'minMotifSize'
+		'minMotifSize',
+		'flankingRegionLeft',
+		'flankingRegionRight',
+		'chromosome',
+		'strand',
+		'markerCode',
+		'motifSequence'
 	],
 	#category : 'BioTools-Repeats',
 	#package : 'BioTools',
 	#tag : 'Repeats'
 }
+
+{ #category : 'accessing' }
+BioRepeatSequence class >> countTandemRepeats: aMotif in: aSequence [
+	"Count consecutive tandem repeats of motif"
+
+	| count pos motifLen |
+	count := 0.
+	pos := 1.
+	motifLen := aMotif size.
+	[
+		pos <= (aSequence size - motifLen + 1) and: [
+			(aSequence copyFrom: pos to: pos + motifLen - 1) = aMotif ] ]
+		whileTrue: [
+				count := count + 1.
+				pos := pos + motifLen ].
+	^ count
+]
+
+{ #category : 'accessing' }
+BioRepeatSequence class >> findMotifsOfLength: len in: aSequence [
+	"Find potential repeat motifs of given length"
+
+	| motifs |
+	motifs := Set new.
+	1 to: aSequence size - len + 1 do: [ :i |
+	motifs add: (aSequence copyFrom: i to: i + len - 1) ].
+	^ motifs asArray select: [ :m |
+		  self countTandemRepeats: m in: aSequence > 1 ]
+]
+
+{ #category : 'accessing' }
+BioRepeatSequence class >> findRepeatsIn: aSequence motif: aMotifString [
+	"Find all occurrences of motif in sequence"
+
+	| positions currentPos |
+	positions := OrderedCollection new.
+	currentPos := 1.
+	[ currentPos <= (aSequence size - aMotifString size + 1) ]
+		whileTrue: [
+				(aSequence
+					 copyFrom: currentPos
+					 to: currentPos + aMotifString size - 1) = aMotifString
+					ifTrue: [
+							positions add: currentPos.
+							currentPos := currentPos + aMotifString size ]
+					ifFalse: [ currentPos := currentPos + 1 ] ].
+	^ positions asArray
+]
 
 { #category : 'instance creation' }
 BioRepeatSequence class >> name: nameString sequence: seqString motif: motifString repeats: repNumber [
@@ -64,6 +118,100 @@ BioRepeatSequence class >> newMotif: motifString repeats: repNumber [
 		yourself
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> alleleCount [
+	"Answer the number of alleles (1 or 2)"
+
+	self genotype alleleA ifNil: [ ^ 0 ].
+	self genotype alleleB ifNil: [ ^ 1 ].
+	^ 2
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> alleleDifference [
+	"Answer the size difference between alleles in bp"
+
+	^ (self genotype alleleA ifNil: [ 0 ])
+	  - (self genotype alleleB ifNil: [ 0 ]) abs
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> alleleSize [
+	"Answer the allele size in base pairs"
+
+	^ self motifSize * self repeats
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> alleleSizeWithFlanks [
+	"Answer total size including flanking regions"
+
+	^ self alleleSize + self leftFlankSize + self rightFlankSize
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> asGFFRow [
+	"Answer a GFF3 format row"
+
+	^ String streamContents: [ :s |
+			  s
+				  nextPutAll: (self chromosome ifNil: [ 'chr' ]);
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: 'BioSmalltalk';
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: 'tandem_repeat';
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: self start asString;
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: self end asString;
+				  nextPut: Character tab.
+			  s
+				  nextPut: $.;
+				  nextPut: Character tab.
+			  s
+				  nextPut: (self isForwardStrand
+						   ifTrue: [ $+ ]
+						   ifFalse: [ $- ]);
+				  nextPut: Character tab.
+			  s
+				  nextPut: $.;
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: 'motif=';
+				  nextPutAll: self motif.
+			  s
+				  nextPutAll: ';repeats=';
+				  nextPutAll: self repeats asString ]
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> asGenBankFeature [
+	"Answer a GenBank feature string"
+
+	^ String streamContents: [ :s |
+			  s
+				  nextPutAll: 'repeat_region';
+				  nextPut: Character tab.
+			  s
+				  nextPutAll: self start asString;
+				  nextPutAll: '..';
+				  nextPutAll: self end asString;
+				  cr.
+			  s
+				  nextPut: Character tab;
+				  nextPutAll: '/rpt_type=tandem';
+				  cr.
+			  s
+				  nextPut: Character tab;
+				  nextPutAll: '/rpt_unit_seq="';
+				  nextPutAll: self motif;
+				  nextPut: $" ]
+]
+
 { #category : 'converting' }
 BioRepeatSequence >> asString [
 	" Answer a <String> with the receiver's sequence "
@@ -84,6 +232,17 @@ BioRepeatSequence >> beSimpleRepeat [
 	self repeatStructure: #simple
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> chromosome [
+
+	^ chromosome
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> chromosome: aString [
+	chromosome := aString
+]
+
 { #category : 'accessing' }
 BioRepeatSequence >> end [
 	" Answer an <Integer> with the receiver's genotype end position "
@@ -96,6 +255,36 @@ BioRepeatSequence >> end: anObject [
 	" Set anObject as the receiver's genotype end position "
 	
 	^ self genotype end:  (self validatePosition: anObject)
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> expectedPCRSize [
+
+	^ self alleleSizeWithFlanks
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> flankingRegionLeft [
+	"Answer the left flanking region <String>"
+
+	^ flankingRegionLeft
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> flankingRegionLeft: aString [
+	flankingRegionLeft := aString
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> flankingRegionRight [
+	"Answer the right flanking region <String>"
+
+	^ flankingRegionRight
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> flankingRegionRight: aString [
+	flankingRegionRight := aString
 ]
 
 { #category : 'accessing' }
@@ -112,6 +301,13 @@ BioRepeatSequence >> genotype: aBioGenotype [
 	genotype := aBioGenotype
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> hasFlankingRegions [
+	"Answer true if flanking regions are defined"
+
+	^ flankingRegionLeft notNil or: [ flankingRegionRight notNil ]
+]
+
 { #category : 'testing' }
 BioRepeatSequence >> isCompoundRepeat [
 	" Answer <true> if receiver repeat structure is compound "
@@ -119,11 +315,63 @@ BioRepeatSequence >> isCompoundRepeat [
 	^ self repeatStructure = #compound
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isForwardStrand [
+
+	^ self strand = 1
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isHeterozygous [
+	"Answer true if genotype has two different alleles"
+
+	^ self genotype alleleA ~= self genotype alleleB
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isHomozygous [
+	"Answer true if genotype has same alleles"
+
+	^ self genotype alleleA = self genotype alleleB
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isInterruptedRepeat [
+	"Answer true if the repeat has interruptions"
+
+	^ self isPerfectRepeat not
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isPerfectRepeat [
+	"Answer true if the repeat is perfect (all motifs identical)"
+
+	| motif |
+	motif := self motif.
+	motif ifNil: [ ^ false ].
+	^ self repeatCopyNumber = self repeats
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> isReverseStrand [
+
+	^ self strand = -1
+]
+
 { #category : 'testing' }
 BioRepeatSequence >> isSimpleRepeat [
 	" Answer <true> if receiver repeat structure is simple "
 
 	^ self repeatStructure = #simple
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> leftFlankSize [
+	"Answer the size of the left flanking region"
+
+	^ flankingRegionLeft
+		  ifNil: [ 0 ]
+		  ifNotNil: [ flankingRegionLeft size ]
 ]
 
 { #category : 'accessing' }
@@ -147,6 +395,17 @@ BioRepeatSequence >> locusName [
 	^ self locus name
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> markerCode [
+
+	^ markerCode
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> markerCode: aString [
+	markerCode := aString
+]
+
 { #category : 'defaults' }
 BioRepeatSequence >> maxMotifSize [
 	" See comment in #defaultMotifRange "
@@ -165,17 +424,13 @@ BioRepeatSequence >> minMotifSize [
 
 { #category : 'accessing' }
 BioRepeatSequence >> motif [
-	" See comment in #sequence "
-
-	^ self sequence
+	"Answer the repeat motif"
+	^ motifSequence
 ]
 
 { #category : 'accessing' }
 BioRepeatSequence >> motif: aString [
-	" See comment in #sequence: "
-	
-	self assert: [ aString size between:  self minMotifSize and: self maxMotifSize ] description: 'Repeat sequence range check'.
-	self sequence: aString
+	motifSequence := aString
 ]
 
 { #category : 'defaults' }
@@ -188,10 +443,7 @@ BioRepeatSequence >> motifRange [
 
 { #category : 'accessing' }
 BioRepeatSequence >> motifSize [
-	" Answer a <Number> with the size of the repeat motif "
-	
-	^ self motif size
-
+	^ (self motif ifNil: [ ^ 0 ]) size
 ]
 
 { #category : 'private' }
@@ -237,6 +489,30 @@ BioRepeatSequence >> printOn: aStream [
 
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> referenceAllele [
+
+	^ self genotype alleleA
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> repeatCopyNumber [
+	"Calculate actual repeat count from the sequence"
+
+	| motif count pos |
+	motif := self motif.
+	motif ifNil: [ ^ 0 ].
+	count := 0.
+	pos := 1.
+	[ pos <= (self sequence size - motif size + 1) ] whileTrue: [
+			(self sequence copyFrom: pos to: pos + motif size - 1) = motif
+				ifTrue: [
+						count := count + 1.
+						pos := pos + motif size ]
+				ifFalse: [ pos := pos + 1 ] ].
+	^ count
+]
+
 { #category : 'accessing - private' }
 BioRepeatSequence >> repeatStructure [
 	^ repeatStructure
@@ -258,6 +534,24 @@ BioRepeatSequence >> repeats: anObject [
 	repeats := anObject
 ]
 
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> rightFlankSize [
+	"Answer the size of the right flanking region"
+
+	^ flankingRegionRight
+		  ifNil: [ 0 ]
+		  ifNotNil: [ flankingRegionRight size ]
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> sequenceWithFlanks [
+	"Answer the full sequence including flanking regions"
+	^ String streamContents: [ :s |
+		flankingRegionLeft ifNotNil: [ s nextPutAll: flankingRegionLeft ].
+		s nextPutAll: self asString.
+		flankingRegionRight ifNotNil: [ s nextPutAll: flankingRegionRight ] ]
+]
+
 { #category : 'accessing' }
 BioRepeatSequence >> start [
 	" Answer an <Integer> with the receiver's genotype start position "
@@ -270,6 +564,17 @@ BioRepeatSequence >> start: anObject [
 	" Set anObject as the receiver's genotype start position "
 	
 	^ self genotype start: (self validatePosition: anObject)
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> strand [
+
+	^ strand ifNil: [ strand := 1 ]
+]
+
+{ #category : 'as yet unclassified' }
+BioRepeatSequence >> strand: anInteger [
+	strand := anInteger
 ]
 
 { #category : 'private' }

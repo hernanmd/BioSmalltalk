@@ -1,6 +1,6 @@
-Extension { #name : #Dictionary }
+Extension { #name : 'Dictionary' }
 
-{ #category : #'*BioSupport' }
+{ #category : '*BioSupport' }
 Dictionary >> associationsDo: aBlock displayingProgress: aStringOrBlock [
 	"Evaluate aBlock for each of the receiver's elements (key/value associations)."
 
@@ -9,7 +9,7 @@ Dictionary >> associationsDo: aBlock displayingProgress: aStringOrBlock [
 
 ]
 
-{ #category : #'*BioSupport' }
+{ #category : '*BioSupport' }
 Dictionary >> associationsDo: aBlock displayingProgress: aStringOrBlock every: msecs [
 
 	| size labelBlock count oldLabel lastUpdate |

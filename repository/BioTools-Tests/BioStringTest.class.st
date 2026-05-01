@@ -44,52 +44,63 @@ BioStringTest >> testAsLowercase [
 { #category : 'testing' }
 BioStringTest >> testAsSequenceString [
 
-	self assert: '    ACTG ' asCondensedString = 'ACTG'.
-	self assert: String empty asCondensedString = String empty.
-	self assert: 'AC TG' asCondensedString = 'ACTG'.
-	self assert: ' A C T G ' asCondensedString = 'ACTG'.
-	
-	
-	self assert: 'ACTG
-' asCondensedString = 'ACTG'.
-	self assert: '
+	self assert: '    ACTG ' asCondensedString equals: 'ACTG'.
+	self assert: String empty asCondensedString equals: String empty.
+	self assert: 'AC TG' asCondensedString equals: 'ACTG'.
+	self assert: ' A C T G ' asCondensedString equals: 'ACTG'.
+	self
+		assert: 'ACTG
+' asCondensedString
+		equals: 'ACTG'.
+	self
+		assert: '
 
 ACTG
 
-' asCondensedString = 'ACTG'
-	
+' asCondensedString
+		equals: 'ACTG'
 ]
 
 { #category : 'testing' }
 BioStringTest >> testCopyUpToStartParenthesis [
 
-	self assert: 'this is a (test)' copyUpToStartParenthesis = 'this is a'.
-	self assert: 'this is another (test) (with several) parenthesis' copyUpToStartParenthesis = 'this is another'.
-	self assert: 'string without parenthesis' copyUpToStartParenthesis = 'string without parenthesis'.
-	self assert: String empty copyUpToStartParenthesis = String empty.
-
+	self
+		assert: 'this is a (test)' copyUpToStartParenthesis
+		equals: 'this is a'.
+	self
+		assert: 'this is another (test) (with several) parenthesis'
+				copyUpToStartParenthesis
+		equals: 'this is another'.
+	self
+		assert: 'string without parenthesis' copyUpToStartParenthesis
+		equals: 'string without parenthesis'.
+	self
+		assert: String empty copyUpToStartParenthesis
+		equals: String empty
 ]
 
 { #category : 'testing' }
 BioStringTest >> testForAlphabet [
 
 	| seq1 seq2 seq3 |
-	
 	seq1 := '    ACTG ' asSequenceForAlphabet: BioNullAlphabet.
-	self assert: ( seq1 isKindOf: BioSequence ).
-	self assert: seq1 asString = 'ACTG'.
-	self assert: ( seq1 alphabet isKindOf: BioNullAlphabet ).
-	
+	self assert: (seq1 isKindOf: BioSequence).
+	self assert: seq1 asString equals: 'ACTG'.
+	self assert: (seq1 alphabet isKindOf: BioNullAlphabet).
+
 	seq2 := 'ACNNNNTG' asSequenceForAlphabet: BioNullAlphabet.
-	self assert: ( seq2 isKindOf: BioSequence ).
-	self assert: seq2 asString = 'ACNNNNTG'.
-	self assert: ( seq2 alphabet isKindOf: BioNullAlphabet ).	
+	self assert: (seq2 isKindOf: BioSequence).
+	self assert: seq2 asString equals: 'ACNNNNTG'.
+	self assert: (seq2 alphabet isKindOf: BioNullAlphabet).
 
-	seq3 := 'TCAGTTACACACATCTGTCGAGACGTAAATTACGGATGAGTTATTCGCTACCTACATGCAAACGGAGCATCCATGTTCTTTATT' asSequenceForAlphabet: BioIUPACUnambiguousDNA.
-	self assert: ( seq3 isKindOf: BioSequence ).
-	self assert: seq3 asString = 'TCAGTTACACACATCTGTCGAGACGTAAATTACGGATGAGTTATTCGCTACCTACATGCAAACGGAGCATCCATGTTCTTTATT'. 
-	self assert: ( seq3 alphabet isKindOf: BioIUPACUnambiguousDNA ).
-
+	seq3 := 'TCAGTTACACACATCTGTCGAGACGTAAATTACGGATGAGTTATTCGCTACCTACATGCAAACGGAGCATCCATGTTCTTTATT'
+		        asSequenceForAlphabet: BioIUPACUnambiguousDNA.
+	self assert: (seq3 isKindOf: BioSequence).
+	self
+		assert: seq3 asString
+		equals:
+		'TCAGTTACACACATCTGTCGAGACGTAAATTACGGATGAGTTATTCGCTACCTACATGCAAACGGAGCATCCATGTTCTTTATT'.
+	self assert: (seq3 alphabet isKindOf: BioIUPACUnambiguousDNA)
 ]
 
 { #category : 'testing' }
@@ -133,10 +144,10 @@ BioStringTest >> testIncludesLike [
 	| testString01 |
 	
 	testString01 := 'hola buenos dias' findTokens: Character space.
-	self assert: ( testString01 includesLike: 'hole' ).
-	self assert: ( testString01 includesLike: 'holas' ).
-	self assert: ( testString01 includesLike: 'bueno' ).
-	self assert: ( testString01 includesLike: 'buenas' ).	
+	self assert: (testString01 includesLike: 'hole').
+	self assert: (testString01 includesLike: 'holas').
+	self assert: (testString01 includesLike: 'bueno').
+	self assert: (testString01 includesLike: 'buenas').	
 
 
 
@@ -156,7 +167,7 @@ BioStringTest >> testIndicesOfAscii [
 	self assert: (ind2 isKindOf: Collection).
 	self assert: ind2 asArray equals: #(2 3 6 7).
 	
-	self assert: ('' indicesOfCharacter: $-) isEmpty.
+	self assertEmpty: ('' indicesOfCharacter: $-).
 ]
 
 { #category : 'testing' }

@@ -27,7 +27,7 @@ BioGFF3DirectiveNode >> text: aSmaCCToken [
 	text := aSmaCCToken
 ]
 
-{ #category : 'generated' }
+{ #category : 'variables' }
 BioGFF3DirectiveNode >> tokenVariables [
 
 	^ #( #text )

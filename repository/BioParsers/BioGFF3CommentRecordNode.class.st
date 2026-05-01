@@ -27,7 +27,7 @@ BioGFF3CommentRecordNode >> text: aSmaCCToken [
 	text := aSmaCCToken
 ]
 
-{ #category : 'generated' }
+{ #category : 'variables' }
 BioGFF3CommentRecordNode >> tokenVariables [
 
 	^ #( #text )

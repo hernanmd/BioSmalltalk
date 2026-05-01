@@ -6,13 +6,13 @@ Class {
 	#tag : 'Core'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequenceAnalysisTest >> dnaSequence: aString [
 
 	^ BioSequence newDNA: aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'instance creation' }
 BioSequenceAnalysisTest >> newSeqRecord [
 
 	^ BioSeqRecord new
@@ -21,19 +21,19 @@ BioSequenceAnalysisTest >> newSeqRecord [
 		  yourself
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequenceAnalysisTest >> proteinSequence: aString [
 
 	^ BioSequence newProtein: aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequenceAnalysisTest >> rnaSequence: aString [
 
 	^ BioSequence newRNA: aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testATRatio [
 
 	| seq |
@@ -43,7 +43,7 @@ BioSequenceAnalysisTest >> testATRatio [
 	self assert: seq atRatio equals: 0.0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testAnnotationPreservesAll [
 
 	| rec |
@@ -64,7 +64,7 @@ BioSequenceAnalysisTest >> testAnnotationPreservesAll [
 	self assert: rec primaryAccession equals: 'NM_001'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testComposition [
 
 	| seq comp |
@@ -76,7 +76,7 @@ BioSequenceAnalysisTest >> testComposition [
 	self assert: (comp at: $G) equals: 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testCompositionWithFrequencies [
 
 	| seq comp |
@@ -86,7 +86,7 @@ BioSequenceAnalysisTest >> testCompositionWithFrequencies [
 	self assert: ((comp at: $A) at: #frequency) equals: 0.5
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testDates [
 
 	| rec |
@@ -96,7 +96,7 @@ BioSequenceAnalysisTest >> testDates [
 	self assert: rec dates size equals: 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testDefinition [
 
 	| rec |
@@ -105,7 +105,7 @@ BioSequenceAnalysisTest >> testDefinition [
 	self assert: rec definition equals: 'Test sequence for unit testing'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testDivision [
 
 	| rec |
@@ -114,7 +114,7 @@ BioSequenceAnalysisTest >> testDivision [
 	self assert: rec division equals: 'PRI'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testFeatureCount [
 
 	| rec |
@@ -125,7 +125,7 @@ BioSequenceAnalysisTest >> testFeatureCount [
 	self assert: rec featureCount equals: 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testGCRatio [
 
 	| seq |
@@ -137,7 +137,7 @@ BioSequenceAnalysisTest >> testGCRatio [
 	self assert: seq gcRatio equals: 0.5
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testKeywords [
 
 	| rec |
@@ -148,7 +148,7 @@ BioSequenceAnalysisTest >> testKeywords [
 	self assert: rec keywords first equals: 'hypothetical protein'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testNucleotideComposition [
 
 	| seq comp |
@@ -160,7 +160,7 @@ BioSequenceAnalysisTest >> testNucleotideComposition [
 	self assert: (comp at: $C) equals: 1
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testNucleotideCompositionRNA [
 
 	| seq comp |
@@ -172,7 +172,7 @@ BioSequenceAnalysisTest >> testNucleotideCompositionRNA [
 	self assert: (comp at: $C) equals: 1
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testOrganism [
 
 	| rec |
@@ -181,7 +181,7 @@ BioSequenceAnalysisTest >> testOrganism [
 	self assert: rec organism equals: 'Drosophila melanogaster'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testPrimaryAccession [
 
 	| rec |
@@ -190,7 +190,7 @@ BioSequenceAnalysisTest >> testPrimaryAccession [
 	self assert: rec primaryAccession equals: 'NM_12345'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testPrimaryAccessionDefaultsToId [
 
 	| rec |
@@ -199,7 +199,7 @@ BioSequenceAnalysisTest >> testPrimaryAccessionDefaultsToId [
 	self assert: rec primaryAccession equals: 'TEST001'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSecondaryAccessions [
 
 	| rec |
@@ -209,7 +209,7 @@ BioSequenceAnalysisTest >> testSecondaryAccessions [
 	self assert: rec secondaryAccessions size equals: 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSeqVersion [
 
 	| rec |
@@ -221,7 +221,7 @@ BioSequenceAnalysisTest >> testSeqVersion [
 	self assert: rec seqVersion equals: 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSequenceTypeDNA [
 
 	| seq |
@@ -229,7 +229,7 @@ BioSequenceAnalysisTest >> testSequenceTypeDNA [
 	self assert: seq sequenceType equals: #DNA
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSequenceTypeProtein [
 
 	| seq |
@@ -237,7 +237,7 @@ BioSequenceAnalysisTest >> testSequenceTypeProtein [
 	self assert: seq sequenceType equals: #Protein
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSequenceTypeRNA [
 
 	| seq |
@@ -245,7 +245,7 @@ BioSequenceAnalysisTest >> testSequenceTypeRNA [
 	self assert: seq sequenceType equals: #RNA
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSpecies [
 
 	| rec |
@@ -255,7 +255,7 @@ BioSequenceAnalysisTest >> testSpecies [
 	self assert: rec species equals: 'Homo sapiens'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSpeciesName [
 
 	| rec |
@@ -264,7 +264,7 @@ BioSequenceAnalysisTest >> testSpeciesName [
 	self assert: rec speciesName equals: 'Mus musculus'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testSpeciesNameFromOrganism [
 
 	| rec |
@@ -273,7 +273,7 @@ BioSequenceAnalysisTest >> testSpeciesNameFromOrganism [
 	self assert: rec speciesName equals: 'Escherichia coli'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceAnalysisTest >> testTaxonomy [
 
 	| rec |

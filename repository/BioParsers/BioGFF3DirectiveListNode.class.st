@@ -12,7 +12,7 @@ BioGFF3DirectiveListNode >> acceptVisitor: aGFF3FileVisitor [
 	^ aGFF3FileVisitor visitDirectiveList: self
 ]
 
-{ #category : 'generated' }
+{ #category : 'variables' }
 BioGFF3DirectiveListNode >> compositeNodeVariables [
 
 	^ #( #directives )
@@ -24,13 +24,15 @@ BioGFF3DirectiveListNode >> directives [
 	^ directives
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'generated' }
 BioGFF3DirectiveListNode >> directives: aCollection [
-    directives := aCollection
+
+	directives := aCollection
 ]
 
-{ #category : 'generated-initialize-release' }
+{ #category : 'initialization' }
 BioGFF3DirectiveListNode >> initialize [
+
 	super initialize.
-	directives := OrderedCollection new: 2.
+	directives := OrderedCollection new: 2
 ]

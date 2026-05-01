@@ -1,18 +1,20 @@
 Class {
-	#name : #BioMaterial,
-	#superclass : #BioNamedObject,
+	#name : 'BioMaterial',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'location'
 	],
-	#category : #'BioSupport-Core'
+	#category : 'BioSupport-Core',
+	#package : 'BioSupport',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMaterial >> location [
 	^ location
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMaterial >> location: anObject [
 	location := anObject
 ]

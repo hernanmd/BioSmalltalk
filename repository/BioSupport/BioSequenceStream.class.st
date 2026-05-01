@@ -5,12 +5,14 @@ Enables streaming behavior over biological sequence bases. You may use this clas
 
 "
 Class {
-	#name : #BioSequenceStream,
-	#superclass : #ReadWriteStream,
-	#category : 'BioSupport-Core'
+	#name : 'BioSequenceStream',
+	#superclass : 'ReadWriteStream',
+	#category : 'BioSupport-Core',
+	#package : 'BioSupport',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSequenceStream >> length [
 	" Answer an Integer of the number of bases in the receiver "
 

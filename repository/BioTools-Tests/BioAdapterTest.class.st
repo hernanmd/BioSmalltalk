@@ -70,11 +70,11 @@ BioAdapterTest >> stopTestWebServer [
 		ifTrue: [ BioWebServerEngine stopWebServer ]
 ]
 
-{ #category : 'accessing' }
+{ #category : 'running' }
 BioAdapterTest >> tearDown [
 
+	self stopTestWebServer.
 	super tearDown.
-	self stopTestWebServer
 ]
 
 { #category : 'testing' }
@@ -101,13 +101,10 @@ BioAdapterTest >> testAdapterClass [
 BioAdapterTest >> testFormatOSInterfaceAdapter [
 
 	| answer |
-	
 	answer := BioOSInterfaceEngine formatPlatformPath: 'C:\Archivos de Programa'.
-	
-	BioObject isRunningInWindows
-		ifTrue: [ self assert: answer = '"C:\Archivos de Programa"' ].
 
-
+	BioObject isRunningInWindows ifTrue: [
+		self assert: answer equals: '"C:\Archivos de Programa"' ]
 ]
 
 { #category : 'testing' }

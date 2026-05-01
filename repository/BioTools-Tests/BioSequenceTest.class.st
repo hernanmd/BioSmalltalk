@@ -152,6 +152,13 @@ BioSequenceTest >> testAsNumber [
 ]
 
 { #category : 'testing' }
+BioSequenceTest >> testAsSequence [
+
+	self assert: (5438 -> 8) asSequence equals: ('ACCCATTC' asSequence alphabet: BioDNAAlphabet new).
+	self assert: (5438 -> 7) asSequence equals: ('CCCATTC' asSequence alphabet: BioDNAAlphabet new)	
+]
+
+{ #category : 'testing' }
 BioSequenceTest >> testAsString [
 
 	| seqString |

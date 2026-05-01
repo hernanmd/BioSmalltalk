@@ -65,14 +65,14 @@ BioGenomicRangesTest >> testAsGFFRoundTrip [
 	out := gr asGFFString.
 	parsed := BioGenomicRanges fromGFF: out.
 	self assert: parsed size equals: 1.
-	self assert: (parsed start at: 1) equals: 5
+	self assert: parsed start first equals: 5
 ]
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testAtReturnsSingleRange [
 
 	| one |
-	one := self sampleGenomicRanges01 at: 1.
+	one := self sampleGenomicRanges01 first.
 	self assert: one start equals: 1.
 	self assert: one end equals: 5
 ]
@@ -109,7 +109,7 @@ BioGenomicRangesTest >> testCountOverlaps [
 		     strands: #( '+' '+' )
 		     metadata: Dictionary new.
 	counts := a countOverlaps: b.
-	self assert: (counts at: 1) equals: 1.
+	self assert: counts first equals: 1.
 	self assert: (counts at: 2) equals: 1
 ]
 
@@ -146,15 +146,18 @@ BioGenomicRangesTest >> testEmptyRanges [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testExampleGRangesFromBioconductorPaper [
+
 	| gr |
 	gr := BioGenomicRanges
-		seqnames: #('chr1' 'chr2' 'chr1')
-		starts: #(1 101 1001)
-		ends: #(100 200 1100)
-		strands: #('+' '-' '+')
-		metadata: (Dictionary new at: #score put: #(5 3 7); yourself).
+		      seqnames: #( 'chr1' 'chr2' 'chr1' )
+		      starts: #( 1 101 1001 )
+		      ends: #( 100 200 1100 )
+		      strands: #( '+' '-' '+' )
+		      metadata: (Dictionary new
+				       at: #score put: #( 5 3 7 );
+				       yourself).
 	self assert: gr size equals: 3.
-	self assert: (gr width at: 1) equals: 100.
+	self assert: gr width first equals: 100.
 	self assert: (gr seqnames at: 3) equals: 'chr1'
 ]
 
@@ -195,30 +198,33 @@ BioGenomicRangesTest >> testFindOverlapsStrandSensitive [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testFlipStrand [
+
 	| gr |
 	gr := self sampleGenomicRanges01 copy.
 	gr flipStrand.
-	self assert: ((gr strand at: 1) symbol) equals: #-.
-	self assert: ((gr strand at: 2) symbol) equals: #+
+	self assert: gr strand first symbol equals: #-.
+	self assert: (gr strand at: 2) symbol equals: #+
 ]
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testFromBED [
+
 	| bed gr |
 	bed := 'chr1	0	10	x	5	+'.
 	gr := BioGenomicRanges fromBED: bed.
 	self assert: gr size equals: 1.
 	self assert: (gr start at: 1) equals: 1.
-	self assert: (gr end at: 1) equals: 10
+	self assert: gr end first equals: 10
 ]
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testFromGFF [
+
 	| gff gr |
 	gff := 'chr1	src	gene	5	20	.	+	.	ID=g1'.
 	gr := BioGenomicRanges fromGFF: gff.
 	self assert: gr size equals: 1.
-	self assert: (gr start at: 1) equals: 5
+	self assert: gr start first equals: 5
 ]
 
 { #category : 'tests' }
@@ -232,7 +238,7 @@ BioGenomicRangesTest >> testIRangesWidth [
 
 	| ir |
 	ir := BioIRanges starts: #( 2 10 ) ends: #( 4 12 ).
-	self assert: (ir width at: 1) equals: 3.
+	self assert: ir width first equals: 3.
 	self assert: (ir width at: 2) equals: 3
 ]
 
@@ -248,7 +254,7 @@ BioGenomicRangesTest >> testMetadataCanContainObjects [
 				obj.
 				obj }
 		at: #sequence.
-	self assert: ((gr metadata at: #sequence) at: 1) identicalTo: obj
+	self assert: (gr metadata at: #sequence) first identicalTo: obj
 ]
 
 { #category : 'tests' }
@@ -269,7 +275,7 @@ BioGenomicRangesTest >> testOverlapWith [
 		     metadata: Dictionary new.
 	c := a overlapWith: b.
 	self assert: c size equals: 1.
-	self assert: (c start at: 1) equals: 1
+	self assert: c start first equals: 1
 ]
 
 { #category : 'tests' }
@@ -298,7 +304,7 @@ BioGenomicRangesTest >> testReduceMergesAdjacent [
 		      metadata: Dictionary new.
 	red := gr reduce.
 	self assert: red size equals: 1.
-	self assert: (red start at: 1) equals: 1.
+	self assert: red start first equals: 1.
 	self assert: (red end at: 1) equals: 10
 ]
 
@@ -309,7 +315,7 @@ BioGenomicRangesTest >> testReject [
 	gr := self sampleGenomicRanges01.
 	selected := gr reject: [ :r | r seqname = 'chr1' ].
 	self assert: selected size equals: 1.
-	self assert: (selected seqnames at: 1) equals: 'chr2'
+	self assert: selected seqnames first equals: 'chr2'
 ]
 
 { #category : 'tests' }
@@ -336,9 +342,10 @@ BioGenomicRangesTest >> testShiftMinusOperator [
 
 { #category : 'tests' }
 BioGenomicRangesTest >> testShiftPlusOperator [
+
 	| gr shifted |
 	gr := self sampleGenomicRanges01.
 	shifted := gr + 10.
-	self assert: (shifted start at: 1) equals: 11.
-	self assert: (shifted end at: 1) equals: 15
+	self assert: shifted start first equals: 11.
+	self assert: shifted end first equals: 15
 ]

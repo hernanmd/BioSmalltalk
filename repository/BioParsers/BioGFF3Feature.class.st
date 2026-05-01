@@ -34,7 +34,7 @@ BioGFF3Feature class >> fromFeatureLine: aNode [
 		  yourself
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'converting' }
 BioGFF3Feature >> asBioSequenceFeature [
 
 	| sf |
@@ -52,109 +52,128 @@ BioGFF3Feature >> asBioSequenceFeature [
 	^ sf
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> attributeAt: key [ ^ self attributesDict at: key ifAbsent: [ nil ]
+{ #category : 'accessing' }
+BioGFF3Feature >> attributeAt: key [
+
+	^ self attributesDict at: key ifAbsent: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> attributes [ ^ attributes
+{ #category : 'accessing' }
+BioGFF3Feature >> attributes [
+
+	^ attributes
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> attributes: aString [ attributes := aString. attributesDict := nil
+{ #category : 'accessing' }
+BioGFF3Feature >> attributes: aString [
+
+	attributes := aString.
+	attributesDict := nil
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> attributesDict [
 
 	^ attributesDict ifNil: [ attributesDict := self parseAttributes ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> derivesFrom [
 
 	^ self attributesDict at: 'Derives_from' ifAbsent: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> end [ ^ end
+{ #category : 'accessing' }
+BioGFF3Feature >> end [
+
+	^ end
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> end: aString [ end := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> end: aString [
+
+	end := aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> endInteger [
 
 	^ end ifNotNil: [ end asInteger ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> hasAttribute: key [ ^ self attributesDict includesKey: key
+{ #category : 'testing' }
+BioGFF3Feature >> hasAttribute: key [
+
+	^ self attributesDict includesKey: key
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> id [
 
 	^ self attributesDict at: 'ID' ifAbsent: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> isForwardStrand [ ^ strand = (String with: $+)
+{ #category : 'testing' }
+BioGFF3Feature >> isForwardStrand [
+
+	^ strand = (String with: $+)
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isMiRNAPrimaryTranscript [
 
 	^ self type = 'miRNA_primary_transcript'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isMiRNAType [
 
 	^ self type = 'miRNA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isOfCDSType [
 
 	^ self type = 'CDS'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isOfExonType [
 
 	^ self type = 'exon'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isOfGeneType [
 
 	^ self type = 'gene'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioGFF3Feature >> isOfMRNAType [
 
 	^ self type = 'mRNA'
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> isReverseStrand [ ^ strand = (String with: $-)
+{ #category : 'testing' }
+BioGFF3Feature >> isReverseStrand [
+
+	^ strand = (String with: $-)
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> isUnstranded [ ^ strand = (String with: $.)
+{ #category : 'testing' }
+BioGFF3Feature >> isUnstranded [
+
+	^ strand = (String with: $.)
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> name [
 
 	^ self attributesDict at: 'Name' ifAbsent: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> parentIds [
 
 	| p |
@@ -163,7 +182,7 @@ BioGFF3Feature >> parentIds [
 	^ p asArray
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'parsing' }
 BioGFF3Feature >> parseAttributes [
 
 	| dict pairs |
@@ -179,23 +198,31 @@ BioGFF3Feature >> parseAttributes [
 	^ dict
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> phase [ ^ phase
+{ #category : 'accessing' }
+BioGFF3Feature >> phase [
+
+	^ phase
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> phase: aString [ phase := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> phase: aString [
+
+	phase := aString
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> score [ ^ score
+{ #category : 'accessing' }
+BioGFF3Feature >> score [
+
+	^ score
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> score: aString [ score := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> score: aString [
+
+	score := aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> scoreFloat [
 
 	^ score = (String with: $.)
@@ -203,48 +230,68 @@ BioGFF3Feature >> scoreFloat [
 		  ifFalse: [ score asFloat ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> seqid [ ^ seqid
+{ #category : 'accessing' }
+BioGFF3Feature >> seqid [
+
+	^ seqid
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> seqid: aString [ seqid := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> seqid: aString [
+
+	seqid := aString
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> source [ ^ source
+{ #category : 'accessing' }
+BioGFF3Feature >> source [
+
+	^ source
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> source: aString [ source := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> source: aString [
+
+	source := aString
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> start [ ^ start
+{ #category : 'accessing' }
+BioGFF3Feature >> start [
+
+	^ start
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> start: aString [ start := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> start: aString [
+
+	start := aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioGFF3Feature >> startInteger [
 
 	^ start ifNotNil: [ start asInteger ]
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> strand [ ^ strand
+{ #category : 'accessing' }
+BioGFF3Feature >> strand [
+
+	^ strand
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> strand: aString [ strand := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> strand: aString [
+
+	strand := aString
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> type [ ^ type
+{ #category : 'accessing' }
+BioGFF3Feature >> type [
+
+	^ type
 ]
 
-{ #category : 'as yet unclassified' }
-BioGFF3Feature >> type: aString [ type := aString
+{ #category : 'accessing' }
+BioGFF3Feature >> type: aString [
+
+	type := aString
 ]

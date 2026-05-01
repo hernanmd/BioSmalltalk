@@ -30,7 +30,7 @@ BioGFF3FeatureListNode >> acceptVisitor: aGFF3FileVisitor [
 	^ aGFF3FileVisitor visitFeatureList: self
 ]
 
-{ #category : 'generated' }
+{ #category : 'variables' }
 BioGFF3FeatureListNode >> compositeNodeVariables [
 
 	^ #( #lines #_comments )

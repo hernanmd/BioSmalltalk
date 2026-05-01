@@ -40,7 +40,7 @@ BioRestriction class >> readGenBankAnnotationsAsDataFrame [
 		separator: Character tab
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioRestriction >> site [ 
 
 	self subclassResponsibility

@@ -342,6 +342,12 @@ BioGenomicRanges >> findOverlaps: anotherGR [
 ]
 
 { #category : 'accessing' }
+BioGenomicRanges >> first [
+
+	^ self at: 1
+]
+
+{ #category : 'accessing' }
 BioGenomicRanges >> flipStrand [
 	strands := (self strand collect: [ :s | s flip ]) asArray.
 	^ self

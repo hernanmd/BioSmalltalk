@@ -126,6 +126,18 @@ BioSeqRecord >> copySeqTo: stopInteger [
 	self sequence: (self sequence copyTo: stopInteger)
 ]
 
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> dates [
+	"Answer a Collection of dates associated with the record"
+	^ self annotationsAt: #dates ifAbsent: [ OrderedCollection new ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> dates: aCollection [
+	"Set the dates associated with the record"
+	self annotationsAt: #dates put: aCollection
+]
+
 { #category : 'accessing' }
 BioSeqRecord >> dbxRefs [
 	^ dbxRefs
@@ -150,6 +162,18 @@ BioSeqRecord >> defaultSequenceFeaturesClass [
 	^ OrderedCollection
 ]
 
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> definition [
+	"Answer the sequence definition (same as description)"
+	^ self description
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> definition: aString [
+	"Set the sequence definition (same as description:)"
+	self description: aString
+]
+
 { #category : 'accessing-sequence' }
 BioSeqRecord >> description [
 	^ description
@@ -158,6 +182,24 @@ BioSeqRecord >> description [
 { #category : 'accessing-sequence' }
 BioSeqRecord >> description: anObject [
 	description := anObject
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> division [
+	"Answer the GenBank division code (e.g., PRI, PLN, VRT)"
+	^ self annotationsAt: #division ifAbsent: [ nil ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> division: aString [
+	"Set the GenBank division code"
+	self annotationsAt: #division put: aString
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> featureCount [
+	"Answer the number of sequence features"
+	^ self sequenceFeatures size
 ]
 
 { #category : 'accessing - sequence features' }
@@ -214,6 +256,18 @@ BioSeqRecord >> initializeWith: aBioSequence [
 	seq := aBioSequence
 ]
 
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> keywords [
+	"Answer a Collection of keywords for the record"
+	^ self annotationsAt: #keywords ifAbsent: [ OrderedCollection new ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> keywords: aCollection [
+	"Set the keywords for the record"
+	self annotationsAt: #keywords put: aCollection
+]
+
 { #category : 'accessing - sequence annotations' }
 BioSeqRecord >> letterAnnotations [
 	" Answer a <Dictionary> with per-letter annotations. "
@@ -252,6 +306,36 @@ BioSeqRecord >> letterAnnotationsClass [
 	^ Dictionary
 ]
 
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> organism [
+	"Answer the organism name"
+	^ self annotationsAt: #organism ifAbsent: [ nil ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> organism: aString [
+	"Set the organism name"
+	self annotationsAt: #organism put: aString
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> primaryAccession [
+	"Answer the primary accession number. Defaults to id if not set."
+	^ self annotationsAt: #primaryAccession ifAbsent: [ self id ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> primaryAccession: aString [
+	"Set the primary accession number"
+	self annotationsAt: #primaryAccession put: aString
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> primaryAccessionDefaultsToId: aBoolean [
+	"Set whether primary accession should default to id"
+	self annotationsAt: #primaryAccessionDefaultsToId put: aBoolean
+]
+
 { #category : 'accessing - sequence annotations' }
 BioSeqRecord >> removeAnnotations [
 	" Completely remove all the annotations from the receiver "
@@ -285,6 +369,30 @@ BioSeqRecord >> removeSeqFeature: aBioSequenceFeature [
 	" Remove aBioSequenceFeature from the receiver "
 	
 	self sequenceFeatures remove: aBioSequenceFeature
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> secondaryAccessions [
+	"Answer a Collection of secondary accession numbers"
+	^ self annotationsAt: #secondaryAccessions ifAbsent: [ OrderedCollection new ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> secondaryAccessions: aCollection [
+	"Set the secondary accession numbers"
+	self annotationsAt: #secondaryAccessions put: aCollection
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> seqVersion [
+	"Answer the sequence version number"
+	^ self annotationsAt: #seqVersion ifAbsent: [ nil ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> seqVersion: anInteger [
+	"Set the sequence version number"
+	self annotationsAt: #seqVersion put: anInteger
 ]
 
 { #category : 'accessing-sequence' }
@@ -322,4 +430,40 @@ BioSeqRecord >> sequenceFeaturesClass [
 	
 	^ sequenceFeaturesClass
 		ifNil: [ sequenceFeaturesClass := self defaultSequenceFeaturesClass ] 
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> species [
+	"Answer the species name"
+	^ self annotationsAt: #species ifAbsent: [ nil ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> species: aString [
+	"Set the species name"
+	self annotationsAt: #species put: aString
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> speciesName [
+	"Answer the species name (alias for species or organism)"
+	^ self species ifNotNil: [ :s | s ] ifNil: [ self organism ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> speciesName: aString [
+	"Set the species name"
+	self species: aString
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> taxonomy [
+	"Answer a Collection of taxonomy entries"
+	^ self annotationsAt: #taxonomy ifAbsent: [ OrderedCollection new ]
+]
+
+{ #category : 'as yet unclassified' }
+BioSeqRecord >> taxonomy: aCollection [
+	"Set the taxonomy entries"
+	self annotationsAt: #taxonomy put: aCollection
 ]

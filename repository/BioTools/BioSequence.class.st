@@ -71,6 +71,16 @@ BioSequence class >> fromUmambiguousRNASequences: aCollection [
 	^ aCollection collect: [ : seqString | self newUnambiguousRNA: seqString ]
 ]
 
+{ #category : 'as yet unclassified' }
+BioSequence class >> generateJoin: aString repeat: repeatCount [
+	"Answer a String with the motif repeated repeatCount times"
+	
+	| result |
+	result := String new: (aString size * repeatCount) streamContents: [ :stream |
+		repeatCount timesRepeat: [ stream nextPutAll: aString ] ].
+	^ result
+]
+
 { #category : 'splitjoin' }
 BioSequence class >> join: aCollection [
 	"Join a collection of BioSequences (or strings) into one sequence."
@@ -896,6 +906,120 @@ BioSequence >> findHotspots [
 	
 ]
 
+{ #category : 'accessing - orf' }
+BioSequence >> findOrfsIn: aBioSequence strand: strand tableId: tableId minLength: minLength seqLen: seqLen orfs: orfs [
+	"Private - Find ORFs in a sequence for a specific strand"
+
+	| nucSeq |
+	nucSeq := aBioSequence asString.
+	0 to: 2 do: [ :frame |
+			| trans transLen aaStart |
+			trans := self
+				         translateSequence:
+				         (nucSeq copyFrom: frame + 1 to: nucSeq size)
+				         withTable: tableId.
+			transLen := trans size.
+
+			aaStart := 0.
+			[ aaStart < transLen ] whileTrue: [
+					| aaEnd proteinSeq orfStart orfEnd |
+					aaEnd := trans
+						         indexOf: $*
+						         startingAt: aaStart + 1
+						         ifAbsent: [ transLen + 1 ].
+					aaEnd := aaEnd - 1.
+
+					aaEnd - aaStart >= minLength ifTrue: [
+							proteinSeq := trans copyFrom: aaStart + 1 to: aaEnd.
+							strand = 1
+								ifTrue: [
+										orfStart := frame + (aaStart * 3) + 1.
+										orfEnd := frame + (aaEnd * 3) + 3 min: seqLen ]
+								ifFalse: [
+										orfStart := seqLen - frame - (aaEnd * 3) - 2.
+										orfEnd := seqLen - frame - (aaStart * 3) ].
+							orfs add: (BioORF
+									 start: orfStart
+									 end: orfEnd
+									 strand: strand
+									 protein: proteinSeq) ].
+					aaStart := aaEnd + 1 ] ]
+]
+
+{ #category : 'accessing - orf' }
+BioSequence >> findOrfsInSeq: nucString strand: strand tableId: tableId minLength: minLength seqLen: seqLen orfs: orfs [
+	"Private - Find ORFs in a nucleotide string for a specific strand."
+
+	0 to: 2 do: [ :frame |
+			| trans transLen aaStart |
+			trans := self
+				         translateSequence: (nucString allButFirst: frame)
+				         withTable: tableId.
+			transLen := trans size.
+
+			aaStart := 1.
+			[ aaStart <= transLen ] whileTrue: [
+					| aaEnd proteinSeq orfStart orfEnd |
+					aaEnd := trans
+						         indexOf: $*
+						         startingAt: aaStart
+						         ifAbsent: [ transLen + 1 ].
+
+					aaEnd - aaStart >= minLength ifTrue: [
+							proteinSeq := trans copyFrom: aaStart to: aaEnd - 1.
+
+							strand = 1
+								ifTrue: [
+										orfStart := frame + (aaStart - 1) * 3 + 1.
+										orfEnd := frame + (aaEnd - 1) * 3 + 3 min: seqLen ]
+								ifFalse: [
+										| rcStart rcEnd |
+										rcStart := frame + 1 + (aaStart - 1) * 3.
+										rcEnd := frame + 1 + (aaEnd - 1) * 3 + 2 min: seqLen.
+										orfStart := seqLen - rcEnd + 1.
+										orfEnd := seqLen - rcStart + 1 ].
+
+							orfs add: (BioORF
+									 start: orfStart
+									 end: orfEnd
+									 strand: strand
+									 protein: proteinSeq) ].
+
+					aaStart := aaEnd + 1 ] ]
+]
+
+{ #category : 'accessing - orf' }
+BioSequence >> findOrfsWithTranslationTable: tableId minProteinLength: minLength [
+	"Find all Open Reading Frames (ORFs) in the receiver.
+	Searches all six reading frames (both strands).
+	Returns an OrderedCollection of BioORF objects.
+	Coordinates are 1-based inclusive in the original forward sequence."
+
+	| orfs seqLen |
+	orfs := OrderedCollection new.
+	seqLen := self size.
+
+	"Forward strand"
+	self
+		findOrfsInSeq: self asString
+		strand: 1
+		tableId: tableId
+		minLength: minLength
+		seqLen: seqLen
+		orfs: orfs.
+
+	"Reverse strand"
+	self
+		findOrfsInSeq: self reverseComplement asString
+		strand: -1
+		tableId: tableId
+		minLength: minLength
+		seqLen: seqLen
+		orfs: orfs.
+
+	^ orfs asSortedCollection: [ :a :b | a start < b start ]
+]
+
 { #category : 'accessing' }
 BioSequence >> first: n [
 	"Answer a new BioSequence with the first n characters."
@@ -1089,6 +1213,18 @@ BioSequence >> gcg [
 			ifTrue: [ index := 0 ] ].
 
 	^ checksum \\ 10000.
+]
+
+{ #category : 'accessing - orf' }
+BioSequence >> generateJoin: aString repeat: repeatCount [
+	"Answer a String with the motif repeated repeatCount times"
+
+	| result |
+	result := String
+		          new: aString size * repeatCount
+		          streamContents: [ :stream |
+		          repeatCount timesRepeat: [ stream nextPutAll: aString ] ].
+	^ result
 ]
 
 { #category : 'testing' }
@@ -2151,6 +2287,20 @@ BioSequence >> translate [
 				cds: false)
 		alphabet: BioIUPACProtein new
 
+]
+
+{ #category : 'accessing - orf' }
+BioSequence >> translateSequence: aString withTable: tableId [
+	"Private - Translate a DNA string to protein string with stop codons as *"
+
+	^ String streamContents: [ :stream |
+			  1 to: aString size - 2 by: 3 do: [ :i |
+					  | codon |
+					  codon := aString copyFrom: i to: i + 2.
+					  (self codonTables isStopCodon: codon)
+						  ifTrue: [ stream nextPut: $* ]
+						  ifFalse: [
+						  stream nextPutAll: (self codonTables translate: codon) ] ] ]
 ]
 
 { #category : 'accesing public - protein synthesis' }

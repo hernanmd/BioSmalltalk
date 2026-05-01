@@ -117,17 +117,20 @@ BioAbstractAdapter class >> isPreferredAdapter [
 { #category : 'private' }
 BioAbstractAdapter class >> preferredAdapterClassForCurrentPlatform [
 	"Answer the adapter class that best matches the current image/platform.
-	Prefer modern subprocess engines on Pharo/GToolkit, keep legacy engines as fallback."
-
-	| os |
-	os := BioOSInterfaceEngine adapter.
-
-	(self isGTImage and: [ os isRunningInUnix ]) ifTrue: [
+	Prefer modern subprocess engines on Pharo/GToolkit, keep legacy engines as fallback.
+	
+	NOTE: Uses OSPlatform current directly to avoid infinite recursion.
+	Do NOT call BioOSInterfaceEngine adapter here!"
+	
+	| isUnix |
+	isUnix := OSPlatform current isUnix.
+	
+	(self isGTImage and: [ isUnix ]) ifTrue: [
 		^ BioGtUnixSubprocess ].
-
-	(self isPharoImage and: [ os isRunningInUnix ]) ifTrue: [
-		^ OSSUnixSubprocess ].
-
+	
+	(self isPharoImage and: [ isUnix ]) ifTrue: [
+		^ BioOSSubProcessExecutor ].
+	
 	^ nil
 ]
 

@@ -6,13 +6,13 @@ Class {
 	#tag : 'Core'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSequenceStringTest >> dnaSequence: aString [
 
 	^ BioSequence newDNA: aString
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testBeginsWith [
 
 	| seq |
@@ -23,7 +23,7 @@ BioSequenceStringTest >> testBeginsWith [
 	self deny: (seq beginsWith: 'ATCGATCGATCG')
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testCountSubstring [
 
 	| seq |
@@ -33,7 +33,7 @@ BioSequenceStringTest >> testCountSubstring [
 	self assert: (seq countSubstring: 'TTTT') equals: 0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testCountSubstringOverlapping [
 
 	| seq |
@@ -42,7 +42,7 @@ BioSequenceStringTest >> testCountSubstringOverlapping [
 	self assert: (seq countSubstring: 'AA' overlapping: true) equals: 3
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testDropFirst [
 
 	| seq sub |
@@ -51,7 +51,7 @@ BioSequenceStringTest >> testDropFirst [
 	self assert: sub sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testDropLast [
 
 	| seq sub |
@@ -60,7 +60,7 @@ BioSequenceStringTest >> testDropLast [
 	self assert: sub sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testEndsWith [
 
 	| seq |
@@ -71,7 +71,7 @@ BioSequenceStringTest >> testEndsWith [
 	self deny: (seq endsWith: 'GATCGATCG')
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testFirstN [
 
 	| seq sub |
@@ -80,7 +80,7 @@ BioSequenceStringTest >> testFirstN [
 	self assert: sub sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testFromTo [
 
 	| seq sub |
@@ -89,7 +89,7 @@ BioSequenceStringTest >> testFromTo [
 	self assert: sub sequence equals: 'TCGA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIncludesAnyOf [
 
 	| seq |
@@ -99,7 +99,7 @@ BioSequenceStringTest >> testIncludesAnyOf [
 	self deny: (seq includesAnyOf: 'XYZ')
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIncludesSubstring [
 
 	| seq |
@@ -109,7 +109,7 @@ BioSequenceStringTest >> testIncludesSubstring [
 	self deny: (seq includesSubstring: 'TTTT')
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIndexOf [
 
 	| seq |
@@ -119,7 +119,7 @@ BioSequenceStringTest >> testIndexOf [
 	self assert: (seq indexOf: 'XXX') equals: 0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIndexOfOrFail [
 
 	| seq |
@@ -128,7 +128,7 @@ BioSequenceStringTest >> testIndexOfOrFail [
 	self should: [ seq indexOfOrFail: 'XXX' ] raise: NotFound
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIndexOfStartingAt [
 
 	| seq |
@@ -139,7 +139,7 @@ BioSequenceStringTest >> testIndexOfStartingAt [
 	self assert: (seq indexOf: 'ATCG' startingAt: 10) equals: 0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIndexOfStartingAtEndingAt [
 
 	| seq |
@@ -156,7 +156,7 @@ BioSequenceStringTest >> testIndexOfStartingAtEndingAt [
 		equals: 0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIsAllLowercase [
 
 	| seq |
@@ -166,7 +166,7 @@ BioSequenceStringTest >> testIsAllLowercase [
 	self deny: seq isAllLowercase
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testIsAllUppercase [
 
 	| seq |
@@ -176,7 +176,7 @@ BioSequenceStringTest >> testIsAllUppercase [
 	self deny: seq isAllUppercase
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testJoin [
 
 	| seqs joined |
@@ -188,7 +188,7 @@ BioSequenceStringTest >> testJoin [
 	self assert: joined equals: 'ATCGTA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testJoinWithStrings [
 
 	| joined |
@@ -196,7 +196,7 @@ BioSequenceStringTest >> testJoinWithStrings [
 	self assert: joined equals: 'ATCGTA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testLastIndexOf [
 
 	| seq |
@@ -206,7 +206,7 @@ BioSequenceStringTest >> testLastIndexOf [
 	self assert: (seq lastIndexOf: 'XXX') equals: 0
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testLastIndexOfOrFail [
 
 	| seq |
@@ -215,7 +215,7 @@ BioSequenceStringTest >> testLastIndexOfOrFail [
 	self should: [ seq lastIndexOfOrFail: 'XXX' ] raise: NotFound
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testLastIndexOfStartingAt [
 
 	| seq |
@@ -225,7 +225,7 @@ BioSequenceStringTest >> testLastIndexOfStartingAt [
 	self assert: (seq lastIndexOf: 'ATCG' startingAt: 4) equals: 1
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testLastN [
 
 	| seq sub |
@@ -234,7 +234,7 @@ BioSequenceStringTest >> testLastN [
 	self assert: sub sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testPadLeft [
 
 	| seq padded |
@@ -243,7 +243,7 @@ BioSequenceStringTest >> testPadLeft [
 	self assert: padded sequence equals: '----ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testPadLeftNoPaddingNeeded [
 
 	| seq padded |
@@ -252,7 +252,7 @@ BioSequenceStringTest >> testPadLeftNoPaddingNeeded [
 	self assert: padded sequence equals: 'ATCGATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testPadRight [
 
 	| seq padded |
@@ -261,7 +261,7 @@ BioSequenceStringTest >> testPadRight [
 	self assert: padded sequence equals: 'ATCG----'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testRemovePrefix [
 
 	| seq result |
@@ -270,7 +270,7 @@ BioSequenceStringTest >> testRemovePrefix [
 	self assert: result sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testRemovePrefixNotPresent [
 
 	| seq result |
@@ -279,7 +279,7 @@ BioSequenceStringTest >> testRemovePrefixNotPresent [
 	self assert: result sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testRemoveSuffix [
 
 	| seq result |
@@ -288,7 +288,7 @@ BioSequenceStringTest >> testRemoveSuffix [
 	self assert: result sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testRemoveSuffixNotPresent [
 
 	| seq result |
@@ -297,7 +297,7 @@ BioSequenceStringTest >> testRemoveSuffixNotPresent [
 	self assert: result sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testReplaceAllOccurrences [
 
 	| seq replaced |
@@ -306,7 +306,7 @@ BioSequenceStringTest >> testReplaceAllOccurrences [
 	self assert: replaced sequence equals: 'AAAAAAAA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testReplaceWith [
 
 	| seq replaced |
@@ -315,7 +315,7 @@ BioSequenceStringTest >> testReplaceWith [
 	self assert: replaced sequence equals: 'TTTGTTTG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testReversed [
 
 	| seq rev |
@@ -324,7 +324,7 @@ BioSequenceStringTest >> testReversed [
 	self assert: rev sequence equals: 'GCTA'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testSplitOn [
 
 	| seq parts |
@@ -336,7 +336,7 @@ BioSequenceStringTest >> testSplitOn [
 	self assert: parts last sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testSplitOnEmpty [
 
 	| seq parts |
@@ -346,7 +346,7 @@ BioSequenceStringTest >> testSplitOnEmpty [
 	self assert: parts first sequence equals: ''
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testSplitOnMaxChunks [
 
 	| seq parts |
@@ -358,7 +358,7 @@ BioSequenceStringTest >> testSplitOnMaxChunks [
 	self assert: parts last sequence equals: 'AT-CG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testTrim [
 
 	| seq trimmed |
@@ -367,7 +367,7 @@ BioSequenceStringTest >> testTrim [
 	self assert: trimmed sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testTrimChars [
 
 	| seq trimmed |
@@ -376,7 +376,7 @@ BioSequenceStringTest >> testTrimChars [
 	self assert: trimmed sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testTrimLeft [
 
 	| seq trimmed |
@@ -385,7 +385,7 @@ BioSequenceStringTest >> testTrimLeft [
 	self assert: trimmed sequence equals: 'ATCG '
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testTrimNoWhitespace [
 
 	| seq trimmed |
@@ -394,7 +394,7 @@ BioSequenceStringTest >> testTrimNoWhitespace [
 	self assert: trimmed sequence equals: 'ATCG'
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'tests' }
 BioSequenceStringTest >> testTrimRight [
 
 	| seq trimmed |

@@ -157,6 +157,11 @@ String >> dumpToStream: aStream [
 ]
 
 { #category : '*BioTools' }
+String >> endsWithCaseInsensitive: aString [
+    ^ self asLowercase endsWith: aString asLowercase
+]
+
+{ #category : '*BioTools' }
 String >> hasAmbiguousDNABases [
 	" Answer <true> if receiver contains ambiguity codes "
 	

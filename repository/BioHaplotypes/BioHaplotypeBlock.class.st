@@ -31,7 +31,6 @@ Class {
 		'markerNumbers',
 		'tagSnps',
 		'haplotypes',
-		'crossingLines',
 		'correlation'
 	],
 	#category : 'BioHaplotypes-Core',

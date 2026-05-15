@@ -4,19 +4,21 @@ Writer for Arlequin Software project files.
 
 "
 Class {
-	#name : #BioArlequinFormatter,
-	#superclass : #BioMatrixFormatter,
-	#category : #'BioArlequin-Core'
+	#name : 'BioArlequinFormatter',
+	#superclass : 'BioMatrixFormatter',
+	#category : 'BioArlequin-Core',
+	#package : 'BioArlequin',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFormatter class >> description [
 	" See superimplementor's comment "
 	
 	^ 'Arlequin Formatter/Writer'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFormatter class >> formatExtension [
 	"Answer a <String> corresponding for the receiver's file output format"
 
@@ -24,14 +26,14 @@ BioArlequinFormatter class >> formatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFormatter class >> identifiers [
 	" Answer a <Collection> of identifiers of the receiver "
 	
 	^ #('Arlequin')
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFormatter >> beforeExport: aPCTView [
 	" See superimplementor's comment "
 
@@ -41,7 +43,7 @@ BioArlequinFormatter >> beforeExport: aPCTView [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFormatter >> beforeExportView: anObject [
 	
 	^ self isPhyloclassTalk
@@ -49,7 +51,7 @@ BioArlequinFormatter >> beforeExportView: anObject [
 		ifFalse: [ self beforeExportViewBioSmalltalk: anObject ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFormatter >> beforeExportViewBioSmalltalk: aPCTView [
 
 	| labelText answer|
@@ -62,7 +64,7 @@ BioArlequinFormatter >> beforeExportViewBioSmalltalk: aPCTView [
 			false ] 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFormatter >> exportFrom: aBioClassifier [
 
 	BioArlequinFile

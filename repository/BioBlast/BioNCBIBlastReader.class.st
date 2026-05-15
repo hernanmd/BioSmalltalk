@@ -4,29 +4,31 @@ Represents a reader over a collection of NCBI BLAST hits.
 It contains a `Collection` of _High Scoring Pairs_ XML node names, which will be the ones ""catched"" by the receiver.
 "
 Class {
-	#name : #BioNCBIBlastReader,
-	#superclass : #BioNCBIReader,
+	#name : 'BioNCBIBlastReader',
+	#superclass : 'BioNCBIReader',
 	#instVars : [
 		'selectedNodes',
 		'parsingStrategy'
 	],
-	#category : #'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> allNodeNames [
 	"Answer a <Collection> of <String> with all the receiver's node names"
 
 	^ self allNodes keys
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> allNodes [
 	
 	^ self hitNodes , self hitHspsNodes
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> headerNodes [
 
 	^ Dictionary new
@@ -46,7 +48,7 @@ BioNCBIBlastReader class >> headerNodes [
 		  yourself
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> hitHspsNodes [
 
 	" Answer a Dictionary with key containing a String with the HSP node name and a description String as value "
@@ -87,14 +89,14 @@ BioNCBIBlastReader class >> hitHspsNodes [
 		  yourself
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> hitHspsNodesNames [
 	" Answer a Dictionary with key containing a String with the HSP node name and a description String as value "
 	
 	^ self hitHspsNodes keys
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> hitNodes [
 	" Answer a <Dictionary> mapping XML node names with a useful description "
 
@@ -128,13 +130,13 @@ BioNCBIBlastReader class >> hitNodes [
 		  yourself
 ]
 
-{ #category : #'accessing-nodes' }
+{ #category : 'accessing-nodes' }
 BioNCBIBlastReader class >> hitNodesNames [
 
 	^ self allNodes keys
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader class >> isPreferredFor: aString [
 	" Answer <true> if aString is the most appropriate content for the receiver "
 	
@@ -142,7 +144,7 @@ BioNCBIBlastReader class >> isPreferredFor: aString [
 
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> alignments [
 	"Answer a <BioAlignment> of receiver's alignment (for the database) in each receiver's HSP node"
 	
@@ -161,7 +163,7 @@ BioNCBIBlastReader >> alignments [
 	^ align
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastDbName [
 	" Answer a String with the database name used to perform the BLAST "
 
@@ -172,7 +174,7 @@ BioNCBIBlastReader >> blastDbName [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastHeader [
 	" Answer a String with the parser receiver's contents header "
 
@@ -180,7 +182,7 @@ BioNCBIBlastReader >> blastHeader [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastProgramName [
 	" Answer a String with the program name used to perform the BLAST "
 
@@ -191,7 +193,7 @@ BioNCBIBlastReader >> blastProgramName [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastProgramVersion [
 	" Answer a String with the program name used to perform the BLAST "
 
@@ -202,7 +204,7 @@ BioNCBIBlastReader >> blastProgramVersion [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastQueryDef [
 	" Answer a String with the query definition line of the BLAST "
 
@@ -213,7 +215,7 @@ BioNCBIBlastReader >> blastQueryDef [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastQueryId [
 	" Answer a String with the query ID of the BLAST "
 
@@ -224,7 +226,7 @@ BioNCBIBlastReader >> blastQueryId [
 	
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> blastQueryLength [
 	" Answer a String with the query length of the BLAST "
 
@@ -235,7 +237,7 @@ BioNCBIBlastReader >> blastQueryLength [
 	
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> dbName [
 	" Answer a Symbol of the database used for the receiver's search "
 	" #nuccore "
@@ -243,7 +245,7 @@ BioNCBIBlastReader >> dbName [
 	^ self blastDbName
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> defaultFilterClass [
 	" Answer a Class acting as a default filter to handle filtered results and updates.
 	See comments in BioFilter class "
@@ -251,14 +253,14 @@ BioNCBIBlastReader >> defaultFilterClass [
 	^ BioBlastFilter
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIBlastReader >> downloadGenBankRecords [
 	" On-Line version. Answer <true> if downloading was successfull "
 	
 	^ self downloadGenBankRecords: self contents.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> downloadGenBankRecords: aBioResultObjet [
 	" On-Line version. Answer <true> if downloading was successfull "
 	
@@ -274,20 +276,20 @@ BioNCBIBlastReader >> downloadGenBankRecords: aBioResultObjet [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> exportTo: aBioFormatter [ 
 
 	aBioFormatter exportFromReader: self
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> genBankReaderClass [
 
 	^ BioNCBIGenBankReader
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIBlastReader >> genBankRecordsAsFlat [
 	" Private - Answer a Collection of GenBank records in GenBank Flat File Format using the gene identifiers from the receiver's contents "
 	
@@ -298,7 +300,7 @@ BioNCBIBlastReader >> genBankRecordsAsFlat [
 
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIBlastReader >> genBankRecordsAsXML [
 	" Query the Entrez system using the receiver's gene identifiers list.
 		Answer a XML String with the results. 
@@ -313,7 +315,7 @@ BioNCBIBlastReader >> genBankRecordsAsXML [
 		ifFalse: [ self searchResults collect: #result ]
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIBlastReader >> genBankRecordsFrom: dbSymbol format: formatSymbol [
 
 	self nextReader: self genBankReaderClass new.
@@ -324,7 +326,7 @@ BioNCBIBlastReader >> genBankRecordsFrom: dbSymbol format: formatSymbol [
 
 ]
 
-{ #category : #'accessing-blast-filters' }
+{ #category : 'accessing-blast-filters' }
 BioNCBIBlastReader >> giList [
 	" Answer a <Collection> with the gene identifiers numbers from the receiver's results.
 	Example output: #('256041716' '256041695' '256041622' ... )"
@@ -335,21 +337,21 @@ BioNCBIBlastReader >> giList [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> giListIdentifiers [
 	"Parse the receiver's GI identifiers and answer them in a <Collection>"
 
 	^ self hitIdentifiers selectGeneIdentifiers
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReader >> hasQuerySequence [
 	" Answer <true> if receiver is a valid sequence "
 
 	^ self querySequence notNil and: [ self querySequence notEmpty ]
 ]
 
-{ #category : #'accessing-blast-meta' }
+{ #category : 'accessing-blast-meta' }
 BioNCBIBlastReader >> headerContents [
 	" Answer a String containing the header contents of the receiver.
 	This is to avoid reading the entire file (which could be huge) to
@@ -361,7 +363,7 @@ BioNCBIBlastReader >> headerContents [
 	
 ]
 
-{ #category : #'accessing-blast-filters' }
+{ #category : 'accessing-blast-filters' }
 BioNCBIBlastReader >> hitAccessions [
 	" Answer a Collection with the accession objects from the receiver's results "
 
@@ -372,7 +374,7 @@ BioNCBIBlastReader >> hitAccessions [
 
 ]
 
-{ #category : #'accessing-blast-filters' }
+{ #category : 'accessing-blast-filters' }
 BioNCBIBlastReader >> hitAccessionsAsString [
 	" Answer a Collection with the accession Strings from the receiver's results "
 
@@ -382,7 +384,7 @@ BioNCBIBlastReader >> hitAccessionsAsString [
 
 ]
 
-{ #category : #'accessing-blast-filters' }
+{ #category : 'accessing-blast-filters' }
 BioNCBIBlastReader >> hitAccessionsAsTokens [
 	" Answer a Collection with the accession numbers tokenized from the receiver's results "
 
@@ -391,21 +393,21 @@ BioNCBIBlastReader >> hitAccessionsAsTokens [
 		collect: #asAccessionToken
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hitHsps [
 	"Answer a <Collection> of <BioBlastNode> from the receiver's results (each HSP is contained in its respective HIT node)"
 
 	^ (self selectHspNodesIn: self results) nodes
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hitHspsNodes [
 	"Answer a <BioBlastNode> from the receiver's results (each HSP is contained in its respective HIT node)"
 
 	^ self selectHspNodesIn: self results
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hitIdentifiers [
 	" Answer a <Collection> of receiver's hit identifiers "
 
@@ -413,7 +415,7 @@ BioNCBIBlastReader >> hitIdentifiers [
 	^ BioParser perform: self parsingStrategy withArguments: {contents . #('Hit_id')}
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hitNodes [
 
 	^ self 
@@ -421,13 +423,13 @@ BioNCBIBlastReader >> hitNodes [
 		in: self results
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hitNodesDo: aBlock [
 
 	^ self nodes do: aBlock
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hitResults [
 	" Answer a Collection of BioBlastParentNode's with all the HIT nodes from the receiver's results "
 
@@ -436,7 +438,7 @@ BioNCBIBlastReader >> hitResults [
 
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> hits [
 	" Answer a <Collection> with all the HIT nodes from the receiver's results "
 
@@ -446,13 +448,13 @@ BioNCBIBlastReader >> hits [
 
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hspHSeqFrom: hit [
 
 	^ hit selectHspHSeq
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hspHSeqs [
 	" Answer a Collection of receiver's alignment strings (for the database) in each receiver's HSP node "
 	
@@ -462,7 +464,7 @@ BioNCBIBlastReader >> hspHSeqs [
 	^ bioSearchResult contents collect: [: node | node selectHspHSeq ]
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hspQSeqs [
 	" Answer a Collection of receiver's alignment strings (for the query, this is the originally sent by the Blast user) "
 	
@@ -472,19 +474,19 @@ BioNCBIBlastReader >> hspQSeqs [
 	^ bioSearchResult contents collect: [: node | node selectHspQSeq ]
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hspQueryFromFrom: hit [
 
 	^ hit selectHspQueryFrom anyOne blastValue
 ]
 
-{ #category : #'accessing-blast-items' }
+{ #category : 'accessing-blast-items' }
 BioNCBIBlastReader >> hspQueryToFrom: hit [
 
 	^ hit selectHspQueryTo anyOne blastValue
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> identities [
 	" Answer a <Collection> of Strings each one representing the identity (matching residues) in the receiver "
 	
@@ -497,14 +499,14 @@ BioNCBIBlastReader >> identities [
 			self lastFilter hspIdentities ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> lastResult [
 	" Answer the last <BioResultObject> in chronological order "
 
 	^ results detectMax: [ : r | r date ]
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> nodes [
 
 	self parsingStrategy ifNil: [ self setSAXParser ].
@@ -513,7 +515,7 @@ BioNCBIBlastReader >> nodes [
 		withArguments: {contents . self selectedNodes}
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> padAlignment: aCollection [
 	" Answer a <Collection> of receiver's alignment (for the database) in each receiver's HSP node.
 	The case for sequences which are not completely aligned are handled this way:
@@ -528,7 +530,7 @@ BioNCBIBlastReader >> padAlignment: aCollection [
 	^ aCollection
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> padAlignmentIn: hit [
 	" Private - See comment in #paddedAlignments "
 
@@ -548,7 +550,7 @@ BioNCBIBlastReader >> padAlignmentIn: hit [
 	^ correctedSeq
 ]
 
-{ #category : #'accessing-blast' }
+{ #category : 'accessing-blast' }
 BioNCBIBlastReader >> paddedAlignments [
 	" Answer a <Collection> of receiver's alignment (for the database) in each receiver's HSP node.
 	The case for sequences which are not completely aligned are handled this way:
@@ -568,36 +570,36 @@ BioNCBIBlastReader >> paddedAlignments [
 	^ align
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> parsingStrategy [
 	^ parsingStrategy
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> parsingStrategy: anObject [
 	parsingStrategy := anObject
 ]
 
-{ #category : #'accessing-blast-filters' }
+{ #category : 'accessing-blast-filters' }
 BioNCBIBlastReader >> resultClass [
 
 	^ BioInitialResult
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> selectAllNodes [
 
 	self selectedNodes: self class allNodeNames
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> selectHeaderNodesIn: aDocumentString [
 	" Private - Answer a Collection with meta-information about the current document aDocumentStringOrLocation "
 	
 	^ BioParser tokenizeNcbiXmlBlastHeader: aDocumentString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> selectHspNodesIn: anObject [
 	"Answer a <BioBlastRootNode> with HSP nodes parsed from anObject"
 
@@ -606,17 +608,17 @@ BioNCBIBlastReader >> selectHspNodesIn: anObject [
 "^ BioParser saxParseNcbiXmlBlastNodes: anObject"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> selectedNodes [
 	^ selectedNodes
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIBlastReader >> selectedNodes: anObject [
 	^ selectedNodes := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> setSAXParser [
 
 	self parsingStrategy: #saxParseNcbiXmlBlast:nodes:
@@ -624,19 +626,19 @@ BioNCBIBlastReader >> setSAXParser [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> setSAXTokenizer [
 
 	self parsingStrategy: #saxTokenizeNcbiXmlBlast:nodes:
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> setStAXParser [
 
 	self parsingStrategy: #parseNcbiXmlBlast:nodes:
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReader >> setStAXTokenizer [
 
 	self parsingStrategy: #tokenizeNcbiXmlBlast:nodes: 

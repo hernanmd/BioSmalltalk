@@ -1,3 +1,6 @@
+"
+Formatter for GenBank flat-file output. Extends BioFileFormatter to produce GenBank-format sequence records.
+"
 Class {
 	#name : 'BioFlatGenBankFormatter',
 	#superclass : 'BioFileFormatter',

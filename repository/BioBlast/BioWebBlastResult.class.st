@@ -1,14 +1,19 @@
+"
+Represents a result from a web-based BLAST query. Extends BioWebResult with retry and request tracking. Instance Variables: maxRetry requestCount
+"
 Class {
-	#name : #BioWebBlastResult,
-	#superclass : #BioWebResult,
+	#name : 'BioWebBlastResult',
+	#superclass : 'BioWebResult',
 	#instVars : [
 		'maxRetry',
 		'requestCount'
 	],
-	#category : #'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 BioWebBlastResult >> executeFirstRequest: aClient [
 	"Private - The first BLAST request is used to get the RID and RTOE"
 
@@ -29,7 +34,7 @@ BioWebBlastResult >> executeFirstRequest: aClient [
 		fetch. 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebBlastResult >> executeFor: aClient [
 	" Private - Perform the actual search using aClient parameters "
 	
@@ -40,7 +45,7 @@ BioWebBlastResult >> executeFor: aClient [
 	
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWebBlastResult >> executeQuery: aClient [
 	" Private - Perform again a request "
 
@@ -54,7 +59,7 @@ BioWebBlastResult >> executeQuery: aClient [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWebBlastResult >> executeTryRequest: aClient [
 	" Private - Perform again a request "
 
@@ -70,7 +75,7 @@ BioWebBlastResult >> executeTryRequest: aClient [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebBlastResult >> maxRetry [
 	" Answer the number of remote retries. Reaching this number could
 	indicate a fail in delaying for results  "
@@ -79,12 +84,12 @@ BioWebBlastResult >> maxRetry [
 		ifNil: [ maxRetry := 10 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebBlastResult >> maxRetry: anObject [
 	maxRetry := anObject
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWebBlastResult >> readerClass [
 
 	^ BioQBlastReader

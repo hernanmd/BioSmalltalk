@@ -1,3 +1,6 @@
+"
+Formatter for sequence features. Extends BioFileFormatter with feature-specific output. Instance Variables: sequenceFeature <BioSequenceFeature>
+"
 Class {
 	#name : 'BioSequenceFeatureFormatter',
 	#superclass : 'BioFileFormatter',

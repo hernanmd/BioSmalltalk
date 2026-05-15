@@ -1,3 +1,6 @@
+"
+SmaCC-based scanner for PDB format files. Tokenizes PDB input for the parser.
+"
 Class {
 	#name : 'BioPDBScanner',
 	#superclass : 'SmaCCScanner',

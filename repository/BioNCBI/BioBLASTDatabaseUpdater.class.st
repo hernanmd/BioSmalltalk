@@ -29,24 +29,26 @@ BioBLASTDatabaseUpdater new
 	download: 'pdbnt.tar.gz' 
 "
 Class {
-	#name : #BioBLASTDatabaseUpdater,
-	#superclass : #BioNCBIDownloader,
+	#name : 'BioBLASTDatabaseUpdater',
+	#superclass : 'BioNCBIDownloader',
 	#instVars : [
 		'dbNames',
 		'fileNames',
 		'selectedDbName'
 	],
-	#category : 'BioNCBI-Databases'
+	#category : 'BioNCBI-Databases',
+	#package : 'BioNCBI',
+	#tag : 'Databases'
 }
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioBLASTDatabaseUpdater >> compressedDatabasesIn: aCollection [
 	" Answer a Collection with items corresponding to recognized database files "
 	
 	^ aCollection lines select: [ : dbName | dbName endsWith: 'tar.gz' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBLASTDatabaseUpdater >> database: aStringOrSymbol [
 	" Set the receiver's working database "
 	
@@ -58,7 +60,7 @@ BioBLASTDatabaseUpdater >> database: aStringOrSymbol [
 	selectedDbName := aStringOrSymbol
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioBLASTDatabaseUpdater >> databases [
 	" Answer a Collection with all available pre-formatted BLAST databases "
 		
@@ -69,7 +71,7 @@ BioBLASTDatabaseUpdater >> databases [
 	^ self dbNames asSortedCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBLASTDatabaseUpdater >> dbNames [
 	" Answer a Collection for containing the receiver's database names "
 	
@@ -77,12 +79,12 @@ BioBLASTDatabaseUpdater >> dbNames [
 		ifNil: [ dbNames := Set new: 50 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBLASTDatabaseUpdater >> dbNames: anObject [
 	dbNames := anObject
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioBLASTDatabaseUpdater >> defaultDirectory [
 	" Answer a String with the receiver's server directory to CWD "
 	
@@ -90,7 +92,7 @@ BioBLASTDatabaseUpdater >> defaultDirectory [
 
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioBLASTDatabaseUpdater >> extractDatabaseNames: aCollection [
 	" Private - Set the receiver's database to contain only the names
 	of the databases found in the repository "
@@ -99,7 +101,7 @@ BioBLASTDatabaseUpdater >> extractDatabaseNames: aCollection [
 		collect: [ : dbFullName | self dbNames add: (self extractDbNameIn: dbFullName) ]
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioBLASTDatabaseUpdater >> extractDbNameIn: dbName [
 	" Private - Answer a String with only the database name "
 	
@@ -113,7 +115,7 @@ BioBLASTDatabaseUpdater >> extractDbNameIn: dbName [
 		ifFalse: [ ('(.*)\.tar\.gz' asRegex matchesIn: dbName) anyOne copyUpTo: $. ].
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioBLASTDatabaseUpdater >> extractFileNames: aCollection [
 	" Private - Answer a String with only the file names for the choosen database "
 	
@@ -123,14 +125,14 @@ BioBLASTDatabaseUpdater >> extractFileNames: aCollection [
 				ifTrue: [ self fileNames add: fileName ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBLASTDatabaseUpdater >> fileNames [
 
 	^ fileNames
 		ifNil: [ fileNames := Set new: 200 ]	
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioBLASTDatabaseUpdater >> filesToDownload [
 	" Answer a Collection with the files to download "
 		
@@ -140,7 +142,7 @@ BioBLASTDatabaseUpdater >> filesToDownload [
 		ifNil: [ self informMessage: 'Connection failed' translated ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioBLASTDatabaseUpdater >> initialize [
 	" Private - Initialize receiver's settings "
 	
@@ -154,7 +156,7 @@ BioBLASTDatabaseUpdater >> initialize [
 			serverDirectory: self defaultDirectory.
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioBLASTDatabaseUpdater >> workingDirectory [
 	" Private - See superimplementor's comment "
 	

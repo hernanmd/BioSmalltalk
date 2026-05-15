@@ -1,3 +1,6 @@
+"
+Test class for BioFASTAParser. Validates single and multi-sequence FASTA parsing including tokenization and building.
+"
 Class {
 	#name : 'BioFASTAParserTest',
 	#superclass : 'BioAbstractFASTAParserTest',

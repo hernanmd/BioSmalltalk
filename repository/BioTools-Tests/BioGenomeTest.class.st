@@ -1,3 +1,6 @@
+"
+Test class for BioGenome. Validates genome creation, chromosome management, and sequence retrieval behavior.
+"
 Class {
 	#name : 'BioGenomeTest',
 	#superclass : 'BioAbstractTest',

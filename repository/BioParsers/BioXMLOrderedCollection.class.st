@@ -1,3 +1,6 @@
+"
+XML result formatter that outputs data as an ordered collection. Extends BioXMLResultFormatter with ordered collection access.
+"
 Class {
 	#name : 'BioXMLOrderedCollection',
 	#superclass : 'BioXMLResultFormatter',

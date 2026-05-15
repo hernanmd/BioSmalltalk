@@ -1,14 +1,19 @@
+"
+Test class for BioClassifier. Validates classification behavior including rule-based and binary classification.
+"
 Class {
-	#name : #BioClassifierTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioClassifierTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'classifier',
 		'group'
 	],
-	#category : 'BioClassifierTests-Core'
+	#category : 'BioClassifierTests-Core',
+	#package : 'BioClassifierTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> observations01 [
 
 	^ '>gi|198282148|ref|NC_011206.1| Acidithiobacillus ferrooxidans ATCC 53993 chromosome, complete genome
@@ -28,7 +33,7 @@ BioClassifierTest >> observations01 [
 '
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> observations02 [
 
 	^ { 'Japan:Shimane,Izumo,Koshi 3775' .
@@ -59,7 +64,7 @@ BioClassifierTest >> observations02 [
 'Japan:Hokkaido' }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> observations03 [
 
 	^ { 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAAGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTA' .
@@ -79,28 +84,28 @@ BioClassifierTest >> observations03 [
 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAAGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTA' }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> subjects01 [
 	" Answer a Collection of BioAccession objects "
 
 	^ self observations01 lines collect: [: accString | BioParser tokenizeFastaDescription: accString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> subjects02 [
 	" Answer a <Collection> of String objects "
 	
 	^ self observations02
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> subjects03 [
 	" Answer a <Collection> of BioSequence objects "
 	
 	^ self observations03 collect: [: str | str asSequence ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testAtMatches [
 
 	| cf |
@@ -115,7 +120,7 @@ BioClassifierTest >> testAtMatches [
 	self assert: cf atMatches size equals: 2
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testAtMatchesPut [
 
 	| cf |
@@ -127,7 +132,7 @@ BioClassifierTest >> testAtMatchesPut [
 	self assert: (cf atMatches bioHasEqualElements: #(1 2)).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testAtMismatchesPut [
 
 	| cf |
@@ -139,7 +144,7 @@ BioClassifierTest >> testAtMismatchesPut [
 	self assert: (cf mismatches bioHasEqualElements: #(1 2)).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testClassesSize [
 
 	| cluster |
@@ -154,7 +159,7 @@ BioClassifierTest >> testClassesSize [
 	self assert: classifier classesSize = 6.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testClassifyByEquality01 [
 	" Test classifying plain Strings "
 
@@ -172,7 +177,7 @@ BioClassifierTest >> testClassifyByEquality01 [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testClassifyByEquality02 [
 	" Test classifying on User objects "
 
@@ -190,7 +195,7 @@ BioClassifierTest >> testClassifyByEquality02 [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testClassifyBySimilarity01 [
 	" Test classifying plain Strings "
 
@@ -209,7 +214,7 @@ BioClassifierTest >> testClassifyBySimilarity01 [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testElements [
 
 	group := BioGroupOrganization withAll: self trainedSet01.
@@ -217,7 +222,7 @@ BioClassifierTest >> testElements [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testGroupBy01 [
 	| clusters |
 	clusters := BioGroupOrganization forEqualityOn: #value.
@@ -231,7 +236,7 @@ BioClassifierTest >> testGroupBy01 [
 		assert: (classifier atMatches includesAll: self trainedSet02Collection)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testGroupCreation [
 
 	group := BioGroupOrganization withAll: self trainedSet01.
@@ -243,7 +248,7 @@ BioClassifierTest >> testGroupCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testMatches [
 
 	| cf |
@@ -258,7 +263,7 @@ BioClassifierTest >> testMatches [
 	self assert: cf matches size equals: 1
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testMismatches [
 
 	| cf |
@@ -274,13 +279,13 @@ BioClassifierTest >> testMismatches [
 	self assert: (cf mismatches bioHasEqualElements: #(1 2)).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testNewMatchingDictionary [
 
 	self assert: ((BioClassifier new newMatchingDictionary: #mismatches) isKindOf: Dictionary)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioClassifierTest >> testSetFeatures [
 
 	| subjects grouping |
@@ -294,7 +299,7 @@ BioClassifierTest >> testSetFeatures [
 	self assert: ( grouping features bioHasEqualElements: self trainedSet01 )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> trainedSet01 [
 
 	^ { 'Polaromonas naphthalenivorans CJ2' .
@@ -305,7 +310,7 @@ BioClassifierTest >> trainedSet01 [
 		'Acidithiobacillus ferrooxidans' }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> trainedSet02 [
 
 	^ { 'United Kingdom: Dudley Castle' .
@@ -315,7 +320,7 @@ BioClassifierTest >> trainedSet02 [
 		'China: Sichuan Province' }
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> trainedSet02Collection [
 
 	^ OrderedCollection new 
@@ -326,7 +331,7 @@ BioClassifierTest >> trainedSet02Collection [
 				yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioClassifierTest >> trainedSet03 [
 
 	^ { 'CCCCATGCATATAAGCAAGTACATGACCTCTATAGCAGTACATAATACATATAATTATTGACTGTACATAGTACATTATGTCAAATTCATTCTTGATAGTATATCTATTATATATTCCTTACCATTAGATCACGAGCTTAATTACCATGCCGCGTGAAACCAGCAACCCGCTAGGCAAGGATCCCTCTTCTCGCTCCGGGCCCATAAACCGTGGGGGTCGCTATCCAATGAATTTTA' .

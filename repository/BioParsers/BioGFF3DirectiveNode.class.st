@@ -1,3 +1,6 @@
+"
+Represents a directive line node in a GFF3 file parse tree. Holds the directive text (e.g., ##gff-version 3). Instance Variables: text <String> The directive text.
+"
 Class {
 	#name : 'BioGFF3DirectiveNode',
 	#superclass : 'BioGFF3GFF3FileNode',

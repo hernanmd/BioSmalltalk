@@ -1,10 +1,15 @@
+"
+Abstract base class for NCBI command objects. Extends BioRemoteCommandObject with NCBI-specific access and query parameter handling.
+"
 Class {
-	#name : #BioNCBICommand,
-	#superclass : #BioRemoteCommandObject,
-	#category : 'BioNCBI-Commands'
+	#name : 'BioNCBICommand',
+	#superclass : 'BioRemoteCommandObject',
+	#category : 'BioNCBI-Commands',
+	#package : 'BioNCBI',
+	#tag : 'Commands'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand class >> cmdString [
 	" Answer the command String for URLs "
 	
@@ -12,7 +17,7 @@ BioNCBICommand class >> cmdString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand >> cmdString [
 	" Answer the command String for URLs "
 	
@@ -20,7 +25,7 @@ BioNCBICommand >> cmdString [
 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBICommand >> execute [
 	"Execute the receiving action. Answer a GTSearchResult object "
 
@@ -29,33 +34,33 @@ BioNCBICommand >> execute [
 		ifFalse: [ self signalInvalidObject: 'Invalid or insufficient parameters' translated ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand >> fetch [
 	" Execute the configured operations and answer the results object "
 
 	^ client execute
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand >> get [
 	" Start issuing receiver's client get parameters "
 	
 	^ client get
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBICommand >> isGet [
 	
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBICommand >> isPut [
 	
 	^ false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand >> page: aString [
 	" Undocumented? "
 	
@@ -63,7 +68,7 @@ BioNCBICommand >> page: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBICommand >> put [
 	" Start issuing receiver's client put parameters "
 	

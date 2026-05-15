@@ -1,3 +1,6 @@
+"
+Writer for VCF (Variant Call Format) records. Produces formatted VCF lines from record objects. Instance Variables: vcfRecord formatStream infoStream
+"
 Class {
 	#name : 'BioVCFRecordWriter',
 	#superclass : 'BioObject',

@@ -1,3 +1,6 @@
+"
+Collection of codon tables for RNA translation. Extends BioCodonTables with RNA-specific codon-to-amino-acid mappings.
+"
 Class {
 	#name : 'BioRNACodonTables',
 	#superclass : 'BioCodonTables',

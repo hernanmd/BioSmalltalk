@@ -1,3 +1,6 @@
+"
+Represents a genome diagram for visualization. Contains tracks with features, title information, and layout properties. Instance Variables: tracks <Collection> Diagram tracks. title <String> Diagram title. name <String> Diagram name. start <Integer> Start position. end <Integer> End position. format <Symbol> Output format. circular <Boolean> Whether the genome is circular.
+"
 Class {
 	#name : 'BioGenomeDiagram',
 	#superclass : 'Object',

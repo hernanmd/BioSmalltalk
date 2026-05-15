@@ -4,12 +4,14 @@ An iterator for reading SNP reports from Illumina.
 BioIlluminaSNPReader readFrom: '/path/to/your/snp_report.csv'
 "
 Class {
-	#name : #BioIlluminaSNPReader,
-	#superclass : #BioObject,
-	#category : #'BioNGS-Illumina'
+	#name : 'BioIlluminaSNPReader',
+	#superclass : 'BioObject',
+	#category : 'BioNGS-Illumina',
+	#package : 'BioNGS',
+	#tag : 'Illumina'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioIlluminaSNPReader class >> newParserFor: aFile [
 
 	^ (NeoCSVReader on: (self openFullFileNamed: aFile) readStream)
@@ -17,7 +19,7 @@ BioIlluminaSNPReader class >> newParserFor: aFile [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioIlluminaSNPReader class >> newSNPRowFrom: row [
 
 	^ BioIlluminaSNPObject new
@@ -35,7 +37,7 @@ BioIlluminaSNPReader class >> newSNPRowFrom: row [
                 yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioIlluminaSNPReader class >> readFrom: aFile [
 	" Answer a <Collection> of SNP objects "
 

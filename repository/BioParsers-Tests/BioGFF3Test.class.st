@@ -1,3 +1,6 @@
+"
+Test class for GFF3 parsing. Validates GFF3 file parsing, feature extraction, and node traversal behavior.
+"
 Class {
 	#name : 'BioGFF3Test',
 	#superclass : 'BioAbstractParserTest',
@@ -6,9 +9,9 @@ Class {
 }
 
 { #category : 'accessing' }
-BioGFF3Test >> baseDirectory [
+BioGFF3Test >> baseDirectory [ 
 
-	^ self testFilesFullDirectoryName / 'gff3'
+	^ self testFilesFullDirectoryName / 'gff'.
 ]
 
 { #category : 'accessing' }

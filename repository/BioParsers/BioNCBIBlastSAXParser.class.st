@@ -1,3 +1,6 @@
+"
+SAX-based parser for NCBI BLAST XML output. Extends BioSAXParser to handle BLAST-specific XML content events and node extraction.
+"
 Class {
 	#name : 'BioNCBIBlastSAXParser',
 	#superclass : 'BioSAXParser',

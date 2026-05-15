@@ -1,8 +1,12 @@
+"
+Test class for BioORF. Validates ORF creation coordinate mapping and strand behavior.
+"
 Class {
 	#name : 'BioORFTest',
 	#superclass : 'BioAbstractTest',
-	#category : 'BioTools-Tests',
-	#package : 'BioTools-Tests'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
 { #category : 'tests' }

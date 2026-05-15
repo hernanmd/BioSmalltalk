@@ -1,3 +1,6 @@
+"
+Abstract base class for PDB file records. Instance Variables: recordType line
+"
 Class {
 	#name : 'BioPDBRecord',
 	#superclass : 'BioObject',

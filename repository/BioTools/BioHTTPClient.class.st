@@ -1,3 +1,6 @@
+"
+HTTP client adapter using Squeak/Pharo WebClient for making HTTP requests. Delegates to the platform-appropriate HTTP client implementation.
+"
 Class {
 	#name : 'BioHTTPClient',
 	#superclass : 'BioWebClientEngine',

@@ -1,3 +1,6 @@
+"
+Represents a strand orientation in genomic coordinates (forward + or reverse -). Instance Variables: symbol <Symbol> The strand symbol (#plus or #minus).
+"
 Class {
 	#name : 'BioStrand',
 	#superclass : 'BioObject',

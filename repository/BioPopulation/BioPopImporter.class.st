@@ -13,21 +13,23 @@ newBreed
 
 "
 Class {
-	#name : #BioPopImporter,
-	#superclass : #BioObject,
+	#name : 'BioPopImporter',
+	#superclass : 'BioObject',
 	#classInstVars : [
 		'newBreed'
 	],
-	#category : 'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopImporter class >> addPopulationFromCsvRow: row [
 
 	self subclassResponsibility 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPopImporter class >> importFromFile: rawDataFilePath [
 	" 
 	Read breed data from raw file, parse and build the receiver's repository 
@@ -41,20 +43,20 @@ BioPopImporter class >> importFromFile: rawDataFilePath [
 		do: [ : row | self addPopulationFromCsvRow: row ].
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPopImporter class >> importersFor: popIdString [
 	" Answer a Collection of subclasses which can import a popIdString "
 	
 	^ self allFinalClasses select: [: cls | cls imports: popIdString ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioPopImporter class >> importsVersionAt: aString [
 
 	^ aString = self repositoryName
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPopImporter class >> initializeFor: aString [
 	" Initialize each importer corresponding aString "
 
@@ -63,31 +65,31 @@ BioPopImporter class >> initializeFor: aString [
 		cls initialize ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopImporter class >> newPopulation [
 	^ newBreed
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopImporter class >> newPopulation: anObject [
 	newBreed := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPopImporter class >> parserConverter [
 	" Private - Answer an appropriate converter for the current platform "
 	
 	^ Latin1TextConverter new
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioPopImporter class >> rawDataFilePath [
 	" Answer a <String> with receiver's location to the repository file(s) "
 	
 	self subclassResponsibility
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioPopImporter class >> versionImporterAt: aString [
 	" Answer a Class suitable for importing aString "
 

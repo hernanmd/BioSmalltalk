@@ -1,31 +1,36 @@
+"
+Test class for BioFileFormat. Validates file format registry behavior including recognition and format collection.
+"
 Class {
-	#name : #BioFileFormatTest,
-	#superclass : #BioAbstractTest,
-	#category : 'BioFormatterTests-Core'
+	#name : 'BioFileFormatTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioFormatterTests-Core',
+	#package : 'BioFormatterTests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> csvContents01 [
 	" Answer a <String> with a sample test file path "
 	
 	^ self testFilesFullDirectoryName / 'Test001.csv'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> phylipContents01 [
 	" Answer a <String> with a sample test file path "
 	
 	^ self testFilesFullDirectoryName / 'dna_interleaved.phy'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> phylipContents02 [
 	" Answer a <String> with a sample test file path "
 	
 	^ self testFilesFullDirectoryName / 'dna_sequential.phy'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testCSV01 [
 
 	| file |
@@ -44,7 +49,7 @@ BioFileFormatTest >> testCSV01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testFileExtensionFor [
 
 	| fastaExt |
@@ -56,7 +61,7 @@ BioFileFormatTest >> testFileExtensionFor [
 	self should: [ BioFileFormat fileExtensionFor: String empty ] raise: BioNotFoundObject.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testFileExtensionsFor [
 
 	| fastaExt |
@@ -69,7 +74,7 @@ BioFileFormatTest >> testFileExtensionsFor [
 	self should: [ BioFileFormat fileExtensionsFor: '' ] raise: BioNotFoundObject.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testFormats [
 
 	BioFileFormat initialize.
@@ -89,7 +94,7 @@ BioFileFormatTest >> testFormats [
 	'ZTR') do: [ : format | self assert: (BioFileFormat isRegistered: format) ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testPhylipFile [
 
 	| file |
@@ -102,7 +107,7 @@ BioFileFormatTest >> testPhylipFile [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testRegisterFileExtensionFor [
 
 	BioFileFormat removeFormat: 'txt'.
@@ -116,7 +121,7 @@ BioFileFormatTest >> testRegisterFileExtensionFor [
 	BioFileFormat removeFormat: 'txt'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFileFormatTest >> testRegistry [
 
 	self deny: BioFileFormat registry isNil.

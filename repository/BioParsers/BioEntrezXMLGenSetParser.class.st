@@ -1,3 +1,6 @@
+"
+Parser for GenSet XML data in Entrez results. Processes GenBank set records containing multiple sequences.
+"
 Class {
 	#name : 'BioEntrezXMLGenSetParser',
 	#superclass : 'BioEntrezResultParser',

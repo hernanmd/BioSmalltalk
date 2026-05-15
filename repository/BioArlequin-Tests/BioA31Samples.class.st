@@ -1,10 +1,14 @@
+"
+Provides sample data and test sequences for Arlequin 3.1 testing. Contains accessor methods for sample files and sequences used in unit tests.
+"
 Class {
-	#name : #BioA31Samples,
-	#superclass : #Object,
-	#category : #'BioArlequin-Tests'
+	#name : 'BioA31Samples',
+	#superclass : 'Object',
+	#category : 'BioArlequin-Tests',
+	#package : 'BioArlequin-Tests'
 }
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> contents [
 
 	^ '# This example is about an AMOVA analysis based on an
@@ -211,7 +215,7 @@ BioA31Samples >> contents [
 		}'	
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> genotypicContents [
 
 	^ '[Profile]
@@ -263,7 +267,7 @@ BioA31Samples >> genotypicContents [
 }'
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> haplotypicContents [
 
 	^ '[Profile]
@@ -308,7 +312,7 @@ BioA31Samples >> haplotypicContents [
       }'	
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> mtDNAContents [
 
 	^ '[Profile]
@@ -407,7 +411,7 @@ BioA31Samples >> mtDNAContents [
 		}'	
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> mtDNAOldTypeContents [
 
 	^ '[Profile]
@@ -473,7 +477,7 @@ CH4	1	A	T	T	T	A	G	C	A	A	T	A	C	T	G	T	C	C	T	A	T	C	T	C	T	T	A	T	C	G	T	C	A	C	C	T	A	C	
 A7	1	A	T	T	T	A	G	C	A	A	T	G	C	T	G	T	C	C	C	A	T	C	T	T	T	T	A	T	T	G	T	C	A	C	C	C	A	C	T}'	
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> recessiveHLAContents [
 
 	^ '[Profile]
@@ -530,7 +534,7 @@ MAN0123 2  A30   Cw10  B70   DR07   DQ0201
 }'	
 ]
 
-{ #category : #'accessing - sequences' }
+{ #category : 'accessing - sequences' }
 BioA31Samples >> sequence1 [
 
 	^ 'ATCTAGCAATACTGTTTTGTCTTCTATCGTCACCCATT
@@ -578,7 +582,7 @@ ATTTAGCAATACTGTCCTATCTCTTATCGTCACCTACT
 ATTTAGCAATGCTGTCCCATCTTTTATTGTCACCCACT'		
 ]
 
-{ #category : #'accessing - sequences' }
+{ #category : 'accessing - sequences' }
 BioA31Samples >> sequence2 [
 
 	^ 'ATCTAGCAATACTGTTTTGTCTTCTATCGTCACCCATT
@@ -626,7 +630,7 @@ ATTTAGCAATACTGTCCTATCTCTTATCGTCACCTACT
 ATTTAGCAATGCTGTCCCATCTTTTATTGTCACCCACT'		
 ]
 
-{ #category : #'accessing - sequences' }
+{ #category : 'accessing - sequences' }
 BioA31Samples >> sequence3 [
 
 	^ 'ATCTAGCAATACTGTTTTGTCTTCTATCGTCACCCATT
@@ -674,7 +678,7 @@ ATTTAGCAATACTGTCCTATCTCTTATCGTCACCTACT
 ATTTAGCAATGCTGTCCCATCTTTTATTGTCACCCACT'
 ]
 
-{ #category : #'accessing - files' }
+{ #category : 'accessing - files' }
 BioA31Samples >> smallContents [
 
 	^ '[Profile]

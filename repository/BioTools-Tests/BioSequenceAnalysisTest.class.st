@@ -1,3 +1,6 @@
+"
+Test class for sequence analysis utilities. Validates sequence transformation and analysis behavior.
+"
 Class {
 	#name : 'BioSequenceAnalysisTest',
 	#superclass : 'BioAbstractTest',

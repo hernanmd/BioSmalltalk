@@ -1,6 +1,6 @@
-Extension { #name : #BioAlignment }
+Extension { #name : 'BioAlignment' }
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioAlignment >> plot [
 
 	BioRSBaseBuilder new

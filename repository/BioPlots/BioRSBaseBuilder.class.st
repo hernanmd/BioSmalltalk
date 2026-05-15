@@ -1,13 +1,17 @@
+"
+Builder for RS (Roassal) visualization of sequence bases. Extends RSAAbstractContainerBuilder. Instance Variables: bases <Collection>
+"
 Class {
-	#name : #BioRSBaseBuilder,
-	#superclass : #RSAbstractContainerBuilder,
+	#name : 'BioRSBaseBuilder',
+	#superclass : 'RSAbstractContainerBuilder',
 	#instVars : [
 		'bases'
 	],
-	#category : #BioPlots
+	#category : 'BioPlots',
+	#package : 'BioPlots'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioRSBaseBuilder class >> example1 [
 	
 	BioRSBaseBuilder new
@@ -19,7 +23,7 @@ ACTGCTTGATTG';
 	open.
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 BioRSBaseBuilder >> addBase: aBaseLetter rowIndex: rowIndex colIndex: colIndex [ 
 
 	| label labelWithBox extent |
@@ -35,31 +39,31 @@ BioRSBaseBuilder >> addBase: aBaseLetter rowIndex: rowIndex colIndex: colIndex [
 	self bases add: labelWithBox
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 BioRSBaseBuilder >> addSequence: aBioSequence rowIndex: anInteger [ 
 
 	aBioSequence addFromRSBuilder: self rowIndex: anInteger.
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 BioRSBaseBuilder >> addSequenceString: aString rowIndex: anInteger [ 
 
 	aString doWithIndex: [ : letter : col | self addBase: letter rowIndex: anInteger colIndex: col ]
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 BioRSBaseBuilder >> bases [
 
 	^ bases
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRSBaseBuilder >> bases: anObject [
 
 	bases := anObject
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 BioRSBaseBuilder >> colorMap [
 
 	^ { 
@@ -72,7 +76,7 @@ BioRSBaseBuilder >> colorMap [
 		} asDictionary
 ]
 
-{ #category : #'accessing - defaults' }
+{ #category : 'accessing - defaults' }
 BioRSBaseBuilder >> defaultContainer [ 
 
 	| canvasController |
@@ -83,14 +87,14 @@ BioRSBaseBuilder >> defaultContainer [
 		yourself
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 BioRSBaseBuilder >> fromAlignment: aBioAlignment [
 
 	aBioAlignment doWithIndex: [ : aBioSequence : row | 
 		self addSequence: aBioSequence rowIndex: row ].
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 BioRSBaseBuilder >> fromString: aString [
 	"For testing purposes"
 
@@ -98,14 +102,14 @@ BioRSBaseBuilder >> fromString: aString [
 		self addSequence: aBioSequence rowIndex: row ].
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioRSBaseBuilder >> initialize [
 
 	super initialize.
 	bases := OrderedCollection new.
 ]
 
-{ #category : #rendering }
+{ #category : 'rendering' }
 BioRSBaseBuilder >> renderIn: canvas [
 
 	canvas addAll: self bases.

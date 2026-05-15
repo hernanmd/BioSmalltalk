@@ -3,12 +3,14 @@ Genomic DNA sequence released by the Center for Bioinformatics and Computational
 
 "
 Class {
-	#name : #BioBTauUMD,
-	#superclass : #BioBTauGD,
-	#category : 'BioNCBI-Genomes'
+	#name : 'BioBTauUMD',
+	#superclass : 'BioBTauGD',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioBTauUMD >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 	
@@ -16,7 +18,7 @@ BioBTauUMD >> defaultFileListPrefix [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBTauUMD >> latestVersionFound [
 	" Private - See superimplementor's commemt "
 

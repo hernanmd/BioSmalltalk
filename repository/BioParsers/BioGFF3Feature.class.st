@@ -1,3 +1,6 @@
+"
+Represents a feature line in GFF3 (Generic Feature Format version 3). Encapsulates seqid, source, type, coordinates, strand, phase, and attributes. Instance Variables: seqid <String> Sequence identifier. source <String> Feature source. type <String> Feature type. start <Integer> Start position. end <Integer> End position. score <String> Score value. strand <String> Strand orientation. phase <String> Reading frame phase. attributes <String> Raw attributes string. attributesDict <Dictionary> Parsed attributes dictionary.
+"
 Class {
 	#name : 'BioGFF3Feature',
 	#superclass : 'Object',

@@ -1,6 +1,6 @@
-Extension { #name : #Association }
+Extension { #name : 'Association' }
 
-{ #category : #'*BioEntrez' }
+{ #category : '*BioEntrez' }
 Association >> features [
 
 	^ self value features

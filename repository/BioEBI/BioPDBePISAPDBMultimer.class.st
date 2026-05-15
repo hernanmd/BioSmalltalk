@@ -1,10 +1,15 @@
+"
+Client for PDBe PISA PDB multimer data. Extends BioDBObject with methods to access PDB multimer assembly information.
+"
 Class {
-	#name : #BioPDBePISAPDBMultimer,
-	#superclass : #BioDBObject,
-	#category : 'BioEBI-PDBePISA'
+	#name : 'BioPDBePISAPDBMultimer',
+	#superclass : 'BioDBObject',
+	#category : 'BioEBI-PDBePISA',
+	#package : 'BioEBI',
+	#tag : 'PDBePISA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAPDBMultimer class >> dbName [
 	" See superimplementor's comment "
 	
@@ -12,7 +17,7 @@ BioPDBePISAPDBMultimer class >> dbName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAPDBMultimer >> pdbCode: aString assemblySet: setNumber assemblyNumberInSet: asmNumberOrCollection [
 	" Set the receiver's pdbcode to aString, which is a 4-letter PDB code "
 	

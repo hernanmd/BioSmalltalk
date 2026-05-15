@@ -1,3 +1,6 @@
+"
+Test class for BioAlignment. Validates multiple sequence alignment creation, manipulation, and output formatting.
+"
 Class {
 	#name : 'BioAlignmentTest',
 	#superclass : 'BioAbstractTest',

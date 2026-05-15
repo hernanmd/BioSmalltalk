@@ -4,9 +4,9 @@ A BioProtein is a sequence that constrains the alphabet to Amino Acids
 Class {
 	#name : 'BioProtein',
 	#superclass : 'BioRepeatSequence',
-	#category : 'BioTools-Core',
+	#category : 'BioTools-Biological',
 	#package : 'BioTools',
-	#tag : 'Core'
+	#tag : 'Biological'
 }
 
 { #category : 'accessing private' }

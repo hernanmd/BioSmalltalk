@@ -3,15 +3,15 @@ Represents a panel of loci recommended by the Food and Agriculture Organization 
 
 "
 Class {
-	#name : 'BioFAOPanel',
+	#name : 'BioFAO_STRPanel',
 	#superclass : 'BioPanel',
-	#category : 'BioTools-Repeats',
+	#category : 'BioTools-Panels',
 	#package : 'BioTools',
-	#tag : 'Repeats'
+	#tag : 'Panels'
 }
 
 { #category : 'accessing - cattle' }
-BioFAOPanel class >> markerAlleleRangesForCattle [
+BioFAO_STRPanel class >> markerAlleleRangesForCattle [
 
 	^ #(
 		#('SPS113' 254 276)
@@ -24,7 +24,7 @@ BioFAOPanel class >> markerAlleleRangesForCattle [
 ]
 
 { #category : 'accessing' }
-BioFAOPanel class >> markersForSpecies [
+BioFAO_STRPanel class >> markersForSpecies [
 	" Answer a <Collection> of <BioMicrosatelliteLocus> for the receiver's panel "
 
 	^ Dictionary new
@@ -33,14 +33,14 @@ BioFAOPanel class >> markersForSpecies [
 ]
 
 { #category : 'accessing' }
-BioFAOPanel class >> panelName [
+BioFAO_STRPanel class >> panelName [
 	" Private - See superimplementor's comment "
 	
 	^ 'FAO'
 ]
 
 { #category : 'accessing' }
-BioFAOPanel class >> supportedMarkerTypes [
+BioFAO_STRPanel class >> supportedMarkerTypes [
 	" Answer a <Collection> of supported types of markers "
 	
 	^ Array with: #BioSTRSequence

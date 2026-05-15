@@ -1,3 +1,6 @@
+"
+Utility class for downloading files via FTP. Provides methods for connecting to FTP servers and retrieving remote files.
+"
 Trait {
 	#name : 'BioFTPDownloader',
 	#traits : 'BioDownloader',

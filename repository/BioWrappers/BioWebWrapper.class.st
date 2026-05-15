@@ -8,23 +8,25 @@ See subclasses for details.
 
 "
 Class {
-	#name : #BioWebWrapper,
-	#superclass : #BioWrapperObject,
+	#name : 'BioWebWrapper',
+	#superclass : 'BioWrapperObject',
 	#instVars : [
 		'url',
 		'searchResult'
 	],
-	#category : #'BioWrappers-Core'
+	#category : 'BioWrappers-Core',
+	#package : 'BioWrappers',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioWebWrapper class >> baseUrl [
 	" Private - Answer a <String> specifying a server valid addres for the receiver "
 	
 	^ self subclassResponsibility
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> addParameters: aString [
 	" Add the parameters in aString to the receiver's url object "
 	
@@ -32,21 +34,21 @@ BioWebWrapper >> addParameters: aString [
 	self url addPathSegment: aString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> baseUrl [
 	" Private - Answer a String specifying a server valid addres for the receiver "
 	
 	^ self class baseUrl
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> cmdName: aString [
 	" Private - Set the receiver's url command (e.g. script.cgi) to be aString "
 
 	self url cmdName: aString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> database: aBioDatabase [
 	"Set the receiver's database to be aBioDatabase. Answer aBioDatabase"
 
@@ -54,13 +56,13 @@ BioWebWrapper >> database: aBioDatabase [
 	^ aBioDatabase
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> downloadUrl [
 	" Answer a String with the receiver's current URL "
 	^ self url downloadUrl
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> execute [
 	" Execute current receiver's operation and answer a result object "
 	
@@ -71,7 +73,7 @@ BioWebWrapper >> execute [
 	^ rs
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioWebWrapper >> printOn: aStream [
 	" Private - See superimplementor's comment "
 
@@ -83,7 +85,7 @@ BioWebWrapper >> printOn: aStream [
 			and: $] ]
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> queryAt: key put: queryString [
 	"Modify the receiver's URL by setting a query variable key=value.
 	If key is already exists, it is overwritten."
@@ -91,14 +93,14 @@ BioWebWrapper >> queryAt: key put: queryString [
 	self url queryAt: key put: queryString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> rawUrl [
 	" Answer the value of url "
 
 	^ url
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioWebWrapper >> searchResult [
 	" Answer a search result object "
 	
@@ -106,18 +108,18 @@ BioWebWrapper >> searchResult [
 		ifNil: [ searchResult := self searchResultClass newFrom: self ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWebWrapper >> searchResult: anObject [
 	^ searchResult := anObject
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> searchResultClass [
 
 	^ BioWebResult
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> url [
 	"Answer the value of url"
 
@@ -125,14 +127,14 @@ BioWebWrapper >> url [
 		ifNil: [ url := BioWebClientEngine urlFromString: self baseUrl ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> url: anObject [
 	"Set the value of url"
 
 	url := anObject
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioWebWrapper >> urlClass [
 	" Answer a <Class> implementing an interpreted URL/URI "
 

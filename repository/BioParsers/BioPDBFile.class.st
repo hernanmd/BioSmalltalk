@@ -1,3 +1,6 @@
+"
+Represents a PDB structure file. Instance Variables: atoms seqResRecords records header title
+"
 Class {
 	#name : 'BioPDBFile',
 	#superclass : 'BioObject',

@@ -1,3 +1,6 @@
+"
+Parser for FASTQ format files. Handles single-end FASTQ records including sequence and quality data. Instance Variables: stream <ReadStream> The input stream being parsed.
+"
 Class {
 	#name : 'BioFASTQParser',
 	#superclass : 'BioAbstractParser',

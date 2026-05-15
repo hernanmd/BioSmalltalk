@@ -1,6 +1,6 @@
-Extension { #name : #Integer }
+Extension { #name : 'Integer' }
 
-{ #category : #'*BioEntrez' }
+{ #category : '*BioEntrez' }
 Integer >> asEntrezMWString [
 	" Answer a <String> representing a Molecular Weight for an Entrez query "
 	

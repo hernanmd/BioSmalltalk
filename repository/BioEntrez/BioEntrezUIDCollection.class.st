@@ -3,12 +3,14 @@ BioEntrezUIDCollection is a collection of identifiers which are formatted to be 
 
 "
 Class {
-	#name : #BioEntrezUIDCollection,
-	#superclass : #BioWebCollection,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioEntrezUIDCollection',
+	#superclass : 'BioWebCollection',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUIDCollection >> baseUrl [ 
 	" Private - Answer a String specifying a valid concatenation of receiver's contents for its service "
 	

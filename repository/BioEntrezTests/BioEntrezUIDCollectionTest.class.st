@@ -1,10 +1,15 @@
+"
+Test class for BioEntrezUIDCollection. Validates UID collection formatting and parameter construction for Entrez queries.
+"
 Class {
-	#name : #BioEntrezUIDCollectionTest,
-	#superclass : #BioAbstractTest,
-	#category : 'BioEntrezTests-Core'
+	#name : 'BioEntrezUIDCollectionTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUIDCollectionTest >> testBaseUrl [
 	| uids |
 	" Test common usage "

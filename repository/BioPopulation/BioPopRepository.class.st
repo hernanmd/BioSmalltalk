@@ -9,15 +9,17 @@ Acts as a repository of organism population. It supports the following features:
 
 "
 Class {
-	#name : #BioPopRepository,
-	#superclass : #BioNamedObject,
+	#name : 'BioPopRepository',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'repositoryVersions'
 	],
-	#category : 'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> addRepositoryVersion: aRepositoryVersion [
 	" Add a aRepositoryVersion to the receiver's versions "
 	
@@ -25,7 +27,7 @@ BioPopRepository >> addRepositoryVersion: aRepositoryVersion [
 	repositoryVersions add: aRepositoryVersion
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> addRepositoryVersionFromImporter: repositoryImporterClass [
 	" Add a repositoryImporterClass to the receiver's versions "
 	
@@ -34,7 +36,7 @@ BioPopRepository >> addRepositoryVersionFromImporter: repositoryImporterClass [
 	repositoryVersions add: (self newRepositoryVersionFrom: repositoryImporterClass)
 ]
 
-{ #category : #displaying }
+{ #category : 'displaying' }
 BioPopRepository >> displayString [
 
 	^ String streamContents: [ : stream | 
@@ -45,7 +47,7 @@ BioPopRepository >> displayString [
 			nextPut:$) ]
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioPopRepository >> initializeRepositoryVersions [
 
 	self names do: [ : aName |
@@ -53,14 +55,14 @@ BioPopRepository >> initializeRepositoryVersions [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioPopRepository >> isEmpty [
 	" Answer <true> if receiver's does not contains any repository version "
 
 	^ self repositoryVersions isNil or: [ self repositoryVersions isEmpty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> newRepositoryVersionFrom: repositoryImporterClass [
 
 	^ BioPopRepositoryVersion new 
@@ -69,7 +71,7 @@ BioPopRepository >> newRepositoryVersionFrom: repositoryImporterClass [
 		name: repositoryImporterClass repositoryName
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioPopRepository >> printOn: aStream [
 	"Append to the argument, aStream, a sequence of characters that  
 	identifies the receiver."
@@ -83,14 +85,14 @@ BioPopRepository >> printOn: aStream [
 	aStream nextPutAll: self name between: $( and: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> removeRepositoryVersions [
 	" Set to nil to re-scan and populate repositories "
 
 	repositoryVersions := nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> repositoryDescriptions [
 
 	self repositoryVersions isEmpty 
@@ -98,21 +100,21 @@ BioPopRepository >> repositoryDescriptions [
 	^ self repositoryVersions collect: #name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> repositoryVersionAt: aRepoVersionName [
 
 	^ self repositoryVersions detect:[: repoVersions | 
 		repoVersions name = aRepoVersionName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> repositoryVersionNames [
 	" Answer a <Collection> with names of repository for the receiver "
 	
 	^ self repositoryVersions collect: #name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> repositoryVersions [
 	" Answer a <Collection> of repository containers and populate them if they are configured for import on demand "
 
@@ -122,7 +124,7 @@ BioPopRepository >> repositoryVersions [
 			repositoryVersions ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopRepository >> repositoryVersions: anObject [
 	^ repositoryVersions := anObject
 ]

@@ -5,15 +5,17 @@ Subclasses may implement different modes of reading, such as supporting UI or ba
 
 "
 Class {
-	#name : #BioNCBIGenBankReader,
-	#superclass : #BioNCBIReader,
+	#name : 'BioNCBIGenBankReader',
+	#superclass : 'BioNCBIReader',
 	#instVars : [
 		'genBankDownloader'
 	],
-	#category : #'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBIGenBankReader class >> filesFromFlatDirectory: aDirectoryString [
 	" Answer a <Collection> of readers iterating over the files located at aDirectoryString "
 
@@ -22,28 +24,28 @@ BioNCBIGenBankReader class >> filesFromFlatDirectory: aDirectoryString [
 			thenCollect: [ : file | self parseFlatDocumentFrom: file ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIGenBankReader class >> isPreferredFor: aString [
 	" Answer <true> if aString is the most appropriate content for the receiver "
 	
 	^ aString beginsWith: 'LOCUS       '
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBIGenBankReader class >> newFromCSVFile: csvFilename [
 	" Answer a new instance of the receiver with contents from csvFilename "
 	
 	^ self new parseCSVFileFrom: csvFilename
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> checkValidContents [
 	"Answer <true> if contents were correctly downloaded"
 	
 	^ self genBankDownloader checkValidContents
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> genBankDownloader [
 
 	^ genBankDownloader
@@ -51,7 +53,7 @@ BioNCBIGenBankReader >> genBankDownloader [
 
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> genBankRecordsAsXMLFrom: aBioBlastParentNodeCollection database: databaseName [
 	"With aBioBlastParentNodeCollection of BLASTHitNode's, query the Entrez system at databaseName and answer a <String> with XML contents"
 	
@@ -62,7 +64,7 @@ BioNCBIGenBankReader >> genBankRecordsAsXMLFrom: aBioBlastParentNodeCollection d
 
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> genBankRecordsFrom: dbSymbol format: formatSymbol uids: anArray [
 	"Fetch Entrez records from database named dbSymbol in format formatSymbol 	using UIDs from anArray. anArray is splitted if exceeds #entrezUrlUidLimit"
 
@@ -74,7 +76,7 @@ BioNCBIGenBankReader >> genBankRecordsFrom: dbSymbol format: formatSymbol uids: 
 
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> giListFrom: anObject [
 	"Answer a <Collection> with the gene identifiers numbers from anObject"
 
@@ -82,14 +84,14 @@ BioNCBIGenBankReader >> giListFrom: anObject [
 		collect: [: id | BioParser tokenizeGi: id hitIdentifier blastValue ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReader >> isGenBankXMLDirectory: aString [ 
 	" Answer <true> if all files contained in aString are XML files with GenBank DTD "
 	
 	^ aString asFileReference entries allSatisfy: #isGenBankXML
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parseCSVFileFrom: aFilename [
 	"Parse documents located at aFilename in the internal CSV format, and update the receiver's contents with the result"
 	
@@ -109,14 +111,14 @@ BioNCBIGenBankReader >> parseCSVFileFrom: aFilename [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parseFlatDocumentFrom: aDataSource [
 	" Parse documents located at aDataSource and update the receiver's contents with the result "
 	
 	self shouldBeImplemented 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parseXMLDocumentsFromCollection: aCollection [
 	"Parse documents located at aDataSource and update the receiver's contents with the result"
 	
@@ -125,7 +127,7 @@ BioNCBIGenBankReader >> parseXMLDocumentsFromCollection: aCollection [
 			parseDocuments)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parseXMLDocumentsFromDirectory: aDataSource [
 	" Parse documents located at aDataSource and update the receiver's contents with the result "
 	
@@ -137,7 +139,7 @@ BioNCBIGenBankReader >> parseXMLDocumentsFromDirectory: aDataSource [
 			parseDocuments)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parsedContents [
 	" Answer the parsed object resulting from the receiver's contents using the receiver's parser "
 
@@ -146,20 +148,20 @@ BioNCBIGenBankReader >> parsedContents [
 		ifTrue: [ self results contents ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> parsedFilesCount [
 	" Answer how many files were parsed for retrieving downloaded contents "
 	
 	^ results size
 ]
 
-{ #category : #'accessing-filters' }
+{ #category : 'accessing-filters' }
 BioNCBIGenBankReader >> resultClass [
 
 	^ BioNCBIGenBankResult
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> resultSizeInMb [
 	"Answer the size of the result set in megabytes"
 
@@ -169,14 +171,14 @@ BioNCBIGenBankReader >> resultSizeInMb [
 	^ answer
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReader >> saveFilterContents [
 	" Private - Save receiver's contents if appropriate "
 
 	self subclassResponsibility
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> selectGenBankRecords: aBlock [
 	" Select GenBank records from XML contents retrieved on-line and answer a <Collection> "
 	
@@ -184,7 +186,7 @@ BioNCBIGenBankReader >> selectGenBankRecords: aBlock [
 	^ (contents select: aBlock) asBio: self nodesCollectionClass
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankReader >> selectGenBankRecords: selectBlock from: aDataSource [
 	" Off-Line version "
 	
@@ -199,7 +201,7 @@ BioNCBIGenBankReader >> selectGenBankRecords: selectBlock from: aDataSource [
 	^ tmpResults asBio: BioGBSeqCollection
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReader >> validateXMLDataSource: aString [ 
 	" Raise an exception if aString path is not valid for the receiver "
 

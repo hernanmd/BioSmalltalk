@@ -1,3 +1,6 @@
+"
+Represents a SHEET record in a PDB file. Instance Variables: strandNumber sheetID numStrands
+"
 Class {
 	#name : 'BioPDBSheetRecord',
 	#superclass : 'BioPDBRecord',

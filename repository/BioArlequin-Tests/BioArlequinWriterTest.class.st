@@ -1,20 +1,24 @@
+"
+Test class for Arlequin file writing. Validates Arlequin project file output for frequency, microsatellite, DNA samples, and profile sections.
+"
 Class {
-	#name : #BioArlequinWriterTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioArlequinWriterTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'arFile',
 		'matrix'
 	],
-	#category : #'BioArlequin-Tests'
+	#category : 'BioArlequin-Tests',
+	#package : 'BioArlequin-Tests'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinWriterTest >> arlequinFileClass [
 
 	^ BioArlequinFile
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> dataSample1 [
 
 	^ 'id1 1 ACGGTGTCGA
@@ -24,7 +28,7 @@ id4 10 ACAGTGTCAA
 id5 1 GCGGTGTCAA'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> dataSample2 [
 
 	^ '[[Samples]]
@@ -33,7 +37,7 @@ BioArlequinWriterTest >> dataSample2 [
 	SampleData={' , self sequenceSample2 , '}'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> dataSample3 [
 
 	^ '[[Samples]]
@@ -87,7 +91,7 @@ A7	1	A	T	T	T	A	G	C	A	A	T	G	C	T	G	T	C	C	C	A	T	C	T	T	T	T	A	T	T	G	T	C	A	C	C	C	A	C	T
 '
 ]
 
-{ #category : #'samples-frequency' }
+{ #category : 'samples-frequency' }
 BioArlequinWriterTest >> frequency01Sample01 [
 	" amovadis.arp "
 	
@@ -98,7 +102,7 @@ BioArlequinWriterTest >> frequency01Sample01 [
 
 ]
 
-{ #category : #'samples-frequency' }
+{ #category : 'samples-frequency' }
 BioArlequinWriterTest >> frequency01Sample02 [
 	" amovadis.arp "
 
@@ -109,7 +113,7 @@ BioArlequinWriterTest >> frequency01Sample02 [
 
 ]
 
-{ #category : #'samples-frequency' }
+{ #category : 'samples-frequency' }
 BioArlequinWriterTest >> frequency01Sample03 [
 	" amovadis.arp "
 	
@@ -120,7 +124,7 @@ BioArlequinWriterTest >> frequency01Sample03 [
 
 ]
 
-{ #category : #'samples-microsat' }
+{ #category : 'samples-microsat' }
 BioArlequinWriterTest >> microsat01Sample01 [
 	" microsat.arp "
 	
@@ -136,7 +140,7 @@ BioArlequinWriterTest >> microsat01Sample01 [
 			yourself
 ]
 
-{ #category : #'samples-microsat' }
+{ #category : 'samples-microsat' }
 BioArlequinWriterTest >> microsat01Sample02 [
 	" microsat.arp "
 	
@@ -152,7 +156,7 @@ BioArlequinWriterTest >> microsat01Sample02 [
 			yourself
 ]
 
-{ #category : #'sections-profile' }
+{ #category : 'sections-profile' }
 BioArlequinWriterTest >> profileSample1 [
 
 	^ String streamContents: [ : stream |
@@ -172,7 +176,7 @@ BioArlequinWriterTest >> profileSample1 [
 
 ]
 
-{ #category : #'sections-profile' }
+{ #category : 'sections-profile' }
 BioArlequinWriterTest >> profileSample2 [
 
 	^ String streamContents: [ : stream |
@@ -189,7 +193,7 @@ BioArlequinWriterTest >> profileSample2 [
 			nextPutTerminator ]
 ]
 
-{ #category : #'sections-profile' }
+{ #category : 'sections-profile' }
 BioArlequinWriterTest >> profileSample3 [
 
 	^ String streamContents: [ : stream |
@@ -205,7 +209,7 @@ BioArlequinWriterTest >> profileSample3 [
 
 ]
 
-{ #category : #'sections-profile' }
+{ #category : 'sections-profile' }
 BioArlequinWriterTest >> profileSample4 [
 
 	^ String streamContents: [ : stream |
@@ -221,7 +225,7 @@ BioArlequinWriterTest >> profileSample4 [
 
 ]
 
-{ #category : #'samples-dna' }
+{ #category : 'samples-dna' }
 BioArlequinWriterTest >> sequenceSample1 [
 
 	matrix := self initMatrixRows: 2 columns: 2.
@@ -236,7 +240,7 @@ BioArlequinWriterTest >> sequenceSample1 [
 			yourself.
 ]
 
-{ #category : #'samples-dna' }
+{ #category : 'samples-dna' }
 BioArlequinWriterTest >> sequenceSample2 [
 
 	^ 'OT1	5	A	T	C	T	A	G	C	A	A	T	A	C	T	G	T	T	T	T	G	T	C	T	T	C	T	A	T	C	G	T	C	A	A	C	C	A	T	T
@@ -285,7 +289,7 @@ A7	1	A	T	T	T	A	G	C	A	A	T	G	C	T	G	T	C	C	C	A	T	C	T	T	T	T	A	T	T	G	T	C	A	C	C	C	A	C	T
 '
 ]
 
-{ #category : #'samples-dna' }
+{ #category : 'samples-dna' }
 BioArlequinWriterTest >> sequenceSample3 [
 	^ BioA31SampleCollection forDNA
 		identifiers:
@@ -338,7 +342,7 @@ ATTTAGCAATGCTGTCCCATCTTTTATTGTCACCCACT' substrings: (Array with: Character cr));
 		yourself
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> testDataContents01 [
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
@@ -361,7 +365,7 @@ BioArlequinWriterTest >> testDataContents01 [
 	"self assert: arFile contents equals: self profileSample4."
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> testDataContents02 [
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
@@ -381,14 +385,14 @@ BioArlequinWriterTest >> testDataContents02 [
 	self assert: (arFile contents isKindOf: String)
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> testDataSection1 [
 	arFile := self arlequinFileClass new.
 	self assert: (arFile newDataSection isKindOf: BioA31DataSection).
 	self assert: arFile contents equals: String empty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> testHaplotypeContents1 [
 
 "	arFile := self arlequinFileClass new.
@@ -407,7 +411,7 @@ BioArlequinWriterTest >> testHaplotypeContents1 [
 	self assert: ( aSection contents = self haplotypeSection3 ) "
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioArlequinWriterTest >> testProfileContents1 [
 
 	arFile := self arlequinFileClass new.
@@ -418,7 +422,7 @@ BioArlequinWriterTest >> testProfileContents1 [
 	self assert: arFile contents equals: self profileSample3.
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioArlequinWriterTest >> testProfileContents2 [
 	arFile := self arlequinFileClass new.
 	arFile newProfileSection
@@ -428,7 +432,7 @@ BioArlequinWriterTest >> testProfileContents2 [
 	self assert: arFile contents equals: self profileSample3.
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioArlequinWriterTest >> testProfileContents3 [
 
 	arFile := self arlequinFileClass new.
@@ -442,7 +446,7 @@ BioArlequinWriterTest >> testProfileContents3 [
 	self assert: arFile contents equals: self profileSample1
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioArlequinWriterTest >> testProfileSection1 [
 	
 	arFile := self arlequinFileClass new.
@@ -451,7 +455,7 @@ BioArlequinWriterTest >> testProfileSection1 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinWriterTest >> testProfileSection2 [
 	
 	arFile := self arlequinFileClass new.

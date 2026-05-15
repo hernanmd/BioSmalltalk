@@ -1,10 +1,15 @@
+"
+Abstract downloader for NCBI data files. Provides downloading updating and default configuration methods for NCBI FTP resources.
+"
 Class {
-	#name : #BioNCBIDownloader,
-	#superclass : #BioDBObject,
-	#category : 'BioNCBI-Databases'
+	#name : 'BioNCBIDownloader',
+	#superclass : 'BioDBObject',
+	#category : 'BioNCBI-Databases',
+	#package : 'BioNCBI',
+	#tag : 'Databases'
 }
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIDownloader >> defaultServerName [
 	" Answer a String with the receiver's server name "
 	
@@ -12,7 +17,7 @@ BioNCBIDownloader >> defaultServerName [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIDownloader >> download [
 	" Download the requested files only if they are missing or if they are newer in the remote site. "
 	
@@ -22,7 +27,7 @@ BioNCBIDownloader >> download [
 	 
 ]
 
-{ #category : #updating }
+{ #category : 'updating' }
 BioNCBIDownloader >> setTimeout: seconds [
 	" Timeout on connection to NCBI (default: 120 seconds). "
 ]

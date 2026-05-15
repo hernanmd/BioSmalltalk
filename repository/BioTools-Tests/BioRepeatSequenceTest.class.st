@@ -1,8 +1,12 @@
+"
+Test class for BioRepeatSequence subclasses. Validates repeat sequence behavior.
+"
 Class {
 	#name : 'BioRepeatSequenceTest',
 	#superclass : 'BioAbstractTest',
-	#category : 'BioTools-Tests',
-	#package : 'BioTools-Tests'
+	#category : 'BioTools-Tests-Core',
+	#package : 'BioTools-Tests',
+	#tag : 'Core'
 }
 
 { #category : 'tests' }

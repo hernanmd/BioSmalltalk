@@ -1,3 +1,6 @@
+"
+Wrapper for the PHYLIP tokenizer. Instance Variables: block <BlockClosure>
+"
 Class {
 	#name : 'BioPhylipTokenizerWrapper',
 	#superclass : 'Object',

@@ -1,3 +1,6 @@
+"
+Abstract XML file formatter. Extends BioFileFormatter with XML-specific formatting behavior.
+"
 Class {
 	#name : 'BioXMLFormatter',
 	#superclass : 'BioFileFormatter',

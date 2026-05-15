@@ -1,3 +1,6 @@
+"
+CSV formatter for PHASE haplotype inference software. Extends BioCSVFormatter with PHASE-specific initialization and accessor methods.
+"
 Class {
 	#name : 'BioPHASECSVFormatter',
 	#superclass : 'BioCSVFormatter',

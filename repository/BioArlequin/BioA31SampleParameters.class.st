@@ -9,8 +9,8 @@ Instance Variables:
 	samplesPrefix	<String>					Random number for prefixing sample names, which has to be unique between populations in Arlequin
 "
 Class {
-	#name : #BioA31SampleParameters,
-	#superclass : #BioMatrixFormatter,
+	#name : 'BioA31SampleParameters',
+	#superclass : 'BioMatrixFormatter',
 	#instVars : [
 		'identifiers',
 		'frequencies',
@@ -19,23 +19,25 @@ Class {
 		'samplesPrefix',
 		'groupBuilder'
 	],
-	#category : #'BioArlequin-Sample'
+	#category : 'BioArlequin-Sample',
+	#package : 'BioArlequin',
+	#tag : 'Sample'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters class >> description [
 
 	^ 'Arlequin Sample Parameters (Version >= 3.1)'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31SampleParameters class >> on: aBioA31GroupBuilder [
 	" Answer a new instance of the receiver using aBioA31GroupBuilder to retrieve haplotypes and group samples "
 
 	^ self new initializeWith: aBioA31GroupBuilder
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31SampleParameters >> buildSampleFrom: assoc [
 	" Building samples uses currently the HaplotypeDefinition format "
 
@@ -44,7 +46,7 @@ BioA31SampleParameters >> buildSampleFrom: assoc [
 "	sequences add: assoc key"
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> buildSamples [
 	" Private - Build the Arlequin samples from aDictionary "
 	
@@ -52,7 +54,7 @@ BioA31SampleParameters >> buildSamples [
 		self buildSampleFrom: assoc ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> buildSamplesAt: group [
 	" Private - Build the Arlequin samples from aDictionary "
 	
@@ -60,71 +62,71 @@ BioA31SampleParameters >> buildSamplesAt: group [
 		self buildSampleFrom: assoc ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31SampleParameters >> countFrequenciesByGroup [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> frequencies [
 	^ frequencies
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> frequencies: anObject [
 	frequencies := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> frequenciesSize [
 	" Cantidad de Filas : sampleDataItems sum: #size "
 	
 	^ (self frequencies sum: #value) asString.	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> groupBuilder [
 	^ groupBuilder
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> groupBuilder: anObject [
 	groupBuilder := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> groupSamples [
 
 	^ self groupBuilder groupSamples
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31SampleParameters >> haplotypeSequenceAt: idString [
 	" Answer a <String> "
 	
 	^ self groupBuilder atHaplotypeName: idString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31SampleParameters >> haplotypeSequences [
 
 	^ self identifiers collect: [ : p | self haplotypeSequenceAt: p ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> identifiers [
 	"Answer a <Collection> of identifiers of the receiver"
 
 	^ identifiers
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> identifiers: anObject [
 	identifiers := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioA31SampleParameters >> initializeWith: aBioA31GroupBuilder [
 
 	frequencies := OrderedCollection new.
@@ -137,7 +139,7 @@ BioA31SampleParameters >> initializeWith: aBioA31GroupBuilder [
 
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioA31SampleParameters >> printOn: aStream [
 
 	super printOn: aStream.
@@ -146,27 +148,27 @@ BioA31SampleParameters >> printOn: aStream [
 		between: $( and: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> samplesPrefix [
 	^ samplesPrefix
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> samplesPrefix: anObject [
 	samplesPrefix := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> sequences [
 	^ sequences
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> sequences: anObject [
 	sequences := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SampleParameters >> size [
 
 	^ self identifiers size

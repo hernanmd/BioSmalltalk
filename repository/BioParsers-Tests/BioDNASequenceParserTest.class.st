@@ -1,3 +1,6 @@
+"
+Test class for DNA sequence parsing. Validates parsing of DNA-specific sequence formats.
+"
 Class {
 	#name : 'BioDNASequenceParserTest',
 	#superclass : 'BioAbstractParserTest',

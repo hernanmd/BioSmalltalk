@@ -1,3 +1,6 @@
+"
+Full parser for GBSeq elements in Entrez XML results. Extracts complete sequence information including features, references, and annotations.
+"
 Class {
 	#name : 'BioEntrezXMLGBSeqFullParser',
 	#superclass : 'BioEntrezXMLGBSeqParser',

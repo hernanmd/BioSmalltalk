@@ -1,3 +1,6 @@
+"
+Abstract XML result formatter. Extends BioObject with accessor methods for formatted output of XML parsing results.
+"
 Class {
 	#name : 'BioXMLResultFormatter',
 	#superclass : 'BioObject',

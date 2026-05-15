@@ -1,3 +1,6 @@
+"
+Parser for SAM (Sequence Alignment/Map) format files. Extends BioAbstractParser with stream-based record access. Instance Variables: stream <ReadStream> The input stream.
+"
 Class {
 	#name : 'BioSAMParser',
 	#superclass : 'BioAbstractParser',

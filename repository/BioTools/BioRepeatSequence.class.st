@@ -24,9 +24,9 @@ Class {
 		'markerCode',
 		'motifSequence'
 	],
-	#category : 'BioTools-Repeats',
+	#category : 'BioTools-Sequences',
 	#package : 'BioTools',
-	#tag : 'Repeats'
+	#tag : 'Sequences'
 }
 
 { #category : 'accessing' }

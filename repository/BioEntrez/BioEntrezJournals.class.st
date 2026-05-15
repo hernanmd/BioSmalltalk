@@ -1,10 +1,15 @@
+"
+Represents the Journals database in the NCBI Entrez system. Provides access to journal records indexed in NCBI.
+"
 Class {
-	#name : #BioEntrezJournals,
-	#superclass : #BioEntrezDatabase,
-	#category : 'BioEntrez-Databases'
+	#name : 'BioEntrezJournals',
+	#superclass : 'BioEntrezDatabase',
+	#category : 'BioEntrez-Databases',
+	#package : 'BioEntrez',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezJournals class >> dbName [
 	" See superimplementor's comment "
 	

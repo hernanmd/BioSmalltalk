@@ -8,60 +8,62 @@ Instance Variables:
 	feature				<ProtoObject | PseudoContext>
 "
 Class {
-	#name : #BioOrganization,
-	#superclass : #BioNamedObject,
+	#name : 'BioOrganization',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'matchedElements',
 		'feature'
 	],
-	#category : #'BioClassifier-Core'
+	#category : 'BioClassifier-Core',
+	#package : 'BioClassifier',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> addClassification: anObject [
 	"Add anObject to the receiver's matches. Answer the receiver"
 
 	self classifications add: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> classifications [
 
 	^ matchedElements
 		ifNil: [ matchedElements := self matchClass new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> classifications: anObject [
 	matchedElements := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> feature [
 	^ feature
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> feature: anObject [
 	feature := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> groupBy: selector [
 
 	^ self classifications groupedBy: [: classification | 
 		classification contents perform: selector ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> matchClass [
 	"Private - Answer a <Collection class> used to store matched elements"
 
 	^ OrderedCollection
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioOrganization >> printOn: aStream [
 	"Private - See superimplementor's comment"
 	
@@ -79,13 +81,13 @@ BioOrganization >> printOn: aStream [
 		cr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> releaseClassifications [
 
 	matchedElements := nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioOrganization >> size [
 	"Answer a <Number> representing how many objects had organized or classified the receiver"
 

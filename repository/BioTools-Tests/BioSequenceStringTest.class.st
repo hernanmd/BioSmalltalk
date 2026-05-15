@@ -1,3 +1,6 @@
+"
+Test class for BioSequence string operations. Validates sequence string manipulation behavior.
+"
 Class {
 	#name : 'BioSequenceStringTest',
 	#superclass : 'BioAbstractTest',

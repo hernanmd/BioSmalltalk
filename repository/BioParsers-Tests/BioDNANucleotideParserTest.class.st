@@ -1,3 +1,6 @@
+"
+Test class for BioDNANucleotide parser. Validates DNA nucleotide parsing behavior.
+"
 Class {
 	#name : 'BioDNANucleotideParserTest',
 	#superclass : 'BioAbstractParserTest',

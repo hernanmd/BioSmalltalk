@@ -1,26 +1,31 @@
+"
+Test class for BioNCBIGenBankReader. Validates GenBank record reading and parsing behavior.
+"
 Class {
-	#name : #BioNCBIGenBankReaderTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioNCBIGenBankReaderTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'reader'
 	],
-	#category : #'BioBlastTests-Core'
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReaderTest class >> testFilesDirectoryName [
 	" Answer a <String> where the files for testing will be placed "
 	
 	^ (BioObject testFilesFullDirectoryName / 'GenBankTestFiles') fullName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankReaderTest class >> testXMLFilesDirectoryName [
 	
 	^ (self testFilesDirectoryName asFileReference / 'XML') fullName
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testAccessOffLineFilterGBSeqXML [
 	| gbSeqCollection |
 	gbSeqCollection := BioNCBIGenBankReader new
@@ -41,7 +46,7 @@ BioNCBIGenBankReaderTest >> testAccessOffLineFilterGBSeqXML [
 			'Submitted (04-JUL-2010) Zoology, University of Tasmania, Private Bag 5, Hobart, Tasmania 7001, Australia'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testParseOffLineGBSeqXML [
 
 	| gbSeqReader |
@@ -62,7 +67,7 @@ BioNCBIGenBankReaderTest >> testParseOffLineGBSeqXML [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testReadGBSeqXML [
 
 	| gbXMLCollection |
@@ -87,7 +92,7 @@ BioNCBIGenBankReaderTest >> testReadGBSeqXML [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testReadOffLineFilterGBSeqXML [
 
 	| gbSeqCollection |
@@ -115,7 +120,7 @@ BioNCBIGenBankReaderTest >> testReadOffLineFilterGBSeqXML [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testSearchOffLineFilterGBSeqXML [
 
 	| gbSeqCollection |
@@ -132,7 +137,7 @@ BioNCBIGenBankReaderTest >> testSearchOffLineFilterGBSeqXML [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankReaderTest >> testSelectOffLineFilterGBSeqXML [
 	| gbSeqCollection |
 	gbSeqCollection := BioNCBIGenBankReader new

@@ -6,19 +6,21 @@ To run the examples HMMER must be installed in the host system. See class side f
 
 "
 Class {
-	#name : #BioHMMERWrapper,
-	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#name : 'BioHMMERWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Programs',
+	#package : 'BioWrappers',
+	#tag : 'Programs'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper class >> availablePlatforms [
 	" Private - See superimplementor's comment "
 	
 	^ #('Unix' 'MacOS' 'Win32')
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioHMMERWrapper class >> defaultProgramName [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -26,7 +28,7 @@ BioHMMERWrapper class >> defaultProgramName [
 	^ self phmmer
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioHMMERWrapper class >> example1 [
 	" Answer a <String> with the receiver's help text "
 	
@@ -36,7 +38,7 @@ BioHMMERWrapper class >> example1 [
 
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioHMMERWrapper class >> example2 [
 	" hmmbuild globins4.hmm tutorial/globins4.sto "
 	" hmmsearch globins4.hmm uniprot sprot.fasta > globins4.out "
@@ -62,7 +64,7 @@ BioHMMERWrapper class >> example2 [
 			execute.
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper class >> phmmer [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -70,7 +72,7 @@ BioHMMERWrapper class >> phmmer [
 	^ 'phmmer'
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioHMMERWrapper class >> programLocation [
 	" Answer a FileReference with the receiver's location in the system "
 	
@@ -78,14 +80,14 @@ BioHMMERWrapper class >> programLocation [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper class >> softwareName [
 	" See superimplementor's comment "
 
 	^ 'HMMER'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper class >> url [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:04 pm"
@@ -93,7 +95,7 @@ BioHMMERWrapper class >> url [
 	^ 'http://hmmer.janelia.org/'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> A: f [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -103,7 +105,7 @@ BioHMMERWrapper >> A: f [
 	 ^ self propertyAt: 'A' ifAbsentPut: [ f ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> E: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -113,7 +115,7 @@ BioHMMERWrapper >> E: x [
 	 ^ self propertyAt: 'E' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EfL: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -123,7 +125,7 @@ BioHMMERWrapper >> EfL: n [
 	 ^ self propertyAt: 'EfL' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EfN: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -133,7 +135,7 @@ BioHMMERWrapper >> EfN: n [
 	 ^ self propertyAt: 'EfN' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> Eft: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -143,7 +145,7 @@ BioHMMERWrapper >> Eft: x [
 	 ^ self propertyAt: 'Eft' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EmL: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -153,7 +155,7 @@ BioHMMERWrapper >> EmL: n [
 	 ^ self propertyAt: 'EmL' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EmN: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -163,7 +165,7 @@ BioHMMERWrapper >> EmN: n [
 	 ^ self propertyAt: 'EmN' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EvL: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -173,7 +175,7 @@ BioHMMERWrapper >> EvL: n [
 	 ^ self propertyAt: 'EvL' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> EvN: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -183,7 +185,7 @@ BioHMMERWrapper >> EvN: n [
 	 ^ self propertyAt: 'EvN' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> F1: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -193,7 +195,7 @@ BioHMMERWrapper >> F1: x [
 	 ^ self propertyAt: 'F1' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> F2: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -203,7 +205,7 @@ BioHMMERWrapper >> F2: x [
 	 ^ self propertyAt: 'F2' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> F3: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -213,7 +215,7 @@ BioHMMERWrapper >> F3: x [
 	 ^ self propertyAt: 'F3' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> T: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -223,7 +225,7 @@ BioHMMERWrapper >> T: x [
 	 ^ self propertyAt: 'T' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> Z: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -233,7 +235,7 @@ BioHMMERWrapper >> Z: x [
 	 ^ self propertyAt: 'Z' ifAbsentPut: [ x ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> acc [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -243,7 +245,7 @@ BioHMMERWrapper >> acc [
 	 ^ self addOption: 'acc'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> cpu: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:19 pm"
@@ -253,7 +255,7 @@ BioHMMERWrapper >> cpu: n [
 	 ^ self propertyAt: 'cpu' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> domE: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -263,7 +265,7 @@ BioHMMERWrapper >> domE: x [
 	 ^ self propertyAt: 'domE' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> domT: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -273,7 +275,7 @@ BioHMMERWrapper >> domT: x [
 	 ^ self propertyAt: 'domT' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> domZ: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -283,7 +285,7 @@ BioHMMERWrapper >> domZ: x [
 	 ^ self propertyAt: 'domZ' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> domtblout: f [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -293,7 +295,7 @@ BioHMMERWrapper >> domtblout: f [
 	 ^ self propertyAt: 'domtblout' ifAbsentPut: [ f ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> help [
 	"WARNING: This is code generated automatically.
  On: 14 November 2012 - 1:22:49 am"
@@ -303,7 +305,7 @@ BioHMMERWrapper >> help [
 	 ^ self addOption: 'h'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmalign [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -311,7 +313,7 @@ BioHMMERWrapper >> hmmalign [
 	^ 'hmmalign'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmbuild [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -319,7 +321,7 @@ BioHMMERWrapper >> hmmbuild [
 	^ 'hmmbuild'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmconvert [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -327,7 +329,7 @@ BioHMMERWrapper >> hmmconvert [
 	^ 'hmmconvert'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmemit [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -335,7 +337,7 @@ BioHMMERWrapper >> hmmemit [
 	^ 'hmmemit'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmfetch [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -343,7 +345,7 @@ BioHMMERWrapper >> hmmfetch [
 	^ 'hmmfetch'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmpress [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:02 pm"
@@ -351,7 +353,7 @@ BioHMMERWrapper >> hmmpress [
 	^ 'hmmpress'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmscan [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -359,7 +361,7 @@ BioHMMERWrapper >> hmmscan [
 	^ 'hmmscan'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmsearch [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -367,7 +369,7 @@ BioHMMERWrapper >> hmmsearch [
 	^ 'hmmsearch'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmsim [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -375,7 +377,7 @@ BioHMMERWrapper >> hmmsim [
 	^ 'hmmsim'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> hmmstat [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -383,7 +385,7 @@ BioHMMERWrapper >> hmmstat [
 	^ 'hmmstat'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> incE: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -393,7 +395,7 @@ BioHMMERWrapper >> incE: x [
 	 ^ self propertyAt: 'incE' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> incT: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -403,7 +405,7 @@ BioHMMERWrapper >> incT: x [
 	 ^ self propertyAt: 'incT' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> incdomE: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -413,7 +415,7 @@ BioHMMERWrapper >> incdomE: x [
 	 ^ self propertyAt: 'incdomE' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> incdomT: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:16 pm"
@@ -423,7 +425,7 @@ BioHMMERWrapper >> incdomT: x [
 	 ^ self propertyAt: 'incdomT' ifAbsentPut: [ x ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioHMMERWrapper >> isExecCygwin [
 	" phmmer.exe reports 
 	
@@ -437,7 +439,7 @@ BioHMMERWrapper >> isExecCygwin [
 	^ true
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> jackhmmer [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -445,7 +447,7 @@ BioHMMERWrapper >> jackhmmer [
 	^ 'jackhmmer'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> max [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -455,7 +457,7 @@ BioHMMERWrapper >> max [
 	 ^ self addOption: 'max'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> mxfile: f [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -465,7 +467,7 @@ BioHMMERWrapper >> mxfile: f [
 	 ^ self propertyAt: 'mxfile' ifAbsentPut: [ f ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> noali [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -475,7 +477,7 @@ BioHMMERWrapper >> noali [
 	 ^ self addOption: 'noali'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> nobias [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:17 pm"
@@ -485,7 +487,7 @@ BioHMMERWrapper >> nobias [
 	 ^ self addOption: 'nobias'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> nonull2 [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -495,7 +497,7 @@ BioHMMERWrapper >> nonull2 [
 	 ^ self addOption: 'nonull2'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioHMMERWrapper >> notextw [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -505,7 +507,7 @@ BioHMMERWrapper >> notextw [
 	 ^ self addOption: 'notextw'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> o: f [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -515,7 +517,7 @@ BioHMMERWrapper >> o: f [
 	 ^ self propertyAt: 'o' ifAbsentPut: [ f ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> pextend: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -525,7 +527,7 @@ BioHMMERWrapper >> pextend: x [
 	 ^ self propertyAt: 'pextend' ifAbsentPut: [ x ]
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioHMMERWrapper >> phmmer [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -533,7 +535,7 @@ BioHMMERWrapper >> phmmer [
 	^ self class phmmer
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> popen: x [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -543,7 +545,7 @@ BioHMMERWrapper >> popen: x [
 	 ^ self propertyAt: 'popen' ifAbsentPut: [ x ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> qformat: s [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -553,7 +555,7 @@ BioHMMERWrapper >> qformat: s [
 	 ^ self propertyAt: 'qformat' ifAbsentPut: [ s ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmAlign [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -561,7 +563,7 @@ BioHMMERWrapper >> runHmmAlign [
 	self programName: (self programNamed: self hmmalign)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmBuild [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -569,7 +571,7 @@ BioHMMERWrapper >> runHmmBuild [
 	self programName: (self programNamed: self hmmbuild)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmConvert [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -577,7 +579,7 @@ BioHMMERWrapper >> runHmmConvert [
 	self programName: (self programNamed: self hmmconvert)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmEmit [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -585,7 +587,7 @@ BioHMMERWrapper >> runHmmEmit [
 	self programName: (self programNamed: self hmmemit)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmFetch [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -593,7 +595,7 @@ BioHMMERWrapper >> runHmmFetch [
 	^ self programNamed: self hmmfetch
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmPress [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -601,7 +603,7 @@ BioHMMERWrapper >> runHmmPress [
 	self programName: (self programNamed: self hmmpress)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmScan [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -609,7 +611,7 @@ BioHMMERWrapper >> runHmmScan [
 	self programName: (self programNamed: self hmmscan)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmSearch [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -617,7 +619,7 @@ BioHMMERWrapper >> runHmmSearch [
 	self programName: (self programNamed: self hmmsearch)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmSim [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -625,7 +627,7 @@ BioHMMERWrapper >> runHmmSim [
 	self programName: (self programNamed: self hmmsim)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHMMERWrapper >> runHmmStat [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:03 pm"
@@ -633,7 +635,7 @@ BioHMMERWrapper >> runHmmStat [
 	self programName: (self programNamed: self hmmstat)
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> seed: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:18 pm"
@@ -643,7 +645,7 @@ BioHMMERWrapper >> seed: n [
 	 ^ self propertyAt: 'seed' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> tblout: f [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:14 pm"
@@ -653,7 +655,7 @@ BioHMMERWrapper >> tblout: f [
 	 ^ self propertyAt: 'tblout' ifAbsentPut: [ f ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> textw: n [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:15 pm"
@@ -663,7 +665,7 @@ BioHMMERWrapper >> textw: n [
 	 ^ self propertyAt: 'textw' ifAbsentPut: [ n ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioHMMERWrapper >> tformat: s [
 	"WARNING: This is code generated automatically.
  On: 6 December 2012 - 6:34:19 pm"

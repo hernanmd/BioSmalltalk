@@ -1,16 +1,21 @@
+"
+Test class for NCBI BLAST URL construction. Validates URL parameter formatting for BLAST queries.
+"
 Class {
-	#name : #BioNCBIBlastUrlTest,
-	#superclass : #BioNCBITests,
-	#category : #'BioBlastTests-Core'
+	#name : 'BioNCBIBlastUrlTest',
+	#superclass : 'BioNCBITests',
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastUrlTest >> baseUrl [
 
 	^ BioNCBIWebBlastWrapper baseUrl
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastUrlTest >> testCompleteGetUrl [
 
 	| url |
@@ -23,7 +28,7 @@ BioNCBIBlastUrlTest >> testCompleteGetUrl [
 		'http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Get&RID=954517013-7638-11119'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastUrlTest >> testCompletePutUrl [
 
 	| url |

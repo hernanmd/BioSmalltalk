@@ -1,3 +1,6 @@
+"
+Test class for paired-end format parsing. Validates paired-end record creation and iteration behavior.
+"
 Class {
 	#name : 'BioPairedEndParserTest',
 	#superclass : 'BioAbstractParserTest',

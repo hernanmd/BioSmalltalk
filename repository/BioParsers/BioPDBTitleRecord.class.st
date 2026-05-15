@@ -1,3 +1,6 @@
+"
+Represents a TITLE record in a PDB file. Instance Variables: continuationNumber title
+"
 Class {
 	#name : 'BioPDBTitleRecord',
 	#superclass : 'BioPDBRecord',

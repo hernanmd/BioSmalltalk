@@ -1,3 +1,6 @@
+"
+Represents a CONECT record in a PDB file specifying connectivity. Instance Variables: serialNumber bondedAtoms
+"
 Class {
 	#name : 'BioPDBConectRecord',
 	#superclass : 'BioPDBRecord',

@@ -1,3 +1,6 @@
+"
+Test class for BioRestriction and BioRestrictionEnzyme. Validates restriction enzyme analysis behavior.
+"
 Class {
 	#name : 'BioRestrictionTest',
 	#superclass : 'BioAbstractTest',

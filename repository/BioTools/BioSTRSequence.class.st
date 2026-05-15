@@ -14,9 +14,9 @@ https://tools.thermofisher.com/content/sfs/manuals/cms_042039.pdf
 Class {
 	#name : 'BioSTRSequence',
 	#superclass : 'BioRepeatSequence',
-	#category : 'BioTools-Repeats',
+	#category : 'BioTools-Sequences',
 	#package : 'BioTools',
-	#tag : 'Repeats'
+	#tag : 'Sequences'
 }
 
 { #category : 'converting' }
@@ -61,10 +61,11 @@ BioSTRSequence class >> example03 [
 { #category : 'converting' }
 BioSTRSequence >> asAlleleString [
 	"Answer allele in standard notation (e.g., D13S317=10)"
+
 	^ String streamContents: [ :s |
-		self markerCode ifNotNil: [ s << self markerCode ].
-		s << $=.
-		s << (self repeats ifNil: [ 0 ]) asString ]
+			  self markerCode ifNotNil: [ s << self markerCode ].
+			  s << $=.
+			  s << (self repeats ifNil: [ 0 ]) asString ]
 ]
 
 { #category : 'converting' }
@@ -233,7 +234,8 @@ BioSTRSequence >> description [
 	"Answer a human-readable description"
 
 	^ String streamContents: [ :s |
-			  self markerCode ifNotNil: [
+			  self markerCode 
+				ifNotNil: [
 					  s
 						  << self markerCode;
 						  << ': ' ].
@@ -313,8 +315,8 @@ BioSTRSequence >> matchesExpectedSize: expectedSize [
 { #category : 'printing' }
 BioSTRSequence >> printMotifOn: aStream [
 
-	self motif notNil
-		ifTrue: [ 
+	self motif 
+		ifNotNil: [
 			aStream
 				nextPutAll: self motif between: $( and: $);
 				nextPutAll: self repeats asString ]

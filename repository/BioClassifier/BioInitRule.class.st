@@ -1,10 +1,15 @@
+"
+Represents an initialization rule for a rule-based classifier. Serves as the starting rule in a rule evaluation chain.
+"
 Class {
-	#name : #BioInitRule,
-	#superclass : #BioBinaryRule,
-	#category : 'BioClassifier-RuleEngine'
+	#name : 'BioInitRule',
+	#superclass : 'BioBinaryRule',
+	#category : 'BioClassifier-RuleEngine',
+	#package : 'BioClassifier',
+	#tag : 'RuleEngine'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInitRule >> evaluate: aCollection [
 	" See superimplementor's comment "
 
@@ -16,7 +21,7 @@ BioInitRule >> evaluate: aCollection [
 		displayingProgress: 'Classifying'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioInitRule >> evaluate: aCollection context: aContext [
 	" See superimplementor's comment "
 

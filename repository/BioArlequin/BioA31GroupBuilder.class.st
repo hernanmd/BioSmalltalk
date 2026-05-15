@@ -25,18 +25,20 @@ arlequinGroups := ( BioA31GroupBuilder
 The output is a Collection of <GTA31Group>
 "
 Class {
-	#name : #BioA31GroupBuilder,
-	#superclass : #BioNamedObject,
+	#name : 'BioA31GroupBuilder',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'groupSamples',
 		'haplotypes',
 		'haplotypesBag',
 		'data'
 	],
-	#category : 'BioArlequin-Core'
+	#category : 'BioArlequin-Core',
+	#package : 'BioArlequin',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31GroupBuilder class >> newFromClassifications: classifications [
 	" Answer a new receiver's instance setting classifications "
 	
@@ -46,7 +48,7 @@ BioA31GroupBuilder class >> newFromClassifications: classifications [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> atHaplotypeName: aString [ 
 	" Answer a <String> "
 
@@ -55,7 +57,7 @@ BioA31GroupBuilder >> atHaplotypeName: aString [
 		ifNone: [ self error: 'Haplotype named ' , aString , ' not found' ]) sequence asString.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> atSequence: aString [ 
 	" Answer a <String> "
 
@@ -64,7 +66,7 @@ BioA31GroupBuilder >> atSequence: aString [
 		ifNone: [ self error: 'Haplotype not found' ]) name.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31GroupBuilder >> buildGroupSamples [
 
 	groupSamples := self data collect: [ : classAssoc |
@@ -72,7 +74,7 @@ BioA31GroupBuilder >> buildGroupSamples [
 	^  BioA31Group fromBuilder: self.
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31GroupBuilder >> buildHaplotype: groupedDictionaries [ 
 
 	^ groupedDictionaries collect: [ : gbSeqDictionary | 
@@ -81,7 +83,7 @@ BioA31GroupBuilder >> buildHaplotype: groupedDictionaries [
 			ifAbsent: [ self error: 'Sequences were not padded for Arlequin export' ] ].
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31GroupBuilder >> buildHaplotypes [
 
 	self haplotypesBag: (self data flatCollect: [ : keyValue | self buildHaplotype: keyValue value ]) asBag.
@@ -89,7 +91,7 @@ BioA31GroupBuilder >> buildHaplotypes [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> buildSampleData [
 	" Private - Territory names and samples contents must correspond each other. "
 	
@@ -97,7 +99,7 @@ BioA31GroupBuilder >> buildSampleData [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31GroupBuilder >> buildSamplesFromGroupedDictionaries: aCollection [ 
 
 	^ aCollection groupedBy: [ : gbSeqDictionary | 
@@ -105,29 +107,29 @@ BioA31GroupBuilder >> buildSamplesFromGroupedDictionaries: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> data [
 	^ data
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> data: anObject [
 
 	data := anObject.
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> groupSamples [
 	^ groupSamples
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> groupSamples: anObject [
 	groupSamples := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> groups [
 	" Answer a <Collection> of Arlequin groups "
 
@@ -136,24 +138,24 @@ BioA31GroupBuilder >> groups [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> haplotypes [
 	^ haplotypes
 		ifNil: [ haplotypes := self initializeHaplotypes ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> haplotypesBag [
 	^ haplotypesBag
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> haplotypesBag: aCollection [ 
 
 	haplotypesBag := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31GroupBuilder >> initializeHaplotypes [
 
 	| index |

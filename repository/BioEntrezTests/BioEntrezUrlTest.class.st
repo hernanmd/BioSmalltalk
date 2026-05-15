@@ -1,26 +1,31 @@
+"
+Test class for BioEntrezUrl. Validates Entrez URL construction and parameter formatting.
+"
 Class {
-	#name : #BioEntrezUrlTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioEntrezUrlTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'entrezUrl'
 	],
-	#category : #'BioEntrezTests-Core'
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> baseUrl [
 
 	^ BioEntrezClient baseUrl
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> setUp [
 
 	super setUp.
 	entrezUrl := BioEntrezUrl fromString: self baseUrl
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testBaseUrl [
 
 	self assert: (BioEGlobalQuery baseUrl isKindOf: String).
@@ -34,7 +39,7 @@ BioEntrezUrlTest >> testBaseUrl [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testCompleteUrl [
 	
 	| url |
@@ -57,7 +62,7 @@ BioEntrezUrlTest >> testCompleteUrl [
 		equals: 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testCreation [
 
 	entrezUrl := BioEntrezUrl fromString: self baseUrl , 'db=pubmed&term=science[journal]+AND+breast+cancer+AND+2009[pdat]'.
@@ -68,7 +73,7 @@ BioEntrezUrlTest >> testCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testDbName [
 
 	entrezUrl
@@ -77,7 +82,7 @@ BioEntrezUrlTest >> testDbName [
 	self assert: entrezUrl dbName equals: 'nuccore'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testEmailAddress [
 
 	entrezUrl
@@ -86,7 +91,7 @@ BioEntrezUrlTest >> testEmailAddress [
 	self assert: (entrezUrl valueForParameter: 'email') equals: 'test@test.com'
 ]
 
-{ #category : #tests }
+{ #category : 'tests' }
 BioEntrezUrlTest >> testEntrezParameters [
 
 	self deny: entrezUrl entrezParameters isEmpty.
@@ -94,7 +99,7 @@ BioEntrezUrlTest >> testEntrezParameters [
 	self assert: (entrezUrl entrezParameters allSatisfy: #isString).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testParameters [
 
 	self assert: (entrezUrl parameters isKindOf: Collection).
@@ -108,7 +113,7 @@ BioEntrezUrlTest >> testParameters [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezUrlTest >> testToolName [
 
 	entrezUrl

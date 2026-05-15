@@ -1,3 +1,6 @@
+"
+Test class for BioAlphabet and its subclasses. Validates alphabet construction, letter membership, and complement behavior.
+"
 Class {
 	#name : 'BioAlphabetTest',
 	#superclass : 'BioAbstractTest',

@@ -1,3 +1,6 @@
+"
+Parser for interleaved (combined) FASTQ files where paired-end reads alternate within a single file. Provides streaming access to FASTQ records.
+"
 Class {
 	#name : 'BioFASTQInterleavedParser',
 	#superclass : 'Object',

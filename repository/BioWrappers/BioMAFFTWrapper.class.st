@@ -3,33 +3,35 @@ See https://mafft.cbrc.jp/alignment/software/manual/manual.html for details
 
 "
 Class {
-	#name : #BioMAFFTWrapper,
-	#superclass : #BioWrapperObject,
-	#category : #'BioWrappers-Aligners'
+	#name : 'BioMAFFTWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Aligners',
+	#package : 'BioWrappers',
+	#tag : 'Aligners'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper class >> defaultProgramName [
 	" Private - See superimplementor's comment "
 
 	^ self mafft
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper class >> mafft [
 	" See superimplementor's comment "
 
 	^ 'mafft'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper class >> softwareName [
 	" See superimplementor's comment "
 
 	^ 'Mafft'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper class >> url [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:12 pm"
@@ -37,7 +39,7 @@ BioMAFFTWrapper class >> url [
 	^ 'http://mafft.cbrc.jp/alignment/software/'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> auto [
 	" Automatically selects an appropriate strategy from L-INS-i, FFT-NS-i and FFT-NS-2, according to data size. Default: off (always FFT-NS-2) "
 
@@ -45,7 +47,7 @@ BioMAFFTWrapper >> auto [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> clustalout [
 	" Output format: clustal format. Default: off (fasta format)  "
 
@@ -53,14 +55,14 @@ BioMAFFTWrapper >> clustalout [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioMAFFTWrapper >> defaultPropertySeparator [
 	" Private - See superimplementor's comment "
 	
 	^ Character space
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> fastapair [
 	"  All pairwise alignments are computed with FASTA (Pearson and Lipman 1988). FASTA is required. Default: off (6mer distance is used) "
 
@@ -68,7 +70,7 @@ BioMAFFTWrapper >> fastapair [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> genafpair [
 	"  All pairwise alignments are computed with a local algorithm with the generalized affine gap cost (Altschul 1998). More accurate but slower than --6merpair. Suitable when large internal gaps are expected. Applicable to up to ~200 sequences. A combination with --maxiterate 1000 is recommended (E-INS-i). Default: off (6mer distance is used).
 	
@@ -78,7 +80,7 @@ BioMAFFTWrapper >> genafpair [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> globalpair [
 	" All pairwise alignments are computed with the Needleman-Wunsch algorithm. More accurate but slower than --6merpair. Suitable for a set of globally alignable sequences. Applicable to up to ~200 sequences. A combination with --maxiterate 1000 is recommended (G-INS-i). Default: off (6mer distance is used).	
 	G-INS-i (suitable for sequences of similar lengths; recommended for <200 sequences; iterative refinement method incorporating global pairwise alignment information) "
@@ -87,13 +89,13 @@ BioMAFFTWrapper >> globalpair [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> input: anObject [
 
 	anObject asMAFFTWrapperInput: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> inputorder [
 	" Output order: same as input. Default: on "
 
@@ -101,7 +103,7 @@ BioMAFFTWrapper >> inputorder [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> localpair [
 	" All pairwise alignments are computed with the Smith-Waterman algorithm. More accurate but slower than --6merpair. Suitable for a set of locally alignable sequences. Applicable to up to ~200 sequences. A combination with --maxiterate 1000 is recommended (L-INS-i). Default: off (6mer distance is used).
 	L-INS-i (probably most accurate; recommended for <200 sequences; iterative refinement method incorporating local pairwise alignment information) "
@@ -110,7 +112,7 @@ BioMAFFTWrapper >> localpair [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> maxiterate: aNumber [
 	" Number cycles of iterative refinement are performed. Default: 0  "
 
@@ -118,7 +120,7 @@ BioMAFFTWrapper >> maxiterate: aNumber [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> reorder [
 	" Output order: aligned. Default: off (inputorder) "
 
@@ -126,7 +128,7 @@ BioMAFFTWrapper >> reorder [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> retree: aNumber [
 	" By the --retree 1 option, the speed is increased (about two times) and the accuracy is reduced:   "
 
@@ -134,7 +136,7 @@ BioMAFFTWrapper >> retree: aNumber [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMAFFTWrapper >> treeout [
 	" Guide tree is output to the input.tree file. Default: off "
 

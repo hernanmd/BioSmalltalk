@@ -1,3 +1,6 @@
+"
+Test class for BioNCBIIdParser. Validates parsing of NCBI identifier strings.
+"
 Class {
 	#name : 'BioNCBIIdParserTest',
 	#superclass : 'BioAbstractParserTest',

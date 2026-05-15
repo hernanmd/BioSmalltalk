@@ -1,3 +1,6 @@
+"
+Test class for PDB file parsing. Validates PDB record parsing including atom records SEQRES CONECT and multi-chain structures.
+"
 Class {
 	#name : 'BioPDBParserTest',
 	#superclass : 'BioAbstractParserTest',

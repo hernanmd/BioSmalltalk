@@ -1,3 +1,6 @@
+"
+Represents a sample entry within a VCF record containing genotype and quality information. Instance Variables: vcfRecord genotype readDepth haplotypeQuality genotypeQuality
+"
 Class {
 	#name : 'BioVCFRecordSample',
 	#superclass : 'BioNamedObject',

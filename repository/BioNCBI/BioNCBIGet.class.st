@@ -7,12 +7,14 @@ http://www.ncbi.nlm.nih.gov/blast/Blast.cgi?CMD=Get&RID=954517013-7639-11119
 
 "
 Class {
-	#name : #BioNCBIGet,
-	#superclass : #BioNCBICSCommand,
-	#category : 'BioNCBI-Commands'
+	#name : 'BioNCBIGet',
+	#superclass : 'BioNCBICSCommand',
+	#category : 'BioNCBI-Commands',
+	#package : 'BioNCBI',
+	#tag : 'Commands'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewFlatQueryAnchored [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only).
 	This is the option described in web page as 
@@ -21,7 +23,7 @@ BioNCBIGet >> alignmentViewFlatQueryAnchored [
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'FlatQueryAnchored'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewFlatQueryAnchoredNoIdentities [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only)
 	This is the option described in web page as 
@@ -30,14 +32,14 @@ BioNCBIGet >> alignmentViewFlatQueryAnchoredNoIdentities [
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'FlatQueryAnchoredNoIdentities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewPairwise [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only) "
 	
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'Pairwise'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewQueryAnchored [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only)
 	This is the option described in web page as 
@@ -47,7 +49,7 @@ BioNCBIGet >> alignmentViewQueryAnchored [
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'QueryAnchored'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewQueryAnchoredNoIdentities [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only) 
 	This is the option described in web page as 
@@ -57,49 +59,49 @@ BioNCBIGet >> alignmentViewQueryAnchoredNoIdentities [
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'QueryAnchoredNoIdentities'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignmentViewTabular [
 	" Type of alignment view (FORMAT_OBJECT=Alignment only) "
 	
 	self clientUrl queryAt: 'ALIGNMENT_VIEW' put: 'Tabular'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> alignments: aSmallInteger [
 	" Number of alignments "
 	
 	self clientUrl queryAt: 'ALIGNMENTS' put: aSmallInteger asString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBIGet >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ self cmdString , '=Get'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGet >> checkParameters [
 	" Answer <true> if the receiver supports client parameters "
 	
 	^ self client rawUrl isNil not and: [ self client url asText isEmpty not ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBIGet >> clientUrl [
 	" Answer a GTNCBIUrl object "
 	
 	^ self client getUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> descriptions: aSmallIntegerString [
 	" Number of descriptions "
 	
 	self clientUrl addParameters: 'DESCRIPTIONS=' , aSmallIntegerString
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBIGet >> doesNotUnderstand: aMessage [
 	" Private - Redirect messages not understood to the PUT command.
 	This allows to have interchangeable message sends to the NCBI Client
@@ -108,160 +110,160 @@ BioNCBIGet >> doesNotUnderstand: aMessage [
 	^ aMessage sentTo: self put
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> entrezLinksNewWindowOff [
 	" Add TARGET to Entrez links in formatted results "
 	
 	self clientUrl queryAt: 'ENTREZ_LINKS_NEW_WINDOW' put: 'no'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> entrezLinksNewWindowOn [
 	" Add TARGET to Entrez links in formatted results "
 	
 	self clientUrl queryAt: 'ENTREZ_LINKS_NEW_WINDOW' put: 'yes'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> expectHigh: aFloat [
 	" High expect value threshold for formatting "
 	
 	self clientUrl queryAt: 'EXPECT_HIGH' put: aFloat asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> expectLow: aFloat [
 	" Low expect value threshold for formatting "
 	
 	self clientUrl queryAt: 'EXPECT_LOW' put: aFloat asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatEntrezQuery: aString [
 	" Entrez query to limit formatting of Blast results "
 	
 	self clientUrl queryAt: 'FORMAT_ENTREZ_QUERY' put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectAlignment [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'Alignment'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectNeighbors [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'Neighbors'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectPSSM [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'PSSM'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectSearchInfo [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'SearchInfo'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectTaxBlast [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'TaxBlast'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectTaxBlastMultiFrame [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'TaxBlastMultiFrame'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatObjectTaxblastParent [
 	" Specifies object to get "
 	
 	self clientUrl queryAt: 'FORMAT_OBJECT' put: 'TaxblastParent'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatTypeAsn1 [
 	" Type of formatting "
 	
 	self clientUrl queryAt: 'FORMAT_TYPE' put: 'ASN.1'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatTypeHTML [
 	" Type of formatting "
 	
 	self clientUrl queryAt: 'FORMAT_TYPE' put: 'HTML'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatTypeText [
 	" Type of formatting "
 	
 	self clientUrl queryAt: 'FORMAT_TYPE' put: 'Text'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> formatTypeXML [
 	" Type of formatting "
 	
 	self clientUrl queryAt: 'FORMAT_TYPE' put: 'XML'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGet >> isGet [
 	
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> resultsFileOff [
 	" Allow to download megablast results as a gzip-compressed file "
 	
 	self clientUrl queryAt: 'RESULTS_FILE' put: 'no'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> resultsFileOn [
 	" Allow to download megablast results as a gzip-compressed file "
 	
 	self clientUrl queryAt: 'RESULTS_FILE' put: 'yes'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> showNCBIGiOff [
 	" Show NCBI GI "
 	
 	self clientUrl queryAt: 'NCBI_GI' put: 'no'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> showNCBIGiOn [
 	" Show NCBI GI "
 	
 	self clientUrl queryAt: 'NCBI_GI' put: 'yes'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> showOverviewOff [
 	" Show graphical overview "
 	
 	self clientUrl queryAt: 'SHOW_OVERVIEW' put: 'no'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGet >> showOverviewOn [
 	" Show graphical overview "
 	

@@ -4,18 +4,20 @@ When download finish, presents a dialog to save results into a directory.
 
 "
 Class {
-	#name : #BioNCBIGenBankUIReader,
-	#superclass : #BioNCBIGenBankReader,
-	#category : 'BioBlast-Remote'
+	#name : 'BioNCBIGenBankUIReader',
+	#superclass : 'BioNCBIGenBankReader',
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankUIReader >> entrezSearchResults [
 
 	^ contents select: #isEntrezSearchResult
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankUIReader >> formatFilename: dir index: index [
 
 	^ String streamContents: [: stream | 
@@ -26,7 +28,7 @@ BioNCBIGenBankUIReader >> formatFilename: dir index: index [
 				nextPutAll:  '.xml' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankUIReader >> saveFilterContents [
 	" Private - Save receiver's contents if appropriate "
 
@@ -40,7 +42,7 @@ BioNCBIGenBankUIReader >> saveFilterContents [
 	^ downloadStatus
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankUIReader >> saveSplittedSearchResults: dir [
 	self entrezSearchResults
 		doWithIndex: [ :bioESearchResult :index | 

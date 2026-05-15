@@ -1,3 +1,6 @@
+"
+Represents a paired-end FASTQ record containing two synchronized reads. Instance Variables: read1 <BioFASTQRecord> First read in the pair. read2 <BioFASTQRecord> Second read in the pair.
+"
 Class {
 	#name : 'BioFASTQPairedEndRecord',
 	#superclass : 'Object',

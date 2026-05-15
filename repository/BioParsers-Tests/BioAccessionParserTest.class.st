@@ -1,3 +1,6 @@
+"
+Test class for BioAccessionParser. Validates parsing of Accession-format identifier strings.
+"
 Class {
 	#name : 'BioAccessionParserTest',
 	#superclass : 'BioAbstractParserTest',

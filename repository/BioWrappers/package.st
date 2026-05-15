@@ -1,1 +1,1 @@
-Package { #name : #BioWrappers }
+Package { #name : 'BioWrappers' }

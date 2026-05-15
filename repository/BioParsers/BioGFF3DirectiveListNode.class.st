@@ -1,3 +1,6 @@
+"
+Represents a directive list node in a GFF3 file parse tree. Contains multiple directive nodes.
+"
 Class {
 	#name : 'BioGFF3DirectiveListNode',
 	#superclass : 'BioGFF3GFF3FileNode',

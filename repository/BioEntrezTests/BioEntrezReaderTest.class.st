@@ -1,13 +1,18 @@
+"
+Test class for Entrez result readers. Validates reading and parsing of Entrez query responses.
+"
 Class {
-	#name : #BioEntrezReaderTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioEntrezReaderTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'reader'
 	],
-	#category : 'BioEntrezTests-Core'
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezReaderTest >> eSearchResult01 [
 	" This is the output of #entrezClientSample02 "
 
@@ -26,7 +31,7 @@ BioEntrezReaderTest >> eSearchResult01 [
 	</IdList><TranslationSet><Translation>     <From>Opuntia</From>     <To>"Opuntia"[Organism] OR Opuntia[All Fields]</To>    </Translation></TranslationSet><TranslationStack>   <TermSet>    <Term>"Opuntia"[Organism]</Term>    <Field>Organism</Field>    <Count>201</Count>    <Explode>Y</Explode>   </TermSet>   <TermSet>    <Term>Opuntia[All Fields]</Term>    <Field>All Fields</Field>    <Count>413</Count>    <Explode>Y</Explode>   </TermSet>   <OP>OR</OP>   <OP>GROUP</OP>   <TermSet>    <Term>rpl16[All Fields]</Term>    <Field>All Fields</Field>    <Count>12302</Count>    <Explode>Y</Explode>   </TermSet>   <OP>AND</OP>  </TranslationStack><QueryTranslation>("Opuntia"[Organism] OR Opuntia[All Fields]) AND rpl16[All Fields]</QueryTranslation></eSearchResult>'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezReaderTest >> testReadingValues01 [
 
 	reader := BioEntrezSearchResultReader newFromXML: self eSearchResult01 readStream.

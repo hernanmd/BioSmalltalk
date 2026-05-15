@@ -1,13 +1,18 @@
+"
+Test class for BLAST XML parsing. Validates parsing of BLAST XML output into node hierarchies.
+"
 Class {
-	#name : #BioBlastXMLParserTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioBlastXMLParserTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'result'
 	],
-	#category : #'BioBlastTests-Core'
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> hits01 [
 	" Several hits with full headers and footers "
 
@@ -139,7 +144,7 @@ BioBlastXMLParserTest >> hits01 [
 </BlastOutput>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> hits03 [
 	" One hit with full headers and footers "
 
@@ -215,7 +220,7 @@ BioBlastXMLParserTest >> hits03 [
 </BlastOutput>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> hits04 [
 	" One hit with 2 HSPs "
 	
@@ -310,7 +315,7 @@ BioBlastXMLParserTest >> hits04 [
 </BlastOutput>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> hits05 [
 	" Several hits with full headers and footers "
 
@@ -414,7 +419,7 @@ BioBlastXMLParserTest >> hits05 [
 </BlastOutput>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> hits06 [
 	" Several hits with 2 HSPs "
 
@@ -537,27 +542,27 @@ BioBlastXMLParserTest >> hits06 [
 </BlastOutput>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> parserClass [
 
 	^ BioParser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> saxParseBlastNodes: hitsSelector [
 
 	result := self parserClass saxParseNcbiXmlBlastNodes: (self perform: hitsSelector)
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> saxTokenizeBlastNodes: hitsSelector [
 
 	result := self parserClass saxTokenizeNcbiXmlBlastNodes: (self perform: hitsSelector)
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test01ParsingNodes [
 
 	self saxParseBlastNodes: #hits03.						
@@ -572,7 +577,7 @@ BioBlastXMLParserTest >> test01ParsingNodes [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test01QueryingNodes [
 
 	| filterResult theHsps theHsp |
@@ -596,7 +601,7 @@ BioBlastXMLParserTest >> test01QueryingNodes [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test01SelectingNodes [
 
 	| queryRs |
@@ -612,7 +617,7 @@ BioBlastXMLParserTest >> test01SelectingNodes [
 	self assert: queryRs third blastValue equals: 99.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test01TokenizeHeaders [
 	self tokenizeBlastHeaderNodes: (self perform: #hits04).
 	self assert: (result isKindOf: OrderPreservingDictionary).
@@ -651,7 +656,7 @@ BioBlastXMLParserTest >> test01TokenizeHeaders [
 	self assert: (result at: 'BlastOutput_program') equals: 'blastn'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test01TokenizeNodes [
 
 	self saxTokenizeBlastNodes: #hits01.						
@@ -664,7 +669,7 @@ BioBlastXMLParserTest >> test01TokenizeNodes [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test03ParsingNodes [
 
 	| theHit theHsp |
@@ -707,7 +712,7 @@ BioBlastXMLParserTest >> test03ParsingNodes [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test04ParsingNodes [
 
 	| theHit firstHsp secondHsp |
@@ -768,7 +773,7 @@ BioBlastXMLParserTest >> test04ParsingNodes [
 	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastXMLParserTest >> test05ParsingNodes [
 
 	| firstHit secondHit theHsp |
@@ -837,7 +842,7 @@ BioBlastXMLParserTest >> test05ParsingNodes [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastXMLParserTest >> tokenizeBlastHeaderNodes: aString [
 
 	result := self parserClass tokenizeNcbiXmlBlastHeader: aString.

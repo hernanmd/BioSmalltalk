@@ -1,3 +1,6 @@
+"
+Represents a GenBank format file. Extends BioFile with GenBank-specific file handling.
+"
 Class {
 	#name : 'BioGenBankFile',
 	#superclass : 'BioFile',

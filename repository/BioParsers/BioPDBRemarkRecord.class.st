@@ -1,3 +1,6 @@
+"
+Represents a REMARK record in a PDB file. Instance Variables: remarkNumber
+"
 Class {
 	#name : 'BioPDBRemarkRecord',
 	#superclass : 'BioPDBRecord',

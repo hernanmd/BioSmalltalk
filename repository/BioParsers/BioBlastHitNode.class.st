@@ -1,3 +1,6 @@
+"
+Represents a Hit node in the BLAST XML result tree. Provides access to hit-level information from BLAST output.
+"
 Class {
 	#name : 'BioBlastHitNode',
 	#superclass : 'BioBlastValueNode',

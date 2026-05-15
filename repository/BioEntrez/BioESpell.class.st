@@ -6,19 +6,21 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/espell.fcgi?db=pubmed&term=brest+ca
 http://www.ncbi.nlm.nih.gov/corehtml/query/static/espell_help.html
 "
 Class {
-	#name : #BioESpell,
-	#superclass : #BioEntrezCommand,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioESpell',
+	#superclass : 'BioEntrezCommand',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioESpell class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'espell.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioESpell class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

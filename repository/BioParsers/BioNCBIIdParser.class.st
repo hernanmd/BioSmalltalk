@@ -1,3 +1,6 @@
+"
+Parser for NCBI identifier formats. Handles initialization and parsing of various NCBI identifier strings including gi accession and locus formats.
+"
 Class {
 	#name : 'BioNCBIIdParser',
 	#superclass : 'BioIDParser',

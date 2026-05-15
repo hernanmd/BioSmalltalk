@@ -1,3 +1,6 @@
+"
+Test class for BioHirschberg. Validates Hirschberg sequence alignment algorithm behavior including gap penalties and scoring.
+"
 Class {
 	#name : 'BioHirschbergTest',
 	#superclass : 'TestCase',

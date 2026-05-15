@@ -33,8 +33,8 @@ programName
 
 "
 Class {
-	#name : #BioWrapperObject,
-	#superclass : #BioPropertyObject,
+	#name : 'BioWrapperObject',
+	#superclass : 'BioPropertyObject',
 	#instVars : [
 		'lastStatus',
 		'options',
@@ -46,10 +46,12 @@ Class {
 		'isDoubleDashOptions',
 		'isDoubleDashProperties'
 	],
-	#category : #'BioWrappers-Core'
+	#category : 'BioWrappers-Core',
+	#package : 'BioWrappers',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject class >> availablePlatforms [
 	" Answer a <Collection> of <String> with receiver's supported platforms. 
 	Each supporteed platform name must be obtained through
@@ -61,14 +63,14 @@ BioWrapperObject class >> availablePlatforms [
 	self subclassResponsibility 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioWrapperObject class >> defaultProgramName [
 	" Answer a <String> representing the name of the 'main' binary executable for the receiver "
 
 	self subclassResponsibility 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject class >> invalidPlatform [
 	" Perform an action after an invalid platform for the receiver was detected.
 	Override if necessary "
@@ -76,70 +78,70 @@ BioWrapperObject class >> invalidPlatform [
 	self informMessage: self softwareName , ' is not supported in the current platform: ' , Smalltalk os name.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioWrapperObject class >> platformCheck [
 	" Answer <true> if receiver can be executed in the current platform "
 	
 	^ self availablePlatforms includes: Smalltalk os name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject class >> releases [
 	" Answer a <Collection> of <String> each representing a binary name version of the receiver "
 	
 	^ self allFinalClasses collect: #defaultProgramName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject class >> softwareName [
 	" Answer a <String> with the receiver's friendly or known name "
 
 	^ self subclassResponsibility 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject class >> url [
 	" Answer a <String> representing receiver's URL "
 
 	^ self subclassResponsibility
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> addInputParameter: anObject [
 	" Private - Add anObject to the receiver's options stack "
 
 	self parameters addLast: '< ' , anObject
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> addOption: aString [
 	" Private - Add anObject to the receiver's options stack "
 
 	self options addLast: aString
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> addOption: optionName value: optionValue [
 	" Private - Add optionName and optionValue to the receiver's options stack "
 
 	self options addLast:  '-' , optionName , ' ' , optionValue.
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> addOutputParameter: filename [
 	" Private - Add filename to the receiver's options stack "
 
 	self parameters addLast: ' > ' , filename
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> addParameter: param [
 	" Private - Add param to the receiver's parameters stack "
 
 	self parameters addLast: param
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildCmdLine [
 	" Answer a <String> with receiver's full command line "
 	
@@ -150,7 +152,7 @@ BioWrapperObject >> buildCmdLine [
 			buildParameters: stream ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildOptions: stream [
 
 	self options do: [ : optString |
@@ -163,7 +165,7 @@ BioWrapperObject >> buildOptions: stream [
 		stream nextPutAll: optString ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildParameters: stream [
 	" Append receiver's parameters delimited by space, to stream "
 
@@ -172,7 +174,7 @@ BioWrapperObject >> buildParameters: stream [
 		stream nextPutAll: parString ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioWrapperObject >> buildPath: fileName [
 
 	^ String streamContents: [ : stream |
@@ -181,7 +183,7 @@ BioWrapperObject >> buildPath: fileName [
 			nextPutAll: fileName ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildProperties: stream [
 	" Private - Append receiver's properties to stream "
 
@@ -194,7 +196,7 @@ BioWrapperObject >> buildProperties: stream [
 					self buildPropertyValue: assoc into: stream ] ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildPropertySeparator: assoc into: stream [
 	"Private - Use a dash or double dash as property separator"
 
@@ -203,7 +205,7 @@ BioWrapperObject >> buildPropertySeparator: assoc into: stream [
 		ifFalse: [ stream nextPut: $- ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> buildPropertyValue: assoc into: stream [
 	" Private - Write the association assoc into stream "
 
@@ -213,7 +215,7 @@ BioWrapperObject >> buildPropertyValue: assoc into: stream [
 		nextPutAll: assoc value asString
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> cmdLine [ 
 	" Answer a <String> with the full command line for executing the receiver "
 
@@ -224,40 +226,40 @@ BioWrapperObject >> cmdLine [
 	^ cmdLine
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioWrapperObject >> cwd [
 
 	^ cwd
 		ifNil: [ cwd := String empty ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> cwd: anObject [
 	cwd := anObject
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioWrapperObject >> defaultParametersCollector [
 	" Answer a <Collection> acting as holder for receiver's parameters "
 
 	^ OrderedCollection new
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioWrapperObject >> defaultProgramName [
 	" Answer a <String> representing the name of the 'main' binary executable for the receiver "
 
 	^ self class defaultProgramName 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioWrapperObject >> defaultPropertySeparator [
 	" Answer a <Character> used as delimiter between property names and property values "
 
 	^ $=
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> execNameFor: aString [
 	" Answer a String with the fully qualified name for programName, i.e. if programName is 'blast' then in Windows family the answer will be 'blast.exe' " 
 	
@@ -265,7 +267,7 @@ BioWrapperObject >> execNameFor: aString [
 
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioWrapperObject >> execResult [
 	" Execute the receiving action. Answer a <String> "
 	
@@ -273,7 +275,7 @@ BioWrapperObject >> execResult [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> execSelector [
 	" Private - Answer a <Symbol> which specifies the appropriate selector to execute a command in the receiver's host system "
 
@@ -286,21 +288,21 @@ BioWrapperObject >> execSelector [
 	^ self signalNotFound: 'Platform undetected'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> execSelectorForMac [
 	" Private - Answer a <Symbol> representing a selector for performing a message in a Mac-box "
 	
 	^ #executeCommand:
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> execSelectorForUnix [
 	" Private - Answer a <Symbol> representing a selector for performing a message in a Unix-box "
 	
 	^ #executeCommand:
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> execSelectorForWindows [
 
 	^ self isExecCygwin
@@ -308,7 +310,7 @@ BioWrapperObject >> execSelectorForWindows [
 		ifFalse: [ #executeCommand: ]
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioWrapperObject >> execute [
 	" Execute the receiving action. Answer a <BioResultObject> "
 	
@@ -322,7 +324,7 @@ BioWrapperObject >> execute [
 
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioWrapperObject >> execute: anOperationClass [
 	" Private - Execute the operation specified by anOperationClass "
 	
@@ -331,14 +333,14 @@ BioWrapperObject >> execute: anOperationClass [
 
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> formatPlatformPath: aPath [
 	" Private - Answe a <String> with the path properly formatted for the current platform "
 
 	^ BioOSInterfaceEngine formatPlatformPath: aPath
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioWrapperObject >> isDoubleDashOptions [
 	"Answer <true> if the receiver uses double dashes to specify options"
 
@@ -346,7 +348,7 @@ BioWrapperObject >> isDoubleDashOptions [
 		ifNil: [ isDoubleDashOptions := true ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioWrapperObject >> isDoubleDashProperties [
 	"Answer <true> if the receiver uses double dashes to specify options"
 
@@ -354,65 +356,65 @@ BioWrapperObject >> isDoubleDashProperties [
 		ifNil: [ isDoubleDashProperties := true ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> isExecCygwin [
 
 	^ false
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioWrapperObject >> lastStatus [
 	" Answer a <Boolean> specifying last operation status "
 
 	^ lastStatus
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioWrapperObject >> lastStatus: aBoolean [
 	" Set aBoolean specifying last operation status "
 
 	lastStatus := aBoolean
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> options [
 
 	^ options
 		ifNil: [ options := OrderedCollection new ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> options: anObject [
 	options := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> parameters [
 
 	^ parameters
 		ifNil: [ parameters := self defaultParametersCollector ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> parameters: anObject [
 	parameters := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> programName [
 
 	^ programName
 		ifNil: [ programName := self execNameFor: self defaultProgramName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> programName: cmdString [
 	" Set cmdString specifying command name "
 	
 	programName := cmdString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioWrapperObject >> programNamed: aString [
 	"Answer a <String> with the full path to the receiver's binary "
 	" (self locator userBinaries / (self execNameFor: programName)) resolve "
@@ -421,7 +423,7 @@ BioWrapperObject >> programNamed: aString [
 
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> propertySeparator [
 	" Answer a <Character> with receiver's properties separator "
 
@@ -429,42 +431,42 @@ BioWrapperObject >> propertySeparator [
 		ifNil: [ propertySeparator := self defaultPropertySeparator ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> propertySeparator: aCharacter [
 	" Set the receiver's delimiter between property name and values "
 
 	^ propertySeparator := aCharacter
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioWrapperObject >> scriptsFullDirectoryName [
 	" Private - See comment in BioObject "
 	
 	^ BioObject scriptsFullDirectoryName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> url [
 	" Answer a <String> representing receiver's URL "
 
 	^ self class url
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> useSingleDashOptions [
 	"Specify the receiver will use single dash to specify options"
 
 	isDoubleDashOptions := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> useSingleDashProperties [
 	"Specify the receiver will use single dash to specify property names"
 
 	isDoubleDashProperties := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioWrapperObject >> version [
 	"Print version information and exit"
 

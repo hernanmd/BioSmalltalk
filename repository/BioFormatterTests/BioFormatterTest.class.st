@@ -1,37 +1,42 @@
+"
+Test class for BioFormatter and its subclasses. Provides shared test infrastructure for formatters including accessor setup for test fixtures.
+"
 Class {
-	#name : #BioFormatterTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioFormatterTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'formatter'
 	],
-	#category : 'BioFormatterTests-Core'
+	#category : 'BioFormatterTests-Core',
+	#package : 'BioFormatterTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatterTest >> formatter [
 	^ formatter
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatterTest >> formatter: anObject [
 	formatter := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatterTest >> formatterClass [
 	" Answer the concrete BioFormatter class being tested "
 	
 	self subclassResponsibility.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioFormatterTest >> setUp [
 
 	super setUp.
 	formatter := BioFormatter new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFormatterTest >> testEscapeDelimiters01 [
 
 	self assert: formatter delimiterSourceCharacter equals: $;.
@@ -60,7 +65,7 @@ BioFormatterTest >> testEscapeDelimiters01 [
 	self assert: (formatter escapeDelimiters: String empty) equals: String empty.	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFormatterTest >> testFormatterFor [
 
 	self assert: ((BioFileFormatter formatterFor: 'fasta') isKindOf: BioFASTAFormatter).
@@ -77,7 +82,7 @@ BioFormatterTest >> testFormatterFor [
 	self should: [BioFileFormatter formatterFor: nil] raise: Error.	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFormatterTest >> testGenerator01 [
 
 	self assert: (BioObject generateJoin: 2 repeat: 4) = '2222'.
@@ -90,7 +95,7 @@ BioFormatterTest >> testGenerator01 [
 	self should: [ BioObject generateJoin: 'C' repeat: -1 ] raise: Exception.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioFormatterTest >> testGenerator02 [
 
 	self assert: (BioObject generate: 2 repeat: 4) asArray = #(2 2 2 2).

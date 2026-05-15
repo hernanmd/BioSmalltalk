@@ -13,23 +13,25 @@ synonyms
 
 "
 Class {
-	#name : #BioBreed,
-	#superclass : #BioNamedBreed,
+	#name : 'BioBreed',
+	#superclass : 'BioNamedBreed',
 	#instVars : [
 		'synonyms',
 		'locations'
 	],
-	#category : 'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioBreed class >> named: aString [
 	" Answer a new instance of the receiver adding aString as name "
 
 	^ self new name: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed class >> removePrefixes: locString [
 	" Given locString including a space Character, remove any possible known location prefix.
 	Answer locString without the prefix, if found "
@@ -38,13 +40,13 @@ BioBreed class >> removePrefixes: locString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed class >> repositoryFor: aString [
 
 	^ self allSubclasses select: [: cls | cls descriptionIncludes: aString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> addLocation: locationString [
 	" Add locationString to the receive's locations "
 
@@ -53,7 +55,7 @@ BioBreed >> addLocation: locationString [
 			yourself.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> addSynonym: synString [
 	" Add synString as receiver's synonym "
 	
@@ -62,20 +64,20 @@ BioBreed >> addSynonym: synString [
 		yourself.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> allNames [
 	" Answer a <Collection> of all receiver names including synonyms "
 
 	^ self names , self synonyms
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioBreed >> asString [
 
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> dumpCSVTo: aStream [
 	" Write the receiver contents in the following CSV format:
 	
@@ -87,14 +89,14 @@ BioBreed >> dumpCSVTo: aStream [
 	self outputLocationsTo: aStream
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBreed >> hasSynonym [
 	" Answer <true> if receiver's synonyms is not empty "
 	
 	^ self synonyms notEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBreed >> includesLocation: locationString [
 	" Answer whether the receiver includes locationString. "
 
@@ -102,7 +104,7 @@ BioBreed >> includesLocation: locationString [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBreed >> includesName: aString [
 	"Answer whether the receiver contains a sequence named aString."
 
@@ -113,7 +115,7 @@ BioBreed >> includesName: aString [
 	^ (allNames includes: lcs) or: [ allSyns includes: lcs ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBreed >> includesNameBeginsWith: aString [
 	" Answer whether the receiver begins with aString. "
 
@@ -121,14 +123,14 @@ BioBreed >> includesNameBeginsWith: aString [
 		or: [ self synonyms asLowercase anySatisfy: [: s | s beginsWith: aString asLowercase ] ]
 ]
 
-{ #category : #'text-mining' }
+{ #category : 'text-mining' }
 BioBreed >> isFoundIn: aString [
 	" Answer <true> if the receiver's is located at aString "
 	
 	^ self locationsWithoutPrefixes asLowercase includes: aString asLowercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> locations [
 	" Answer a <Collection> of receiver's locations "
 
@@ -136,19 +138,19 @@ BioBreed >> locations [
 		ifNil: [ locations := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> locations: anObject [
 	locations := anObject
 ]
 
-{ #category : #'text-mining' }
+{ #category : 'text-mining' }
 BioBreed >> locationsWithoutPrefixes [
 	" Answer a <Collection> of Strings with receiver's locations without common prefixes "
 	
 	^ self locations collect: [ : loc | self class removePrefixes: loc ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> names [
 	" Answer a <Collection> of receiver's names. If a name is divided by a $- delimiter, then add a copy
 	of that name with replacing the minus character with blanks "
@@ -170,7 +172,7 @@ BioBreed >> names [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> outputLocationsTo: aStream [
 	" Private - See comment in #outputAsCsvTo: "
 	
@@ -183,7 +185,7 @@ BioBreed >> outputLocationsTo: aStream [
 					aStream back ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> outputNamesTo: aStream [
 	" Private - See comment in #outputAsCsvTo: "
 
@@ -194,7 +196,7 @@ BioBreed >> outputNamesTo: aStream [
 		nextPut: $;.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> outputSynonymsTo: aStream [
 	" Private - See comment in #outputAsCsvTo: "
 
@@ -206,7 +208,7 @@ BioBreed >> outputSynonymsTo: aStream [
 	aStream nextPut: $;.
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioBreed >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -222,19 +224,19 @@ BioBreed >> printOn: aStream [
 		nextPutAll: self synonyms asString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> synonyms [
 
 	^ synonyms
 		ifNil: [ synonyms := OrderedCollection new ]	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> synonyms: anObject [
 	synonyms := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBreed >> synonymsCount [
 	" Answer a <Number> with receiver's count of synonyms "
 

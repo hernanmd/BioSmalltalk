@@ -1,3 +1,6 @@
+"
+Test class for BioAbstractParser FASTA parsing behavior. Provides shared test fixtures and sample data for FASTA parser subclasses.
+"
 Class {
 	#name : 'BioAbstractFASTAParserTest',
 	#superclass : 'BioAbstractParserTest',

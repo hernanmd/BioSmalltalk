@@ -1,14 +1,19 @@
+"
+A stream that generates random sequence data based on probability percentages. Instance Variables: random percentages
+"
 Class {
-	#name : #BioRandomStream,
-	#superclass : #BioRepeatStream,
+	#name : 'BioRandomStream',
+	#superclass : 'BioRepeatStream',
 	#instVars : [
 		'random',
 		'percentages'
 	],
-	#category : 'BioBenchmarks-Fasta'
+	#category : 'BioBenchmarks-Fasta',
+	#package : 'BioBenchmarks',
+	#tag : 'Fasta'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRandomStream >> next [
 
 	| r |
@@ -19,7 +24,7 @@ BioRandomStream >> next [
 		(r < (percentages at: i)) ifTrue: [ ^ collection at: i ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRandomStream >> on: aCollection [
 
 	| size cp |
@@ -35,7 +40,7 @@ BioRandomStream >> on: aCollection [
  		percentages at: i put: (cp := cp + (aCollection at: i) last) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRandomStream >> random: aRandomNumber [
 	" Share the random number generator so we can get the expected results. "
 	

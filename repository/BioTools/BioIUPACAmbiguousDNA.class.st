@@ -1,3 +1,6 @@
+"
+IUPAC alphabet for ambiguous DNA bases. Includes standard A, C, G, T plus ambiguity codes like R (A/G), Y (C/T), etc.
+"
 Class {
 	#name : 'BioIUPACAmbiguousDNA',
 	#superclass : 'BioIUPACUnambiguousDNA',

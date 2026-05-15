@@ -1,3 +1,6 @@
+"
+A collection for holding web query results. Extends BioOrderedCollection with result-specific access methods.
+"
 Class {
 	#name : 'BioWebCollection',
 	#superclass : 'BioOrderedCollection',

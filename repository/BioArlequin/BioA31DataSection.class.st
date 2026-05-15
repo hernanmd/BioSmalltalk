@@ -1,17 +1,22 @@
+"
+Represents the Data section of an Arlequin 3.1 input file. The data section groups together profile, structure, and sample subsections that define the input data for an Arlequin analysis.
+"
 Class {
-	#name : #BioA31DataSection,
-	#superclass : #BioA31INISection,
-	#category : #'BioArlequin-Sections'
+	#name : 'BioA31DataSection',
+	#superclass : 'BioA31INISection',
+	#category : 'BioArlequin-Sections',
+	#package : 'BioArlequin',
+	#tag : 'Sections'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31DataSection class >> notation [
 	" Answer a String describing the receiver's section identifier "
 	
 	^ 'Data'
 ]
 
-{ #category : #subsections }
+{ #category : 'subsections' }
 BioA31DataSection >> sampleSubsection [
 	"Answer a <BioA31SamplesSection> for adding and removing samples"
 
@@ -25,7 +30,7 @@ BioA31DataSection >> sampleSubsection [
 
 ]
 
-{ #category : #subsections }
+{ #category : 'subsections' }
 BioA31DataSection >> structureSubsection [
 	" Answer a <BioA31StructureSection> for adding and removing samples "
 

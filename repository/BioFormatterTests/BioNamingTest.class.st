@@ -1,13 +1,18 @@
+"
+Test class for BioNaming and its subclasses. Validates naming strategy formatting behavior.
+"
 Class {
-	#name : #BioNamingTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioNamingTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'formatter'
 	],
-	#category : #'BioFormatterTests-Core'
+	#category : 'BioFormatterTests-Core',
+	#package : 'BioFormatterTests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamingTest >> testAsTriplet [
 
 	| seqFmt |
@@ -27,7 +32,7 @@ BioNamingTest >> testAsTriplet [
 		'CCA	CAC	CAC	ACC	CAC	ACA	CCC	ACA	CAC	CAC	ACC	ACA	CAC	CAC	ACC	ACA	CCC	ACA	CAC	ACA'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamingTest >> testContraction [
 
 	formatter := BioContractionNaming new.
@@ -44,7 +49,7 @@ BioNamingTest >> testContraction [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamingTest >> testContractionCapitalization [
 
 	formatter := BioContractionNaming new.
@@ -60,7 +65,7 @@ BioNamingTest >> testContractionCapitalization [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamingTest >> testContractionLimit [
 
 	formatter := BioContractionNaming new.
@@ -81,7 +86,7 @@ BioNamingTest >> testContractionLimit [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNamingTest >> testJoinSequence [
 
 	| seq01 |

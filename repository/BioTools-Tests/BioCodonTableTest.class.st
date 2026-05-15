@@ -1,3 +1,6 @@
+"
+Test class for BioCodonTable and BioCodonTables. Validates codon table lookup, start/stop codon identification, and translation behavior.
+"
 Class {
 	#name : 'BioCodonTableTest',
 	#superclass : 'BioAbstractTest',

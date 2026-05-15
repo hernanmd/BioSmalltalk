@@ -1,9 +1,12 @@
+"
+Represents a satellite (repetitive) DNA sequence. Extends BioRepeatSequence with satellite-specific defaults and testing.
+"
 Class {
 	#name : 'BioSatelliteSequence',
 	#superclass : 'BioRepeatSequence',
-	#category : 'BioTools-Repeats',
+	#category : 'BioTools-Sequences',
 	#package : 'BioTools',
-	#tag : 'Repeats'
+	#tag : 'Sequences'
 }
 
 { #category : 'defaults' }

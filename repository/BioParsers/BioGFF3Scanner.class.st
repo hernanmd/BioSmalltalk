@@ -1,3 +1,6 @@
+"
+SmaCC-based scanner (lexer) for GFF3 format files. Tokenizes GFF3 input for the parser.
+"
 Class {
 	#name : 'BioGFF3Scanner',
 	#superclass : 'SmaCCScanner',

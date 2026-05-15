@@ -1,3 +1,6 @@
+"
+Test class for BioNamedObject. Validates named object behavior including preferred name and alias management.
+"
 Class {
 	#name : 'BioNamedObjectTest',
 	#superclass : 'BioAbstractTest',

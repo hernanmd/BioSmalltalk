@@ -1,6 +1,6 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*BioPopulation' }
+{ #category : '*BioPopulation' }
 String >> bioLocationPrefixes [
 	" Answer a <Collection> of english common territorial prefixes "
 
@@ -10,7 +10,7 @@ String >> bioLocationPrefixes [
 	'to' . 'and' . 'of' . 'region' . 'area' . 'i.e.' }
 ]
 
-{ #category : #'*BioPopulation' }
+{ #category : '*BioPopulation' }
 String >> bioRemovePrefixes [
 
 	| tokenizedLocation |
@@ -22,7 +22,7 @@ String >> bioRemovePrefixes [
 
 ]
 
-{ #category : #'*BioPopulation' }
+{ #category : '*BioPopulation' }
 String >> locationsWithoutPrefixes [
 	" Answer a <Collection> of Strings with receiver's locations without common prefixes "
 

@@ -1,3 +1,6 @@
+"
+Test class for BioMAFParser. Validates Multiple Alignment Format (MAF) parsing behavior.
+"
 Class {
 	#name : 'BioMAFParserTest',
 	#superclass : 'BioAbstractFASTAParserTest',

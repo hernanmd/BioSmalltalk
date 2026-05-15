@@ -1,3 +1,6 @@
+"
+Represents a HELIX record in a PDB file. Instance Variables: serialNumber helixID initResName initChainID initSeqNum initICode endResName endChainID endSeqNum endICode helixClass
+"
 Class {
 	#name : 'BioPDBHelixRecord',
 	#superclass : 'BioPDBRecord',

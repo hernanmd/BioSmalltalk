@@ -15,19 +15,21 @@ Creates hyperlinks to the primary LinkOut provider for a single UID
 
 "
 Class {
-	#name : #BioELink,
-	#superclass : #BioEWebEnvCmd,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioELink',
+	#superclass : 'BioEWebEnvCmd',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioELink class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'elink.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioELink class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

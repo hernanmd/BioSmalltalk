@@ -1,3 +1,6 @@
+"
+Represents an ATOM record in a PDB file. Instance Variables: serialNumber atomName altLoc resName chainID resSeq iCode x y z occupancy tempFactor element charge
+"
 Class {
 	#name : 'BioPDBAtomRecord',
 	#superclass : 'BioPDBRecord',

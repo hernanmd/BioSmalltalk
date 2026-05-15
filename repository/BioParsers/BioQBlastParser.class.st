@@ -1,3 +1,6 @@
+"
+Parser for NCBI QBlast query results. Extends BioAbstractTextParser with QBlast-specific initialization.
+"
 Class {
 	#name : 'BioQBlastParser',
 	#superclass : 'BioAbstractTextParser',

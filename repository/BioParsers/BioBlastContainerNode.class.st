@@ -1,3 +1,6 @@
+"
+Represents a container node in the BLAST XML result tree. Contains child nodes that group BLAST result elements such as hits and HSPs.
+"
 Class {
 	#name : 'BioBlastContainerNode',
 	#superclass : 'BioBlastNode',

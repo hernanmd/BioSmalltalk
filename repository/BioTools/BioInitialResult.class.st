@@ -1,3 +1,6 @@
+"
+Represents an initial result object from a remote query. Wraps a client and reader for fetching and processing query results. Instance Variables: client <BioEntrezClient> The query client. reader <BioReader> The result reader.
+"
 Class {
 	#name : 'BioInitialResult',
 	#superclass : 'BioResultObject',

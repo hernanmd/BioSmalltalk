@@ -7,26 +7,28 @@ BioHSapiensGD new downloadChromosome: 22.
 
 "
 Class {
-	#name : #BioHSapiensGD,
-	#superclass : #BioNCBIChrGD,
-	#category : #'BioNCBI-Genomes'
+	#name : 'BioHSapiensGD',
+	#superclass : 'BioNCBIChrGD',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHSapiensGD class >> maxChr [
 	" Answer maximum number of chromosomes for the receiver "
 	
 	^ 22
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioHSapiensGD >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 
 	^ 'hs_alt_HuRef'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHSapiensGD >> organismName [
 
 	^ 'H_sapiens'

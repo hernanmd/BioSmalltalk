@@ -1,3 +1,6 @@
+"
+OS subprocess executor adapter for Pharo using OSSubprocess. Provides platform-specific process execution.
+"
 Class {
 	#name : 'BioOSSubProcessExecutor',
 	#superclass : 'BioExecutionEngine',

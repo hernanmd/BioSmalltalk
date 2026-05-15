@@ -1,3 +1,6 @@
+"
+Test class for BioSeqCoordinatesMapper. Validates coordinate mapping between genomic and CDS positions.
+"
 Class {
 	#name : 'BioSeqCoordinatesMapperTest',
 	#superclass : 'BioAbstractTest',
@@ -5,8 +8,9 @@ Class {
 		'mapper',
 		'exonPairs'
 	],
-	#category : 'BioTools-Tests',
-	#package : 'BioTools-Tests'
+	#category : 'BioTools-Tests-Genomic-Ranges',
+	#package : 'BioTools-Tests',
+	#tag : 'Genomic-Ranges'
 }
 
 { #category : 'running' }

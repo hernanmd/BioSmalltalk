@@ -5,12 +5,14 @@ This class should not be used directly, instead, see BioEntrezClient class.
 
 "
 Class {
-	#name : #BioEntrezUrl,
-	#superclass : #BioUrl,
-	#category : #'BioEntrez-Core'
+	#name : 'BioEntrezUrl',
+	#superclass : 'BioUrl',
+	#category : 'BioEntrez-Core',
+	#package : 'BioEntrez',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> dbName [
 	" Answer a String with the receiver's database name, if it was configured "
 
@@ -18,7 +20,7 @@ BioEntrezUrl >> dbName [
 	^ self queryAt: 'db'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> dbName: aString [
 	" Append aString as the receiver's database name "
 
@@ -26,14 +28,14 @@ BioEntrezUrl >> dbName: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> emailAddress: aString [
 	" Append aString as the receiver's e-mail address "
 
 	self queryAt: 'email' put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> entrezParameters [
 	"Private - Answer a <Collection> of <String> representing valid Entrez parameters"
 	
@@ -41,7 +43,7 @@ BioEntrezUrl >> entrezParameters [
 				joinUsing: Array empty) asSet
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> parameters [
 	"Answer a <Collection> with the receiver's parameter names"
 
@@ -50,7 +52,7 @@ BioEntrezUrl >> parameters [
 		ifFalse: [ Array new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> queryKey: aKeyString [
 	"Append aKeyString for setting the remote query key"
 
@@ -59,21 +61,21 @@ BioEntrezUrl >> queryKey: aKeyString [
 		ifTrue: [ BioObject signalInvalidObject: 'Missing remote query key'  ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> setUseHistory [
 	"Append a string to set the usehistory value to true"
 
 	self queryAt: 'usehistory' put: 'y'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> toolName: aString [
 	" Append aString as the receiver's tool name "
 
 	self queryAt: 'tool' put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezUrl >> webEnv: aWebEnvString [
 	" Append aWebEnvString for setting the remote web environment "
 

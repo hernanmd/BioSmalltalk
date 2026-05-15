@@ -1,3 +1,6 @@
+"
+Test class for BioSwissProtParser. Validates Swiss-Prot identifier format parsing.
+"
 Class {
 	#name : 'BioSwissProtParserTest',
 	#superclass : 'BioAbstractParserTest',

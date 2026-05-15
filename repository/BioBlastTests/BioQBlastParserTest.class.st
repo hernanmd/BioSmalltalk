@@ -1,35 +1,40 @@
+"
+Test class for BioQBlastParser. Validates QBlast result parsing behavior.
+"
 Class {
-	#name : #BioQBlastParserTest,
-	#superclass : #BioAbstractParserTest,
-	#category : 'BioBlastTests-Core'
+	#name : 'BioQBlastParserTest',
+	#superclass : 'BioAbstractParserTest',
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioQBlastParserTest >> parserForRID [
 
 	^ self parser parserForRID
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioQBlastParserTest >> parserForRTOE [
 
 	^ self parser parserForRTOE
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioQBlastParserTest >> setUp [
 
 	super setUp.
 	parser := BioQBlastParser new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioQBlastParserTest >> statusParser [
 
 	^ self parser parserForStatus 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test01BasicRequest [
 
 	self assert: ( self parserForRID parse: '<p><!--QBlastInfoBegin
@@ -46,7 +51,7 @@ QBlastInfoEnd' ) = '1038164033-015457-19065'.
 QBlastInfoEnd' ) = '1038164033-015457-19065'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test01BasicStatus [
 
 	self assert: ( self statusParser parse: '<p><!--QBlastInfoBegin
@@ -54,14 +59,14 @@ BioQBlastParserTest >> test01BasicStatus [
 QBlastInfoEnd' ) = 'READY'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test01CompleteRequest [
 
 	self assert: ( self parserForRID parse: BioWebBlastSamples new qbreq1Html ) = 'HZ50WJZT01N'.
 	self assert: ( self parserForRTOE parse: BioWebBlastSamples new qbreq1Html ) = '10'	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test01CompleteStatus [
 
 	self assert: ( self statusParser parse: BioWebBlastSamples new bt064Txt ) = 'READY'.
@@ -72,7 +77,7 @@ BioQBlastParserTest >> test01CompleteStatus [
 	self assert: ( self statusParser parse: BioWebBlastSamples new bt074Txt ) = 'READY'.			
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test02BasicStatus [
 
 	self assert: ( self statusParser parse: '<p><!--QBlastInfoBegin
@@ -80,7 +85,7 @@ BioQBlastParserTest >> test02BasicStatus [
 QBlastInfoEnd' ) = 'WAITING'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioQBlastParserTest >> test02CompleteStatus [
 
 	self assert: ( self statusParser parse: BioWebBlastSamples new blastcgiHtm ) = 'WAITING'.

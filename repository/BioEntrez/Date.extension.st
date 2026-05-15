@@ -1,6 +1,6 @@
-Extension { #name : #Date }
+Extension { #name : 'Date' }
 
-{ #category : #'*BioEntrez' }
+{ #category : '*BioEntrez' }
 Date >> asEntrezDateString [
 	" Answer a <String> for querying modification date in Entrez "
 	

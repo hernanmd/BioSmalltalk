@@ -1,3 +1,6 @@
+"
+Test class for sequence string utilities. Validates string extension methods for bioinformatics.
+"
 Class {
 	#name : 'BioStringTest',
 	#superclass : 'BioAbstractTest',

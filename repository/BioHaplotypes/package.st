@@ -1,1 +1,1 @@
-Package { #name : #BioHaplotypes }
+Package { #name : 'BioHaplotypes' }

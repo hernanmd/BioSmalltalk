@@ -1,10 +1,14 @@
+"
+Test class for BioHaplotype. Validates haplotype creation, comparison, and analysis behavior.
+"
 Class {
-	#name : #BioAHaplotypeTest,
-	#superclass : #TestCase,
-	#category : #'BioArlequin-Tests'
+	#name : 'BioAHaplotypeTest',
+	#superclass : 'TestCase',
+	#category : 'BioArlequin-Tests',
+	#package : 'BioArlequin-Tests'
 }
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeCollection1 [
 
 	| haploStream haploColl |
@@ -17,7 +21,7 @@ BioAHaplotypeTest >> haplotypeCollection1 [
 
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeCollection2 [
 
 	| haploStream haploColl |
@@ -30,7 +34,7 @@ BioAHaplotypeTest >> haplotypeCollection2 [
 
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeSample1 [
 
 	^ '               	AM_1  	1 1 0 0 1 1 1 1 1 1 1
@@ -50,7 +54,7 @@ BioAHaplotypeTest >> haplotypeSample1 [
 		AM_14	0 1 1 0 0 1 0 1 1 1 1'
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeSample2 [
 
 	^ '1  1000010000100010001001100100000110
@@ -111,7 +115,7 @@ BioAHaplotypeTest >> haplotypeSample2 [
 95 0000010000100010001001100100000110'
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeSample3 [
 
 	^ '			1 Yap- A
@@ -122,7 +126,7 @@ BioAHaplotypeTest >> haplotypeSample3 [
 			6 Yap+ All'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioAHaplotypeTest >> haplotypeSection1 [
 
 	^ '[[HaplotypeDefinition]]
@@ -145,7 +149,7 @@ BioAHaplotypeTest >> haplotypeSection1 [
     }'
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> haplotypeSection2 [
 
 	^ '[[HaplotypeDefinition]]
@@ -211,7 +215,7 @@ BioAHaplotypeTest >> haplotypeSection2 [
 }'
 ]
 
-{ #category : #'data samples' }
+{ #category : 'data samples' }
 BioAHaplotypeTest >> newParserFor: haploStream [
 	" Answer a parser opened for haploStream  "
 

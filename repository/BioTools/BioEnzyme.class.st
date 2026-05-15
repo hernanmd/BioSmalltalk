@@ -1,3 +1,6 @@
+"
+Represents a restriction enzyme with its associated sequence pattern and catalysis information. Extends BioNamedObject to add sequence recognition and catalysis handling. Instance Variables: sequence <String> The recognition sequence. catalyses <Collection> Collection of BioCatalysis objects.
+"
 Class {
 	#name : 'BioEnzyme',
 	#superclass : 'BioNamedObject',

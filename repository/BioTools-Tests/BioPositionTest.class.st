@@ -1,3 +1,6 @@
+"
+Test class for BioPosition and coordinate classes. Validates sequence position behavior.
+"
 Class {
 	#name : 'BioPositionTest',
 	#superclass : 'BioAbstractTest',

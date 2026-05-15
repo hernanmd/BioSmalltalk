@@ -648,6 +648,226 @@ BioSequence >> compositionWithFrequencies [
 	^ result
 ]
 
+{ #category : 'Tm' }
+BioSequence >> computeTm_NNC_seq: cSeq shift: shift check: check strict: strict saltCorrection: saltCorrection [
+	"Private - Compute melting temperature using nearest-neighbor thermodynamic model (SantaLucia 1998). Returns Tm in degrees Celsius."
+
+	| deltaH deltaS dH dS nnTable tmmTable immTable deTable dnac1 selfcomp na kalium tris mg dNTPs conc corr r neighbors leftTmm rightTmm ends atCount gcCount mySeq myCSeq tm startIdx stopIdx actualFirst actualLast pair seqForSalt |
+
+	dH := 1. "Index for enthalpy in NN pair arrays"
+	dS := 2. "Index for entropy in NN pair arrays"
+
+	"SantaLucia 1998 unified nearest-neighbor parameters"
+	"DH in kcal/mol, DS in cal/(K*mol)"
+	nnTable := Dictionary new.
+	nnTable at: 'init' put: #(0.2 -5.7).
+	nnTable at: 'init_allA/T' put: #(0 0).
+	nnTable at: 'init_oneG/C' put: #(0 0).
+	nnTable at: 'init_5T/A' put: #(0 0).
+	nnTable at: 'init_A/T' put: #(2.3 4.1).
+	nnTable at: 'init_G/C' put: #(0.1 -2.8).
+	nnTable at: 'sym' put: #(0 -1.4).
+
+	"Nearest-neighbor doublet parameters (SantaLucia 1998)"
+	nnTable at: 'AA/TT' put: #(-7.9 -22.2).
+	nnTable at: 'AT/TA' put: #(-7.2 -20.4).
+	nnTable at: 'TA/AT' put: #(-7.2 -21.3).
+	nnTable at: 'CA/GT' put: #(-8.5 -22.7).
+	nnTable at: 'GT/CA' put: #(-8.4 -22.4).
+	nnTable at: 'CT/GA' put: #(-7.8 -21.0).
+	nnTable at: 'GA/CT' put: #(-8.2 -22.2).
+	nnTable at: 'CG/GC' put: #(-10.6 -27.2).
+	nnTable at: 'GC/CG' put: #(-9.8 -24.4).
+	nnTable at: 'GG/CC' put: #(-8.0 -19.9).
+
+	"Terminal mismatches (placeholder)"
+	tmmTable := Dictionary new.
+	"Internal mismatches (placeholder)"
+	immTable := Dictionary new.
+	"Dangling ends (placeholder)"
+	deTable := Dictionary new.
+
+	dnac1 := 25. "Total strand concentration [nM]"
+	selfcomp := false.
+	na := 50.
+	kalium := 0.
+	tris := 0.
+	mg := 0.
+	dNTPs := 0.
+
+	mySeq := self asString asUppercase.
+	myCSeq := cSeq
+			ifNil: [ self complement asString asUppercase ]
+			ifNotNil: [ cSeq asString asUppercase ].
+
+	(check and: [ self isDNASequence not ]) ifTrue: [
+		self error: 'Tm calculation requires a DNA sequence' ].
+
+	"Detect self-complementary sequences"
+	selfcomp := mySeq = myCSeq reversed.
+
+	"Save actual terminal nucleotides before padding"
+	actualFirst := mySeq first.
+	actualLast := mySeq last.
+
+	deltaH := 0.
+	deltaS := 0.
+
+	"Padding for alignment shift"
+	shift > 0
+		ifTrue: [ mySeq := ('.' repeat: shift asInteger) , mySeq ].
+	shift < 0
+		ifTrue: [ myCSeq := ('.' repeat: shift negated asInteger) , myCSeq ].
+
+	"Pad shorter sequence with dots"
+	mySeq size < myCSeq size
+		ifTrue: [ mySeq := mySeq , ('.' repeat: myCSeq size - mySeq size) ].
+	myCSeq size < mySeq size
+		ifTrue: [ myCSeq := myCSeq , ('.' repeat: mySeq size - myCSeq size) ].
+
+	"Use index-based pointers to avoid O(N^2) string slicing"
+	startIdx := 1.
+	stopIdx := mySeq size.
+
+	"Trim leading double dots"
+	[ (startIdx < stopIdx and: [ (mySeq at: startIdx) = $. and: [ (mySeq at: startIdx + 1) = $. ] ])
+		or: [ startIdx < stopIdx and: [ (myCSeq at: startIdx) = $. and: [ (myCSeq at: startIdx + 1) = $. ] ] ] ]
+			whileTrue: [ startIdx := startIdx + 2 ].
+
+	"Trim trailing double dots"
+	[ (stopIdx > startIdx and: [ (mySeq at: stopIdx) = $. and: [ (mySeq at: stopIdx - 1) = $. ] ])
+		or: [ stopIdx > startIdx and: [ (myCSeq at: stopIdx) = $. and: [ (myCSeq at: stopIdx - 1) = $. ] ] ] ]
+			whileTrue: [ stopIdx := stopIdx - 2 ].
+
+	"Leading dangling end"
+	(mySeq at: startIdx) = $.
+		ifTrue: [
+			| key |
+			key := (mySeq at: startIdx) asString , '/' , (myCSeq at: startIdx) asString.
+			(deTable includesKey: key) ifTrue: [
+					deltaH := deltaH + ((deTable at: key) at: dH).
+					deltaS := deltaS + ((deTable at: key) at: dS) ].
+			startIdx := startIdx + 1 ].
+
+	"Trailing dangling end"
+	(myCSeq at: stopIdx) = $.
+		ifTrue: [
+			| key |
+			key := (String with: (myCSeq at: stopIdx)) , (String with: (mySeq at: stopIdx)) , '/' ,
+				(String with: (myCSeq at: stopIdx - 1)) , (String with: (mySeq at: stopIdx - 1)).
+			(deTable includesKey: key) ifTrue: [
+					deltaH := deltaH + ((deTable at: key) at: dH).
+					deltaS := deltaS + ((deTable at: key) at: dS) ].
+			stopIdx := stopIdx - 1 ].
+
+	"Terminal mismatches"
+	leftTmm := (String with: (myCSeq at: startIdx + 1)) , (String with: (myCSeq at: startIdx)) , '/' ,
+		(String with: (mySeq at: startIdx + 1)) , (String with: (mySeq at: startIdx)).
+
+	(tmmTable includesKey: leftTmm) ifTrue: [
+			deltaH := deltaH + ((tmmTable at: leftTmm) at: dH).
+			deltaS := deltaS + ((tmmTable at: leftTmm) at: dS).
+			startIdx := startIdx + 2 ].
+
+	rightTmm := (String with: (mySeq at: stopIdx - 1)) , (String with: (mySeq at: stopIdx)) , '/' ,
+		(String with: (myCSeq at: stopIdx - 1)) , (String with: (myCSeq at: stopIdx)).
+
+	(tmmTable includesKey: rightTmm) ifTrue: [
+			deltaH := deltaH + ((tmmTable at: rightTmm) at: dH).
+			deltaS := deltaS + ((tmmTable at: rightTmm) at: dS).
+			stopIdx := stopIdx - 2 ].
+
+	"Initiation values"
+	deltaH := deltaH + ((nnTable at: 'init') at: dH).
+	deltaS := deltaS + ((nnTable at: 'init') at: dS).
+
+	"Terminal basepair penalties using actual (non-padding) nucleotides"
+	ends := actualFirst asString , actualLast asString.
+	atCount := ends count: [ :c | 'AT' includes: c ].
+	gcCount := ends count: [ :c | 'GC' includes: c ].
+	deltaH := deltaH + (((nnTable at: 'init_A/T') at: dH) * atCount).
+	deltaS := deltaS + (((nnTable at: 'init_A/T') at: dS) * atCount).
+	deltaH := deltaH + (((nnTable at: 'init_G/C') at: dH) * gcCount).
+	deltaS := deltaS + (((nnTable at: 'init_G/C') at: dS) * gcCount).
+
+	"Zipping walk nearest-neighbor pairs using pre-allocated key string"
+	startIdx to: stopIdx - 1 do: [ :baseNumber |
+		pair := String new: 5.
+		pair at: 1 put: (mySeq at: baseNumber).
+		pair at: 2 put: (mySeq at: baseNumber + 1).
+		pair at: 3 put: $/.
+		pair at: 4 put: (myCSeq at: baseNumber).
+		pair at: 5 put: (myCSeq at: baseNumber + 1).
+		((immTable includesKey: pair) or: [ immTable includesKey: pair reversed ])
+			ifTrue: [
+				neighbors := (immTable includesKey: pair)
+					ifTrue: [ pair ]
+					ifFalse: [ pair reversed ].
+				deltaH := deltaH + ((immTable at: neighbors) at: dH).
+				deltaS := deltaS + ((immTable at: neighbors) at: dS) ]
+			ifFalse: [
+				(nnTable includesKey: pair)
+					ifTrue: [
+						deltaH := deltaH + ((nnTable at: pair) at: dH).
+						deltaS := deltaS + ((nnTable at: pair) at: dS) ]
+					ifFalse: [
+						(nnTable includesKey: pair reversed)
+								ifTrue: [
+								deltaH := deltaH + ((nnTable at: pair reversed) at: dH).
+								deltaS := deltaS + ((nnTable at: pair reversed) at: dS) ]
+								ifFalse: [
+									strict
+										ifTrue: [ self error: (String streamContents: [ :stream | stream << 'no data for neighbors '; << pair ]) ]
+										ifFalse: [
+											Transcript
+												show: (String streamContents: [ :stream | stream << 'no data for neighbors '; << pair; << '. Calculation will be wrong' ]);
+												cr ] ] ] ] ].
+
+	"Concentration term: Ct/4 for non-self-comp, Ct for self-comp"
+	conc := selfcomp
+		ifTrue: [ dnac1 * 1e-9 ]
+		ifFalse: [ dnac1 * 1e-9 / 4 ].
+
+	"Symmetry correction for self-complementary sequences"
+	selfcomp
+		ifTrue: [
+			deltaH := deltaH + ((nnTable at: 'sym') at: dH).
+			deltaS := deltaS + ((nnTable at: 'sym') at: dS) ].
+
+	r := 1.9872. "Universal gas constant in cal/(K*mol)"
+
+	"Salt correction pass sequence without padding dots"
+	seqForSalt := mySeq reject: [ :c | c = $. ].
+	corr := self
+		saltCorrectionNa: na
+		K: kalium
+		tris: tris
+		Mg: mg
+		dNTPs: dNTPs
+		method: saltCorrection
+		seq: seqForSalt.
+
+	"Apply salt correction to deltaS for method 5"
+	saltCorrection = 5
+		ifTrue: [ deltaS := deltaS + corr ].
+
+	"Tm in Kelvin"
+	tm := (1000 * deltaH) / (deltaS + (r * conc ln)).
+
+	"Apply salt correction to Tm for methods 1-4 (additive correction)"
+	(saltCorrection between: 1 and: 4)
+		ifTrue: [ tm := tm + corr ].
+
+	"Methods 6-7: correction applies to 1/Tm, result in Kelvin"
+	(saltCorrection = 6) | (saltCorrection = 7)
+		ifTrue: [ tm := 1 / ((1 / tm) + corr) ].
+
+	"Convert Kelvin to Celsius"
+	tm := tm - 273.15.
+
+	^ tm
+]
+
 { #category : 'accessing' }
 BioSequence >> contents [
 	" Compatibility with #dumpToFileNamed: . Answer the receiver's sequence <String> "
@@ -2100,6 +2320,79 @@ BioSequence >> reversed [
 		  alphabet: self alphabet
 ]
 
+{ #category : 'Tm' }
+BioSequence >> saltCorrectionNa: Na K: k tris: tris Mg: mg dNTPs: dNTPs method: method seq: aSeqString [
+	"Answer the salt correction value for Tm calculation.
+		 method: 1=Schildkraut2010, 2=Wetmur1991, 3=SantaLucia1996, 4=SantaLucia1998-1, 
+		5=SantaLucia1998-2, 6=Owczarzy2004, 7=Owczarzy2008.
+	 Na, K, tris, mg, dNTPs: millimolar concentrations."
+
+	| mmon mon mg ptGC dntps ka r mySeq nSeq m7 corr |
+	mmon := Na + k + (tris / 2.0).
+	mg := mg / 1000.0.
+	(method ~= 7 and: [ k + mg + tris + dNTPs > 0 and: [ dNTPs < mg ] ])
+		ifTrue: [ mmon := mmon + 120 * (mg - dNTPs) sqrt ].
+	mon := mmon / 1000.0.
+	mon = 0 
+		ifTrue: [ self error: 'total ion concentration of zero is not allowed' ].
+
+	corr := 0.
+	method = 1 ifTrue: [ corr := 16.6 * mon log ].
+	method = 2 ifTrue: [ corr := 16.6 * (mon / (1.0 + (0.7 * mon))) log ].
+	method = 3 ifTrue: [ corr := 12.5 * mon log ].
+	method = 4 ifTrue: [ corr := 11.7 * mon log ].
+	method = 5 ifTrue: [
+			mySeq := aSeqString asUppercase.
+			nSeq := mySeq size.
+			corr := 0.368 * (nSeq - 1) * mon ln ].
+	method = 6 ifTrue: [
+			mySeq := aSeqString asUppercase.
+			ptGC := (mySeq count: [ :c | c = $G or: [ c = $C ] ]) / mySeq size
+			        * 100.
+			corr := 4.29 * ptGC / 100 - 3.95 * 1e-5 * mon ln
+			        + (9.40e-6 * mon ln squared) ].
+	method = 7 ifTrue: [
+			mySeq := aSeqString asUppercase.
+			nSeq := mySeq size.
+			ptGC := (mySeq count: [ :c | c = $G or: [ c = $C ] ]) / mySeq size
+			        * 100.
+			m7 := #( 3.92 -0.911 6.26 1.42 -48.2 52.5 8.31 ) asArray collect: [
+				      :v | v asFloat ].
+			dntps := dNTPs * 1e-3.
+			ka := 3e4.
+			mg := ((ka * dntps - ka * (mg / 1000.0) + 1) squared
+			       + (4 * ka * (mg / 1000.0))) sqrt
+			      - (ka * dntps - ka * (mg / 1000.0) + 1) / (2 * ka).
+			r := mmon > 0
+				     ifTrue: [ mg sqrt / mon ]
+				     ifFalse: [ 0 ].
+			r < 0.22
+				ifTrue: [
+						corr := 4.29 * ptGC / 100 - 3.95 * 1e-5 * mon ln
+						        + (9.40e-6 * mon ln squared) ]
+				ifFalse: [
+						(r >= 0.22 and: [ r < 6.0 ]) ifTrue: [
+								m7 at: 1 put: 3.92 * (0.843 - (0.352 * mon sqrt * mon ln)).
+								m7
+									at: 4
+									put:
+									1.42
+									* (1.279 - (4.03e-3 * mon ln) - (8.03e-3 * mon ln squared)).
+								m7
+									at: 7
+									put:
+									8.31
+									*
+									(0.486 - (0.258 * mon ln) + (5.25e-3 * (mon ln raisedTo: 3))).
+								corr := (m7 at: 1) + ((m7 at: 2) * mg ln)
+								        + (ptGC / 100 * ((m7 at: 3) + ((m7 at: 4) * mg ln)))
+								        + (1 / (2.0 * (nSeq - 1))
+									         *
+									         ((m7 at: 5) + ((m7 at: 6) * mg ln)
+									          + ((m7 at: 7) * mg ln squared))) * 1e-5 ] ] ].
+	^ corr
+]
+
 { #category : 'accessing - checksum' }
 BioSequence >> seguid [
 	"Answer a <Number> with the SEquence Globally Unique IDentifier checksum (edundancy check) for the receiver's sequence"
@@ -2247,10 +2540,16 @@ BioSequence >> subSeqFrom: startInteger to: endInteger [
 	
 ]
 
-{ #category : 'accessing' }
+{ #category : 'Tm' }
 BioSequence >> tmStaluc [
+	"Answer the melting temperature using the nearest-neighbor thermodynamic model."
 
-	self shouldBeImplemented
+	^ self
+		  computeTm_NNC_seq: nil
+		  shift: 0
+		  check: true
+		  strict: true
+		  saltCorrection: 1
 ]
 
 { #category : 'accesing public - protein synthesis' }

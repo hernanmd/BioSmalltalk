@@ -1,15 +1,20 @@
+"
+Represents a binary classification rule that evaluates to true or false. A binary rule holds an explanation string, a nextTrue rule, and a nextFalse rule for building decision trees. Instance Variables: explanation <String> Description of what this rule checks. nextTrue <BioBinaryRule> Rule to follow when condition is true. nextFalse <BioBinaryRule> Rule to follow when condition is false.
+"
 Class {
-	#name : #BioBinaryRule,
-	#superclass : #BioRule,
+	#name : 'BioBinaryRule',
+	#superclass : 'BioRule',
 	#instVars : [
 		'explanation',
 		'nextTrue',
 		'nextFalse'
 	],
-	#category : 'BioClassifier-RuleEngine'
+	#category : 'BioClassifier-RuleEngine',
+	#package : 'BioClassifier',
+	#tag : 'RuleEngine'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioBinaryRule class >> name: aString if: conditionBlockOrSymbol true: trueRule false: falseRule [
 
 	^ self new
@@ -20,7 +25,7 @@ BioBinaryRule class >> name: aString if: conditionBlockOrSymbol true: trueRule f
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioBinaryRule class >> name: aString if: conditionBlockOrSymbol true: trueRule false: falseRule context: aContextObject [
 
 	^ self new
@@ -32,7 +37,7 @@ BioBinaryRule class >> name: aString if: conditionBlockOrSymbol true: trueRule f
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> evaluate: subject [
 
 	(super evaluate: subject)
@@ -40,7 +45,7 @@ BioBinaryRule >> evaluate: subject [
 		ifFalse: [ self nextFalse evaluate: subject ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> evaluate: subject context: aContext [
 
 	(super evaluate: subject context: aContext)
@@ -48,17 +53,17 @@ BioBinaryRule >> evaluate: subject context: aContext [
 		ifFalse: [ self nextFalse evaluate: subject context: aContext ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> explanation [
 	^ explanation
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> explanation: anObject [
 	explanation := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> name: aString if: conditionBlockOrSymbol true: trueRule false: falseRule [
 
 	^ self name: aString;
@@ -68,7 +73,7 @@ BioBinaryRule >> name: aString if: conditionBlockOrSymbol true: trueRule false: 
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> name: aString if: conditionBlockOrSymbol true: trueRule false: falseRule context: aContextObject [
 
 	^ self name: aString;
@@ -79,27 +84,27 @@ BioBinaryRule >> name: aString if: conditionBlockOrSymbol true: trueRule false: 
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> nextFalse [
 	^ nextFalse
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> nextFalse: anObject [
 	nextFalse := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> nextTrue [
 	^ nextTrue
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> nextTrue: anObject [
 	nextTrue := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBinaryRule >> rules [
 
 	^ Array 

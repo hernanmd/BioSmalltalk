@@ -1,6 +1,6 @@
-Extension { #name : #BioFastaMultiRecord }
+Extension { #name : 'BioFastaMultiRecord' }
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioFastaMultiRecord >> plot [
 	" Open a window displaying an historgram of the receiver's sequences.
 	X-axis represent the bins with sequence lengths (using the Roassal's default bin length
@@ -12,7 +12,7 @@ BioFastaMultiRecord >> plot [
 		yAxisLabel: 'Sequence Count'.
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioFastaMultiRecord >> plotGcSkewInt [
 	"Plot the receiver's sequences GC skew"
 
@@ -26,7 +26,7 @@ BioFastaMultiRecord >> plotGcSkewInt [
 	^ canvas
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel [
 
 	| chart plot |
@@ -45,7 +45,7 @@ BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxis
 	chart open.
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color: aColor [
 
 	self 
@@ -56,7 +56,7 @@ BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxis
 		barWidth: 25
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioFastaMultiRecord >> plotHistogramBins: binNumber xAxisLabel: axisXLabel yAxisLabel: axixYLabel color: colorPaletteSelector barWidth: barWidth [
 
 	| c plot |

@@ -1,3 +1,6 @@
+"
+IUPAC DNA alphabet including both unambiguous and ambiguous nucleotide codes. Extends BioIUPACAlphabet with DNA-specific validation.
+"
 Class {
 	#name : 'BioIUPACDNA',
 	#superclass : 'BioIUPACAlphabet',

@@ -1,3 +1,6 @@
+"
+Represents a catalysis event involving an enzyme and a reaction. Links restriction enzymes to the biochemical reactions they catalyze. Instance Variables: enzyme <String> The enzyme name. reaction <BioReaction> The associated reaction. michaelisConstant <Number> The Michaelis constant for the enzyme-substrate pair.
+"
 Class {
 	#name : 'BioCatalysis',
 	#superclass : 'BioObject',

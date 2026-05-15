@@ -1,6 +1,6 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*BioClassifier' }
+{ #category : '*BioClassifier' }
 SequenceableCollection >> asBioGroupOrganization [
 
 	^ BioGroupOrganization new

@@ -6,25 +6,27 @@ It contains utility methods for easy querying of Blast filtered results. For exa
 
 "
 Class {
-	#name : #BioBlastFilter,
-	#superclass : #BioFilter,
-	#category : #'BioBlast-Local'
+	#name : 'BioBlastFilter',
+	#superclass : 'BioFilter',
+	#category : 'BioBlast-Local',
+	#package : 'BioBlast',
+	#tag : 'Local'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter class >> blastCategories [
 
 	^ self organization categories select: [: cat | cat beginsWith: 'filtering-blast' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter class >> blastMethods [
 	" self blastMethods "
 
 	^ self blastCategories flatCollect: [: cat | BioBlastFilter organization listAtCategoryNamed: cat ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter class >> userCommentAt: aSymbol [
 
 	| userCommentPragma textComment |
@@ -38,7 +40,7 @@ BioBlastFilter class >> userCommentAt: aSymbol [
 	^ textComment
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastFilter >> = aBioBlastFilter [
 	"Answer whether the receiver and anObject represent the same object."
 
@@ -49,7 +51,7 @@ BioBlastFilter >> = aBioBlastFilter [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> addFilteredResultsFrom: collection [
 	
 	"^ collection ifNotEmpty: [ self addFilterFrom: collection ] ifEmpty: [ self contents ]"
@@ -57,14 +59,14 @@ BioBlastFilter >> addFilteredResultsFrom: collection [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> alignments [
 	"Answer the receiver's <BioAlignment>"
 
 	^ self reader alignments
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> alignsFullIdentity [
 	" Answer a filter with the receiver's nodes which were fully aligned (i.e. Identities is 100%)
 	i.e. if Hsp_positive = 326 and Hsp_align-len = 327 identity is 99%"
@@ -78,7 +80,7 @@ BioBlastFilter >> alignsFullIdentity [
 
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> alignsPositivesWithThresholdDiff: aNumber [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned at least up to aNumber "
 
@@ -90,7 +92,7 @@ BioBlastFilter >> alignsPositivesWithThresholdDiff: aNumber [
 
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> alignsWithLengthBetween: minAlignLength and: maxAlignLength [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned between maxAlignLength and minAlignLength "
 	<userComment: 	'Select hits with alignments between a given range. In the BlastOutput XML file it matches with the Hsp_align-len node. The Hsp_align-len is an integer value which contains the length of the alignment used. If there are multiple HSPs, this will answer a Number with the one with the highest alignment.'>
@@ -103,7 +105,7 @@ BioBlastFilter >> alignsWithLengthBetween: minAlignLength and: maxAlignLength [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> alignsWithMaxLength: maxAlignLength [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned up to maxAlignLength "
 
@@ -113,7 +115,7 @@ BioBlastFilter >> alignsWithMaxLength: maxAlignLength [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> alignsWithMinLength: minAlignLength [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned up to minAlignLength "
 
@@ -123,20 +125,20 @@ BioBlastFilter >> alignsWithMinLength: minAlignLength [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> atHitAccession: aString [
 	" Answer the <BlastNode> in the receiver's hits matching aString accession number. 	See also comment in #asAccessionString "
 
 	^ self hits detect: [ : node | node asAccessionString = aString asAccessionStringWithoutVersion asLowercase ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> defaultReaderClass [
 
 	^ BioNCBIBlastReader
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioBlastFilter >> definition: aString condition: cmpSymbol [
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
 	
@@ -149,7 +151,7 @@ BioBlastFilter >> definition: aString condition: cmpSymbol [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioBlastFilter >> definitions: aStringCollection condition: cmpSymbol [
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
 	
@@ -160,7 +162,7 @@ BioBlastFilter >> definitions: aStringCollection condition: cmpSymbol [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #'filtering-blast-definitions' }
+{ #category : 'filtering-blast-definitions' }
 BioBlastFilter >> definitionsBeginWith: aTermCollection [
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
 	<userComment: 'Select hits with definition lines (for the database sequence) matching at the beggining of the definition string. A definition string is a mandatory description of the origin and function of a sequence, and is typically found in FASTA descriptions. Although the string line is structured, it doesn''t use a controlled vocabulary, which means you can''t be sure which words will or won''t appear. In the BlastOutput XML file it matches with the Hit_def node. Examples:
@@ -179,28 +181,28 @@ BioBlastFilter >> definitionsBeginWith: aTermCollection [
 				condition: #beginsWith: ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastFilter >> hasBehaviorNamed: aSelector [ 
 	" Private - For calculated queries, aSelector should be understood by the receiver "
 	
 	^ self class canUnderstand: aSelector
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastFilter >> hasNewResults [
 	" Answer <false> since receiver represents a new filter "
 
 	^ true
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioBlastFilter >> hash [
 
 	^ self contents hash
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> hits [
 	" Answer a Collection with the receiver hits. If we have already filtered results, then use the hits from the last filter "
 	
@@ -212,7 +214,7 @@ BioBlastFilter >> hits [
 				ifFalse: [ self reader contents result ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> hspIdentities [
 	" Answer a filter with the receiver's HSP identity nodes "
 
@@ -222,7 +224,7 @@ BioBlastFilter >> hspIdentities [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> hspMidLines [
 	" Answer a filter with the receiver's HSP identity nodes "
 
@@ -232,7 +234,7 @@ BioBlastFilter >> hspMidLines [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> merge: aBioBlastFilter [ 
 	" Merge the receiver with aBioBlastFilter"
 	
@@ -240,7 +242,7 @@ BioBlastFilter >> merge: aBioBlastFilter [
 		reject: [ :  blastNode | self filteredResultContents includes: blastNode ]) 
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> percentIdentityOverAlignment: aPercentageFloat cmpSelector: cmpSymbol [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned up to aPercentageFloat. "
 
@@ -257,7 +259,7 @@ BioBlastFilter >> percentIdentityOverAlignment: aPercentageFloat cmpSelector: cm
 
 ]
 
-{ #category : #'filtering-blast-alignments' }
+{ #category : 'filtering-blast-alignments' }
 BioBlastFilter >> percentMinPositiveOverAlignment: aPercentageFloat [
 	" Answer a filter with the receiver's hit nodes which were identities are aligned up to aPercentageFloat "
 
@@ -268,7 +270,7 @@ BioBlastFilter >> percentMinPositiveOverAlignment: aPercentageFloat [
 	^ self addFilteredResultsFrom: collection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioBlastFilter >> perform: cmpSymbol node: nodeName withArgument: aString [
 	" Answer a filtered result with the receiver's definition nodes begins with the strings in aStringCollection (ignoring case) "
 	
@@ -278,14 +280,14 @@ BioBlastFilter >> perform: cmpSymbol node: nodeName withArgument: aString [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> performBehavior: cmpSymbol named: aSelector withArgument: argString [
 
 	^ self perform: aSelector withArguments: { argString . cmpSymbol }.
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> performNode: cmpSymbol node: nodeName withArgument: argString [ 
 
 	| nodes hits |
@@ -299,7 +301,7 @@ BioBlastFilter >> performNode: cmpSymbol node: nodeName withArgument: argString 
 	^ self addFilteredResultsFrom: nodes
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioBlastFilter >> printBlastFilterOn: aStream [
 	" Private - Append receiver's information on aStream "
 
@@ -314,7 +316,7 @@ BioBlastFilter >> printBlastFilterOn: aStream [
 
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioBlastFilter >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -323,7 +325,7 @@ BioBlastFilter >> printOn: aStream [
 		ifFalse: [ self printBlastFilterOn: aStream ]
 ]
 
-{ #category : #'filtering-entrez' }
+{ #category : 'filtering-entrez' }
 BioBlastFilter >> selectGenBankRecords: aBlock [
 	" Answer a Collection of GenBank records satisfying condition in aBlock "
 	
@@ -331,7 +333,7 @@ BioBlastFilter >> selectGenBankRecords: aBlock [
 			selectGenBankRecords: self lastResult result
 ]
 
-{ #category : #'filtering-entrez' }
+{ #category : 'filtering-entrez' }
 BioBlastFilter >> selectGenBankRecords: aBlock from: aDataSource [
 	" Answer a <Collection> of GenBank records from aDataSource satisfying condition in aBlock "
 	
@@ -340,110 +342,110 @@ BioBlastFilter >> selectGenBankRecords: aBlock from: aDataSource [
 			from: aDataSource
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHitDefinitions [
 
 	^ self hits contents collect: [: h | h hitDefinition blastValue ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHitLengths [
 	" Answer a <Collection> of receiver's hit lengths "
 
 	^ self hits collect: #hitLength
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHitScores [
 
 	^ self hits collect: #selectHitScore
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspAlignLengths [
 	
 	^ self hits collect: [: h | h hspAlignLengths blastValue]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspEValues [
 
 	^ self hits collect: #selectHspEValue
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspHSeqs [
 
 	^ self hits collect: #selectHspHSeq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspHitFroms [
 
 	^ self hits collect: #selectHspHitFrom
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspHitTos [
 
 	^ self hits collect: #selectHspHitTo
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspIdentities [
 
 	^ self hits collect: #selectHspIdentity
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspMidLines [
 
 	^ self hits collect: #selectHspMidLine
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspNumberOfGaps [
 
 	^ self hits collect: #selectHspNumberOfGaps
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspPositives [
 
 	^ self hits collect: #selectHspPositive
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspQSeqs [
 
 	^ self hits collect: #selectHspQSeq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspQueryFroms [
 
 	^ self hits collect: #selectHspQueryFrom
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspQueryTos [
 
 	^ self hits collect: #selectHspQueryTo
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspScoreDensities [
 
 	^ self hits collect: #selectHspScoreDensities
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectHspScores [
 
 	^ self hits collect: #selectHspBitScores
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioBlastFilter >> selectPercentagesOverAlignment [
 
 	^ self hits collect: #selectPercentageOverAlignment

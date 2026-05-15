@@ -8,12 +8,14 @@ BioLocalWrapper time.
 
 "
 Class {
-	#name : #BioLocalWrapper,
-	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Core'
+	#name : 'BioLocalWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Core',
+	#package : 'BioWrappers',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioLocalWrapper class >> ls [
 	" List contents of current image directory "
 	
@@ -23,7 +25,7 @@ BioLocalWrapper class >> ls [
 		
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioLocalWrapper class >> time [
 	" List contents of current image directory "
 	

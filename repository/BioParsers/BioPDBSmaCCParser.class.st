@@ -1,3 +1,6 @@
+"
+SmaCC-based parser for PDB format files. Parses PDB records into structured objects.
+"
 Class {
 	#name : 'BioPDBSmaCCParser',
 	#superclass : 'SmaCCParser',

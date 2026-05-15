@@ -1,22 +1,27 @@
+"
+Represents an Arlequin project file parsed from INI format. Manages data sections, sample sections, haplotype sections, and provides building, review, and testing capabilities for Arlequin project configurations. Instance Variables: dataSection <BioA31DataSection> sampleKeyNumber <Integer> samplesSection <BioA31SamplesSection> haplotypesSection <BioA31HaplotypeSection>
+"
 Class {
-	#name : #BioArlequinFile,
-	#superclass : #INIFile,
+	#name : 'BioArlequinFile',
+	#superclass : 'INIFile',
 	#instVars : [
 		'dataSection',
 		'sampleKeyNumber',
 		'samplesSection',
 		'haplotypesSection'
 	],
-	#category : #'BioArlequin-Core'
+	#category : 'BioArlequin-Core',
+	#package : 'BioArlequin',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioArlequinFile class >> buildGroupsFrom: aClassifier [
 
 	^ (BioA31GroupBuilder newFromClassifications: aClassifier groupByPaddedAlignment) groups.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioArlequinFile class >> named: aFilename forHaplotypicDNAGroups: aClassifier [
 
 	| newInstance arGroups |
@@ -28,7 +33,7 @@ BioArlequinFile class >> named: aFilename forHaplotypicDNAGroups: aClassifier [
 		contents: newInstance contents
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioArlequinFile class >> named: aString forHaplotypicFrequencyGroups: aClassifier [
 
 	| newInstance arGroups |
@@ -48,7 +53,7 @@ BioArlequinFile class >> named: aString forHaplotypicFrequencyGroups: aClassifie
 	^ newInstance dumpToFileNamed: aString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile class >> newArlequinFileNamed: aString haplotypeDNAGroups: arGroupsCollection [ 
 
 	| newInstance |
@@ -70,7 +75,7 @@ BioArlequinFile class >> newArlequinFileNamed: aString haplotypeDNAGroups: arGro
 	^ newInstance
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 BioArlequinFile >> buildDNASample: params title: groupTitle [
 
 	self dataSection 
@@ -78,7 +83,7 @@ BioArlequinFile >> buildDNASample: params title: groupTitle [
 			title: groupTitle
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 BioArlequinFile >> buildHaplotypicDataDNAProfile: aDictionary title: aString groups: aNumber [
 
 	self newProfileSection
@@ -90,7 +95,7 @@ BioArlequinFile >> buildHaplotypicDataDNAProfile: aDictionary title: aString gro
 		useLocusSeparator: 'WHITESPACE'.
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 BioArlequinFile >> buildHaplotypicDataDNAProfileTitle: aString groups: aNumber missingData: missingCharacter [
 
 	self newProfileSection
@@ -102,7 +107,7 @@ BioArlequinFile >> buildHaplotypicDataDNAProfileTitle: aString groups: aNumber m
 		useLocusSeparator: 'WHITESPACE'.
 ]
 
-{ #category : #building }
+{ #category : 'building' }
 BioArlequinFile >> buildHaplotypicDataFrequencyProfileTitle: aString groups: aNumber missingData: missingCharacter [
 
 	self newProfileSection
@@ -114,7 +119,7 @@ BioArlequinFile >> buildHaplotypicDataFrequencyProfileTitle: aString groups: aNu
 		useLocusSeparator: 'WHITESPACE'.
 ]
 
-{ #category : #review }
+{ #category : 'review' }
 BioArlequinFile >> contents [
 	" Answer a String with receiver's output contents "
 
@@ -124,7 +129,7 @@ BioArlequinFile >> contents [
 			s nextPutAll: output contents ]
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> dataSection [
 	" Private - Set and answer a new data section "
 	
@@ -132,13 +137,13 @@ BioArlequinFile >> dataSection [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile >> dictionaryClass [
 
 	^ OrderPreservingDictionary
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> haplotypesSection [
 	" Private - Set and answer a new haplotypes section "
 	
@@ -147,7 +152,7 @@ BioArlequinFile >> haplotypesSection [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioArlequinFile >> includesSection: label [
 "	self needsWork."
 	
@@ -156,27 +161,27 @@ BioArlequinFile >> includesSection: label [
 			or: [ dataSection isNil not ] ]
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> newDataSection [
 
 	^ self newSectionNamed: BioA31DataSection
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> newHaplotypesSection [
 	" Private - Set and answer a new Haplotypes section "
 	
 	^ self newSectionNamed: BioA31HaplotypeSection
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> newProfileSection [
 	" Private - Answer a new [Profile] section "
 	
 	^ self newSectionNamed: BioA31ProfileSection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile >> newSampleKey [
 	" Answer an 'anonymous' sample key Number suitable for adding a new sample "
 	
@@ -184,14 +189,14 @@ BioArlequinFile >> newSampleKey [
 	^ self sampleKeyNumber
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> newSamplesSection [
 	" Private - Answer a new [Samples] section "
 	
 	^ self newSectionNamed: BioA31SamplesSection
 ]
 
-{ #category : #review }
+{ #category : 'review' }
 BioArlequinFile >> newSectionNamed: aSectionClass [
 	" Private - Delegate naming of section a aSectionClass. Answer a new data section for aSectionClass "
 	
@@ -200,25 +205,25 @@ BioArlequinFile >> newSectionNamed: aSectionClass [
 			on: self
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> newStructureSection [
 	" Private - Set and answer a new Structure section "
 	
 	^ self newSectionNamed: BioA31StructureSection
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile >> sampleKeyNumber [
 	^ sampleKeyNumber
 		ifNil: [ sampleKeyNumber := 0 ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile >> sampleKeyNumber: anObject [
 	sampleKeyNumber := anObject
 ]
 
-{ #category : #sections }
+{ #category : 'sections' }
 BioArlequinFile >> samplesSection [
 	" Private - Answer the receiver's [Samples] section "
 	
@@ -227,13 +232,13 @@ BioArlequinFile >> samplesSection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFile >> section: sectionString [
 
 	^ (BioA31INISection classFor: sectionString) named: sectionString on: self
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioArlequinFile >> section: label at: keyString put: valueString [
 
 	^ (self ensureSectionDictionary: label)
@@ -241,7 +246,7 @@ BioArlequinFile >> section: label at: keyString put: valueString [
 			put: valueString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFile >> sectionsDo: aBlock [
 
 	self sectionDictionaries do: [ : assoc | 
@@ -250,7 +255,7 @@ BioArlequinFile >> sectionsDo: aBlock [
 		aBlock value: (sectionClass on: self label: assoc key) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioArlequinFile >> subSectionsTopClass [
 
 	^ BioA31INISection

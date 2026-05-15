@@ -4,8 +4,8 @@ samples				<Bag>
 sequences			<Bag>
 "
 Class {
-	#name : #BioPopulation,
-	#superclass : #BioNamedObject,
+	#name : 'BioPopulation',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'samples',
 		'sequences',
@@ -13,71 +13,73 @@ Class {
 		'description',
 		'organism'
 	],
-	#category : #'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> addBioSample: aBioSample [
 	" Add aBioSample to the receiver's population "
 
 	self samples addBioSample: aBioSample
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> addSample: aString [
 	" Add a Sample identified by aString to the receiver's population "
 
 	self samples addSample: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> addSequence: aSequence [
 
 	self sequences add: aSequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> clear [
 	" Remove all individuals in the receiver "
 	
 	self samples removeAll
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> defaultPopulationSize [
 	" Answer a <Number> representing the default population count "
 
 	^ 100	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> description [
 	^ description
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> description: anObject [
 	description := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> occurrencesOf: aSequence [
 	" Answer how many of ocurrences contains aSequence."
 
 	^ self sequences occurrencesOf: aSequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> organism [
 	^ organism
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> organism: anObject [
 	organism := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioPopulation >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -88,7 +90,7 @@ BioPopulation >> printOn: aStream [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> samples [
 	"Answer the value of samples"
 
@@ -96,14 +98,14 @@ BioPopulation >> samples [
 		ifNil: [ samples := BioSampleCollection new: self defaultPopulationSize ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> samples: anObject [
 	"Set the value of samples"
 
 	samples := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> sequences [
 	"Answer the value of sequences"
 
@@ -111,21 +113,21 @@ BioPopulation >> sequences [
 		ifNil: [ sequences := OrderedCollection new: 300 ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> sequences: anObject [
 	"Set the value of sequences"
 
 	sequences := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> territory [
 	"Answer the value of regionName"
 
 	^ region
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPopulation >> territory: anObject [
 	"Set the value of regionName"
 

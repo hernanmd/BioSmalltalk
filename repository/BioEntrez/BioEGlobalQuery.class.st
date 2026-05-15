@@ -9,19 +9,21 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/egquery.fcgi?term=brca1+OR+brca2
 http://www.ncbi.nlm.nih.gov/corehtml/query/static/egquery_help.html
 "
 Class {
-	#name : #BioEGlobalQuery,
-	#superclass : #BioEntrezCommand,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioEGlobalQuery',
+	#superclass : 'BioEntrezCommand',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEGlobalQuery class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'egqueryt.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEGlobalQuery class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

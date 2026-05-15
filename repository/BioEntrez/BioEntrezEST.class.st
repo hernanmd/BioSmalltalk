@@ -1,10 +1,15 @@
+"
+Represents the EST (Expressed Sequence Tags) database in the NCBI Entrez system. Provides specific qualifiers for EST searches.
+"
 Class {
-	#name : #BioEntrezEST,
-	#superclass : #BioESSGSSDb,
-	#category : 'BioEntrez-Databases'
+	#name : 'BioEntrezEST',
+	#superclass : 'BioESSGSSDb',
+	#category : 'BioEntrez-Databases',
+	#package : 'BioEntrez',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezEST class >> dbName [
 	" See superimplementor's comment "
 	
@@ -12,28 +17,28 @@ BioEntrezEST class >> dbName [
 
 ]
 
-{ #category : #'accessing - qualifiers' }
+{ #category : 'accessing - qualifiers' }
 BioEntrezEST >> qualifierForESTId [
 	" Answer a <String> qualifier. Legacy dbEST unique identifier provided by NCBI "
 
 	^ '[EST ID]'
 ]
 
-{ #category : #'accessing - qualifiers' }
+{ #category : 'accessing - qualifiers' }
 BioEntrezEST >> qualifierForESTName [
 	" Answer a <String> qualifier. The name given to the EST record by the submitters "
 
 	^ '[EST Name]'
 ]
 
-{ #category : #'accessing - qualifiers' }
+{ #category : 'accessing - qualifiers' }
 BioEntrezEST >> qualifierForLibraryName [
 	" Answer a <String> qualifier. The name given to the cDNA library that is the source of the clone, provided by the submitter and taken verbatim from the record. May contain useful information about the cell, tissue, or organ source. "
 
 	^ '[Library Name]'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezEST >> setEst [
 	" Set the receiver's retrieval type to EST Report format "
 	

@@ -1,16 +1,21 @@
+"
+Represents a group organization strategy for classification. Holds contents, a selector for grouping, a strategy, and an element group class. Instance Variables: contents <Collection> Grouped contents. selector <Symbol> Grouping selector. strategy <Symbol> Classification strategy. elementGroupClass <Class> Class used for element groups.
+"
 Class {
-	#name : #BioGroupOrganization,
-	#superclass : #BioObject,
+	#name : 'BioGroupOrganization',
+	#superclass : 'BioObject',
 	#instVars : [
 		'contents',
 		'selector',
 		'strategy',
 		'elementGroupClass'
 	],
-	#category : #'BioClassifier-Core'
+	#category : 'BioClassifier-Core',
+	#package : 'BioClassifier',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> for: comparatorSymbol on: selectorSymbol [
 
 	^ self new 
@@ -18,7 +23,7 @@ BioGroupOrganization class >> for: comparatorSymbol on: selectorSymbol [
 		strategy: comparatorSymbol.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> forEqualityOn: aSymbol [
 
 	^ self new 
@@ -26,7 +31,7 @@ BioGroupOrganization class >> forEqualityOn: aSymbol [
 		setEquality.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> forGreaterThanOn: aSymbol [
 
 	^ self new 
@@ -34,7 +39,7 @@ BioGroupOrganization class >> forGreaterThanOn: aSymbol [
 		setGreaterThan.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> forLessThanOn: aSymbol [
 
 	^ self new 
@@ -42,7 +47,7 @@ BioGroupOrganization class >> forLessThanOn: aSymbol [
 		setLessThan.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> forSimilarityOn: aSymbol [
 
 	^ self new 
@@ -50,47 +55,47 @@ BioGroupOrganization class >> forSimilarityOn: aSymbol [
 		setSimilarity.
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioGroupOrganization class >> withAll: aCollection [
 	"Answer a new instance containing all the elements from aCollection."
 	
 	^ self new initializeWith: aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> addOrganization: aBioOrganization [
 
 	self contents add: aBioOrganization
 
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 BioGroupOrganization >> asBioGroupOrganization [
 
 	^ self
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> classesSize [
 	"Answer a <Number> representing how many classes <BioOrganization> the receiver contains "
 
 	^ self contents size
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> classificationsSize [
 	"Answer a <Number> representing how many classes <BioOrganization> the receiver contains"
 
 	^ self contents sum: #size
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> collect: aBlockOrSymbol [
 
 	^ self contents collect: aBlockOrSymbol 
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> contents [
 	"Answer a <Collection> with the contained groups in the receiver"
 
@@ -98,49 +103,49 @@ BioGroupOrganization >> contents [
 		ifNil: [ contents := self contentsClass new ]
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> contents: anObject [
 	contents := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioGroupOrganization >> contentsClass [
 
 	^ OrderedCollection
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioGroupOrganization >> defaultElementGroupClass [
 
 	^ BioOrganization
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> do: aBlockOrSymbol [
 
 	^ self contents do: aBlockOrSymbol 
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioGroupOrganization >> elementGroupClass [
 
 	^ elementGroupClass
 		ifNil: [ elementGroupClass := self defaultElementGroupClass ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> elementGroupClass: anObject [
 	elementGroupClass := anObject
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> features [
 	"Answer a <Collection> with the receiver's features"
 	
 	^ self contents collect: #feature
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> groupFor: anObject [
 
 	| attValue |
@@ -154,7 +159,7 @@ BioGroupOrganization >> groupFor: anObject [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> groupFor: anObject feature: featureName [
 
 	| attValue |
@@ -168,55 +173,55 @@ BioGroupOrganization >> groupFor: anObject feature: featureName [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGroupOrganization >> includes: anObject [
 	"Answer <true> whether anObject is one of the receiver's elements."
 	
 	^ self contents includes: anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> indexOf: object [
 
 	^ self contents indexOf: object
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioGroupOrganization >> initializeWith: aCollection [
 	" Private - Set the receiver's groups using aCollection "
 	
 	contents := aCollection collect: [: elem | self elementGroupClass new name: elem ]
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> maxClass [
 	" Answer the BioOrganization class with most assignments in the receiver's classifier "
 	
 	^ self contents detectMax: [: each | each classifications size ]
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> maxClasses [
 	" Answer how many classes could be assigned in the receiver with the maximum number of features "
 	
 	^ self maxClass size
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> minClass [
 	" Answer the BioOrganization class with the fewer assignments in the receiver's classifier "
 
 	^ self contents detectMin: [: each | each classifications size ]
 ]
 
-{ #category : #'accessing-output' }
+{ #category : 'accessing-output' }
 BioGroupOrganization >> minClasses [
 	" Answer how many classes has been assigned in the receiver with the minimum number of features "
 	
 	^ self minClass size
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioGroupOrganization >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -231,53 +236,53 @@ BioGroupOrganization >> printOn: aStream [
 	self contents printOn: aStream.
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> selector [
 	^ selector
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> selector: anObject [
 	selector := anObject
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> setEquality [
 
 	strategy := #=
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> setGreaterThan [
 
 	strategy := #>
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> setLessThan [
 
 	strategy := #<=
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> setSimilarity [
 
 	strategy := #alike:
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGroupOrganization >> size [
 	"Answer how many elements the receiver contains."
 
 	^ self contents size
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> strategy [
 	^ strategy
 ]
 
-{ #category : #'accessing-strategy' }
+{ #category : 'accessing-strategy' }
 BioGroupOrganization >> strategy: anObject [
 	strategy := anObject
 ]

@@ -1,3 +1,6 @@
+"
+Random sampler for FASTQ files. Selects a random subset of records from a FASTQ file for quality control analysis. Instance Variables: parser <BioFASTQParser> The FASTQ parser. sampleSize <Integer> Number of records to sample. randomSeed <Integer> Seed for random number generation.
+"
 Class {
 	#name : 'BioFASTQSampler',
 	#superclass : 'Object',

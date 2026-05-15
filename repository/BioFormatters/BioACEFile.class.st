@@ -1,3 +1,6 @@
+"
+Represents an ACE file format used in bioinformatics for representing sequence assembly data, typically output by assembly programs like phrap.
+"
 Class {
 	#name : 'BioACEFile',
 	#superclass : 'BioFile',

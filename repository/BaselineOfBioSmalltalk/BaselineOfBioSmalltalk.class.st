@@ -115,7 +115,8 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 			package: 'BioToolsSamples' 			with: [ spec requires: #('BioTools' 'BioEntrez' 'BioParsers' ). ];
 			package: 'BioTools-Tests' 			with: [ spec requires: #('BioTools' ). ];
 			package: 'BioWrapperTests' 			with: [ spec requires: #('BioTools-Tests' ) ];
-			package: 'BioPhysics'        	with: [ spec requires: #('BioTools') ];
+			package: 'BioPhysics'        	   with: [ spec requires: #('BioTools') ];
+			package: 'BioPhysics-Tests'       with: [ spec requires: #('BioPhysics') ];
 			package: 'BioWrappers' 				with: [ spec requires: #('BioTools' ) ];
 			package: 'BioSummarizedExperiment' with: [ spec requires: #('BioTools' 'DataFrame') ];
 			package: 'BioSummarizedExperiment-Tests' with: [ spec requires: #('BioSummarizedExperiment') ]
@@ -139,7 +140,8 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioHaplotypes' 
 			'BioBenchmarks' 
 			'BioNGS'
-			'BioPlots' )
+			'BioPlots'
+			'BioSummarizedExperiment' )
 ]
 
 { #category : 'groups' }

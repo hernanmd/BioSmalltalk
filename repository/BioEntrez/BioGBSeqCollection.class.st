@@ -3,70 +3,72 @@ BioGBSeqCollection is a <Collection> of <Dictionary> which serves to access GenB
 
 "
 Class {
-	#name : #BioGBSeqCollection,
-	#superclass : #BioINSDCCollection,
+	#name : 'BioGBSeqCollection',
+	#superclass : 'BioINSDCCollection',
 	#instVars : [
 		'bioGBSeqCollection'
 	],
-	#category : #'BioEntrez-Core'
+	#category : 'BioEntrez-Core',
+	#package : 'BioEntrez',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForAccessionWithVersion [
 	"Answer a <String> describing the node used for accession numbers with versions"
 
 	^ 'GBSeq_accession-version'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForAlignedSequence [
 	" Note : This qualifier does not exists in the GenBank feature tables. It was added to support records with aligned sequences "
 
 	^ 'GBSeq_aligned-sequence'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForAuthor [
 	"Answer a <String> describing the node used for authors"
 
 	^ 'GBAuthor'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForDefinition [
 	"Answer a <String> describing the node used for sequence definition"
 	
 	^ 'GBSeq_definition'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForReferenceJournal [
 	"Answer a <String> describing the node used for reference journals"
 
 	^ 'GBReference_journal'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForReferenceTitle [
 	"Answer a <String> describing the node used for reference titles"
 	
 	^ 'GBReference_title'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> qualifierForXRefId [
 
 	^ 'GBXref_id'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection class >> readerClass [ 
 	"Private - See superimplementor's comment"
 
 	^ BioEXmlGBSeqReader
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection >> accessionsWithVersion [
 	"Answer a <Collection> of <String>"
 
@@ -74,7 +76,7 @@ BioGBSeqCollection >> accessionsWithVersion [
 		d at: self class qualifierForAccessionWithVersion ifAbsent: [ String empty ] ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection >> atAccession: accesionString [
 	"Answer a <Dictionary> identified by accessionString "
 
@@ -83,19 +85,19 @@ BioGBSeqCollection >> atAccession: accesionString [
 		
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection >> collectAt: keyName [
 
 	^ self collect: [ : d | d at: keyName ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection >> collectAt: keyName ifAbsent: absentBlock [
 
 	^ self collect: [ : d | d at: keyName ifAbsent: absentBlock ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollection >> features [
 	" Detect the record with most features and answer a sorted <Collection> of <String> with them "
 	

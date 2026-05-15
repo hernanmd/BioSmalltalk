@@ -11,15 +11,17 @@ popFreq
 
 "
 Class {
-	#name : #BioHaplotype,
-	#superclass : #BioSequence,
+	#name : 'BioHaplotype',
+	#superclass : 'BioSequence',
 	#instVars : [
 		'popFreq'
 	],
-	#category : 'BioHaplotypes-Core'
+	#category : 'BioHaplotypes-Core',
+	#package : 'BioHaplotypes',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioHaplotype class >> readFrom: collection [
 	" collection contains subcollections, each one an haplotype block "
 	
@@ -31,7 +33,7 @@ BioHaplotype class >> readFrom: collection [
 				yourself ] ].
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotype >> haplotypeIdentifier [
 
 	^ String streamContents: [ : stream |
@@ -41,12 +43,12 @@ BioHaplotype >> haplotypeIdentifier [
 			nextPutAll: (self popFreq printShowingDecimalPlaces: 3) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotype >> popFreq [
 	^ popFreq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotype >> popFreq: anObject [
 	popFreq := anObject
 ]

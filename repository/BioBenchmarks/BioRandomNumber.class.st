@@ -1,6 +1,9 @@
+"
+Generates random numbers with configurable seed and scale. Instance Variables: seed scale
+"
 Class {
-	#name : #BioRandomNumber,
-	#superclass : #Object,
+	#name : 'BioRandomNumber',
+	#superclass : 'Object',
 	#instVars : [
 		'seed',
 		'scale'
@@ -11,10 +14,12 @@ Class {
 		'Modulus',
 		'Multiplier'
 	],
-	#category : 'BioBenchmarks-Fasta'
+	#category : 'BioBenchmarks-Fasta',
+	#package : 'BioBenchmarks',
+	#tag : 'Fasta'
 }
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioRandomNumber class >> initialize [
 
 	super initialize.
@@ -24,19 +29,19 @@ BioRandomNumber class >> initialize [
 	Multiplier := 3877
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioRandomNumber class >> to: anInteger [
    ^ self basicNew to: anInteger
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRandomNumber >> next [
 
    seed := (seed * Multiplier + Increment) \\ Modulus.
    ^ (seed * scale) / FModulus
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRandomNumber >> to: anInteger [
 
 	seed := 42.

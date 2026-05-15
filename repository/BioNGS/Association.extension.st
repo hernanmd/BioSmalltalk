@@ -1,6 +1,6 @@
-Extension { #name : #Association }
+Extension { #name : 'Association' }
 
-{ #category : #'*BioNGS' }
+{ #category : '*BioNGS' }
 Association >> asBioCutadaptParameter [
 	" Answer the receiver suitable for use as Cutadapt parameter "
 

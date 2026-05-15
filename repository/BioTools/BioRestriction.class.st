@@ -1,3 +1,6 @@
+"
+Provides access to restriction enzyme analysis. Extends BioObject with restriction enzyme lookup and analysis behavior.
+"
 Class {
 	#name : 'BioRestriction',
 	#superclass : 'BioObject',

@@ -1,3 +1,6 @@
+"
+Parser for full GBSeq XML data from Entrez. Extends the GenBank sequence parser to extract all available fields from GBSeq records.
+"
 Class {
 	#name : 'BioEntrezXMLGBFullParser',
 	#superclass : 'BioEntrezXMLGenBankSeqParser',

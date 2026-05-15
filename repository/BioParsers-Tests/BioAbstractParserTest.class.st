@@ -1,3 +1,6 @@
+"
+Abstract test class for BioSmalltalk parsers. Provides common test infrastructure, fixture accessors, and helper methods for parser test subclasses.
+"
 Class {
 	#name : 'BioAbstractParserTest',
 	#superclass : 'BioAbstractTest',

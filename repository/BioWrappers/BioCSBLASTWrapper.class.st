@@ -1,17 +1,22 @@
+"
+Wrapper for the CS-BLAST (Context-Specific BLAST) sequence alignment tool. Provides access to CS-BLAST program options and execution.
+"
 Class {
-	#name : #BioCSBLASTWrapper,
-	#superclass : #BioWrapperObject,
-	#category : 'BioWrappers-Programs'
+	#name : 'BioCSBLASTWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Programs',
+	#package : 'BioWrappers',
+	#tag : 'Programs'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper class >> softwareName [
 	" See superimplementor's comment "
 
 	^ 'CSBLAST'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper class >> url [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -19,7 +24,7 @@ BioCSBLASTWrapper class >> url [
 	^ 'ftp://toolkit.lmb.uni-muenchen.de/csblast/'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBlast [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:56 pm"
@@ -27,7 +32,7 @@ BioCSBLASTWrapper >> csBlast [
 	^ 'csBlast'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBlastIntelIcc [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -35,7 +40,7 @@ BioCSBLASTWrapper >> csBlastIntelIcc [
 	^ 'csBlastIntelIcc'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBlastStatic [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -43,7 +48,7 @@ BioCSBLASTWrapper >> csBlastStatic [
 	^ 'csBlastStatic'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBuild [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -51,7 +56,7 @@ BioCSBLASTWrapper >> csBuild [
 	^ 'csBuild'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBuildIntelIcc [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -59,7 +64,7 @@ BioCSBLASTWrapper >> csBuildIntelIcc [
 	^ 'csBuildIntelIcc'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csBuildStatic [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:57 pm"
@@ -67,7 +72,7 @@ BioCSBLASTWrapper >> csBuildStatic [
 	^ 'csBuildStatic'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioCSBLASTWrapper >> csiBlast [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:57:56 pm"

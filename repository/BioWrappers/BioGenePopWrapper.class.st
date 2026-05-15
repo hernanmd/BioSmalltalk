@@ -5,19 +5,21 @@ Implementation currently inspired on the Biopython version: https://github.com/l
 
 "
 Class {
-	#name : #BioGenePopWrapper,
-	#superclass : #BioWrapperObject,
-	#category : #'BioWrappers-Popgen'
+	#name : 'BioGenePopWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Popgen',
+	#package : 'BioWrappers',
+	#tag : 'Popgen'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGenePopWrapper class >> url [
 	" Answer a <String> representing receiver's URL "
 
 	^ 'https://kimura.univ-montp2.fr/%7Erousset/Genepop.htm'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 BioGenePopWrapper >> buildCmdLineForAllFst: fileName [
 	" Answer a <String> for executing FST analysis given fileName "
 	
@@ -28,7 +30,7 @@ BioGenePopWrapper >> buildCmdLineForAllFst: fileName [
 			nextPutAll: '> /dev/null 2> /dev/null' ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 BioGenePopWrapper >> calcFstAll: fileName [
 	" Calculates the Fst/Fis/Fit for all populations in fileName.
 	Answer a <Collection> of (Locus name, Fis, Fst, Fit). Creates a file named fname.FST "
@@ -36,7 +38,7 @@ BioGenePopWrapper >> calcFstAll: fileName [
 
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 BioGenePopWrapper >> getLociGenotypeCounts: fileName [
 	" Answer the genotype count for all populations) in fileName "
 	

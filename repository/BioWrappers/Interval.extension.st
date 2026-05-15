@@ -1,13 +1,13 @@
-Extension { #name : #Interval }
+Extension { #name : 'Interval' }
 
-{ #category : #'*BioWrappers' }
+{ #category : '*BioWrappers' }
 Interval >> asPLINKParameter [
 	" Answer a <String> representation suitable to use as PLINK parameter "
 	
 	^ self first asString , '-' , self last asString
 ]
 
-{ #category : #'*BioWrappers' }
+{ #category : '*BioWrappers' }
 Interval >> gtInspectorIntervalIn: composite [
 
 	<gtInspectorPresentationOrder: 80>

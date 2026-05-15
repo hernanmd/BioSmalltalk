@@ -3,46 +3,48 @@ Astract superclass with behavior for downloading Genomes with chromosomes.
 
 "
 Class {
-	#name : #BioNCBIChrGD,
-	#superclass : #BioNCBIGenomeDownloader,
+	#name : 'BioNCBIChrGD',
+	#superclass : 'BioNCBIGenomeDownloader',
 	#instVars : [
 		'chromosomes',
 		'chr',
 		'chrDirZeroPrefixed',
 		'chrZeroPrefixed'
 	],
-	#category : #'BioNCBI-Genomes'
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> beChrDirNotZeroPrefixed [
 	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
 
 	^ chrDirZeroPrefixed := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> beChrDirZeroPrefixed [
 	" Set a <Boolean> specifying if chromosome numbers directories are prefixed with 0 "
 
 	^ chrDirZeroPrefixed := true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> beChrFileNotZeroPrefixed [
 	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
 
 	^ chrZeroPrefixed := false
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> beChrFileZeroPrefixed [
 	" Set a <Boolean> specifying if chromosome numbers are prefixed with 0 "
 
 	^ chrZeroPrefixed := true
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIChrGD >> buildFilePath [
 
 	^ String streamContents: [ : stream |
@@ -54,17 +56,17 @@ BioNCBIChrGD >> buildFilePath [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chr [
 	^ chr
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chr: anObject [
 	chr := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chrAsString [
 	" Private - Adapt because NCBI store directories as 01,02,...22 "
 	
@@ -75,7 +77,7 @@ BioNCBIChrGD >> chrAsString [
 		ifFalse: [ self chr asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chrDirAsString [
 	" Private - Adapt because NCBI store directories as 01,02 "
 	
@@ -86,7 +88,7 @@ BioNCBIChrGD >> chrDirAsString [
 		ifFalse: [ self chr asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chromosomes [
 	" Answer a <Collection> of <String> each one representing a chromosome name to download "
 
@@ -95,19 +97,19 @@ BioNCBIChrGD >> chromosomes [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> chromosomes: anObject [
 	^ chromosomes := anObject
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIChrGD >> defaultChromosomes [
 
 	^ 1 to: self maxChr
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIChrGD >> defaultDirectory [
 	" Answer a <String> with the receiver's server directory to CWD "
 	
@@ -120,7 +122,7 @@ BioNCBIChrGD >> defaultDirectory [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIChrGD >> downloadAllChromosomes [
 	" Download all chromosomes found for the receiver "
 
@@ -136,7 +138,7 @@ BioNCBIChrGD >> downloadAllChromosomes [
 		named: 'Downloading all chromosomes...' 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIChrGD >> downloadChromosome: chrString [
 	" Download the chromosome number chrNumber in the current directory "
 
@@ -150,7 +152,7 @@ BioNCBIChrGD >> downloadChromosome: chrString [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIChrGD >> downloadChromosomes: chrInterval [
 	" Download the chromosome number chrNumber in the current directory "
 
@@ -166,7 +168,7 @@ BioNCBIChrGD >> downloadChromosomes: chrInterval [
 		named: 'Downloading ' , self organismName , ' chromosome '
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioNCBIChrGD >> initialize [
 	" Private - See superimplementor's comment "
 
@@ -175,21 +177,21 @@ BioNCBIChrGD >> initialize [
 	self beChrDirZeroPrefixed.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIChrGD >> isChrDirZeroPrefixed [
 	" Answer a <Boolean> specifying if chromosome numbers are prefixed with 0 "
 
 	^ chrDirZeroPrefixed
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIChrGD >> isChrZeroPrefixed [
 	" Answer a <Boolean> specifying if chromosome numbers are prefixed with 0 "
 
 	^ chrZeroPrefixed
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIChrGD >> maxChr [
 	" Answer maximum number of chromosomes for the receiver "
 

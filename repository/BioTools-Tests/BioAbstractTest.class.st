@@ -1,3 +1,6 @@
+"
+Abstract test class for BioSmalltalk. Provides common test infrastructure including sample data accessors and setup/teardown behavior for test subclasses.
+"
 Class {
 	#name : 'BioAbstractTest',
 	#superclass : 'TestCase',

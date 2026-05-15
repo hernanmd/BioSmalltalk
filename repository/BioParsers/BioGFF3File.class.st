@@ -1,3 +1,6 @@
+"
+Represents a GFF3 (Generic Feature Format version 3) file. Provides parsing, querying, and property access for GFF3 files. Instance Variables: directives <Collection> File directives. features <Collection> Feature records. gffVersion <String> GFF format version.
+"
 Class {
 	#name : 'BioGFF3File',
 	#superclass : 'Object',

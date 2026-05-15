@@ -1,3 +1,6 @@
+"
+Parser for paired-end FASTQ files containing two synchronized read files. Manages two parallel parsers and yields paired-end record pairs. Instance Variables: parser1 <BioFASTQParser> Parser for the first read file. parser2 <BioFASTQParser> Parser for the second read file. currentPair <Integer> Current pair index.
+"
 Class {
 	#name : 'BioFASTQPairedEndParser',
 	#superclass : 'Object',

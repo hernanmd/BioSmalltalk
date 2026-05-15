@@ -25,8 +25,8 @@ tagSnps
 
 "
 Class {
-	#name : #BioHaplotypeBlock,
-	#superclass : #BioObject,
+	#name : 'BioHaplotypeBlock',
+	#superclass : 'BioObject',
 	#instVars : [
 		'markerNumbers',
 		'tagSnps',
@@ -34,47 +34,49 @@ Class {
 		'crossingLines',
 		'correlation'
 	],
-	#category : 'BioHaplotypes-Core'
+	#category : 'BioHaplotypes-Core',
+	#package : 'BioHaplotypes',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> correlation [
 	" Answer the multi-locus D prime "
 
 	^ correlation
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> correlation: anObject [
 	correlation := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> haplotypes [
 	^ haplotypes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> haplotypes: anObject [
 	haplotypes := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> markerNumbers [
 	^ markerNumbers
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> markerNumbers: anObject [
 	markerNumbers := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> tagSnps [
 	^ tagSnps
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHaplotypeBlock >> tagSnps: anObject [
 	tagSnps := anObject
 ]

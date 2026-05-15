@@ -6,23 +6,25 @@ Instance Variables:
 	saveContents 	<Boolean>			Save contents of retrieved result sets to local workstation
 "
 Class {
-	#name : #BioNCBIReader,
-	#superclass : #BioFilteredReader,
+	#name : 'BioNCBIReader',
+	#superclass : 'BioFilteredReader',
 	#instVars : [
 		'querySeq',
 		'results'
 	],
-	#category : #'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIReader class >> allowOpenTranscript [
 	"Answer <true> if receiver is allowd to open a Transcript window to report log"
 
 	^ true
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBIReader class >> newFrom: aSearchResult [
 
 	^ self new
@@ -31,7 +33,7 @@ BioNCBIReader class >> newFrom: aSearchResult [
 		yourself
 ]
 
-{ #category : #'accessing filters' }
+{ #category : 'accessing filters' }
 BioNCBIReader >> addResult [
 	" Add a new result object to the receiver from the receiver's raw contents "
 
@@ -44,7 +46,7 @@ BioNCBIReader >> addResult [
 	^ newResult
 ]
 
-{ #category : #'accessing filters' }
+{ #category : 'accessing filters' }
 BioNCBIReader >> filter [
 	"Answer a filterer for selecting specific results from the receiver"
 	
@@ -53,14 +55,14 @@ BioNCBIReader >> filter [
 		ifTrue: [ self lastCumulativeFilter ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIReader >> hasResults [
 	"Answer <true> if we have results"
 	
 	^ results notNil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> parsedContents [
 	" Answer a <BioFilteredObject> "
 
@@ -70,7 +72,7 @@ BioNCBIReader >> parsedContents [
 		ifFalse: [ rs ]
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioNCBIReader >> parserClass [
 	" Answer a multi-purpose parser class. Override if necessary "
 
@@ -78,22 +80,22 @@ BioNCBIReader >> parserClass [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> querySequence [
 	^ querySeq
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> querySequence: anObject [
 	querySeq := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> resultClass [
 	^ self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> searchResults [
 
 	^ (results isNil or: [ results isEmpty ])
@@ -102,12 +104,12 @@ BioNCBIReader >> searchResults [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> searchResults: anObject [
 	results := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIReader >> searchResultsSize [
 	"Answer a <Number> with the receiver's count of hits"
 

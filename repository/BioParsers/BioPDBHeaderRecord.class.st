@@ -1,3 +1,6 @@
+"
+Represents a HEADER record in a PDB file. Instance Variables: classification depositionDate idCode
+"
 Class {
 	#name : 'BioPDBHeaderRecord',
 	#superclass : 'BioPDBRecord',

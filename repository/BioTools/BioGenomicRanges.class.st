@@ -1,3 +1,6 @@
+"
+Represents a collection of genomic ranges grouped by sequence name with strand information. Supports filtering, conversion, and set operations similar to Bioconductor GenomicRanges. Instance Variables: seqnames <Collection> Sequence names for each range. ranges <BioIRanges> The interval ranges. strands <Collection> Strand values for each range. metadata <Dictionary> Additional metadata. seqinfo <Object> Sequence information. ignoreStrandFlag <Boolean> Whether to ignore strand in operations.
+"
 Class {
 	#name : 'BioGenomicRanges',
 	#superclass : 'BioObject',

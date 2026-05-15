@@ -1,3 +1,6 @@
+"
+Test class for BioSequence. Validates sequence creation alphabet handling and transformation behavior.
+"
 Class {
 	#name : 'BioSequenceTest',
 	#superclass : 'BioAbstractSequenceTest',
@@ -929,6 +932,120 @@ BioSequenceTest >> testTmStaluc [
 
 
 
+]
+
+{ #category : 'Testing' }
+BioSequenceTest >> testTmStalucSaltCorrection [
+	"Test salt correction methods 1-7 produce numerical results"
+
+	| seq |
+	seq := BioSequence newDNA: 'ATCGATCGATCG'.
+	"Method 1 (Schildkraut2010)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 1
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 2 (Wetmur1991)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 2
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 3 (SantaLucia1996)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 3
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 4 (SantaLucia1998-1)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 4
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 5 (SantaLucia1998-2)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 5
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 6 (Owczarzy2004)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 6
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Method 7 (Owczarzy2008)"
+	self assert: (seq
+			 saltCorrectionNa: 50
+			 K: 0
+			 tris: 0
+			 Mg: 0
+			 dNTPs: 0
+			 method: 7
+			 seq: 'ATCGATCGATCG') isNumber.
+	"Verify specific expected values for salt correction"
+	self
+		assert: (seq
+				 saltCorrectionNa: 50
+				 K: 0
+				 tris: 0
+				 Mg: 0
+				 dNTPs: 0
+				 method: 1
+				 seq: 'ATCGATCGATCG')
+		closeTo: 16.6 * (0.05 log: 10)
+		precision: 0.001.
+	self
+		assert: (seq
+				 saltCorrectionNa: 50
+				 K: 0
+				 tris: 0
+				 Mg: 0
+				 dNTPs: 0
+				 method: 3
+				 seq: 'ATCGATCGATCG')
+		closeTo: 12.5 * (0.05 log: 10)
+		precision: 0.001.
+	"Test computeTm returns a valid number"
+	self assert: (seq
+			 computeTm_NNC_seq: nil
+			 shift: 0
+			 check: true
+			 strict: true
+			 saltCorrection: 1) isNumber.
+	"Test tmStaluc returns a valid Tm in Celsius"
+	self assert: seq tmStaluc isNumber.
+	"Verify tmStaluc Tm values match expected calculations"
+	"ACGT: self-complementary, 4 mer"
+	self
+		assert: (BioSequence newDNA: 'ACGT') tmStaluc
+		closeTo: -80.9
+		precision: 0.1.
+	"ATCG: non-self-complementary, 4 mer"
+	self
+		assert: (BioSequence newDNA: 'ATCG') tmStaluc
+		closeTo: -85.3
+		precision: 0.1
 ]
 
 { #category : 'testing' }

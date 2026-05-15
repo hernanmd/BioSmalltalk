@@ -15,19 +15,21 @@ MacOS:
 
 "
 Class {
-	#name : #BioACANAWrapper,
-	#superclass : #BioWrapperObject,
-	#category : #'BioWrappers-Aligners'
+	#name : 'BioACANAWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioWrappers-Aligners',
+	#package : 'BioWrappers',
+	#tag : 'Aligners'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioACANAWrapper class >> availablePlatforms [
 	" Private - See superimplementor's comment "
 	
 	^ #('Unix' 'MacOS' 'Win32')
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioACANAWrapper class >> example1 [
 
 	| fastaFile |
@@ -39,7 +41,7 @@ BioACANAWrapper class >> example1 [
 			execute.
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioACANAWrapper class >> example2 [
 
 	| fastaFile |
@@ -52,7 +54,7 @@ BioACANAWrapper class >> example2 [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioACANAWrapper class >> url [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:11 pm"
@@ -60,7 +62,7 @@ BioACANAWrapper class >> url [
 	^ 'http://www.niehs.nih.gov/research/resources/software/biostatistics/acana/'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioACANAWrapper >> acana [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:11 pm"
@@ -68,7 +70,7 @@ BioACANAWrapper >> acana [
 	^ 'acana'
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioACANAWrapper >> acana2 [
 	"WARNING: This is code generated automatically.
  On: 8 November 2012 - 9:58:11 pm"
@@ -76,68 +78,68 @@ BioACANAWrapper >> acana2 [
 	^ 'acana2'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> affineGapPenality: aNumber [ 
 	" Set The affine gap penalty (default: -25) to be aNumber "
 
 	self propertyAt: 'A' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> inSeqFile: aFileReference [ 
 	" Set Input sequence file in FASTA format to be aFileReference "
 
 	self propertyAt: 'I' ifAbsentPut: [ aFileReference ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> minCutoffFactor: aNumber [ 
 	" Set The factor for increasing minium local alignment cutoff (default: 10) to be aNumber "
 
 	self propertyAt: 'T' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> minLength: aNumber [ 
 	" Set The minimum length of local alignment (default: 100) to be aNumber "
 
 	self propertyAt: 'C' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> openGapPenality: aNumber [ 
 	" Set The opening gap penalty (default: -500) to be aNumber "
 
 	self propertyAt: 'G' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> outputFilename: aString [ 
 	" Set The scoring matrix file name to be aString "
 
 	self propertyAt: 'O' ifAbsentPut: [ aString ]
 ]
 
-{ #category : #'accessing - private' }
+{ #category : 'accessing - private' }
 BioACANAWrapper >> propertySeparator [
 	" Private - See superclass comment "
 
 	^ Character space
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioACANAWrapper >> runAcana [
 
 	self programName: (self programNamed: self acana)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioACANAWrapper >> runAcana2 [
 
 	self programName: (self programNamed: self acana2)
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioACANAWrapper >> scoringMatrix: aFileReference [ 
 	" Set The scoring matrix file name (default: dnaMatrix) to be aFileReference "
 

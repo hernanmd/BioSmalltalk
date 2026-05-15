@@ -1,23 +1,28 @@
+"
+Legacy local BLAST wrapper for BLAST version 2.2.23. Extends BioNCBILocalBlastWrapper with path configuration specific to the legacy version.
+"
 Class {
-	#name : #BioNCBILocalBlastLegacy2223,
-	#superclass : #BioNCBILocalBlastWrapper,
-	#category : 'BioBlast-Local'
+	#name : 'BioNCBILocalBlastLegacy2223',
+	#superclass : 'BioNCBILocalBlastWrapper',
+	#category : 'BioBlast-Local',
+	#package : 'BioBlast',
+	#tag : 'Local'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBILocalBlastLegacy2223 class >> isLegacyVersion [
 
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastLegacy2223 class >> versionNumber [
 	" Answer a Number of the receiver's version "
 
 	^ 2223
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> bl2seqPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -25,7 +30,7 @@ BioNCBILocalBlastLegacy2223 >> bl2seqPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> blastAllPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -33,7 +38,7 @@ BioNCBILocalBlastLegacy2223 >> blastAllPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> blastClustPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -41,7 +46,7 @@ BioNCBILocalBlastLegacy2223 >> blastClustPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> blastPgpPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -49,7 +54,7 @@ BioNCBILocalBlastLegacy2223 >> blastPgpPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> copymatPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -57,7 +62,7 @@ BioNCBILocalBlastLegacy2223 >> copymatPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> fastaCmdPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -65,7 +70,7 @@ BioNCBILocalBlastLegacy2223 >> fastaCmdPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> formatDbPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -73,7 +78,7 @@ BioNCBILocalBlastLegacy2223 >> formatDbPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> formatRpsDbPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -81,7 +86,7 @@ BioNCBILocalBlastLegacy2223 >> formatRpsDbPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> impalaPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -89,14 +94,14 @@ BioNCBILocalBlastLegacy2223 >> impalaPath [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBILocalBlastLegacy2223 >> mainExecName [
 	" Answer a String with the receiver's main executable name "
 	
 	^ 'blastall'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> makeMatPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -104,7 +109,7 @@ BioNCBILocalBlastLegacy2223 >> makeMatPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> megaBlastPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -112,7 +117,7 @@ BioNCBILocalBlastLegacy2223 >> megaBlastPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> rpsBlastPath [
 	" Answer a String with the full path to the receiver's binary "
 	
@@ -120,7 +125,7 @@ BioNCBILocalBlastLegacy2223 >> rpsBlastPath [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastLegacy2223 >> seedTopPath [
 	" Answer a String with the full path to the receiver's binary "
 	

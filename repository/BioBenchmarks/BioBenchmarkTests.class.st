@@ -7,12 +7,14 @@ BioBenchmarkTests fasta: 250000.
 
 "
 Class {
-	#name : #BioBenchmarkTests,
-	#superclass : #Object,
-	#category : 'BioBenchmarks-Fasta'
+	#name : 'BioBenchmarkTests',
+	#superclass : 'Object',
+	#category : 'BioBenchmarks-Fasta',
+	#package : 'BioBenchmarks',
+	#tag : 'Fasta'
 }
 
-{ #category : #benchmarking }
+{ #category : 'benchmarking' }
 BioBenchmarkTests class >> alu [
 
 	^ String streamContents: [ : stream | 
@@ -27,21 +29,21 @@ BioBenchmarkTests class >> alu [
 
 ]
 
-{ #category : #'benchmark scripts' }
+{ #category : 'benchmark scripts' }
 BioBenchmarkTests class >> fasta [
 
 	self fasta: self arg to: FileStream stdout.
 	^ String empty
 ]
 
-{ #category : #'benchmark scripts' }
+{ #category : 'benchmark scripts' }
 BioBenchmarkTests class >> fasta: n [
 
 	self fasta: n to: FileStream stdout.
 	^ String empty
 ]
 
-{ #category : #benchmarking }
+{ #category : 'benchmarking' }
 BioBenchmarkTests class >> fasta: n to: out [
 
 	| r lineLength |
@@ -72,7 +74,7 @@ BioBenchmarkTests class >> fasta: n to: out [
    out flush.
 ]
 
-{ #category : #benchmarking }
+{ #category : 'benchmarking' }
 BioBenchmarkTests class >> homoSapiens [
 
 	^ #(
@@ -83,7 +85,7 @@ BioBenchmarkTests class >> homoSapiens [
 		)
 ]
 
-{ #category : #benchmarking }
+{ #category : 'benchmarking' }
 BioBenchmarkTests class >> iub [
 
 	^ #(
@@ -106,7 +108,7 @@ BioBenchmarkTests class >> iub [
 		)
 ]
 
-{ #category : #benchmarking }
+{ #category : 'benchmarking' }
 BioBenchmarkTests class >> writeFasta: aString from: inStream to: outStream lineLength: lineLength [
 
 	| i |

@@ -1,3 +1,6 @@
+"
+Test class for GenBank format parsing. Validates parsing of GenBank flat-file records.
+"
 Class {
 	#name : 'BioGenBankParserTest',
 	#superclass : 'BioAbstractParserTest',

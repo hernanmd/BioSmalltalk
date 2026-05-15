@@ -15,9 +15,9 @@ Internal Representation and Key Implementation Points.
 Class {
 	#name : 'BioMinisatelliteSequence',
 	#superclass : 'BioRepeatSequence',
-	#category : 'BioTools-Repeats',
+	#category : 'BioTools-Sequences',
 	#package : 'BioTools',
-	#tag : 'Repeats'
+	#tag : 'Sequences'
 }
 
 { #category : 'examples' }

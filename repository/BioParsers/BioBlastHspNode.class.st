@@ -1,3 +1,6 @@
+"
+Represents an HSP (High-scoring Segment Pair) node in the BLAST XML result tree. Provides access to alignment-level information from BLAST output.
+"
 Class {
 	#name : 'BioBlastHspNode',
 	#superclass : 'BioBlastValueNode',

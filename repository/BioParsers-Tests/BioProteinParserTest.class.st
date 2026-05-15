@@ -1,3 +1,6 @@
+"
+Test class for protein sequence parsing.
+"
 Class {
 	#name : 'BioProteinParserTest',
 	#superclass : 'BioAbstractParserTest',
@@ -5,7 +8,7 @@ Class {
 	#package : 'BioParsers-Tests'
 }
 
-{ #category : 'running' }
+{ #category : 'accessing' }
 BioProteinParserTest >> setUp [
 
 	super setUp.

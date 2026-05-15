@@ -1,3 +1,6 @@
+"
+Represents the root node of a BLAST XML result tree. Acts as the top-level container for all BLAST result elements.
+"
 Class {
 	#name : 'BioBlastRootNode',
 	#superclass : 'BioBlastParentNode',

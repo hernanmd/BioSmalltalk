@@ -1,3 +1,6 @@
+"
+Test class for BioEMBLParser. Validates parsing of EMBL-format identifier strings.
+"
 Class {
 	#name : 'BioEMBLParserTest',
 	#superclass : 'BioAbstractParserTest',

@@ -9,12 +9,14 @@ Version 2.0 XML is returned when &version=2.0 is included in the ESummary URL.
 
 "
 Class {
-	#name : #BioESummaryAlternative,
-	#superclass : #BioESummary,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioESummaryAlternative',
+	#superclass : 'BioESummary',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioESummaryAlternative >> execute [
 	"Execute the receiving action. Answer a BioESearchResult "
 

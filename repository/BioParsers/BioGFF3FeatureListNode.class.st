@@ -1,3 +1,6 @@
+"
+Parse tree node representing a list of GFF3 feature lines with associated comments. Instance Variables: lines <Collection> Feature line nodes. comments <Collection> Associated comment nodes.
+"
 Class {
 	#name : 'BioGFF3FeatureListNode',
 	#superclass : 'BioGFF3GFF3FileNode',

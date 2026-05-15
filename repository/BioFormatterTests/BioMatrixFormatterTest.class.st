@@ -1,23 +1,28 @@
+"
+Test class for BioMatrixFormatter. Validates matrix output formatting including delimiter and row construction.
+"
 Class {
-	#name : #BioMatrixFormatterTest,
-	#superclass : #BioFormatterTest,
-	#category : 'BioFormatterTests-Core'
+	#name : 'BioMatrixFormatterTest',
+	#superclass : 'BioFormatterTest',
+	#category : 'BioFormatterTests-Core',
+	#package : 'BioFormatterTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatterTest >> formatterClass [
 	" Answer the concrete BioFormatter class being tested "
 	
 	^ BioMatrixFormatter 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMatrixFormatterTest >> setUp [
 
 	formatter := self formatterClass new.
 ]
 
-{ #category : #'tests-populating' }
+{ #category : 'tests-populating' }
 BioMatrixFormatterTest >> testAtColumnFillWith [
 
 	(self formatter initMatrixRows: 1 columns: 1)
@@ -33,7 +38,7 @@ BioMatrixFormatterTest >> testAtColumnFillWith [
 	self assert: ((self formatter atColumn: 2) asArray hasEqualElements: #(4 4)).
 ]
 
-{ #category : #'tests-populating' }
+{ #category : 'tests-populating' }
 BioMatrixFormatterTest >> testAtColumnFillWithRepeat [
 
 	(self formatter initMatrixRows: 1 columns: 1)
@@ -49,14 +54,14 @@ BioMatrixFormatterTest >> testAtColumnFillWithRepeat [
 	self assert: ((self formatter atColumn: 2) asArray hasEqualElements: #(4 nil)).
 ]
 
-{ #category : #'tests-populating' }
+{ #category : 'tests-populating' }
 BioMatrixFormatterTest >> testAtColumnFillWithStartingAt [
 ]
 
-{ #category : #'tests-populating' }
+{ #category : 'tests-populating' }
 BioMatrixFormatterTest >> testAtRowFillWith [
 ]
 
-{ #category : #'tests-populating' }
+{ #category : 'tests-populating' }
 BioMatrixFormatterTest >> testAtRowFillWithStartingAt [
 ]

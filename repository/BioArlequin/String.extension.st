@@ -1,6 +1,6 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*BioArlequin' }
+{ #category : '*BioArlequin' }
 String >> forArlequinValue [
 
 	^ self asComment 

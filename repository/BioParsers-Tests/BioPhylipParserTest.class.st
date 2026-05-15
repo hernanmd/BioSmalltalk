@@ -1,3 +1,6 @@
+"
+Test class for PHYLIP format parsing. Validates PHYLIP parser behavior.
+"
 Class {
 	#name : 'BioPhylipParserTest',
 	#superclass : 'BioAbstractParserTest',
@@ -7,7 +10,8 @@ Class {
 
 { #category : 'testing' }
 BioPhylipParserTest >> firstLineTokenizer [
-    ^ BioPhylipSmaCCParser new firstLineTokenizer
+
+	^ BioPhylipParser new firstLineTokenizer 
 ]
 
 { #category : 'testing' }
@@ -70,13 +74,13 @@ TSIDVIHSFT ISTLGIKIDC IPGRCN
 { #category : 'testing' }
 BioPhylipParserTest >> speciesDNALineTokenizer [
 
-	^ BioPhylipSmaCCParser new speciesDNALineTokenizer
+	^ BioPhylipParser new speciesDNALineTokenizer 
 ]
 
 { #category : 'testing' }
 BioPhylipParserTest >> speciesDNANamedBlockTokenizer [
 
-	^ BioPhylipSmaCCParser new speciesDNANamedBlockTokenizer
+	^ BioPhylipParser new speciesDNANamedBlockTokenizer 
 ]
 
 { #category : 'testing' }

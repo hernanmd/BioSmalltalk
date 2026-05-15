@@ -1,3 +1,6 @@
+"
+XML parser for NCBI BLAST results. Extends BioXMLParser with initialization and accessing methods for BLAST-specific XML parsing.
+"
 Class {
 	#name : 'BioNCBIXMLBlastParser',
 	#superclass : 'BioXMLParser',

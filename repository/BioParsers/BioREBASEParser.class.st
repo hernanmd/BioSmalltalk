@@ -1,3 +1,6 @@
+"
+Parser for REBASE (Restriction Enzyme Database) format files. Extends BioAbstractParser with REBASE-specific access methods.
+"
 Class {
 	#name : 'BioREBASEParser',
 	#superclass : 'BioAbstractParser',

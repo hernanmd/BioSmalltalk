@@ -7,15 +7,17 @@ currentSpecies	<Symbol>		Selector for retrieving class side list.
 
 "
 Class {
-	#name : #BioSpeciesLists,
-	#superclass : #BioNamedObject,
+	#name : 'BioSpeciesLists',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'currentSpecies'
 	],
-	#category : 'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists class >> commonAnimalSpecies [
 	" Answer a <Collection> of common animal species names in english language "
 
@@ -313,21 +315,21 @@ BioSpeciesLists class >> commonAnimalSpecies [
 'Zebu').
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioSpeciesLists class >> currentSpeciesList [
 	" Answer a <Collection> with receiver's default species names "
 
 	^ self new currentSpeciesList
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists class >> faoSpecies [
 	" Answer a <Collection> of FAO species in english language "
 
 	^ #('Ass' 'Bactrian Camel' 'Buffalo' 'Cassowary' 'Cattle' 'Chicken' 'Chilean Tinamou' 'Deer' 'Canis' 'Dromedary' 'Dromedary/Bactrian Camel' 'Duck' 'Duck(domestic)/Muscovy duck' 'Emu' 'Goat' 'Goose' 'Guanaco' 'Guinea fowl' 'Guinea Pig' 'Horse' 'Llama' 'Muscovy duck' 'Nandu' 'Ostrich' 'Partridge' 'Peacock' 'Pheasant' 'Pig' 'Pigeon' 'Quail' 'Rabbit' 'Sheep' 'Swallow' 'Turkey' 'Vicuña' 'Yak').
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists class >> faoSpeciesWithChr [
 	" Answer a <Collection> of FAO species in english language, and the number of haploid chromosomes "
 
@@ -347,25 +349,25 @@ BioSpeciesLists class >> faoSpeciesWithChr [
 	}.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists >> currentSpecies [
 	^ currentSpecies
 		ifNil: [ currentSpecies := self defaultSpeciesList ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists >> currentSpecies: anObject [
 	currentSpecies := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpeciesLists >> currentSpeciesList [
 	" Answer a <Collection> of selected current species "
 
 	^ self class perform: self currentSpecies 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioSpeciesLists >> defaultSpeciesList [
 	" Private - Answer the default selector for retrieving list "
 

@@ -1,3 +1,6 @@
+"
+Represents a single SAM (Sequence Alignment/Map) record with standard fields. Instance Variables: qname flag rname pos mapq cigar rnext pnext tlen seq qual tags
+"
 Class {
 	#name : 'BioSAMRecord',
 	#superclass : 'BioNamedObject',

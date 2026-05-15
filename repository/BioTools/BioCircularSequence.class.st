@@ -1,3 +1,6 @@
+"
+Represents a circular (non-linear) DNA sequence such as a plasmid or mitochondrial genome. Supports circular-specific operations like rotation and position wrapping. Instance Variables: sequence <String> The circular sequence string.
+"
 Class {
 	#name : 'BioCircularSequence',
 	#superclass : 'BioObject',

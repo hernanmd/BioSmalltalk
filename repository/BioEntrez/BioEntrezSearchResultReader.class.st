@@ -3,12 +3,14 @@ Helper class to easy reading entrez search results
 
 "
 Class {
-	#name : #BioEntrezSearchResultReader,
-	#superclass : #BioEntrezXmlReader,
-	#category : #'BioEntrez-Core'
+	#name : 'BioEntrezSearchResultReader',
+	#superclass : 'BioEntrezXmlReader',
+	#category : 'BioEntrez-Core',
+	#package : 'BioEntrez',
+	#tag : 'Core'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 BioEntrezSearchResultReader class >> isPreferredFor: aString [
 	" Answer <true> if aString is the most appropriate content for the receiver "
 	
@@ -16,7 +18,7 @@ BioEntrezSearchResultReader class >> isPreferredFor: aString [
 <!DOCTYPE eSearchResult PUBLIC "-//NLM//DTD eSearchResult'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> correctedQuery [
 	"Answer a <String> with the corrected query spelling suggestion"
 	
@@ -26,21 +28,21 @@ BioEntrezSearchResultReader >> correctedQuery [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> count [
 	"Answer a <String> with the number of search results"
 
 	^ (self accessNode: 'Count') first
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> idList [
 	"Answer a <Collection> with GenBank identifiers"
 	
 	^ (self accessNodes: 'Id') at: 'Id'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> keys [
 	"Answer a <Collection> with the search results keys (node names)"
 	
@@ -48,27 +50,27 @@ BioEntrezSearchResultReader >> keys [
 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezSearchResultReader >> keysParserClass [
 
 	^ BioEResultKeysParser
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioEntrezSearchResultReader >> parserClass [
 	" Private - See superimplementor's comment "
 	
 	^ BioParser
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> queryKey [
 	" Answer a <String> with Entrez search result query key "
 	
 	^ self accessNode: 'QueryKey'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> retMax [
 	"Answer a <String> with number of records retrieved
 	See http://www.ncbi.nlm.nih.gov/corehtml/query/static/esummary_help.html#DisplayNumbers for details "
@@ -76,7 +78,7 @@ BioEntrezSearchResultReader >> retMax [
 	^ (self accessNode: 'RetMax') first
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioEntrezSearchResultReader >> selectNodes: nodesCollection in: anObject [
 
 	^ self parserClass 
@@ -84,7 +86,7 @@ BioEntrezSearchResultReader >> selectNodes: nodesCollection in: anObject [
 			nodes: nodesCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSearchResultReader >> webEnv [
 	"Answer a <String> with Entrez search result web environment"
 

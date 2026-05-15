@@ -2,19 +2,21 @@
 Genome Reference Consortium 
 "
 Class {
-	#name : #BioMMusculusGRCm,
-	#superclass : #BioMMusculusGD,
-	#category : 'BioNCBI-Genomes'
+	#name : 'BioMMusculusGRCm',
+	#superclass : 'BioMMusculusGD',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioMMusculusGRCm >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 	
 	^ 'mm_ref_GRCm'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMMusculusGRCm >> latestVersionFound [
 	" Private - See superimplementor's commemt "
 

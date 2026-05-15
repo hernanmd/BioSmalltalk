@@ -1,69 +1,74 @@
+"
+Represents the Profile section of an Arlequin 3.1 input file. Provides configuration settings for the Arlequin analysis profile.
+"
 Class {
-	#name : #BioA31ProfileSection,
-	#superclass : #BioA31INISection,
+	#name : 'BioA31ProfileSection',
+	#superclass : 'BioA31INISection',
 	#classVars : [
 		'ArlequinDataTypes',
 		'ArlequinFrequencies',
 		'ArlequinLocusSeparators'
 	],
-	#category : #'BioArlequin-Sections'
+	#category : 'BioArlequin-Sections',
+	#package : 'BioArlequin',
+	#tag : 'Sections'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31ProfileSection class >> arlequinDataTypes [
 
 	^ ArlequinDataTypes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31ProfileSection class >> arlequinFrequencies [
 
 	^ ArlequinFrequencies
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> dataTypeId [
 
 	^ 'DataType' -> 'Type of data to be analyzed. Only one type of data is allowed per project'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> epsilonValueId [
 
 	^ 'EpsilonValue' -> 'The convergence criterion for the EM algorithm used to estimate haplotype frequencies and linkage disequilibrium from genotypic data'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31ProfileSection class >> formatter [
 
 	^ BioFormatter
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> frequencyId [
 
 	^ 'Frequency' -> 'If haplotype or phenotype frequencies are entered as absolute or relative values'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> frequencyThresholdId [
 
 	^ 'FrequencyThreshold' -> 'The number of significant digits for haplotype frequency outputs'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> gameticPhaseId [
 
 	^ 'GameticPhase' -> 'If the gametic phase of genotypes is known'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> genotypicDataId [
 
 	^ 'GenotypicData' -> 'The current project deals with haplotypic or genotypic data?'
 ]
 
-{ #category : #'class initialization' }
+{ #category : 'class initialization' }
 BioA31ProfileSection class >> initialize [
 	" self initialize "
 	
@@ -73,13 +78,13 @@ BioA31ProfileSection class >> initialize [
 
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> locusSeparatorId [
 
 	^ 'LocusSeparator' -> 'The character used to separate the alleles at different loci'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31ProfileSection class >> mandatorySections [ 
 	" Private - Answer a Collection with the mandatory sections for the receiver "
 
@@ -87,38 +92,38 @@ BioA31ProfileSection class >> mandatorySections [
 
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> missingDataId [
 
 	^ 'MissingData' -> 'The character used to code for missing data'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31ProfileSection class >> notation [
 	" Answer a String describing the receiver's section identifier "
 	
 	^ 'Profile'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> recessiveAlleleId [
 
 	^ 'RecessiveAllele' -> 'The code for the recessive allele'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> recessiveDataId [
 
 	^ 'RecessiveData' -> 'If the genotypic data present a recessive allele'
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> sampleNumberId [
 
 	^ 'NbSamples' -> 'Number of samples or populations present in the current project. Enter 0 to calculate from input file in next step'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31ProfileSection class >> sectionSpecs [
 	" Answer a Collection with raw data related with the
 	Arlequin input format "
@@ -139,19 +144,19 @@ BioA31ProfileSection class >> sectionSpecs [
 		(self specClass newTitle: self epsilonValueId isMandatory: false defaultValue: 1e-7 range: (1e-7 to: 1e-12)) }
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31ProfileSection class >> specClass [
 
 	^ BioA31Spec
 ]
 
-{ #category : #'property names' }
+{ #category : 'property names' }
 BioA31ProfileSection class >> titleId [
 
 	^ 'Title' -> 'Title of the current project'
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addDataType: aString [
 	" Set a value for the DataType configuration "
 	
@@ -162,7 +167,7 @@ BioA31ProfileSection >> addDataType: aString [
 		ifFalse: [ self bioLog: aString , ' is not listed as a valid type for DataType' ]
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addEpsilonValue: aFloat [
 	" Set a value for the EpsilonValue configuration "
 	
@@ -173,7 +178,7 @@ BioA31ProfileSection >> addEpsilonValue: aFloat [
 		ifFalse: [ self bioLog: aFloat , ' value is not listed as a valid epsilon value' ]
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addFrequency: aString [
 	" Set a value for the Frequency configuration "
 	
@@ -185,7 +190,7 @@ BioA31ProfileSection >> addFrequency: aString [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addFrequencyThreshold: aFraction [
 	" Set a value for the FrequencyThreshold configuration "
 	
@@ -198,7 +203,7 @@ BioA31ProfileSection >> addFrequencyThreshold: aFraction [
 		ifFalse: [ self log: aFraction asString , ' value is not listed as a valid frequency threshold'] "
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addSampleNumber: aNumber [
 	" Set a value for the NbSamples (number of samples) configuration "
 	
@@ -209,7 +214,7 @@ BioA31ProfileSection >> addSampleNumber: aNumber [
 		ifFalse: [ self bioLog: aNumber asString , ' value out of range for NbSamples' ]
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> addTitle: aString [
 	" Set a value for the Title configuration "
 	
@@ -218,7 +223,7 @@ BioA31ProfileSection >> addTitle: aString [
 		put: aString
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> dataType [
 	" Answer a String with the DataType configuration "
 	
@@ -226,7 +231,7 @@ BioA31ProfileSection >> dataType [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> frequency [
 	" Answer a String with the configuration "
 	
@@ -234,7 +239,7 @@ BioA31ProfileSection >> frequency [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> frequencyThreshold [
 	" Answer a String with the configuration "
 	
@@ -242,7 +247,7 @@ BioA31ProfileSection >> frequencyThreshold [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> gameticPhase [
 	" Answer a String with the GameticPhase configuration "
 	
@@ -250,7 +255,7 @@ BioA31ProfileSection >> gameticPhase [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> genotypicData [
 	" Anwer a String the GenotypicData configuration "
 	
@@ -258,7 +263,7 @@ BioA31ProfileSection >> genotypicData [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> haplotypicData [
 	" Answer a String with the HaplotypicData configuration "
 	
@@ -266,7 +271,7 @@ BioA31ProfileSection >> haplotypicData [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> locusSeparator [
 	" Answer a Character for the LocusSeparator configuration "
 	
@@ -274,14 +279,14 @@ BioA31ProfileSection >> locusSeparator [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> missingData [
 	" Answer a Character for the MissingData configuration "
 	
 	^ self configurationAt: self class missingDataId
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> recessiveAllele [
 	" Answer a String with the RecessiveAllele configuration "
 	
@@ -289,7 +294,7 @@ BioA31ProfileSection >> recessiveAllele [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> recessiveData [
 	" Answer a String with the RecessiveData configuration "
 	
@@ -297,7 +302,7 @@ BioA31ProfileSection >> recessiveData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setCodominantData [
 	" Set a value for the RecessiveData configuration "
 	
@@ -305,7 +310,7 @@ BioA31ProfileSection >> setCodominantData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setGenotypicData [
 	" Set a value for the GenotypicData configuration "
 	
@@ -313,7 +318,7 @@ BioA31ProfileSection >> setGenotypicData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setHaplotypicData [
 	" Set a value for the HaplotypicData configuration "
 	
@@ -321,7 +326,7 @@ BioA31ProfileSection >> setHaplotypicData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setKnownGameticPhase [
 	" Set a value for the GameticPhase configuration "
 	
@@ -329,7 +334,7 @@ BioA31ProfileSection >> setKnownGameticPhase [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setRecessiveData [
 	" Set a value for the RecessiveData configuration "
 	
@@ -337,7 +342,7 @@ BioA31ProfileSection >> setRecessiveData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> setUnknownGameticPhase [
 	" Set a value for the GameticPhase configuration "
 	
@@ -345,14 +350,14 @@ BioA31ProfileSection >> setUnknownGameticPhase [
 
 ]
 
-{ #category : #'getting configurations' }
+{ #category : 'getting configurations' }
 BioA31ProfileSection >> title [
 	" Answer a String for the Title configuration "
 	
 	^ self at: self class titleId ifAbsent: [ '""' ]
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> unsetCodominantData [
 	" Set a value for the RecessiveData configuration "
 	
@@ -360,7 +365,7 @@ BioA31ProfileSection >> unsetCodominantData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> unsetGenotypicData [
 	" Set a value for the GenotypicData configuration "
 	
@@ -368,7 +373,7 @@ BioA31ProfileSection >> unsetGenotypicData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> unsetHaplotypicData [
 	" Set a value for the HaplotypicData configuration "
 	
@@ -376,7 +381,7 @@ BioA31ProfileSection >> unsetHaplotypicData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> unsetRecessiveData [
 	" Set a value for the RecessiveData configuration "
 	
@@ -384,7 +389,7 @@ BioA31ProfileSection >> unsetRecessiveData [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> useLocusSeparator: aCharacter [
 	" Set a value for the LocusSeparator configuration "
 	
@@ -396,7 +401,7 @@ BioA31ProfileSection >> useLocusSeparator: aCharacter [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> useMissingData: aCharacter [
 	" Set a value for the MissingData configuration "
 	
@@ -409,7 +414,7 @@ BioA31ProfileSection >> useMissingData: aCharacter [
 
 ]
 
-{ #category : #'setting configurations' }
+{ #category : 'setting configurations' }
 BioA31ProfileSection >> useRecessiveAllele: aString [
 	" Set a value for the MissingData configuration "
 	

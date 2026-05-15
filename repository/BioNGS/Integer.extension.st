@@ -1,6 +1,6 @@
-Extension { #name : #Integer }
+Extension { #name : 'Integer' }
 
-{ #category : #'*BioNGS' }
+{ #category : '*BioNGS' }
 Integer >> asBioCutadaptParameter [
 	" Answer the receiver suitable for use as Cutadapt parameter "
 

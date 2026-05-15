@@ -1,3 +1,6 @@
+"
+SmaCC-based scanner for PHYLIP format files. Tokenizes PHYLIP input for the parser.
+"
 Class {
 	#name : 'BioPhylipScanner',
 	#superclass : 'SmaCCScanner',

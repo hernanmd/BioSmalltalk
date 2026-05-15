@@ -1,3 +1,6 @@
+"
+Represents a biological material sample with a named location. Extends BioNamedObject. Instance Variables: location <String> Storage or origin location.
+"
 Class {
 	#name : 'BioMaterial',
 	#superclass : 'BioNamedObject',

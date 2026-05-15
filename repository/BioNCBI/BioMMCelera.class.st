@@ -4,18 +4,20 @@ Celera Genomics
 
 "
 Class {
-	#name : #BioMMCelera,
-	#superclass : #BioMMusculusGD,
-	#category : 'BioNCBI-Genomes'
+	#name : 'BioMMCelera',
+	#superclass : 'BioMMusculusGD',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMMCelera class >> isAlternative [
 
 	^ true
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioMMCelera >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 	
@@ -23,7 +25,7 @@ BioMMCelera >> defaultFileListPrefix [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMMCelera >> latestVersionFound [
 	" Private - See superimplementor's commemt "
 

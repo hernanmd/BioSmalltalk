@@ -1,3 +1,6 @@
+"
+Represents a SEQRES record in a PDB file. Instance Variables: serialNumber chainID numResidues residues
+"
 Class {
 	#name : 'BioPDBSeqResRecord',
 	#superclass : 'BioPDBRecord',

@@ -42,35 +42,37 @@ All BLAST programs share the same codes to specify the output format. These are 
 
 "
 Class {
-	#name : #BioNCBILocalBlastWrapper,
-	#superclass : #BioNCBIBlastWrapper,
+	#name : 'BioNCBILocalBlastWrapper',
+	#superclass : 'BioNCBIBlastWrapper',
 	#instVars : [
 		'queryFastaFilename'
 	],
-	#category : #'BioBlast-Local'
+	#category : 'BioBlast-Local',
+	#package : 'BioBlast',
+	#tag : 'Local'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBILocalBlastWrapper class >> isLatestVersion [
 
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBILocalBlastWrapper class >> isLegacyVersion [
 	" Answer <true> because receiver's is the latest version "
 	
 	^ false
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBILocalBlastWrapper class >> latest [
 	"Answer a new instance of the receiver representing the latest version"
 	
 	^ self new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBILocalBlastWrapper class >> legacy [
 	" Answer a new instance of the receiver's latest legacy version "
 	
@@ -79,7 +81,7 @@ BioNCBILocalBlastWrapper class >> legacy [
 					detectMax: [: cls | cls versionNumber ] ) new
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBILocalBlastWrapper class >> programNames [
 	" Answer a list of program names for resolving their path to execute them "
 	
@@ -103,84 +105,84 @@ BioNCBILocalBlastWrapper class >> programNames [
 'windowmasker.exe') 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastWrapper class >> versionNumber [
 	" Answer a Number of the receiver's version "
 
 	^ 2224
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastdbaliastoolPath [
 	"Answer a <String> with the full path to the Application to create BLAST database aliases binary "
 	
 	^  self programNamed: 'blastdb_aliastool'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastdbcheckPath [
 	"Answer a <String> with the full path to the BLAST database integrity and validity checking application binary"
 	
 	^  self programNamed: 'blastdbcheck'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastdbcmdPath [
 	"Answer a <String> with the full path to the BLAST database client binary"
 	
 	^  self programNamed: 'blastdbcmd'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastformatterPath [
 	"Answer a <String> with the full path to the Stand-alone BLAST formatter client binary"
 	
 	^  self programNamed: 'blast_formatter'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastWrapper >> blastn [
 	"Set the receiver's program to be executed to blastn"
 
 	self programName: self blastnPath 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastnPath [
 	"Answer a <String> with the full path to the Nucleotide-Nucleotide BLAST binary"
 	
 	^  self programNamed: 'blastn'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastWrapper >> blastp [
 	"Set the receiver's program to be executed to blastp"
 
 	self programName: self blastpPath
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastpPath [
 	"Answer a <String> with the full path to the Protein-Protein BLAST binary"
 	
 	^ self programNamed: 'blastp'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> blastxPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'blastx'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> convert2blastmaskPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'convert2blastmask'
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBILocalBlastWrapper >> dbSwissProt [
 	"Set the receiver's database to UniProt"
 
@@ -190,14 +192,14 @@ BioNCBILocalBlastWrapper >> dbSwissProt [
 
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> dustmaskerPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'dustmasker'
 ]
 
-{ #category : #'accessing - public' }
+{ #category : 'accessing - public' }
 BioNCBILocalBlastWrapper >> execute [
 
 	| bioResult |
@@ -206,14 +208,14 @@ BioNCBILocalBlastWrapper >> execute [
 	^ bioResult.
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBILocalBlastWrapper >> formatTypeXML [ 
 	"Set the receiver's output to be XML formatted"
 
 	self outfmt: '5'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioNCBILocalBlastWrapper >> initialize [
 
 	super initialize.
@@ -222,41 +224,41 @@ BioNCBILocalBlastWrapper >> initialize [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBILocalBlastWrapper >> mainExecName [
 	" Answer a String with a receiver's program name "
 	
 	^ 'blastn'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> makeblastdbPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'makeblastdb'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> makembindexPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'makembindex'
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBILocalBlastWrapper >> outfmt: aNumber [
 
 	self propertyAt: 'outfmt' put: aNumber
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> psiblastPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'psiblast'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioNCBILocalBlastWrapper >> query: aSequenceString [
 	"Set the receiver's query sequence to aSequenceString. We create a temporary file because the command line does not seem to accept plain query strings."
 
@@ -265,7 +267,7 @@ BioNCBILocalBlastWrapper >> query: aSequenceString [
 	self propertyAt: 'query' put: self queryFastaFilename.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastWrapper >> queryFastaFilename [
 	"Answer a random <String> representing a FASTA file name"
 
@@ -273,48 +275,48 @@ BioNCBILocalBlastWrapper >> queryFastaFilename [
 		ifNil: [ queryFastaFilename := UUIDGenerator new next asString36 , '.fna' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBILocalBlastWrapper >> queryFastaFilename: anObject [
 
 	queryFastaFilename := anObject
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> rpsblastPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'rpsblast'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> rpstblastnPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'rpstblastn'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> segmaskerPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'segmasker'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> tblastnPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'tblastn'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> tblastxPath [
 	" Answer a String with the full path to the receiver's binary "
 	
 	^  self programNamed: 'tblastx'
 ]
 
-{ #category : #path }
+{ #category : 'path' }
 BioNCBILocalBlastWrapper >> windowmaskerPath [
 	" Answer a String with the full path to the receiver's binary "
 	

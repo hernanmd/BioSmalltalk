@@ -1,6 +1,9 @@
+"
+Represents a specification parameter in the Arlequin 3.1 format. Each specification has a notation, data type, default value, format, range, and can be marked as mandatory. Instance Variables: notation <String> The parameter notation. isMandatory <Boolean> Whether the parameter is required. dataType <String> The data type of the parameter. defaultValue <String> The default value. format <String> The expected format. range <String> Valid range description. value <String> Current value. modified <Boolean> Whether the value has been modified.
+"
 Class {
-	#name : #BioA31Spec,
-	#superclass : #Object,
+	#name : 'BioA31Spec',
+	#superclass : 'Object',
 	#instVars : [
 		'notation',
 		'isMandatory',
@@ -11,10 +14,12 @@ Class {
 		'value',
 		'modified'
 	],
-	#category : 'BioArlequin-Core'
+	#category : 'BioArlequin-Core',
+	#package : 'BioArlequin',
+	#tag : 'Core'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObject [
 	" Answer a new instance of the receiver "
 	
@@ -26,7 +31,7 @@ BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObje
 			yourself			
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObject format: aFormatObject [
 	" Answer a new instance of the receiver "
 
@@ -39,7 +44,7 @@ BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObje
 			yourself 
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObject range: aRangeObject [
 	" Answer a new instance of the receiver "
 
@@ -52,7 +57,7 @@ BioA31Spec class >> newTitle: aString isMandatory: aBoolean defaultValue: anObje
 			yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> contents [
 	" Answer a String with a suitable representation for 
 	the receiver's input format "
@@ -63,59 +68,59 @@ BioA31Spec >> contents [
 			nextPutAll: self value asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> dataType [
 	"Answer the value of dataType"
 
 	^ dataType
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> dataType: anObject [
 	"Set the value of dataType"
 
 	dataType := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> defaultValue [
 	"Answer the value of defaultValue"
 
 	^ defaultValue
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> defaultValue: anObject [
 	"Set the value of defaultValue"
 
 	defaultValue := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> format [
 	^ format
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> format: anObject [
 	format := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> isMandatory [
 	"Answer the value of isMandatory"
 
 	^ isMandatory
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> isMandatory: anObject [
 	"Set the value of isMandatory"
 
 	isMandatory := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> modified [
 	"Answer the value of modified"
 
@@ -123,28 +128,28 @@ BioA31Spec >> modified [
 		ifNil: [ modified := false ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> modified: anObject [
 	"Set the value of modified"
 
 	modified := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> notation [
 	"Answer the value of notation"
 
 	^ notation
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> notation: anObject [
 	"Set the value of notation"
 
 	notation := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioA31Spec >> printOn: aStream [
 	" Private - See superimplementor's comment "
 	
@@ -158,17 +163,17 @@ BioA31Spec >> printOn: aStream [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> range [
 	^ range
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Spec >> range: anObject [
 	range := anObject
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioA31Spec >> validate: anObject [
 	" Answer true if the receiver may accept
 	anObject as a valid value "
@@ -178,7 +183,7 @@ BioA31Spec >> validate: anObject [
 		ifTrue: [ self defaultValue isKindOf: anObject class ]
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 BioA31Spec >> value [
 	" Answer the receiver's value. If no value was set
 	then use the receiver's default value "
@@ -187,7 +192,7 @@ BioA31Spec >> value [
 		ifNil: [ value := self defaultValue ]
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 BioA31Spec >> value: anObject [
 	value := anObject
 ]

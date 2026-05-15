@@ -3,7 +3,9 @@ A binary classifier classifies a group of objects into one of two defined sets a
 
 "
 Class {
-	#name : #BioBinaryClassifier,
-	#superclass : #BioClassifier,
-	#category : 'BioClassifier-Core'
+	#name : 'BioBinaryClassifier',
+	#superclass : 'BioClassifier',
+	#category : 'BioClassifier-Core',
+	#package : 'BioClassifier',
+	#tag : 'Core'
 }

@@ -13,12 +13,14 @@ fastq-mcf attempts to:
 
 "
 Class {
-	#name : #BioFASTQMcfWrapper,
-	#superclass : #BioWrapperObject,
-	#category : 'BioNGS-Trimming'
+	#name : 'BioFASTQMcfWrapper',
+	#superclass : 'BioWrapperObject',
+	#category : 'BioNGS-Trimming',
+	#package : 'BioNGS',
+	#tag : 'Trimming'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioFASTQMcfWrapper class >> example01 [
 
 	^ BioFASTQMcfWrapper new
@@ -27,154 +29,154 @@ BioFASTQMcfWrapper class >> example01 [
 		yourself
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioFASTQMcfWrapper class >> fastqcExamplesDir [
 	" Answer a <FileDirectory> containing example files for FASTQC "
 
 	^ self testFilesFullDirectoryName / 'fastqc'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> barReadPercentage: aFloat [
 	" 'N' (Bad read) percentage causing cycle removal (20) "
 
 	self propertyAt: 'x' ifAbsentPut: [ aFloat ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> debug [
 	" Output lots of random debugging stuff "
 	
 	self addOption: 'd'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> help [
 	" Display help "
 	
 	self addOption: 'h'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> illuminaPFDisableFilter [
 	" Force disable/enable Illumina PF filtering (auto) "
 	
 	self addOption: 'u'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> illuminaPFEnableFilter [
 	" Force disable/enable Illumina PF filtering (auto) "
 	
 	self addOption: 'U'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> logScale: aFloat [
 	" Log scale for adapter minimum-length-match (2.2) "
 
 	self propertyAt: 'o' ifAbsentPut: [ aFloat ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> maximumAdapterDiff: aFloat [
 	" Maximum adapter difference percentage (10) "
 
 	self propertyAt: 'p' ifAbsentPut: [ aFloat ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> maximumRemainSeqLength: aNumber [
 	" Maximum remaining sequence length (none) "
 
 	self propertyAt: 'L' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> minimumClipLength: aNumber [
 	" Minimum clip length, overrides scaled auto (1) "
 
 	self propertyAt: 'm' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> minimumRemainSeqLength: aNumber [
 	" Minimum remaining sequence length (19) "
 
 	self propertyAt: 'l' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> out: fileName [  
 	" Set the output file to fileName "
 
 	self propertyAt: 'o' ifAbsentPut: [ fileName ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> preserveNs [
 	" Dont remove Ns from the fronts/ends of reads "
 	
 	self addOption: 'R'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> qualityThreshold: aNumber [
 	" quality threshold causing base removal (10) "
 
 	self propertyAt: 'q' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> removeDupReads: aNumber [
 	" Remove duplicate reads : Read_1 has an identical N bases (0) "
 
 	self propertyAt: 'D' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> removeHomopolymerReads [
 	" Remove >95% homopolymer reads (no) "
 	
 	self addOption: 'H'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> saveDiscardedReads [
 	" Save all discarded reads to '.skip' files "
 	
 	self addOption: 'S'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> simulateClip [
 	" Dont clip, just output what would be done "
 	
 	self addOption: 'n'
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> skewPercentage: aFloat [
 	" sKew percentage-less-than causing cycle removal (2) "
 
 	self propertyAt: 'k' ifAbsentPut: [ aFloat ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> thresholdBeforeAdapterClipping: aFloat [
 	" % occurance threshold before adapter clipping (0.25) "
 
 	self propertyAt: 't' ifAbsentPut: [ aFloat ]
 ]
 
-{ #category : #properties }
+{ #category : 'properties' }
 BioFASTQMcfWrapper >> windowSize: aNumber [
 	" window-size for quality trimming (1) "
 
 	self propertyAt: 'w' ifAbsentPut: [ aNumber ]
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioFASTQMcfWrapper >> zero [
 	" Set all default parameters to zero/do nothing "
 	

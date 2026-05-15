@@ -1,3 +1,6 @@
+"
+Test class for BioFASTQParser. Validates FASTQ format parsing including record iteration and quality decoding.
+"
 Class {
 	#name : 'BioFASTQParserTest',
 	#superclass : 'BioAbstractParserTest',

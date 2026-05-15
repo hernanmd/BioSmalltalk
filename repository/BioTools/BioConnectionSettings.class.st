@@ -1,5 +1,5 @@
 "
-GTConnectionSettings is a rewrite of NetworkSystemSettings to allow any user of this object mantaining network connection setting on its own.
+It is a rewrite of NetworkSystemSettings to allow any user of this object mantaining network connection setting on its own.
 
 Instance Variables:
 	useNetworkAuthentification	<ProtoObject | PseudoContext>

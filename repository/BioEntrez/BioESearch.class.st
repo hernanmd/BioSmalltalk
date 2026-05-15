@@ -21,19 +21,21 @@ http://www.ncbi.nlm.nih.gov/corehtml/query/static/esearch_help.html
 
 "
 Class {
-	#name : #BioESearch,
-	#superclass : #BioEWebEnvCmd,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioESearch',
+	#superclass : 'BioEWebEnvCmd',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioESearch class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'esearch.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioESearch class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

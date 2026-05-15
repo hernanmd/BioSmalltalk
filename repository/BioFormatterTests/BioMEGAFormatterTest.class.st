@@ -1,20 +1,25 @@
+"
+Test class for BioMEGAFormatter. Validates MEGA format writing and sequence record conversion.
+"
 Class {
-	#name : #BioMEGAFormatterTest,
-	#superclass : #BioFormatterTest,
-	#category : 'BioFormatterTests-Formats'
+	#name : 'BioMEGAFormatterTest',
+	#superclass : 'BioFormatterTest',
+	#category : 'BioFormatterTests-Formats',
+	#package : 'BioFormatterTests',
+	#tag : 'Formats'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatterTest >> formatterClass [
 	
 	^ BioMEGAFormatter 
 ]
 
-{ #category : #'tests-accessing' }
+{ #category : 'tests-accessing' }
 BioMEGAFormatterTest >> testCodeTable [
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioMEGAFormatterTest >> testDataSet01 [
 	" self new testDataSet01 explore "
 	^ (Array new: 4)
@@ -1564,7 +1569,7 @@ BioMEGAFormatterTest >> testDataSet01 [
 		yourself
 ]
 
-{ #category : #'tests-exporting' }
+{ #category : 'tests-exporting' }
 BioMEGAFormatterTest >> testExport [
 
 	| results |
@@ -1579,46 +1584,46 @@ BioMEGAFormatterTest >> testExport [
 
 ]
 
-{ #category : #'tests-exporting' }
+{ #category : 'tests-exporting' }
 BioMEGAFormatterTest >> testExportHeader [
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testForDataTypeDNA [
 	self formatter: self formatterClass forDataTypeDNA.
 	self assert: (self formatter isKindOf: BioMEGAFormatter).
 	self assert: self formatter formatType equals: 'DNA'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testForDataTypeDistance [
 	self formatter: self formatterClass forDataTypeDistance.
 	self assert: (self formatter isKindOf: BioMEGAFormatter).
 	self assert: self formatter formatType equals: 'Distance'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testForDataTypeNucleotide [
 	self formatter: self formatterClass forDataTypeNucleotide.
 	self assert: (self formatter isKindOf: BioMEGAFormatter).
 	self assert: self formatter formatType equals: 'Nucleotide'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testForDataTypeProtein [
 	self formatter: self formatterClass forDataTypeProtein.
 	self assert: (self formatter isKindOf: BioMEGAFormatter).
 	self assert: self formatter formatType equals: 'Protein'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testForDataTypeRNA [
 	self formatter: self formatterClass forDataTypeRNA.
 	self assert: (self formatter isKindOf: BioMEGAFormatter).
 	self assert: self formatter formatType equals: 'RNA'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioMEGAFormatterTest >> testFormatExtension [
 
 	self assert: (self formatterClass formatExtension isKindOf: String).

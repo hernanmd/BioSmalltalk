@@ -1,3 +1,6 @@
+"
+A collection specialized for holding readers with a common parser and reader class. Instance Variables: readerClass parser
+"
 Class {
 	#name : 'BioReadersCollection',
 	#superclass : 'BioOrderedCollection',

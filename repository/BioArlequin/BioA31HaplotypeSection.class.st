@@ -1,34 +1,39 @@
+"
+Represents the Haplotype section of an Arlequin 3.1 input file. Contains haplotype definitions and their configurations for analysis.
+"
 Class {
-	#name : #BioA31HaplotypeSection,
-	#superclass : #BioA31INISection,
+	#name : 'BioA31HaplotypeSection',
+	#superclass : 'BioA31INISection',
 	#classVars : [
 		'HaplListValues'
 	],
-	#category : #'BioArlequin-Sections'
+	#category : 'BioArlequin-Sections',
+	#package : 'BioArlequin',
+	#tag : 'Sections'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31HaplotypeSection class >> haplotypeListId [
 	" Answer a <String> with receiver's property name "
 
 	^ 'HaplList' 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31HaplotypeSection class >> haplotypeListNameId [ 
 	" Answer a String with the property's name "
 
 	^ 'HaplListName' 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31HaplotypeSection class >> notation [
 	" Answer a String describing the receiver's section identifier "
 	
 	^ '[HaplotypeDefinition]'
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31HaplotypeSection class >> sectionSpecs [
 	" Answer a Collection with raw data related with the Arlequin input format "
 	
@@ -45,7 +50,7 @@ BioA31HaplotypeSection class >> sectionSpecs [
 				format: $")
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31HaplotypeSection >> addHaplotypes: groupCollection [
 	
 	self addSampleData: (groupCollection collect: [ : group |
@@ -54,7 +59,7 @@ BioA31HaplotypeSection >> addHaplotypes: groupCollection [
 			title: group name ] )
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31HaplotypeSection >> addSampleData: aSampleCollection [
 	"Add aSampleCollection to the receiver"
 
@@ -65,14 +70,14 @@ BioA31HaplotypeSection >> addSampleData: aSampleCollection [
 
 ]
 
-{ #category : #'adding configurations' }
+{ #category : 'adding configurations' }
 BioA31HaplotypeSection >> addTitle: aString [
 	"Set a value for the Title configuration"
 	
 	self at: self class haplotypeListNameId put: aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31HaplotypeSection >> buildHaplotypesList: params title: groupTitle [
 
 	^ BioA31SampleCollection forDNA
@@ -83,7 +88,7 @@ BioA31HaplotypeSection >> buildHaplotypesList: params title: groupTitle [
 
 ]
 
-{ #category : #subsections }
+{ #category : 'subsections' }
 BioA31HaplotypeSection >> haplotypesSubsection [
 	" Answer a samples subsection object for adding and removing samples "
 
@@ -97,7 +102,7 @@ BioA31HaplotypeSection >> haplotypesSubsection [
 
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31HaplotypeSection >> writeOn: aStream [
 	" Private - Write the receiver's title and key/value pairs in aStream "
 	

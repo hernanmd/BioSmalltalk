@@ -1,12 +1,12 @@
-Extension { #name : #BioSequence }
+Extension { #name : 'BioSequence' }
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> addFromRSBuilder: aBioRSBaseBuilder rowIndex: anInteger [ 
 
 	aBioRSBaseBuilder addSequenceString: self sequence rowIndex: anInteger
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> chartGcSkewInt [
 	" Answer a chart of the receiver's GC skew "
 
@@ -16,7 +16,7 @@ BioSequence >> chartGcSkewInt [
 		y: 'Skew'
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> chartGcSkewInt: extentPoint x: xLabel y: yLabel [
 	" Answer a plot of the receiver's GC skew "
 
@@ -37,14 +37,14 @@ BioSequence >> chartGcSkewInt: extentPoint x: xLabel y: yLabel [
 		yourself
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> defaultExtent [
 	" Answer a <Point> specifying the receiver's extent for plots "
 
 	^ 800 @ 500
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> plot [
 	"Answer a <RSCanvas> which can be inspected to visualize the receiver's composition of nucleotides"
 
@@ -69,7 +69,7 @@ BioSequence >> plot [
 	
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> plotGcSkewInt [
 	" Plot receiver's GC skew "
 
@@ -79,7 +79,7 @@ BioSequence >> plotGcSkewInt [
 		y: 'Skew'
 ]
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 BioSequence >> plotGcSkewInt: extentPoint x: xLabel y: yLabel [
 	" Open a window with the receiver's GC skew plot "
 

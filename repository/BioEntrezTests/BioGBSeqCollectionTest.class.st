@@ -1,34 +1,39 @@
+"
+Test class for BioGBSeqCollection. Validates GenBank sequence collection loading and iteration behavior.
+"
 Class {
-	#name : #BioGBSeqCollectionTest,
-	#superclass : #TestCase,
+	#name : 'BioGBSeqCollectionTest',
+	#superclass : 'TestCase',
 	#instVars : [
 		'bioGBSeqCollection'
 	],
-	#category : #'BioEntrezTests-Core'
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollectionTest >> bioGBSeqCollection [
 	" Answer the bioGBSeqCollection of this BioGBSeqCollectionTest "
 
 	^ bioGBSeqCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGBSeqCollectionTest >> bioGBSeqCollection: anObject [
 	" Sets the bioGBSeqCollection of this BioGBSeqCollectionTest "
 
 	bioGBSeqCollection := anObject
 ]
 
-{ #category : #running }
+{ #category : 'running' }
 BioGBSeqCollectionTest >> setUp [
 
 	super setUp.
 	bioGBSeqCollection := BioGBSeqCollection new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testAccessionsWithVersion [
 
 	| accKeyAccVer1 dict1 dict2 |
@@ -45,7 +50,7 @@ BioGBSeqCollectionTest >> testAccessionsWithVersion [
 	self deny: bioGBSeqCollection accessionsWithVersion isEmpty.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testAtAccession [
 
 	| accKeyAccVer1 accKeyAccVer2 dict1 dict2 |
@@ -67,42 +72,42 @@ BioGBSeqCollectionTest >> testAtAccession [
 	self assert: (bioGBSeqCollection atAccession: 'BBBB.1') equals: dict1.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testFeatures [
 
 	self assert: (bioGBSeqCollection features isKindOf: Collection).
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testQualifierForAccessionWithVersion [
 
 	self assert: (bioGBSeqCollection class qualifierForAccessionWithVersion isKindOf: String).
 	self deny: bioGBSeqCollection class qualifierForAccessionWithVersion isEmpty.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testQualifierForAuthor [
 
 	self assert: (bioGBSeqCollection class qualifierForAuthor isKindOf: String).
 	self deny: bioGBSeqCollection class qualifierForAuthor isEmpty.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testQualifierForDefinition [
 
 	self assert: (bioGBSeqCollection class qualifierForDefinition isKindOf: String).
 	self deny: bioGBSeqCollection class qualifierForDefinition isEmpty.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testQualifierForReferenceJournal [
 
 	self assert: (bioGBSeqCollection class qualifierForReferenceJournal isKindOf: String).
 	self deny: bioGBSeqCollection class qualifierForReferenceJournal isEmpty.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioGBSeqCollectionTest >> testQualifierForReferenceTitle [
 
 	self assert: (bioGBSeqCollection class qualifierForReferenceTitle isKindOf: String).

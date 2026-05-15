@@ -7,19 +7,21 @@ Usage Example:
 BionCoV2019GD new download.
 "
 Class {
-	#name : #BionCoV2019GD,
-	#superclass : #BioNCBIGenomeDownloader,
-	#category : #'BioNCBI-Genomes'
+	#name : 'BionCoV2019GD',
+	#superclass : 'BioNCBIGenomeDownloader',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BionCoV2019GD >> buildFilePath [
 	" Private - See superimplementor's comment "
 
 	^ self fileListPrefix
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BionCoV2019GD >> defaultDirectory [
 	" Answer a <String> with the receiver's server directory to CWD "
 	
@@ -27,7 +29,7 @@ BionCoV2019GD >> defaultDirectory [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BionCoV2019GD >> defaultDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -40,7 +42,7 @@ BionCoV2019GD >> defaultDownloadFormats [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BionCoV2019GD >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 	
@@ -48,7 +50,7 @@ BionCoV2019GD >> defaultFileListPrefix [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BionCoV2019GD >> defaultGenomicDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -61,14 +63,14 @@ BionCoV2019GD >> defaultGenomicDownloadFormats [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BionCoV2019GD >> download [
 
 	self connectionSettings serverDirectory: self defaultDirectory.
 	super download
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BionCoV2019GD >> fastaFormatExtension [
 
 	^ '_genomic.fna.gz'

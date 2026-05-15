@@ -1,3 +1,6 @@
+"
+Trait providing visitor methods for GFF3 parse tree nodes. Implements double-dispatch visiting for AST traversal of GFF3 files.
+"
 Trait {
 	#name : 'TBioGFF3GFF3FileNodeVisitor',
 	#traits : 'TSmaCCParseNodeVisitor',

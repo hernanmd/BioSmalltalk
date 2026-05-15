@@ -3,35 +3,37 @@ Implements basic behavior for rule-based classification.
 
 "
 Class {
-	#name : #BioRuleBasedClassifier,
-	#superclass : #BioClassifier,
+	#name : 'BioRuleBasedClassifier',
+	#superclass : 'BioClassifier',
 	#instVars : [
 		'ruleBases',
 		'currentRuleBase'
 	],
-	#category : 'BioClassifier-Core'
+	#category : 'BioClassifier-Core',
+	#package : 'BioClassifier',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRuleBasedClassifier >> currentRuleBase [
 	" Answer an instance of receiver's rule container <BioRuleBase> "
 	^ currentRuleBase
 		ifNil: [ currentRuleBase := self defaultRuleBase ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRuleBasedClassifier >> currentRuleBase: anObject [
 	currentRuleBase := anObject
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioRuleBasedClassifier >> defaultRuleBase [
 	" Private - See comment in #ruleBase "
 
 	^ BioRuleBase new 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRuleBasedClassifier >> ruleBases [
 	" Answer a <Collection> containing the receiver's rule base instances "
 
@@ -39,7 +41,7 @@ BioRuleBasedClassifier >> ruleBases [
 		ifNil: [ ruleBases := Set new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRuleBasedClassifier >> setRuleClass: ruleClass [ 
 	" See comment in #setRuleClass: 
 	Set only a new organization if selected ruleClass is different from current organization "

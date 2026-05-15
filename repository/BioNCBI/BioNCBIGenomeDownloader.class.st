@@ -7,24 +7,26 @@ Subclasses implement specific organism genome downloaders.
 
 "
 Class {
-	#name : #BioNCBIGenomeDownloader,
-	#superclass : #BioNCBIDownloader,
+	#name : 'BioNCBIGenomeDownloader',
+	#superclass : 'BioNCBIDownloader',
 	#instVars : [
 		'organismName',
 		'version',
 		'downloadFormats',
 		'fileListPrefix'
 	],
-	#category : #'BioNCBI-Genomes'
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenomeDownloader class >> isAlternative [
 
 	^ false
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> asnFormatExtension [
 	" Answer a <String> with the extension of ASN.1 file "
 
@@ -34,7 +36,7 @@ BioNCBIGenomeDownloader >> asnFormatExtension [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> buildFileList [
 	" Private - Answer a <Collection> of files to download appending formats to each file name "
 
@@ -46,14 +48,14 @@ BioNCBIGenomeDownloader >> buildFileList [
 				nextPutAll: format ] ].
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> buildFilePath [
 	" Answer a <String> representing the path to the file to download "
 
 	self subclassResponsibility 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultCDSDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -64,7 +66,7 @@ BioNCBIGenomeDownloader >> defaultCDSDownloadFormats [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultDirectory [
 	" Answer a <String> with the receiver's server directory to CWD "
 	
@@ -72,7 +74,7 @@ BioNCBIGenomeDownloader >> defaultDirectory [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -81,7 +83,7 @@ BioNCBIGenomeDownloader >> defaultDownloadFormats [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultFeaturesDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -92,14 +94,14 @@ BioNCBIGenomeDownloader >> defaultFeaturesDownloadFormats [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultFileListPrefix [
 
 	self subclassResponsibility 
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultGenomicDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -113,7 +115,7 @@ BioNCBIGenomeDownloader >> defaultGenomicDownloadFormats [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> defaultProteinDownloadFormats [
 	" By default we download all types of formats found in the NCBI's FTP "
 
@@ -121,7 +123,7 @@ BioNCBIGenomeDownloader >> defaultProteinDownloadFormats [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> downloadFormats [
 	" Answer a <Collection> of <String> with file formats to be downloaded "
 	
@@ -130,48 +132,48 @@ BioNCBIGenomeDownloader >> downloadFormats [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> downloadFormats: aCollection [
 	" Set the receiver's with aCollection containing <String> with download file formats "
 
 	^ downloadFormats := aCollection
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> fastaFormatExtension [
 
 	^ '.fa.gz'
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> featureCDSFromGenomicFormatExtension [
 
 	^ '_cds_from_genomic.fna.gz'
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> featureCDSTranslatedFormatExtension [
 
 	^ '_translated_cds.faa.gz'
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> featureCountFormatExtension [
 
 	^ '_feature_count.txt.gz'
 
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> featureTableFormatExtension [
 
 	^ '_feature_table.txt.gz'
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> fileListPrefix [
 	" Set a <String> with the prefix of the files to be downloaded "
 
@@ -180,7 +182,7 @@ BioNCBIGenomeDownloader >> fileListPrefix [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> fileListPrefix: prefixString [
 	" Set a <String> with the prefix of the files to be downloaded "
 
@@ -188,7 +190,7 @@ BioNCBIGenomeDownloader >> fileListPrefix: prefixString [
 
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenomeDownloader >> filesToDownload [
 	" Answer a Collection with the files to download "
 
@@ -197,13 +199,13 @@ BioNCBIGenomeDownloader >> filesToDownload [
 		ifNil: [ self informMessage: 'Connection failed' translated ]
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> gbffFormatExtension [
 
 	^ '_genomic.gbff.gz'
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> gbkFormatExtension [
 	" Answer a <String> with the extension of GenBank flat file format (annotation + sequence), compressed "
 
@@ -213,7 +215,7 @@ BioNCBIGenomeDownloader >> gbkFormatExtension [
 
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> gbsFormatExtension [
 	" Answer a <String> with the extension of GenBank summary file format (annotation only), compressed ."
 
@@ -221,25 +223,25 @@ BioNCBIGenomeDownloader >> gbsFormatExtension [
 
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> gffFormatExtension [
 
 	^ '_genomic.gff.gz'
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> gpffFormatExtension [
 
 	^ '_protein.gpff'
 ]
 
-{ #category : #defaults }
+{ #category : 'defaults' }
 BioNCBIGenomeDownloader >> gtfFormatExtension [
 
 	^ '_genomic.gtf.gz'
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 BioNCBIGenomeDownloader >> initialize [
 	" Private - Initialize receiver's settings "
 	
@@ -252,7 +254,7 @@ BioNCBIGenomeDownloader >> initialize [
 			serverAddress: self defaultServerName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> isUpdated: fileName [
 	" Answer <true> if modification time of remote fileName is newer than modification time of receiver's copy of fileName "
 
@@ -262,14 +264,14 @@ BioNCBIGenomeDownloader >> isUpdated: fileName [
 	^ (self fileExists: fullName) and: [ fileName asFileReference modificationTime < (self client getMdtm: fileName) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> latestVersionFound [
 	" Answer a <String> with the receiver's latest found version in remote database "
 
 	self subclassResponsibility 
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> mfaFormatExtension [
 	" Answer a <String> with the extension of masked FASTA file format, compressed."
 
@@ -277,56 +279,56 @@ BioNCBIGenomeDownloader >> mfaFormatExtension [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> organismName [
 	" Answer a <String> with the receiver's organism name in the target database "
 	
 	^ organismName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> organismName: aString [
 	" Set the receiver's organism name to aString "
 	
 	organismName := aString
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> setDownloadASN1 [
 	" Set the receiver to download the ASN.1 format files "
 	
 	self downloadFormats add: self asnFormatExtension
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> setDownloadFasta [
 	" Set the receiver to download the FASTA format files "
 	
 	self downloadFormats add: self fastaFormatExtension
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> setDownloadGBK [
 	" Set the receiver to download the GBK format files "
 	
 	self downloadFormats add: self gbkFormatExtension
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> setDownloadGBS [
 	" Set the receiver to download the GBS format files "
 	
 	self downloadFormats add: self gbsFormatExtension
 ]
 
-{ #category : #'download - formats' }
+{ #category : 'download - formats' }
 BioNCBIGenomeDownloader >> setDownloadMFA [
 	" Set the receiver to download the MFA format files "
 	
 	self downloadFormats add: self mfaFormatExtension
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> version [
 	" Answer a <String>. Specific to versioned genomes file names "
 	
@@ -334,7 +336,7 @@ BioNCBIGenomeDownloader >> version [
 		ifNil: [ version := self latestVersionFound ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenomeDownloader >> version: aString [
 	" Set a <String>. Specific to versioned genomes file names "
 	

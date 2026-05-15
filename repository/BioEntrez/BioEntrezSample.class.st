@@ -1,10 +1,15 @@
+"
+Represents the Sample database in the NCBI Entrez system. Provides access to sample records.
+"
 Class {
-	#name : #BioEntrezSample,
-	#superclass : #BioERetDatabase,
-	#category : 'BioEntrez-Databases'
+	#name : 'BioEntrezSample',
+	#superclass : 'BioERetDatabase',
+	#category : 'BioEntrez-Databases',
+	#package : 'BioEntrez',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezSample class >> dbName [
 	" See superimplementor's comment "
 	

@@ -1,3 +1,6 @@
+"
+XML result formatter that outputs data as a dictionary map. Extends BioXMLResultFormatter with mapping-specific access.
+"
 Class {
 	#name : 'BioXMLDictionaryMap',
 	#superclass : 'BioXMLResultFormatter',

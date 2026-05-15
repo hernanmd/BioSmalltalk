@@ -11,14 +11,12 @@ Class {
 		'id',
 		'position',
 		'chromosome',
-		'identifier',
 		'refBase',
 		'altBase',
 		'quality',
 		'filter',
 		'formats',
-		'samples',
-		'infos'
+		'samples'
 	],
 	#category : 'BioFormatters-Formatters-VCF',
 	#package : 'BioFormatters',

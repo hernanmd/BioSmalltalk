@@ -1,3 +1,6 @@
+"
+Test class for Entrez XML GenBank accession parsing. Validates extraction of accession data from GenBank XML records.
+"
 Class {
 	#name : 'BioEntrezXMLGenBankAccessionParserTest',
 	#superclass : 'BioAbstractParserTest',

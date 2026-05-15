@@ -1,3 +1,6 @@
+"
+Represents a substitution (scoring) matrix for sequence alignment. Instance Variables: name matrix gapOpenPenalty gapExtendPenalty
+"
 Class {
 	#name : 'BioSubstitutionMatrix',
 	#superclass : 'Object',

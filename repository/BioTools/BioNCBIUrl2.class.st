@@ -1,3 +1,6 @@
+"
+Extended URL builder for NCBI web services. Extends BioUrl with NCBI-specific URL access methods.
+"
 Class {
 	#name : 'BioNCBIUrl2',
 	#superclass : 'BioUrl',

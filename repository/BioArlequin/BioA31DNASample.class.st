@@ -1,16 +1,21 @@
+"
+Represents a DNA sample in the Arlequin 3.1 format. A DNA sample contains sequence data for haplotype analysis within the Arlequin software framework. See also BioA31Sample for the common sample behavior.
+"
 Class {
-	#name : #BioA31DNASample,
-	#superclass : #BioA31Sample,
-	#category : 'BioArlequin-Sample'
+	#name : 'BioA31DNASample',
+	#superclass : 'BioA31Sample',
+	#category : 'BioArlequin-Sample',
+	#package : 'BioArlequin',
+	#tag : 'Sample'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31DNASample >> sequenceString [
 
 	^ self sequence
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31DNASample >> writeOn: aStream [
 	" Write the receiver's data into aStream "
 
@@ -21,7 +26,7 @@ BioA31DNASample >> writeOn: aStream [
 		nextPutAll: GRPlatform current newline
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31DNASample >> writeOn: aStream delimiter: aDelimiterCharacter [
 	" Write the receiver's data into aStream "
 

@@ -1,24 +1,29 @@
+"
+Represents an INFO command for NCBI. Provides both private and public access to database information parameters.
+"
 Class {
-	#name : #BioNCBIInfo,
-	#superclass : #BioNCBICommand,
-	#category : 'BioNCBI-Commands'
+	#name : 'BioNCBIInfo',
+	#superclass : 'BioNCBICommand',
+	#category : 'BioNCBI-Commands',
+	#package : 'BioNCBI',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioNCBIInfo >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ self cmdString , '=Info'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIInfo >> targetDatabases [
 	" Sets target for the Info command "
 	
 	self client queryAt: 'TARGET' put: 'databases'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIInfo >> targetQBlast [
 	" Sets target for the Info command "
 	

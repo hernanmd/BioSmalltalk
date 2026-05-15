@@ -12,25 +12,27 @@ BioSpecies populatedRepositories.
 
 "
 Class {
-	#name : #BioSpecies,
-	#superclass : #BioNamedObject,
+	#name : 'BioSpecies',
+	#superclass : 'BioNamedObject',
 	#classVars : [
 		'Repositories'
 	],
 	#classInstVars : [
 		'initializeRepositoryOnDemand'
 	],
-	#category : 'BioPopulation-Core'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> addRepository: aBioPopRepository [
 	" Add aBioPopRepository to the receiver's repository "
 	
 	self repositories add: aBioPopRepository 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> addRepositoryNamed: organismName [
 	" Add a <BioPopRepository> for organism organismName to the receiver's repositories "
 	
@@ -40,7 +42,7 @@ BioSpecies class >> addRepositoryNamed: organismName [
 	repo initializeRepositoryVersions	
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSpecies class >> initialize [
 	" Private - initialize species repositories "
 
@@ -51,19 +53,19 @@ BioSpecies class >> initialize [
 	self bioLog: 'Imported repositories: ' , self repositories size asString.
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSpecies class >> initializeRepositoryOnDemand [
 
 	^ initializeRepositoryOnDemand
 		ifNil: [ initializeRepositoryOnDemand := true ]
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSpecies class >> initializeRepositoryOnDemand: anObject [
 	initializeRepositoryOnDemand := anObject
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSpecies class >> newRepositoryForOrganism: organismName [
 	" Answer a new population repository for organismName "
 
@@ -72,14 +74,14 @@ BioSpecies class >> newRepositoryForOrganism: organismName [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> populatedRepositories [
 	" Answer a <Collection> of <BioPopRepository> which are already populated  "
 
 	^ self repositories reject: #isEmpty
 ]
 
-{ #category : #'initialize-release' }
+{ #category : 'initialize-release' }
 BioSpecies class >> release [
 	" Private - Initialize the receiver's repository.
 	
@@ -89,7 +91,7 @@ BioSpecies class >> release [
 	self repositories: nil.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> repositories [
 	" Answer a <Collection> of <BioPopRepository> "
 
@@ -97,14 +99,14 @@ BioSpecies class >> repositories [
 		ifNil: [ Repositories := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> repositories: aCollection [
 	" Set the receiver's repositories to be aCollection "
 	
 	Repositories := aCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioSpecies class >> repositoryFor: speciesName [
 	" Scan population repositories classes for speciesName and answer the corresponding class if found, or raise an exception "
 	

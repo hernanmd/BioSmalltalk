@@ -1,10 +1,15 @@
+"
+Test class for BioNCBIDatabase. Validates NCBI database query behavior and URL construction.
+"
 Class {
-	#name : #BioNCBIDatabaseTest,
-	#superclass : #BioAbstractTest,
-	#category : 'BioNCBITests-Core'
+	#name : 'BioNCBIDatabaseTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioNCBITests-Core',
+	#package : 'BioNCBITests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIDatabaseTest >> testDatabaseList [
 
 	| dbList |
@@ -17,7 +22,7 @@ BioNCBIDatabaseTest >> testDatabaseList [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIDatabaseTest >> testDescriptionAt [
 
 	| description |

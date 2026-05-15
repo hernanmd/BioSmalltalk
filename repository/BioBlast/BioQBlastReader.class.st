@@ -1,16 +1,21 @@
+"
+Reader for NCBI QBlast query results. Instance Variables: statusParser rtoe ridParser rtoeParser
+"
 Class {
-	#name : #BioQBlastReader,
-	#superclass : #BioReader,
+	#name : 'BioQBlastReader',
+	#superclass : 'BioReader',
 	#instVars : [
 		'statusParser',
 		'rtoe',
 		'ridParser',
 		'rtoeParser'
 	],
-	#category : #'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> debugReadyStatus [
 	" Private - Log debug status information "
 	
@@ -23,7 +28,7 @@ BioQBlastReader >> debugReadyStatus [
 				contents: self results ].
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> delaySeconds [
 	" Private - Answer the number of seconds to wait
 	for checking again the availability of job results "
@@ -31,7 +36,7 @@ BioQBlastReader >> delaySeconds [
 	^ rtoe asNumber
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioQBlastReader >> gtDebug [
 	" Answer <true> if we want to log debug information to the Transcript (default) or
 	other configured stream "
@@ -39,7 +44,7 @@ BioQBlastReader >> gtDebug [
 	^ false
 ]
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> isValid [
 	" Answer <true> if receiver's remote response is valid for reading
 	i.e. not UNKNOWN "
@@ -53,14 +58,14 @@ BioQBlastReader >> isValid [
 	^ true
 ]
 
-{ #category : #'accessing parser' }
+{ #category : 'accessing parser' }
 BioQBlastReader >> parserClass [
 	" Private - See superimplementor's comment "
 	
 	^ BioQBlastParser
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> parserForErrorMsg [
 	" Private - This is for NCBI error messages encoded in the partial results responses. Examples 
 	 Message ID#24 Error: Failed to read the Blast query: Nucleotide FASTA provided for protein sequence 
@@ -71,27 +76,27 @@ BioQBlastReader >> parserForErrorMsg [
 
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> parserForQBlastInfoBegin [ 
 
 	^ self parserClass new parserForQBlastInfoBegin 
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> parserForRID [
 
 	^ ridParser 
 		ifNil: [ ridParser := self parserClass new parserForRID ]
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> parserForRTOE [
 
 	^ rtoeParser 
 		ifNil: [ rtoeParser := self parserClass new parserForRTOE ]
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> rid [
 	" Answer a String with the Request Identifier "
 	
@@ -104,7 +109,7 @@ BioQBlastReader >> rid [
 
 ]
 
-{ #category : #'accessing-put' }
+{ #category : 'accessing-put' }
 BioQBlastReader >> rtoe [
 	"Answer a <String> with the Request Time of Execution in seconds"
 	
@@ -123,7 +128,7 @@ BioQBlastReader >> rtoe [
 				ifNotNil: [ rtoe ] ] " Using the last known RTOE... "
 ]
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> selectStatus [
 	"Private - Wait for the results until ready, answer <true> if results sent are ready and valid"
 	
@@ -140,7 +145,7 @@ BioQBlastReader >> selectStatus [
 
 ]
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> shouldWaitForResults [
 	" Private - Answer <true> if results contains status information "
 	
@@ -151,14 +156,14 @@ BioQBlastReader >> shouldWaitForResults [
 
 ]
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> status [
 	"Answer a <String> with the result of the remote job"
 	
 	^ self statusParser parse: self results
 ]
 
-{ #category : #'accessing-get' }
+{ #category : 'accessing-get' }
 BioQBlastReader >> statusParser [
 
 	^ statusParser 

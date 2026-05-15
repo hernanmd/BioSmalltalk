@@ -1,3 +1,6 @@
+"
+Parser for composite NCBI identifiers that combine multiple database accessions. Handles initialization of composite identifier parsing.
+"
 Class {
 	#name : 'BioCompositeIDParser',
 	#superclass : 'BioNCBIIdParser',

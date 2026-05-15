@@ -1,6 +1,6 @@
-Extension { #name : #FileSystemDirectoryEntry }
+Extension { #name : 'FileSystemDirectoryEntry' }
 
-{ #category : #'*BioBlast' }
+{ #category : '*BioBlast' }
 FileSystemDirectoryEntry >> isGenBankXML [
 	" Answer <true> if the receiver represents a GenBank XML file "
 

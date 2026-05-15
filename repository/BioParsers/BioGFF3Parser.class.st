@@ -1,3 +1,6 @@
+"
+SmaCC-based parser for GFF3 (Generic Feature Format version 3) files. Parses GFF3 syntax into a tree of AST nodes.
+"
 Class {
 	#name : 'BioGFF3Parser',
 	#superclass : 'SmaCCParser',

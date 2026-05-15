@@ -1,3 +1,6 @@
+"
+Test class for BioSeqRecord. Validates sequence record creation and annotation behavior.
+"
 Class {
 	#name : 'BioSeqRecordTest',
 	#superclass : 'BioAbstractTest',

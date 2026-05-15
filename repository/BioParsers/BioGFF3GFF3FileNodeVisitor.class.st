@@ -1,3 +1,6 @@
+"
+Visitor pattern implementation for GFF3 parse tree nodes. Provides double-dispatch visiting methods for traversing the GFF3 AST.
+"
 Class {
 	#name : 'BioGFF3GFF3FileNodeVisitor',
 	#superclass : 'Object',

@@ -1,3 +1,6 @@
+"
+FASTQ quality analysis tool. Computes per-base quality statistics, GC distribution, sequence length distribution, and overrepresented sequence detection. Instance Variables: totalRecords <Integer> Number of records processed. totalBases <Integer> Total bases processed. perBaseQuality <Collection> Per-position quality statistics. gcDistribution <Collection> GC content distribution. qualityDistribution <Collection> Quality score distribution. sequenceLengths <Dictionary> Sequence length counts. overrepresentedSequences <Collection> Overrepresented sequences found. meanQualityRecord <Object> Record with worst mean quality.
+"
 Class {
 	#name : 'BioFASTQQA',
 	#superclass : 'Object',

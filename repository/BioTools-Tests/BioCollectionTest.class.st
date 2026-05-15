@@ -1,3 +1,6 @@
+"
+Test class for BioSmalltalk collection utilities. Validates extension methods and collection behavior specific to bioinformatics.
+"
 Class {
 	#name : 'BioCollectionTest',
 	#superclass : 'BioAbstractTest',

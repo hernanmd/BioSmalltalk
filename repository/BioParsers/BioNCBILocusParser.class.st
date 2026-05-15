@@ -1,3 +1,6 @@
+"
+Parser for Locus identifier format in NCBI records. Extends BioAccessionParser to parse locus-specific identifier strings.
+"
 Class {
 	#name : 'BioNCBILocusParser',
 	#superclass : 'BioAccessionParser',

@@ -1,3 +1,6 @@
+"
+SmaCC-based parser for PHYLIP format files. Parses PHYLIP input into structured objects.
+"
 Class {
 	#name : 'BioPhylipSmaCCParser',
 	#superclass : 'SmaCCParser',

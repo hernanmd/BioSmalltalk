@@ -1,3 +1,6 @@
+"
+Parser for PHYLIP format files. Handles both sequential and interleaved PHYLIP formats including relaxed variants. Instance Variables: numTaxa numChars taxaNames sequences isInterleaved isStrict currentLine lines errorLine
+"
 Class {
 	#name : 'BioPhylipParser',
 	#superclass : 'BioObject',

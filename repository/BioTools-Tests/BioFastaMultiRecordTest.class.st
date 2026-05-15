@@ -1,3 +1,6 @@
+"
+Test class for BioFastaMultiRecord. Validates multi-record FASTA operations including sequence iteration and conversion.
+"
 Class {
 	#name : 'BioFastaMultiRecordTest',
 	#superclass : 'BioAbstractTest',

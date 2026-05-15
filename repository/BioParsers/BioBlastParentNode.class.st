@@ -1,3 +1,6 @@
+"
+Represents a parent node in the BLAST XML result tree that can contain child hits and HSPs. Provides methods for accessing hits individually, filtering HSPs, and extracting alignment data.
+"
 Class {
 	#name : 'BioBlastParentNode',
 	#superclass : 'BioBlastContainerNode',

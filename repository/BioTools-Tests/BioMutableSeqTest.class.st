@@ -1,3 +1,6 @@
+"
+Test class for BioMutableSeq. Validates mutable sequence editing operations including insertion, deletion, and replacement.
+"
 Class {
 	#name : 'BioMutableSeqTest',
 	#superclass : 'BioAbstractSequenceTest',

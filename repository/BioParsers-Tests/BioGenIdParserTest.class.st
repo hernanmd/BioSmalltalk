@@ -1,3 +1,6 @@
+"
+Test class for BioGenIdParser. Validates parsing of GenBank identifier strings.
+"
 Class {
 	#name : 'BioGenIdParserTest',
 	#superclass : 'BioAbstractParserTest',

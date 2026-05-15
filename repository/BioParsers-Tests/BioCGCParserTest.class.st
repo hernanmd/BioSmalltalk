@@ -1,3 +1,6 @@
+"
+Test class for BioCGCParser. Validates parsing of CGC identifier strings.
+"
 Class {
 	#name : 'BioCGCParserTest',
 	#superclass : 'BioAbstractParserTest',

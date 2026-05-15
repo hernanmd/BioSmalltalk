@@ -1,3 +1,6 @@
+"
+Represents a biochemical reaction with substrates products and catalysis information. Instance Variables: name products substrates catalyses
+"
 Class {
 	#name : 'BioReaction',
 	#superclass : 'BioObject',

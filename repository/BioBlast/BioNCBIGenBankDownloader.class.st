@@ -4,8 +4,8 @@ Split downloads records from GenBank if necessary
 
 "
 Class {
-	#name : #BioNCBIGenBankDownloader,
-	#superclass : #BioNamedObject,
+	#name : 'BioNCBIGenBankDownloader',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'dbName',
 		'format',
@@ -14,10 +14,12 @@ Class {
 		'parsedResults',
 		'reader'
 	],
-	#category : 'BioBlast-Remote'
+	#category : 'BioBlast-Remote',
+	#package : 'BioBlast',
+	#tag : 'Remote'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioNCBIGenBankDownloader class >> newFromReader: aBioReader [
 
 	^ self new 
@@ -25,25 +27,25 @@ BioNCBIGenBankDownloader class >> newFromReader: aBioReader [
 		yourself
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankDownloader >> checkValidContents [
 
 	^ self processGenBankRecords notNil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> dbName [
 	^ dbName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> dbName: aString [
 	" Set the receiver's database name to be aString "
 
 	dbName := aString
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenBankDownloader >> download [
 	" Private - Download records without splitting requests "
 	
@@ -56,7 +58,7 @@ BioNCBIGenBankDownloader >> download [
 	^ self results
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIGenBankDownloader >> entrezUrlUidLimit [
 	" Private - Answer a Number representing the maximum size of the UID list
 	to be requested to the Entrez server "
@@ -64,25 +66,25 @@ BioNCBIGenBankDownloader >> entrezUrlUidLimit [
 	^ 500
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIGenBankDownloader >> exceedsLimit [
 
 	^ self uids size >= self entrezUrlUidLimit 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> format [
 	^ format
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> format: aSymbol [
 	" Set the receiver's download format to be aSaSymbol "
 
 	format := aSymbol
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> genBankFetchRecords: aCollection [
 	" Private - Fetch Entrez records from database named dbSymbol in format formatSymbol using UIDs from anArray. anArray is NOT splitted if exceeds #entrezUrlUidLimit "
 	
@@ -98,7 +100,7 @@ BioNCBIGenBankDownloader >> genBankFetchRecords: aCollection [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> genBankSplitRecordsFrom: dbSymbol format: formatSymbol uids: anArray [
 	" Private - Break the request into smaller chunks splittin anArray of UIDs.
 	Answer a Collection of Collections to be joined "
@@ -112,17 +114,17 @@ BioNCBIGenBankDownloader >> genBankSplitRecordsFrom: dbSymbol format: formatSymb
 		ifFalse: [ self download ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> parsedResults [
 	^ parsedResults
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> parsedResults: anObject [
 	parsedResults := anObject
 ]
 
-{ #category : #'accessing-entrez' }
+{ #category : 'accessing-entrez' }
 BioNCBIGenBankDownloader >> processGenBankRecords [
 	" Answer a <BioGBSeqCollection> if current results are valid, nil otherwise "
 
@@ -134,7 +136,7 @@ BioNCBIGenBankDownloader >> processGenBankRecords [
 	^ self results
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioNCBIGenBankDownloader >> prvGenBankFetchRecords: aCollection [ 
 
 	| db entrezDbName |
@@ -148,24 +150,24 @@ BioNCBIGenBankDownloader >> prvGenBankFetchRecords: aCollection [
 	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> reader [
 	^ reader
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> reader: anObject [
 	reader := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> results [
 
 	^ results
 		ifNil: [ results := OrderedCollection new: self uids size ]
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioNCBIGenBankDownloader >> splitDownload [
 
 	| index splittedRs |
@@ -187,12 +189,12 @@ BioNCBIGenBankDownloader >> splitDownload [
 	^ self results
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> uids [
 	^ uids
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIGenBankDownloader >> uids: aCollection [
 	" Set the receiver's UID's to be aCollection "
 

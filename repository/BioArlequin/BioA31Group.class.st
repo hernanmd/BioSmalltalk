@@ -4,22 +4,24 @@ Instance Variables:
 	data		<BioA31SampleParameters>
 "
 Class {
-	#name : #BioA31Group,
-	#superclass : #BioNamedObject,
+	#name : 'BioA31Group',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'group',
 		'data'
 	],
-	#category : 'BioArlequin-Core'
+	#category : 'BioArlequin-Core',
+	#package : 'BioArlequin',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group class >> description [
 
 	^ 'Arlequin Group'
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31Group class >> fromBuilder: aGroupBuilder [
 
 	^ aGroupBuilder groupSamples collect: [ : group | 
@@ -28,7 +30,7 @@ BioA31Group class >> fromBuilder: aGroupBuilder [
 			data: ((BioA31SampleParameters on: aGroupBuilder) buildSamplesAt: group value) ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioA31Group class >> named: aString data: sampleParams [
 	" Answer a new Arlequin group "
 
@@ -38,27 +40,27 @@ BioA31Group class >> named: aString data: sampleParams [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group >> data [
 	^ data
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group >> data: anObject [
 	data := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group >> group [
 	^ group
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group >> group: anObject [
 	group := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioA31Group >> printOn: aStream [
 
 	aStream 
@@ -67,7 +69,7 @@ BioA31Group >> printOn: aStream [
 	self data printOn: aStream.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31Group >> size [
 	" For NbSamples setting "
 	

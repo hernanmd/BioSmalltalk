@@ -1,10 +1,15 @@
+"
+Test class for BLAST XML node hierarchy. Validates BLAST result tree construction and querying.
+"
 Class {
-	#name : #BioBlastNodeTest,
-	#superclass : #BioAbstractTest,
-	#category : 'BioBlastTests-Core'
+	#name : 'BioBlastNodeTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNodeTest >> testEmptyNodeCreation [
 
 	self assert: ( ( BioBlastNode nodeFor: 'Hit' ) isKindOf: BioBlastParentNode ).
@@ -29,7 +34,7 @@ BioBlastNodeTest >> testEmptyNodeCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNodeTest >> testHitNodeCreation [
 
 	self assert: ( ( BioBlastNode nodeFor: 'Hit_num' ) isKindOf: BioBlastHitNode ).
@@ -47,7 +52,7 @@ BioBlastNodeTest >> testHitNodeCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNodeTest >> testHspNodeCreation [
 
 	self assert: ( ( BioBlastNode nodeFor: 'Hsp_num' ) isKindOf: BioBlastNode ).

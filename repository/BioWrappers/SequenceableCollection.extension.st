@@ -1,6 +1,6 @@
-Extension { #name : #SequenceableCollection }
+Extension { #name : 'SequenceableCollection' }
 
-{ #category : #'*BioWrappers' }
+{ #category : '*BioWrappers' }
 SequenceableCollection >> asPLINKParameter [
 	" Answer a <String> representation suitable to use as PLINK parameter "
 	

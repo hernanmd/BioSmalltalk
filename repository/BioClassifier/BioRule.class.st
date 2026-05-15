@@ -1,15 +1,20 @@
+"
+Represents a classification rule with an evaluation context and condition. Instance Variables: evaluation <BlockClosure> Evaluation block. context <Dictionary> Rule context. condition <Symbol> Condition selector.
+"
 Class {
-	#name : #BioRule,
-	#superclass : #BioNamedObject,
+	#name : 'BioRule',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'evaluation',
 		'context',
 		'condition'
 	],
-	#category : 'BioClassifier-RuleEngine'
+	#category : 'BioClassifier-RuleEngine',
+	#package : 'BioClassifier',
+	#tag : 'RuleEngine'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRule class >> name: aString action: actionBlock [
 
 	^ self new
@@ -18,7 +23,7 @@ BioRule class >> name: aString action: actionBlock [
 		yourself
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 BioRule class >> name: aString action: actionBlock context: aContext [
 
 	^ self new
@@ -28,28 +33,28 @@ BioRule class >> name: aString action: actionBlock context: aContext [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> condition [
 	^ condition
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> condition: conditionBlockOrSymbol [
 
 	condition := conditionBlockOrSymbol
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> context [
 	^ context
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> context: anObject [
 	context := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> evaluate: subject [
 
 	^ self condition isSymbol 
@@ -57,7 +62,7 @@ BioRule >> evaluate: subject [
 		ifFalse: [ self condition cull: subject ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> evaluate: subject context: aContext [
 
 	^ self condition isSymbol 
@@ -65,17 +70,17 @@ BioRule >> evaluate: subject context: aContext [
 		ifFalse: [ self condition cull: subject cull: aContext ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> evaluation [
 	^ evaluation
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> evaluation: anObject [
 	evaluation := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 BioRule >> printOn: aStream [
 
 	super printOn: aStream.
@@ -85,7 +90,7 @@ BioRule >> printOn: aStream [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRule >> rules [
 
 	^ Array empty

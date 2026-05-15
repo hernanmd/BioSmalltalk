@@ -8,19 +8,21 @@ BioEntrezClient new <dbNameSelector>	"" See accessing public - databases  ""
 		<action>. 							"" See BioDBObject protocol actions ""
 "
 Class {
-	#name : #BioEntrezClient,
-	#superclass : #BioWebWrapper,
-	#category : #'BioEntrez-Core'
+	#name : 'BioEntrezClient',
+	#superclass : 'BioWebWrapper',
+	#category : 'BioEntrez-Core',
+	#package : 'BioEntrez',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing-private' }
+{ #category : 'accessing-private' }
 BioEntrezClient class >> baseUrl [
 	" Private - Answer a <String> specifying a server valid addres for the receiver "
 
 	^ 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils'
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> biosample [
 	"Set and answer the receiver's working database"
 		
@@ -30,7 +32,7 @@ BioEntrezClient >> biosample [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> biosystems [
 	" Set and answer the receiver's working database "
 		
@@ -40,7 +42,7 @@ BioEntrezClient >> biosystems [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> books [
 	" Set and answer the receiver's working database "
 		
@@ -50,7 +52,7 @@ BioEntrezClient >> books [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> cancerchromosomes [
 	" Set and answer the receiver's working database "
 		
@@ -60,7 +62,7 @@ BioEntrezClient >> cancerchromosomes [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> cdd [
 	" Set and answer the receiver's working database "
 		
@@ -70,14 +72,14 @@ BioEntrezClient >> cdd [
 
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioEntrezClient >> dbName: aString [
 	" Set the receiver's database to the specified by aString "
 	
 	self url dbName: aString
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> domains [
 	" Set and answer the receiver's working database "
 		
@@ -87,42 +89,42 @@ BioEntrezClient >> domains [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> fetch [
 	" Answer a list of UIDs with the corresponding data records "
 
 	^ self execute: BioEFetchCmd
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> fetchLiterature [
 	" Private - Execute the command in the corresponding context "
 
 	^ self execute: BioEFetchLit
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> fetchSequence [
 	" Private - Execute the command in the corresponding context "
 
 	^ self execute: BioEFetchSeq
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> fetchTaxonomy [
 	" Private - Execute the command in the corresponding context "
 
 	^ self execute: BioEFetchTax
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> gQuery [
 	" Answer the number of records matching the query in each Entrez database "
 
 	^ self execute: BioEGlobalQuery
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> gap [
 	" Set and answer the receiver's working database "
 		
@@ -132,7 +134,7 @@ BioEntrezClient >> gap [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> gds [
 	" Set and answer the receiver's working database "
 		
@@ -142,7 +144,7 @@ BioEntrezClient >> gds [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> gene [
 	" Set and answer the receiver's working database "
 		
@@ -152,7 +154,7 @@ BioEntrezClient >> gene [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> genome [
 	" Set and answer the receiver's working database "
 		
@@ -162,7 +164,7 @@ BioEntrezClient >> genome [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> genomeprj [
 	" Set and answer the receiver's working database "
 		
@@ -172,7 +174,7 @@ BioEntrezClient >> genomeprj [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> gensat [
 	" Set and answer the receiver's working database "
 		
@@ -182,7 +184,7 @@ BioEntrezClient >> gensat [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> geo [
 	" Set and answer the receiver's working database "
 		
@@ -192,7 +194,7 @@ BioEntrezClient >> geo [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> homologene [
 	" Set and answer the receiver's working database "
 		
@@ -202,7 +204,7 @@ BioEntrezClient >> homologene [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> info [
 	" Answer the number of records indexed in each field of a diven database,
 	the date of the last update of the database, and the available links
@@ -211,7 +213,7 @@ BioEntrezClient >> info [
 	^ self execute: BioEInfo
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> journals [
 	" Set and answer the receiver's working database "
 		
@@ -221,7 +223,7 @@ BioEntrezClient >> journals [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> link [
 	" Answer a list of related IDs in the same database or a list of
 	linked IDs in another Entrez database given a list of UIDs "
@@ -229,7 +231,7 @@ BioEntrezClient >> link [
 	^ self execute: BioELink
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> mesh [
 	" Set and answer the receiver's working database "
 		
@@ -239,7 +241,7 @@ BioEntrezClient >> mesh [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> ncbisearch [
 	" Set and answer the receiver's working database "
 		
@@ -249,7 +251,7 @@ BioEntrezClient >> ncbisearch [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> nlmcatalog [
 	" Set and answer the receiver's working database "
 		
@@ -259,7 +261,7 @@ BioEntrezClient >> nlmcatalog [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> nuccore [
 	" Set and answer the receiver's working database "
 		
@@ -269,7 +271,7 @@ BioEntrezClient >> nuccore [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> nucest [
 	" Set and answer the receiver's working database "
 		
@@ -279,7 +281,7 @@ BioEntrezClient >> nucest [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> nucgss [
 	" Set and answer the receiver's working database "
 		
@@ -289,7 +291,7 @@ BioEntrezClient >> nucgss [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> omia [
 	" Set and answer the receiver's working database "
 		
@@ -299,7 +301,7 @@ BioEntrezClient >> omia [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> omim [
 	" Set and answer the receiver's working database "
 		
@@ -309,14 +311,14 @@ BioEntrezClient >> omim [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezClient >> parameters [
 	"Answer a <Collection> with the receiver's configured parameters"
 	
 	^ self url parameters
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> pcassay [
 	" Set and answer the receiver's working database "
 		
@@ -326,7 +328,7 @@ BioEntrezClient >> pcassay [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> pccompound [
 	" Set and answer the receiver's working database "
 		
@@ -336,7 +338,7 @@ BioEntrezClient >> pccompound [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> pcsubstance [
 	" Set and answer the receiver's working database "
 		
@@ -346,7 +348,7 @@ BioEntrezClient >> pcsubstance [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> peptidome [
 	" Set and answer the receiver's working database "
 		
@@ -356,7 +358,7 @@ BioEntrezClient >> peptidome [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> pmc [
 	" Set and answer the receiver's working database "
 		
@@ -366,7 +368,7 @@ BioEntrezClient >> pmc [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> popset [
 	" Set and answer the receiver's working database "
 		
@@ -376,7 +378,7 @@ BioEntrezClient >> popset [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> post [
 	" Stores the given list of UIDs in the History Server, and answer
 	with the corresponding query key and web environment "
@@ -384,7 +386,7 @@ BioEntrezClient >> post [
 	^ self execute: BioEPost
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> probe [
 	" Set and answer the receiver's working database "
 		
@@ -394,7 +396,7 @@ BioEntrezClient >> probe [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> protein [
 	" Set and answer the receiver's working database "
 		
@@ -404,7 +406,7 @@ BioEntrezClient >> protein [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> proteinclusters [
 	" Set and answer the receiver's working database "
 		
@@ -414,7 +416,7 @@ BioEntrezClient >> proteinclusters [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> pubmed [
 	" Set and answer the receiver's working database "
 		
@@ -424,34 +426,34 @@ BioEntrezClient >> pubmed [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> search [
 	" Answer a <BioESearchResult> with the list of UIDs matching the query in a diven database, along with the term translation of the query "
 
 	^ self execute: BioESearch
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> searchResultClass [
 
 	^ BioESearchResult
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> setEmail [
 	"Answer a String for identifying this application"
 	
 	^ self url emailAddress: 'biosmalltalk@gmail.com'.
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> setTool [
 	" Answer a String for identifying this application "
 	
 	^ self url toolName: 'BioSmalltalk'.
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioEntrezClient >> setUseHistory [
 	" Store the retrieved sets of UIDs temporarily in the Entrez history server
 	so that they can be subsequently combined or provided as input for
@@ -461,7 +463,7 @@ BioEntrezClient >> setUseHistory [
 	^ self url setUseHistory
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> snp [
 	" Set and answer the receiver's working database "
 		
@@ -471,14 +473,14 @@ BioEntrezClient >> snp [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> spell [
 	" Answer a Collection with spelling suggestions for a query in the selected Entrez database "
 
 	^ self execute: BioESpell
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> sra [
 	"Set and answer the receiver's working database"
 		
@@ -488,7 +490,7 @@ BioEntrezClient >> sra [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> structure [
 	" Set and answer the receiver's working database "
 		
@@ -498,21 +500,21 @@ BioEntrezClient >> structure [
 
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> summary [
 	" Answer document summaries given a list of UIDs "
 
 	^ self execute: BioESummary
 ]
 
-{ #category : #'accessing public - commands' }
+{ #category : 'accessing public - commands' }
 BioEntrezClient >> summaryAlternative [
 	" Answer document summaries given a list of UIDs "
 
 	^ self execute: BioESummaryAlternative
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> taxonomy [
 	" Set and answer the receiver's working database "
 		
@@ -522,7 +524,7 @@ BioEntrezClient >> taxonomy [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> unigene [
 	" Set and answer the receiver's working database "
 		
@@ -532,7 +534,7 @@ BioEntrezClient >> unigene [
 
 ]
 
-{ #category : #'accessing public - databases' }
+{ #category : 'accessing public - databases' }
 BioEntrezClient >> unists [
 	" Set and answer the receiver's working database "
 		
@@ -542,7 +544,7 @@ BioEntrezClient >> unists [
 
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> url [
 	"Answer the value of url"
 
@@ -550,14 +552,14 @@ BioEntrezClient >> url [
 		ifNil: [ url := self urlClass fromString: self baseUrl ]
 ]
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEntrezClient >> urlClass [
 	" Answer a <Class> implementing an interpreted URL/URI "
 
 	^ BioEntrezUrl
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioEntrezClient >> useWebEnv [
 	" Search with the current parameters and answer 
 	a new instance of the receiver's using previous web environment  "
@@ -574,7 +576,7 @@ BioEntrezClient >> useWebEnv [
 
 ]
 
-{ #category : #'accessing public' }
+{ #category : 'accessing public' }
 BioEntrezClient >> webEnv: aBioESearchResult [
 	" Set the receiver's web environment and query key from aGETSearchResult "
 	

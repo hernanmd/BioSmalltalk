@@ -1,16 +1,21 @@
+"
+Represents the environmental sample nucleotide (env_nt) database in the NCBI system.
+"
 Class {
-	#name : #BioNCBIEnvNT,
-	#superclass : #BioNCBIDatabase,
-	#category : 'BioNCBI-Databases'
+	#name : 'BioNCBIEnvNT',
+	#superclass : 'BioNCBIDatabase',
+	#category : 'BioNCBI-Databases',
+	#package : 'BioNCBI',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIEnvNT class >> dbName [
 
 	^ 'env_nt'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIEnvNT class >> description [
 
 	^ 'Environmental samples: ' , self dbName

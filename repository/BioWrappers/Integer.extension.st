@@ -1,6 +1,6 @@
-Extension { #name : #Integer }
+Extension { #name : 'Integer' }
 
-{ #category : #'*BioWrappers' }
+{ #category : '*BioWrappers' }
 Integer >> asPLINKParameter [
 	" Answer a <String> representation suitable to use as PLINK parameter "
 	

@@ -1,3 +1,6 @@
+"
+Represents a restriction enzyme with its recognition site and cut positions. Instance Variables: site <String> Recognition sequence. cut3 <Integer> 3-prime cut position. cut5 <Integer> 5-prime cut position.
+"
 Class {
 	#name : 'BioRestrictionEnzyme',
 	#superclass : 'BioNamedObject',

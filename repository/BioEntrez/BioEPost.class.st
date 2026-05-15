@@ -18,19 +18,21 @@ epost.fcgi?db=protein&id=15718680,157427902,119703751
 
 "
 Class {
-	#name : #BioEPost,
-	#superclass : #BioEWebEnvCmd,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioEPost',
+	#superclass : 'BioEWebEnvCmd',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEPost class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'epost.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEPost class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

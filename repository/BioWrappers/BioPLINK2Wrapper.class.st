@@ -2,12 +2,14 @@
 Wrapper for PLINK software version ""2"" (or 1.90 actually). See superclass for additional documentation.
 "
 Class {
-	#name : #BioPLINK2Wrapper,
-	#superclass : #BioPLINKWrapper,
-	#category : #'BioWrappers-Popgen'
+	#name : 'BioPLINK2Wrapper',
+	#superclass : 'BioPLINKWrapper',
+	#category : 'BioWrappers-Popgen',
+	#package : 'BioWrappers',
+	#tag : 'Popgen'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPLINK2Wrapper class >> example01 [
 
 	BioPLINKWrapper new 
@@ -17,7 +19,7 @@ BioPLINK2Wrapper class >> example01 [
 		execute.
 ]
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPLINK2Wrapper class >> example02 [
 
 	BioPLINK2Wrapper new
@@ -28,21 +30,21 @@ BioPLINK2Wrapper class >> example02 [
 		execute.
 ]
 
-{ #category : #programs }
+{ #category : 'programs' }
 BioPLINK2Wrapper class >> plink [
 	" Answer a <String> with the command line name "
 
 	^ 'plink2'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPLINK2Wrapper class >> softwareName [
 	" See superimplementor's comment "
 
 	^ 'PLINK2'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPLINK2Wrapper class >> url [
 	" See superimplementor's comment "
 

@@ -17,19 +17,21 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=unists&id=254085,2
 http://www.ncbi.nlm.nih.gov/corehtml/query/static/esummary_help.html
 "
 Class {
-	#name : #BioESummary,
-	#superclass : #BioEntrezCommand,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioESummary',
+	#superclass : 'BioEntrezCommand',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioESummary class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'esummary.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioESummary class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

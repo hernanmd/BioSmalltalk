@@ -1,3 +1,6 @@
+"
+Formatter for restriction enzyme maps. Extends BioSequenceFormatter to output restriction site locations on a sequence.
+"
 Class {
 	#name : 'BioRestrictionMapFormatter',
 	#superclass : 'BioSequenceFormatter',

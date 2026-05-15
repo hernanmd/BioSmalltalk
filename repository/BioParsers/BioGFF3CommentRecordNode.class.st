@@ -1,3 +1,6 @@
+"
+Represents a comment line node in a GFF3 file parse tree. Holds the comment text. Instance Variables: text <String> The comment text content.
+"
 Class {
 	#name : 'BioGFF3CommentRecordNode',
 	#superclass : 'BioGFF3GFF3FileNode',

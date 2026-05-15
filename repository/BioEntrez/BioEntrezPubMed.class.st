@@ -18,12 +18,14 @@ This class is not intended to be used directly.
 See BioEntrezClient.
 "
 Class {
-	#name : #BioEntrezPubMed,
-	#superclass : #BioELitDatabase,
-	#category : 'BioEntrez-Databases'
+	#name : 'BioEntrezPubMed',
+	#superclass : 'BioELitDatabase',
+	#category : 'BioEntrez-Databases',
+	#package : 'BioEntrez',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezPubMed class >> dbName [
 	" See superimplementor's comment "
 	
@@ -31,14 +33,14 @@ BioEntrezPubMed class >> dbName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezPubMed >> fields [
 	" See http://www.ncbi.nlm.nih.gov/corehtml/query/static/esearch_help.html for details "
 
 	^ #( 'affl' 'auth' 'ecno' 'jour' 'iss' 'mesh' 'majr' 'mhda' 'page' 'pdat' 'ptyp' 'si' 'subs' 'subh' 'tiab' 'word' 'titl' 'lang' 'uid' 'fltr' 'vol')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezPubMed >> rettypeFields [
 	" See 
 	http://www.ncbi.nlm.nih.gov/books/NBK25499/#chapter4.EFetch

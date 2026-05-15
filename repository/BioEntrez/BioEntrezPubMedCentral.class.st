@@ -10,12 +10,14 @@ License filters are described in : http://www.ncbi.nlm.nih.gov/pmc/tools/openftl
 
 "
 Class {
-	#name : #BioEntrezPubMedCentral,
-	#superclass : #BioELitDatabase,
-	#category : 'BioEntrez-Databases'
+	#name : 'BioEntrezPubMedCentral',
+	#superclass : 'BioELitDatabase',
+	#category : 'BioEntrez-Databases',
+	#package : 'BioEntrez',
+	#tag : 'Databases'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezPubMedCentral class >> dbName [
 	" See superimplementor's comment "
 	
@@ -23,49 +25,49 @@ BioEntrezPubMedCentral class >> dbName [
 
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termAnyCCLicense [
 	" Any CC license "
 
 	^ self term: 'cc+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCByLicense [
 	" CC BY (Attribution) "
 
 	^ self term: 'cc+by+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCByNCLicense [
 	" Attribution, noncommercial "
 
 	^ self term: 'cc+by-nc+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCByNCNDLicense [
 	" Attribution, noncommercial, no derivatives "
 
 	^ self term:  'cc+by-nc-nd+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCByNCSALicense [
 	" Attribution, noncommercial, share-alike "
 
 	^ self term: 'cc+by-nc-sa+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCByNDLicense [
 	" Attribution, no derivatives "
 
 	^ self term:  'cc+by-nd+license[filter]'
 ]
 
-{ #category : #'accessing - filters' }
+{ #category : 'accessing - filters' }
 BioEntrezPubMedCentral >> termCCBySALicense [
 	" Public domain "
 

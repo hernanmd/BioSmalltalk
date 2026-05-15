@@ -1,36 +1,41 @@
+"
+Test class for BioNCBIBlastClient. Validates NCBI BLAST client query submission and result retrieval.
+"
 Class {
-	#name : #BioNCBIBlastClientTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioNCBIBlastClientTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'ncbiClient'
 	],
-	#category : #'BioBlastTests-Core'
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastClientTest >> ncbiClient [
 	^ ncbiClient
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastClientTest >> ncbiClient: anObject [
 	ncbiClient := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastClientTest >> newNCBIClient [
 
 	^ BioNCBIWebBlastWrapper new
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastClientTest >> setUp [
 
 	super setUp.
 	ncbiClient := self newNCBIClient.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test01InterfacesClientAccess [
 	| blastInterface |
 	blastInterface := BioBlastWrapper.
@@ -41,7 +46,7 @@ BioNCBIBlastClientTest >> test01InterfacesClientAccess [
 	self assert: blastInterface ncbi remote equals: BioNCBIWebBlastWrapper
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test02LatestLocalClientAccess [
 
 	| blastInterface |
@@ -60,7 +65,7 @@ BioNCBIBlastClientTest >> test02LatestLocalClientAccess [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test02LegacyLocalClientAccess [
 
 	| blastInterface |
@@ -84,7 +89,7 @@ BioNCBIBlastClientTest >> test02LegacyLocalClientAccess [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test03PutSettings [
 
 	| cmd |
@@ -107,7 +112,7 @@ BioNCBIBlastClientTest >> test03PutSettings [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test04GetSettings [
 
 	self assert: (self ncbiClient get isKindOf: BioNCBIGet).
@@ -115,7 +120,7 @@ BioNCBIBlastClientTest >> test04GetSettings [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> test04PutSettings [
 
 	| cmd |
@@ -151,7 +156,7 @@ BioNCBIBlastClientTest >> test04PutSettings [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> testCreation [
 
 	self assert: (self ncbiClient isKindOf: BioNCBIWebBlastWrapper).
@@ -159,7 +164,7 @@ BioNCBIBlastClientTest >> testCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastClientTest >> testSettings [
 
 	| cmd |

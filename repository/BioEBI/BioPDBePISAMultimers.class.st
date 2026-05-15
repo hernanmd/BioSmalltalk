@@ -1,10 +1,15 @@
+"
+Client for PDBe PISA multimer data. Extends BioDBObject with methods to access protein assembly multimer predictions.
+"
 Class {
-	#name : #BioPDBePISAMultimers,
-	#superclass : #BioDBObject,
-	#category : 'BioEBI-PDBePISA'
+	#name : 'BioPDBePISAMultimers',
+	#superclass : 'BioDBObject',
+	#category : 'BioEBI-PDBePISA',
+	#package : 'BioEBI',
+	#tag : 'PDBePISA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAMultimers class >> dbName [
 	" See superimplementor's comment "
 	
@@ -12,13 +17,13 @@ BioPDBePISAMultimers class >> dbName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAMultimers >> idCollectionClass [
 
 	^ BioPDBePISACollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAMultimers >> pdbCodes: aCollection [
 	" Set the receiver PDB codes "
 

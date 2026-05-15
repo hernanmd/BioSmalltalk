@@ -1,10 +1,15 @@
+"
+Wrapper for PLINK version 1 population genetics tool. Extends BioPLINKWrapper with PLINK1-specific option handling.
+"
 Class {
-	#name : #BioPLINK1Wrapper,
-	#superclass : #BioPLINKWrapper,
-	#category : #'BioWrappers-Popgen'
+	#name : 'BioPLINK1Wrapper',
+	#superclass : 'BioPLINKWrapper',
+	#category : 'BioWrappers-Popgen',
+	#package : 'BioWrappers',
+	#tag : 'Popgen'
 }
 
-{ #category : #examples }
+{ #category : 'examples' }
 BioPLINK1Wrapper class >> example1 [
 
 	BioPLINKWrapper new 
@@ -15,21 +20,21 @@ BioPLINK1Wrapper class >> example1 [
 		execute.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPLINK1Wrapper class >> softwareName [
 	" See superimplementor's comment "
 
 	^ 'PLINK'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPLINK1Wrapper class >> url [
 	" See superimplementor's comment "
 
 	^ 'http://web.archive.org/web/20160829192650/http://pngu.mgh.harvard.edu/~purcell/plink/index.shtml'
 ]
 
-{ #category : #options }
+{ #category : 'options' }
 BioPLINK1Wrapper >> noWeb [
 	" Add noweb option to PLINK "
 

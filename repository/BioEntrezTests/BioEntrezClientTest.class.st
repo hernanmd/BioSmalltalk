@@ -1,34 +1,39 @@
+"
+Test class for BioEntrezClient. Validates Entrez client query construction and result retrieval behavior.
+"
 Class {
-	#name : #BioEntrezClientTest,
-	#superclass : #BioAbstractTest,
+	#name : 'BioEntrezClientTest',
+	#superclass : 'BioAbstractTest',
 	#instVars : [
 		'entrezClient'
 	],
-	#category : 'BioEntrezTests-Core'
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezClientTest >> entrezClient [
 	"Answer the value of entrezClient"
 
 	^ entrezClient
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezClientTest >> entrezClient: anObject [
 	"Set the value of entrezClient"
 
 	entrezClient := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezClientTest >> setUp [
 
 	super setUp.
 	entrezClient := BioEntrezClient new.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testCreation [
 
 	self assert: (self entrezClient isKindOf: BioEntrezClient).
@@ -36,7 +41,7 @@ BioEntrezClientTest >> testCreation [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDatabaseSetting [
 
 	self assert: ( self entrezClient biosystems isKindOf: BioEntrezBioSystems ).
@@ -79,7 +84,7 @@ BioEntrezClientTest >> testDatabaseSetting [
 	self assert: ( self entrezClient unists isKindOf: BioEntrezUniSTS ).
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDbClassOf [
 	self
 		assert: (BioEntrezDatabase dbClassOf: 'nuccore')
@@ -89,7 +94,7 @@ BioEntrezClientTest >> testDbClassOf [
 		equals: BioEntrezSample
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDescription [
 
 	self entrezClient: BioEntrezClient new nuccore.
@@ -99,7 +104,7 @@ BioEntrezClientTest >> testDescription [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDisplayDefault [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient displayDefault.
@@ -108,7 +113,7 @@ BioEntrezClientTest >> testDisplayDefault [
 		equals: '0'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDisplayMinimalBioseq [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient displayMinimalBioseq.
@@ -117,7 +122,7 @@ BioEntrezClientTest >> testDisplayMinimalBioseq [
 		equals: '2'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDisplayMinimalNucProt [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient displayMinimalNucProt.
@@ -126,7 +131,7 @@ BioEntrezClientTest >> testDisplayMinimalNucProt [
 		equals: '3'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDisplayMinimalPubSet [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient displayMinimalPubSet.
@@ -135,7 +140,7 @@ BioEntrezClientTest >> testDisplayMinimalPubSet [
 		equals: '4'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testDisplayWholeBlob [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient displayWholeBlob.
@@ -144,7 +149,7 @@ BioEntrezClientTest >> testDisplayWholeBlob [
 		equals: '0'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testFields [
 
 	self entrezClient: BioEntrezClient new pubmed.
@@ -154,7 +159,7 @@ BioEntrezClientTest >> testFields [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testRettypeFields [
 
 	self entrezClient: BioEntrezClient new pubmed.
@@ -164,7 +169,7 @@ BioEntrezClientTest >> testRettypeFields [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSeqStart [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient seqStart: 1.
@@ -173,7 +178,7 @@ BioEntrezClientTest >> testSeqStart [
 		equals: '1'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSeqStop [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient seqStop: 1.
@@ -182,7 +187,7 @@ BioEntrezClientTest >> testSeqStop [
 		equals: '1'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetASN1 [
 	| db |
 	db := self entrezClient nuccore uids: #(12800).
@@ -191,7 +196,7 @@ BioEntrezClientTest >> testSetASN1 [
 	self assert: (db url valueForParameter: 'retmode') equals: 'asn.1'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetEst [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient setEst.
@@ -200,7 +205,7 @@ BioEntrezClientTest >> testSetEst [
 		equals: 'est'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetFasta [
 	self entrezClient: BioEntrezClient new nuccore.
 	self entrezClient setFasta.
@@ -209,7 +214,7 @@ BioEntrezClientTest >> testSetFasta [
 		equals: 'fasta'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetGb [
 	self entrezClient: BioEntrezClient new nuccore.
 	self entrezClient setGb.
@@ -218,7 +223,7 @@ BioEntrezClientTest >> testSetGb [
 		equals: 'gb'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetGp [
 	self entrezClient: BioEntrezClient new protein.
 	self entrezClient setGp.
@@ -231,7 +236,7 @@ BioEntrezClientTest >> testSetGp [
 		equals: 'gpc'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetGss [
 	self entrezClient: BioEntrezClient new nucgss.
 	self entrezClient setGss.
@@ -240,7 +245,7 @@ BioEntrezClientTest >> testSetGss [
 		equals: 'gss'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetHTML [
 
 	| db |
@@ -251,7 +256,7 @@ BioEntrezClientTest >> testSetHTML [
 	self assert: (db url valueForParameter: 'retmode') equals: 'html'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetTerm [
 	self entrezClient: BioEntrezClient new nuccore.
 	self entrezClient term: 'Opuntia AND rpl16'.
@@ -260,7 +265,7 @@ BioEntrezClientTest >> testSetTerm [
 		equals: 'Opuntia AND rpl16'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetText [
 
 	| db |
@@ -271,7 +276,7 @@ BioEntrezClientTest >> testSetText [
 	self assert: (db url valueForParameter: 'retmode') equals: 'text'.	
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testSetXML [
 
 	| db |
@@ -282,7 +287,7 @@ BioEntrezClientTest >> testSetXML [
 	self assert: (db url valueForParameter: 'retmode') equals: 'xml'.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testStrandMinus [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient strandMinus.
@@ -291,7 +296,7 @@ BioEntrezClientTest >> testStrandMinus [
 		equals: '2'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testStrandPlus [
 	self entrezClient: BioEntrezClient new nucest.
 	self entrezClient strandPlus.
@@ -300,7 +305,7 @@ BioEntrezClientTest >> testStrandPlus [
 		equals: '1'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testUrlAccess [
 
 	| db |
@@ -313,7 +318,7 @@ BioEntrezClientTest >> testUrlAccess [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEntrezClientTest >> testValidParameters [
 
 	self assert: ( BioEFetchCmd validParameters isKindOf: Collection ).

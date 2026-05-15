@@ -1,6 +1,6 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*BioPlots' }
+{ #category : '*BioPlots' }
 String >> addFromRSBuilder: aBioRSBaseBuilder rowIndex: anInteger [ 
 
 	aBioRSBaseBuilder addSequenceString: self rowIndex: anInteger

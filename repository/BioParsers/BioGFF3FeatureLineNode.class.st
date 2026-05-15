@@ -1,3 +1,6 @@
+"
+Parse tree node representing a single GFF3 feature line. Holds the parsed fields from a feature line. Instance Variables: seqid <String> source <String> type <String> start <String> end <String> score <String> strand <String> phase <String> attributes <String>
+"
 Class {
 	#name : 'BioGFF3FeatureLineNode',
 	#superclass : 'BioGFF3GFF3FileNode',

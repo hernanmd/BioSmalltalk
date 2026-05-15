@@ -1,3 +1,6 @@
+"
+Test class for BioAmbiguousBaseParser. Validates parsing of degenerate (ambiguous) DNA base notation.
+"
 Class {
 	#name : 'BioDegenerateBaseParserTest',
 	#superclass : 'BioAbstractParserTest',

@@ -1,6 +1,6 @@
-Extension { #name : #Dictionary }
+Extension { #name : 'Dictionary' }
 
-{ #category : #'*BioEntrez' }
+{ #category : '*BioEntrez' }
 Dictionary >> features [
 
 	^ self keys

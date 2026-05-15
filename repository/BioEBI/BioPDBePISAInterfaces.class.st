@@ -1,10 +1,15 @@
+"
+Client for PDBe PISA interfaces data. Extends BioDBObject with methods to access protein-protein interface predictions.
+"
 Class {
-	#name : #BioPDBePISAInterfaces,
-	#superclass : #BioDBObject,
-	#category : 'BioEBI-PDBePISA'
+	#name : 'BioPDBePISAInterfaces',
+	#superclass : 'BioDBObject',
+	#category : 'BioEBI-PDBePISA',
+	#package : 'BioEBI',
+	#tag : 'PDBePISA'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAInterfaces class >> dbName [
 	" See superimplementor's comment "
 	
@@ -12,13 +17,13 @@ BioPDBePISAInterfaces class >> dbName [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAInterfaces >> idCollectionClass [
 
 	^ BioPDBePISACollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioPDBePISAInterfaces >> pdbCodes: aCollection [
 	" Set the receiver PDB codes "
 

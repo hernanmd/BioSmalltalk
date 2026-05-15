@@ -3,12 +3,14 @@ Used for cancelled queries
 
 "
 Class {
-	#name : #BioBlastNullFilter,
-	#superclass : #BioFilter,
-	#category : 'BioBlast-Local'
+	#name : 'BioBlastNullFilter',
+	#superclass : 'BioFilter',
+	#category : 'BioBlast-Local',
+	#package : 'BioBlast',
+	#tag : 'Local'
 }
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioBlastNullFilter >> hasNewResults [
 	" Answer <false> since receiver is a null filter "
 

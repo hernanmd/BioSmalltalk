@@ -1,3 +1,6 @@
+"
+Represents a single FASTQ record containing an identifier, description, sequence, and quality string. Instance Variables: id <String> Record identifier. description <String> Description line. sequence <String> Nucleotide or protein sequence. quality <String> Quality scores.
+"
 Class {
 	#name : 'BioFASTQRecord',
 	#superclass : 'BioNamedObject',

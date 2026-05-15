@@ -1,3 +1,6 @@
+"
+Parsers identifiers in Accession format (accession number only, without locus). Handles parsing of the accession component from NCBI identifier strings.
+"
 Class {
 	#name : 'BioAccessionParser',
 	#superclass : 'BioNCBIIdParser',

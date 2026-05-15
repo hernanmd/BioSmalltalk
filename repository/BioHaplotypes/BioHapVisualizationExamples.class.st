@@ -1,10 +1,15 @@
+"
+Contains example scripts for visualizing haplotype data using the Roassal visualization engine.
+"
 Class {
-	#name : #BioHapVisualizationExamples,
-	#superclass : #BioObject,
-	#category : 'BioHaplotypes-Examples'
+	#name : 'BioHapVisualizationExamples',
+	#superclass : 'BioObject',
+	#category : 'BioHaplotypes-Examples',
+	#package : 'BioHaplotypes',
+	#tag : 'Examples'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHapVisualizationExamples class >> example01 [
 	" Example using two blocks "
 	
@@ -31,7 +36,7 @@ BioHapVisualizationExamples class >> example01 [
 		open.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioHapVisualizationExamples class >> newBuilderWithTitle: aString [
 
 	(Smalltalk hasClassNamed: #RTDowserBuilder)

@@ -1,3 +1,6 @@
+"
+Represents a genomic range on a named sequence with strand and metadata. Extends BioObject with IRanges-compatible range operations. Instance Variables: seqname <String> Sequence name. irange <BioIRanges> The interval range. strand <BioStrand> Strand orientation. metadata <Dictionary> Additional metadata.
+"
 Class {
 	#name : 'BioGenomicRange',
 	#superclass : 'BioObject',

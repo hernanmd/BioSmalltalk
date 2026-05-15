@@ -10,9 +10,9 @@ Class {
 	#instVars : [
 		'genotypes'
 	],
-	#category : 'BioTools-Biological',
+	#category : 'BioTools-Collections',
 	#package : 'BioTools',
-	#tag : 'Biological'
+	#tag : 'Collections'
 }
 
 { #category : 'instance creation' }

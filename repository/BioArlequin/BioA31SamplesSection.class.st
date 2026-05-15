@@ -1,41 +1,46 @@
+"
+Represents the Samples section of an Arlequin 3.1 input file. Manages the collection of sample definitions including their writing and private construction.
+"
 Class {
-	#name : #BioA31SamplesSection,
-	#superclass : #BioA31INISection,
-	#category : #'BioArlequin-Sections'
+	#name : 'BioA31SamplesSection',
+	#superclass : 'BioA31INISection',
+	#category : 'BioArlequin-Sections',
+	#package : 'BioArlequin',
+	#tag : 'Sections'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> matches: anObject [
 
 	^ anObject isInteger or: [ anObject = self notationSection ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> notation [
 	" Answer a String describing the receiver's section identifier "
 	
 	^ '[Samples]'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> sampleDataId [
 
 	^ 'SampleData' -> 'A list of haplotypes or genotypes and their frequencies as found in the sample, entered within braces. If the data type is set to FREQUENCY, one must only specify for each haplotype its identifier (a string of characters without blanks) and its sample frequency (either relative or absolute). In this case the haplotype should not be defined'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> sampleNameId [
 
 	^ 'SampleName' -> 'A name for each sample (This name will be used in the Structure sub-section to identify the different samples, which are part of a given genetic structure to test)'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> sampleSizeId [
 
 	^ 'SampleSize' -> 'The size of the sample (For haplotypic data, the sample size is equal to the haploid sample size. For genotypic data, the sample size should be equal to the number of diploid individuals present in the sample. When absolute frequencies are entered, the size of each sample will be checked against the sum of all haplotypic frequencies will check. If a discrepancy is found, a Warning message is issued in the log file, and the sample size is set to the sum of haplotype frequencies. When relative frequencies are specified, no such check is possible, and the sample size is used to convert relative frequencies to absolute frequencies'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection class >> sectionSpecs [
 	" Answer a Collection with raw data related with the Arlequin input format "
 	
@@ -45,7 +50,7 @@ BioA31SamplesSection class >> sectionSpecs [
 		with: (BioA31Spec newTitle: self sampleDataId isMandatory: true defaultValue: String new format: '{}')
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> addDNAGroups: groupCollection [
 
 	groupCollection do: [ : group |
@@ -54,7 +59,7 @@ BioA31SamplesSection >> addDNAGroups: groupCollection [
 			title: group name ].
 ]
 
-{ #category : #samples }
+{ #category : 'samples' }
 BioA31SamplesSection >> addSampleData: aSampleCollection [
 	" Add aSampleCollection to the receiver "
 
@@ -66,7 +71,7 @@ BioA31SamplesSection >> addSampleData: aSampleCollection [
 
 ]
 
-{ #category : #samples }
+{ #category : 'samples' }
 BioA31SamplesSection >> addSampleName: aString [
 	" Add a sample named aString to the receiver "
 
@@ -78,7 +83,7 @@ BioA31SamplesSection >> addSampleName: aString [
 
 ]
 
-{ #category : #samples }
+{ #category : 'samples' }
 BioA31SamplesSection >> addSampleSize: aNumber [
 
 	self iniFile 
@@ -87,7 +92,7 @@ BioA31SamplesSection >> addSampleSize: aNumber [
 		put: aNumber asString	
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> addSamples: aBioA31SampleCollection [ 
 	" Add populations to the receiver from aBioaBioA31SampleCollection "
 
@@ -98,7 +103,7 @@ BioA31SamplesSection >> addSamples: aBioA31SampleCollection [
 			addSampleData: sample sequence ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> at: keyString put: valueString [
 
 	" Specialized to support non-unique entries in a section "
@@ -111,7 +116,7 @@ BioA31SamplesSection >> at: keyString put: valueString [
 		  put: valueString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> buildDNASample: params title: groupTitle [
 
 	| bioA31SamplesSection |
@@ -128,21 +133,21 @@ BioA31SamplesSection >> buildDNASample: params title: groupTitle [
 			yourself.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> newSampleKeyNumber [
 	"Answer the value of sampleKeyNumber"
 
 	^ self iniFile newSampleKey
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31SamplesSection >> sampleKeyNumber [
 	"Answer the value of sampleKeyNumber"
 
 	^ self iniFile sampleKeyNumber
 ]
 
-{ #category : #writing }
+{ #category : 'writing' }
 BioA31SamplesSection >> writeLabelOn: aStream [
 	(self shouldWriteLabelOn: aStream)
 		ifTrue: [ 
@@ -154,7 +159,7 @@ BioA31SamplesSection >> writeLabelOn: aStream [
 				nextPut: Character cr ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 BioA31SamplesSection >> writeOn: aStream [
 	" Write the receiver's section on aStream "
 

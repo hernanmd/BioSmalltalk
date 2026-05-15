@@ -1,3 +1,6 @@
+"
+Represents a single FASTA record with an identifier list and sequence. Extends BioNamedObject with sequence-specific comparison and conversion behavior. Instance Variables: sequence <String> The sequence string. identifiers <Collection> List of identifiers for this record.
+"
 Class {
 	#name : 'BioFastaRecord',
 	#superclass : 'BioNamedObject',

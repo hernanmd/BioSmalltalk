@@ -1,3 +1,6 @@
+"
+Abstract test class for BioSequence and its subclasses. Provides shared sequence fixtures and common assertion methods for sequence test classes.
+"
 Class {
 	#name : 'BioAbstractSequenceTest',
 	#superclass : 'BioAbstractTest',

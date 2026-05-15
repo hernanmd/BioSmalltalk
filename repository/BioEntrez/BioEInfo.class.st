@@ -32,19 +32,21 @@ http://eutils.ncbi.nlm.nih.gov/entrez/eutils/einfo.fcgi?db=protein&version=2.0
 
 "
 Class {
-	#name : #BioEInfo,
-	#superclass : #BioEntrezCommand,
-	#category : 'BioEntrez-Commands'
+	#name : 'BioEInfo',
+	#superclass : 'BioEntrezCommand',
+	#category : 'BioEntrez-Commands',
+	#package : 'BioEntrez',
+	#tag : 'Commands'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioEInfo class >> baseUrl [
 	" Private - See superimplementor's comment "
 	
 	^ 'einfo.fcgi'
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioEInfo class >> validParameters [
 	" Private - See superimplementor´s comment "
 	

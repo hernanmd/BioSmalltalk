@@ -1,1 +1,1 @@
-Package { #name : #BioClassifierTests }
+Package { #name : 'BioClassifierTests' }

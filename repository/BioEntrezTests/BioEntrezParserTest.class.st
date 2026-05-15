@@ -1,10 +1,15 @@
+"
+Test class for Entrez XML parsers. Validates parsing of Entrez query results.
+"
 Class {
-	#name : #BioEntrezParserTest,
-	#superclass : #BioAbstractTest,
-	#category : 'BioEntrezTests-Core'
+	#name : 'BioEntrezParserTest',
+	#superclass : 'BioAbstractTest',
+	#category : 'BioEntrezTests-Core',
+	#package : 'BioEntrezTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezParserTest >> eResults01 [
 	" Private - Sample ESearch Output 01 "
 	^ '<?xml version="1.0" ?>
@@ -14,7 +19,7 @@ BioEntrezParserTest >> eResults01 [
 	</IdList><TranslationSet/><QueryTranslation>AF288373.2</QueryTranslation></eSearchResult>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezParserTest >> eResults02 [
 	" Private - Sample ESearch Output 02 "
 	^ '<?xml version="1.0" ?>
@@ -67,7 +72,7 @@ BioEntrezParserTest >> eResults02 [
 </eSearchResult>'
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezParserTest >> testKeys01 [
 
 	| keys |
@@ -76,7 +81,7 @@ BioEntrezParserTest >> testKeys01 [
 	self assert: ( keys bioHasEqualElements:  #('eSearchResult' 'Count' 'RetMax' 'RetStart' 'QueryKey' 'WebEnv' 'IdList' 'Id' 'TranslationSet' 'QueryTranslation') )
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioEntrezParserTest >> testKeys02 [
 
 	| keys |

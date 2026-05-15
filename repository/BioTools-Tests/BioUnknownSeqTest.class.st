@@ -1,3 +1,6 @@
+"
+Test class for BioUnknownSeq. Validates unknown sequence length handling and behavior.
+"
 Class {
 	#name : 'BioUnknownSeqTest',
 	#superclass : 'BioAbstractSequenceTest',

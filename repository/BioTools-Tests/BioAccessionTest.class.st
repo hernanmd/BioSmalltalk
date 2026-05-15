@@ -1,3 +1,6 @@
+"
+Test class for BioAccession. Validates accession number representation and behavior.
+"
 Class {
 	#name : 'BioAccessionTest',
 	#superclass : 'BioAbstractTest',

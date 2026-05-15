@@ -1,3 +1,6 @@
+"
+Test class for BioGenomicRanges and BioGenomicRange. Validates genomic range construction, strand handling, and filtering operations.
+"
 Class {
 	#name : 'BioGenomicRangesTest',
 	#superclass : 'TestCase',

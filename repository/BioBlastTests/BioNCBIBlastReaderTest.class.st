@@ -1,26 +1,31 @@
+"
+Test class for BioNCBIBlastReader. Validates BLAST result reading and hit extraction behavior.
+"
 Class {
-	#name : #BioNCBIBlastReaderTest,
-	#superclass : #BioNCBITests,
+	#name : 'BioNCBIBlastReaderTest',
+	#superclass : 'BioNCBITests',
 	#instVars : [
 		'reader'
 	],
-	#category : #'BioBlastTests-Core'
+	#category : 'BioBlastTests-Core',
+	#package : 'BioBlastTests',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReaderTest >> blastResultsSample02 [
 
 	^ BioWebBlastSamples new blastResultsSample02.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNCBIBlastReaderTest >> setUp [
 
 	super setUp.
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessBlastReader01 [
 	" Accessing information about the BLAST "
 
@@ -39,7 +44,7 @@ BioNCBIBlastReaderTest >> testAccessBlastReader01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessBlastReader02 [
 	" Accessing meta-information about the BLAST "
 
@@ -53,7 +58,7 @@ BioNCBIBlastReaderTest >> testAccessBlastReader02 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessBlastReader03 [
 	" Accessing information about the BLAST "
 
@@ -86,7 +91,7 @@ BioNCBIBlastReaderTest >> testAccessBlastReader03 [
 	self assert: reader identities size equals: 100
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessDNAAlignments01 [
 
 	| alignment |
@@ -104,7 +109,7 @@ BioNCBIBlastReaderTest >> testAccessDNAAlignments01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessFilter [
 
 	| emptyFilter |
@@ -116,7 +121,7 @@ BioNCBIBlastReaderTest >> testAccessFilter [
 	self assert: emptyFilter contents isNil.
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessFilterBlastReader01 [
 
 	| ft |
@@ -135,7 +140,7 @@ BioNCBIBlastReaderTest >> testAccessFilterBlastReader01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessFilterBlastReader02 [
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
@@ -148,7 +153,7 @@ BioNCBIBlastReaderTest >> testAccessFilterBlastReader02 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessNode [
 
 	| nodeContents |
@@ -167,7 +172,7 @@ BioNCBIBlastReaderTest >> testAccessNode [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAccessProteinAlignments01 [
 
 	| alignments |
@@ -184,7 +189,7 @@ BioNCBIBlastReaderTest >> testAccessProteinAlignments01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testAddFilterBlastReader01 [
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.
@@ -201,7 +206,7 @@ BioNCBIBlastReaderTest >> testAddFilterBlastReader01 [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testFilterBlastReader01 [
 
 	| hits |
@@ -219,7 +224,7 @@ BioNCBIBlastReaderTest >> testFilterBlastReader01 [
 	self assert: hits first nodes isCollection
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testGiList [
 	| giList |
 	giList := (BioNCBIBlastReader newFromXML: self resultBlastp01) giList.
@@ -233,7 +238,7 @@ BioNCBIBlastReaderTest >> testGiList [
 					#('116414' '227369' '544028' '118083358' '326912741' '348530520' '130498679' '292622140' '47221590' '348526341'))
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testHasContents [
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.	
@@ -243,7 +248,7 @@ BioNCBIBlastReaderTest >> testHasContents [
 
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 BioNCBIBlastReaderTest >> testNewBlastReader01 [
 
 	reader := BioNCBIBlastReader newFromXML: self blastResultsSample02.

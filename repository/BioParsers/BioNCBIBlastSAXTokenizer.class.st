@@ -1,3 +1,6 @@
+"
+Tokenizer extension for NCBI BLAST SAX parsing. Adds BLAST-specific content handling to the base SAX parser.
+"
 Class {
 	#name : 'BioNCBIBlastSAXTokenizer',
 	#superclass : 'BioNCBIBlastSAXParser',

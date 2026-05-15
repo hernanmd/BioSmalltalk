@@ -1,9 +1,12 @@
+"
+Represents the quality encoding scheme for sequencing quality scores (e.g. Phred+33 Sanger Illumina).
+"
 Class {
 	#name : 'BioQualityEncoding',
 	#superclass : 'Object',
-	#category : 'BioTools-Biological',
-	#package : 'BioTools',
-	#tag : 'Biological'
+	#category : 'BioNGS-Illumina',
+	#package : 'BioNGS',
+	#tag : 'Illumina'
 }
 
 { #category : 'as yet unclassified' }

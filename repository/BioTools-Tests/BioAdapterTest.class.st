@@ -1,3 +1,6 @@
+"
+Test class for BioAbstractAdapter. Validates adapter behavior including provider lookup and delegation.
+"
 Class {
 	#name : 'BioAdapterTest',
 	#superclass : 'BioAbstractTest',

@@ -1,3 +1,6 @@
+"
+Represents a collection of integer ranges with start positions, end positions, and optional names. Similar to Bioconductor IRanges. Instance Variables: starts <Array> Start positions. ends <Array> End positions. names <Array> Range names.
+"
 Class {
 	#name : 'BioIRanges',
 	#superclass : 'BioObject',
@@ -38,9 +41,10 @@ BioIRanges class >> starts: startCollection widths: widthCollection [
 { #category : 'accessing' }
 BioIRanges >> at: anIndex [
 	"Return a single-range IRanges."
+
 	^ BioIRanges
-		starts: { self startAt: anIndex }
-		ends: { self endAt: anIndex }
+		  starts: { (self startAt: anIndex) }
+		  ends: { (self endAt: anIndex) }
 ]
 
 { #category : 'accessing' }
@@ -66,17 +70,20 @@ BioIRanges >> ends [
 
 { #category : 'accessing' }
 BioIRanges >> ends: aCollection [
+
 	| arr |
 	arr := aCollection asArray.
 	(starts notNil and: [ starts size ~= arr size ]) ifTrue: [
 		self error: 'Starts and ends must have same size' ].
 	1 to: arr size do: [ :i |
-		((arr at: i) < (starts at: i)) ifTrue: [ self error: 'End cannot be less than start' ] ].
+			(arr at: i) < (starts at: i) ifTrue: [
+				self error: 'End cannot be less than start' ] ].
 	ends := arr
 ]
 
 { #category : 'accessing' }
 BioIRanges >> isEmpty [
+
 	^ self size = 0
 ]
 
@@ -138,6 +145,7 @@ BioIRanges >> starts: aCollection [
 
 { #category : 'accessing' }
 BioIRanges >> width [
+
 	| out |
 	out := Array new: self size.
 	1 to: self size do: [ :i | out at: i put: (self widthAt: i) ].
@@ -146,5 +154,6 @@ BioIRanges >> width [
 
 { #category : 'accessing' }
 BioIRanges >> widthAt: anIndex [
+
 	^ (self endAt: anIndex) - (self startAt: anIndex) + 1
 ]

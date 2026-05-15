@@ -4,19 +4,21 @@ Genomic DNA sequence released by the International Chicken Genome Sequencing Con
 The NCBI reference sequence for the mitochondrial genome was also included in the reference assembly.
 "
 Class {
-	#name : #BioGallusGallusGD,
-	#superclass : #BioNCBIChrGD,
-	#category : #'BioNCBI-Genomes'
+	#name : 'BioGallusGallusGD',
+	#superclass : 'BioNCBIChrGD',
+	#category : 'BioNCBI-Genomes',
+	#package : 'BioNCBI',
+	#tag : 'Genomes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGallusGallusGD class >> maxChr [
 	" Answer maximum number of chromosomes for the receiver "
 	
 	^ 32
 ]
 
-{ #category : #downloading }
+{ #category : 'downloading' }
 BioGallusGallusGD >> defaultFileListPrefix [
 	" Private - See superimplementor's comment "
 	
@@ -24,7 +26,7 @@ BioGallusGallusGD >> defaultFileListPrefix [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioGallusGallusGD >> latestVersionFound [
 	" Private - See superimplementor's commemt "
 

@@ -1,34 +1,39 @@
+"
+Represents a microsatellite sample in the Arlequin 3.1 format. Stores microsatellite allele data with two alleles per locus. Instance Variables: allele1 <Collection> First allele values for each locus. allele2 <Collection> Second allele values for each locus.
+"
 Class {
-	#name : #BioA31MicrosatSample,
-	#superclass : #BioA31Sample,
+	#name : 'BioA31MicrosatSample',
+	#superclass : 'BioA31Sample',
 	#instVars : [
 		'allele1',
 		'allele2'
 	],
-	#category : 'BioArlequin-Sample'
+	#category : 'BioArlequin-Sample',
+	#package : 'BioArlequin',
+	#tag : 'Sample'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31MicrosatSample >> allele1 [
 	^ allele1
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31MicrosatSample >> allele1: anObject [
 	allele1 := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31MicrosatSample >> allele2 [
 	^ allele2
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31MicrosatSample >> allele2: anObject [
 	allele2 := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioA31MicrosatSample >> writeOn: aStream delimiter: aDelimiterCharacter [
 	" Write the receiver's data into aStream "
 

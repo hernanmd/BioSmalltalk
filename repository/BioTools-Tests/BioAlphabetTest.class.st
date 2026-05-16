@@ -4,9 +4,6 @@ Test class for BioAlphabet and its subclasses. Validates alphabet construction, 
 Class {
 	#name : 'BioAlphabetTest',
 	#superclass : 'BioAbstractTest',
-	#instVars : [
-		'alphabet'
-	],
 	#category : 'BioTools-Tests-Alphabets',
 	#package : 'BioTools-Tests',
 	#tag : 'Alphabets'
@@ -18,7 +15,7 @@ BioAlphabetTest >> testCanTranslateDNAAlphabe [
 	self assert: BioDNAAlphabet new canTranslate
 ]
 
-{ #category : 'test' }
+{ #category : 'tests' }
 BioAlphabetTest >> testCanTranslateIUPACProtein [
 
 	self deny: BioIUPACProtein new canTranslate 
@@ -72,7 +69,7 @@ BioAlphabetTest >> testIUPACUnambiguousRNACodes [
 	self assert: BioIUPACUnambiguousRNA new codes asSet equals: 'GAUC' asSet.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAlphabetTest >> testTranslation [
 
 	self assert: ( BioIUPACDNA		withAllSubclasses allSatisfy: [: alpha | alpha new canTranslate ] ).

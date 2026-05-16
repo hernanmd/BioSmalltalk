@@ -9,7 +9,7 @@ Class {
 	#tag : 'Biological'
 }
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testAddToAlignment [
 
 	| align1 |
@@ -23,7 +23,7 @@ BioStringTest >> testAddToAlignment [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testAsAminoacidLetter [
 
 	self assert: 'A' asAminoacidLetter = $A.
@@ -32,7 +32,7 @@ BioStringTest >> testAsAminoacidLetter [
 	self should: [ String empty asAminoacidLetter ] 	raise: BioException	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testAsLowercase [
 
 	self assert: (#('HOLA') asLowercase bioHasEqualElements: #('hola')).
@@ -44,7 +44,7 @@ BioStringTest >> testAsLowercase [
 	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testAsSequenceString [
 
 	self assert: '    ACTG ' asCondensedString equals: 'ACTG'.
@@ -64,7 +64,7 @@ ACTG
 		equals: 'ACTG'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testCopyUpToStartParenthesis [
 
 	self
@@ -82,7 +82,7 @@ BioStringTest >> testCopyUpToStartParenthesis [
 		equals: String empty
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testForAlphabet [
 
 	| seq1 seq2 seq3 |
@@ -106,7 +106,7 @@ BioStringTest >> testForAlphabet [
 	self assert: (seq3 alphabet isKindOf: BioIUPACUnambiguousDNA)
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testHasAmbiguousBases [
 
 	self assert: 'atgCtgAccR' hasAmbiguousDNABases.
@@ -116,7 +116,7 @@ BioStringTest >> testHasAmbiguousBases [
 	self assert: 'AUGCAUCAGRYAUCUGU' hasAmbiguousRNABases.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIncludesBeginWith [
 
 	self assert: ('the quick brown fox jums over the lazy dog' includesBeginWith: 'the').
@@ -128,7 +128,7 @@ BioStringTest >> testIncludesBeginWith [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIncludesBeginWithAnyOf [
 
 	self assert: ('the quick brown fox jums over the lazy dog' includesBeginWithAnyOf: #('the') ).
@@ -141,7 +141,7 @@ BioStringTest >> testIncludesBeginWithAnyOf [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIncludesLike [
 
 	| testString01 |
@@ -156,7 +156,7 @@ BioStringTest >> testIncludesLike [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIndicesOfAscii [
 
 	| ind1 ind2 |
@@ -173,7 +173,7 @@ BioStringTest >> testIndicesOfAscii [
 	self assertEmpty: ('' indicesOfCharacter: $-).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIsAllLetters [
 
 	self assert: 'AATGATCGATGCTAGTCGACA' isAllLetters.
@@ -184,7 +184,7 @@ BioStringTest >> testIsAllLetters [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testIsNumeric [
 
 	self assert: '123' isNumeric.
@@ -199,7 +199,7 @@ BioStringTest >> testIsNumeric [
 	self deny: '5.23e-6e' isNumeric.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioStringTest >> testStringAsFloat [
 
 	self assert: '123' asFloat isFloat.

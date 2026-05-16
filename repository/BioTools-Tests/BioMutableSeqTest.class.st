@@ -14,7 +14,7 @@ BioMutableSeqTest >> alphabetClass [
 	^ self shouldBeImplemented
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioMutableSeqTest >> testAppend [
 	| testMutSeq1 |
 	testMutSeq1 := BioMutableSeq new.
@@ -24,7 +24,7 @@ BioMutableSeqTest >> testAppend [
 	self assert: testMutSeq1 asString equals: 'ACTGACGTACACGT'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioMutableSeqTest >> testAsSequence [
 
 	| testMutSeq1 testSeq1 |
@@ -37,7 +37,7 @@ BioMutableSeqTest >> testAsSequence [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioMutableSeqTest >> testSetSequence [
 
 	| testMutSeq1 |

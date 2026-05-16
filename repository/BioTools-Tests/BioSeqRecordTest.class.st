@@ -12,7 +12,7 @@ Class {
 	#tag : 'Core'
 }
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testAnnotations [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -60,7 +60,7 @@ BioSeqRecordTest >> testAnnotations [
 		equals: 'New evidence'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testAnnotationsClass [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -70,7 +70,7 @@ BioSeqRecordTest >> testAnnotationsClass [
 	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testCopySeqFrom [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'MKQHKAMIVALIVICITAVVAALVTRKDLCEVHIRTGQTEVAVF').
@@ -83,7 +83,7 @@ BioSeqRecordTest >> testCopySeqFrom [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testCopySeqTo [
 
 	| editedSeqRecord |
@@ -99,7 +99,7 @@ BioSeqRecordTest >> testCopySeqTo [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testCreate [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -117,7 +117,7 @@ BioSeqRecordTest >> testCreate [
 	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testEquality [
 
 	| tmpSeqRecord |
@@ -137,7 +137,7 @@ BioSeqRecordTest >> testEquality [
 	self deny: tmpSeqRecord = seqRecord description: 'Test different id'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testLetterAnnotations [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -193,7 +193,7 @@ BioSeqRecordTest >> testLetterAnnotations [
 	self assert: seqRecord letterAnnotations size equals: 0
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testSequence [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').
@@ -202,7 +202,7 @@ BioSeqRecordTest >> testSequence [
 	self assert: seqRecord sequence asString equals: 'tcga'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSeqRecordTest >> testSetIdAndDescription [
 
 	seqRecord := BioSeqRecord new: (BioSequence newDNA: 'ACGT').

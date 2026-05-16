@@ -22,7 +22,7 @@ BioUnknownSeqTest >> setUp [
 	sequence := BioUnknownSeq new: 7
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testAlphabet [
 
 	self assert: (self sequence alphabet isKindOf: BioAlphabet).
@@ -34,35 +34,35 @@ BioUnknownSeqTest >> testAlphabet [
 	self assert: self sequence unknownLetter equals: $?
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testAsString [
 
 	self assert: self sequence asString equals: 'NNNNNNN'.
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testComplementary [
 
 	self assert: self sequence complementary equals: 'NNNNNNN'.
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testReversed [
 
 	self assert: self sequence reversed equals: 'NNNNNNN'.
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testSameSequence [
 
 	self assert: self sequence sameSequence equals: 'NNNNNNN'.
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testSize [
 
 	self assert: self sequence size equals: 7.
@@ -70,7 +70,7 @@ BioUnknownSeqTest >> testSize [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioUnknownSeqTest >> testUnknownLetter [
 
 	self assert: self sequence unknownLetter equals: $N.

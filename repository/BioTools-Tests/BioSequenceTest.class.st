@@ -15,14 +15,14 @@ BioSequenceTest >> alphabetClass [
 	^ BioAlphabet
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAccessionName [
 
 	self sequence accessionName: 'ABC234.1'.
 	self assert: self sequence accessionName equals: 'ABC234.1'.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAddSeqFeature [
 
 	| seqFeature |
@@ -32,7 +32,7 @@ BioSequenceTest >> testAddSeqFeature [
 	self assert: (self sequence sequenceFeatures includes: seqFeature).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAddToAlignment [ 
 
 	| align1 |
@@ -45,7 +45,7 @@ BioSequenceTest >> testAddToAlignment [
 	self assert: (align1 sequenceStrings includes: 'ACAGTAGCTAGC')
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAllButFirst [
 
 	| seqWithoutFirst seqStringWithoutFirst |
@@ -57,7 +57,7 @@ BioSequenceTest >> testAllButFirst [
 	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAllButLast [
 
 	| seqWithoutLast seqStringWithoutLast |
@@ -69,13 +69,13 @@ BioSequenceTest >> testAllButLast [
 	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAlphabet [
 
 	self assert: (self sequence alphabet isKindOf: BioAlphabet).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAlphabetCodes [
 
 	sequence := BioSequence newAmbiguousDNA: 'ACAGTAGCTAGC'.
@@ -84,7 +84,7 @@ BioSequenceTest >> testAlphabetCodes [
 	self assert: sequence alphabetCodes equals: 'ABCDGHKMNRSTVWY'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAmbiguityCodes [
 
 	sequence := BioSequence newAmbiguousDNA: String empty.
@@ -106,13 +106,13 @@ BioSequenceTest >> testAmbiguityCodes [
 	self assert: (sequence ambiguityCodes includes: $N).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAminoacidNames [
 
 	self assert: (self sequence aminoacidNames bioHasEqualElements: #('Cysteine' 'Alanine' 'Glycine' 'Threonine' 'Cysteine' 'Alanine' 'Threonine' 'Glycine' 'Cysteine' 'Threonine' 'Alanine' 'Glycine')).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsFastaRecord [
 
 	| fastaRecord |
@@ -123,13 +123,13 @@ BioSequenceTest >> testAsFastaRecord [
 	self assert: self sequence asFastaRecord equals: fastaRecord.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsLowercase [
 
 	self assert: (self sequence asLowercase asString allSatisfy: [: car | car isLowercase ]).	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsMutableSequence [
 	| testSeq1 |
 	self assert: self sequence asString equals: self sampleDnaString01.
@@ -145,7 +145,7 @@ BioSequenceTest >> testAsMutableSequence [
 	self assert: (testSeq1 at: 2) equals: $G
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsNumber [
 
 	self assert: ('AGT' asSequence alphabet: BioDNAAlphabet new) asNumber equals: 12.
@@ -154,14 +154,14 @@ BioSequenceTest >> testAsNumber [
 	self assert: ('GGCGGTTGCACCAGATGA' asSequence alphabet: BioDNAAlphabet new) asNumber equals: 44759798329.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsSequence [
 
 	self assert: (5438 -> 8) asSequence equals: ('ACCCATTC' asSequence alphabet: BioDNAAlphabet new).
 	self assert: (5438 -> 7) asSequence equals: ('CCCATTC' asSequence alphabet: BioDNAAlphabet new)	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsString [
 
 	| seqString |
@@ -173,14 +173,14 @@ BioSequenceTest >> testAsString [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAsUppercase [
 
 	self assert: (self sequence asUppercase asString allSatisfy: [: car | car isUppercase ]).
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testAt [
 
 	self assert: (self sequence at: 2) equals: $A.
@@ -191,7 +191,7 @@ BioSequenceTest >> testAt [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testBackTranscription [
 
 	| testSeq1 backTranscribedSeq |
@@ -207,7 +207,7 @@ BioSequenceTest >> testBackTranscription [
 	self assert: backTranscribedSeq asString equals: self sampleDnaString01.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testBuildFrequencies [
 
 	self assert: ((('ACGCGGCTCTGAAA' asSequence alphabet: BioDNAAlphabet new) buildFrequencies: 2) hasEqualElements: #(2 1 0 0 0 0 2 2 1 2 1 0 0 1 1 0)).
@@ -217,20 +217,20 @@ BioSequenceTest >> testBuildFrequencies [
 	self assert: ((('ACTTCGCCTAAGTCATTTATCCCGTGGTACGACGCTCCCTTACAGTCTTATATCCCGGTATATACGCAGAAATGCCTACGTCCCCTCGTCCCACACACCAGGGAAGCTGAAATCGCTCATCTACTATGCGTGTACTTCCGGACGAAATCGTCGTCGGCTTCTGTCTGGCGCTGGAGATCCGGGCTTCTTGAGGGACACACCCATTATGACCGTTACAGGACTTACAACTACTCTGAGCAATGATGGTGCTCTGTAACGAACAAACGCACTCACCTCTGTTTCCTGTATGACATCCTCAAATGGATCGACCGTGATGTACTGAGCGAATAAGTGCGGATTACATTTATAGTCAGCTACATTTATTCGCCGCTCGGAGCAGAGTATAATGAATTTATACCACTTGTTAGACTCCTTCTCGCATTTAGCCCCTACCGCAAGTCGGAGCGTTGGGGTGCAATAGAGTTTTCAGTATCTACGTACCGTTAAGTCTCTCGCGTTCTTTCAGCAGGCATCAATATGTTGCTTGCTGTGGGGTCGGGTGGGGCGGAGAGCCAATAAAGTGCATCGGAATTGGCTGCCCTCCTACGAATCCGCAAGATGCGGTGATGCTACGTGATTATGACTACTAGCTTAGTCCC' asSequence alphabet: BioDNAAlphabet new) buildFrequencies: 6) hasEqualElements: #(0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 2 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 2 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 1 0 1 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 2 0 0 0 0 0 1 0 0 1 2 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 1 2 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 1 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 3 2 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 2 0 0 0 0 1 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 2 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 1 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 2 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 1 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 2 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 2 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1 0 0 0 1 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 2 0 0 0 0 0 0 1 0 0 0 0 3 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 1 0 1 0 0 1 0 2 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 2 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 1 1 0 1 0 0 2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 2 1 0 1 0 0 2 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0))
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testClumpFindKLengthTimes [
 
 	self assert: (('GATCAGCATAAGGGTCCCTGCAATGCATGACAAGCCTGCAGTTGTTTTAC' asSequence clumpFindK: 4 length: 25 times: 3) asArray hasEqualElements: #('TGCA')).
 	self assert: (('CCTAGCACGGGTACACACCCCTCGGGTGACTGTGTTCCCTACTAATGGAGTAATCGAATAAAGTAGTATGTGAAATCACCAATACTTTCAGTGTTTCATGCATGCCTGAATTTCATTTACGGCAAGCTAACATCGATGTTTTGGTAGATGAGACACTGCACACACGATAAACTAGACGGAGCTGGCAGACGTCAATATGTAACCCAGTAATACGGTTATCACCGAGGTTTGTTAATAACGATAATTGTCCCTTGTCTGGGGTTGCCGCGCCAGCCTGGAACGTGAAATCCGCCTCCGACCTGAAATCCGCTCGAAATCCGCCTCTGCGAAATCCGCCCCCGAAATCCGGAAATCCGCGGTCCGACCTCCGACCTCTCATTCAGAAATCCGCCGGAGAGAGCTTCCGGTCTCAACGAGAGCCACGAGAGCCCCGACGAGAGCCAGAACGAGAGCCGAAATCCGACGACGAGAGCCGCCCCTCAGAAATCCGCTGTTTAAAACGAGAGCCGACACGAGAGCCCCTCCGATCCGACTCCACGAGAGCCCGCAAATCACGAACGAGAGCCCCTCATCCGCCCCAAGCCAAGTTGGTCCGACCTCTCGTTTGTAACAGAAATACGCCAAGTTGGCGAGAGCCGCCGACCGCCAAGTTGGGAGAGCCACCAAGCCAAGTTGGCAAGTTGGCAAGTTGGCCTGGAAAGAACGAGAGCCAAGTCCAAGTTGGCGATTTAATAGTACGAGAGCCCAATCCGCTACATACACGAGCCAAGTTGGTCCGCGACGAGAGCCAAATCCGCCGACCTCTGGCAGTCGGTTTCCGACCTACGAGAGCCGACGAGAACGAGAGCCATCCCCAAGTTGGAGACGACCAAGTTGGCCCCACGAGAGCCACGACCCAAGTTGGGAAAATACCCAAGCCAAGTTGCCAAGTTGGAAGTTGGAGTTGGAGTTGGGAGAGCCTTCCAAGTTGGAGTTGGAGTGAGAGTTCCGAGGCACCTGCTAAAATCTCCCAAGTTGGGGCACCACCAAGTTCCAAGTTGGTGCCAAGTTGGTGACGCTCACATCCAACCAAGTTGGCCCAAGTTGGTAACCAAGTTGGGCGTAGTCAAACGCCGTATTGCCGTATTCGTTGGCCGTATTCAGCTTCGCCGCCGTATTCCAGCGCCGTATTCTATTCATTCGCTTGATCTACAGGGGATTTAACGAGTCCGCCGTATTCCTCTGATTCAGACGTTTAGGCAACAGCCAACCTGCAAGGCCGTATTCTAACGCCGTGCCGTAGCCGTATTCTGGTATAGTGGGCCGACAGGAGCCGTATTCAATCCCCTAGAAGCACTGCCGTAGCCGTATTCGATATGGTCGATGTGCCGTATTCATTCATCATTGCCGTATTCCGCCGTATTCCCGATGCCGTATTCAGCCGTATTCTCTTGGCCGTATTCGTTGTACGCCGTATTCTTTATTATTTGCGCCGCCGTATTCGTATTCTCTTCAATCATAACGGGCGCCGTATTCCCGTCAAGTGACTTATAGGCCGTATTCCCTATCAAGGCAAGGCTACCCTTATTTAAAGCCACCGGCCGCCGTATTCCCAATACTTAGGGCTGTGGGTCGAGGCCGTATTCGCCGTATTCTGAATCAAAAGGAGATTCTTCTCTTGACGCACTCTACACAGTTACTCGAGTCAGCCGTATTCATTCAATTCGCCACAATATCAATGCGACGGTTTTGTTAGTCCAGCAAGACCAATGTCGTTCATGATATCCTTTAAAAGACGGTCCGATACCTTTAAAAACCTTTAAAACTTTCCTTTAAAAACTTACCATAGGCTAGCCCATTGAGACTCCTTTCCTTTAAAACTGAGCCTTTAAAAAAAACCTTTAAAAGCAGCATCCCCTTTAAAACTTTAAAAAACCCCCTTTAAAACGTGTCCCTCCCTTTAAAAATCTCACGAGCTCTCGTACCGCAACCTTTAAAATGCCCCTTTAAAATGCCTTTAAAATGCCTTTAAAATGGCCTTTAAAAACCCTTTAAAAGAGACATTAGTGGTTGCTAAAAGTGGTTGCGGTTGCTCAGTGGTTGCGTTTGAGTGGTTGCGGTAGTGGTTGCCTTTAAAATTGGCGAAGCTACATCCCTTTAAAAGTGGTTGCCCACCTGCCTACAGCGTTAGTAGTAGTGGTTGCTTCAGTTAGTGGTTGCTTCTTAGTGGTTGCGATGGCACCTTTAAAATAAAAAGTGGTTGCCCAGTGGTTGCCTTAGTGGTTGCATTTAAAACGCGGTAAGCCTTTAAAAAAGTGGTTGCACAACCTGCCTACCTTTAAAATTAAAATGAAAGGCCTTTAAAGAGTGGTAGTGGTTGCGTTGCATATACGAGTGGTTGCAGTGGTTGCTCTCAACGAAGTGGTTGCTGCACCCCATAAGTGGTTGCGGTGAGGTGTCCCAGTGGTTGCCATCTAGCAAGTGGTTGCATCTAAAACGGCGTTAGTGGTAGTGGTTGCATGCGTGGCCAATAATGCGTGACGCGGCAGTGGTTGCATGCGTGCGTGACCAAGATGGATTAATGCTAATGCGTGCAGTGGTTGCGGCCTGTAATACTTGCGCTAGTGGTTGCTGTAATTAAAGTGGTTGCGTGATAATGCGTTAATGCGTGGACGATGGTCCGGTTAATGCGTGCCTGACATGAAAGCTGCTAATGCGTGCATAAAGTTGTCCCCACCCGTATCGCGCCGATTGTAATGCGTGGGTGGTTTGGTCTTGCCGCTCCGACCGAGTATTCCATGCGATAATGGTGAAGATAATGCGTGATTGTGCTAATGCGTGGTGTGGGACGTCTTTGGAGGTTTGGGAATTGAATAGTTCATCATCCTGATATTATAATGCGTGGCAAGTAATGCGTGATGCGTGTAATGCGTGTATGAGGAGCTAATGCGTGGTATAATTAATGCGTGATGCGTGTAATGCGTGGTCTAATGCGTGACCGTTCATATTTCCGTCGTGAGGCCAAGTTGATGCACGTACGGCAGTAATGCGTGTGCGTGCGTACTTCATTTGTCCTTAATGCGTGAGGTTCGCCTAACGATGACCTGGCGTGCCCTGCTGGACACGACCAGTTGAGTTTACCCGCCCTTAAGGGTGCTTTGTGGATTATTGTGTTCACCTTGCTAGAGCTTTGCCAGCGATGATGACGTGGCACGAGGCGGGTGTAAAAGTCTTTTTAGGTTGGTCAATTTCCATCTGATGCATTCAACAGTGAGTTGTCGATAAAAACTTTTGGCCGGGTTTGTTACTGCCCGGATGGGTTGACAGCGGTGGTCTAGCTGATCTAATTATAAGGACGGTTCGCGTCGTAACATGGGCGAAGCGACCGTCTTTAATGGAGCGCTAGATCAGCCTAACGTTATGCTATCGCTATGTACGGGTCAGTACCCGACAGGCACCGATCGAAACCTCTCTCCATTTACGTCAAGTACTATAACGCGGGCTCCTGTCTCGGCGCAGAGACAGTAGTTCGCGTTTTCTAACCCCCAATGAGAGCCTTACAGGGAACTACCGAAACCTCTGAAAGTTCGCTTGCGATCGTAGTGAGACTGATGGCCCACGGGACAAGCCCGTTAAGATTGCGCTTCCCCCAAGACCAAGGGTCCAGAGCATGAGTAGGTCGATAACCGCGAATCTCGGAGCGGTGCAACACAGGATATCTCGGCATTGGCTCTCGTTGTGCAGCAATTAGTGCTTCGACTCAACATATTCCGCGGCCTCTCAAATCTTCTCGCAAGGTCACGCGGAGTCCTTTTTATTGTTGGTCTGCAATAACTTTATCACATCACTCACTTATGGCGCTCGGGACCCCTCCTTCGTGGCTTATGATGCAGGACATGATAACATCATGTGGCCATACTAAGTATGCGAACGCGTATCCATGTGAAGCTGTTTAACCGTTGGTAGAAACAATGATTGTTTGTTACATATGCAGAATACCTACCGCAATAATATCGGTCATTAACCTGTGGCTTCCAAGCTCCAACCGATTGAGGGGGGGATAATACAGCATAACACTGGGTGGCCCTTGAAGACACGTATCCTATGTAGCACTACTGGAAGGATCTGGTCCAGATAACCGCGAGTACTGATTTGGGCGTTTCTGGCAATCACGATCTGGTTGCGAGTTGCGATCCGATCTGGGAACCCGTTGCGAGTTGCGATCCGATCTTACAAAGTCTGTACGCTGAGTGAACGGCGGGTTGCGATCGAATGGCGTCTCCTCACTTGCATTTGTTGCGATCGCCCGCCTCGTTGCGATCATGGTCAAAAAACAAACAAGTTGCGATCTCATGTTGCGATCCGATCATGAAGCCACATGACGTTGCGATCTGGTTGCGATCAACCTGGTTTCTCGGCGTTGCGATCCGCTGGAGGCGTTGGGTTGCGATCCAATGCTGAACGAAAAGCCCAGAGCGTCAAAAGGTTGCGATCTCTACACGCCTTACGCCGTAGGTTGTTGCGATCGTGGTAAACGGGGTTGCGATCAATAGTTGCGATCTCTGTTGTTGCGATCTAGTAACCAGGATGTTGCGATCGCCTTGATATTACACGGCGTGTTGCGATCTGTGTTGCGATCGTTGCGATCTTCTCTTCTGTTTACTACTGCTTATGGTCGTAGGCTGAACATCGAGTTGAAGGTTGCGATCACTGGTTCCGAACCCGTGAGGTTGCGATCCACATAAGAGGTTGCGATCTCAAAGGCTCTTCTTGCGAGGCCACGGTTGATGCCTCCAGATCGGCATCCTAAAATAGCTGGGGCCGGCTTATTCATCCACTAATTCTACCTCAAGTCTGACGGTCTAGATCCCCATTTTCCGAGTGGCGTGTCGCCCACGACCGACACCTTTCGCAGTCACGACCAGCCTGACAGACGCACATAGGAGAGTGTCGCGTAGTACCTGGCACAGGTACAAGCCAGTTTTTCCGACTGGAACGGGAGGCCAGAACACCGTAATAACCAGTCAATAATTACCGCCAATCTAACTCACATGGCACCCGAACGTTTCGAGCTTCCCTGTTGGTTTGGCCAGGTGACCTTACCGCCCATGTGATGGTGATATCTGGCCACGTTAGACCCTGGAGGTATGGACAATATATCGGGGACTTAAACCATCGCATCACTGAGGGAATCCGTTCATACTAAATAGAGTCCAAATTTATGGATCCTATAAGCGTAGCCGAGTTACATTTGTTAGTTGGGTATCTGATGGATCCTTCTTCTAGATAGGCGACTAGAAACCCCTGTGTGTTCATATTTAATGCGGCTAGTTGCGTCATAAGCTGCGCTACCGCTACCTAAGACCTGAGGACAAGTGGCCGCCATGGCCGAAGTGTTGTCTTAGCTGTCTGATACTGCAGGGACTGCACCTCCTTCGTCCTGCGTAGACAAAGTACATTTATTGGATACAAGTGTTGGCAACCAACGCGTACATAGTGTGGTACTTTGGCGACTCACAGGAAACAAACGTGCACGAGCTTCTACGGGGCATAAGCGGGTTCACGAGCTTCTATAGTGTCAATTAGCACGAGCTTATTCGGCCGGGTAAATCTGGAGGTTTCAGCCACGAGCTTAACCACGAGCTTGAGCTTAACCCGCCACGAGCTTCGTATGCAACCACGAGCTTTTAGCGGTCGGAGGTTGCTGCTGTCCACGAGCTTACGAGCTCACGAGCTTCCACGAGCTTACCTGGCGGAAAGGTACGTGCTTATCTAGTCGCGAGAGGTGAGCCTTTGCGCGTCAGTCTAACACACGAGCTTGAGCTTGAGCTCACGAGCTTGACCCCACGAGCTTCGCCGTGTCTACGCTGTACTCACGAGCTTGCTTCGAGCTTCTAGAAATGGGCACGAGCTTGCGAGGGATGTATCCTATTACACACGAGCTTCGAGCTTTTAACTGACCCGTAATCGGTCAGCGCGCACGAGCTTGGAGCTTCCACCACGAGCTTCACGAGCTTCTTGTCCTGAAAAATTTGACGACTCAAGGTTCGTGTGGAATCGTTTCTCCCACACGAGCTTGTAGTTTTTGGTTCTCTACCGAAGTCTAGTCGTTCCACACGAGCTTTTCGGGGTTTGAAGTGGCTGACCATACGCCATAACGGGGCAGTTCTCTCCGTCCATCGCTGATTTTAAGATTGGGCAGGGCCGGAGAACGTTCAGCCGGCGGAGTCGACCACTGGCTGACAATACATATTGCTTCATATTACGTTATAACTCATTCATGTCAACCAACGTCCGGGTTTGGTGGTCGGGGGTACCGGAGACTTGTCGTTACCAACTTGGTAATTCAGTTACGATTGAATCATATTCTGATGCATTTCTAGGTATTTTGCTTCACCTCTTTGGCATGCAATAAATCTTTATTAGGCTAAAGCCCAAAAATCAAGTTTACCCCGCGAGTATACTAGCTCCGGAAAAGTAGATTCTATATACCGTATACTGTCGCACTGCAGCCCTTATCTACCCTCCAGATGTAGTGCCGAGAGGCAACGTGATTACTATTTCGGTGGGCTACGATCGTGATTACGCGCGTGATTACGACGTGATTACCTCGCAAGATGGTTATCGTGATTACGATTACAATACATCTATGGCTCGTGATTACGATTACTTCGAAAGTTGTACCCTGCTCAACTGCCGCCACCGTGATTACGTGATTACTTACCTAGATAGGATCGTGGTAGATCGACCCTAGATACCTAACTTCCGCGTGATTAGATGAATAGGAATAGCAGGTCCGGATGAATAGAATGTCGTGATTACATCGAGATGATGAATAGAGACGTGAGATGAATAGCGTGATTACGATTACCGGATGAATAGGGAGATCAAGTTGCACTGCGTGAGTCCAGTAAGATGAATAGCGCCCAAAAGGCGTGATTACGATGAATAGCGCCCGATGAATAGAGATGAATAGCTTAGGGGCGTGATTACCGATGAATAGATTTCGATGAAGATGAATAGATGAGATGAATAGGAGTCGATGAATAGATGAATGATGAATAGCCCCAAAGGGCCAGATGAATAGGACCAATAGATGAAGATGAATAGATTACTACGATGAATAGGAATAGGGCCGGATGAAGATGAATAGTGAGATGAATAGCACCTGAGATGTGGAGTGAGTCGTGGGATGAATAGGTGTACCCATGCAGGTTCCCAAGAGGACGCAGATGAATAGAATCACCTCGAATCGAGCCTCCTGCGACGCGAGGGATCGGATGAATAGACATAAACTCGTTCGAACTCCGGCAGGAGATGAATGATGAATAGAATAGTATTGGGTTACCTGCAAGACCTAAATCATCGAATGACTACCCATAGAGCTATGACACGTCTATGAGGTCGAGTAGGACATTAGTCCCATGTTGATAGGGGGTCCTTTCCCCACTGCATACGTCTTTTAGGGCGGTAGGCATCATTAACCTATGACAGCTGCCAAAGAATCTTCCATCGCCAACATACTCCCCCAGTAGCCCACGGTAGTAATCATAAACCTTCCACCGACCAGAGTTTTTCCAAGACGGTTCGAAGCCACACCAATAAATCACGAGGTTAGAGTAGAAGGTCCGACGTGGGGGGCATTCTCCTTGACGAGACCCATCCTCACGAGCGTCCCCTCCTTAAAGGGACGGAAGGATTGCGTTGTTGTTACCCAACTAAGACACCAATCCCATTTGCCACCCCCCGCCCTCCCGAGTCTGTCTATAGCGCAAGTCGTTGAGCTGTCTTCCATTCCAAGCCTTCCGCGAGTAGGTAGGATCGACTTCGATCTGTCATTGTACTGGTTTAAATTCTTTTTTGGCAAATTCATAGTAGCGAGATGCACCCCGAAGACCACATTAGACCCTTGTATCTTCTCTCTTGGACGCTCAAGCCCTTGCTTTCCCACTCTACTTGTTGGATAAGTCCGTTTAAATTTTCGAACCTTCGTAAGAGTGCACTACGTTACACCTTACGTAGAAAATTCCTGACGGGCACCTTTGTTTTGAACCGACCTCGTATTTCGGATAGGCGTGCTCCAGTGAAGTAACCTAGCCGAAGCATGTATTCTTGAGCCCCCTTTTTCACCATCGGTTCCAGCGCTAGTCTTCCAGCGCGGCCTTCCAGCGCTTCCAGCGCATTCCAGCGCATCGTTTCCAGCGCCGCCTCGGGTGCGTTCATCACAGGTAACCCGCATTCCAGCGCCAGCTTCCAGCGCGCTGTATGTTCCAAATTTCCTTCCAGCGCTCCAGCGCCGCGCTCCAAATAGTGGCGAACGGACATAGCGCGATGGTTGAAGCGTATTCCAGCGCGCCATTTCCAGCGCGCGCATTACCGCCAGGGAATTTCCAGCTTTTCCAGCGCCTTTTCCAGCGCATGAAGATATAGGCCAGTAGGCTTCTCTCATCAATTCCAGCGCCTATGATGCTTGAGAACATATTCCTTCCAGCGCGCGTCAACGCTCACGAGGCTTGTTTTCCAGCGCCCAGTTCCAGCGCAAAACCTAAACCTATTATGATGCGTAGTAGAGCCTCGCGGGTTCCAGCGCTTATTCCAGCGTTCCAGCGCGTTCGACTTCTTCCAGCGCCCTTCGTGCCTGTCCATGAACTGGGTTAATTCCAGCGCTTAATTCCAGCGCAACTCTTTTGACGCTTCCAGCGCTTTCCAGCGCCAGCGCATCAAAGAAAGGTCTACGAACGCCTGATGGTCGCTAGACATGAGAAGGGAGATTCCGATTTTTCCGATACAAATGTAACGGTAACCGGAGGGCGCCTTGGGGGTCACCTGAGAACAACCCGCTCCCTGAGCCCACCGGCTCTTAATGGAAAGGTGCGAGGGCCGCAGTTTAGAGGGGATGCCCGAGAGCGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGGTCGTGCGGAGAAGAAAATCCGTGCGGAGAAAATCCGTCGAGAAAATAGAAAATCCCGTGCGGGTCGTGCGGGTCGTGCGAGAAAATCCGGTCGTGCGGGTCGTGCAGAAAATCCGGGTCGAGAAAATAGAAAATCCCGTGCGGAGAAAATCCGTCGTAGAAAATCCGCGGGTCGTGAGAAAATCCAAAATCCTGCGGGTCAGAAAATCCGTGCGGGTCGTTAGAAAATCCAAAATCCTTTCGTGGGTTTCGTGGGTTTCGTGGGTTTCGTAGAAAATAGAAAATCCGTGGGAGAAAAGAAAATCCTGGGTTTCGTGGGTTTCGAGAAAATCCGTGGAGAAAATCCTTTCGTGGGTTTCGTGGGTTTCGTGGGTTTCGTGGGAGAAAATCCTTTCGTGGGTTTCGTGGGTTTCGTGGGTTTCGTAGAAAATCCTGGGTTCGTGGGTTTCGTTAGAAAAGAAAATCCCGTGAGAAAATCCGGTTTCGTAGAAAATCCAATCCTCGTGAGAAAATCCGGTAGAAAATCCAGAAAAAGAAAATCCAGAAAATCCAGAAAATCC' asSequence clumpFindK: 9 length: 516 times: 19) asArray hasEqualElements: #('GTTGCGATC' 'GATGAATAG' 'AGTGGTTGC' 'GCGGGTCGT' 'CACGAGCTT' 'GCCGTATTC' 'CCTTTAAAA' 'AGAAAATCC' 'TTCCAGCGC'))
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testCodonTables [
 
 	self assert: (self sequence codonTables isKindOf: BioCodonTables class)
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testComplement [
 
 	| seq1 seq2 comp |
@@ -260,7 +260,7 @@ BioSequenceTest >> testComplement [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testConcat [
 
 	| seq1 seq2 result |
@@ -278,7 +278,7 @@ BioSequenceTest >> testConcat [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testContents [
 
 	sequence := BioSequence newAmbiguousDNA: 'ACAGTAGCTAGC'.
@@ -287,7 +287,7 @@ BioSequenceTest >> testContents [
 		equals: 'ACAGTAGCTAGC'
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testCopyFrom [
 
 	| testSeq1 |
@@ -298,7 +298,7 @@ BioSequenceTest >> testCopyFrom [
 		equals: testSeq1 asString
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testCopyFromTo [
 
 	| testSeq1 |
@@ -309,13 +309,13 @@ BioSequenceTest >> testCopyFromTo [
 		equals: testSeq1 asString
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDefaultAlphabetClass [
 
 	self assert: (self sequence defaultAlphabetClass isKindOf: BioAlphabet class)
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDegenerateBasesAsMultibases [
 
 	self 
@@ -327,7 +327,7 @@ BioSequenceTest >> testDegenerateBasesAsMultibases [
 		equals: ''
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDinucleotideFrequencyCountsSlidingWindows [
 
 	| seq frequencies |
@@ -339,7 +339,7 @@ BioSequenceTest >> testDinucleotideFrequencyCountsSlidingWindows [
 	self assert: (frequencies at: 'TA') equals: 2
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDinucleotideFrequencyDoesNotIncludeAbsentDinucleotides [
 
 	| seq frequencies |
@@ -352,7 +352,7 @@ BioSequenceTest >> testDinucleotideFrequencyDoesNotIncludeAbsentDinucleotides [
 	self deny: (frequencies includesKey: 'AC')
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDinucleotideFrequencyEmptyWhenSequenceTooShort [
 
 	| seq |
@@ -361,7 +361,7 @@ BioSequenceTest >> testDinucleotideFrequencyEmptyWhenSequenceTooShort [
 	self assertEmpty: seq dinucleotideFrequency
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDinucleotideFrequencySingleWindow [
 
 	| seq frequencies |
@@ -373,7 +373,7 @@ BioSequenceTest >> testDinucleotideFrequencySingleWindow [
 	self assert: (frequencies at: 'AC') equals: 1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDinucleotideFrequencySumsToNumberOfWindows [
 
 	| seq frequencies |
@@ -384,7 +384,7 @@ BioSequenceTest >> testDinucleotideFrequencySumsToNumberOfWindows [
 	self assert: frequencies values sum equals: seq size - 1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testDisambiguate [
 	
 	| disambiguatedSeqs |
@@ -408,7 +408,7 @@ BioSequenceTest >> testDisambiguate [
 	self assert: (disambiguatedSeqs bioHasEqualElements: {'ACGT'}).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testEqual [
 
 	| testSeq1 |
@@ -425,7 +425,7 @@ BioSequenceTest >> testEqual [
 	self deny: self sequence equals: testSeq1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testExpectedProbabilitySeqOfSizePatternLengthAlphabetSizeOccurrences [
 
 	" What is the expected number of occurrences of a 9-mer in 500 sequences, each of length 1000? 
@@ -433,7 +433,7 @@ BioSequenceTest >> testExpectedProbabilitySeqOfSizePatternLengthAlphabetSizeOccu
 	self assert: (BioSequence expected: 500 probabilitySeqOfSize: 1000 patternLength: 9 alphabetSize: 4 occurrences: 1) equals: 1.89208984375
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testGcContent [
 
 	self assert: 'gacgatcggtattcgtag' asSequence gcContent equals: 50.0.
@@ -442,7 +442,7 @@ BioSequenceTest >> testGcContent [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testGcContentCalc [
 
 	self assert: 'gacgatcggtattcgtag' asSequence gcContent equals: 50.0.
@@ -451,14 +451,14 @@ BioSequenceTest >> testGcContentCalc [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testGcSkewInt [
 
 	self assert: (('GAGCCACCGCGATA' asSequence gcSkewInt) hasEqualElements: #(0 1 1 2 1 0 0 -1 -2 -1 -2 -1 -1 -1 -1)).
 	self assert: (('CATGGGCATCGGCCATACGCC' asSequence gcSkewInt) hasEqualElements: #(0 -1 -1 -1 0 1 2 1 1 1 0 1 2 1 0 0 0 0 -1 0 -1 -2)).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testHasAmbiguousBases [
 
 	| seq1 seq2 seq3 |
@@ -484,7 +484,7 @@ BioSequenceTest >> testHasAmbiguousBases [
 	self assert: seq2 hasAmbiguousBases.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testHotspotRegionsLeftRight [
 
 	| seq1 hotspotRegions |
@@ -497,7 +497,7 @@ BioSequenceTest >> testHotspotRegionsLeftRight [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testIsDNASequence [
 
 	| seq1 seq2 seq3 |
@@ -516,14 +516,14 @@ BioSequenceTest >> testIsDNASequence [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testIsEmpty [ 
 
 	self deny: (BioSequence newAmbiguousDNA: self sampleDnaString03) isEmpty.
 	self assert: (BioSequence newAmbiguousDNA: String empty) isEmpty.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testIsProteinSequence [
 
 	| seq1 seq2 seq3 |
@@ -542,7 +542,7 @@ BioSequenceTest >> testIsProteinSequence [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testIsRNASequence [
 
 	| seq1 seq2 seq3 |
@@ -561,7 +561,7 @@ BioSequenceTest >> testIsRNASequence [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testJoinSequence [
 
 	| seq01 |
@@ -574,7 +574,7 @@ BioSequenceTest >> testJoinSequence [
 	self assert: (BioSequence joinSequence: String empty) equals: String empty.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testKmersCount [
 
 	self assert: ('GCGCG' asSequence kmersCount: 'GCG') equals: 2.
@@ -586,7 +586,7 @@ BioSequenceTest >> testKmersCount [
 	self assert: ('CTGTTTTTGATCCATGATATGTTATCTCTCCGTCATCAGAAGAACAGTGACGGATCGCCCTCTCTCTTGGTCAGGCGACCGTTTGCCATAATGCCCATGCTTTCCAGCCAGCTCTCAAACTCCGGTGACTCGCGCAGGTTGAGTA' asSequence kmersCount: 'CTC') equals: 9.	
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testKmersCountMismatches [
 
 	self assert: ('TTTAGAGCCTTCAGAGG' asSequence kmersCount: 'GAGG' mismatches: 2) equals: 4.
@@ -596,7 +596,7 @@ BioSequenceTest >> testKmersCountMismatches [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testMinGCSkewInt [
 
 	self assert: ('ACCG' asSequence minGCSkewInt hasEqualElements: #(3)).
@@ -605,7 +605,7 @@ BioSequenceTest >> testMinGCSkewInt [
 	self assert: ('CCGGCCGG' asSequence minGCSkewInt hasEqualElements: #(2 6)).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testMostFrequentKmer [
 
 	self assert: ((('ACAACTATGCATCACTATCGGGAACTATCCT' asSequence mostFrequentKmer: 5) asArray collect: #asString) hasEqualElements: #('ACTAT')).
@@ -613,7 +613,7 @@ BioSequenceTest >> testMostFrequentKmer [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testMostFrequentKmerMismatches [
 	self
 		assert:
@@ -652,7 +652,7 @@ BioSequenceTest >> testMostFrequentKmerMismatches [
 				asArray sorted hasEqualElements: #('GGTA'))
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testMostFrequentKmerRevCompMismatches [
 	self
 		assert:
@@ -689,7 +689,7 @@ BioSequenceTest >> testMostFrequentKmerRevCompMismatches [
 				asArray sorted hasEqualElements: #('CA' 'CC' 'GG' 'TG') sorted)
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testNewPrototype [
 
 	| prototype |
@@ -703,7 +703,7 @@ BioSequenceTest >> testNewPrototype [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOccurrencesOf [
 
 	sequence := BioSequence newAmbiguousDNA: 'CgGAtTTAGCgCGT'.
@@ -721,7 +721,7 @@ BioSequenceTest >> testOccurrencesOf [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOccurrencesOfLetters [
 
 	| occurrences |
@@ -740,7 +740,7 @@ BioSequenceTest >> testOccurrencesOfLetters [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOligonucleotideFrequencyCountsNucleotides [
 
 	| seq frequencies |
@@ -753,7 +753,7 @@ BioSequenceTest >> testOligonucleotideFrequencyCountsNucleotides [
 	self assert: (frequencies at: 'T') equals: 1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOligonucleotideFrequencyDoesNotIncludeAbsentSymbols [
 
 	| seq frequencies |
@@ -765,7 +765,7 @@ BioSequenceTest >> testOligonucleotideFrequencyDoesNotIncludeAbsentSymbols [
 	self deny: (frequencies includesKey: 'T')
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOligonucleotideFrequencyOnEmptySequence [
 
 	| seq |
@@ -774,7 +774,7 @@ BioSequenceTest >> testOligonucleotideFrequencyOnEmptySequence [
 	self assertEmpty: seq oligonucleotideFrequency
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOligonucleotideFrequencySumsToSequenceSize [
 
 	| seq frequencies |
@@ -785,7 +785,7 @@ BioSequenceTest >> testOligonucleotideFrequencySumsToSequenceSize [
 	self assert: frequencies values sum equals: seq size
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testOligonucleotideFrequencyWithRepeatedSymbol [
 
 	| seq frequencies |
@@ -797,7 +797,7 @@ BioSequenceTest >> testOligonucleotideFrequencyWithRepeatedSymbol [
 	self assert: (frequencies at: 'A') equals: 4
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testPositionsOf [
 
 	| expected |
@@ -818,7 +818,7 @@ BioSequenceTest >> testPositionsOf [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testRandomSeq [
 
 	| seq |
@@ -833,7 +833,7 @@ BioSequenceTest >> testRandomSeq [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testReverseComplement [
 
 	| seq1 seq2 revComp |
@@ -860,7 +860,7 @@ BioSequenceTest >> testReverseComplement [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testReversed [
 
 	| seqTest |
@@ -881,13 +881,13 @@ BioSequenceTest >> testReversed [
 	self assert: seqTest reversed asString equals: String empty.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testSequenceFeatures [
 
 	self assert: (self sequence sequenceFeatures isKindOf: Collection).
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testSize [
 
 	self assert: (self sequence size isKindOf: Integer).
@@ -896,7 +896,7 @@ BioSequenceTest >> testSize [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testSizeExcludeTerminals [
 
 	self sequence: (BioSequence newWith: 'MAASEHRCVGCGFRVKSLF*' alphabet: BioIUPACProtein).
@@ -908,7 +908,7 @@ BioSequenceTest >> testSizeExcludeTerminals [
 	self assert: self sequence sizeExcludeTerminals equals: 27.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testSubSeqFromTo [
 
 	| subSeqString |
@@ -925,16 +925,7 @@ BioSequenceTest >> testSubSeqFromTo [
 	self should: [ self sequence subSeqFrom: 0 to: 1 ] raise: Error.
 ]
 
-{ #category : 'testing' }
-BioSequenceTest >> testTmStaluc [
-
-	"self assert: 'tgcagtacgtatcgt' tmStaluc equals: 42.21."
-
-
-
-]
-
-{ #category : 'Testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTmStalucSaltCorrection [
 	"Test salt correction methods 1-7 produce numerical results"
 
@@ -1048,7 +1039,7 @@ BioSequenceTest >> testTmStalucSaltCorrection [
 		precision: 0.1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTranscribe [
 
 	| testSeq1 transcribedSeq |
@@ -1064,7 +1055,7 @@ BioSequenceTest >> testTranscribe [
 	self assert: transcribedSeq asString equals: self sampleSeq01Transcription.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTranscription [
 
 	| seqStrand seqTranscribed |
@@ -1079,7 +1070,7 @@ BioSequenceTest >> testTranscription [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTranslateFromDNA [
 
 	| seq1 seq2 seq3 seq4 translated1 translated2 |
@@ -1112,7 +1103,7 @@ BioSequenceTest >> testTranslateFromDNA [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTranslateFromRNA [
 
 	| seq3 seq4 |
@@ -1122,7 +1113,7 @@ BioSequenceTest >> testTranslateFromRNA [
 	self assert: seq3 translate equals: seq4
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTranslated [
 
 	| seq1 seq2 seq3 seq4 translated1 translated2 |
@@ -1153,7 +1144,7 @@ BioSequenceTest >> testTranslated [
 	self assert: seq3 translate equals: seq4
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTrinucleotideFrequencyCountsSlidingWindows [
 
 	| seq frequencies |
@@ -1165,7 +1156,7 @@ BioSequenceTest >> testTrinucleotideFrequencyCountsSlidingWindows [
 	self assert: (frequencies at: 'TAT') equals: 2
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTrinucleotideFrequencyEmptyWhenSequenceTooShort [
 
 	| seq |
@@ -1173,7 +1164,7 @@ BioSequenceTest >> testTrinucleotideFrequencyEmptyWhenSequenceTooShort [
 	self assertEmpty: seq trinucleotideFrequency
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTrinucleotideFrequencySingleWindow [
 
 	| seq frequencies |
@@ -1185,7 +1176,7 @@ BioSequenceTest >> testTrinucleotideFrequencySingleWindow [
 	self assert: (frequencies at: 'ATG') equals: 1
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTrinucleotideFrequencySumsToNumberOfWindows [
 
 	| seq frequencies |
@@ -1196,7 +1187,7 @@ BioSequenceTest >> testTrinucleotideFrequencySumsToNumberOfWindows [
 	self assert: frequencies values sum equals: seq size - 2
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioSequenceTest >> testTrinucleotideFrequencyWithRepeatedTrinucleotide [
 
 	| seq frequencies |

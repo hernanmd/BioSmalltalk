@@ -9,7 +9,7 @@ Class {
 	#tag : 'Core'
 }
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testAsString [
 	self
 		assert:
@@ -26,7 +26,7 @@ BioAccessionTest >> testAsString [
 		equals: String empty
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testHasVersion [
 	
 	| accession |
@@ -50,7 +50,7 @@ BioAccessionTest >> testHasVersion [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testIsEmpty [
 
 	self deny: 'AF288373.2' asAccession isEmpty.
@@ -67,7 +67,7 @@ BioAccessionTest >> testIsEmpty [
 	self should: [ String empty asAccession ] raise: Error.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testIsVersioned [
 	
 	| accession |
@@ -85,7 +85,7 @@ BioAccessionTest >> testIsVersioned [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testName [
 	| accession |
 	accession := BioAccession new
@@ -97,7 +97,7 @@ BioAccessionTest >> testName [
 	self assert: accession asString equals: accession nullName
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAccessionTest >> testVersion [
 	| accession |
 	accession := BioAccession new

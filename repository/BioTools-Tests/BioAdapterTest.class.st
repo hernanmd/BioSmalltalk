@@ -80,7 +80,7 @@ BioAdapterTest >> tearDown [
 	super tearDown.
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testAdapter [
 
 	self adapterEngines do: [: sCls | 
@@ -90,7 +90,7 @@ BioAdapterTest >> testAdapter [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testAdapterClass [
 
 	self adapterEngines do: [: sCls | 
@@ -100,7 +100,7 @@ BioAdapterTest >> testAdapterClass [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testFormatOSInterfaceAdapter [
 
 	| answer |
@@ -110,7 +110,7 @@ BioAdapterTest >> testFormatOSInterfaceAdapter [
 		self assert: answer equals: '"C:\Archivos de Programa"' ]
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testProviderClass [
 
 	| concreteAdapters |
@@ -133,7 +133,7 @@ BioAdapterTest >> testProviderClass [
 		].
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testSettingSerializationAdapter [
 
 	self assert: ( BioSerializationEngine hasAnyProvider isKindOf: Boolean ).
@@ -151,7 +151,7 @@ BioAdapterTest >> testSettingSerializationAdapter [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testSettingWebClientAdapter [
 
 "	| testAddress |
@@ -171,7 +171,7 @@ BioAdapterTest >> testSettingWebClientAdapter [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testUsingOSInterfaceAdapter [
 
 	self assert: ( BioOSInterfaceEngine hasAnyProvider isKindOf: Boolean ).
@@ -190,7 +190,7 @@ BioAdapterTest >> testUsingOSInterfaceAdapter [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testUsingWebClientAdapter [
 
 "	| testAddress |
@@ -207,7 +207,7 @@ BioAdapterTest >> testUsingWebClientAdapter [
 
 ]
 
-{ #category : 'testing' }
+{ #category : 'tests' }
 BioAdapterTest >> testWebDecodeUrl [
 
 	| decoded encodedAddress decodedAddress |

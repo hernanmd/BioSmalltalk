@@ -3,12 +3,14 @@ Sample scripts for using the Entrez system API
 
 "
 Class {
-	#name : #BioESamples,
-	#superclass : #BioSamples,
-	#category : 'BioToolsSamples-Core'
+	#name : 'BioESamples',
+	#superclass : 'BioSamples',
+	#category : 'BioToolsSamples-Core',
+	#package : 'BioToolsSamples',
+	#tag : 'Core'
 }
 
-{ #category : #'eUtilities-fetch' }
+{ #category : 'eUtilities-fetch' }
 BioESamples >> entrezFetchSample01 [
 	" self new entrezFetchSample01 "
 
@@ -23,7 +25,7 @@ BioESamples >> entrezFetchSample01 [
 
 ]
 
-{ #category : #'eUtilities-fetch' }
+{ #category : 'eUtilities-fetch' }
 BioESamples >> entrezFetchSample02 [
 	" Outputs a GenBank file for a list of GenBank identifiers "
 	
@@ -38,7 +40,7 @@ BioESamples >> entrezFetchSample02 [
 
 ]
 
-{ #category : #'eUtilities-fetch' }
+{ #category : 'eUtilities-fetch' }
 BioESamples >> entrezFetchSample03 [
 	" Outputs an XML with information "
 	
@@ -54,7 +56,7 @@ BioESamples >> entrezFetchSample03 [
 
 ]
 
-{ #category : #'eUtilities-fetch' }
+{ #category : 'eUtilities-fetch' }
 BioESamples >> entrezFetchSample04 [
 	" Outputs a Fasta file for a list of accession numbers "
 	
@@ -69,7 +71,7 @@ BioESamples >> entrezFetchSample04 [
 
 ]
 
-{ #category : #'eUtilities-info' }
+{ #category : 'eUtilities-info' }
 BioESamples >> entrezInfoSample01 [
 	" Outputs an XML with information about PubMed database "
 	
@@ -81,7 +83,7 @@ BioESamples >> entrezInfoSample01 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample01 [
 	" 
 	1) Using a client to search a gene and get a Collection of Gene Identifiers from the Nuccore database
@@ -106,7 +108,7 @@ BioESamples >> entrezSearchFetchExample01 [
 		dumpToFileNamed: 'searchFASTANuccore3.fasta'.
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample02 [
 	" 
 	Simplify the use of the history server. 
@@ -126,7 +128,7 @@ BioESamples >> entrezSearchFetchExample02 [
 		dumpToFileNamed: 'searchFASTANuccore4.fasta'.
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample03 [
 	" 
 	1) Using a client to search a gene and get a Collection of Gene Identifiers from the Nuccore database
@@ -150,7 +152,7 @@ BioESamples >> entrezSearchFetchExample03 [
 		dumpToFileNamed: 'searchFASTANuccore2.fasta'.
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample04 [
 	" 
 	1) Search a gene by accession and get the FASTA sequence from the Nuccore database
@@ -179,7 +181,7 @@ BioESamples >> entrezSearchFetchExample04 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample05 [
 	" 
 	Download first 20 PubMedCentral OA (Open-Access) articles with CC-By-NC license (Attribution, noncommercial) in XML format
@@ -197,7 +199,7 @@ BioESamples >> entrezSearchFetchExample05 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample06 [
 	" 
 	Download first 20 PubMedCentral OA (Open-Access) articles with CC BY-NC-ND license (Attribution, noncommercial, no derivatives) in TEXT format
@@ -215,7 +217,7 @@ BioESamples >> entrezSearchFetchExample06 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample07 [
 	" 
 	Download bos taurus records from Gene database in XML format
@@ -233,7 +235,7 @@ BioESamples >> entrezSearchFetchExample07 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample08 [
 	" 
 	Download and save into a FASTA file the d-loop sequence for Sheep
@@ -248,7 +250,7 @@ BioESamples >> entrezSearchFetchExample08 [
 		fetch) dumpToFileNamed: 'e-nuccore-sheep-dloop.fa'.
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> entrezSearchFetchExample09 [
 	" 
 	Download and save into a XML file the gene sequences for Bos taurus
@@ -262,7 +264,7 @@ BioESamples >> entrezSearchFetchExample09 [
 		fetch) dumpToFileNamed: 'e-gene-btau.xml'.
 ]
 
-{ #category : #'eUtilities-search' }
+{ #category : 'eUtilities-search' }
 BioESamples >> entrezSearchSample01 [
 	" self new entrezClientSample02 "
 
@@ -275,7 +277,7 @@ BioESamples >> entrezSearchSample01 [
 
 ]
 
-{ #category : #'eUtilities-search' }
+{ #category : 'eUtilities-search' }
 BioESamples >> entrezSearchSample02 [
 	" Using a client to get a Collection of Gene Identifiers 
 	from an Entrez search result (not provided = search is performed).
@@ -290,7 +292,7 @@ BioESamples >> entrezSearchSample02 [
 	^ searchResult idList.
 ]
 
-{ #category : #'eUtilities-search' }
+{ #category : 'eUtilities-search' }
 BioESamples >> entrezSearchSample03 [
 	" 
 	Using a client to search a gene and get a Collection of Gene Identifiers from the Nuccore database
@@ -309,7 +311,7 @@ BioESamples >> entrezSearchSample03 [
 		dumpToFileNamed: 'searchUsingHistory.xml'.
 ]
 
-{ #category : #'eUtilities-spelling' }
+{ #category : 'eUtilities-spelling' }
 BioESamples >> entrezSpellingSample01 [
 	" Outputs an XML with spelling suggestions for the query term String "
 	
@@ -324,7 +326,7 @@ BioESamples >> entrezSpellingSample01 [
 
 ]
 
-{ #category : #'eUtilities-summary' }
+{ #category : 'eUtilities-summary' }
 BioESamples >> entrezSummarySample01 [
 	" Outputs an XML with information about summaries "
 	
@@ -339,7 +341,7 @@ BioESamples >> entrezSummarySample01 [
 
 ]
 
-{ #category : #'eUtilities-summary' }
+{ #category : 'eUtilities-summary' }
 BioESamples >> entrezSummarySample02 [
 	" Outputs an XML with information about summaries "
 	
@@ -354,7 +356,7 @@ BioESamples >> entrezSummarySample02 [
 
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> exampleDLoopPig [
 	" 
 	Download and save into a FASTA file the d-loop sequence for Sus scrofa. From: Complete nucleotide sequence of pig (Sus scrofa) mitochondrial genome and dating evolutionary divergence within Artiodactyla. Chich-Sheng et al. Gene 236 (1999) 107–114
@@ -371,7 +373,7 @@ BioESamples >> exampleDLoopPig [
 	(fastaRecord sequence copyFrom: 1 to: 1175) dumpToFileNamed: 'e-nuccore-sus_scrofa-dloop.fa'.
 ]
 
-{ #category : #'eUtilities-search-fetch' }
+{ #category : 'eUtilities-search-fetch' }
 BioESamples >> exampleDLoopSheep [
 	" 
 	Download and save into a FASTA file the d-loop sequence for Sheep

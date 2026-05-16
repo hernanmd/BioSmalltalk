@@ -2,12 +2,14 @@
 Sample scripts for accessing data formatted in FASTA format
 "
 Class {
-	#name : #BioFASTASamples,
-	#superclass : #BioSamples,
-	#category : 'BioToolsSamples-Core'
+	#name : 'BioFASTASamples',
+	#superclass : 'BioSamples',
+	#category : 'BioToolsSamples-Core',
+	#package : 'BioToolsSamples',
+	#tag : 'Core'
 }
 
-{ #category : #'samples-code' }
+{ #category : 'samples-code' }
 BioFASTASamples >> fastaParsingSample01 [
 	" BioFASTASamples new fastaParsingSample01. "
 
@@ -23,7 +25,7 @@ BioFASTASamples >> fastaParsingSample01 [
 
 ]
 
-{ #category : #'samples-code' }
+{ #category : 'samples-code' }
 BioFASTASamples >> fastaParsingSample02 [
 	" BioFASTASamples new fastaParsingSample02. "
 	
@@ -39,7 +41,7 @@ BioFASTASamples >> fastaParsingSample02 [
 
 ]
 
-{ #category : #'samples-code' }
+{ #category : 'samples-code' }
 BioFASTASamples >> fastaParsingSample03 [
 	" BioFASTASamples new fastaParsingSample03. "
 	| fastaParser |
@@ -51,7 +53,7 @@ BioFASTASamples >> fastaParsingSample03 [
 
 ]
 
-{ #category : #'samples-code' }
+{ #category : 'samples-code' }
 BioFASTASamples >> fastaParsingSample04 [
 	" BioFASTASamples new fastaParsingSample04. "
 	
@@ -63,7 +65,7 @@ BioFASTASamples >> fastaParsingSample04 [
 
 ]
 
-{ #category : #'samples-data' }
+{ #category : 'samples-data' }
 BioFASTASamples >> fastaResult01 [
 	" From http://www.biopython.org/DIST/docs/tutorial/examples/ls_orchid.fasta "
 	
@@ -1266,7 +1268,7 @@ GCAAATGCCCCGGTTGGCCGTTTAGTTGGGCC'
 
 ]
 
-{ #category : #'samples-data' }
+{ #category : 'samples-data' }
 BioFASTASamples >> fastaResult02 [
 	" Private - "
 	

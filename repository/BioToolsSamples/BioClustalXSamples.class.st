@@ -2,12 +2,14 @@
 Sample scripts for using Clustal
 "
 Class {
-	#name : #BioClustalXSamples,
-	#superclass : #BioSamples,
-	#category : 'BioToolsSamples-Core'
+	#name : 'BioClustalXSamples',
+	#superclass : 'BioSamples',
+	#category : 'BioToolsSamples-Core',
+	#package : 'BioToolsSamples',
+	#tag : 'Core'
 }
 
-{ #category : #'samples-data' }
+{ #category : 'samples-data' }
 BioClustalXSamples >> clustalSample01 [
 	" CLUSTAL X (1.8) multiple sequence alignment.
 	From http://www.molbiol-tools.ca/Jie_Zheng/example.aln "

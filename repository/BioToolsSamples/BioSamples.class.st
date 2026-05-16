@@ -3,12 +3,14 @@ Abstract class for grouping common behavior of sample subclasses
 
 "
 Class {
-	#name : #BioSamples,
-	#superclass : #BioObject,
-	#category : 'BioToolsSamples-Core'
+	#name : 'BioSamples',
+	#superclass : 'BioObject',
+	#category : 'BioToolsSamples-Core',
+	#package : 'BioToolsSamples',
+	#tag : 'Core'
 }
 
-{ #category : #'accessing private' }
+{ #category : 'accessing private' }
 BioSamples class >> allowOpenTranscript [
 
 	^ true

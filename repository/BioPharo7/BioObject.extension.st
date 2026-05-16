@@ -1,21 +1,20 @@
-Extension { #name : #BioObject }
+Extension { #name : 'BioObject' }
 
-{ #category : #'*BioPharo7' }
+{ #category : '*BioPharo7' }
 BioObject class >> requestDirectoryPath [
 	" Answer a <FileReference> with selected directory "
 
-	| tmpFileDialog |
-	tmpFileDialog := FileDialogWindow basicNew
-		initialize;
-		title: 'Select a directory';
-		answerDirectory;
+	| reference |
+	StOpenDirectoryPresenter new
+		openFolder: FileLocator workingDirectory;
+		title: 'Choose directory';
+		okAction: [ :directoryReference | reference := directoryReference ];
 		openModal.
-	tmpFileDialog isNil ifTrue: [ self error: 'FileDialogWindow is broken' ].
-	^ tmpFileDialog answer "pathString"
+	^ reference
 
 ]
 
-{ #category : #'*BioPharo7' }
+{ #category : '*BioPharo7' }
 BioObject class >> requestOpenCSVFile [
 	" Open request dialog to select a CSV file "
 	
@@ -24,7 +23,7 @@ BioObject class >> requestOpenCSVFile [
 		label: 'Choose CSV file'
 ]
 
-{ #category : #'*BioPharo7' }
+{ #category : '*BioPharo7' }
 BioObject class >> requestOpenFASTAFile [
 	" Open request dialog to select a FASTA file "
 	
@@ -33,7 +32,7 @@ BioObject class >> requestOpenFASTAFile [
 		label: 'Choose FASTA file'
 ]
 
-{ #category : #'*BioPharo7' }
+{ #category : '*BioPharo7' }
 BioObject class >> requestOpenXMLFile [
 	" Open request dialog to select a XML file "
 	

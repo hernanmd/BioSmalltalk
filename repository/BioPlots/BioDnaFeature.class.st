@@ -46,8 +46,9 @@ Class {
 		'labelLinkColor',
 		'data'
 	],
-	#category : 'BioDnaFeaturesViewer',
-	#package : 'BioDnaFeaturesViewer'
+	#category : 'BioPlots-FeaturesViewer',
+	#package : 'BioPlots',
+	#tag : 'FeaturesViewer'
 }
 
 { #category : 'instance creation' }

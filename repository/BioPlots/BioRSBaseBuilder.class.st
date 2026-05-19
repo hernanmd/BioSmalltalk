@@ -7,8 +7,9 @@ Class {
 	#instVars : [
 		'bases'
 	],
-	#category : 'BioPlots',
-	#package : 'BioPlots'
+	#category : 'BioPlots-Alignments',
+	#package : 'BioPlots',
+	#tag : 'Alignments'
 }
 
 { #category : 'examples' }

@@ -21,8 +21,9 @@ Class {
 		'radius',
 		'cScale'
 	],
-	#category : 'BioDnaFeaturesViewer',
-	#package : 'BioDnaFeaturesViewer'
+	#category : 'BioPlots-FeaturesViewer',
+	#package : 'BioPlots',
+	#tag : 'FeaturesViewer'
 }
 
 { #category : 'instance creation' }

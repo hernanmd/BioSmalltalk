@@ -248,7 +248,8 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioClassifierTests' 
 			"'BioProjectTests'"
 			'BioArlequin-Tests'
-			'BioSummarizedExperiment-Tests' )
+			'BioSummarizedExperiment-Tests'
+			'BioPlots-Tests' )
 ]
 
 { #category : 'baselines' }

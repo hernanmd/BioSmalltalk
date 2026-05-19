@@ -17,8 +17,9 @@ Example:
 Class {
 	#name : 'BioDnaFeatureLevelComputer',
 	#superclass : 'Object',
-	#category : 'BioDnaFeaturesViewer',
-	#package : 'BioDnaFeaturesViewer'
+	#category : 'BioPlots-FeaturesViewer',
+	#package : 'BioPlots',
+	#tag : 'FeaturesViewer'
 }
 
 { #category : 'instance creation' }

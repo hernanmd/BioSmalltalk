@@ -20,8 +20,9 @@ Each example opens a Roassal visualization window showing different aspects of t
 Class {
 	#name : 'BioDnaFeaturesViewerExamples',
 	#superclass : 'Object',
-	#category : 'BioDnaFeaturesViewer',
-	#package : 'BioDnaFeaturesViewer'
+	#category : 'BioPlots-FeaturesViewer',
+	#package : 'BioPlots',
+	#tag : 'FeaturesViewer'
 }
 
 { #category : 'examples - circular' }

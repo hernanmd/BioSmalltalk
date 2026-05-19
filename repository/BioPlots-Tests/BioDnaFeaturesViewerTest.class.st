@@ -4,8 +4,9 @@ I test the BioDnaFeaturesViewer package including BioDnaFeature, BioDnaFeatureLe
 Class {
 	#name : 'BioDnaFeaturesViewerTest',
 	#superclass : 'BioAbstractTest',
-	#category : 'BioDnaFeaturesViewer-Tests',
-	#package : 'BioDnaFeaturesViewer-Tests'
+	#category : 'BioPlots-Tests-FeaturesViewer',
+	#package : 'BioPlots-Tests',
+	#tag : 'FeaturesViewer'
 }
 
 { #category : 'running' }
@@ -40,16 +41,16 @@ BioDnaFeaturesViewerTest >> testAutoLabelColor [
 		          features: OrderedCollection new. "Dark colors should produce white labels"
 	self
 		assert: (record autoLabelColorFor: Color black)
-		equals: Color white.
+		equals: Color veryDarkGray.
 	self
 		assert: (record autoLabelColorFor: (Color r: 0.2 g: 0.4 b: 0.8))
-		equals: Color white. "Light colors should produce black labels for readability"
+		equals: Color veryDarkGray. "Light colors should produce black labels for readability"
 	self
 		assert: (record autoLabelColorFor: Color white)
 		equals: Color black.
 	self
 		assert: (record autoLabelColorFor: Color red)
-		equals: Color white
+		equals: Color veryDarkGray
 ]
 
 { #category : 'tests - integration' }

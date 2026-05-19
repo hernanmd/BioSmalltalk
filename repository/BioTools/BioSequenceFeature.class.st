@@ -80,6 +80,24 @@ BioSequenceFeature >> addTag: anAssociation [
 	self tags at: anAssociation key put: anAssociation value
 ]
 
+{ #category : 'converting' }
+BioSequenceFeature >> asDnaFeature [
+    ^ BioDnaFeature new
+        start: self start;
+        end: self end;
+        strand: self strand;
+        label: self primaryTag;
+        yourself
+]
+
+{ #category : 'converting' }
+BioSequenceFeature >> asDnaGraphicRecord [
+    ^ BioDnaGraphicRecord new
+        sequenceLength: self end;
+        features: (OrderedCollection with: self asDnaFeature);
+        yourself
+]
+
 { #category : 'accessing' }
 BioSequenceFeature >> chromosome [
 

@@ -467,7 +467,7 @@ BioDNACodonTables class >> euplotidNuclearTableStopCodons [
 		with: 'TAG'
 ]
 
-{ #category : 'initialize-release' }
+{ #category : 'class initialization' }
 BioDNACodonTables class >> initialize [
 	" Private - Initialize receiver's codon tables "
 	| tablesCount tableSelectors startIndex |

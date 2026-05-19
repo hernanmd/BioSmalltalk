@@ -413,6 +413,17 @@ BioSequence >> asCircular [
 ]
 
 { #category : 'converting' }
+BioSequence >> asDnaGraphicRecord [
+    | features |
+    features := self sequenceFeatures collect: [ :f | f asDnaFeature ].
+    ^ BioDnaGraphicRecord new
+        sequenceLength: self size;
+        sequence: self asString;
+        features: features;
+        yourself
+]
+
+{ #category : 'converting' }
 BioSequence >> asFastaRecord [
 	" Answer a <BioFastaRecord> filled with the receiver's name and sequence "
 
@@ -1266,7 +1277,7 @@ BioSequence >> from: start to: stop do: aClosure [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcContent [
 	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
 
@@ -1276,12 +1287,12 @@ BioSequence >> gcContent [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcContent: anObject [
 	gcContent := anObject
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcContentCalc [
 	" Answer a <Number> representing the GC-content of a DNA string: the percentage of symbols in the string that are 'C' or 'G' "
 	| cCount gCount |	
@@ -1297,7 +1308,7 @@ BioSequence >> gcContentCalc [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcContentStep: step window: w [
 	" Answer a <Collection> of GC-content regions of window size w by step increments, in percentages. "
 
@@ -1321,7 +1332,7 @@ BioSequence >> gcContentStep: step window: w [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcContentUppercased [
 	" Answer a <Number> representing the GC-content of the receiver: the percentage of symbols in the string that are 'C' or 'G'. Assume the receiver's sequence is already all uppercased "
 
@@ -1351,7 +1362,7 @@ BioSequence >> gcRatio [
 	^ gc / (at + gc) asFloat
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcSkew [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
@@ -1361,12 +1372,12 @@ BioSequence >> gcSkew [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcSkew: anObject [
 	gcSkew := anObject
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcSkewCalc [
 	" Answer a <Collection> with ratios <Float>. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength.
 	Set 0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
@@ -1375,7 +1386,7 @@ BioSequence >> gcSkewCalc [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcSkewCalc: wLength [
 	" Answer a <Collection> with <Float> representing ratios. Calculate receiver's GC skew (G-C)/(G+C) for windows of size wLength. Answer 0.0 for windows without any G/C by handling zero division errors. Does NOT look at any ambiguous nucleotides. "
 	
@@ -1401,7 +1412,7 @@ BioSequence >> gcSkewCalc: wLength [
 
 ]
 
-{ #category : 'accessing' }
+{ #category : 'accessing - gc' }
 BioSequence >> gcSkewInt [
 	" Answer a <Collection> with <Integer>. Calculate receiver's GC skew for each position. Does NOT look at any ambiguous nucleotides. "
 

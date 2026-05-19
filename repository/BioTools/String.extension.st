@@ -18,6 +18,14 @@ String >> asAccessionStringWithoutVersion [
 ]
 
 { #category : '*BioTools' }
+String >> asAminoacidAbbreviation [
+	" Answer the complete name of each receiver's aminoacid. Input may be one or three letter code. "
+	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>
+
+	^ self asAminoacidName first: 3
+]
+
+{ #category : '*BioTools' }
 String >> asAminoacidLetter [
 	" Answer a <Character> representing an aminoacid letter. "
 	<lint: 'Method selectors' rationale: 'No spelling error' author: 'HernanMoralesDurand'>

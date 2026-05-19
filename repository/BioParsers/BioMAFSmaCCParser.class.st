@@ -1,10 +1,26 @@
+"
+A SmaCC-based parser for Mutation Annotation Format (MAF) files. Extends SmaCCParser for class hierarchy consistency with other BioSmalltalk parsers (BioGFF3File, VCF, BioBEDParser).
+
+Like the GFF3 parser, this uses a hybrid approach: it inherits from SmaCCParser but reads lines directly from the scanner stream rather than using a formal SmaCC grammar. This is appropriate because MAF is a simple tab-delimited format with no recursive structure.
+
+Both BioMAFParser (line-by-line) and BioMAFSmaCCParser produce identical BioMutationSet results. Use BioMAFParser for production (slightly faster) or BioMAFSmaCCParser for consistency with the SmaCC parser pattern.
+
+API:
+  BioMAFSmaCCParser parseFile: '/path/to/mutations.maf'
+  BioMAFSmaCCParser parseString: mafText
+  BioMAFSmaCCParser parseStream: aReadStream
+  BioMutationSet fromSmaCCFile: '/path/to/mutations.maf'
+
+Instance Variables:
+  columnNames <Array of String>  Header column names from the MAF file
+
+See also: BioMAFParser, BioMAFScanner, BioMutationSet
+"
 Class {
 	#name : 'BioMAFSmaCCParser',
 	#superclass : 'SmaCCParser',
 	#instVars : [
-		'columnNames',
-		'currentLineString',
-		'headerParsed'
+		'columnNames'
 	],
 	#category : 'BioParsers-MAF',
 	#package : 'BioParsers',
@@ -54,21 +70,21 @@ BioMAFSmaCCParser class >> parseString: aString [
 BioMAFSmaCCParser class >> scannerClass [ ^ BioMAFScanner
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFSmaCCParser >> columnNames [ ^ columnNames
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFSmaCCParser >> columnNames: anArray [ columnNames := anArray
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'instance creation' }
 BioMAFSmaCCParser >> on: aScanner [
 	super on: aScanner.
 	columnNames := nil
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFSmaCCParser >> parse [
 	| mutationSet line lineNum rs |
 	mutationSet := BioMutationSet new.
@@ -93,7 +109,7 @@ BioMAFSmaCCParser >> parse [
 	^ mutationSet
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'parsing' }
 BioMAFSmaCCParser >> parseDataLine: aLine lineNum: lineNum [
 	| fields mut |
 	fields := (aLine findTokens: (Array with: Character tab)) collect: [ :s | s trimBoth ].
@@ -105,7 +121,7 @@ BioMAFSmaCCParser >> parseDataLine: aLine lineNum: lineNum [
 	^ mut
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'parsing' }
 BioMAFSmaCCParser >> parseStream: aStream [
 	| scanner parser |
 	scanner := BioMAFScanner on: aStream.
@@ -113,7 +129,7 @@ BioMAFSmaCCParser >> parseStream: aStream [
 	^ parser parse
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'initialization' }
 BioMAFSmaCCParser >> setField: key value: value in: mut [
 	BioMAFParser new setField: key value: value in: mut
 ]

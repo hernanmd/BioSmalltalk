@@ -1,3 +1,14 @@
+"
+A raw MAF record representing a single data line with column-name access. Stores parsed fields as a Dictionary keyed by column header names.
+
+BioMAFRecord provides low-level column-access API (atField:, atField:ifAbsent:) while BioMutation provides rich domain accessors (hugoSymbol, chromosome, variantType, predicates like isSNP, isMissense, etc.). For most use cases, BioMutation is preferred.
+
+Instance Variables:
+  fields      <Dictionary String -> String>  Raw field values keyed by column name
+  columnNames <Array of String>              Column header names in order
+
+See also: BioMAFParser, BioMutation
+"
 Class {
 	#name : 'BioMAFRecord',
 	#superclass : 'Object',
@@ -10,7 +21,7 @@ Class {
 	#tag : 'MAF'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'converting' }
 BioMAFRecord >> asDictionary [
 	| dict |
 	dict := Dictionary new.
@@ -20,11 +31,11 @@ BioMAFRecord >> asDictionary [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> atField: fieldName [ | idx | idx := columnNames indexOf: fieldName ifAbsent: [ ^ nil ]. idx > fields size ifTrue: [ ^ nil ]. ^ fields at: idx
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> atField: fieldName put: aValue [
 	| idx |
 	idx := columnNames indexOf: fieldName ifAbsent: [ ^ self ].
@@ -33,25 +44,25 @@ BioMAFRecord >> atField: fieldName put: aValue [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> chromosome [
 	^ self atField: 'Chromosome'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> columnNames [
 	^ columnNames
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> columnNames: anArray [
 	columnNames := anArray
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> endPosition [
 	| val |
 	val := self atField: 'End_Position'.
@@ -59,7 +70,7 @@ BioMAFRecord >> endPosition [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> entrezGeneId [
 	| val |
 	val := self atField: 'Entrez_Gene_Id'.
@@ -67,38 +78,38 @@ BioMAFRecord >> entrezGeneId [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> fields [
 	^ fields
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> fields: anArray [
 	fields := anArray
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'private' }
 BioMAFRecord >> hugoSymbol [
 	^ self atField: 'Hugo_Symbol'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'initialization' }
 BioMAFRecord >> initialize [
 	super initialize.
 	fields := Array new.
 	columnNames := Array new
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> referenceAllele [
 	^ self atField: 'Reference_Allele'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> startPosition [
 	| val |
 	val := self atField: 'Start_Position'.
@@ -106,31 +117,31 @@ BioMAFRecord >> startPosition [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'private' }
 BioMAFRecord >> tumorSampleBarcode [
 	^ self atField: 'Tumor_Sample_Barcode'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> tumorSeqAllele1 [
 	^ self atField: 'Tumor_Seq_Allele1'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> tumorSeqAllele2 [
 	^ self atField: 'Tumor_Seq_Allele2'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> variantClassification [
 	^ self atField: 'Variant_Classification'
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRecord >> variantType [
 	^ self atField: 'Variant_Type'
 

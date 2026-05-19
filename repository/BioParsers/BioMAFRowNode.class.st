@@ -9,14 +9,14 @@ Class {
 	#tag : 'MAF'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRowNode >> fields [ ^ fields
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMAFRowNode >> fields: anArray [ fields := anArray
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'initialization' }
 BioMAFRowNode >> initialize [ super initialize. fields := OrderedCollection new
 ]

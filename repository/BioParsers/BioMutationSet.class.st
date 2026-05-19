@@ -37,14 +37,14 @@ BioMutationSet class >> fromSmaCCString: aString [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'adding' }
 BioMutationSet >> addAll: aCollection [
 	aCollection do: [ :m | self addMutation: m ].
 	^ self
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'adding' }
 BioMutationSet >> addMutation: aBioMutation [
 	mutations add: aBioMutation.
 	self indexMutation: aBioMutation.
@@ -52,7 +52,7 @@ BioMutationSet >> addMutation: aBioMutation [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'converting' }
 BioMutationSet >> asMAFString [
 	| stream headers |
 	headers := self defaultColumnNames.
@@ -66,33 +66,33 @@ BioMutationSet >> asMAFString [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> chromosomes [
 	^ indexByChromosome keys
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> customColumns [ ^ customColumns
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> customColumns: anArray [ customColumns := anArray
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> defaultColumnNames [
 	^ #( 'Hugo_Symbol' 'Entrez_Gene_Id' 'Chromosome' 'Start_Position' 'End_Position' 'Strand' 'Variant_Classification' 'Variant_Type' 'Reference_Allele' 'Tumor_Seq_Allele1' 'Tumor_Seq_Allele2' 'Tumor_Sample_Barcode' 'Matched_Norm_Sample_Barcode' 'Tumor_Allele_Freq' 'Amino_Acid_Change' )
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'enumerating' }
 BioMutationSet >> do: aBlock [
 	mutations do: aBlock
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> enrichPathways: pathwayCollection [
 	"For each pathway, compute Fisher-style enrichment of mutated genes"
 	| totalGenes totalMutated results |
@@ -109,13 +109,13 @@ BioMutationSet >> enrichPathways: pathwayCollection [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> genes [
 	^ indexByGene keys
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> groupedByChromosome [
 	| groups |
 	groups := Dictionary new.
@@ -126,7 +126,7 @@ BioMutationSet >> groupedByChromosome [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> groupedBySample [
 	"Return a Dictionary mapping sample barcode -> mutation set"
 	| groups |
@@ -138,13 +138,13 @@ BioMutationSet >> groupedBySample [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> indelCount [
 	^ mutations count: [ :m | m isIndel ]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> indexMutation: aBioMutation [
 	aBioMutation hugoSymbol ifNotNil: [ :g |
 		(indexByGene at: g ifAbsentPut: [OrderedCollection new]) add: aBioMutation ].
@@ -155,7 +155,7 @@ BioMutationSet >> indexMutation: aBioMutation [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'initialization' }
 BioMutationSet >> initialize [
 	super initialize.
 	mutations := OrderedCollection new.
@@ -166,31 +166,13 @@ BioMutationSet >> initialize [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioMutationSet >> isEmpty [
 	^ mutations isEmpty
 
 ]
 
-{ #category : 'as yet unclassified' }
-BioMutationSet >> mafField: fieldName ifAbsent: aBlock [
-	fieldName = 'Hugo_Symbol' ifTrue: [ ^ hugoSymbol ifNil: aBlock ].
-	fieldName = 'Entrez_Gene_Id' ifTrue: [ ^ entrezGeneId ifNil: aBlock ].
-	fieldName = 'Chromosome' ifTrue: [ ^ chromosome ifNil: aBlock ].
-	fieldName = 'Start_Position' ifTrue: [ ^ startPosition ifNil: aBlock ifNotNil: [ :v | v printString ] ].
-	fieldName = 'End_Position' ifTrue: [ ^ endPosition ifNil: aBlock ifNotNil: [ :v | v printString ] ].
-	fieldName = 'Variant_Classification' ifTrue: [ ^ variantClassification ifNil: aBlock ].
-	fieldName = 'Variant_Type' ifTrue: [ ^ variantType ifNil: aBlock ].
-	fieldName = 'Reference_Allele' ifTrue: [ ^ referenceAllele ifNil: aBlock ].
-	fieldName = 'Tumor_Seq_Allele1' ifTrue: [ ^ tumorSeqAllele1 ifNil: aBlock ].
-	fieldName = 'Tumor_Seq_Allele2' ifTrue: [ ^ tumorSeqAllele2 ifNil: aBlock ].
-	fieldName = 'Tumor_Sample_Barcode' ifTrue: [ ^ tumorSampleBarcode ifNil: aBlock ].
-	fieldName = 'Matched_Norm_Sample_Barcode' ifTrue: [ ^ matchedNormSampleBarcode ifNil: aBlock ].
-	^ aBlock value
-
-]
-
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationBurdenPerMB: genomeSizeMB [
 	"Total mutations per megabase"
 	genomeSizeMB = 0 ifTrue: [ ^ 0 ].
@@ -198,7 +180,7 @@ BioMutationSet >> mutationBurdenPerMB: genomeSizeMB [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationSpectrum [
 	"Return a Dictionary of 6-channel mutation counts: C>A, C>G, C>T, T>A, T>C, T>G"
 	| spectrum |
@@ -211,31 +193,31 @@ BioMutationSet >> mutationSpectrum [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutations [
 	^ mutations
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationsForChromosome: aChrom [
 	^ indexByChromosome at: aChrom ifAbsent: [OrderedCollection new]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationsForGene: aGeneName [
 	^ indexByGene at: aGeneName ifAbsent: [OrderedCollection new]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationsForSample: aBarcode [
 	^ indexBySample at: aBarcode ifAbsent: [OrderedCollection new]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> mutationsInPathway: aBioPathway [
 	"Return all mutations in genes that appear in the given pathway"
 	| pathwayGenes |
@@ -244,7 +226,7 @@ BioMutationSet >> mutationsInPathway: aBioPathway [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> nonsynonymousBurdenPerMB: genomeSizeMB [
 	"Nonsynonymous mutations per megabase"
 	genomeSizeMB = 0 ifTrue: [ ^ 0 ].
@@ -252,13 +234,13 @@ BioMutationSet >> nonsynonymousBurdenPerMB: genomeSizeMB [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> nonsynonymousCount [
 	^ mutations count: [ :m | m isNonsynonymous ]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'printing' }
 BioMutationSet >> printOn: aStream [
 	aStream nextPutAll: 'BioMutationSet('.
 	aStream print: mutations size.
@@ -266,7 +248,7 @@ BioMutationSet >> printOn: aStream [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'enumerating' }
 BioMutationSet >> reject: aBlock [
 	^ BioMutationSet new
 		addAll: (mutations reject: aBlock);
@@ -274,13 +256,13 @@ BioMutationSet >> reject: aBlock [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> samples [
 	^ indexBySample keys
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'enumerating' }
 BioMutationSet >> select: aBlock [
 	^ BioMutationSet new
 		addAll: (mutations select: aBlock);
@@ -288,19 +270,19 @@ BioMutationSet >> select: aBlock [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> size [
 	^ mutations size
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> snvCount [
 	^ mutations count: [ :m | m isSNP ]
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> topMutatedGenes: anInteger [
 	| counts |
 	counts := Dictionary new.
@@ -309,7 +291,7 @@ BioMutationSet >> topMutatedGenes: anInteger [
 
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioMutationSet >> topMutatedSamples: anInteger [
 	| counts |
 	counts := Dictionary new.

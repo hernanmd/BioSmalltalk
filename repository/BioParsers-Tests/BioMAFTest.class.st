@@ -93,6 +93,11 @@ BRAF	Nonsense_Mutation	SNP	A	T	T	TCGA-AB-1'.
 
 ]
 
+{ #category : 'as yet unclassified' }
+BioMAFTest >> testMutationSetNoMafField [
+	self should: [ BioMutationSet new mafField: 'Hugo_Symbol' ifAbsent: ['N/A'] ] raise: MessageNotUnderstood
+]
+
 { #category : 'tests' }
 BioMAFTest >> testMutationSpectrum [
 	| maf mset spectrum |
@@ -199,6 +204,14 @@ KRAS	3845	12	1	Missense_Mutation	SNP	C	A	A	TCGA-AB-1'.
 
 ]
 
+{ #category : 'as yet unclassified' }
+BioMAFTest >> testValidationStatusAliasFromMAFField [
+	| mut |
+	mut := BioMutation new.
+	mut verificationStatus: 'Valid'.
+	self assert: (mut mafField: 'Validation_Status' ifAbsent: ['N/A']) equals: 'Valid'
+]
+
 { #category : 'tests' }
 BioMAFTest >> testVariantClassificationPredicates [
 	| mut |
@@ -216,4 +229,31 @@ BioMAFTest >> testVariantClassificationPredicates [
 	self assert: mut isSynonymous
 
 
+]
+
+{ #category : 'as yet unclassified' }
+BioMAFTest >> testVerificationStatusAccessor [
+	| mut |
+	mut := BioMutation new.
+	mut verificationStatus: 'Valid'.
+	self assert: mut verificationStatus equals: 'Valid'
+]
+
+{ #category : 'as yet unclassified' }
+BioMAFTest >> testVerificationStatusFromMAFField [
+	| mut |
+	mut := BioMutation new.
+	mut verificationStatus: 'Valid'.
+	self assert: (mut mafField: 'Verification_Status' ifAbsent: ['N/A']) equals: 'Valid'
+]
+
+{ #category : 'as yet unclassified' }
+BioMAFTest >> testVerificationStatusParsedFromMAF [
+	| maf mset mut |
+	maf := String cr join: {
+		'Hugo_Symbol	Chromosome	Start_Position	End_Position	Verification_Status	Variant_Type'.
+		'BRAF	7	140453136	140453136	Valid	SNP' }.
+	mset := BioMAFParser parseString: maf.
+	mut := mset mutations first.
+	self assert: mut verificationStatus equals: 'Valid'
 ]

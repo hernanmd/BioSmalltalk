@@ -23,152 +23,152 @@ Class {
 	#tag : 'SAM'
 }
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> cigar [
     ^ cigar
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> cigar: aValue [
     cigar := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> flag [
     ^ flag
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'flagging' }
 BioSAMRecord >> flag: aValue [
     flag := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioSAMRecord >> isProperPair [
     ^ (flag bitAnd: 2) = 2
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioSAMRecord >> isReverseComplement [
     ^ (flag bitAnd: 16) = 16
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioSAMRecord >> isSecondary [
     ^ (flag bitAnd: 256) = 256
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'testing' }
 BioSAMRecord >> isSupplementary [
     ^ (flag bitAnd: 2048) = 2048
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> mapq [
     ^ mapq
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> mapq: aValue [
     mapq := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> pnext [
     ^ pnext
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> pnext: aValue [
     pnext := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> pos [
     ^ pos
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> pos: aValue [
     pos := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> qname [
     ^ qname
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> qname: aValue [
     qname := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> qual [
     ^ qual
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> qual: aValue [
     qual := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> rlen [
     ^ seq size
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> rname [
     ^ rname
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> rname: aValue [
     rname := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> rnext [
     ^ rnext
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> rnext: aValue [
     rnext := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> seq [
     ^ seq
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> seq: aValue [
     seq := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> tagAt: tagName [
     ^ tags at: tagName ifAbsent: [ nil ]
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> tags [
     ^ tags
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> tags: aValue [
     tags := aValue
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> tlen [
     ^ tlen
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMRecord >> tlen: aValue [
     tlen := aValue
 ]

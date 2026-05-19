@@ -17,12 +17,12 @@ BioSAMParser class >> on: aReadStream [
     ^ self new stream: aReadStream; yourself
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMParser >> atEnd [
     ^ stream atEnd
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMParser >> next [
 
 	| line fields record qname flag rname pos mapq cigar rnext pnext tlen seq qual tags |
@@ -66,12 +66,12 @@ BioSAMParser >> next [
 		  yourself
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMParser >> stream [
     ^ stream
 ]
 
-{ #category : 'as yet unclassified' }
+{ #category : 'accessing' }
 BioSAMParser >> stream: aStream [
     stream := aStream
 ]

@@ -130,7 +130,6 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 		group: 'Core' 
 		with: #(
 			'Basic'
-		
 			'BioWrappers' 
 			'BioEntrez' 
 			'BioClassifier' 
@@ -141,7 +140,10 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioBenchmarks' 
 			'BioNGS'
 			'BioPlots'
-			'BioSummarizedExperiment' )
+			'BioSummarizedExperiment'
+			'BioOntology'
+			'BioPathway'
+			'BioDatabases' )
 ]
 
 { #category : 'groups' }
@@ -249,7 +251,10 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			"'BioProjectTests'"
 			'BioArlequin-Tests'
 			'BioSummarizedExperiment-Tests'
-			'BioPlots-Tests' )
+			'BioPlots-Tests'
+			'BioOntology-Tests'
+			'BioPathway-Tests'
+			'BioDatabases-Tests' )
 ]
 
 { #category : 'baselines' }

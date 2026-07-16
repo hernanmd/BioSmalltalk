@@ -8,7 +8,7 @@
 
 - [Description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Features](#features)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -47,6 +47,142 @@ The script should be evaluated inside the Pharo image. The current Pharo version
 			load ].
 ```
 In case of problems, check [Troubleshoot Install](./TROUBLESHOOT.md)
+
+# Features
+
+BioSmalltalk covers the core bioinformatics workflow from sequence retrieval to analysis, with no external C dependencies for most operations. The following modules are the most recent additions.
+
+## DNA Feature Visualization
+
+A port of the Python DnaFeaturesViewer library built on Roassal2. It renders linear and circular DNA plots with features, ruler, nucleotide sequence, amino-acid translation, and GC-content rows.
+
+```smalltalk
+| record features |
+features := {
+  BioDnaFeature start: 10 end: 40 strand: 1 label: 'geneA' color: Color blue.
+  BioDnaFeature start: 55 end: 80 strand: -1 label: 'geneB' color: Color red }.
+record := BioDnaGraphicRecord sequence: 'ATCGATCG...' features: features.
+record yScale: 15; xScale: 10.
+record openLinearTitled: 'My plasmid'.
+record openCircularTitled: 'My plasmid'.
+record openLinearWithSequenceAndTranslationTitled: 'Details' from: 1 to: 50.
+record openLinearWithGCTitled: 'GC Content' windowSize: 20.
+```
+
+Linear plots support feature CRUD, overlapping multi-level features, cropping, inverted axes, local highlighting, overview+detail, custom colors, and GenBank import (`fromGenBankFile:`). Circular plots support plasmid and virus maps with rotated start positions. 22 example methods and 63 tests ship with the module.
+
+## Pathway Modeling
+
+Metabolic and signaling pathway modeling inspired by Biopython `Bio.Pathway`, libSBML, BioPAX, KEGG, and MetaCyc. Eight classes (`BioSpecies`, `BioComplex`, `BioCompartment`, `BioReaction`, `BioInteraction`, `BioNetwork`, `BioPathway`, `BioOntologyTerm`) support stoichiometric analysis, graph queries, and omics mapping.
+
+```smalltalk
+| pathway glc pyr r1 |
+glc := BioSpecies metabolite: 'glucose'.
+pyr := BioSpecies metabolite: 'pyruvate'.
+r1 := BioReaction id: 'R1' name: 'glycolysis_step1'.
+r1 addReactant: glc stoichiometry: 1; addProduct: pyr stoichiometry: 2.
+pathway := BioPathway id: 'hsa00010' name: 'Glycolysis' organism: 'Homo sapiens'.
+pathway addReaction: r1.
+pathway stoichiometryMatrix.
+pathway chokePoints.
+pathway deadEndMetabolites.
+pathway findPathsFrom: glc to: pyr.
+pathway validate.
+pathway mapOmicsData: expressionData.
+```
+
+Seven example methods cover glycolysis, the TCA cycle, lac operon regulation, hierarchical pathways, omics data mapping, pathway analysis, and FBA-style kinetics. Export stubs (`asSBML`, `asKGML`, `asBioPAX`) are extension points for future format conversion. 27 tests pass.
+
+## Ontology Management
+
+OBO 1.2 parsing and programmatic ontology construction with DAG traversal, namespace and subset support, and entity annotations carrying qualifiers and evidence. Eight classes: `BioOntology`, `BioOntologyTerm`, `BioOntologyRelationship`, `BioOntologyNamespace`, `BioAnnotation`, `BioOntologyParser`, `BioOBOOntologyParser`, `BioOWLOntologyParser`.
+
+```smalltalk
+| onto bp |
+onto := BioOntology loadFromOBO: oboText.
+bp := onto termById: 'GO:0008150'.
+onto termsMatching: 'protein'.
+onto ancestorsOf: bp.
+onto annotate: aPathway withTerm: bp qualifier: #enables.
+oboString := onto exportToOBO.
+```
+
+## Curated Database Catalog
+
+`BioDatabases` ships 654 curated bioinformatics database entries across 34 categories (19 primary, 15 secondary), parsed from bioinformaticssoftwareandtools.co.in. URLs are resolved from the `click_me.php?id=N` proxy to real targets.
+
+```smalltalk
+| dbs |
+dbs := BioDatabases allDatabases.  "654 entries"
+dbs byCategory: 'nucleotideSequenceDatabases'.
+dbs byType: #primary.
+dbs searchKeyword: 'GenBank'.
+```
+
+## MAF Parsing and Mutation Analysis
+
+Two parsers produce `BioMutationSet` from Mutation Annotation Format files: a fast line-by-line `BioMAFParser` and a SmaCC-based `BioMAFSmaCCParser` consistent with the VCF and GFF3 parsers. `BioMutation` and `BioMutationSet` provide indexing, filtering, mutation spectrum, and pathway integration.
+
+```smalltalk
+| mset |
+mset := BioMutationSet fromMAFFile: '/path/to/mutations.maf'.
+mset mutationsForGene: 'TP53'.
+mset mutationSpectrum.
+mset topMutatedGenes: 10.
+mset mutationBurdenPerMB: 3000.
+mset enrichPathways: pathwayCollection.
+mset asMAFString.
+```
+
+## BED Parsing and Genomic Intervals
+
+SmaCC-hybrid BED parser with automatic BED3/BED6/BED12 detection (track, browser, and comment lines skipped). `BioGenomicInterval` provides half-open interval arithmetic; `BioGenomicIntervalCollection` adds chromosome indexing, merge, sort, and overlap queries.
+
+```smalltalk
+| intervals i1 i2 |
+intervals := BioGenomicIntervalCollection fromBED: '/path/to/regions.bed'.
+i1 := BioGenomicInterval from: 100 to: 500 on: 'chr1' strand: '+'.
+i2 := BioGenomicInterval from: 300 to: 800 on: 'chr1'.
+i1 overlapsInterval: i2.          "true"
+i1 intersect: i2.                 "chr1:300-500"
+i1 union: i2.                     "chr1:100-800"
+i1 subtract: i2.                  "chr1:100-300"
+i1 promoterRegion: 1000 downstream: 200.
+intervals mergeOverlapping.
+intervals overlappingMutations: aMutationSet.
+```
+
+BED12 features expose exon blocks and coding length. Intervals integrate with MAF (`overlappingMutations:`), ontology (`annotateWithOntology:`), and GFF3 (`toGFF`). 43 tests pass.
+
+## SmaCC Parsers for VCF and GFF3
+
+The VCF 4.5 and GFF3 parsers are SmaCC-based (LALR(1)) and build rich domain models. The VCF parser exposes sample genotypes, INFO fields, and biallelic SNP predicates. The GFF3 parser supports memory-efficient streaming, type filtering, and parent-child navigation via `Parent` and `Derives_from` attributes.
+
+```smalltalk
+| vcf dl |
+vcf := VCF fromFile: '/path/to/file.vcf'.
+vcf fileFormat.                    "'VCFv4.5'"
+dl := vcf dataLines first.
+dl isBiallelicSNP.
+dl hasInfoFlag: 'DB'.
+dl genotypeAt: 1.
+```
+
+```smalltalk
+| gff features |
+gff := BioGFF3File fromFile: '/path/to/file.gff3'.
+gff featureTypes.
+features := gff featuresWithType: 'gene'.
+
+BioGFF3File new streamFeaturesFromFile: '/path/to/large.gff3' block: [ :f |
+  f isOfGeneType ifTrue: [ ...process gene... ] ].
+
+gff := BioGFF3File new fromFile: '/path/to/large.gff3' filteringTypes: (Set with: 'gene' with: 'mRNA').
+```
+
+## Sequences, Alignment, and External Tools
+
+Beyond the new modules, BioSmalltalk provides DNA/RNA/protein sequences (`BioSequence` with complement, translate, GC content, restriction maps, k-mer frequencies), FASTA/GenBank/EMBL/SwissProt/Phylip parsing, `BioAlignment` with consensus building, NCBI Entrez clients (`BioEntrezClient`), BLAST wrappers, multiple sequence alignment wrappers (MUSCLE, ClustalW/O, MAFFT, HMMER), population genetics tools (PLINK, LAMPLD, Structure, ShapeIt), haplotype block analysis, rule-based classifiers, and NGS preprocessing (Cutadapt, fastq-mcf, SAMtools).
 
 # Contribute
 

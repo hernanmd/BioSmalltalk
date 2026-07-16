@@ -9,6 +9,19 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Features](#features)
+  - [DNA Feature Visualization](#dna-feature-visualization)
+  - [Pathway Modeling](#pathway-modeling)
+  - [Ontology Management](#ontology-management)
+  - [Curated Database Catalog](#curated-database-catalog)
+  - [MAF Parsing and Mutation Analysis](#maf-parsing-and-mutation-analysis)
+  - [BED Parsing and Genomic Intervals](#bed-parsing-and-genomic-intervals)
+  - [SmaCC Parsers for VCF and GFF3](#smacc-parsers-for-vcf-and-gff3)
+  - [PDB Parser](#pdb-parser)
+  - [FASTQ and SAM Parsing](#fastq-and-sam-parsing)
+  - [ORF Finding](#orf-finding)
+  - [Coordinate Mapping](#coordinate-mapping)
+  - [Repeat Sequence Analysis](#repeat-sequence-analysis)
+  - [Sequences, Alignment, and External Tools](#sequences-alignment-and-external-tools)
 - [Contribute](#contribute)
 - [License](#license)
 
@@ -179,6 +192,104 @@ BioGFF3File new streamFeaturesFromFile: '/path/to/large.gff3' block: [ :f |
 
 gff := BioGFF3File new fromFile: '/path/to/large.gff3' filteringTypes: (Set with: 'gene' with: 'mRNA').
 ```
+
+## PDB Parser
+
+A SmaCC-based Protein Data Bank parser following the same pattern as the GFF3, VCF, and Phylip parsers. A typed record class per PDB record type (`BioPDBAtomRecord`, `BioPDBSeqResRecord`, `BioPDBHeaderRecord`, `BioPDBHelixRecord`, `BioPDBSheetRecord`, `BioPDBConectRecord`, and more) is collected into a `BioPDBFile` container. Fixed-column parsing is safe against short lines and missing numeric fields.
+
+```smalltalk
+file := BioPDBSmaCCParser parseFile: '/path/to/structure.pdb'.
+file atoms size.
+file atomsForChain: 'A'.
+file sequenceForChain: 'A'.
+file seqResRecords size.
+```
+
+Supported record types include `HEADER`, `TITLE`, `SEQRES`, `ATOM`, `HETATM`, `HELIX`, `SHEET`, `CONECT`, `MODEL`, and `ENDMDL`. 30 tests pass (7 basic + 23 advanced).
+
+## FASTQ and SAM Parsing
+
+Stream-based FASTQ and SAM parsers with advanced quality handling, automatic gzip support, and paired-end parsing.
+
+`BioFASTQRecord` computes Phred scores (with Sanger/Solexa/Illumina encoding auto-detection), mean quality, GC content, N counting, and quality trimming. `BioFASTQParser` filters records by quality, length, N count, and GC range, and collects aggregate statistics.
+
+```smalltalk
+parser := BioFASTQParser onFile: 'reads.fastq.gz' asFileReference.  "auto gzip detection"
+record := parser next.
+record meanQuality.
+record trimLowQuality: 30.
+parser select: [ :r | r meanQuality >= 30 ].
+parser gcContentRange: #(30.0 70.0).
+stats := parser statistics.
+```
+
+GZip support is transparent: `onGZipFile:`, `onGZipBytes:`, and `onFile:` (auto-detects the `.gz` extension) decompress on the fly using Pharo's built-in `GZipReadStream`.
+
+`BioPairedEndParser` reads R1/R2 file pairs or interleaved FASTQ, normalizes read IDs (`/1`, `/2`, Illumina `1:`/`2:`), validates pairs, filters by insert size and quality, and collects statistics. `BioInterleavedParser` handles alternated R1/R2 records.
+
+```smalltalk
+parser := BioPairedEndParser onR1: r1File r2: r2File.
+parser validPairs.
+parser insertSizeRange: #(200 500).
+parser statistics at: #averageInsertSize.
+```
+
+`SamParser` and `SamRecord` parse all 11 mandatory SAM fields plus optional `TAG:TYPE:VALUE` tags, with bitwise-flag accessors (`isSecondary`, `isProperPair`, `isReverseComplement`, `isSupplementary`) and `tagAt:` lookup. 27 tests pass across FASTQ, SAM, gzip, and paired-end.
+
+## ORF Finding
+
+Open Reading Frame detection on `BioSequence`, analogous to Biopython's `find_orfs_with_trans`. Searches all six reading frames (both strands) using NCBI genetic-code tables and returns a `SortedCollection` of `BioORF` objects sorted by start position.
+
+```smalltalk
+| seq orfs |
+seq := BioSequence newDNA: 'ATGAAATTTGGGTAATGAATGAAAGGGCCCTAG'.
+orfs := seq findOrfsWithTranslationTable: 1 minProteinLength: 5.
+orfs first start.       "1-based inclusive"
+orfs first strand.     "1 or -1"
+orfs first protein.    "translated sequence"
+```
+
+Coordinates are 1-based inclusive, consistent with GenBank/EMBL and Smalltalk conventions. 5 tests pass.
+
+## Coordinate Mapping
+
+`BioSeqCoordinatesMapper` translates between genomic, CDS, and protein coordinate systems, following the Biopython `Bio.SeqUtils.Mapper` pattern. It uses 1-based closed intervals internally (GenBank/HGVS convention) and converts to BED's 0-based half-open format on demand.
+
+```smalltalk
+mapper := BioSeqCoordinatesMapper fromExonPairs:
+  { 5809->5860 . 6758->6874 . 7769->7912 }.
+mapper genomicToCDS: 5810.          "c.2 (exon)"
+mapper cdsToGenomicLocus: 274.       "returns a BioLocus"
+mapper cdsToProtein: 274.            "p.92"
+mapper proteinToGenomicLocus: 92.   "returns a BioLocus"
+```
+
+`BioCDSPosition` models exon, intron, 5' UTR (`preCDS`), and 3' UTR (`postCDS`) positions with HGVS notation (`c.52+5`, `c.-809`, `c.*15`). Genomic positions reuse the existing `BioLocus` class (with `asBedInterval`/`asGffInterval`), avoiding duplication. 17 tests pass.
+
+## Repeat Sequence Analysis
+
+`BioRepeatSequence` and its subclass `BioSTRSequence` model tandem repeats and microsatellites (STRs) with flanking regions, chromosome, strand, and marker metadata. STRs are classified by motif length (mono- to hexanucleotide), and alleles are exported to GFF3, VCF, CSV, and GenBank feature formats.
+
+```smalltalk
+str := BioSTRSequence new
+  name: 'D13S317';
+  motif: 'TATC';
+  repeats: 10;
+  chromosome: '13';
+  markerCode: 'D13S317';
+  start: 82367542; end: 82367581;
+  flankingRegionLeft: 'ACGT';
+  flankingRegionRight: 'TGCA';
+  yourself.
+str isTetraNucleotide.   "true"
+str alleleSize.          "40"
+str expectedPCRSize.     "48"
+str asAlleleString.      "D13S317=10"
+str asGFFRow.            "GFF3 row"
+str asVCFRow.            "VCF row"
+```
+
+Class-side detection helpers include `findRepeatsIn:motif:`, `countTandemRepeats:in:`, and `findMotifsOfLength:in:`. 10 tests pass.
 
 ## Sequences, Alignment, and External Tools
 

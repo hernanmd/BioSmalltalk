@@ -20,7 +20,7 @@ Class {
 	#classInstVars : [
 		'initializeRepositoryOnDemand'
 	],
-	#category : 'BioPopulation-Core',
+	#category : 'BioPathway',
 	#package : 'BioPopulation',
 	#tag : 'Core'
 }

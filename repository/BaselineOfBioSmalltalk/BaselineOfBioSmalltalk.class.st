@@ -20,14 +20,11 @@ Class {
 
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baseline: spec [
-
 	<baseline>
 	spec for: #common do: [
 			spec blessing: #baseline.
-
 			spec preLoadDoIt: #preLoad.
 			spec postLoadDoIt: #postLoad.
-
 			self
 				projectSpecForCommonUtils: spec;
 				projectSpecForDataDrameInspector: spec;
@@ -41,11 +38,24 @@ BaselineOfBioSmalltalk >> baseline: spec [
 				projectSpecForPetitParser: spec;
 				projectSpecForNeedlemanWunsch: spec.
 			"projectSpecForRoassal2: spec."
-
 			self baselineCommonPackages: spec.
+			self baselineAdditionalPackages: spec.
 			self baselineGroups: spec ].
 
 	self baselinePharo: spec
+]
+
+{ #category : 'baselines' }
+BaselineOfBioSmalltalk >> baselineAdditionalPackages: spec [
+	"Declare packages that are referenced by the Core/Tests groups but were missing a spec package: declaration, which caused 'Name not found: <Package> in baseline' during load (see baselineCoreGroup: and baselineTestsGroup:)."
+	spec
+		package: 'BioOntology' with: [ spec requires: #('BioTools') ];
+		package: 'BioOntology-Tests' with: [ spec requires: #('BioOntology') ];
+		package: 'BioPathway' with: [ spec requires: #('BioTools') ];
+		package: 'BioPathway-Tests' with: [ spec requires: #('BioPathway') ];
+		package: 'BioDatabases' with: [ spec requires: #('BioTools') ];
+		package: 'BioDatabases-Tests' with: [ spec requires: #('BioDatabases') ];
+		package: 'BioPlots-Tests' with: [ spec requires: #('BioPlots') ]
 ]
 
 { #category : 'groups' }
@@ -268,9 +278,10 @@ BaselineOfBioSmalltalk >> commonPackagesForPharo7onWards: spec [
 
 { #category : 'accessing' }
 BaselineOfBioSmalltalk >> customProjectAttributes [
-	Smalltalk os isMacOS ifTrue: [ ^ #(#MacOS) ].
-	Smalltalk os isUnix ifTrue: [ ^ #(#Unix) ].
-	Smalltalk os isWindows ifTrue: [ ^ #(#Windows) ]
+
+	OSPlatform current isMacOS ifTrue: [ ^ #( #MacOS ) ].
+	Smalltalk os isUnix ifTrue: [ ^ #( #Unix ) ].
+	Smalltalk os isWindows ifTrue: [ ^ #( #Windows ) ]
 ]
 
 { #category : 'doits' }

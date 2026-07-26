@@ -1,29 +1,28 @@
 "
-I represent a physical entity in a biological pathway: a metabolite, gene, protein, RNA or complex. I have identifiers, type, optional compartment, chemical formula, charge, initial concentration, modification state and ontology terms. BioComplex is my subclass for multi-subunit assemblies.
+Acts as a global repository of organisms. Holds a Collection of population repositories  (instances of BioPopRepository).  Can be used wiith BioSpeciesList to to grab names and build its Collection of population repositories.
+
+You can add, remove or query repositories. Populated repositories are those which contains BioPopRepository which are actually populated.
+
+BioSpecies release.
+BioSpecies initialize.
+BioSpecies repositories.
+BioSpecies populatedRepositories.
+(BioSpecies repositoryFor: 'Cattle') repositoryVersions.
+(BioSpecies repositoryFor: 'Cattle') repositoryVersionAt: 'Mason'.
+
 "
 Class {
 	#name : 'BioSpecies',
-	#superclass : 'Object',
-	#instVars : [
-		'id',
-		'name',
-		'type',
-		'compartment',
-		'formula',
-		'charge',
-		'initialConcentration',
-		'modificationState',
-		'ontologyTerms',
-		'data'
-	],
+	#superclass : 'BioNamedObject',
 	#classVars : [
 		'Repositories'
 	],
 	#classInstVars : [
 		'initializeRepositoryOnDemand'
 	],
-	#category : 'BioPathway',
-	#package : 'BioPathway'
+	#category : 'BioPopulation-Core',
+	#package : 'BioPopulation',
+	#tag : 'Core'
 }
 
 { #category : 'accessing' }

@@ -50,10 +50,15 @@ BioDnaFeaturesViewerExamples class >> exampleCircularDefinedByHand [
 { #category : 'examples - circular' }
 BioDnaFeaturesViewerExamples class >> exampleCircularFromGenBank [
 	"Load features from a GenBank file and display in circular view."
+
 	| record circular |
-	record := BioDnaGraphicRecord fromGenBankFile: 'DnaFeaturesViewer/examples/example_sequence.gb'.
-	circular := BioDnaCircularGraphicRecord sequenceLength: record sequenceLength features: record features.
-	^ circular openCircularTitled: self mainTitle , ' - Circular from GenBank'
+	record := BioDnaGraphicRecord fromGenBankFile:
+		          self examplesDirectory / 'example_sequence.gb'.
+	circular := BioDnaCircularGraphicRecord
+		            sequenceLength: record sequenceLength
+		            features: record features.
+	^ circular openCircularTitled:
+		  self mainTitle , ' - Circular from GenBank'
 ]
 
 { #category : 'examples - circular' }
@@ -174,7 +179,7 @@ BioDnaFeaturesViewerExamples class >> exampleLinearCustomColorsFromGenBank [
 	"Corresponds to Python: translator_with_cutom_colors.py"
 
 	| record |
-	record := BioDnaGraphicRecord fromGenBankFile: 'DnaFeaturesViewer/examples/example_sequence.gb'.
+	record := BioDnaGraphicRecord fromGenBankFile: self examplesDirectory  / 'example_sequence.gb'.
 	record features do: [ :f |
 			((f label includesSubstring: 'site') or: [
 				 f label includesSubstring: 'Site' ]) ifTrue: [
@@ -248,7 +253,7 @@ BioDnaFeaturesViewerExamples class >> exampleLinearFromGenBank [
 	"Load features from a GenBank file and display them."
 	"Corresponds to Python: from_genbank.py"
 	| record |
-	record := BioDnaGraphicRecord fromGenBankFile: 'DnaFeaturesViewer/examples/example_sequence.gb'.
+	record := BioDnaGraphicRecord fromGenBankFile: self examplesDirectory  / 'example_sequence.gb'.
 	^ record openLinearTitled: self mainTitle , ' - From GenBank'
 ]
 
@@ -382,12 +387,13 @@ BioDnaFeaturesViewerExamples class >> exampleLinearSequenceAndTranslation [
 BioDnaFeaturesViewerExamples class >> exampleLinearWithGCPlot [
 	"Display features with labels above the ruler and GC content below.
 	Corresponds to Python: with_gc_plot.py"
+
 	| record |
-	record := BioDnaGraphicRecord fromGenBankFile: 'DnaFeaturesViewer/examples/example_sequence.gb'.
+	record := BioDnaGraphicRecord fromGenBankFile: self examplesDirectory / 'example_sequence.gb'.
 	record flipY: true.
 	^ record
-		openLinearWithGCTitled: 'DNA Features Viewer - GC Plot'
-		windowSize: 50
+		  openLinearWithGCTitled: 'DNA Features Viewer - GC Plot'
+		  windowSize: 50
 ]
 
 { #category : 'examples - linear' }
@@ -436,6 +442,12 @@ BioDnaFeaturesViewerExamples class >> exampleLinearWithSequenceNoTitle [
 				          f2 }.
 	record flipY: true.
 	^ record openLinearWithSequence
+]
+
+{ #category : 'examples - linear' }
+BioDnaFeaturesViewerExamples class >> examplesDirectory [
+
+	^ BioObject testFilesFullDirectoryName / 'DnaFeaturesViewer'
 ]
 
 { #category : 'accessing' }

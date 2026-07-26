@@ -34,6 +34,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 				projectSpecForFileDialog: spec;
 				projectSpecForPolyMath: spec;
 				projectSpecForDataFrame: spec;
+				projectSpecForAIViz: spec;
 				projectSpecForINIParser: spec;
 				projectSpecForPetitParser: spec;
 				projectSpecForNeedlemanWunsch: spec.
@@ -321,6 +322,14 @@ BaselineOfBioSmalltalk >> preLoad [
 
     self ensureMetacelloFileDownload.
     super preLoad.
+]
+
+{ #category : 'specs' }
+BaselineOfBioSmalltalk >> projectSpecForAIViz: spec [
+
+	spec
+		baseline: 'AIViz'
+		with: [ spec repository: 'github://pharo-ai/viz/src' ]
 ]
 
 { #category : 'specs' }

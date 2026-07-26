@@ -418,7 +418,7 @@ BioDnaGraphicRecord >> buildLinearTranslationOn: canvas from: start to: end [
 				ifTrue: [ sequence at: (i - firstIndex + 1) ]
 				ifFalse: [ $N ] ]).
 		aa := self aminoAcidForCodon: codonStr.
-		aaLabel := aa asAminoacidAbbreviation.
+		aaLabel := aa asString asAminoacidAbbreviation.
 		canvas add: (RSLabel new
 			text: aaLabel;
 			fontSize: fontSize;

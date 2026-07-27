@@ -1,6 +1,6 @@
 Class {
 	#name : 'BioComplex',
-	#superclass : 'BioSpecies',
+	#superclass : 'BioPathwaySpecies',
 	#instVars : [
 		'subunits'
 	],

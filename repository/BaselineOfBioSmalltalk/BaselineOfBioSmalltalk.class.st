@@ -48,15 +48,16 @@ BaselineOfBioSmalltalk >> baseline: spec [
 
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineAdditionalPackages: spec [
-	"Declare packages that are referenced by the Core/Tests groups but were missing a spec package: declaration, which caused 'Name not found: <Package> in baseline' during load (see baselineCoreGroup: and baselineTestsGroup:)."
+	"Packages referenced by the Core/Tests groups that were missing a spec package: declaration.
+	The -Tests packages subclass BioAbstractTest, which is defined in BioTools-Tests, so each must require BioTools-Tests (in addition to its base package) or Metacello warns 'Package UNKNOWN depends on BioAbstractTest'."
 	spec
 		package: 'BioOntology' with: [ spec requires: #('BioTools') ];
-		package: 'BioOntology-Tests' with: [ spec requires: #('BioOntology') ];
+		package: 'BioOntology-Tests' with: [ spec requires: #('BioTools-Tests' 'BioOntology') ];
 		package: 'BioPathway' with: [ spec requires: #('BioTools') ];
-		package: 'BioPathway-Tests' with: [ spec requires: #('BioPathway') ];
+		package: 'BioPathway-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPathway') ];
 		package: 'BioDatabases' with: [ spec requires: #('BioTools') ];
-		package: 'BioDatabases-Tests' with: [ spec requires: #('BioDatabases') ];
-		package: 'BioPlots-Tests' with: [ spec requires: #('BioPlots') ]
+		package: 'BioDatabases-Tests' with: [ spec requires: #('BioTools-Tests' 'BioDatabases') ];
+		package: 'BioPlots-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPlots') ]
 ]
 
 { #category : 'groups' }

@@ -335,7 +335,7 @@ BaselineOfBioSmalltalk >> projectSpecForAIViz: spec [
 
 	spec
 		baseline: 'AIViz'
-		with: [ spec repository: 'github://pharo-ai/viz/src' ]
+		with: [ spec repository: 'github://hernanmd/viz/src' ]
 ]
 
 { #category : 'specs' }

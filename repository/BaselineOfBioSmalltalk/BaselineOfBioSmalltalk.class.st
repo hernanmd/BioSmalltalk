@@ -110,7 +110,7 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 			package: 'BioNCBITests' 				with: [ spec requires: #('BioTools-Tests' 'BioNCBI' ). ];
 			package: 'BioNGS' 						with: [ spec requires: #('BioTools' 'BioWrappers' ). ];
 			package: 'BioParsers-Tests' 		with: [ spec requires: #('BioTools-Tests' 'BioParsers' ). ];
-			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' ). ];
+			package: 'BioParsers' 				with: [ spec requires: #('BioWrappers' 'BioTools' 'SmaCC' ). ];
 			package: 'BioPharoCommon' 			with: [ spec requires: #('BioTools' ). ];									
 			package: 'BioPharo4' 					with: [ spec requires: #('BioPharoCommon' ). ];
 			package: 'BioPharo7' 					with: [ spec requires: #('BioPharoCommon' ). ];

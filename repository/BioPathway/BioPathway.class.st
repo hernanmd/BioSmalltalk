@@ -26,21 +26,21 @@ BioPathway class >> example01 [
 	"BioPathway example01 inspect"
 
 	| pathway glucose g6p f6p f16bp dhap g3p bpg pep pyruvate atp adp nad nadh r |
-	glucose := BioSpecies metabolite: 'glucose'.
+	glucose := BioPathwaySpecies metabolite: 'glucose'.
 	glucose formula: 'C6H12O6'.
-	g6p := BioSpecies metabolite: 'G6P'.
-	f6p := BioSpecies metabolite: 'F6P'.
-	f16bp := BioSpecies metabolite: 'F1,6BP'.
-	dhap := BioSpecies metabolite: 'DHAP'.
-	g3p := BioSpecies metabolite: 'G3P'.
-	bpg := BioSpecies metabolite: '1,3-BPG'.
-	pep := BioSpecies metabolite: 'PEP'.
-	pyruvate := BioSpecies metabolite: 'pyruvate'.
+	g6p := BioPathwaySpecies metabolite: 'G6P'.
+	f6p := BioPathwaySpecies metabolite: 'F6P'.
+	f16bp := BioPathwaySpecies metabolite: 'F1,6BP'.
+	dhap := BioPathwaySpecies metabolite: 'DHAP'.
+	g3p := BioPathwaySpecies metabolite: 'G3P'.
+	bpg := BioPathwaySpecies metabolite: '1,3-BPG'.
+	pep := BioPathwaySpecies metabolite: 'PEP'.
+	pyruvate := BioPathwaySpecies metabolite: 'pyruvate'.
 	pyruvate formula: 'C3H4O3'.
-	atp := BioSpecies metabolite: 'ATP'.
-	adp := BioSpecies metabolite: 'ADP'.
-	nad := BioSpecies metabolite: 'NAD+'.
-	nadh := BioSpecies metabolite: 'NADH'.
+	atp := BioPathwaySpecies metabolite: 'ATP'.
+	adp := BioPathwaySpecies metabolite: 'ADP'.
+	nad := BioPathwaySpecies metabolite: 'NAD+'.
+	nadh := BioPathwaySpecies metabolite: 'NADH'.
 	pathway := BioPathway
 		           id: 'hsa00010'
 		           name: 'Glycolysis / Gluconeogenesis'
@@ -96,18 +96,18 @@ BioPathway class >> example02 [
 	"BioPathway example02 inspect"
 
 	| cycle r acetylCoA oxaloacetate citrate isocitrate akG succinylCoA succinate fumarate malate coA_SH nad nadh |
-	acetylCoA := BioSpecies metabolite: 'acetyl-CoA'.
-	oxaloacetate := BioSpecies metabolite: 'oxaloacetate'.
-	citrate := BioSpecies metabolite: 'citrate'.
-	isocitrate := BioSpecies metabolite: 'isocitrate'.
-	akG := BioSpecies metabolite: 'alpha-ketoglutarate'.
-	succinylCoA := BioSpecies metabolite: 'succinyl-CoA'.
-	succinate := BioSpecies metabolite: 'succinate'.
-	fumarate := BioSpecies metabolite: 'fumarate'.
-	malate := BioSpecies metabolite: 'malate'.
-	coA_SH := BioSpecies metabolite: 'CoA-SH'.
-	nad := BioSpecies metabolite: 'NAD+'.
-	nadh := BioSpecies metabolite: 'NADH'.
+	acetylCoA := BioPathwaySpecies metabolite: 'acetyl-CoA'.
+	oxaloacetate := BioPathwaySpecies metabolite: 'oxaloacetate'.
+	citrate := BioPathwaySpecies metabolite: 'citrate'.
+	isocitrate := BioPathwaySpecies metabolite: 'isocitrate'.
+	akG := BioPathwaySpecies metabolite: 'alpha-ketoglutarate'.
+	succinylCoA := BioPathwaySpecies metabolite: 'succinyl-CoA'.
+	succinate := BioPathwaySpecies metabolite: 'succinate'.
+	fumarate := BioPathwaySpecies metabolite: 'fumarate'.
+	malate := BioPathwaySpecies metabolite: 'malate'.
+	coA_SH := BioPathwaySpecies metabolite: 'CoA-SH'.
+	nad := BioPathwaySpecies metabolite: 'NAD+'.
+	nadh := BioPathwaySpecies metabolite: 'NADH'.
 	cycle := BioPathway
 		         id: 'hsa00020'
 		         name: 'TCA Cycle'
@@ -164,10 +164,10 @@ BioPathway class >> example03 [
 	"BioPathway example03 inspect"
 
 	| pathway net r lacI lacZ lacY crp |
-	lacI := BioSpecies gene: 'lacI'.
-	lacZ := BioSpecies gene: 'lacZ'.
-	lacY := BioSpecies gene: 'lacY'.
-	crp := BioSpecies protein: 'CRP'.
+	lacI := BioPathwaySpecies gene: 'lacI'.
+	lacZ := BioPathwaySpecies gene: 'lacZ'.
+	lacY := BioPathwaySpecies gene: 'lacY'.
+	crp := BioPathwaySpecies protein: 'CRP'.
 	lacI addOntologyTerm: (BioOntologyTerm go: 'GO:0003700').
 	crp addOntologyTerm: (BioOntologyTerm go: 'GO:0003700').
 	pathway := BioPathway
@@ -176,7 +176,7 @@ BioPathway class >> example03 [
 		           organism: 'E. coli'.
 	r := BioReaction id: 'R_repress' name: 'lacI repression'.
 	r addReactant: lacI stoichiometry: 1.
-	r addProduct: (BioSpecies gene: 'lacO') stoichiometry: 1.
+	r addProduct: (BioPathwaySpecies gene: 'lacO') stoichiometry: 1.
 	pathway addReaction: r.
 	r := BioReaction id: 'R_activate' name: 'CRP activation'.
 	r addReactant: crp stoichiometry: 1.
@@ -200,19 +200,19 @@ BioPathway class >> example04 [
 	glycolysis := BioPathway id: 'hsa00010' name: 'Glycolysis' organism: 'Homo sapiens'.
 	glycolysis addCompartment: cytosol.
 	r := BioReaction id: 'R_HEX' name: 'Hexokinase'.
-	r addReactant: (BioSpecies metabolite: 'glucose') stoichiometry: 1.
-	r addProduct: (BioSpecies metabolite: 'G6P') stoichiometry: 1.
+	r addReactant: (BioPathwaySpecies metabolite: 'glucose') stoichiometry: 1.
+	r addProduct: (BioPathwaySpecies metabolite: 'G6P') stoichiometry: 1.
 	glycolysis addReaction: r.
 	r := BioReaction id: 'R_PK' name: 'Pyruvate kinase'.
-	r addReactant: (BioSpecies metabolite: 'PEP') stoichiometry: 1.
-	r addProduct: (BioSpecies metabolite: 'pyruvate') stoichiometry: 1.
+	r addReactant: (BioPathwaySpecies metabolite: 'PEP') stoichiometry: 1.
+	r addProduct: (BioPathwaySpecies metabolite: 'pyruvate') stoichiometry: 1.
 	glycolysis addReaction: r.
 	tca := BioPathway id: 'hsa00020' name: 'TCA Cycle' organism: 'Homo sapiens'.
 	tca addCompartment: mitochondria.
 	r := BioReaction id: 'R_CS' name: 'Citrate synthase'.
-	r addReactant: (BioSpecies metabolite: 'acetyl-CoA') stoichiometry: 1.
-	r addReactant: (BioSpecies metabolite: 'oxaloacetate') stoichiometry: 1.
-	r addProduct: (BioSpecies metabolite: 'citrate') stoichiometry: 1.
+	r addReactant: (BioPathwaySpecies metabolite: 'acetyl-CoA') stoichiometry: 1.
+	r addReactant: (BioPathwaySpecies metabolite: 'oxaloacetate') stoichiometry: 1.
+	r addProduct: (BioPathwaySpecies metabolite: 'citrate') stoichiometry: 1.
 	tca addReaction: r.
 	energy := BioPathway id: 'hsa00190' name: 'Energy Metabolism' organism: 'Homo sapiens'.
 	energy addSubPathway: glycolysis.
@@ -227,9 +227,9 @@ BioPathway class >> example04 [
 BioPathway class >> example05 [
 	"BioPathway example05 inspect"
 	| pathway a b c data result r |
-	a := BioSpecies metabolite: 'A'.
-	b := BioSpecies metabolite: 'B'.
-	c := BioSpecies metabolite: 'C'.
+	a := BioPathwaySpecies metabolite: 'A'.
+	b := BioPathwaySpecies metabolite: 'B'.
+	c := BioPathwaySpecies metabolite: 'C'.
 	pathway := BioPathway id: 'demo-omics' name: 'Demo Pathway' organism: 'Test'.
 	r := BioReaction id: 'R1' name: 'A-to-B'.
 	r addReactant: a stoichiometry: 1.
@@ -252,14 +252,14 @@ BioPathway class >> example05 [
 BioPathway class >> example06 [
 	"BioPathway example06 inspect"
 	| pathway glc g6p f6p f16bp g3p pyr atp adp r |
-	glc := BioSpecies metabolite: 'glucose'.
-	g6p := BioSpecies metabolite: 'G6P'.
-	f6p := BioSpecies metabolite: 'F6P'.
-	f16bp := BioSpecies metabolite: 'F1,6BP'.
-	g3p := BioSpecies metabolite: 'G3P'.
-	pyr := BioSpecies metabolite: 'pyruvate'.
-	atp := BioSpecies metabolite: 'ATP'.
-	adp := BioSpecies metabolite: 'ADP'.
+	glc := BioPathwaySpecies metabolite: 'glucose'.
+	g6p := BioPathwaySpecies metabolite: 'G6P'.
+	f6p := BioPathwaySpecies metabolite: 'F6P'.
+	f16bp := BioPathwaySpecies metabolite: 'F1,6BP'.
+	g3p := BioPathwaySpecies metabolite: 'G3P'.
+	pyr := BioPathwaySpecies metabolite: 'pyruvate'.
+	atp := BioPathwaySpecies metabolite: 'ATP'.
+	adp := BioPathwaySpecies metabolite: 'ADP'.
 	pathway := BioPathway id: 'mini-glycolysis' name: 'Mini Glycolysis' organism: 'Homo sapiens'.
 	r := BioReaction id: 'HEX' name: 'Hexokinase'.
 	r addReactant: glc stoichiometry: 1.
@@ -303,25 +303,25 @@ BioPathway class >> example07 [
 	| pathway r1 r2 enzyme |
 	pathway := BioPathway id: 'fba-glycolysis' name: 'FBA Glycolysis' organism: 'Homo sapiens'.
 	r1 := BioReaction id: 'R_HEX1' name: 'Hexokinase'.
-	r1 addReactant: (BioSpecies metabolite: 'glucose') stoichiometry: 1.
-	r1 addReactant: (BioSpecies metabolite: 'ATP') stoichiometry: 1.
-	r1 addProduct: (BioSpecies metabolite: 'G6P') stoichiometry: 1.
-	r1 addProduct: (BioSpecies metabolite: 'ADP') stoichiometry: 1.
+	r1 addReactant: (BioPathwaySpecies metabolite: 'glucose') stoichiometry: 1.
+	r1 addReactant: (BioPathwaySpecies metabolite: 'ATP') stoichiometry: 1.
+	r1 addProduct: (BioPathwaySpecies metabolite: 'G6P') stoichiometry: 1.
+	r1 addProduct: (BioPathwaySpecies metabolite: 'ADP') stoichiometry: 1.
 	r1 kineticLaw: 'Vmax * S / (Km + S)'.
 	r1 parameterAt: 'Vmax' put: 100.0.
 	r1 parameterAt: 'Km' put: 0.1.
 	r1 geneAssociation: '(HK1 and HK2) or HK3'.
 	r1 lowerBound: 0.0.
 	r1 upperBound: 1000.0.
-	enzyme := BioSpecies protein: 'hexokinase'.
+	enzyme := BioPathwaySpecies protein: 'hexokinase'.
 	r1 addCatalyst: enzyme.
 	r1 reversible: false.
 	pathway addReaction: r1.
 	r2 := BioReaction id: 'R_PFK1' name: 'PFK-1'.
-	r2 addReactant: (BioSpecies metabolite: 'F6P') stoichiometry: 1.
-	r2 addReactant: (BioSpecies metabolite: 'ATP') stoichiometry: 1.
-	r2 addProduct: (BioSpecies metabolite: 'F1,6BP') stoichiometry: 1.
-	r2 addProduct: (BioSpecies metabolite: 'ADP') stoichiometry: 1.
+	r2 addReactant: (BioPathwaySpecies metabolite: 'F6P') stoichiometry: 1.
+	r2 addReactant: (BioPathwaySpecies metabolite: 'ATP') stoichiometry: 1.
+	r2 addProduct: (BioPathwaySpecies metabolite: 'F1,6BP') stoichiometry: 1.
+	r2 addProduct: (BioPathwaySpecies metabolite: 'ADP') stoichiometry: 1.
 	r2 kineticLaw: 'Vmax * S / (Km + S)'.
 	r2 parameterAt: 'Vmax' put: 50.0.
 	r2 parameterAt: 'Km' put: 0.05.

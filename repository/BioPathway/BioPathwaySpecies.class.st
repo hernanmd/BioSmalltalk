@@ -32,23 +32,6 @@ Class {
 	#package : 'BioPathway'
 }
 
-{ #category : 'accessing' }
-BioPathwaySpecies class >> addRepository: aBioPopRepository [
-	" Add aBioPopRepository to the receiver's repository "
-	
-	self repositories add: aBioPopRepository 
-]
-
-{ #category : 'accessing' }
-BioPathwaySpecies class >> addRepositoryNamed: organismName [
-	" Add a <BioPopRepository> for organism organismName to the receiver's repositories "
-	
-	| repo |
-	repo := self newRepositoryForOrganism: organismName.
-	self addRepository: repo.
-	repo initializeRepositoryVersions	
-]
-
 { #category : 'instance creation' }
 BioPathwaySpecies class >> gene: aName [
 	^ self id: aName name: aName type: #gene
@@ -56,92 +39,24 @@ BioPathwaySpecies class >> gene: aName [
 
 { #category : 'instance creation' }
 BioPathwaySpecies class >> id: anId name: aName type: aType [
-	^ self new id: anId; name: aName; type: aType; yourself
-]
 
-{ #category : 'initialize-release' }
-BioPathwaySpecies class >> initialize [
-	" Private - initialize species repositories "
-
-	self release.
-	BioSpeciesLists currentSpeciesList 
-		do: [ : organismName | self addRepositoryNamed: organismName  ]
-		displayingProgress: 'Initializing population repositories'.
-	self bioLog: 'Imported repositories: ' , self repositories size asString.
-]
-
-{ #category : 'initialize-release' }
-BioPathwaySpecies class >> initializeRepositoryOnDemand [
-
-	^ initializeRepositoryOnDemand
-		ifNil: [ initializeRepositoryOnDemand := true ]
-]
-
-{ #category : 'initialize-release' }
-BioPathwaySpecies class >> initializeRepositoryOnDemand: anObject [
-	initializeRepositoryOnDemand := anObject
+	^ self new
+		  id: anId;
+		  name: aName;
+		  type: aType;
+		  yourself
 ]
 
 { #category : 'instance creation' }
 BioPathwaySpecies class >> metabolite: aName [
+
 	^ self id: aName name: aName type: #metabolite
-]
-
-{ #category : 'initialize-release' }
-BioPathwaySpecies class >> newRepositoryForOrganism: organismName [
-	" Answer a new population repository for organismName "
-
-	^ BioPopRepository new 
-		name: organismName;
-		yourself
-]
-
-{ #category : 'accessing' }
-BioPathwaySpecies class >> populatedRepositories [
-	" Answer a <Collection> of <BioPopRepository> which are already populated  "
-
-	^ self repositories reject: #isEmpty
 ]
 
 { #category : 'instance creation' }
 BioPathwaySpecies class >> protein: aName [
+
 	^ self id: aName name: aName type: #protein
-]
-
-{ #category : 'initialize-release' }
-BioPathwaySpecies class >> release [
-	" Private - Initialize the receiver's repository.
-	
-	self release "
-
-	super release.
-	self repositories: nil.
-]
-
-{ #category : 'accessing' }
-BioPathwaySpecies class >> repositories [
-	" Answer a <Collection> of <BioPopRepository> "
-
-	^ Repositories
-		ifNil: [ Repositories := OrderedCollection new ]
-]
-
-{ #category : 'accessing' }
-BioPathwaySpecies class >> repositories: aCollection [
-	" Set the receiver's repositories to be aCollection "
-	
-	Repositories := aCollection
-]
-
-{ #category : 'accessing' }
-BioPathwaySpecies class >> repositoryFor: speciesName [
-	" Scan population repositories classes for speciesName and answer the corresponding class if found, or raise an exception "
-	
-	(self repositories isEmpty and: [ self initializeRepositoryOnDemand ])
-		ifTrue: [ 
-			self initialize.
-			BioPopImporter initializeFor: speciesName ].
-	^ self repositories detect: [ : repo | repo name = speciesName ]
 ]
 
 { #category : 'comparing' }

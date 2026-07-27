@@ -50,6 +50,13 @@ BioFile >> contents [
 ]
 
 { #category : 'accessing' }
+BioFile >> contents: aString [
+	"Set the contents of the receiver."
+	
+	self stream nextPutAll: aString
+]
+
+{ #category : 'accessing' }
 BioFile >> fileFormatterClass [
 
 	^ self class fileFormatterClass

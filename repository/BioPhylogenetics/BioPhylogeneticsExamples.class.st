@@ -31,6 +31,35 @@ BioPhylogeneticsExamples class >> exampleCircularPlot [
 ]
 
 { #category : 'examples' }
+BioPhylogeneticsExamples class >> exampleFromNewick [
+
+	<example>
+	^ self sampleTree inspect
+]
+
+{ #category : 'examples' }
+BioPhylogeneticsExamples class >> exampleFromNexus [
+	"Parse the two trees embedded in the sample Nexus TREES block."
+
+	<example>
+
+	^ (Array streamContents: [ :s |
+			s 
+				nextPut: (#'t1' -> (BioPhyloTree readFromNewick: #'((A:0.1,B:0.2):0.3,(C:0.4,D:0.5):0.6)'));
+	  			nextPut: (#'t2' -> (BioPhyloTree readFromNewick: #'(A,B,(C,D))')) ]) inspect
+]
+
+{ #category : 'examples' }
+BioPhylogeneticsExamples class >> exampleLadderize [
+
+	<example>
+	| t |
+	t := self sampleTree.
+	t ladderize.
+	^ t inspect
+]
+
+{ #category : 'examples' }
 BioPhylogeneticsExamples class >> exampleLadderizeAndPlot [
 
 	<example>
@@ -40,6 +69,15 @@ BioPhylogeneticsExamples class >> exampleLadderizeAndPlot [
 		  tipLabels;
 		  scaleBar;
 		  open
+]
+
+{ #category : 'examples' }
+BioPhylogeneticsExamples class >> exampleMRCA [
+
+	<example>
+	| t |
+	t := self sampleTree.
+	^ (t commonAncestor: #( 'A' 'D' )) inspect
 ]
 
 { #category : 'examples' }
@@ -58,6 +96,16 @@ BioPhylogeneticsExamples class >> exampleRectangularPlot [
 		  nodePoints;
 		  scaleBar;
 		  open
+]
+
+{ #category : 'examples' }
+BioPhylogeneticsExamples class >> exampleSmaCCParser [
+	"Show that parsing is driven by the SmaCC-generated parser when present."
+
+	<example>
+	^ ((Smalltalk at: #BioNewickSmaCCParser ifAbsent: [ nil ])
+		  ifNil: [ 'SmaCC parser not loaded' ]
+		  ifNotNil: [ :p | p parse: '((A,B),(C,D));' ]) inspect
 ]
 
 { #category : 'examples' }

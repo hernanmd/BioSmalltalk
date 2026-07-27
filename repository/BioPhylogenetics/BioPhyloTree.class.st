@@ -53,6 +53,12 @@ BioPhyloTree >> asNewickString [
 ]
 
 { #category : 'querying' }
+BioPhyloTree >> cladeNamed: aString [
+
+	^ root ifNil: [ nil ] ifNotNil: [ root cladeNamed: aString ]
+]
+
+{ #category : 'querying' }
 BioPhyloTree >> commonAncestor: aCollectionOfNames [
 	"Answer the MRCA clade of the clades whose names are in aCollectionOfNames.
 	 Mirrors ggtree's MRCA(tree, tip=...) and Bio.Phylo's Tree.common_ancestor."

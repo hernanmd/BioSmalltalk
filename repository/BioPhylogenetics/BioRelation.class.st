@@ -5,16 +5,18 @@ This class is based in the work of Bio::Relation in the BioRuby library.
 
 "
 Class {
-	#name : #BioRelation,
-	#superclass : #BioNamedObject,
+	#name : 'BioRelation',
+	#superclass : 'BioNamedObject',
 	#instVars : [
 		'node',
 		'edge'
 	],
-	#category : 'BioPhylogenetics-Core'
+	#category : 'BioPhylogenetics-Core',
+	#package : 'BioPhylogenetics',
+	#tag : 'Core'
 }
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioRelation >> = aBioRelation [
 	"Answer whether the receiver and anObject represent the same object."
 
@@ -27,7 +29,7 @@ BioRelation >> = aBioRelation [
 	^ true
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioRelation >> >= aBioRelation [
 	"Answer whether the receiver's edge is greater of aBioRelation. "
 
@@ -35,31 +37,31 @@ BioRelation >> >= aBioRelation [
 
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> edge [
 	^ edge
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> edge: anObject [
 	edge := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> from [
 	" Answer the first relation <Object> "
 
 	^ self node first
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 BioRelation >> hash [
 	" Hash is reimplemented because #= is reimplemented "
 
 	^ self edge hash bitXor: self node hash
 ]
 
-{ #category : #initialize }
+{ #category : 'initialize' }
 BioRelation >> initializeEdge: anEdge with: firstNode with: secondNode [
 	" Private - Initialize the receiver's binary relation "
 
@@ -67,17 +69,17 @@ BioRelation >> initializeEdge: anEdge with: firstNode with: secondNode [
 	self edge: anEdge
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> node [
 	^ node
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> node: anObject [
 	node := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioRelation >> relation [
 
 	^ edge

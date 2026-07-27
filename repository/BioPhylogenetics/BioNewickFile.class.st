@@ -1,10 +1,12 @@
 Class {
-	#name : #BioNewickFile,
-	#superclass : #BioFile,
-	#category : 'BioPhylogenetics-Files'
+	#name : 'BioNewickFile',
+	#superclass : 'BioFile',
+	#category : 'BioPhylogenetics-Files',
+	#package : 'BioPhylogenetics',
+	#tag : 'Files'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BioNewickFile class >> possibleExtensions [
 	" See superimplementor's comment"
 

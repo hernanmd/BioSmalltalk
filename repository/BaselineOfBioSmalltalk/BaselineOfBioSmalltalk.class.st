@@ -48,8 +48,7 @@ BaselineOfBioSmalltalk >> baseline: spec [
 
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineAdditionalPackages: spec [
-	"Packages referenced by the Core/Tests groups that were missing a spec package: declaration.
-	The -Tests packages subclass BioAbstractTest, which is defined in BioTools-Tests, so each must require BioTools-Tests (in addition to its base package) or Metacello warns 'Package UNKNOWN depends on BioAbstractTest'."
+	"Packages referenced by the Core/Tests groups that were missing a spec package: declaration. The -Tests packages subclass BioAbstractTest, which is defined in BioTools-Tests, so each must require BioTools-Tests (in addition to its base package) or Metacello warns 'Package UNKNOWN depends on BioAbstractTest'. BioPhylogenetics visualization depends on the AIViz baseline (Roassal 3)."
 	spec
 		package: 'BioOntology' with: [ spec requires: #('BioTools') ];
 		package: 'BioOntology-Tests' with: [ spec requires: #('BioTools-Tests' 'BioOntology') ];
@@ -57,7 +56,9 @@ BaselineOfBioSmalltalk >> baselineAdditionalPackages: spec [
 		package: 'BioPathway-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPathway') ];
 		package: 'BioDatabases' with: [ spec requires: #('BioTools') ];
 		package: 'BioDatabases-Tests' with: [ spec requires: #('BioTools-Tests' 'BioDatabases') ];
-		package: 'BioPlots-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPlots') ]
+		package: 'BioPlots-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPlots') ];
+		package: 'BioPhylogenetics' with: [ spec requires: #('BioTools' 'AIViz') ];
+		package: 'BioPhylogenetics-Tests' with: [ spec requires: #('BioTools-Tests' 'BioPhylogenetics') ]
 ]
 
 { #category : 'groups' }
@@ -135,9 +136,8 @@ BaselineOfBioSmalltalk >> baselineCommonPackages: spec [
 
 ]
 
-{ #category : 'groups' }
+{ #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
-
 	spec 
 		group: 'Core' 
 		with: #(
@@ -155,7 +155,8 @@ BaselineOfBioSmalltalk >> baselineCoreGroup: spec [
 			'BioSummarizedExperiment'
 			'BioOntology'
 			'BioPathway'
-			'BioDatabases' )
+			'BioDatabases'
+			'BioPhylogenetics' )
 ]
 
 { #category : 'groups' }
@@ -245,13 +246,11 @@ BaselineOfBioSmalltalk >> baselineProjectsGroup: spec [
 
 { #category : 'baselines' }
 BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
-
-	spec			
+	spec		
 		group: 'Tests' 
 		with: #(
 			'Core'	
 			"'Projects'"
-
 			'BioTools-Tests' 
 			'BioBlastTests' 
 			'BioWrappers-Tests' 
@@ -266,7 +265,8 @@ BaselineOfBioSmalltalk >> baselineTestsGroup: spec [
 			'BioPlots-Tests'
 			'BioOntology-Tests'
 			'BioPathway-Tests'
-			'BioDatabases-Tests' )
+			'BioDatabases-Tests'
+			'BioPhylogenetics-Tests' )
 ]
 
 { #category : 'baselines' }

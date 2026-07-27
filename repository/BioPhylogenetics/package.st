@@ -1,1 +1,1 @@
-Package { #name : #BioPhylogenetics }
+Package { #name : 'BioPhylogenetics' }

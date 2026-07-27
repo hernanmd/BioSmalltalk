@@ -311,10 +311,15 @@ BaselineOfBioSmalltalk >> platformFilesUrl [
 
 { #category : 'doits' }
 BaselineOfBioSmalltalk >> postLoad [
-	" Private - If Pharo >=7 set the FileDialog package as default "
 
 	(Smalltalk hasClassNamed: #FDMorphicUIManager) ifTrue: [
 		(Smalltalk at: #FDMorphicUIManager) new beDefault ].
+
+	(Smalltalk hasClassNamed: #SmaCCParserDebugger) ifTrue: [ 
+		(Smalltalk at: #SmaCCParserDebugger) availableAutomatically: false ].
+	
+	(Smalltalk hasClassNamed: #SmaCCTransformationToolkitDebugger) ifTrue: [ 
+		(Smalltalk at: #SmaCCTransformationToolkitDebugger) availableAutomatically: false ]
 ]
 
 { #category : 'doits' }

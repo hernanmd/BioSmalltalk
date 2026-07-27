@@ -22,8 +22,7 @@ Class {
 		'catalyses',
 		'substrates'
 	],
-	#category : 'BioPathway',
-	#package : 'BioPathway'
+	#package : 'BioTools'
 }
 
 { #category : 'instance creation' }

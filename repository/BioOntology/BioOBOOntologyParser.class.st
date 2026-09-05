@@ -1,9 +1,6 @@
 Class {
 	#name : 'BioOBOOntologyParser',
 	#superclass : 'BioOntologyParser',
-	#instVars : [
-		'currentTerm'
-	],
 	#category : 'BioOntology-Parsers',
 	#package : 'BioOntology',
 	#tag : 'Parsers'
